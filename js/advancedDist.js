@@ -30,6 +30,11 @@ form.addEventListener('submit', function(e){
     if(distance) {
         if(convertType == "miles") {
             var converted = (distance * 1.609344).toFixed(3);
+            answer.innerHTML = `${distance} miles equals ${converted} kilometers`;
+        }
+        else {
+            var converted = (distance * 0.621371192).toFixed(3);
+            answer.innerHTML = `${distance} kilometers equals ${converted} miles`
         }
     }
     else {

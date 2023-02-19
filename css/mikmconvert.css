@@ -1,3 +1,19 @@
 .invisible {
     color: #fff;
 }
+
+.homeColor {
+    color:rgb(224, 147, 106);
+}
+
+a {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(17 138 178);
+}
+
+
+a:hover {
+    color:rgb(106, 194, 224);
+}

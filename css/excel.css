@@ -2,7 +2,7 @@
     color:rgb(224, 147, 106);
 }
 
-.mainContain {
+.linkHouse {
     border: 1px solid #ccc;
     border-radius: 10px;
     text-align: center;
@@ -11,7 +11,7 @@
     margin: 100px auto;
 }
 
-.mainContain a {
+.linkHouse a {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.5rem;
     text-decoration: none;
@@ -19,6 +19,6 @@
 }
 
 
-.mainContain a:hover {
+.linkHouse a:hover {
     color:rgb(106, 194, 224);
 }

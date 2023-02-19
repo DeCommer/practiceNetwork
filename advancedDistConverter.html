@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/mikmconvert.css">
     <script src="./js/advancedDist.js" defer></script>
-    <title>Document</title>
+    <title>Advanced distance Converter</title>
 </head>
 <body>
-    <a href="./index.html">Home</a>
-    <h1>Advanced Distance Converter</h1>
-
-
-    <div class="container top">
-        <p>Enter miles to convert to KM</p>
-        <form method="post" action="somephp.php" id="convert">
-            <input type="text" name="distance" id="distance" placeholder="distance">
-            <input type="submit" name="convertdist" value="Convert Distance">
-        </form>
+    <div class="mainContain">
+        <a href="./index.html"><span class="homeColor">Home</span></a>
+        <h1>Advanced Distance Converter</h1>
+        <div class="container top">
+            <p>Enter miles to convert to KM</p>
+            <form method="post" action="somephp.php" id="convert">
+                <input type="text" name="distance" id="distance" placeholder="distance">
+                <input type="submit" name="convertdist" value="Convert Distance">
+            </form>
+        </div>
+    
+        <div class="container bottom" id="answer">
+            <h2 class="invisible"></h2>
+        </div>
+    
+        <p id="instructions">Press k for kilometer conversion or m for mile conversion</p>
+        <p id="instructions">in progress...</p>
     </div>
 
-    <div class="container bottom" id="answer">
-        <h2 class="invisible"></h2>
-    </div>
-
-    <p id="instructions">Press k for kilometer conversion or m for mile conversion</p>
-    <p id="instructions">in progress...</p>
 </body>
 </html>
