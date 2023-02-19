@@ -1,0 +1,20 @@
+.linkHouse {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 25px;
+    width: 400px;
+    margin: 100px auto;
+}
+
+.linkHouse a {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(17 138 178);
+}
+
+
+.linkHouse a:hover {
+    color:rgb(106, 194, 224);
+}
