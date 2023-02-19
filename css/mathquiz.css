@@ -1,0 +1,161 @@
+body{ 
+    background-color: #ea088f;
+    margin: 0;
+    padding: 0;
+}
+
+#mQMain {
+    font-family: 'Avenir Book', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #fddd19;
+    padding: 0px 10px 30px 10px;
+    margin: 20px auto;
+    box-shadow: 0px 5px 25px;
+    width: 550px;
+    height: 290px;
+    border-radius: 15px;
+}
+
+#titleArea {
+    padding: 10px;
+    margin: 0;
+}
+
+.title {
+    color: #ea088f;
+    font-size: 4rem;
+    padding: 0;
+    margin: 0;
+}
+
+#opText {
+    position: relative;
+    font-size: 2rem;
+    top: 5px;
+    right: 120px;
+    float: right;
+}
+
+.titleSmall {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Main question area */
+
+#qArea {
+    display: inline-flex;
+    font-size: 3.5rem;
+    padding: 0;
+    min-width: 240px;
+    max-width: 240px;
+    margin-left: 20px;
+}
+
+hr {
+    border-top: 1px solid red;
+    padding: 0;
+    margin-top: -10px;
+}
+
+#ansArea {
+    display: inline-flex;
+}
+
+.mathText{
+    color: #6a3c5e;
+    font-size: 4rem;
+    margin: 0;
+    padding: 10px 10px 3px 10px;
+}
+
+#answerField {
+    font-size: 1.5rem;
+    margin: 35px 8px 0px 15px;
+    max-width: 90px;
+    padding-left: 10px;
+}
+
+#enterBtn {
+    background-color: #08afef;
+    border: 1px solid rgb(84, 121, 184);
+    font-size: 1rem;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#scoreArea {
+    background-color: #08afef;
+    border: 1px solid rgb(84, 121, 184);
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.questionNumText {
+    display: inline-flex;
+    color: #ea088f;
+    font-size: 2rem;
+    padding: 0px;
+    margin: 0px;
+}
+
+#questionNumber{
+    display: inline-flex;
+    color: #ea088f;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.scoreText {
+    display: inline-flex;
+    position: relative;
+    left: 210px;
+    color: #ea088f;
+    font-size: 2rem;
+    padding: 0px;
+    margin: 0px;
+}
+
+#score {
+    display: inline-flex;
+    position: relative;
+    left: 220px;
+    color: #ea088f;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+#below {
+    background-image: linear-gradient(#fddf1944, #ea088f);
+    color: #fff;
+    text-align: left;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 10px 50px;
+    width: 470px;
+    height: 100px;
+}
+
+.correctText {
+    position:fixed;
+    text-shadow: 2px 2px 2px #aa950c;
+    max-height: 75px;
+    margin: 0;
+    padding: 15px;
+    background-color: #fddd19;
+    color: lime;
+}
+
+.inCorrectText {
+    position:fixed;
+    text-shadow: 2px 2px 2px #aa950c;
+    max-height: 75px;
+    margin: 0;
+    padding: 15px;
+    background-color: #fddd19;
+    color: red;
+}

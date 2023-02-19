@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mathquiz.css">
+    <title>Math Quiz</title>
+</head>
+<body>
+
+<a href="./index.html">Home</a>
+    <div id="mQMain">
+        <div id="titleArea">
+            <h3 id="opText">+ - x ÷</h3>
+            <h1 class="title">Math Quiz</h1>
+            <hr>
+            <h32 class="titleSmall">🧮 Exercise you brain-skull!</h3>
+        </div>
+            <div id="qArea">
+                <p id="leftNum" class="mathText"></p>
+                <p id="operator" class="mathText"></p>
+                <p id="rightNum" class="mathText"></p>
+            </div>  
+
+            <div id="ansArea">
+                <p class="mathText">=</p>
+                <form method="post" action="somephp.php" id="answerForm">
+                    <input id="answerField" type="text" name="answerField"  placeholder="answer" autocomplete="off">
+                    <input id="enterBtn" type="submit" name="submitAnswer" value="Enter">
+                </form>
+            </div>
+
+        <div id="scoreArea">
+            <p class="questionNumText">Question:</p>
+            <p id="questionNumber">1</p>
+            <p class="scoreText">Score:</p>
+            <p id="score">0</p>
+        </div>
+     </div>
+
+     <div id="below">
+        <h1>Math is fun stuffers!</h1>
+        <p>🤪 1 pts for plus questions</p>
+        <p>🤪 2 pts for minus because of negatives </p>
+        <p>🤪 5 pts for multiplication</p>
+        <p>🤪 10 pts for division because fractions and decimals can be hard</p>
+        <h2>Scoring system in progress...</h2>
+     </div>
+
+
+    <script src="/js/mathQuiz.js"></script>
+</body>
+</html>
