@@ -1,13 +1,13 @@
 
 
-var convertType = "miles";
-var heading = document.querySelector('h1');
-var intro = document.querySelector('p');
-var answerDiv = document.getElementById('convert');
-var form = document.getElementById('convert');
+let convertType = "miles";
+const heading = document.querySelector('h1');
+const intro = document.querySelector('p');
+const answerDiv = document.getElementById('convert');
+const form = document.getElementById('convert');
 
 document.addEventListener('keydown', function(e) {
-    var key = e.code
+    let key = e.code
 
     if(key == 'KeyK') {
         convertType = 'kilometers';
@@ -25,15 +25,15 @@ document.addEventListener('keydown', function(e) {
 form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    var distance = parseFloat(document.getElementById('distance').value);
+    const distance = parseFloat(document.getElementById('distance').value);
 
     if(distance) {
         if(convertType == "miles") {
-            var converted = (distance * 1.609344).toFixed(3);
+            const converted = (distance * 1.609344).toFixed(3);
             answer.innerHTML = `${distance} miles equals ${converted} kilometers`;
         }
         else {
-            var converted = (distance * 0.621371192).toFixed(3);
+            const converted = (distance * 0.621371192).toFixed(3);
             answer.innerHTML = `${distance} kilometers equals ${converted} miles`
         }
     }

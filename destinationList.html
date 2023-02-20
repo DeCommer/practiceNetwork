@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/vacation.css">
+    <script src="./vacationApp.js"></script>
+    <title>Destinations</title>
+</head>
+<body>
+
+    <header>
+        <a href="./index.html"><span class="homeColor">Home</span></a>
+        <h1>Vacations Destinations List</h1>
+        <p>Places to visit. Use form to add places</p>
+    </header>
+
+    <main>
+        <form id="destination_details_form">
+            <label for="name">Destionation Name</label>
+            <input type="text" id="name" placeholder="Destination name" required>
+
+            <label for="location">Destination Location</label>
+            <input type="text" id="location" placeholder="Location of destination" required>
+
+            <label for="photo">Photo</label>
+            <input tyupe="url" id="photo" placeholder="Input a photo url">
+
+            <label for="description">Destination Description</label>
+            <textarea id="description" placeholder="Give a description"></textarea>
+
+            <button type="submt">Add to list</button>
+        </form>
+
+        <article>
+            <h2 id="title"> Enter Destination Details</h2>
+            <div id="destinations_container">
+
+                <p>In progress...</p>
+                <!-- js content -->
+            </div>
+        </article>
+    </main>
+
+
+    
+</body>
+</html>
