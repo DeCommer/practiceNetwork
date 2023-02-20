@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/vacation.css">
-    <script src="./vacationApp.js"></script>
+    <script src="./js/vacationApp.js" defer></script>
     <title>Destinations</title>
 </head>
 <body>
@@ -18,28 +18,30 @@
     </header>
 
     <main>
+
         <form id="destination_details_form">
-            <label for="name">Destionation Name</label>
+            <label for="name">Destination Name</label>
+
             <input type="text" id="name" placeholder="Destination name" required>
 
             <label for="location">Destination Location</label>
+
             <input type="text" id="location" placeholder="Location of destination" required>
 
             <label for="photo">Photo</label>
-            <input tyupe="url" id="photo" placeholder="Input a photo url">
+
+            <input type="url" id="photo" placeholder="Input a photo url">
 
             <label for="description">Destination Description</label>
+            
             <textarea id="description" placeholder="Give a description"></textarea>
 
-            <button type="submt">Add to list</button>
+            <button type="submit">Add to list</button>
         </form>
 
         <article>
             <h2 id="title"> Enter Destination Details</h2>
             <div id="destinations_container">
-
-                <p>In progress...</p>
-                <!-- js content -->
             </div>
         </article>
     </main>
