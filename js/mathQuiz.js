@@ -1,6 +1,8 @@
 let score = 0;
 let questionNum = 1;
 const loopNum = 10;
+const opArr = ["+", "-", "x", "÷"];
+let randOp = opArr[Math.floor(Math.random() * opArr.length)];
 
 initQuestion()
 
@@ -13,9 +15,8 @@ function correct() {
 }
 
 function question() {
-    const opArr = ["+", "-", "x", "÷"]
     leftNum = Math.floor(Math.random() * 10) + 1;
-    randOp = opArr[Math.floor(Math.random() * opArr.length)];
+    randOp
     rightNum = Math.floor(Math.random() * 10) + 1;
     document.getElementById("leftNum").innerHTML = leftNum;
     document.getElementById("operator").innerHTML = randOp;
@@ -24,9 +25,9 @@ function question() {
 
 function displayCorrect() {
     const correctText = document.createElement('div');
-    correctText.setAttribute('class', 'correctText')
+    correctText.setAttribute('class', 'correctText');
     correctText.textContent = "Correct";
-    var disp = document.getElementById("qArea").appendChild(correctText);
+    var disp = document.getElementById("scoreArea").appendChild(correctText);
     setTimeout(function(){
         const element = disp;
         element.remove();
@@ -35,9 +36,9 @@ function displayCorrect() {
 
 function displayInorrect() {
     const correctText = document.createElement('div');
-    correctText.setAttribute('class', 'correctText')
-    correctText.textContent = "inCorrect";
-    var disp = document.getElementById("qArea").appendChild(correctText);
+    correctText.setAttribute('class', 'correctText');
+    correctText.textContent = "incorrect";
+    var disp = document.getElementById("scoreArea").appendChild(correctText);
     setTimeout(function(){
         const element = disp;
         element.remove();
@@ -54,30 +55,42 @@ function guts() {
 
     if(randOp == "+") {
         answer = (leftNum + rightNum);
-        if(usrAnswer == answer) {
+        if(usrAnswer === answer) {
             correct();
             displayCorrect();
+        }
+        else {
+            displayInorrect();
         }
     }
     if(randOp == "-") {
         answer = (leftNum - rightNum);
-        if(usrAnswer == answer) {
+        if(usrAnswer === answer) {
             correct();
             displayCorrect();
+        }
+        else {
+            displayInorrect();
         }
     }
     if(randOp == "x") {
         answer = (leftNum * rightNum);
-        if(usrAnswer == answer) {
+        if(usrAnswer === answer) {
             correct();
             displayCorrect();
         }
+        else {
+            displayInorrect();
+        }
     }
     if(randOp == "÷") {
-        answer =  (leftNum / rightNum).toFixed(2);
-        if(usrAnswer == answer) {
+        answer = (leftNum / rightNum).toFixed(3);
+        if(usrAnswer === answer) {
             correct();
             displayCorrect();
+        }
+        else {
+            displayInorrect();
         }
     }
 }
