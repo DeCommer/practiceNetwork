@@ -1,11 +1,11 @@
 body{ 
+    font-family: 'Avenir Book', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #ea088f;
     margin: 0;
     padding: 0;
 }
 
 #mQMain {
-    font-family: 'Avenir Book', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #fddd19;
     padding: 0px 10px 30px 10px;
     margin: 20px auto;
