@@ -4,10 +4,9 @@ const loopNum = 10;
 const opArr = ["+", "-", "x", "÷"];
 let randOp = opArr[Math.floor(Math.random() * opArr.length)];
 
-initQuestion()
+question();
 
 function correct() {
-    console.log("Correct!");
     question(); 
     scoreInc();
     questionInc();
@@ -16,7 +15,7 @@ function correct() {
 
 function question() {
     leftNum = Math.floor(Math.random() * 10) + 1;
-    randOp
+    randOp = opArr[Math.floor(Math.random() * opArr.length)];
     rightNum = Math.floor(Math.random() * 10) + 1;
     document.getElementById("leftNum").innerHTML = leftNum;
     document.getElementById("operator").innerHTML = randOp;
@@ -45,15 +44,11 @@ function displayInorrect() {
     }, 2000);
 }
 
-function initQuestion() {
-    question();   
-}
-
 function guts() {
-
+    
     let usrAnswer = parseFloat(document.getElementById('answerField').value);
 
-    if(randOp == "+") {
+    if(randOp === "+") {
         answer = (leftNum + rightNum);
         if(usrAnswer === answer) {
             correct();
@@ -63,7 +58,7 @@ function guts() {
             displayInorrect();
         }
     }
-    if(randOp == "-") {
+    if(randOp === "-") {
         answer = (leftNum - rightNum);
         if(usrAnswer === answer) {
             correct();
@@ -73,7 +68,7 @@ function guts() {
             displayInorrect();
         }
     }
-    if(randOp == "x") {
+    if(randOp === "x") {
         answer = (leftNum * rightNum);
         if(usrAnswer === answer) {
             correct();
@@ -83,9 +78,10 @@ function guts() {
             displayInorrect();
         }
     }
-    if(randOp == "÷") {
-        answer = (leftNum / rightNum).toFixed(3);
-        if(usrAnswer === answer) {
+    if(randOp === "÷") {
+        answer = (leftNum / rightNum).toFixed(2);
+        console.log(answer);
+        if(usrAnswer == answer) {
             correct();
             displayCorrect();
         }
