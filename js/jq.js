@@ -3,14 +3,13 @@
 })
  */
 
-var submenu = document.querySelectorAll('ul li ul');
-
+//Without jQuery
+/* var submenu = document.querySelectorAll('ul li ul');
 function hideMenu() {
     for(let i = 0; i < submenu.length; i++) {
         submenu[i].className = 'hide-menu';
     }
 }
-
 hideMenu();
 let menuLinks = document.querySelectorAll('.menulink');
 
@@ -28,8 +27,16 @@ for(let i = 0; i < menuLinks.length; i++) {
         else {
             thisMenu.className = 'hide-menu';
         }
-
-
-
     });
-}
+} */
+
+
+//With jQuery
+
+$('ul li ul').hide();
+$('.menulink').click(function() {
+    var thisMenu = $(this).next('ul');
+    $('ul li ul').not(thisMenu).hide();
+    thisMenu.toggle();
+})
+

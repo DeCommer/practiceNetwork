@@ -1,8 +1,10 @@
-let score = 0;
-let questionNum = 1;
+var score = 0;
+var questionNum = 1;
 const loopNum = 10;
 const opArr = ["+", "-", "x", "÷"];
 let randOp = opArr[Math.floor(Math.random() * opArr.length)];
+const correctText = document.createElement('div');
+correctText.setAttribute('class', 'correctText');
 
 question();
 
@@ -23,72 +25,12 @@ function question() {
 }
 
 function displayCorrect() {
-    const correctText = document.createElement('div');
-    correctText.setAttribute('class', 'correctText');
     correctText.textContent = "Correct";
-    var disp = document.getElementById("scoreArea").appendChild(correctText);
+    let disp = document.getElementById("scoreArea").appendChild(correctText);
     setTimeout(function(){
         const element = disp;
         element.remove();
     }, 2000);
-}
-
-function displayInorrect() {
-    const correctText = document.createElement('div');
-    correctText.setAttribute('class', 'correctText');
-    correctText.textContent = "incorrect";
-    var disp = document.getElementById("scoreArea").appendChild(correctText);
-    setTimeout(function(){
-        const element = disp;
-        element.remove();
-    }, 2000);
-}
-
-function guts() {
-    
-    let usrAnswer = parseFloat(document.getElementById('answerField').value);
-
-    if(randOp === "+") {
-        answer = (leftNum + rightNum);
-        if(usrAnswer === answer) {
-            correct();
-            displayCorrect();
-        }
-        else {
-            displayInorrect();
-        }
-    }
-    if(randOp === "-") {
-        answer = (leftNum - rightNum);
-        if(usrAnswer === answer) {
-            correct();
-            displayCorrect();
-        }
-        else {
-            displayInorrect();
-        }
-    }
-    if(randOp === "x") {
-        answer = (leftNum * rightNum);
-        if(usrAnswer === answer) {
-            correct();
-            displayCorrect();
-        }
-        else {
-            displayInorrect();
-        }
-    }
-    if(randOp === "÷") {
-        answer = (leftNum / rightNum).toFixed(2);
-        console.log(answer);
-        if(usrAnswer == answer) {
-            correct();
-            displayCorrect();
-        }
-        else {
-            displayInorrect();
-        }
-    }
 }
 
 function scoreInc() {
@@ -105,3 +47,39 @@ document.getElementById('answerForm').addEventListener('submit', function(e) {
     e.preventDefault();
     guts();
 });
+
+function guts() {
+    
+    let usrAnswer = parseFloat(document.getElementById('answerField').value);
+
+    if(randOp === "+") {
+        answer = (leftNum + rightNum);
+        if(usrAnswer == answer) {
+            correct();
+            displayCorrect();
+        }
+    }
+    if(randOp === "-") {
+        answer = (leftNum - rightNum);
+        if(usrAnswer == answer) {
+            correct();
+            displayCorrect();
+        }
+    }
+    if(randOp === "x") {
+        answer = (leftNum * rightNum);
+        if(usrAnswer == answer) {
+            correct();
+            displayCorrect();
+        }
+    }
+    if(randOp === "÷") {
+        answer = (leftNum / rightNum).toFixed(2);
+        console.log(answer);
+        if(usrAnswer == answer) {
+            correct();
+            displayCorrect();
+        }
+    }
+}
+
