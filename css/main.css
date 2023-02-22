@@ -1,11 +1,15 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
     color: #262626;
 }
 
 h1, h2, h3, h4, ul, li, p {
     margin: 0;
-    padding: 0;
+    padding: 5px;
 }
 
 img {
@@ -16,26 +20,47 @@ img {
     color:rgb(224, 147, 106);
 }
 
-a {
-    text-decoration: none;
+.mainContainer {
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    width: auto;
+    height: auto;
+    
 }
 
 .mainContain {
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    width: 500px;
+    margin: 50px auto;
     text-align: center;
-    padding: 10px;
-    width: 350px;
-    margin: 100px auto;
+    
 }
 
-.mainContain a {
+.link {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 150px;
+    max-height: 50px;
+    margin: 5px;
+    padding: 35px 5px;
+
+}
+
+.link a {
     font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
     font-size: 1.5rem;
     text-decoration: none;
     color: rgb(17 138 178);
 }
 
-.mainContain a:hover {
+.mainContainer a:hover {
     color:rgb(106, 194, 224);
 }
+
+
+
+
