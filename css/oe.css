@@ -90,6 +90,13 @@ header p{
     font-size: 2rem;
 }
 
+a {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(17 138 178);
+}
+
 .btn {
   background-color: #FCFCFD;
   border-radius: 4px;

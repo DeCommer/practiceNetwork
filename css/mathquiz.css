@@ -2,12 +2,23 @@
     color:rgb(224, 147, 106);
 }
 
+hr {
+    width: 80%;
+}
+
+a {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(17 138 178);
+}
+
 .mainContain {
     border: 1px solid lightgray;
     border-radius: 5px;
     text-align: center;
     padding: 20px;
-    width: 600px;
+    width: 500px;
     margin: 0 auto;
 }
 
