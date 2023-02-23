@@ -99,14 +99,13 @@ header p{
   display: inline-flex;
   margin-top: 110px;
   justify-content: center;
-  line-height: 1;
   align-items: center;
   text-decoration: none;
   transition: box-shadow .15s,transform .15s;
   user-select: none;
   touch-action: manipulation;
   will-change: box-shadow,transform;
-  font-size: 45px;
+  font-size: 40px;
 }
 
 .btn:focus {

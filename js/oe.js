@@ -48,7 +48,9 @@ function process() {
     document.getElementById('divResult').innerHTML = divRes;
     if(divRes % 2 == 0) {
         document.getElementById('res4OE').innerHTML = "even";
-        console.log('even');
+    }
+    else if(divRes < 1){
+        document.getElementById('res4OE').innerHTML = "decimal";
     }
     else { 
         document.getElementById('res4OE').innerHTML = "odd";
