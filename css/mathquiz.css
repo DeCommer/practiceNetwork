@@ -7,6 +7,12 @@
     border-radius: 5px;
     text-align: center;
     padding: 20px;
-    width: 400px;
+    width: 600px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 501px) {
+    .mainContain {
+        width: 300px;
+    }
 }
