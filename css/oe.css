@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 body {
-    background-color: #a9f7e6;
-    color: #4C5270;
-    text-align: center;
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: lightblue;
+    font-family: 'Roboto', sans-serif;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
     margin: 0;
-    padding: 0;
 }
 
 a {
@@ -31,6 +35,16 @@ a {
     height: 35px;
     width: 50px;
     margin-top: 75px;
+}
+
+.mainContain {
+    border: 1px solid lightslategray;
+    background-color: white;
+    margin-top: 50px;
+    padding: 30px;
+    text-align: center;
+    height: 650px;
+
 }
 
 .container {
@@ -80,7 +94,7 @@ header p{
 
 .resNumCard {
     text-align: center;
-    margin: 20px;
+    margin: 0 20px;
     width:fit-content;
     height: 140px;
 }
@@ -137,6 +151,10 @@ a {
     #resCardContainer {
         width: fit-content;
         display:block;
+    }
+    .mainContain {
+        height: auto;
+    
     }
     .container {
         margin-top: 20px;

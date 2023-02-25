@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/mikmconvert.css">
     <script src="./js/advancedDist.js" defer></script>
     <title>Advanced distance Converter</title>
@@ -16,7 +15,7 @@
         <div class="container top">
             <p>Enter miles to convert to KM</p>
             <form method="post" action="somephp.php" id="convert">
-                <input type="text" name="distance" id="distance" placeholder="distance">
+                <input type="text" name="distance" id="distance" placeholder="distance" autocomplete="off">
                 <input type="submit" name="convertdist" value="Convert Distance">
             </form>
         </div>
@@ -26,7 +25,6 @@
         </div>
     
         <p id="instructions">Press k for kilometer conversion or m for mile conversion</p>
-        <p id="instructions">in progress...</p>
     </div>
 
 </body>

@@ -1,24 +1,38 @@
-.homeColor {
-    color:rgb(224, 147, 106);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
 }
 
-.linkHouse {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    width: 350px;
-    margin: 100px auto;
+body {
+    background-color: lightblue;
+    font-family: 'Roboto', sans-serif;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    margin: 0;
 }
 
-.linkHouse a {
-    font-family: Helvetica, Arial, sans-serif;
+a {
     font-size: 1.5rem;
     text-decoration: none;
     color: rgb(17 138 178);
 }
 
+.homeColor {
+    color:rgb(224, 147, 106);
+}
 
-.linkHouse a:hover {
-    color:rgb(106, 194, 224);
+.mainContain {
+    border: 1px solid lightslategray;
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.instructions {
+    border: 1px solid lightslategray;
+    padding: 3px 15px;
 }
