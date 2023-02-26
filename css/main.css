@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: lightblue;
+    background-color: white;
     font-family: 'Roboto', sans-serif;
     display:flex;
     flex-direction: column;
@@ -37,6 +37,11 @@ header {
 }
 
 .outer {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     margin-top: 300px;
 }
 
