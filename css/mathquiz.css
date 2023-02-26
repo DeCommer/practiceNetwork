@@ -42,6 +42,24 @@ a {
     margin: 50px auto;
 }
 
+#scoreArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scoreArea p {
+    padding: 0 40px;
+}
+
+#below {
+    text-align: left;
+    padding-left: 30px;
+}
+#below h2{
+    text-align: center;    
+}
+
 @media screen and (max-width: 501px) {
     .mainContain {
         width: 300px;

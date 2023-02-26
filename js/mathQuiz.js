@@ -6,11 +6,10 @@ let randOp = opArr[Math.floor(Math.random() * opArr.length)];
 const correctText = document.createElement('div');
 correctText.setAttribute('class', 'correctText');
 
-question();
+
 
 function correct() {
     question(); 
-    scoreInc();
     questionInc();
     document.getElementById('answerForm').reset();
 }
@@ -26,15 +25,14 @@ function question() {
 
 function displayCorrect() {
     correctText.textContent = "Correct";
-    let disp = document.getElementById("scoreArea").appendChild(correctText);
+    let disp = document.getElementById("correctArea").appendChild(correctText);
     setTimeout(function(){
         const element = disp;
         element.remove();
     }, 2000);
 }
 
-function scoreInc() {
-    score++
+function scoreUpdate() {
     document.getElementById('score').innerHTML = score;
 }
 
@@ -46,6 +44,9 @@ function questionInc() {
 document.getElementById('answerForm').addEventListener('submit', function(e) {
     e.preventDefault();
     guts();
+    if(score >= 25) {
+
+    }
 });
 
 function guts() {
@@ -57,6 +58,8 @@ function guts() {
         if(usrAnswer == answer) {
             correct();
             displayCorrect();
+            score += 1;
+            scoreUpdate();
         }
     }
     if(randOp === "-") {
@@ -64,6 +67,8 @@ function guts() {
         if(usrAnswer == answer) {
             correct();
             displayCorrect();
+            score += 2;
+            scoreUpdate();
         }
     }
     if(randOp === "x") {
@@ -71,6 +76,8 @@ function guts() {
         if(usrAnswer == answer) {
             correct();
             displayCorrect();
+            score += 5;
+            scoreUpdate();
         }
     }
     if(randOp === "÷") {
@@ -79,7 +86,10 @@ function guts() {
         if(usrAnswer == answer) {
             correct();
             displayCorrect();
+            score += 10;
+            scoreUpdate();
         }
     }
 }
 
+question();
