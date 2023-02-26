@@ -18,6 +18,15 @@ a {
     text-decoration: none;
 }
 
+h4 {
+    margin: 0px;
+    padding: 0px;
+}
+input:focus {
+    outline: none;
+    border: 0;
+}
+
 .homeColor {
     color:rgb(224, 147, 106);
 }
@@ -59,6 +68,7 @@ a {
 }
 
 #resCardContainer {
+    
     color: #345A7C;
     width: fit-content;
     display: flex;
@@ -83,7 +93,8 @@ header p{
 }
 
 .numCard input {
-    border: 1px solid gray;
+    border: 1px solid #cbcbdd;
+    background-color: #ededf8;
     color: #345A7C;
     border-radius: 5px;
     text-align: center;
@@ -94,6 +105,7 @@ header p{
 }
 
 .resNumCard {
+    
     text-align: center;
     margin: 0 20px;
     width:fit-content;
