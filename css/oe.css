@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 body {
     background-color: lightblue;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     display:flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
     margin: 0;
+}
+
+form {
+    display: flex;
 }
 
 a {
@@ -17,7 +20,6 @@ a {
 
 .homeColor {
     color:rgb(224, 147, 106);
-    margin-right: 10px;
 }
 
 .num {
@@ -38,29 +40,28 @@ a {
 }
 
 .mainContain {
-    border: 1px solid lightslategray;
     background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 25px;
     margin-top: 50px;
     padding: 30px;
     text-align: center;
     height: 650px;
-
 }
 
 .container {
-    text-align: center;
     width: fit-content;
     margin: 0 auto;
 }
 
 #numCardContainer {
     width: fit-content;
-    display: inline-flex;
 }
 
 #resCardContainer {
+    color: #345A7C;
     width: fit-content;
-    display: inline-flex;
+    display: flex;
 }
 
 .numCard {
@@ -68,12 +69,12 @@ a {
     margin: 20px;
     width: fit-content;
     height: fit-content;
-
 }
 
 header {
-    display: inline-flex;
+    display: flex;
     align-items: baseline;
+    justify-content: center;
 }
 
 header p{

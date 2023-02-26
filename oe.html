@@ -10,30 +10,29 @@
 </head>
 <body>
     <div class="mainContain">
-        <header>
+        <div>
             <a href="./index.html"><span class="homeColor">Home</span></a>
+        </div>
+        <header>
             <h1>Odd Even App</h1>
             <p class="byline">by Joseph DeCommer</p>
         </header>
-
         <div class="container">
-            <p>Enter numbers, press equals button</p>
+            <p>Enter numbers, press equals/enter</p>
             <div id="numCardContainer">
+                <form method="post" action="somephp.php" id="answerForm">
                 <div class="numCard">
                     <h2>Num 1</h2>
-                    <form type="submit">
                         <input class="num" type="text" id="num1" autocomplete="off">
-                    </form>
                     <h4 id="num1OE"></h4>
                 </div>
                 <div class="numCard">
                     <h2>Num 2</h2>
-                    <form type="submit">
                         <input class="num" type="text" id="num2" autocomplete="off">
-                    </form>
                     <h4 id="num2OE"></h4>
                 </div>
                 <button class="btn" onclick="process();">=</button>
+            </form>
             </div>
         </div>
         <div class="container">

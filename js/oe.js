@@ -1,4 +1,9 @@
 
+document.getElementById('answerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    process();
+});
+
 function process() {
     let num1 = document.getElementById('num1').value;
     let num2 = document.getElementById('num2').value;
@@ -21,7 +26,6 @@ function process() {
     }else {
         oe2.innerHTML = "odd";
     }
-
 
     document.getElementById('plusResult').innerHTML = plusRes;
     if(plusRes % 2 == 0) {
@@ -54,9 +58,9 @@ function process() {
     }
     else { 
         document.getElementById('res4OE').innerHTML = "odd";
-        console.log('odd');
     }
 }
+
 
 
 
