@@ -14,15 +14,12 @@ body {
 hr {
     border: 0;
     height: 1px;
+    width: 80%;
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 .homeColor {
     color:rgb(224, 147, 106);
-}
-
-hr {
-    width: 80%;
 }
 
 .mathText {

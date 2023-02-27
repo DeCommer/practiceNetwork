@@ -10,6 +10,14 @@ body {
     margin: 0;
 }
 
+hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
 form {
     display: flex;
 }
@@ -68,7 +76,6 @@ input:focus {
 }
 
 #resCardContainer {
-    
     color: #345A7C;
     width: fit-content;
     display: flex;
@@ -157,30 +164,27 @@ a {
 }
 
 @media screen and (max-width: 501px) {
-    #numCardContainer {
-      display: block;
-      padding: 0px;
-    }
-    #resCardContainer {
-        width: fit-content;
-        display:block;
-    }
+
     .mainContain {
         height: auto;
-    
     }
-    .container {
-        margin-top: 20px;
-    }
-    .btn {
-        height: 35px;
-        width: 250px;
-        margin-top: 5px;
-    }
-    .resNumCard {
-        margin: 20px;
-        width: 200px;
-        height: 140px;
+    form {
+        display: block;
     }
 
+    .btn {
+        margin-top: 0px;
+        width: 150px;
+    }
+
+    #resCardContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .operator {
+        margin: 0px;
+        padding: 0px;
+    }
+    
   }
