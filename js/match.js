@@ -1,26 +1,20 @@
 const cards = document.querySelectorAll('.card');
 
 let cardsUp =  0;
-
 let flipped = false;
 let freeze = false;
 let originCard, matchCard;
 
 function flip() {
     if(freeze) return;
-
     if(this === originCard) return;
-
     this.classList.add('flip');
-
     if(!flipped) {
         flipped = true;
         originCard = this;
         return;
     } 
-
     matchCard = this;
-
     checkMatch();
 }
 
@@ -33,7 +27,6 @@ function checkMatch() {
     match ? flippedCards() : notFlippedCards();
 
 }
-
 function checkWin() {
     if(cardsUp === 12) {
         document.querySelector('.modal').classList.add('active');
@@ -71,5 +64,3 @@ function reset() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flip));
-
-//modal
