@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/tipcalc.css">
+    <title>Tip Calculator</title>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainContain">
+        <div>
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+        </div>
+        <h1>Tip Calculator</h1>
+        <hr>
+        <div class="formContainer">
+            <form method="post" action="somephp.php" id="billAmntSubmit">
+                <label class="label"><span class="icon">💵</span> Enter amount</label><br>
+                <input id="bill" class="txtField" type="number" name="billAmntField"  placeholder="$" autocomplete="off"> 
+            </form>
+        </div>
+        <div class="percentContainer">
+            <h3>Tip</h3>
+            <select name="tip" class="select" id="tip">
+                <option value="0">Choose a percent</option>
+                <option value=".05">5%</option>
+                <option value=".10">10%</option>
+                <option value=".15">15%</option>
+                <option value=".20">20%</option>
+              </select>
+        </div>
+        <div class="partyContainer">
+                <label class="label">Number of tippers</label><br>
+                <input id="tippers" class="txtField" type="text" value="1" autocomplete="off">
+        </div>
+        <div class="totalArea">
+            <div class="amount">
+                <h3>Tip Amount:</h3>
+                <h3 class="amountNum" id="tipAmountNum">$0</h3>
+            </div>
+            <div class="amount">
+                <h3>per person:</h3>
+                <h3 class="amountNum" id="tippersAmountNum">$0</h3>
+            </div>
+            <div class="amount">
+                <h3>per person total:</h3>
+                <h3 class="amountNum" id="pptAmountNum">$0</h3>
+            </div>
+            <hr>
+            <div class="amount">
+                <h2>Total:</h2>
+                <h2 class="amountNum" id="totalAmountNum">$0</h2>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="calculate" id="calculate">
+                <p>Calculate tip</p>
+            </div>
+            <div class="reset" id="reset">
+                <p id="reset">reset</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/tipcalc.js"></script>
+</body>
+</html>

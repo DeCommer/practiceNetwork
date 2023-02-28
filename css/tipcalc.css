@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+body {
+    background-color: lightblue;
+    color: rgb(66, 75, 85);
+    font-family: 'PT Mono', monospace;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.icon{
+    font-size: 2rem;
+}
+
+.btn {
+    margin: 10px;
+}
+
+input {
+    margin-top: 10px
+}
+
+h1 {
+    margin-bottom: 20px;
+    padding: 0px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(17 138 178);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    width: 80%;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.txtField {
+    font-family: inherit;
+    font-size: 1.5rem;
+    width: 200px;
+}
+
+.homeColor {
+    color:rgb(224, 147, 106);
+}
+
+.mainContain {
+    background-color: white;
+    border-top: 3px dotted grey;
+    border-bottom: 3px dotted gray;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 50px;
+    text-align: center;
+    width: fit-content;
+    padding: 10px 30px;
+    height: auto;
+}
+
+#bill {
+    border: none;
+    border-bottom: 1px solid slategray;
+    text-align: right;
+}
+
+.formContainer {
+    width: fit-content;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.percentContainer {
+    display:flexbox;
+    text-align: center;
+}
+
+.tipOther {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tipOther .btn {
+    width: 130px;
+}
+
+.select  {
+    border: 1px solid slategray;
+    border-radius: 5px;
+    padding: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.select:focus {
+    outline: none;
+    border: 1px solid slategray;
+    border-radius: 5px;
+}
+
+.partyContainer {
+    margin: 30px 0 30px 0;
+}
+
+#tippers {
+    border: none;
+    border-bottom: 1px solid slategray;
+    text-align: center;
+}
+
+.amount {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+}
+
+.amountNum {
+    position: absolute;
+    right: 0;
+}
+
+.buttons {
+    display: flex;
+    align-items: baseline;
+}
+
+.calculate {
+    border: 1px solid darkorange;
+    border-radius: 20px;
+    padding: 3px 10px;
+    text-align: left;
+    cursor: pointer;
+}
+.reset {
+    cursor: pointer;
+    margin-left: 100px;
+    justify-content: baseline;
+    font-size: .8rem;
+}
+
+
+
+
