@@ -38,7 +38,7 @@ header {
 .outer {
     background-color: lightblue;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;;
     align-items: center;
     width: 100%;
     margin-top: 280px;
@@ -79,8 +79,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 900px;
-    height: 450px;
+    width: 700px;
+    height: 220px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 2px 4px 5px rgba(0,0,0,0.3);
