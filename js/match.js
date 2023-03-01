@@ -31,7 +31,23 @@ function checkWin() {
     if(cardsUp === 12) {
         document.querySelector('.modal').classList.add('active');
         document.querySelector('.overlay').classList.add('active');
+        start();
+        stop();
+        
+        document.querySelector('.modal').addEventListener('click') = window.location.reload();
+
     }
+}
+
+const start = () => {
+    setTimeout(function() {
+        confetti.start();
+    }, 200)
+}
+const stop = () => {
+    setTimeout(function() {
+        confetti.stop();
+    }, 5000)
 }
 
 function flippedCards() {

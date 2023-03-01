@@ -9,7 +9,6 @@
 body {
     background-color: lightblue;
     font-family: 'Roboto', monospace;
-    height: 100vh;
 }
 
 a {
@@ -20,14 +19,14 @@ a {
 }
 
 p {
-    font-size: 4.5rem;
+    font-size: 6.5rem;
 }
 
 .header {
     display: flex;
     width: auto;
     max-width: 450px;
-    margin: 130px auto 0 auto;
+    margin: 150px auto 0 auto;
     align-items: baseline;
     justify-content: space-between;
 }
@@ -40,8 +39,8 @@ span {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.30) 0px 3px 4px;
     border-radius: 7px;
-    height: 640px;
-    width: 640px;
+    height: 940px;
+    width: 940px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -86,7 +85,7 @@ span {
 }
 
 .back {
-    background-color: #7cb8ea;
+    background-color: #6ea2cc;
 }
 
 .front {
@@ -100,7 +99,6 @@ span {
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
-    border: 1px solid gray;
     border-radius: 10px;
     z-index: 10;
     display: flex;
@@ -108,7 +106,7 @@ span {
     align-items: center;
     justify-content: center;
     background-color: white;
-    width: 300px;
+    width: 240px;
     height: 100px;
     max-width: 80%;
 }
@@ -134,8 +132,24 @@ span {
     pointer-events: all;
 }
 
+.btn {
+    cursor: pointer;
+    border: 1px solid grey;
+    margin-top: 20px;
+    padding: 5px 10px;
+    font-family: inherit;
+    border-radius: 10px;
+}
+
 @media screen and (max-width: 500px) {
     .game{
         width: 450px;
+        height: 450px;
+    }
+    .modal {
+        top: 32%;
+    }
+    p {
+        font-size: 3rem;
     }
 }
