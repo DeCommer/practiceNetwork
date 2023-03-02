@@ -5,64 +5,16 @@
 }
 
 body {
-    background-color: white;
-    font-family: 'Roboto', sans-serif;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden;
-    margin: 0;
-}
-
-header {
-    background-color: white;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    height: 300px;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.whiteBar {
-    position: fixed;
-    background-color: white;
-    top: 300px;
-    width: 100%;
-    height: 100px;
-}
-
-.outer {
     background-color: lightblue;
-    display: flex;
-    flex-direction: column;;
-    align-items: left;
-    height: 100vh;
-    width: 100%;
-    margin-top: 350px;
-}
-
-.outer h3 {
-    z-index: 1;
-}
-
-a {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: rgb(17 138 178);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 .homeColor {
     color:rgb(224, 147, 106);
-    position: absolute;
-    top: 60%;
 }
 
 a {
-    font-family: Helvetica, Arial, sans-serif;
     text-decoration: none;
     font-size: 1.5rem;
     text-decoration: none;
@@ -73,43 +25,28 @@ h1 {
     margin: 10px;
 }
 
+header {
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.outer {
+    width: fit-content;
+    margin: 50px auto;
+}
+
 .section p {
     margin: 10px;
     font-size: 3rem;
-    text-shadow: 2px 2px 1px rgba(222, 0, 0, 0.8);
 }
 
 .section {
-    border: 2px solid slategray;
-    background-color: lightblue;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: fit-content;
     height: fit-content;
-    margin: 10px 0 0 10%;
+    margin: 10px;
     border-radius: 10px;
-    transform: translateX(400%);
-    transition: transform 0.5s ease-in-out;
 }
 
-.section:nth-of-type(even) {
-    transform: translateX(-400%);
-}
-
-.section.show {
-    transform: translateX(0);
-}
-
-@media(max-width: 501px) {
-    .section {
-        width: 400px;
-    }
-    header {
-        flex-direction: column;
-    }
-    .homeColor {
-        top: 65%;
-    }
-}
