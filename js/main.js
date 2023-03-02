@@ -16,6 +16,7 @@ function checkSection() {
         }else {
             section.classList.add('show');
         }
-
     })
 }
+
+
