@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 body {
-    background-color: lightblue;
+    background-color: #669bbc;
     font-family: 'Roboto', sans-serif;
     display:flex;
     flex-direction: column;
@@ -16,7 +16,19 @@ body {
 }
 
 .homeColor {
-    color:rgb(224, 147, 106);
+    font-size: 1.2rem;
+    color: #c1121f;
+}
+
+h1 {
+    color: #003049;
+    margin-right: 30px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #FDF0D5;
 }
 
 a {

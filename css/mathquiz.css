@@ -1,44 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    background-color: lightblue;
-    font-family: 'Share Tech Mono', monospace;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden;
-    margin: 0;
+    background-color: #669bbc;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #FDF0D5;
 }
 
 hr {
     border: 0;
     height: 1px;
     width: 80%;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    background: #003049;
 }
 
 .homeColor {
-    color:rgb(224, 147, 106);
+    font-size: 1.5rem;
+    color: #c1121f;
+}
+
+.mainContain {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #f7efe0;
+    border: 1px solid #003049;
+    color: #003049;
+    border-radius: 25px;
+    text-align: center;
+    padding: 20px;
+    width: 450px;
+    margin: 50px auto;
+}
+
+small {
+    color: #c1121f;
+    font-size: 1.3rem;
 }
 
 .mathText {
-    font-size: 30px;
-    padding: 0 10px;
-    margin-left: -15px;
+    font-size: 2rem;
+}
+
+#qArea {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
 }
 
 #answerField {
     border: 1px solid #cbcbdd;
-    background-color: #ededf8;
     font-family: inherit;
-    font-size: 20px;
+    font-size: 1.5rem;
     color: #345A7C;
     border-radius: 5px;
     text-align: center;
-    padding: 10px;
-    margin: 5px;
+    padding: 15px;
     height: 20px;
     width: 200px;
 }
@@ -48,21 +73,8 @@ input:focus {
     border: none;
 }
 
-a {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: rgb(17 138 178);
-}
-
-.mainContain {
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 25px;
-    text-align: center;
-    padding: 20px;
-    width: 500px;
-    margin: 50px auto;
+#ansArea{
+    margin-bottom: 30px;
 }
 
 #scoreArea {
@@ -76,15 +88,15 @@ a {
 }
 
 #below {
-    text-align: left;
-    padding-left: 30px;
+    text-align: center;
 }
-#below h2{
-    text-align: center;    
+
+p{
+    font-size: 1.2rem;  
 }
 
 .btn {
-    font-size: 12px;
+    font-size: 1rem;
     width: 60px;
     height: 25px;
 }

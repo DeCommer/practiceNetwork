@@ -15,28 +15,27 @@
         </div>
         <header>
             <h1>Odd Even App</h1>
-            <p class="byline">by Joseph DeCommer</p>
+            <p>by Joseph DeCommer</p>
         </header>
         <div class="container">
             <p>Enter numbers, press equals/enter</p>
-            <div id="numCardContainer">
-                <form method="post" action="somephp.php" id="answerForm">
-                <div class="numCard">
-                    <h2>Num 1</h2>
-                        <input class="num" type="text" id="num1" autocomplete="off">
-                    <h4 id="num1OE"></h4>
-                </div>
-                <div class="numCard">
-                    <h2>Num 2</h2>
-                        <input class="num" type="text" id="num2" autocomplete="off">
-                    <h4 id="num2OE"></h4>
-                </div>
-                <button class="btn" onclick="process();">=</button>
-            </form>
-            </div>
-        </div>
-        <div class="container">
-            <hr>
+                    <form method="post" action="somephp.php" id="answerForm">
+                    <div class="numCard">
+                        <h2>Num 1</h2>
+                            <input class="num" type="text" id="num1" autocomplete="off">
+                        <h4 id="num1OE"></h4>
+                    </div>
+                    <div class="numCard">
+                        <h2>Num 2</h2>
+                            <input class="num" type="text" id="num2" autocomplete="off">
+                        <h4 id="num2OE"></h4>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" onclick="process();">=</button>
+                        <!-- <button class="btn">Reset</button> -->
+                    </div>
+                </form>
+            <hr style="margin-top: 35px;">
             <h2>Results</h2>
             <hr>
             <div id="resCardContainer">
@@ -60,8 +59,8 @@
                     <div class="resNum" id="divResult">0</div>
                     <h4 id="res4OE"></h4>
                 </div>
+            </div>
         </div>
-    </div>
 </div>
     
     <script src="./js/oe.js"></script>

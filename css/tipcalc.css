@@ -7,13 +7,18 @@
 }
 
 body {
-    background-color: lightblue;
-    color: rgb(66, 75, 85);
+    background-color: #669bbc;
+    color: #003049;
     font-family: 'PT Mono', monospace;
     display:flex;
     align-items: center;
     justify-content: center;
     margin: 0;
+}
+
+.homeColor {
+    font-size: 1.2rem;
+    color: #c1121f;
 }
 
 label {
@@ -64,16 +69,13 @@ hr {
 
 .txtField {
     font-family: inherit;
+    background-color: #f7efe0;
     font-size: 1.5rem;
     width: 200px;
 }
 
-.homeColor {
-    color:rgb(224, 147, 106);
-}
-
 .mainContain {
-    background-color: white;
+    background-color: #f7efe0;
     border-top: 3px dotted grey;
     border-bottom: 3px dotted gray;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -132,6 +134,7 @@ hr {
 }
 
 #tippers {
+    
     border: none;
     border-bottom: 1px solid slategray;
     text-align: center;
@@ -156,9 +159,9 @@ hr {
 }
 
 .calculate {
-    border: 1px solid darkorange;
+    border: 1px solid #c1121f;
     border-radius: 20px;
-    padding: 0px 10px;
+    padding: 4px 10px;
     text-align: left;
     cursor: pointer;
 }

@@ -1,85 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    background-color: lightblue;
-    font-family: 'Share Tech Mono', monospace;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden;
-    margin: 0;
+    background-color: #669bbc;
+    font-family: 'Roboto', sans-serif;
+}
+
+.homeColor {
+    font-size: 1.2rem;
+    color: #c1121f;
 }
 
 hr {
     border: 0;
     height: 1px;
-    width: 100%;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
-}
-
-form {
-    display: flex;
+    width: 80%;
+    background: #003049;
 }
 
 a {
     text-decoration: none;
 }
 
-h4 {
-    margin: 0px;
-    padding: 0px;
-}
 input:focus {
     outline: none;
     border: 0;
 }
 
-.homeColor {
-    color:rgb(224, 147, 106);
-}
-
-.num {
-    font-size: 3rem;
-}
-
-.resNum {
-    border-radius: 5px;
-    height: 55px;
-    margin: 10px;
-    font-size: 2.5rem;
-}
-
 .mainContain {
-    background-color: white;
+    background-color: #f7efe0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 25px;
-    margin-top: 50px;
-    padding: 30px;
+    border-radius: 15px;
+    margin: 50px auto;
+    padding: 20px;
     text-align: center;
-    height: 650px;
-}
-
-.container {
     width: fit-content;
-    margin: 0 auto;
-}
-
-#numCardContainer {
-    width: fit-content;
-}
-
-#resCardContainer {
-    color: #345A7C;
-    width: fit-content;
-    display: flex;
-}
-
-.numCard {
-    text-align: center;
-    margin: 20px;
-    width: fit-content;
-    height: fit-content;
+    height: auto;
 }
 
 header {
@@ -93,42 +52,26 @@ header p{
     margin-left: 10px;
 }
 
+.container {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .numCard input {
+    font-size: 1.5rem;
     border: 1px solid #cbcbdd;
     background-color: #ededf8;
     color: #345A7C;
     border-radius: 5px;
-    text-align: center;
     padding: 10px;
-    margin: 5px;
-    height: 50px;
     width: 200px;
-}
-
-.resNumCard {
-    
     text-align: center;
-    margin: 0 20px;
-    width:fit-content;
-    height: 140px;
 }
 
-.operator {
-    color: #F652A0;
-    font-size: 2rem;
-}
-
-a {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: rgb(17 138 178);
-}
 
 .btn {
-    font-size: 12px;
-    margin-top: 110px;
-    width: 60px;
-    height: 25px;
+    margin-top: 20px;
+    width: 100px;
 }
 
 .btn:hover {
@@ -139,23 +82,53 @@ a {
     background-color: #e2e2e2;
 }
 
+.resNumCard {
+    text-align: center;
+    margin: 0 20px;
+}
+
+#resCardContainer {
+    color: #345A7C;
+    width: fit-content;
+    display: flex;
+}
+
+.operator {
+    color: #c1121f;
+    font-size: 2rem;
+}
+
+.resNum {
+    font-size: 2.5rem;
+}
+
 @media screen and (max-width: 501px) {
 
     .mainContain {
         height: auto;
     }
+    
     form {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .btn {
-        margin-top: 0px;
+        margin-top: 20px;
         width: 150px;
+    }
+
+    h4 {
+        padding: 0;
+        margin: 0;
     }
 
     #resCardContainer {
         flex-direction: column;
+        text-align: center;
         align-items: center;
+        margin: 0 auto;
     }
 
     .operator {

@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: lightblue;
+    background-color: #669bbc;
     font-family: 'Roboto', sans-serif;
     display:flex;
     flex-direction: column;
@@ -18,16 +18,16 @@ body {
 a {
     font-size: 1.5rem;
     text-decoration: none;
-    color: rgb(17 138 178);
+    color: #f7efe0;;
 }
 
 .homeColor {
-    color:rgb(224, 147, 106);
+    font-size: 1.2rem;
+    color: #c1121f;
 }
 
 .mainContain {
-    border: 1px solid lightslategray;
-    background-color: #fff;
+    color: #f7efe0;
     padding: 30px;
     margin-top: 50px;
 }
