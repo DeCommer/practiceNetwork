@@ -18,7 +18,7 @@ body {
 a {
     font-size: 1.5rem;
     text-decoration: none;
-    color: #f7efe0;;
+    color: #FDF0D5;;
 }
 
 .homeColor {
@@ -27,12 +27,13 @@ a {
 }
 
 .mainContain {
-    color: #f7efe0;
+    color: #FDF0D5;
     padding: 30px;
     margin-top: 50px;
 }
 
 .instructions {
-    border: 1px solid lightslategray;
-    padding: 3px 15px;
+    border: 2px solid #c1121f;
+    border-radius: 5px;
+    padding: 5px 20px;
 }
