@@ -35,7 +35,6 @@ function checkWin() {
         stop();
         
         document.querySelector('.modal').addEventListener('click') = window.location.reload();
-
     }
 }
 
