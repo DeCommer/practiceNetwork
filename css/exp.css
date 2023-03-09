@@ -1,0 +1,19 @@
+.desc {
+    background-color: #f7efe0;
+    box-shadow: rgba(0, 0, 0, 0.40) 0px 3px 4px;
+    position: absolute;
+    padding: 20px;
+    margin: 0 auto;
+    width: 700px;
+    height: auto;
+    top: 800px;
+}
+
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
