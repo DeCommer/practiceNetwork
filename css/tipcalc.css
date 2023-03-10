@@ -16,6 +16,13 @@ body {
     margin: 0;
 }
 
+/* for removal of inc decr button on amnt input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .homeColor {
     font-size: 1.2rem;
     color: #c1121f;
