@@ -69,73 +69,49 @@
         <h3>Description</h3><br>
         <p>This simple app was built with HTML CSS and JavaScript. Enter an amount and an anonymous
         function will respond to that submit action.
-        Then a function called process does the math and gives the result. Give it a try! Or if you think
+        Then a function called ticCalc does the math and gives the result. Give it a try! Or if you think
         you can make the JS more efficient, drop me a line!
         </p><br>
         <pre>
             <code>
-                document.getElementById('answerForm').addEventListener
-                ('submit', function(e) {
-                    e.preventDefault();
-                    process();
-                });
+                const bill = document.getElementById('bill')
+                const tippers = document.getElementById('tippers')
+                const percent = document.getElementById('tip')
                 
-                function process() {
-                    let num1 = document.getElementById('num1').value;
-                    let num2 = document.getElementById('num2').value;
-                    let oe1 = document.getElementById('num1OE');
-                    let oe2 = document.getElementById('num2OE');
-                    const plusRes = parseInt(num1) + parseInt(num2);
-                    const minRes = parseInt(num1) - parseInt(num2);
-                    const timesRes = parseInt(num1) * parseInt(num2);
-                    let divRes = parseInt(num1) / parseInt(num2);
-                    divRes = divRes.toFixed(2);
+                let tip = document.getElementById('tip')
                 
-                    if(num1 % 2 === 0) {
-                        oe1.innerHTML = "even";
+                const calc = document.getElementById('calculate')
+                calc.addEventListener('click', calcTip)
+                
+                function calcTip() {
+                    if(bill.value === '' || tip === 0) {
+                        alert("enter values")
                     }
-                    else {
-                        oe1.innerHTML = "odd";
-                    }
-                    if( num2 % 2 === 0) {
-                        oe2.innerHTML = "even";
-                    }else {
-                        oe2.innerHTML = "odd";
+                    if(tippers.value === '' || tippers.value <= 1) {
+                        tippers.value === 1;
                     }
                 
-                    document.getElementById('plusResult').innerHTML = plusRes;
-                    if(plusRes % 2 == 0) {
-                        document.getElementById('res1OE').innerHTML = "even"
-                    }
-                    else {
-                        document.getElementById('res1OE').innerHTML = "odd"
-                    }
-                    document.getElementById('minResult').innerHTML = minRes;
-                    if(minRes % 2 == 0) {
-                        document.getElementById('res2OE').innerHTML = "even"
-                    }
-                    else {
-                        document.getElementById('res2OE').innerHTML = "odd"
-                    }
-                    document.getElementById('timesResult').innerHTML = timesRes;
-                    if(timesRes % 2 == 0) {
-                        document.getElementById('res3OE').innerHTML = "even"
-                    }
-                    else {
-                        document.getElementById('res3OE').innerHTML = "odd"
-                    }
+                    let totalTip = bill.value * tip.value
+                    let dividedTip = totalTip / tippers.value
+                    let totalBill =  totalTip + parseInt(bill.value)
+                    let ppt = totalBill / tippers.value
                 
-                    document.getElementById('divResult').innerHTML = divRes;
-                    if(divRes % 2 == 0) {
-                        document.getElementById('res4OE').innerHTML = "even";
-                    }
-                    else if(divRes < 1){
-                        document.getElementById('res4OE').innerHTML = "decimal";
-                    }
-                    else { 
-                        document.getElementById('res4OE').innerHTML = "odd";
-                    }
+                    document.getElementById('pptAmountNum').innerHTML = "$" + ppt.toFixed(2)
+                    document.getElementById('tipAmountNum').innerText = "$" + totalTip.toFixed(2)
+                    document.getElementById('tippersAmountNum').innerText = "$" + dividedTip.toFixed(2)
+                    document.getElementById('totalAmountNum').innerHTML = "$" + totalBill.toFixed(2)
                 }
+                
+                //reset area
+                document.getElementById('reset').addEventListener('click', () => {
+                    document.getElementById('bill').value = '';
+                    document.getElementById('tip').value = '0';
+                    document.getElementById('tippers').value = '1';
+                    document.getElementById('tipAmountNum').innerHTML = '$0';
+                    document.getElementById('tippersAmountNum').innerHTML = '$0';
+                    document.getElementById('pptAmountNum').innerHTML = '$0';
+                    document.getElementById('totalAmountNum').innerHTML = '$0';
+                })
             </code>
         </pre>
         </p><br>
