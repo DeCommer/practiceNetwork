@@ -2,7 +2,7 @@
     background-color: #f7efe0;
     box-shadow: rgba(0, 0, 0, 0.40) 0px 3px 4px;
     border-radius: 10px;
-    position: absolute;
+    position: flex;
     padding: 20px;
     margin: 0 auto;
     width: 900px;
