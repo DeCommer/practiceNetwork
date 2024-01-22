@@ -19,7 +19,7 @@ function guess(){
         result.textContent = "You got it!"
     }else if (guesses == 1){
         remaining.textContent = (`You have: ${guesses - 1} guesses left`);
-        result.textContent = "You lose!"
+        result.textContent = `You lose! The secret number was ${secret_number}`
     } else if(userGuess > secret_number) {
         guesses --;
         remaining.textContent = (`You have: ${guesses} guesses left`);
