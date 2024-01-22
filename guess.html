@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/guess.css">
+    <script defer src="./js/guess.js"></script>
+    <title>Guessing Game</title>
+</head>
+<body>
+    
+    <div class="mainContain">
+        <div>
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+        </div>
+        <header>
+            <h1>Guessing Game</h1>
+            <p>by Joseph DeCommer</p>
+        </header>
+        <h2>Guess a number<br>between 1 and 100</h2>
+        <input type="text" id="guessBox" placeholder="Enter a number"/>
+
+        <button type="button" id="enterButton" class="btn" onClick="guess()">Guess</button>
+        <h3 id="remaining"> </h3>
+        <p id="result"></p>
+        <button type="button" id="reset" class="reset_btn" onClick="guess()">reset</button>
+
+    </div>
+</body>
+</html>

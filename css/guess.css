@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #669bbc;
+    font-family: 'Roboto', sans-serif;
+}
+
+.homeColor {
+    font-size: 1.2rem;
+    color: #c1121f;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    width: 80%;
+    background: #003049;
+}
+
+a {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none;
+    border: 0;
+}
+
+.mainContain {
+    background-color: #f7efe0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    width: fit-content;
+    height: auto;
+}
+
+header {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+header p{
+    font-size: x-small;
+    margin-left: 10px;
+}
+
+.container {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#guessBox {
+    width: 50%;
+    text-align: center;
+    font-size: 1em;
+}
+
+#result {
+    font-size: 1.5em;
+}
+
+.btn {
+    width: 100px;
+    background-color: dodgerblue;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 5px 5px;
+    font-size: 1em;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(82, 168, 254);
+}
+
+.btn:active {
+    background-color: #e2e2e2;
+}
+
+.reset_btn {
+    background:none; 
+    font-size: .9em;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+.reset_btn:hover {
+    color: #c1121f;
+}
+
+
+
+@media screen and (max-width: 501px) {
+
+    .mainContain {
+        height: auto;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        margin-top: 20px;
+        width: 150px;
+    }
+
+    h4 {
+        padding: 0;
+        margin: 0;
+    }
+
+    #resCardContainer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .operator {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+  }
