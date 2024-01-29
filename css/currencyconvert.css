@@ -20,6 +20,15 @@ body {
     text-decoration: none;
 }
 
+.code {
+    width: 600px;
+    margin: 25px auto;
+}
+
+.code pre{
+    color: #f7efe0;
+}
+
 .converter-container {
     margin: 0 auto;
     max-width: 550px;
