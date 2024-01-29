@@ -33,10 +33,13 @@ hr {
     border: 1px solid #003049;
     color: #003049;
     border-radius: 25px;
-    text-align: center;
     padding: 20px;
     width: 450px;
     margin: 50px auto;
+}
+
+#titleArea {
+    text-align: center;
 }
 
 small {
@@ -54,6 +57,10 @@ small {
     justify-content: space-around;
     width: 80%;
     margin: auto;
+}
+
+#ansArea {
+    text-align: center;
 }
 
 #answerField {

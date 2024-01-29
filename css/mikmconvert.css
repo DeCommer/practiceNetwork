@@ -44,8 +44,7 @@ a:hover {
 }
 
 .mainContain {
-    border: 1px solid lightslategrey;
-    background-color: #fff;
+    background-color: #f7efe0;
     border-radius: 10px;
     padding: 30px;
     margin-top: 50px;

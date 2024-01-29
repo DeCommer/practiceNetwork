@@ -30,6 +30,10 @@ input:focus {
     border: 0;
 }
 
+.link{
+    text-align: left;
+}
+
 .mainContain {
     background-color: #f7efe0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

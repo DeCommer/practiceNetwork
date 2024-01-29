@@ -82,6 +82,10 @@ hr {
     width: 200px;
 }
 
+.links {
+    text-align: left;
+}
+
 .mainContain {
     background-color: #f7efe0;
     border-top: 3px dotted grey;
