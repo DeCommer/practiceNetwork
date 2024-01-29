@@ -5,7 +5,7 @@ const inputAmount = document.querySelector('.converter-container .input-amount')
 const result = document.querySelector('.converter-container .result');
 const swapBtn = document.querySelector('.converter-container .swap-btn');
 
-const floatratesUrl = 'http://floatrates.com/daily/usd.json'
+const floatratesUrl = 'https://floatrates.com/daily/usd.json'
 const init = async () => {
     try {
         const res = await fetch(floatratesUrl);
