@@ -38,7 +38,7 @@ input:focus {
     background-color: #f7efe0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 15px;
-    margin: 50px auto;
+    margin: 50px auto 25px auto;
     padding: 20px;
     text-align: center;
     width: fit-content;
@@ -72,23 +72,26 @@ header p{
 }
 
 .btn {
-    width: 100px;
-    background-color: dodgerblue;
-    border-radius: 5px;
-    margin-left: 15px;
-    padding: 5px 5px;
-    font-size: 1em;
+    position: relative;
+    top: 0px;
+    width: 75px;
+    height: 25px;
+    background-color: #c1121f;
     color: #fff;
     border: none;
     cursor: pointer;
 }
 
 .btn:hover {
-    background-color: rgb(82, 168, 254);
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
 }
 
 .btn:active {
-    background-color: #e2e2e2;
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
 }
 
 .reset_btn {

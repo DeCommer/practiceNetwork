@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/match.css">
-    <script defer src="./js/match.js"></script>
+    <link rel="stylesheet" href="./css/showhide.css">
+    <script src="./js/match.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
+    <script src="./js/confetti.js" defer></script>
     <title>Matching Memory Game</title>
 </head>
 <body>
     <header>
-        <h1>Match Game <span>By joseph DeCommer</span></h1>    
-        <a class="homeColor" href="./index.html">Home</a>
+        <a class="links" href="index.html"><span class="homeColor">Home</span></a>
+        <h1>Match Game <span>By joseph DeCommer</span></h1>
     </header>
     <section class="game">
         <div class="card" data-framework="pizza">
@@ -73,6 +76,92 @@
          </button>       
     </section>
     <div class="overlay"></div>
-<script src="./js/confetti.js"></script>
+
+    <div class="code">
+        <button class="toggleBtn" >See the Javascript.</button>
+        <p><pre><code class="hidden">
+const cards = document.querySelectorAll('.card');
+
+let cardsUp =  0;
+let flipped = false;
+let freeze = false;
+let originCard, matchCard;
+
+function flip() {
+    if(freeze) return;
+    if(this === originCard) return;
+    this.classList.add('flip');
+    if(!flipped) {
+        flipped = true;
+        originCard = this;
+        return;
+    } 
+    matchCard = this;
+    checkMatch();
+}
+
+function hasClass(element, clsName) {
+    return (' ' + element.className + ' ').indexOf(' ' + clsName + ' ') > -1;
+}
+
+function checkMatch() {
+    let match = originCard.dataset.framework === matchCard.dataset.framework 
+    match ? flippedCards() : notFlippedCards();
+
+}
+function checkWin() {
+    if(cardsUp === 12) {
+        document.querySelector('.modal').classList.add('active');
+        document.querySelector('.overlay').classList.add('active');
+        start();
+        stop();
+        
+        document.querySelector('.modal').addEventListener('click') = window.location.reload();
+    }
+}
+
+const start = () => {
+    setTimeout(function() {
+        confetti.start();
+    }, 200)
+}
+const stop = () => {
+    setTimeout(function() {
+        confetti.stop();
+    }, 5000)
+}
+
+function flippedCards() {
+    originCard.removeEventListener('click', flip);
+    matchCard.removeEventListener('click', flip);
+    cardsUp += 2;
+    checkWin();
+    reset();
+}
+
+function notFlippedCards() {
+    freeze = true;
+    setTimeout(() => {
+        originCard.classList.remove('flip');
+        matchCard.classList.remove('flip');
+        reset();
+    }, 1000);
+}
+
+function reset() {
+    [flipped, freeze] = [false, false];
+    [originCard, matchCard] = [null, null];
+}
+
+(function shuffleOrder() {
+    cards.forEach(card => {
+        let position = Math.floor(Math.random() * 12);
+        card.style.order = position;
+    })
+})();
+
+cards.forEach(card => card.addEventListener('click', flip));
+        </code></pre></p>
+    </div>
 </body>
 </html>

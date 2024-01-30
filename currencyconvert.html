@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/currencyconvert.css"/>
-    <script defer src="./js/currencyconvert.js"></script>
+    <link rel="stylesheet" href="./css/showhide.css"/>
+    <script src="./js/currencyconvert.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
     <title>Currency Converter</title>
 </head>
 <body>
     <main>
-        
         <div class="converter-container">
             <a class="links" href="index.html"><span class="homeColor">Home</span></a>
             <h2>Currency Converter <span>💵 💶 💷 💴</span></h2>
@@ -32,16 +33,28 @@
             </div>
         </div>
         <div class="code">
-            <h2> This is the JS that makes it work.</h2>
-            <p><pre><code>
+            <button class="toggleBtn" >See the Javascript.</button>
+            <p><pre><code class="hidden">
 const exchangeRates = {usd: 1};
 const fromCurrency = document.querySelector('.converter-container #from');
 const toCurrency = document.querySelector('.converter-container #to');
 const inputAmount = document.querySelector('.converter-container .input-amount');
 const result = document.querySelector('.converter-container .result');
 const swapBtn = document.querySelector('.converter-container .swap-btn');
-
+const hidden = document.querySelector('.hidden');
+const toggleBtn = document.querySelector('.toggleBtn');
 const floatratesUrl = 'https://floatrates.com/daily/usd.json'
+
+toggleBtn.addEventListener('click', function hideCode() {
+    if (hidden.style.display === "block") {
+        hidden.style.display = "none";
+        toggleBtn.textContent = "See the Javascript"
+    } else {
+        hidden.style.display = "block";
+        toggleBtn.textContent = "Hide the Javascript"
+    }
+    });
+
 const init = async () => {
     try {
         const res = await fetch(floatratesUrl);
@@ -79,8 +92,10 @@ const convert = () => {
     const fromCurrencyValue = fromCurrency.value.toLowerCase();
     const toCurrencyValue = toCurrency.value.toLowerCase();
 
-    const convertedValue = (inputValue * exchangeRates[toCurrencyValue]) / exchangeRates[fromCurrencyValue];
-    const resultValue = `<span class='result-currency'>${toCurrencyValue}</span> ${convertedValue.toFixed(2)}`;
+    const convertedValue = (inputValue * exchangeRates[toCurrencyValue]) 
+    / exchangeRates[fromCurrencyValue];
+    const resultValue = `<span class='result-currency'>${toCurrencyValue}</span> 
+    ${convertedValue.toFixed(2)}`;
     
     result.innerHTML = isNaN(convertedValue) ? "Enter amount above" : resultValue;
 };
@@ -96,7 +111,6 @@ swapBtn.addEventListener('click', () => {
     toCurrency.value = fromCurrencyValue;
 
     convert();
-
 });
             </code></pre></p>
         </div>

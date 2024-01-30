@@ -4,8 +4,8 @@ const toCurrency = document.querySelector('.converter-container #to');
 const inputAmount = document.querySelector('.converter-container .input-amount');
 const result = document.querySelector('.converter-container .result');
 const swapBtn = document.querySelector('.converter-container .swap-btn');
-
 const floatratesUrl = 'https://floatrates.com/daily/usd.json'
+
 const init = async () => {
     try {
         const res = await fetch(floatratesUrl);
@@ -43,8 +43,10 @@ const convert = () => {
     const fromCurrencyValue = fromCurrency.value.toLowerCase();
     const toCurrencyValue = toCurrency.value.toLowerCase();
 
-    const convertedValue = (inputValue * exchangeRates[toCurrencyValue]) / exchangeRates[fromCurrencyValue];
-    const resultValue = `<span class='result-currency'>${toCurrencyValue}</span> ${convertedValue.toFixed(2)}`;
+    const convertedValue = (inputValue * exchangeRates[toCurrencyValue]) 
+    / exchangeRates[fromCurrencyValue];
+    const resultValue = `<span class='result-currency'>${toCurrencyValue}</span> 
+    ${convertedValue.toFixed(2)}`;
     
     result.innerHTML = isNaN(convertedValue) ? "Enter amount above" : resultValue;
 };
@@ -60,5 +62,5 @@ swapBtn.addEventListener('click', () => {
     toCurrency.value = fromCurrencyValue;
 
     convert();
-
 });
+

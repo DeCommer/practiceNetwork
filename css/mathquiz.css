@@ -61,6 +61,7 @@ small {
 
 #ansArea {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 #answerField {
@@ -71,17 +72,13 @@ small {
     border-radius: 5px;
     text-align: center;
     padding: 15px;
-    height: 20px;
+    height: 25px;
     width: 200px;
 }
 
 input:focus {
     outline: none;
     border: none;
-}
-
-#ansArea{
-    margin-bottom: 30px;
 }
 
 #scoreArea {
@@ -91,10 +88,21 @@ input:focus {
 }
 
 #scoreArea p {
+    text-align: center;
     padding: 0 40px;
 }
 
+#correctArea {
+    text-align: center;
+}
+
 #below {
+    width: 250px;
+    margin: 0 20%;
+    text-align: left;
+}
+
+#below h2 {
     text-align: center;
 }
 
@@ -103,17 +111,26 @@ p{
 }
 
 .btn {
-    font-size: 1rem;
-    width: 60px;
+    position: relative;
+    top: 0px;
+    width: 75px;
     height: 25px;
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: lightgray;
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
 }
 
 .btn:active {
-    background-color: #e2e2e2;
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
 }
 
 

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/exp.css">
     <link rel="stylesheet" href="./css/mathquiz.css">
+    <link rel="stylesheet" href="./css/showhide.css">
     <script src="./js/mathQuiz.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
     <title>Math Quiz</title>
 </head>
 <body>
@@ -50,23 +51,109 @@
         <h2>Scores</h2>
         <p>🥔 1 pt for addition</p>
         <p>🫒 2 pts for subtraction </p>
-        <p>🍬 5 pts for multiplication</p>
+        <p>🍔 5 pts for multiplication</p>
         <p>🍕 10 pts for division</p>
      </div>
     </div>
 </div>
 
-<!-- <div class="desc">
-    <h3>Description</h3><br>
-    <p>
-    </p><br>
-    <pre>
-        <code>
+<div class="code">
+    <button class="toggleBtn" >See the Javascript.</button>
+    <p><pre><code class="hidden">
+var score = 0;
+var questionNum = 1;
+const loopNum = 10;
+const opArr = ["+", "-", "x", "÷"];
+let randOp = opArr[Math.floor(Math.random() * opArr.length)];
+const correctText = document.createElement('div');
+correctText.setAttribute('class', 'correctText');
 
-        </code>
-    </pre>
-    </p><br>
-</div> -->
+function correct() {
+    question(); 
+    questionInc();
+    document.getElementById('answerForm').reset();
+}
 
+function question() {
+    leftNum = Math.floor(Math.random() * 10) + 1;
+    randOp = opArr[Math.floor(Math.random() * opArr.length)];
+    rightNum = Math.floor(Math.random() * 10) + 1;
+    document.getElementById("leftNum").innerHTML = leftNum;
+    document.getElementById("operator").innerHTML = randOp;
+    document.getElementById("rightNum").innerHTML = rightNum;   
+}
+
+function displayCorrect() {
+    correctText.textContent = "Correct";
+    let disp = document.getElementById("correctArea").appendChild(correctText);
+    setTimeout(function(){
+        const element = disp;
+        element.remove();
+    }, 2000);
+}
+
+function scoreUpdate() {
+    document.getElementById('score').innerHTML = score;
+}
+
+function questionInc() {
+    questionNum++
+    document.getElementById('questionNumber').innerHTML = questionNum;
+}
+
+document.getElementById('answerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    guts();
+    if(score >= 25) {
+
+    }
+});
+
+function guts() {
+    
+    let usrAnswer = parseFloat(document.getElementById('answerField').value);
+
+    if(randOp === "+") {
+        answer = (leftNum + rightNum);
+        if(usrAnswer == answer) {
+            correct();
+            displayCorrect();
+            score += 1;
+            scoreUpdate();
+        }
+    }
+    if(randOp === "-") {
+        answer = (leftNum - rightNum);
+        if(usrAnswer == answer) {
+            correct();
+            displayCorrect();
+            score += 2;
+            scoreUpdate();
+        }
+    }
+    if(randOp === "x") {
+        answer = (leftNum * rightNum);
+        if(usrAnswer == answer) {
+            correct();
+            displayCorrect();
+            score += 5;
+            scoreUpdate();
+        }
+    }
+    if(randOp === "÷") {
+        answer = (leftNum / rightNum).toFixed(2);
+        console.log(answer);
+        if(usrAnswer == answer) {
+            correct();
+            displayCorrect();
+            score += 10;
+            scoreUpdate();
+        }
+    }
+}
+
+question();
+    </code></pre></p>
+</div>
 </body>
 </html>

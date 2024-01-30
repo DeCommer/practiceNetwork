@@ -6,8 +6,6 @@ let randOp = opArr[Math.floor(Math.random() * opArr.length)];
 const correctText = document.createElement('div');
 correctText.setAttribute('class', 'correctText');
 
-
-
 function correct() {
     question(); 
     questionInc();

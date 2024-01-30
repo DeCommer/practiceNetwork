@@ -41,6 +41,7 @@ input:focus {
     margin: 50px auto;
     padding: 20px;
     text-align: center;
+    min-width: 450px;
     width: fit-content;
     height: auto;
 }
@@ -76,14 +77,22 @@ header p{
 .btn {
     margin-top: 20px;
     width: 100px;
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: lightgray;
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
 }
 
 .btn:active {
-    background-color: #e2e2e2;
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
 }
 
 .resNumCard {

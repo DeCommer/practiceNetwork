@@ -1,13 +1,10 @@
-
 const guessBox = document.getElementById("guessBox");
 const remaining = document.getElementById("remaining");
 const result = document.getElementById("result");
 const enterButton = document.getElementById("enterButton");
 
-let secret_number = Math.floor(Math.random() * 100) + 1;
-
+let secret_number = Math.floor(Math.random() * 10) + 1;
 let guesses = 3;
-
 
 function guess(){
     guesses - 1
@@ -29,7 +26,6 @@ function guess(){
         remaining.textContent = (`You have: ${guesses} guesses left`);
         result.textContent = (`${userGuess} is too low`);
     }
-
 
     //reset area
     document.getElementById('reset').addEventListener('click', () => {

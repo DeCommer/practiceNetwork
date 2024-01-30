@@ -49,3 +49,24 @@ a:hover {
     padding: 30px;
     margin-top: 50px;
 }
+
+.btn {
+    margin-top: 20px;
+    width: 100px;
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
+}
+
+.btn:active {
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
+}

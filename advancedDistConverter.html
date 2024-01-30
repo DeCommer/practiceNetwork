@@ -5,27 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/mikmconvert.css">
+    <link rel="stylesheet" href="./css/showhide.css"/>
     <script src="./js/advancedDist.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
     <title>Advanced distance Converter</title>
 </head>
 <body>
     <div class="mainContain">
         <a href="./index.html"><span class="homeColor">Home</span></a>
-        <h1>Advanced Distance Converter</h1>
+        <h1>Distance Converter</h1>
         <div class="container top">
             <p>Enter miles to convert to KM</p>
             <form method="post" action="somephp.php" id="convert">
                 <input type="text" name="distance" id="distance" placeholder="distance" autocomplete="off">
-                <input type="submit" name="convertdist" value="Convert Distance">
+                <input class="btn" type="submit" name="convertdist" value="Convert Distance">
             </form>
         </div>
     
         <div class="container bottom" id="answer">
             <h2 class="invisible"></h2>
         </div>
-    
         <p id="instructions">Press k for kilometer conversion or m for mile conversion</p>
     </div>
+    <div class="code">
+        <button class="toggleBtn" >See the Javascript.</button>
+        <p><pre><code class="hidden">
+let convertType = "miles";
+const heading = document.querySelector('h1');
+const intro = document.querySelector('p');
+const answerDiv = document.getElementById('convert');
+const form = document.getElementById('convert');
 
+document.addEventListener('keydown', function(e) {
+    let key = e.code
+    if(key == 'KeyK') {
+        convertType = 'kilometers';
+        heading.innerHTML = "Kilometers to Miles Converter"
+        intro.innerHTML = "Type in a number to convert Km to Mi"
+        
+    } else if( key == 'KeyM') {
+        convertType = 'miles';
+        heading.innerHTML = "Miles to Kilometer Converter"
+        intro.innerHTML = "Type in a number to convert Mi to Km"
+    }
+});
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const distance = parseFloat(document.getElementById('distance').value);
+    if(distance) {
+        if(convertType == "miles") {
+            const converted = (distance * 1.609344).toFixed(3);
+            answer.innerHTML = `${distance} miles equals ${converted} kilometers`;
+        }
+        else {
+            const converted = (distance * 0.621371192).toFixed(3);
+            answer.innerHTML = `${distance} kilometers equals ${converted} miles`
+        }
+    }
+    else {
+        answerDiv.innerHTML = "<p>Enter a number</p>";
+    }
+});
+                </code>
+            </pre>
+        </p>
+    </div>
 </body>
 </html>

@@ -11,24 +11,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.homeColor {
-    font-size: 1.2rem;
-    color: #c1121f;
-}
-
-.links {
-    text-decoration: none;
-}
-
-.code {
-    width: 600px;
-    margin: 25px auto;
-}
-
-.code pre{
-    color: #f7efe0;
-}
-
 .converter-container {
     margin: 0 auto;
     max-width: 550px;
@@ -55,11 +37,11 @@ h2 span {
 .converter-container h2::after {
     position:absolute;
     content: "";
-    height: 3px;
+    height: 2px;
     width: 130px;
     left: 0;
     bottom: -6px;
-    background-color: #EBD9B4;
+    background-color: #c1121f;
 }
 
 .converter-container .content {
