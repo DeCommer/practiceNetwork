@@ -13,13 +13,22 @@ body {
 
 h1 {
     color: #003049;
-    margin-right: 30px;
+    margin: 0 50px;
+}
+
+p {
+    font-size: 15pt;
+    color: #f7efe0;
 }
 
 a {
     text-decoration: none;
     font-size: 1.5rem;
     color: #FDF0D5;
+}
+
+a:hover {
+    color:#c1121f;
 }
 
 header {
@@ -34,15 +43,21 @@ header {
 }
 
 .outer {
+    min-width: 400px;
     width: fit-content;
     margin: 50px auto;
 }
 
 .links {
-    margin-left: 20%;
+    margin-left: 25%;
 }
 
 .section {
-    margin: 10px;
+    margin-top: 25px;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    align-content: center;
+}
