@@ -11,11 +11,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.homeColor {
-    font-size: 1.2rem;
-    color: #c1121f;
-}
-
 h1 {
     color: #003049;
     margin-right: 30px;
@@ -33,9 +28,18 @@ header {
     align-items: baseline;
 }
 
+.homeColor {
+    font-size: 1.2rem;
+    color: #c1121f;
+}
+
 .outer {
     width: fit-content;
     margin: 50px auto;
+}
+
+.links {
+    margin-left: 20%;
 }
 
 .section {

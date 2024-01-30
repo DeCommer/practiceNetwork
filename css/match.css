@@ -44,6 +44,18 @@ p {
     font-size: 6.5rem;
 }
 
+.mainContain {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #f7efe0;
+    border: 1px solid #003049;
+    color: #003049;
+    border-radius: 25px;
+    padding: 5px;
+    width: 450px;
+    margin: 50px auto;
+    width: fit-content;
+}
+
 .game {
     height: 940px;
     width: 940px;
