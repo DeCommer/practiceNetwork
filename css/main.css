@@ -69,6 +69,6 @@ header {
 
 footer {
     position: fixed;
-    bottom: 0;
+    bottom:25px;
     align-content: center;
 }
