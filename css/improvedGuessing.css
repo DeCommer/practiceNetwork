@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #669bbc;
+    font-family: 'Roboto', sans-serif;
+}
+
+header h1 {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px auto 15px auto;
+    color: #343434;
+  }
+
+p {
+    font-size: 15pt;
+    color: #343434;
+}
+
+a {
+    text-decoration: none;
+    margin: 15px;
+    font-size: 1.5rem;
+    color: #FDF0D5;
+}
+
+a:hover {
+    color:#c1121f;
+}
+
+.homeColor {
+    font-size: 1.2rem;
+    color: #c1121f;
+}
+
+main {
+    text-align: center;
+    background-color: #f7efe0;
+    margin: 50px auto 20px auto;
+    padding: 20px;
+    width:  500px;
+    height: 558px;
+    border-radius: 10px;
+  }
+  
+  .top {
+    margin: 25px auto;
+  }
+  
+  .bottom {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .number {
+    background: #fff;
+    color: #c1121f;
+    border: 1px solid #669bbc;
+    border-radius: 15px;
+    font-size: 6rem;
+    width: 150px;
+    padding: 1rem 0rem;
+    text-align: center;
+    position: relative;
+    margin: 5px auto 25px auto;
+  }
+  
+  .between {
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 0 auto;
+  }
+  
+  .reset {
+    display: flex;  
+  }
+  
+  input::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  .guess {
+    background: #fff;
+    border: 1px solid #F0EDCF;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid #669bbc;
+    font-family: inherit;
+    color: #232323;
+    font-size: 1.5rem;
+    padding: .7rem;
+    text-align: center;
+  }
+  
+  .btn {
+    border: none;
+    background-color: #669bbc;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 15px 20px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #669bbc;
+  }
+  
+  .btn:active {
+    transform: translateY(2px);
+  }
+  
+  .message {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    height: 3rem;
+  }
+  
+  .label-score {
+    margin-bottom: 1rem;
+  }

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/showhide.css" />
+    <link rel="stylesheet" href="./css/improvedGuessing.css" />
+    <script src="./js/improvedGuessing.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
+    <title>Guess the Secret Number</title>
+</head>
+<body>
+    <main>
+    <header>
+        <a class="links" href="index.html"><span class="homeColor">Home</span></a>
+        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+        <h1>Guess the Secret Number</h1>
+        <div class="number">🔒</div>
+        <p class="between">( Between 1 and 100 )</p>
+    </header>
+        <section class="top">
+            <button class="btn resetbtn">Reset</button>
+            <input type="number" class="guess" />
+            <button class="btn guessBtn">Guess!</button>
+        </section>
+        <section class="bottom">
+            <p class="prevGuess"></p>
+            <p class="message">🤨 Enter your guess! 😏</p>
+            <p class="label-score">Guesses Remaining: <span class="score">20</span></p>
+            <p class="label-highscore">Highscore: <span class="highscore">0</span></p>
+        </section>
+    </main>
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Improved Guessing Game</h1>
+        <p>Visually improved and with added features like keeping a score
+            and letting user know remaining guesses.
+        </p><p>Check out the JavaScript below.</p>
+    </div><div class="aboutOverlay hidden"></div>
+
+    <div class="code">
+        <button class="toggleBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden">
+let secretNumber = Math.trunc(Math.random() * 100) + 1;
+let guesses = 20;
+let highscore = 0;
+
+const messageDisp = function(message) {
+    document.querySelector('.message').textContent = message;
+}
+
+const clearTxt = function() {
+    document.querySelector('.guess').value = '';
+}
+
+const prevGuessDisplay = function(prevGuess) {
+    document.querySelector('.prevGuess').textContent = prevGuess
+};
+
+document.querySelector('.guessBtn').addEventListener('click', function(){
+    const guess = Number(document.querySelector('.guess').value);
+    clearTxt();
+    if(!guess) {
+            messageDisp("🚫 You must enter a number. 🚫");
+            
+    }else if (guess === secretNumber) {
+        messageDisp("🚀 You got it! 🍪");
+        document.querySelector('.number').textContent = "🔓";
+        if (guesses > highscore) {
+            highscore = guesses;
+            document.querySelector('.highscore').textContent = highscore;
+        };
+    }else if(guess !== secretNumber) { //replaces below
+        guess > secretNumber ? messageDisp("🏔️ Your guess is too high ⛰️") :
+        messageDisp("🏚️ Your guess is too low 🏚️");
+        guesses--;
+        document.querySelector('.score').textContent = guesses;
+        prevGuessDisplay(`Your previous guess was: ${guess}`);
+        };
+    if (guesses < 1) {
+        messageDisp("😫 You lose! 🤢");
+        document.querySelector('.score').textContent = 0;
+        document.querySelector('.number').textContent = "🪦";
+        };
+});
+    
+document.querySelector('.resetbtn').addEventListener('click', function() {
+    guesses = 20;
+    secretNumber = Math.trunc(Math.random() * 20) + 1;
+    console.log(secretNumber);
+    messageDisp("🤨 Enter your guess! 😏");
+    document.querySelector('.score').textContent = guesses;
+    document.querySelector('.number').textContent = '🔒';
+    clearTxt();
+    document.querySelector('body').style.backgroundColor = "#669bbc";
+    prevGuessDisplay(``);
+});
+
+        </code></pre></p>
+    </div>
+</body>
+</html>

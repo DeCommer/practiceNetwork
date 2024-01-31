@@ -22,6 +22,7 @@ p {
 }
 
 a {
+    display: block;
     text-decoration: none;
     font-size: 1.5rem;
     color: #FDF0D5;
@@ -49,11 +50,21 @@ header {
 }
 
 .links {
+    width: 100%;
     margin-left: 25%;
 }
 
 .section {
+    display: block;
     margin-top: 25px;
+}
+
+.section p {
+    font-size: 1.2em;
+}
+
+.links a:hover {
+    color: #c1121f;
 }
 
 footer {
