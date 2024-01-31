@@ -15,9 +15,9 @@
     <div class="mainContain">
     <header>
         <a class="links" href="index.html"><span class="homeColor">Home</span></a>
+        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
         <h1>Match Game <span>By joseph DeCommer</span></h1>
     </header>
-
     <section class="game">
         <div class="card" data-framework="pizza">
             <div class="front"><p>🍕</p></div>
@@ -35,7 +35,6 @@
             <div class="front"><p>✈️</p></div>
             <div class="back"><p>❓</p></div>
         </div>
-
         <div class="card" data-framework="dice">
             <div class="front"><p>🎲</p></div>
             <div class="back"><p>❓</p></div>
@@ -52,7 +51,6 @@
             <div class="front"><p>🔥</p></div>
             <div class="back"><p>❓</p></div>
         </div>
-
         <div class="card" data-framework="plane">
             <div class="front"><p>✈️</p></div>
             <div class="back"><p>❓</p></div>
@@ -80,9 +78,21 @@
     </section>
     <div class="overlay"></div>
 
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Match Game</h1>
+        <p>Uncover pairs of matching cards by clicking on them. 
+        Your goal is to match all the cards on the board.</p><p>This game is 
+        powered by a combination of JavaScript, HTML, and CSS, making it a 
+        sleek and efficient web-based game. The use of these technologies 
+        ensures a smooth and responsive gaming experience while showcasing 
+        the capabilities of modern web development.</p>
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
     <div class="code">
         <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="hidden">
+        <p><pre><code class="jsHidden">
 const cards = document.querySelectorAll('.card');
 
 let cardsUp =  0;

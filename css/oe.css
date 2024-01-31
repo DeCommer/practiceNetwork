@@ -23,6 +23,7 @@ hr {
 
 a {
     text-decoration: none;
+    margin: 15px;
 }
 
 input:focus {

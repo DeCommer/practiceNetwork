@@ -12,9 +12,8 @@
 </head>
 <body>
     <div class="mainContain">
-        <div class="link">
-            <a href="./index.html"><span class="homeColor">Home</span></a>
-        </div>
+        <a class="links" href="index.html"><span class="homeColor">Home</span></a>
+        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
         <h1>Password Generator</h1>
         <p>How many characters?</p>
     
@@ -30,9 +29,22 @@
             <h2 class="invisible"></h2>
         </div>
     </div>
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Password Generator</h1>
+        <p>This uses an array of all the alhpabet, number and special
+        characters and combines them in a random order to give a unique
+        password based on the number of characters entered.
+        </p><p>
+        I made this with a combination of HTML, CSS and JS. 
+        Check out the JavaScript to see how it works by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
     <div class="code">
         <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="hidden">
+        <p><pre><code class="jsHidden">
 (function(){
     document.getElementById('genrate').addEventListener('submit', function(e){
         e.preventDefault();

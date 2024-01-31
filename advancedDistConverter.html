@@ -12,8 +12,12 @@
 </head>
 <body>
     <div class="mainContain">
+        <header>
         <a href="./index.html"><span class="homeColor">Home</span></a>
+        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+        
         <h1>Distance Converter</h1>
+    </header>
         <div class="container top">
             <p>Enter miles to convert to KM</p>
             <form method="post" action="somephp.php" id="convert">
@@ -27,9 +31,22 @@
         </div>
         <p id="instructions">Press k for kilometer conversion or m for mile conversion</p>
     </div>
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>KM / MI Distance Converter</h1>
+        <p>Press 'k' or 'm' to convert to Kilometers or Miles.
+        This is a basic converter app that uses the base 
+        units to calculate distance.
+        </p><p>
+        I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
     <div class="code">
         <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="hidden">
+        <p><pre><code class="jsHidden">
 let convertType = "miles";
 const heading = document.querySelector('h1');
 const intro = document.querySelector('p');

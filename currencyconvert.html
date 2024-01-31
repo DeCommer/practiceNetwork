@@ -12,7 +12,10 @@
 <body>
     <main>
         <div class="converter-container">
-            <a class="links" href="index.html"><span class="homeColor">Home</span></a>
+            <header>
+                <a href="./index.html"><span class="homeColor">Home</span></a>
+                <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            </header>
             <h2>Currency Converter <span>💵 💶 💷 💴</span></h2>
             <div class="content">
                 <input class="input-amount" type="number" value="1.00" placeholder="Enter amount">
@@ -32,9 +35,22 @@
                 <div class="result"><span class="result-currency">USD </span>00</div>
             </div>
         </div>
+
+        <div class="aboutModal hidden">
+            <button class="closeAboutModal">&times</button>
+            <h1>Currency Converter</h1>
+            <p>This currency converter webapp takes API data from Flowrates.com. The data
+                is fetched with a JS function and distributed to corresponding fields to 
+                convert from one country's currency to another.
+            </p><p>
+            I made this with a combination of HTML, CSS and JS. 
+            You can see the JavaScript by clicking the button below.
+            </p>
+        </div><div class="aboutOverlay hidden"></div>
+
         <div class="code">
             <button class="toggleBtn" >See the Javascript.</button>
-            <p><pre><code class="hidden">
+            <p><pre><code class="jsHidden">
 const exchangeRates = {usd: 1};
 const fromCurrency = document.querySelector('.converter-container #from');
 const toCurrency = document.querySelector('.converter-container #to');

@@ -23,6 +23,11 @@ hr {
 
 a {
     text-decoration: none;
+    margin: 15px;
+}
+
+.jsHidden {
+    text-align: left;
 }
 
 input:focus {

@@ -12,9 +12,8 @@
 </head>
 <body>
     <div class="mainContain">
-        <div class="link">
-            <a href="./index.html"><span class="homeColor">Home</span></a>
-        </div>
+        <a href="./index.html"><span class="homeColor">Home</span></a>
+        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
         <header>
             <h1>Odd Even App</h1>
             <p>by Joseph DeCommer</p>
@@ -64,9 +63,21 @@
             </div>
         </div>
 </div>
+
+<div class="aboutModal hidden">
+    <button class="closeAboutModal">&times</button>
+    <h1>Odd Even App</h1>
+    <p>Odd Even takes two numbers and performs each of the basic
+    math operations giving you the results, and whether the results 
+    are odd or even.</p>
+    <p>I made this with a combination of HTML, CSS and JS. 
+    You can see the JavaScript by clicking the button below.
+    </p>
+</div><div class="aboutOverlay hidden"></div>
+
 <div class="code">
     <button class="toggleBtn" >See the Javascript.</button>
-    <p><pre><code class="hidden">
+    <p><pre><code class="jsHidden">
 document.getElementById('answerForm').addEventListener('submit', function(e) {
     e.preventDefault();
     process();

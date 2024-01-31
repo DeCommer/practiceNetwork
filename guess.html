@@ -10,11 +10,9 @@
     <title>Guessing Game</title>
 </head>
 <body>
-    
     <div class="mainContain">
-        <div class="link">
-            <a href="./index.html"><span class="homeColor">Home</span></a>
-        </div>
+        <a href="./index.html"><span class="homeColor">Home</span></a>
+        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
         <header>
             <h1>Guessing Game</h1>
             <p>by Joseph DeCommer</p>
@@ -27,9 +25,21 @@
         <p id="result"></p>
         <button type="button" id="reset" class="reset_btn" onClick="guess()">reset</button>
     </div>
-    <div class="code">
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Guessing Game</h1>
+        <p>A simple, fun, guessing game. Based on a series of logical
+            if else statements.
+        </p><p>
+        I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
+<div class="code">
         <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="hidden">
+        <p><pre><code class="jsHidden">
 const guessBox = document.getElementById("guessBox");
 const remaining = document.getElementById("remaining");
 const result = document.getElementById("result");

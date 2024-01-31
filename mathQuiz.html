@@ -13,7 +13,10 @@
 <body>
 
 <div class="mainContain">
-    <a href="./index.html"><span class="homeColor">Home</span></a>
+    <header>
+        <a href="./index.html"><span class="homeColor">Home</span></a>
+        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+    </header>
     <div id="mQMain">
         <div id="titleArea">
             <h3 id="opText"></h3>
@@ -57,9 +60,21 @@
     </div>
 </div>
 
+<div class="aboutModal hidden">
+    <button class="closeAboutModal">&times</button>
+    <h1>Math Quiz</h1>
+    <p>Math quiz is set up to randomly generate two numbers 
+    along with a randomly generated operator so you never know
+    what kind of question covering basic math you will get.
+    </p><p>
+    I made this with a combination of HTML, CSS and JS. 
+    You can see the JavaScript by clicking the button below.
+    </p>
+</div><div class="aboutOverlay hidden"></div>
+
 <div class="code">
     <button class="toggleBtn" >See the Javascript.</button>
-    <p><pre><code class="hidden">
+    <p><pre><code class="jsHidden">
 var score = 0;
 var questionNum = 1;
 const loopNum = 10;

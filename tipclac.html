@@ -12,9 +12,8 @@
 </head>
 <body>
     <div class="mainContain">
-        <div class="links">
             <a href="./index.html"><span class="homeColor">Home</span></a>
-        </div>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
         <h1>Tip Calculator</h1>
         <hr>
         <div class="formContainer">
@@ -66,10 +65,19 @@
             </div>
         </div>
     </div>
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Tip Calculator</h1>
+        <p>A standard tip calulator made to look like a reciept.
+        </p><p>
+        I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
 
     <div class="code">
         <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="hidden">
+        <p><pre><code class="jsHidden">
 const bill = document.getElementById('bill')
 const tippers = document.getElementById('tippers')
 const percent = document.getElementById('tip')

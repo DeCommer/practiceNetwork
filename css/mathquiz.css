@@ -22,9 +22,16 @@ hr {
     background: #003049;
 }
 
+header {
+    border-bottom: 1px solid #FDF0D5;
+    text-align: center;
+    margin: 5px auto 5px auto;
+}
+
 .homeColor {
     font-size: 1.5rem;
     color: #c1121f;
+    margin-right: 15px;
 }
 
 .mainContain {
