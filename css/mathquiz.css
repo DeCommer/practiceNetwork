@@ -51,11 +51,12 @@ header {
 
 small {
     color: #c1121f;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-left: 25px;
 }
 
 .mathText {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 #qArea {
@@ -79,7 +80,7 @@ small {
     border-radius: 5px;
     text-align: center;
     padding: 15px;
-    height: 25px;
+    height:45px;
     width: 200px;
 }
 
@@ -105,7 +106,7 @@ input:focus {
 
 #below {
     width: 250px;
-    margin: 0 20%;
+    margin: 0 auto;
     text-align: left;
 }
 
@@ -118,8 +119,9 @@ p{
 }
 
 .btn {
-    padding: 10px;
+    padding: 10px 25px;
     background-color: #c1121f;
+    font-size: 1em;
     color: #fff;
     border: none;
     cursor: pointer;

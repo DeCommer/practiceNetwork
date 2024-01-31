@@ -76,8 +76,10 @@ header p{
 
 
 .btn {
+    border-radius: 5px;
+    font-size: 1.5em;
     margin-top: 20px;
-    width: 100px;
+    padding: 5px 50px;
     background-color: #c1121f;
     color: #fff;
     border: none;
@@ -113,7 +115,7 @@ header p{
 }
 
 .resNum {
-    font-size: 2.5rem;
+    font-size: 2.5em;
 }
 
 @media screen and (max-width: 501px) {
