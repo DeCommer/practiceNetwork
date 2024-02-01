@@ -42,7 +42,7 @@ document.querySelector('.guessBtn').addEventListener('click', function(){
  
 document.querySelector('.resetbtn').addEventListener('click', function() {
     guesses = 20;
-    secretNumber = Math.trunc(Math.random() * 20) + 1;
+    secretNumber = Math.trunc(Math.random() * 100) + 1;
     console.log(secretNumber);
     messageDisp("🤨 Enter your guess! 😏");
     document.querySelector('.score').textContent = guesses;
