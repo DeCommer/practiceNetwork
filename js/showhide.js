@@ -1,16 +1,21 @@
 // Show / hide JS
-const jsHidden = document.querySelector('.jsHidden');
-const toggleBtn = document.querySelector('.toggleBtn');
 
-toggleBtn.addEventListener('click', function hideCode() {
-    if (jsHidden.style.display === "block") {
-        jsHidden.style.display = "none";
-        toggleBtn.textContent = "See the Javascript"
-    } else {
-        jsHidden.style.display = "block";
-        toggleBtn.textContent = "Hide the Javascript"
-    }
-  });
+const jsModal = document.querySelector('.jsHidden');
+
+const openJsModal = function() {
+    jsModal.classList.remove('hidden');
+    aboutOverlay.classList.remove('hidden');
+}
+
+const closeJsModal = function() {
+    jsModal.classList.add('hidden');
+    aboutOverlay.classList.add('hidden');
+}
+
+document.querySelector('.jsBtn').addEventListener('click', openJsModal);
+document.querySelector('.closeJsModal').addEventListener('click', closeJsModal);
+document.querySelector('.aboutOverlay').addEventListener('click', closeJsModal);
+
 
 // Modal
 
@@ -28,7 +33,5 @@ const closeAboutModal = function() {
 }
 
 document.querySelector('.aboutBtn').addEventListener('click', openAboutModal);
-
 document.querySelector('.closeAboutModal').addEventListener('click', closeAboutModal);
-
 document.querySelector('.aboutOverlay').addEventListener('click', closeAboutModal);

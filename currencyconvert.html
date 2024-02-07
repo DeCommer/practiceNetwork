@@ -10,7 +10,7 @@
     <title>Currency Converter</title>
 </head>
 <body>
-    <main>
+
         <div class="converter-container">
             <header>
                 <a href="./index.html"><span class="homeColor">Home</span></a>
@@ -49,8 +49,10 @@
         </div><div class="aboutOverlay hidden"></div>
 
         <div class="code">
-            <button class="toggleBtn" >See the Javascript.</button>
-            <p><pre><code class="jsHidden">
+            <button class="jsBtn">See the Javascript.</button>
+            <p><pre><code class="jsHidden hidden">
+                <button class="closeJsModal">&times</button>
+                
 const exchangeRates = {usd: 1};
 const fromCurrency = document.querySelector('.converter-container #from');
 const toCurrency = document.querySelector('.converter-container #to');
@@ -130,6 +132,5 @@ swapBtn.addEventListener('click', () => {
 });
             </code></pre></p>
         </div>
-    </main>
 </body>
 </html>

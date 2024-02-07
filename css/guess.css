@@ -1,12 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 * {
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: #669bbc;
-    font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #70badc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+}
+
+.converter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    background-color: #ffffff7c;
+    /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
+    padding: 16px;
+    border-radius: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 5px;
+}
+  
+header h1 {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px auto 15px auto;
+    color: #343434;
 }
 
 .homeColor {
@@ -14,16 +47,14 @@ body {
     color: #c1121f;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    width: 80%;
-    background: #003049;
-}
-
 a {
     text-decoration: none;
     margin: 15px;
+}
+
+.betweenText {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .jsHidden {
@@ -35,53 +66,29 @@ input:focus {
     border: 0;
 }
 
-.link{
-    text-align: left;
-}
-
-.mainContain {
-    background-color: #f7efe0;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 15px;
-    margin: 50px auto 25px auto;
-    padding: 20px;
-    text-align: center;
-    width: fit-content;
-    height: auto;
-}
-
-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-}
-
-header p{
-    font-size: x-small;
-    margin-left: 10px;
-}
-
-.container {
-    width: fit-content;
-    margin: 0 auto;
-}
-
 #guessBox {
-    width: 50%;
+    outline: none;
+    margin: 10px;
+    padding: 15px 10px;
     text-align: center;
     font-size: 1em;
 }
 
+#remaining {
+    text-align: center;
+    padding: 10px;
+}
+
 #result {
+    text-align: center;
+    padding: 10px;
     font-size: 1.5em;
 }
 
 .btn {
-    position: relative;
-    top: 0px;
-    width: 75px;
-    height: 25px;
+    padding: 15px 20px;
     background-color: #c1121f;
+    font-size: 1.5rem;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -100,9 +107,12 @@ header p{
 }
 
 .reset_btn {
-    background:none; 
-    font-size: .9em;
-    color: #000;
+    display: flex;
+    font-size: 1.4rem;
+    background-color: #c1121f;
+    margin: 20px 0 15px 0;
+    padding: 5px 10px;
+    color: #fff;
     border: none;
     cursor: pointer;
 }

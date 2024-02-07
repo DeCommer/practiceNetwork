@@ -11,25 +11,24 @@
     <title>Password Generator 9000</title>
 </head>
 <body>
-    <div class="mainContain">
-        <a class="links" href="index.html"><span class="homeColor">Home</span></a>
-        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-        <h1>Password Generator</h1>
-        <p>How many characters?</p>
+    <div class="converter-container">
+        <header>
+            <a class="links" href="index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <h1>Password Generator</h1>
+            <p>Up to how many characters?</p>
+        </header>
     
-        <div class="container top">
-    
+        <div class="container-top">
             <form method="post" action="somephp.php" id="genrate">
                 <input type="text" name="genrate" id="n_field" placeholder="characters" autocomplete="off">
-                <input type="submit" name="genrate" value="Generate">
+                <input type="submit" class="passGBtn" name="genrate" value="Generate">
             </form>
         </div>
-    
-        <div class="container bottom" id="answer">
+        <div class="container-bottom" id="answer">
             <h2 class="invisible"></h2>
         </div>
     </div>
-
     <div class="aboutModal hidden">
         <button class="closeAboutModal">&times</button>
         <h1>Password Generator</h1>
@@ -43,8 +42,9 @@
     </div><div class="aboutOverlay hidden"></div>
 
     <div class="code">
-        <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
 (function(){
 
 document.getElementById('genrate').addEventListener('submit', function(e){

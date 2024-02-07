@@ -11,14 +11,13 @@
     <title>Advanced distance Converter</title>
 </head>
 <body>
-    <div class="mainContain">
+    <div class="converter-container">
         <header>
         <a href="./index.html"><span class="homeColor">Home</span></a>
         <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-        
         <h1>Distance Converter</h1>
     </header>
-        <div class="container top">
+        <div class="container-top">
             <p>Enter miles to convert to KM</p>
             <form method="post" action="somephp.php" id="convert">
                 <input type="text" name="distance" id="distance" placeholder="distance" autocomplete="off">
@@ -26,7 +25,7 @@
             </form>
         </div>
     
-        <div class="container bottom" id="answer">
+        <div class="container-bottom" id="answer">
             <h2 class="invisible"></h2>
         </div>
         <p id="instructions">Press k for kilometer conversion or m for mile conversion</p>
@@ -45,8 +44,9 @@
     </div><div class="aboutOverlay hidden"></div>
 
     <div class="code">
-        <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
 let convertType = "miles";
 const heading = document.querySelector('h1');
 const intro = document.querySelector('p');

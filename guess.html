@@ -10,19 +10,20 @@
     <title>Guessing Game</title>
 </head>
 <body>
-    <div class="mainContain">
-        <a href="./index.html"><span class="homeColor">Home</span></a>
-        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+    <div class="converter-container">
         <header>
-            <h1>Guessing Game</h1>
-            <p>by Joseph DeCommer</p>
+            <a class="links" href="index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <h1>Guess the Secret Number</h1>
         </header>
-        <h2>Guess a number<br>between 1 and 10</h2>
-        <input type="text" id="guessBox" placeholder="Enter a number"/>
+        <div>
+            <h2 class="betweenText">(between 1 and 10)</h2>
+            <input type="text" id="guessBox" placeholder="Enter a number"/>
 
-        <button type="button" id="enterButton" class="btn" onClick="guess()">Guess</button>
-        <h3 id="remaining"> </h3>
-        <p id="result"></p>
+            <button type="button" id="enterButton" class="btn" onClick="guess()">Guess</button>
+            <h3 id="remaining"> </h3>
+            <p id="result"></p>
+        </div>
         <button type="button" id="reset" class="reset_btn" onClick="guess()">reset</button>
     </div>
 
@@ -38,8 +39,9 @@
     </div><div class="aboutOverlay hidden"></div>
 
 <div class="code">
-        <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
 const guessBox = document.getElementById("guessBox");
 const remaining = document.getElementById("remaining");
 const result = document.getElementById("result");

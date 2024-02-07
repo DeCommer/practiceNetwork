@@ -11,14 +11,15 @@
     <title>Tip Calculator</title>
 </head>
 <body>
-    <div class="mainContain">
+    <div class="converter-container">
+        <header>
             <a href="./index.html"><span class="homeColor">Home</span></a>
             <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-        <h1>Tip Calculator</h1>
-        <hr>
+            <h1>Tip Calculator</h1>
+         </header>
         <div class="formContainer">
             <form method="post" action="somephp.php" id="billAmntSubmit">
-                <label class="label"><span class="icon">💵</span>Enter Amount<span class="icon">💵</span></label><br>
+                <label class="label"><span class="icon">💵</span>Enter Amount<span class="icon">💵</span></label>
                 <input id="bill" class="txtField" type="number" name="billAmntField"  placeholder="$" autocomplete="off"> 
             </form>
         </div>
@@ -76,8 +77,9 @@
     </div><div class="aboutOverlay hidden"></div>
 
     <div class="code">
-        <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
 const bill = document.getElementById('bill')
 const tippers = document.getElementById('tippers')
 const percent = document.getElementById('tip')

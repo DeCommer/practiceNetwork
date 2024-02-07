@@ -7,7 +7,13 @@
 }
 
 body {
-    background-color: #669bbc;
+    height: 100vh;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #70badc 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -22,9 +28,8 @@ a {
 }
 
 .converter-container {
-    margin: 50px auto 20px auto;
-    max-width: 550px;
-    background-color: #f7efe0;
+    width: fit-content;
+    background-color: #ffffff7c;
     /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
     padding: 16px;
     border-radius: 16px;
@@ -42,6 +47,7 @@ a {
 
 h2 span {
     margin-left: 40px;
+    font-size: 2rem;
 }
 
 .converter-container h2::after {
@@ -55,19 +61,22 @@ h2 span {
 }
 
 .converter-container .content {
+    width: 500px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .converter-container input,
 .converter-container select {
+    width: 500px;
     padding: 10px 16px;
     background-color: #fff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 8px;
     border: none;
     font-size: 16px;
+    outline: none;
     appearance: none;
 }
 
@@ -79,7 +88,7 @@ h2 span {
 
 .converter-container .select-container {
     display: flex;
-    gap: 8px;
+    gap: 10px;
 }
 
 .converter-container .select-container select {

@@ -1,35 +1,58 @@
-.toggleBtn {
-    border: none;
-    background-color: #c1121f;
-    color: #f7efe0;
-    height: 25px;
-    width: 125px;
-    border-radius: 5px;
-    cursor: pointer;
+.jsBtn {
+  border: none;
+  background-color: #c1121f;
+  color: #f7efe0;
+  height: 25px;
+  width: 125px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .homeColor, a:visited{
-    font-size: 1.2rem;
-    color: #c1121f;
+  font-size: 1.2rem;
+  color: #c1121f;
 }
 
 .links {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.code {
-    width: 600px;
-    margin: 25px auto;
-    text-align: center;
+.code .jsBtn {
+  padding: 0px 10px;
+  margin: 25px auto;
+  text-align: center;
 }
 
 .jsHidden {
-    display: none;
-    text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: fit-content;
+  width: 500px;
+  max-height: 90%;
+  overflow: scroll;
+  background-color: #f7efe0;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.closeJsModal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #444;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 .code pre{
-    color: #f7efe0;
+  font-size: 0.7rem;
+    color: #3a3429;
 }
 
 /* About Modal */

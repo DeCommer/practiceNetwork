@@ -11,10 +11,10 @@
     <title>Odd Even</title>
 </head>
 <body>
-    <div class="mainContain">
-        <a href="./index.html"><span class="homeColor">Home</span></a>
-        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+    <div class="converter-container">
         <header>
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
             <h1>Odd Even App</h1>
             <p>by Joseph DeCommer</p>
         </header>
@@ -76,8 +76,9 @@
 </div><div class="aboutOverlay hidden"></div>
 
 <div class="code">
-    <button class="toggleBtn" >See the Javascript.</button>
-    <p><pre><code class="jsHidden">
+    <button class="jsBtn" >See the Javascript.</button>
+    <p><pre><code class="jsHidden hidden">
+        <button class="closeJsModal">&times</button>
 document.getElementById('answerForm').addEventListener('submit', function(e) {
     e.preventDefault();
     process();

@@ -12,11 +12,11 @@
     <title>Matching Memory Game</title>
 </head>
 <body>
-    <div class="mainContain">
+    <div class="converter-container">
     <header>
         <a class="links" href="index.html"><span class="homeColor">Home</span></a>
         <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-        <h1>Match Game <span>By joseph DeCommer</span></h1>
+        <h1>Match Game</h1>
     </header>
     <section class="game">
         <div class="card" data-framework="pizza">
@@ -91,8 +91,9 @@
     </div><div class="aboutOverlay hidden"></div>
 
     <div class="code">
-        <button class="toggleBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
 const cards = document.querySelectorAll('.card');
 
 let cardsUp =  0;

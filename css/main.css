@@ -7,13 +7,17 @@
 }
 
 body {
-    background-color: #669bbc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #70badc 100%);
     font-family: 'Roboto', sans-serif;
 }
 
 h1 {
     color: #003049;
-    margin: 0 50px;
 }
 
 p {
@@ -23,11 +27,15 @@ p {
 
 a {
     display: flex;
+    align-items: center;
     text-decoration: none;
     font-size: 1.5rem;
     color: #FDF0D5;
-    align-items: center;
-    
+}
+
+a:hover {
+    color:#c1121f;
+    transition: ease-in 0.2s;
 }
 
 .icon {
@@ -39,15 +47,13 @@ a {
     rotate: -20deg;
 }
 
-a:hover {
-    color:#c1121f;
-    transition: ease-in 0.2s;
-}
-
 header {
-    border-bottom: 1px solid #FDF0D5;
+    border-bottom: 1px solid #c1121f;
     display: flex;
-    align-items: baseline;
+    justify-content: space-between;
+}
+header a {
+    color:#c1121f;
 }
 
 .homeColor {
@@ -56,22 +62,12 @@ header {
 }
 
 .outer {
-    min-width: 500px;
     width: fit-content;
-    margin: 50px auto;
 }
 
-.links {
-    margin-left: 25%;
-}
-
-.section {
-    display: block;
-    margin-top: 25px;
-}
-
-.section p {
-    font-size: 1.2em;
+.links a {
+    display: flex;
+    justify-content: space-between;
 }
 
 .links a:hover {
