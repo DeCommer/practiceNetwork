@@ -10,7 +10,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
 
     let vertexFromula = function(a, b, c) {
         if(a == 0) {
-            return ``
+            return `The variable \'a\' must be greater than 0`
         } else {
             const xVert = -b / (2 * a)
             const yVert = a * (xVert ** 2) + (b * xVert) + c
@@ -18,7 +18,11 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
         };
     };
     let yIntFormula = function(a, b, c) {
-        return `(0, ${c})`
+        if(a == 0) {
+            return `The variable \'a\' must be greater than 0`
+        } else {
+            return `(0, ${c})`
+        };
     };
     let zerosFormula = function(a, b, c) {
         const qePos = (-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
@@ -31,7 +35,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
             return zeros.innerText = `There are no intercepts`;
         }else {
             return `(${qeNeg.toFixed(3)}, 0) (${qePos.toFixed(3)}, 0)`
-        }
+        };
     };
     vertex.innerText = vertexFromula(a, b, c);
     yInt.innerText = yIntFormula(a, b, c);
