@@ -4,12 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/quadsolver.css">
+        <link rel="stylesheet" href="./css/showhide.css">
         <script src="./js/quadsolver.js" defer></script>
+        <script src="./js/showhide.js" defer></script>
         <title>Quadratic Solver</title>
     </head>
     <body>
-         <main class="wrap">
-            <h1 class="title">Quadratic Solver</h1>
+         <main class="converter-container">
+            <header>
+                <a href="./index.html"><span class="homeColor">Home</span></a>
+                <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+                <h1 class="title">Quadratic Solver</h1>
+            </header>
             <h3 class="directions">Enter values of variables</h3>
             <div class="inputs">
                 <p class="eqText">y = </p>
@@ -21,11 +27,68 @@
                 <button class="solveBtn btn">Solve</button>
             </div>
             <div class="results">
-                <p id="yInt">y-intercept: </p>
-                <p id="vertex">Vertex: </p>
-                <p id="zeros">Zeros: </p>
+                <p>The vertex is: <span id="vertex"></span></p>
+                <p>The y-intercept is: <span id="yInt"></span></p>
+                <p>The x-intercepts are: <span id="zeros"></span></p>
                 <p></p>
             </div>
         </main>
+
+        <div class="aboutModal hidden">
+            <button class="closeAboutModal">&times</button>
+            <h1>Quadratic Calculator</h1>
+            <p>I wrote this first in Python, then ported it to JavaScript.<br></p>
+                <p>Enter values for a, b and c 
+                to solve quadratic in standard form. Vertex, y-intercept, 
+                and x = 0 solutions are given</p>
+            
+        </div><div class="aboutOverlay hidden"></div>
+
+        <div class="code">
+            <button class="jsBtn" >See the Javascript.</button>
+            <p><pre><code class="jsHidden hidden">
+                <button class="closeJsModal">&times</button>
+
+document.querySelector('.solveBtn').addEventListener('click', function() {
+    let a = parseFloat(document.getElementById('a').value);
+    let b = parseFloat(document.getElementById('b').value);
+    let c = parseFloat(document.getElementById('c').value);
+
+    let yInt = document.getElementById('yInt');
+    let vertex = document.getElementById('vertex');
+    let zeros = document.getElementById('zeros');
+
+    let vertexFromula = function(a, b, c) {
+        if(a == 0) {
+            return ``
+        } else {
+            const xVert = -b / (2 * a)
+            const yVert = a * (xVert ** 2) + (b * xVert) + c
+            return `${xVert}, ${yVert})`;
+        };
+    };
+    let yIntFormula = function(a, b, c) {
+        return `(0, ${c})`
+    };
+    let zerosFormula = function(a, b, c) {
+        const qePos = (-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+        const qeNeg = (-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+        if(a == 0) {
+            return `The variable \'a\' must be greater than 0`
+        }else if (a < 0) {
+            return `(${qePos.toFixed(3)}, 0) (${qeNeg.toFixed(3)}, 0)`
+        }else if (isNaN(qePos) || isNaN(qeNeg)) {
+            return zeros.innerText = `There are no intercepts`;
+        }else {
+            return `(${qeNeg.toFixed(3)}, 0) (${qePos.toFixed(3)}, 0)`
+        }
+    };
+    vertex.innerText = vertexFromula(a, b, c);
+    yInt.innerText = yIntFormula(a, b, c);
+    zeros.innerText = zerosFormula(a, b, c)
+});
+
+       </code></pre></p>
+                </div>
     </body>
 </html>
