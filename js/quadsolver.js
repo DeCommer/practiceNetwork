@@ -14,7 +14,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
         } else {
             const xVert = -b / (2 * a)
             const yVert = a * (xVert ** 2) + (b * xVert) + c
-            return `${xVert}, ${yVert})`;
+            return `(${xVert.toFixed(3)}, ${yVert.toFixed(3)})`;
         };
     };
     let yIntFormula = function(a, b, c) {

@@ -19,20 +19,20 @@ body {
     width: fit-content;
     text-align: center;
     background-color: #ffffff7c;
-    /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
+    box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3);
     padding: 16px;
     border-radius: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   header {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   
   header h1 {
       font-size: 1.7rem;
       text-transform: uppercase;
-      margin: 20px auto 15px auto;
+      margin-top: 20px;
 }
 
 .homeColor {
@@ -46,7 +46,7 @@ a {
 }
 
 .title {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .directions {
@@ -59,16 +59,39 @@ input::-webkit-inner-spin-button {
 }
 
 .inputs {
+    /* border: 1px solid red; */
     background-color: rgba(255, 254, 255, 0.365);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border-radius: 10px;
+    padding-left: 25px;
+    border-radius: 0 10px 10px 0;
+}
+
+.inputs p{
+    cursor: default;
+    color:#c1121f;
+    font-size: 3rem;
+}
+
+.inputs sup{
+    color:#c1121f;
+    font-size: 2rem;
+}
+
+.btn {
+    background-color: #f11c1c;
+    font-size: 2rem;
+    color: #fff;
+    padding: 15px 15px;
+    margin-left: 25px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
 }
 
 ::placeholder {
-    color: rgb(145, 145, 100);
+    color: rgb(127, 154, 174);
     opacity: 1; /* Firefox */
 }
 
@@ -81,28 +104,14 @@ input:focus::placeholder {
 }
 
 .vars {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     background: none;
     border: none;
-    border-bottom: 1px solid #ccc;
-    padding: .2rem 0;
-    width: 4rem;
-    margin: 5px;
-    color: #282828;
-}
-
-.eqText {
-    font-size: 1.5rem;
-}
-
-.btn {
-    background-color: #f11c1c;
-    font-size: 1.2rem;
-    color: #fff;
-    padding: 12px 15px;
-    border: none;
-    margin-left: 15px;
+    width: 3rem;
+    margin: 0 5px;
+    color: rgb(39, 74, 110);
+    cursor: pointer;
 }
 
 .results {
@@ -111,10 +120,13 @@ input:focus::placeholder {
     margin-top: 15px;
     font-size: 1.5rem;
     text-align: left;
+}
 
+.output {
+    color: #f11c1c;
 }
 
 .results p {
     margin-bottom: 15px;
-    color: #fff;
+    color: #2d4a64;
 }
