@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadratic Solver</title>
-</head>
-<body>
-
-    <h1 class="title">Quadratic Solver</h1>
-    <h3 class="directions">Enter values of variables</h3>
-    <div class="inputs">
-        <input class="aValue" type="number" placeholder="a">
-        <input class="bValue" type="number" placeholder="b">
-        <input class="cValue" type="number" placeholder="c">
-    </div>
-    <div class="results">
-        <p>y-intercept: </p>
-        <p>Vertex: </p>
-        <p>Zeros: </p>
-        <p></p>
-    </div>
-    
-
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/quadsolver.css">
+        <script src="./js/quadsolver.js" defer></script>
+        <title>Quadratic Solver</title>
+    </head>
+    <body>
+         <main class="wrap">
+            <h1 class="title">Quadratic Solver</h1>
+            <h3 class="directions">Enter values of variables</h3>
+            <div class="inputs">
+                <p class="eqText">y = </p>
+                <input id="a" class="vars" type="number" placeholder="a">
+                <p class="eqText">x<sup>2</sup> + </p>
+                <input id="b" class="vars" type="number" placeholder="b">
+                <p class="eqText">x + </p>
+                <input id="c" class="vars" type="number" placeholder="c">
+                <button class="solveBtn btn">Solve</button>
+            </div>
+            <div class="results">
+                <p id="yInt">y-intercept: </p>
+                <p id="vertex">Vertex: </p>
+                <p id="zeros">Zeros: </p>
+                <p></p>
+            </div>
+        </main>
+    </body>
 </html>
