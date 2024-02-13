@@ -138,7 +138,7 @@ input:focus::placeholder {
     height: 600px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1500px) {
 
     body {
         height: fit-content;
@@ -150,20 +150,16 @@ input:focus::placeholder {
       }
 
     .vars {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .btn {
         background-color: #f11c1c;
-        position: absolute;
-        right: 0px;
         font-size: 1rem;
         color: #fff;
     }
 
     .inputs {
-        position: relative;
-        height: 45px;
         display: flex;
         justify-content: center;
         align-items: center;
