@@ -184,7 +184,7 @@ input:focus::placeholder {
     }
 }
 
-@media  screen and (min-width:  393px) {
+@media  screen and (min-width:  393) {
 
     body {
         height: fit-content;
