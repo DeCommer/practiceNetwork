@@ -47,10 +47,12 @@ a {
 
 .title {
     margin-bottom: 5px;
+    color: #1d466a;
 }
 
 .directions {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #0d365a;
 }
 
 input::-webkit-outer-spin-button,
@@ -128,4 +130,10 @@ input:focus::placeholder {
 .results p {
     margin-bottom: 15px;
     color: #2d4a64;
+}
+
+#calculator {
+    box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3);
+    width: 800px;
+    height: 600px;
 }

@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./css/showhide.css">
         <script src="./js/quadsolver.js" defer></script>
         <script src="./js/showhide.js" defer></script>
+        <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
         <title>Quadratic Solver</title>
     </head>
     <body>
@@ -87,8 +88,20 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
     yInt.innerText = yIntFormula(a, b, c);
     zeros.innerText = zerosFormula(a, b, c)
 });
-
        </code></pre></p>
-                </div>
+    </div>
+        <h3 class="directions">Enter Values in sliders to visualize the results.</h3>
+        <div id="calculator"></div>
+        <script>
+            var elt = document.getElementById('calculator');
+            var calculator = Desmos.GraphingCalculator(elt);
+            calculator.setExpression({ id: 'q', latex: 'y = ax^2+bx+c' });
+            calculator.setExpression({ id: 'a-slider', latex: 'a = 1' });
+            var a = calculator.HelperExpression({ latex: 'a' });
+            calculator.setExpression({ id: 'b-slider', latex: 'b = 0' });
+            var b = calculator.HelperExpression({ latex: 'b' });
+            calculator.setExpression({ id: 'c-slider', latex: 'c = 0' });
+            var c = calculator.HelperExpression({ latex: 'c' });
+        </script>
     </body>
 </html>
