@@ -179,3 +179,13 @@ input:focus::placeholder {
         height: 400px;
     }
 }
+
+@media (max-width: 1200px) {
+
+    #calculator {
+        box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3);
+        width: 600px;
+        height: 400px;
+    }
+    
+}
