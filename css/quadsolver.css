@@ -180,7 +180,7 @@ input:focus::placeholder {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
 
     .converter-container {
         width: 50%;
