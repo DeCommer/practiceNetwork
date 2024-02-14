@@ -47,6 +47,10 @@ input {
     border: none;
 }
 
+input:focus::placeholder {
+    color: transparent;
+}
+
 .eqText {
     font-size: 1.5rem;
 }
@@ -103,7 +107,6 @@ input {
 cite {
     margin: 15px;
 }
-
 
 @media  (max-width: 800px) {
 
