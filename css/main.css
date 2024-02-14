@@ -73,6 +73,5 @@ header a {
 }
 
 footer {
-    position: fixed;
-    bottom:25px;
+    margin: 25px;
 }
