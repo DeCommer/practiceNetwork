@@ -10,7 +10,6 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 250px;
     background-color: #0093E9;
     font-family: 'Roboto', sans-serif;
 }
