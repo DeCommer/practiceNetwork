@@ -49,7 +49,6 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
     calculator.setExpression({ id: 'c-slider', latex: `c = ${c}` });
 
 });
-    
 
 
 

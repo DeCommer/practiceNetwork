@@ -1,4 +1,10 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #0093E9;
     font-family: 'Roboto', sans-serif;
@@ -9,34 +15,83 @@ body {
 
 .main-container {
     text-align: center;
-    border: 1px solid red;
-    padding: 10px;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.left-container {
-    border: 1px solid black;
+
+a {
+    margin: 10px;
+    text-decoration: none;
+}
+
+.title {
+    margin: 15px;
+}
+
+.directions {
+    margin: 10px;
 }
 
 .inputs-container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+input {
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+}
+
+.eqText {
+    font-size: 1.5rem;
+}
+
 .varIn {
-    width: 55px;
+    width: 50px;
+    font-size: 1.2rem;
+    margin: 5px;
+}
+
+.terms-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+.terms-container p {
+    font-size: .8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.solveBtn {
+    background-color: #c1121f;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px;
+    width: 100%;
+}
+
+.results-container {
+    /* border: 1px solid fuchsia; */
+    text-align: left;
+    margin-top: 15px;
 }
 
 .calculator-container {
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 25px 0 0 15px;
 }
 
 #calculator {
@@ -45,26 +100,34 @@ body {
     height: 400px;
 }
 
-.results-container {
-    border: 1px solid fuchsia;
+cite {
+    margin: 15px;
 }
+
 
 @media  (max-width: 800px) {
 
     .main-container {
         flex-direction: column;
+        margin-top: 25px;
     }
+
+    .varIn {
+        width: 45px;
+    }
+
     .calculator-container {
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: 25px 0;
     }
 
     #calculator {
         box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3);
-        min-width: 400px;
+        min-width: 350px;
         width: 100%;
         height: 650px;
     }
