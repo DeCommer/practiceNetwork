@@ -12,7 +12,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
 
     let vertexFromula = function(a, b, c) {
         if(a == 0) {
-            return `The letiable \'a\' must be greater than 0`
+            return `The variable \'a\' must be greater than 0`
         } else {
             const xVert = -b / (2 * a)
             const yVert = a * (xVert ** 2) + (b * xVert) + c
@@ -21,7 +21,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
     };
     let yIntFormula = function(a, b, c) {
         if(a == 0) {
-            return `The letiable \'a\' must be greater than 0`
+            return `The variable \'a\' must be greater than 0`
         } else {
             return `(0, ${c})`
         };
@@ -30,10 +30,10 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
         const qePos = (-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
         const qeNeg = (-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
         if(a == 0) {
-            return `The letiable \'a\' must be greater than 0`
-        }else if (a < 0) {
+            return `The variable \'a\' must be ga value other than 0`
+        }else if (a < 0 && a > 0) {
             return `(${qePos.toFixed(3)}, 0), (${qeNeg.toFixed(3)}, 0)`
-        }else if (isNaN(qePos) || isNaN(qeNeg)) {
+        }else if (isNaN(qePos) && isNaN(qeNeg)) {
             return zeros.innerText = `There are no intercepts`;
         }else {
             return `(${qeNeg.toFixed(3)}, 0), (${qePos.toFixed(3)}, 0)`
@@ -44,7 +44,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
     zeros.innerText = zerosFormula(a, b, c)
 
     calculator.setExpression({ id: 'q', latex: 'y = ax^2+bx+c' });
-    calculator.setExpression({ id: 'a-slider', latex:  `a = ${a}` });
+    calculator.setExpression({ id: 'a-slider', latex:  `a = ${a}`});
     calculator.setExpression({ id: 'b-slider', latex: `b = ${b}` });
     calculator.setExpression({ id: 'c-slider', latex: `c = ${c}` });
 
