@@ -32,11 +32,11 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
         if(a == 0) {
             return `The letiable \'a\' must be greater than 0`
         }else if (a < 0) {
-            return `(${qePos.toFixed(3)}, 0) (${qeNeg.toFixed(3)}, 0)`
+            return `(${qePos.toFixed(3)}, 0), (${qeNeg.toFixed(3)}, 0)`
         }else if (isNaN(qePos) || isNaN(qeNeg)) {
             return zeros.innerText = `There are no intercepts`;
         }else {
-            return `(${qeNeg.toFixed(3)}, 0) (${qePos.toFixed(3)}, 0)`
+            return `(${qeNeg.toFixed(3)}, 0), (${qePos.toFixed(3)}, 0)`
         };
     };
     vertex.innerText = vertexFromula(a, b, c);

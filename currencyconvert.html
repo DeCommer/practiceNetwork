@@ -10,127 +10,127 @@
     <title>Currency Converter</title>
 </head>
 <body>
-
-        <div class="converter-container">
-            <header>
-                <a href="./index.html"><span class="homeColor">Home</span></a>
-                <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-            </header>
-            <h2>Currency Converter <span>💵 💶 💷 💴</span></h2>
-            <div class="content">
-                <input class="input-amount" type="number" value="1.00" placeholder="Enter amount">
-                <div class="select-container custom-select">
-                    <Section>
-                        <select name="" id="from">
-                            <option value="usd">USD - U.S. Dollar</option>
-                        </select>
-                        <select name="" id="to">
-                            <option value="usd">USD - U.S. Dollar</option>
-                        </select>
-                    </Section>
-                        <div class="swap-btn">
-                            <p>⇢<br>Swap currency<br>⇠</p>
-                        </div>
-                </div>
-                <div class="result"><span class="result-currency">USD </span>00</div>
+    <div class="converter-container">
+        <header>
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+        </header>
+        <h2>Currency Converter <span>💵 💶 💷 💴</span></h2>
+        <div class="content">
+            <input class="input-amount" type="number" value="1.00" placeholder="Enter amount">
+            <div class="select-container custom-select">
+                <Section>
+                    <select name="" id="from">
+                        <option value="usd">USD - U.S. Dollar</option>
+                    </select>
+                    <select name="" id="to">
+                        <option value="usd">USD - U.S. Dollar</option>
+                    </select>
+                </Section>
+                    <div class="swap-btn">
+                        <p>⇢<br>Swap currency<br>⇠</p>
+                    </div>
             </div>
+            <div class="result"><span class="result-currency">USD </span>00</div>
         </div>
+    </div>
 
-        <div class="aboutModal hidden">
-            <button class="closeAboutModal">&times</button>
-            <h1>Currency Converter</h1>
-            <p>This currency converter webapp takes API data from Flowrates.com. The data
-                is fetched with a JS function and distributed to corresponding fields to 
-                convert from one country's currency to another.
-            </p><p>
-            I made this with a combination of HTML, CSS and JS. 
-            You can see the JavaScript by clicking the button below.
-            </p>
-        </div><div class="aboutOverlay hidden"></div>
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Currency Converter</h1>
+        <p>This currency converter webapp takes API data from Flowrates.com. The data
+            is fetched with a JS function and distributed to corresponding fields to 
+            convert from one country's currency to another.
+        </p><p>
+        I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
 
-        <div class="code">
-            <button class="jsBtn">See the Javascript.</button>
-            <p><pre><code class="jsHidden hidden">
-                <button class="closeJsModal">&times</button>
-                
-const exchangeRates = {usd: 1};
-const fromCurrency = document.querySelector('.converter-container #from');
-const toCurrency = document.querySelector('.converter-container #to');
-const inputAmount = document.querySelector('.converter-container .input-amount');
-const result = document.querySelector('.converter-container .result');
-const swapBtn = document.querySelector('.converter-container .swap-btn');
-const hidden = document.querySelector('.hidden');
-const toggleBtn = document.querySelector('.toggleBtn');
-const floatratesUrl = 'https://floatrates.com/daily/usd.json'
+    <div class="code">
+        <button class="jsBtn">See the Javascript.</button>
+        <pre>
+            <code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
+            const exchangeRates = {usd: 1};
+            const fromCurrency = document.querySelector('.converter-container #from');
+            const toCurrency = document.querySelector('.converter-container #to');
+            const inputAmount = document.querySelector('.converter-container .input-amount');
+            const result = document.querySelector('.converter-container .result');
+            const swapBtn = document.querySelector('.converter-container .swap-btn');
+            const hidden = document.querySelector('.hidden');
+            const toggleBtn = document.querySelector('.toggleBtn');
+            const floatratesUrl = 'https://floatrates.com/daily/usd.json'
 
-toggleBtn.addEventListener('click', function hideCode() {
-    if (hidden.style.display === "block") {
-        hidden.style.display = "none";
-        toggleBtn.textContent = "See the Javascript"
-    } else {
-        hidden.style.display = "block";
-        toggleBtn.textContent = "Hide the Javascript"
-    }
-    });
-
-const init = async () => {
-    try {
-        const res = await fetch(floatratesUrl);
-        const data = await res.json();
-
-        if(res.ok) {
-            for (const currencyCode in data) {
-                const currencyInfo = data[currencyCode];
-                const { code, name} = currencyInfo;
-                
-                exchangeRates[currencyCode] = currencyInfo.rate;
-
-                const option1 = document.createElement('option');
-                option1.value = code;
-                option1.textContent = `${code} - ${name}`;
-
-                const option2 = option1.cloneNode(true);
-
-                fromCurrency.appendChild(option1);
-                toCurrency.appendChild(option2);
+            toggleBtn.addEventListener('click', function hideCode() {
+            if (hidden.style.display === "block") {
+                hidden.style.display = "none";
+                toggleBtn.textContent = "See the Javascript"
+            } else {
+                hidden.style.display = "block";
+                toggleBtn.textContent = "Hide the Javascript"
             }
-            //console.log(exchangeRates);
-            toCurrency.value = toCurrency.options[1].value;
+            });
+
+            const init = async () => {
+            try {
+                const res = await fetch(floatratesUrl);
+                const data = await res.json();
+
+                if(res.ok) {
+                    for (const currencyCode in data) {
+                        const currencyInfo = data[currencyCode];
+                        const { code, name} = currencyInfo;
+                        
+                        exchangeRates[currencyCode] = currencyInfo.rate;
+
+                        const option1 = document.createElement('option');
+                        option1.value = code;
+                        option1.textContent = `${code} - ${name}`;
+
+                        const option2 = option1.cloneNode(true);
+
+                        fromCurrency.appendChild(option1);
+                        toCurrency.appendChild(option2);
+                    }
+                    //console.log(exchangeRates);
+                    toCurrency.value = toCurrency.options[1].value;
+                    convert();
+                }
+            }catch (error){
+                console.log("Error loading currencies")
+            }
+            };
+
+            init();
+
+            const convert = () => {
+            const inputValue = parseFloat(inputAmount.value);
+            const fromCurrencyValue = fromCurrency.value.toLowerCase();
+            const toCurrencyValue = toCurrency.value.toLowerCase();
+
+            const convertedValue = (inputValue * exchangeRates[toCurrencyValue]) 
+            / exchangeRates[fromCurrencyValue];
+            const resultValue = `<span class='result-currency'>${toCurrencyValue}</span> 
+            ${convertedValue.toFixed(2)}`;
+
+            result.innerHTML = isNaN(convertedValue) ? "Enter amount above" : resultValue;
+            };
+
+            toCurrency.addEventListener('change', convert);
+            fromCurrency.addEventListener('change', convert);
+            inputAmount.addEventListener('input', convert);
+            swapBtn.addEventListener('click', () => {
+            const fromCurrencyValue = fromCurrency.value;
+            const toCurrencyValue = toCurrency.value;
+
+            fromCurrency.value = toCurrencyValue;
+            toCurrency.value = fromCurrencyValue;
+
             convert();
-        }
-    }catch (error){
-        console.log("Error loading currencies")
-    }
-};
-
-init();
-
-const convert = () => {
-    const inputValue = parseFloat(inputAmount.value);
-    const fromCurrencyValue = fromCurrency.value.toLowerCase();
-    const toCurrencyValue = toCurrency.value.toLowerCase();
-
-    const convertedValue = (inputValue * exchangeRates[toCurrencyValue]) 
-    / exchangeRates[fromCurrencyValue];
-    const resultValue = `<span class='result-currency'>${toCurrencyValue}</span> 
-    ${convertedValue.toFixed(2)}`;
-    
-    result.innerHTML = isNaN(convertedValue) ? "Enter amount above" : resultValue;
-};
-
-toCurrency.addEventListener('change', convert);
-fromCurrency.addEventListener('change', convert);
-inputAmount.addEventListener('input', convert);
-swapBtn.addEventListener('click', () => {
-    const fromCurrencyValue = fromCurrency.value;
-    const toCurrencyValue = toCurrency.value;
-
-    fromCurrency.value = toCurrencyValue;
-    toCurrency.value = fromCurrencyValue;
-
-    convert();
-});
-            </code></pre></p>
-        </div>
+            });
+            </code>
+        </pre>
+    </div>
 </body>
 </html>

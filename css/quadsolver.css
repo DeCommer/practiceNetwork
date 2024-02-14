@@ -88,6 +88,10 @@ input:focus::placeholder {
     margin-top: 15px;
 }
 
+.output {
+    color: #fff;
+}
+
 .calculator-container {
     /* border: 1px solid yellow; */
     text-align: center;
@@ -130,8 +134,8 @@ cite {
 
     #calculator {
         box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3);
-        min-width: 350px;
-        width: 100%;
+        min-width: 300px;
+        width: 90%;
         height: 650px;
     }
 }
