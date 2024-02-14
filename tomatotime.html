@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/tomatotimer.css">
+    <!-- <link rel="stylesheet" href="./css/showhide.css"> -->
+    <script src="./js/tomatotimer.js" defer></script>
+    <!-- <script src="./js/showhide.js" defer></script> -->
+    <title>🍅 Tomato Time</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="title-container">
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <h1 class="title">🍅 ⏲️</h1>
+            <h1 class="title"> Tomato Time!</h1>
+            <p>By Joseph DeCommer</p>
+        </div>
+        <div class="right-container">
+            <div id="modes">
+                <button data-mode-id="tomato" class="mode active">Tomato Mode</button>
+                <button data-mode-id="short" class="mode">Short Break</button>
+                <button data-mode-id="long" class="mode">Long Break</button>
+            </div>
+            <div id="timer">25:00</div>
+            <div id="controls">
+                <button onclick="startTimer()" class="timer-control start">Start</button>
+                <button onclick="pauseTimer()" class="timer-control pause">Pause</button>
+                <button onclick="nextMode()" class="timer-control">Skip</button>
+            </div>
+        </div>
+    </div>
+    <div id="duration-control">
+        <p>Want different tomato times?</p>
+        Work Time: <input type="number" placeholder="00" class="duration" data-duration-id="tomato"><br>
+        Short Break: <input type="number" placeholder="00" class="duration" data-duration-id="short"><br>
+        Long Break: <input type="number" placeholder="00" class="duration" data-duration-id="long"><br>
+    </div>
+</body>
+</html>

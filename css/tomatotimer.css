@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+    --tomato: #c1121f;
+    --short: #17cec5;
+    --long: #8ec261;
+}
+
+html {
+    text-align: center;
+    background-color: #c1121f;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    transition: background-color 0.5s ease;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;   
+}
+
+a {
+    color:#ffffff;
+    font-size: 1.5rem;
+    margin: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0093E9;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.title-container {
+    margin-top: 50px;
+}
+
+.title {
+    font-size: 5rem;
+    color: #0093E9;
+    margin: 0;
+}
+
+#timer {
+    font-size: 10rem;
+    font-weight:  bold;
+    user-select: none;
+    
+}
+
+.mode {
+    border: none;
+    background:  none;
+    cursor: pointer;
+    color: #fff;
+    padding: 15px;
+    font-size: 2rem;
+    transition: 0.2s;
+}
+
+.mode.active {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.mode.active:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.mode:hover {
+    color: #f76666;
+}
+
+.timer-control {
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    transition: 0.2s;
+}
+
+.timer-control:disabled {
+    background-color: #94949459;
+    color:#eeeeee67;
+}
+
+.timer-control:disabled:hover {
+    background-color: #676565;
+}
+
+.timer-control:hover {
+    background-color: #0093E9;
+    color: #fff;
+}
+
+#duration-control {
+    margin-top: 5px;
+    user-select:  none;
+}
+
+#duration-control .duration {
+    background-color: #ffffff63;
+    margin-top: 5px;
+    font-size: 1rem;
+    text-align: center;
+    width: 45px;
+    max-width: fit-content;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}

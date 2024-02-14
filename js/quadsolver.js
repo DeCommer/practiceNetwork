@@ -13,12 +13,15 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
     let vertexFromula = function(a, b, c) {
         if(a == 0) {
             return `The variable \'a\' must be greater than 0`
-        } else {
+        }else if(isNaN(b)) {
+            return 'Please enter a number.'
+        }else {
             const xVert = -b / (2 * a)
             const yVert = a * (xVert ** 2) + (b * xVert) + c
             return `(${xVert.toFixed(3)}, ${yVert.toFixed(3)})`;
         };
     };
+    
     let yIntFormula = function(a, b, c) {
         if(a == 0) {
             return `The variable \'a\' must be greater than 0`
@@ -26,6 +29,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
             return `(0, ${c})`
         };
     };
+
     let zerosFormula = function(a, b, c) {
         const qePos = (-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
         const qeNeg = (-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
