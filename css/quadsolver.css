@@ -39,4 +39,10 @@ body {
     .main-container {
         flex-direction: column;
     }
+
+    #calculator {
+        box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3);
+        width: 500px;
+        height: 400px;
+    }
 }
