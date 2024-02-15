@@ -6,31 +6,25 @@ let MODES = {
     short: 5,
     long: 15
 }
-
 const DEFAULT_MODES = {
     tomato: 25,
     short: 5,
     long: 15
 }
-
 let totalBreaks = 0;
 // const alarmSound = new Audio('nothinghereyet');
-
 document.querySelectorAll('#modes button')
     .forEach(button => {
         button.addEventListener('click', handleModeButtons)
     });
-
 document.querySelectorAll('#duration-control input')
     .forEach(function(input) {
         input.addEventListener('change', durationControlHandler);
         input.value = '';
     });
-
     function durationControlHandler(event) {
         let value = event.target.value.trim();
         let durationId = event.target.dataset.durationId;
-
         if(value != '' && !isNaN(value) && Number.isInteger(parseFloat(value)) && parseInt(value) != 0) {
             MODES[durationId] = parseInt(value);
         }else {
@@ -38,15 +32,12 @@ document.querySelectorAll('#duration-control input')
         }
         resetTimer();
     }
-
 function handleModeButtons(event) {
     switchMode(event.target.dataset.modeId)
 }
-
 function updateControlButtons(isRunning) {
     let start_button = document.querySelector('.timer-control.start');
     let pause_button = document.querySelector('.timer-control.pause');
-
     if(isRunning) {
         start_button.disabled = true;
         pause_button.disabled = false;
@@ -55,7 +46,6 @@ function updateControlButtons(isRunning) {
         pause_button.disabled = true;
     }
 }
-
 function switchMode(mode) {
     currentMode = mode;
     document.documentElement.style.backgroundColor = `var(--${mode})`
@@ -63,21 +53,17 @@ function switchMode(mode) {
         .forEach(elem => {
             elem.classList.remove('active');
         });
-
     document.querySelector(`button[data-mode-id='${mode}']`).classList.add('active');
     resetTimer();
 };
-
 function startTimer() {
     timerInterval = setInterval(updateTimer, 1000);
     updateControlButtons(true);
 };
-
 function pauseTimer() {
     clearInterval(timerInterval);
     updateControlButtons(false);
 };
-
 function updateTimer() {
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
@@ -96,7 +82,6 @@ function updateTimer() {
     }
     time -= 1;
 };
-
 function nextMode() {
     if(currentMode == 'tomato') {
         totalBreaks += 1;
@@ -109,7 +94,6 @@ function nextMode() {
         switchMode('tomato');
     }
 }
-
 function resetTimer() {
     time = MODES[currentMode] * 60;
     clearInterval(timerInterval);
