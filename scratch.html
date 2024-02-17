@@ -3,60 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiments</title>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            margin-top: 200px;
-        }
-        .main-container {
-            text-align: center;
-            background-color: #dfdfdf;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        p {
-            font-size: 5.5rem;
-            color: #cf212d;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .btn {
-            font-size: 1rem;
-            padding: 15px 25px;
-            background-color: #cf212d;
-            border: 1px solid #fff;
-            border-radius: 10px;
-            color: #fff;
+
+        body {
+            font-family: "Inter", sans-serif;
+            font-weight: 300;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-wrapper {
+            /* border: 1px solid red; */
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+        }
+        .left-container {
+            /* border: 1px solid blue; */
+            margin: 10px;
+            padding: 10px;
+        }
+        .right-container {
+            /* border: 1px solid coral; */
+            margin: 10px;
+            padding: 10px;
+        }
+
+        section {
+            /* border: 1px solid red; */
+            width: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .title {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.5rem;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <main class="main-container">
-        <P class="numbers">0</P>
-        <button class="dwnBtn btn">-</button>
-        <button class="resBtn btn">Reset</button>
-        <button class="upBtn btn">+</button>
+    <main class="main-wrapper">
+        <div class="left-container">
+            <h1 class="title">Properties of Exponents</h1>
+            <section>
+                <h2>Multiplication</h2>
+                <p>x<sup>a</sup>(x<sup>b</sup>) = x<sup>a+b</sup></p>
+            </section>
+            <section>
+                <h2>Division</h2>
+                <p><math><mfrac><msup><mi>x</mi><mn>a</mn></msup><msup><mi>x</mi><mn>b</mn></msup></mfrac>
+                </math> = x<sup>a-b</sup></p>
+            </section>
+            <section>
+                <h2>Exponentiation</h2>
+                <p>(x<sup>a</sup>)<sup>b = x<sup>ab</sup></p>
+            </section>
+            <section>
+                <h2>Zero Property</h2>
+                <p>x<sup>0</sup> = 1</p>
+            </section>
+            <section>
+                <h2>inverse</h2>
+                <p>x<sup>-a</sup> = <math><mfrac><mi>1</mi><msup><mi>x</mi><mn>a</mn></msup></mfrac></math></p>
+            </section>
+            <section>
+                <h2>Fractional</h2>
+                <p>x<sup><math><mfrac><mi>1</mi><mi>a</mi></mfrac></math></sup> = <math><mroot><mtext>x</mtext><mtext>a</mtext></mroot></math></p>
+            </section>
+        </div>
+        <div class="right-container">
+            <h1 class="title">Properties of Logarithms</h1>
+            <section>
+                <h2>Multiplication</h2>
+                <p>log(ab) = log(a) + log(b)</p>
+            </section>
+            <section>
+                <h2>Division</h2>
+                <p>log(<math><mfrac><mi>a</mi><mi>b</mi></mfrac></math>) = log(a) - log(b)</p>
+            </section>
+            <section>
+                <h2>Exponentiation</h2>
+                <p>log(a<sup>n</sup>) = (n)log(a)</p>
+            </section>
+            <section>
+                <h2>Zero Property</h2>
+                <p>log(1) = 0</p>
+            </section>
+            <section>
+                <h2>inverse</h2>
+                <p></p>
+            </section>
+            <section>
+                <h2>Fractional</h2>
+                <p></p>
+            </section>
+        </div>
     </main>
-    <script>
-        let dwnBtn = document.querySelector('.dwnBtn.btn');
-        let resetBtn = document.querySelector('.resBtn.btn');
-        let upBtn = document.querySelector('.upBtn.btn');
-        let numbers = document.querySelector('.numbers');
-        let num = 0;
-        dwnBtn.addEventListener('click', () => {
-            num -= 1;
-            numbers.textContent = num;
-        });
-        upBtn.addEventListener('click', () => {
-            num += 1;
-            numbers.textContent = num;
-        });
-        resetBtn.addEventListener('click', () => {
-            num = 0;
-            numbers.textContent = '0';
-        });
-    </script>
 </body>
 </html>
