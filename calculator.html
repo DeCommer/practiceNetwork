@@ -1,0 +1,207 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sooper Calculator 9000</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <style>
+        body {
+            background-color: #525252;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .dial {
+            z-index: -100;
+            border-radius: 10px;
+            background-color: #848383;
+            position: relative;
+            bottom: -220px;
+            left: 145px;
+            width: 25px;
+            height: 160px;
+            border: 1px solid rgb(75, 75, 75);
+            box-shadow: 5px 5px 14px 0px rgba(0, 0, 0, 0.599);
+        }
+        
+        .calc-wrapper {
+            position: relative;
+            box-shadow: 5px 5px 14px 0px rgba(0, 0, 0, 0.599);
+            border: 6px solid #858585;
+            width: 250px;
+            padding: 15px 10px;
+            border-radius: 40px;
+            background-color: #000;
+        }
+        .calc-keys{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .btn {
+            font-size: 1rem;
+            color: #ffffff;
+            border: none;
+            margin: 1.5px;
+            padding: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #969696;
+        }
+        .btn:active {
+            font-size: .9rem;
+            padding: 5px 12px;
+            margin: 2px;
+        }
+        .numBtn {
+            background-color: #656565;
+        }
+        .opBtn {
+            background-color: #ff9f30;
+        }
+        .opBtn:hover {
+            background-color: #fccd97;
+        }
+        .funcBtn {
+            background-color: #9c9a9a;
+        }
+        .zeroBtn {
+            grid-row: 5 / 5;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .inactive {
+            background-color: #6e6d6d;
+            color: #383737;
+        }
+        .hidden {
+            display: none;
+        }
+        .calc-display {
+            width: auto;
+            font-size: 3rem;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .message {
+            height: 35px;
+            margin-top: 10px;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="dial"></div>
+      <main class="calc-wrapper">
+        <div class="calc-display">0</div>
+        <div class="calc-keys">
+            <button class="funcBtn btn" onclick="clearDisplay()">AC</button>
+            <button class="funcBtn btn" onclick="comingSoon()">+/-</button>
+            <button class="btn inactive" onclick="comingSoon()">tip</button>
+            <button class="opBtn btn" onclick="getOp('/')">÷</button>
+
+            <button class="btn" onclick="getNum(7)">7</button>
+            <button class="btn" onclick="getNum(8)">8</button>
+            <button class="btn" onclick="getNum(9)">9</button>
+            <button class="opBtn btn" onclick="getOp('*')">x</button>
+
+            <button class="btn" onclick="getNum(4)">4</button>
+            <button class="btn" onclick="getNum(5)">5</button>
+            <button class="btn" onclick="getNum(6)">6</button>
+            <button class="opBtn btn" onclick="getOp('-')">-</button>
+        
+            <button class="btn" onclick="getNum(1)">1</button>
+            <button class="btn" onclick="getNum(2)">2</button>
+            <button class="btn" onclick="getNum(3)">3</button>
+            <button class="opBtn btn" onclick="getOp('+')">+</button>
+
+            <button class="zeroBtn btn" onclick="getNum(0)">0</button>
+            <button class="btn" onclick="comingSoon()">.</button>
+            <button class="opBtn btn" onclick="calc()">=</button>
+        </div>
+    </main>
+    <div class="message">
+        <p class="cs hidden">Feature coming soon</p>
+    </div>
+<script>
+const cs = document.querySelector('.cs');
+let num1
+let num2
+let count = 0
+let operation
+let result = 0;
+let num1Arr = []
+let num2Arr = []
+
+const display = document.querySelector('.calc-display');
+function getNum(num) {
+    if(count === 0 || count === 1) {
+        num1Arr.push(num);
+        count = 1;
+        num1 = Number(num1Arr.join(''));
+        display.textContent = num1;
+    } else if (count === 2) {
+        num2Arr.push(num)
+        num2 = Number(num2Arr.join(''));
+        display.textContent = num2;
+    }
+}
+function clearDisplay() {
+    display.textContent = '0';
+    num1 = null;
+    num2 = null;
+    count = 0;
+    operation = null;
+    result = 0
+    num1Arr = [];
+    num2Arr = [];
+}
+function negate(num) {
+    console.log(`Count is ${count}`);
+    if(count === 1) {
+        num1 = -num1;
+        display.textContent = num1;
+        console.log(num1);
+    }
+}
+function comingSoon() { //build later
+    cs.classList.remove('hidden');
+    setTimeout(() => {cs.classList.add('hidden')}, 2000);
+}
+function getOp(op) {
+    count = 2
+    operation = op
+}
+const calc = () => {
+    if(operation === '+') {
+        result = num1 + num2;
+        display.textContent = result;
+        resultIncr();
+    }else if (operation === '-') {
+        result = num1 - num2;
+        display.textContent = result;
+    }else if (operation === '*') {
+        result = num1 * num2;
+        display.textContent = result;
+    }else if (operation === '/') {
+        result = num1 / num2;
+        display.textContent = result;
+    }
+}
+function resultIncr() {
+    if(operation === '+' && display.textContent == result) {
+        newNum = num1 += num2
+        display.textContent = newNum;
+    }
+}
+</script>
+  </body>
+</html>
+

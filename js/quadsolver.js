@@ -12,7 +12,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
 
     let vertexFromula = function(a, b, c) {
         if(a == 0) {
-            return `The variable \'a\' must be greater than 0`
+            return `The variable \'a\' must be a value other than 0`
         }else if(isNaN(b)) {
             return 'Please enter a number.'
         }else {
@@ -24,7 +24,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
     
     let yIntFormula = function(a, b, c) {
         if(a == 0) {
-            return `The variable \'a\' must be greater than 0`
+            return `The variable \'a\' must be a value other than 0`
         } else {
             return `(0, ${c})`
         };
@@ -34,7 +34,7 @@ document.querySelector('.solveBtn').addEventListener('click', function() {
         const qePos = (-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
         const qeNeg = (-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
         if(a == 0) {
-            return `The variable \'a\' must be ga value other than 0`
+            return `The variable \'a\' must be a value other than 0`
         }else if (a < 0 && a > 0) {
             return `(${qePos.toFixed(3)}, 0), (${qeNeg.toFixed(3)}, 0)`
         }else if (isNaN(qePos) && isNaN(qeNeg)) {
