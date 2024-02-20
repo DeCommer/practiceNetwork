@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch</title>
+</head>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .title {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: red;
+        font-size: 1.3rem;
+        rotate: -20deg;
+        position: relative;
+        top: 70px;
+        left: -145px;
+
+    }
+
+    .main-section {
+        width: fit-content;
+        border: 1px solid #282828;
+        text-align: center;
+        margin-top: 50px;
+        padding: 15px;
+    }
+
+    .btn {
+        border: 1px solid #282828;
+        background-color: #fff;
+        font-size: 1rem;
+        padding: 5px 10px;
+        margin-top: 15px;
+    }
+
+    .active {
+        background-color: #e7a131;
+        color: #fff;
+    }
+
+    input {
+        border: 1px solid #282828;
+        padding: 5px;
+    }
+
+    .results-section {
+        border: 1px solid #282828;
+        background-color: #fff;
+        border-radius: 0px 10px 10px 10px;
+        margin: 15px 0 0 5px;
+        padding: 10px;
+        height: fit-content;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .results-section p {
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+
+</style>
+<body>
+    <h1 class="title">Degrees / Radians<br>Converter</h1>
+    <section class="main-section">
+        <p>Choose conversion type: <span id="dispType">Deg - Rad</span></p>
+        <button class="btn active" id="degBtn">Degrees</button>
+        <button class="btn" id="radBtn">Radians</button><br>
+        <section class="input-section">
+            <input id="input" type="number">
+            <button class="btn" id="enterBtn">Enter</button>
+            <button class="btn" id="clear-btn">Clear</button>
+        </section>
+    </section>
+    <section id="hide" class="results-section hide">
+        <p id="formula"></p>
+    </section>
+
+    <script>
+        const dispType = document.getElementById('dispType');
+        const input = document.getElementById('input');
+        const radBtn = document.getElementById('radBtn');
+        const degBtn = document.getElementById('degBtn');
+        const typeChng = document.getElementById('typeChng');
+        const enterBtn = document.getElementById('enterBtn');
+        const clearBtn = document.getElementById('clear-btn');
+        const hide = document.getElementById('hide');
+        const result = document.getElementById('result');
+        const formula = document.getElementById('formula')
+
+        let state = 'degrees';
+
+        radBtn.addEventListener('click', () => {
+            state = 'radians';
+            dispType.textContent = 'Rad - Deg'
+            radBtn.classList.add('active');
+            degBtn.classList.remove('active');
+        });
+
+        degBtn.addEventListener('click', () => {
+            dispType.textContent = 'Deg - Rad'
+            state = 'degrees';
+            degBtn.classList.add('active');
+            radBtn.classList.remove('active');
+        })
+
+        enterBtn.addEventListener('click', () => {
+            if(input.value === '') {
+                result.textContent = "Please enter a value";
+            }else if(state === 'degrees') {
+                let deg = input.value
+                toRad = ((deg * Math.PI) / 180).toFixed(3);
+                formula.textContent = `Formula: ${deg}° x π/180 = ${toRad}rad`;
+                hide.classList.remove('hide');
+            }else if (state === 'radians') {
+                let rad = input.value
+                toDeg = ((rad * 180) / Math.PI).toFixed(3)
+                formula.textContent = `Formula: ${rad}rad x 180/π = ${toDeg}°`;
+                hide.classList.remove('hide');
+            }
+        });
+        
+        clearBtn.addEventListener('click', () => {
+            input.value = null;
+            dispType.textContent = '';
+            hide.classList.add('hide');
+        });
+    </script>
+</body>
+</html>
