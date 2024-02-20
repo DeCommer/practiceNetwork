@@ -1,0 +1,50 @@
+let ingredientsToSub = `[
+    {
+        "name" : "allspice",
+        "amount": "1 tsp",
+        "substitute 1": "1/2 teaspoon cinnamon", 
+        "substitute 2": "1/4 teaspoon ginger",
+        "substitute 3": "1/4 teaspoon cloves"
+    },
+    {
+        "name" : "arrowroot starch",
+        "amount": "1 tsp",
+        "substitute 1": "1 tablespoon flour", 
+        "substitute 2": "1 teaspoon cornstarch"
+    },
+    {
+        "name" : "baking mix",
+        "amount": "1 cup",
+        "substitute 1": "1 cup pancake mix"
+    },
+    {
+        "name" : "baking powder",
+        "amount": "1 tsp",
+        "substitute 1": "1/4 teaspoon baking soda plus 1/2 teaspoon cream of tartar", 
+        "substitute 2": "1/4 teaspoon baking soda plus 1/2 cup buttermilk (decrease liquid in recipe by 1/2 cup)"
+    },
+    {
+        "name" : "baking soda",
+        "amount": "1 tsp",
+        "substitute 1": "4 teaspoons baking powder", 
+        "substitute 2": "1 teaspoon potassium bicarbonate and 1/3 teaspoon salt. NOTE: If the recipe calls for an acidic liquid such as sour cream, yogurt, buttermilk, vinegar, molasses, or citrus juice, you should replace it with the same amount of whole milk"
+    },
+    {
+        "name" : "beer",
+        "amount": "1 cup",
+        "substitute 1": "1 cup nonalcoholic beer", 
+        "substitute 2": "1 cup chicken broth"
+    },
+    {
+        "name" : "brandy",
+        "amount": "1/4 cup",
+        "substitute 1": "1 teaspoon imitation brandy extract plus enough water to make 1/4 cup"
+    },
+    {
+        "name" : "bread crumbs",
+        "amount": "1 cup",
+        "substitute 1": "1 cup cracker crumbs", 
+        "substitute 2": "1 cup matzo meal",
+        "substitute 3": "1 cup ground oats"
+    }
+]`
