@@ -30,6 +30,11 @@ body {
     color: #1B3C73;
 }
 
+sup {
+    font-size: 1rem;
+    color:#FF407D;
+}
+
 .close {
     color: #FF407D;
     float: right;
