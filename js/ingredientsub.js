@@ -1,4 +1,4 @@
-fetch("../assets/notes.json")
+fetch("assets/notes.json")
 .then(response => response.json())
 .then(data => showInfo(data));
 
