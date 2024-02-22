@@ -103,7 +103,7 @@ let displayIngSub = () => {
 }
 displayIngSub();
 
-enterBtn.addEventListener('click', () => {
+  enterBtn.addEventListener('click', () => {
     document.getElementById('hidden').classList.remove('hide')
     displayIngSub();
     input.value = '';
