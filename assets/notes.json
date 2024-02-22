@@ -1,50 +1,84 @@
 {
     "allspice" : {
-        "name": "allspice",
+        "name": "Allspice",
         "amount": "1 tsp",
         "substitute1": "1/2 teaspoon cinnamon", 
         "substitute2": "1/4 teaspoon ginger",
         "substitute3": "1/4 teaspoon cloves"
     },
     "arrowroot starch" :{
-        "name" : "arrowroot starch",
+        "name" : "Arrowroot starch",
         "amount": "1 tsp",
         "substitute1": "1 tablespoon flour", 
         "substitute2": "1 teaspoon cornstarch"
     },
     "baking mix" :{
-        "name" : "baking mix",
+        "name" : "Baking mix",
         "amount": "1 cup",
         "substitute1": "1 cup pancake mix"
     },
     "baking powder" :{
-        "name" : "baking powder",
+        "name" : "Baking powder",
         "amount": "1 tsp",
         "substitute1": "1/4 teaspoon baking soda plus 1/2 teaspoon cream of tartar", 
         "substitute2": "1/4 teaspoon baking soda plus 1/2 cup buttermilk (decrease liquid in recipe by 1/2 cup)"
     },
     "baking soda" :{
-        "name" : "baking soda",
+        "name" : "Baking soda",
         "amount": "1 tsp",
         "substitute1": "4 teaspoons baking powder", 
         "substitute2": "1 teaspoon potassium bicarbonate and 1/3 teaspoon salt. NOTE: If the recipe calls for an acidic liquid such as sour cream, yogurt, buttermilk, vinegar, molasses, or citrus juice, you should replace it with the same amount of whole milk"
     },
     "beer" :{
-        "name" : "beer",
+        "name" : "Beer",
         "amount": "1 cup",
         "substitute1": "1 cup nonalcoholic beer", 
         "substitute2": "1 cup chicken broth"
     },
     "brandy" :{
-        "name" : "brandy",
+        "name" : "Brandy",
         "amount": "1/4 cup",
         "substitute1": "1 teaspoon imitation brandy extract plus enough water to make 1/4 cup"
     },
     "bread crumbs" :{
-        "name" : "bread crumbs",
+        "name" : "Bread crumbs",
         "amount": "1 cup",
         "substitute1": "1 cup cracker crumbs", 
         "substitute2": "1 cup matzo meal",
         "substitute3": "1 cup ground oats"
+    },
+    "broth (animal)" :{
+        "name" : "Broth",
+        "amount": "1 cup",
+        "substitute1": "1 bouillon cube plus 1 cup boiling water", 
+        "substitute2": "1 tablespoon soy sauce plus enough water to make 1 cup",
+        "substitute3": "1 cup vegetable broth"
+    },
+    "brown sugar" :{
+        "name" : "Brown sugar",
+        "amount": "1 cup, packed",
+        "substitute1": "1 cup white sugar plus 1/4 cup molasses and decrease the liquid in recipe by 1/4 cup", 
+        "substitute2": "1 cup white sugar",
+        "substitute3": "1 1/4 cups confectioners' sugar"
+    },
+    "butter (salted)" :{
+        "name" : "Butter (salted)",
+        "amount": "1 cup",
+        "substitute1": "1 cup margarine", 
+        "substitute2": "1 cup shortening plus 1/2 teaspoon salt",
+        "substitute3": "7/8 cup lard plus 1/2 teaspoon salt"
+    },
+    "butter (unsalted)" :{
+        "name" : "Butter (unslated)",
+        "amount": "1 cup",
+        "substitute1": "1 cup shortening", 
+        "substitute2": "7/8 cup vegetable oil",
+        "substitute3": "7/8 cup lard"
+    },
+    "buttermilk" :{
+        "name" : "Buttermilk",
+        "amount": "1 cup",
+        "substitute1": "1 cup yogurt", 
+        "substitute2": "1 tablespoon lemon juice or vinegar plus enough milk to make 1 cup"
     }
 }
