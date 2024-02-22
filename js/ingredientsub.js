@@ -1,4 +1,4 @@
-fetch("assets/notes.json")
+fetch("https://decommer.github.io/practiceNetwork/assets/notes.json")
 .then(response => response.json())
 .then(data => showInfo(data));
 
@@ -23,22 +23,22 @@ function showInfo(data) {
             if (substitute3 === undefined) {
                 return`
                 <div class="container">
+                <p class="close">x</p>
                 <h3>Ingredient: <span class="ingredient-span">${name}</span></h3>
                 <p><span>Amount: </span> ${amount}</p>
                 <p><span>You can substitute with: </span> ${substitute1}</p>
                 <p><span>or with: </span> ${substitute2}</p>
-                <p>Click to close</p>
                 </div>
                 `
             }else {
                 return`
                 <div class="container">
+                <p class="close">x</p>
                 <h3>Ingredient: <span class="ingredient-span">${name}</span></h3>
                 <p><span>Amount: </span> ${amount}</p>
                 <p><span>You can substitute with:  </span> ${substitute1}</p>
                 <p><span>or with: </span> ${substitute2}</p>
                 <p><span>or with: </span> ${substitute3}</p>
-                <p>*Click to close</p>
                 </div>
                 `
             }

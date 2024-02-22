@@ -30,6 +30,12 @@ body {
     color: #1B3C73;
 }
 
+.close {
+    color: #FF407D;
+    float: right;
+    cursor: pointer;
+}
+
 hr {
     border: 1px solid #1B3C73;
     border-bottom: none;
@@ -76,14 +82,6 @@ span {
     color: #1B3C73;
 }
 
-.closeBtn {
-    font-size: 1rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    float: right;
-}
-
 .hide {
     display: none;
 }
@@ -97,5 +95,5 @@ span {
     max-width: 500px;
     padding: 20px;
     text-align: left;
-    cursor: pointer;
+
 }
