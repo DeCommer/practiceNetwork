@@ -53,6 +53,13 @@ const intro = document.querySelector('p');
 const answerDiv = document.getElementById('convert');
 const form = document.getElementById('convert');
 
+let convertType = "miles";
+const heading = document.querySelector('h1');
+const intro = document.querySelector('p');
+const answerDiv = document.getElementById('convert');
+const form = document.getElementById('convert');
+const instruct = document.getElementById('instructions');
+
 document.addEventListener('keydown', function(e) {
     let key = e.code
     if(key == 'KeyK') {
@@ -80,7 +87,13 @@ form.addEventListener('submit', function(e){
         }
     }
     else {
-        answerDiv.innerHTML = "<p>Enter a number</p>";
+        instruct.innerHTML = "Enter a number";
+        answerDiv.reset();
+        setTimeout(() => {
+            const element = instruct.innerHTML = "Press k for kilometer conversion or m for mile conversion";
+            element.remove();
+        }, 1200);
+
     }
 });
                 </code>

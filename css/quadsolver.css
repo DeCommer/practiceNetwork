@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0093E9;
+    background-color: #007acc;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -91,6 +91,16 @@ input:focus::placeholder {
 .output {
     color: #fff;
 }
+
+.homeColor {
+    color:#fff;
+}
+
+.homeColor:hover {
+    color:#0f4a89;
+    transition: ease-in 0.2s;
+}
+
 
 .calculator-container {
     /* border: 1px solid yellow; */

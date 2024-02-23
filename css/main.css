@@ -10,7 +10,7 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-    background-color: rgb(38, 97, 195);
+    background-color: #007acc;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -32,7 +32,7 @@ a {
 }
 
 a:hover {
-    color:#c1121f;
+    color:#0f4a89;
     transition: ease-in 0.2s;
 }
 
@@ -50,30 +50,25 @@ a:hover {
 }
 
 header {
-    border-bottom: 1px solid #c1121f;
+    border-bottom: 1px solid #fff;
     display: flex;
     justify-content: space-between;
 }
 header a {
-    color:#c1121f;
-}
-
-.homeColor {
-    font-size: 1.2rem;
-    color: #c1121f;
+    color:#fff;
 }
 
 .outer {
     width: fit-content;
 }
 
+.links{
+    margin-top: 25px;
+}
+
 .links a {
     display: flex;
     justify-content: space-between;
-}
-
-.links a:hover {
-    color: #c1121f;
 }
 
 footer {

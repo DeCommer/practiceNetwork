@@ -8,11 +8,6 @@
   cursor: pointer;
 }
 
-.homeColor, a:visited{
-  font-size: 1.2rem;
-  color: #c1121f;
-}
-
 .links {
   text-decoration: none;
 }

@@ -3,6 +3,7 @@ const heading = document.querySelector('h1');
 const intro = document.querySelector('p');
 const answerDiv = document.getElementById('convert');
 const form = document.getElementById('convert');
+const instruct = document.getElementById('instructions');
 
 document.addEventListener('keydown', function(e) {
     let key = e.code
@@ -31,6 +32,12 @@ form.addEventListener('submit', function(e){
         }
     }
     else {
-        answerDiv.innerHTML = "<h2>Enter a number</h2>";
+        instruct.innerHTML = "<p>Enter a number</p>";
+        answerDiv.reset();
+        setTimeout(() => {
+            const element = instruct.innerHTML = "<p>Press k for kilometer conversion or m for mile conversion</p>";
+            element.remove();
+        }, 1200);
+
     }
 });
