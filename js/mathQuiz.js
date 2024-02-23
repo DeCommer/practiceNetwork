@@ -30,6 +30,15 @@ function displayCorrect() {
     }, 2000);
 }
 
+function displayIncorrect() {
+    correctText.textContent = "Incorrect";
+    let disp = document.getElementById("correctArea").appendChild(correctText);
+    setTimeout(function(){
+        const element = disp;
+        element.remove();
+    }, 2000);
+}
+
 function scoreUpdate() {
     document.getElementById('score').innerHTML = score;
 }
@@ -58,6 +67,10 @@ function guts() {
             displayCorrect();
             score += 1;
             scoreUpdate();
+        }else if(usrAnswer != answer) {
+            displayIncorrect()
+            score -= 1;
+            scoreUpdate();
         }
     }
     if(randOp === "-") {
@@ -66,6 +79,10 @@ function guts() {
             correct();
             displayCorrect();
             score += 2;
+            scoreUpdate();
+        }else if(usrAnswer != answer) {
+            displayIncorrect()
+            score -= 1;
             scoreUpdate();
         }
     }
@@ -76,15 +93,22 @@ function guts() {
             displayCorrect();
             score += 5;
             scoreUpdate();
+        }else if(usrAnswer != answer) {
+            displayIncorrect()
+            score -= 1;
+            scoreUpdate();
         }
     }
     if(randOp === "÷") {
         answer = (leftNum / rightNum).toFixed(2);
-        console.log(answer);
         if(usrAnswer == answer) {
             correct();
             displayCorrect();
             score += 10;
+            scoreUpdate();
+        }else if(usrAnswer != answer) {
+            displayIncorrect()
+            score -= 1;
             scoreUpdate();
         }
     }
