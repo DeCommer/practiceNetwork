@@ -1,178 +1,183 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 * {
-    box-sizing: border-box;
+box-sizing: border-box;
 }
 
 body {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #007acc;
-    font-family: 'Roboto', sans-serif;
+height: 100%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+background-color: #007acc;
+font-family: 'Roboto', sans-serif;
 }
 
 hr {
-    border-bottom: none;
-    color:#6991ac;
+border-bottom: none;
+color:#6991ac;
 }
-  
-  .converter-container {
-    justify-content: center;
-    width: fit-content;
-    background-color: rgba(255, 255, 255, 0.2);
-    /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
-    padding: 16px;
-    border-radius: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
-  header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  header h1 {
-      font-size: 1.7rem;
-      text-transform: uppercase;
-      text-align: center;
-      margin: 20px auto 15px auto;
-      color: #343434;
-    }
 
-    a {
-        text-decoration: none;
-    }
-  
-  p {
-      font-size: 15pt;
-      color: #343434;
-  }
+.converter-container {
+justify-content: center;
+width: fit-content;
+background-color: rgba(255, 255, 255, 0.2);
+/* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
+margin-top: 50px;
+padding: 16px;
+border-radius: 16px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+text-align: center;
+margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px auto 15px auto;
+    color: #343434;
+}
+
+a {
+text-decoration: none;
+}
+
+p {
+    font-size: 15pt;
+    color: #343434;
+}
 
 .homeColor {
-    font-size: 1.2rem;
-    color: #fff;
-    margin-right: 15px;
+font-size: 1.2rem;
+color: #fff;
+margin-right: 15px;
 }
 
 .homeColor:hover {
-    color:#0f4a89;
-    transition: ease-in 0.2s;
+color:#0f4a89;
+transition: ease-in 0.2s;
 }
 
 
 .mainContain {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #f7efe0;
-    border: 1px solid #003049;
-    color: #003049;
-    border-radius: 25px;
-    padding: 20px;
-    width: 450px;
-    margin: 50px auto 25px auto;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+background-color: #f7efe0;
+border: 1px solid #003049;
+color: #003049;
+border-radius: 25px;
+padding: 20px;
+width: 450px;
+margin: 50px auto 25px auto;
 }
 
 #titleArea {
-    text-align: center;
+text-align: center;
 }
 
 small {
-    color: #c1121f;
-    font-size: 1.5rem;
-    margin-left: 25px;
+color: #c1121f;
+font-size: 1.5rem;
+margin-left: 25px;
 }
 
 .mathText {
-    font-size: 2.5rem;
+font-size: 2.5rem;
 }
 
 #qArea {
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-    width: 80%;
-    margin: auto;
+display: flex;
+text-align: center;
+justify-content: space-around;
+width: 80%;
+margin: auto;
 }
 
 #ansArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     margin-bottom: 30px;
 }
 
-#answerField {
-    border: 1px solid #cbcbdd;
+#usrIn {
+    border: none;
     font-family: inherit;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #345A7C;
-    border-radius: 5px;
     text-align: center;
     padding: 15px;
-    height:45px;
+    height:38px;
     width: 200px;
 }
 
-input:focus {
-    outline: none;
+#AnswerBtn {
+    padding: 10px 25px;
+    border-radius: 0 10px 10px 0;
+    background-color: #c1121f;
+    font-size: 1em;
+    color: #fff;
     border: none;
+    cursor: pointer;
+    }
+    
+#AnswerBtn:hover {
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
+    }
+    
+#AnswerBtn:active {
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
+    }
+
+input:focus {
+outline: none;
+border: none;
 }
 
 #scoreArea {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 #scoreArea p {
-    text-align: center;
-    padding: 0 40px;
+text-align: center;
+padding: 0 40px;
 }
 
-#correctArea {
+#messageArea {
     text-align: center;
     font-size: 1.5rem;
     color:#c1121f;
 }
 
 #below {
-    width: 250px;
-    margin: 0 auto;
-    text-align: left;
+width: 250px;
+margin: 0 auto;
+text-align: left;
 }
 
 #below h2 {
-    text-align: center;
+text-align: center;
 }
 
 p{
-    font-size: 1.2rem;  
-}
-
-.btn {
-    padding: 10px 25px;
-    background-color: #c1121f;
-    font-size: 1em;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #c1121f;
-    color: #fff;
-    border: none;
-}
-
-.btn:active {
-    background-color: #c1121f;
-    color: #fff;
-    border: none;
+font-size: 1.2rem;  
 }
 
 
-@media screen and (max-width: 501px) {
-    .mainContain {
-        width: 300px;
-    }
+@media screen and (max-width: 501) {
+
+.converter-container {
+    width: 50%;
+}
 }
