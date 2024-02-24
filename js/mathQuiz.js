@@ -16,7 +16,7 @@ const questionConstructor = () => {
     num1 = Math.floor(Math.random() * 10) + 1;
     num2 = Math.floor(Math.random() * 10) + 1;
     randOp = opArr[Math.floor(Math.random() * opArr.length)];
-        
+
     document.getElementById('leftNum').textContent = num1;
     document.getElementById('operator').textContent = randOp;
     document.getElementById('rightNum').textContent = num2;
