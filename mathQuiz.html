@@ -16,24 +16,21 @@
     <header>
         <a href="./index.html"><span class="homeColor">Home</span></a>
         <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+        <h1 class="title">Math Quiz <sup>+ - x ÷</sup></h1>
     </header>
     <div id="mQMain">
-        <div id="titleArea">
-            <h3 id="opText"></h3>
-            <h1 class="title">Math Quiz <small>+ - x ÷</small></h1>
-            <hr>
+        <hr>
+        <div id="qArea">
+            <p id="leftNum" class="mathText"></p>
+            <p id="operator" class="mathText"></p>
+            <p id="rightNum" class="mathText"></p>
+            <p class="mathText">=</p>
+        </div>  
+        <div id="ansArea">
+                <input id="usrIn" placeholder="answer">
+                <button id="AnswerBtn">Enter</button>
         </div>
-            <div id="qArea">
-                <p id="leftNum" class="mathText"></p>
-                <p id="operator" class="mathText"></p>
-                <p id="rightNum" class="mathText"></p>
-                <p class="mathText">=</p>
-            </div>  
-            <div id="ansArea">
-                    <input id="usrIn" placeholder="answer">
-                    <button id="AnswerBtn">Enter</button>
-            </div>
-            <hr>
+        <hr>
         <div id="scoreArea">
             <div class="questionNumText">
                 <p>Question:</p>
@@ -44,9 +41,9 @@
                 <p id="score">0</p>
             </div>
         </div>
+        <hr>
         <div id="messageArea"></div>
-     <hr>
-     <div id="below">
+     <div id="pts-area">
         <h2>Scoring</h2>
         <p>🥔 1 pt for addition</p>
         <p>🫒 2 pts for subtraction </p>
@@ -92,7 +89,7 @@ const questionConstructor = () => {
     num1 = Math.floor(Math.random() * 10) + 1;
     num2 = Math.floor(Math.random() * 10) + 1;
     randOp = opArr[Math.floor(Math.random() * opArr.length)];
-        
+
     document.getElementById('leftNum').textContent = num1;
     document.getElementById('operator').textContent = randOp;
     document.getElementById('rightNum').textContent = num2;
@@ -107,6 +104,29 @@ const questionConstructor = () => {
         answer = answer.toFixed(2);
     }
     return answer
+}
+
+const clearField = () => {
+    usrIn.value = null;
+    usrIn.focus();
+}
+
+const messageTimeout = () => {
+    setTimeout(() =>{
+        messageArea.textContent = '';
+    }, 1500);
+}
+
+const questionRight = () => {
+    clearField();
+    messageArea.textContent = 'Correct!'
+    messageTimeout();
+}
+
+const questionWrong = () => {
+    clearField();
+    messageArea.textContent = 'Incorrect!'
+    messageTimeout();
 }
 
 const correctCheck = () => {
@@ -136,28 +156,6 @@ const correctCheck = () => {
         score -= 1;
         scoreText.textContent = score;
     }
-}
-
-const clearField = () => {
-    usrIn.value = null;
-    usrIn.focus();
-}
-
-const messageTimeout = () => {
-    setTimeout(() =>{
-        messageArea.textContent = '';
-    }, 1500);
-}
-const questionRight = () => {
-    clearField();
-    messageArea.textContent = 'Correct!'
-    messageTimeout();
-}
-
-const questionWrong = () => {
-    clearField();
-    messageArea.textContent = 'Incorrect!'
-    messageTimeout();
 }
 
 const nextQuestion = () => {

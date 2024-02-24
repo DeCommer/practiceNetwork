@@ -8,6 +8,7 @@ let scoreText = document.getElementById('score');
 questionNumText.textContent = questionNum;
 scoreText.textContent = score;
 
+const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
 const answerBtn = document.getElementById('AnswerBtn');
 
@@ -33,6 +34,29 @@ const questionConstructor = () => {
     return answer
 }
 
+const clearField = () => {
+    usrIn.value = null;
+    usrIn.focus();
+}
+
+const messageTimeout = () => {
+    setTimeout(() =>{
+        messageArea.textContent = '';
+    }, 1500);
+}
+
+const questionRight = () => {
+    messageArea.textContent = 'Correct!'
+    clearField();
+    messageTimeout();
+}
+
+const questionWrong = () => {
+    messageArea.textContent = 'Incorrect!'
+    clearField();
+    messageTimeout();
+}
+
 const correctCheck = () => {
     if(randOp === '+' && Number(usrIn.value) === Number(answer)) {
         // console.log("This was a plus question")
@@ -55,33 +79,11 @@ const correctCheck = () => {
         questionRight();
         score += 10;
         scoreText.textContent = score;
-    } else if (Number(usrIn.value) !== Number(answer)) {
+    }else if (Number(usrIn.value) !== Number(answer)) {
         questionWrong();
         score -= 1;
         scoreText.textContent = score;
     }
-}
-
-const clearField = () => {
-    usrIn.value = null;
-    usrIn.focus();
-}
-
-const messageTimeout = () => {
-    setTimeout(() =>{
-        messageArea.textContent = '';
-    }, 1500);
-}
-const questionRight = () => {
-    clearField();
-    messageArea.textContent = 'Correct!'
-    messageTimeout();
-}
-
-const questionWrong = () => {
-    clearField();
-    messageArea.textContent = 'Incorrect!'
-    messageTimeout();
 }
 
 const nextQuestion = () => {
@@ -95,6 +97,13 @@ answerBtn.addEventListener('click', () => {
     correctCheck();
     nextQuestion();
     // console.log(`${randOp}: ${typeof(randOp)}`)
+});
+
+usrIn.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        correctCheck();
+        nextQuestion();
+    }
 });
 
 questionConstructor();
