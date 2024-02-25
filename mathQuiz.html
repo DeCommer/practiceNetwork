@@ -17,7 +17,15 @@
         <a href="./index.html"><span class="homeColor">Home</span></a>
         <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
         <h1 class="title">Math Quiz <sup>+ - x ÷</sup></h1>
+        <h3>Select mode</h3>
     </header>
+    <!-- <div class="mode-area">
+        <button class="modeBtn active">+ - x ÷</button>
+        <button class="modeBtn">Addition</button>
+        <button class="modeBtn">Subtraction</button>
+        <button class="modeBtn">Multiplication</button>
+        <button class="modeBtn">Division</button>
+    </div> -->
     <div id="mQMain">
         <hr>
         <div id="messageArea"></div>
@@ -57,14 +65,39 @@
     </div>
 </div>
 
+<div class="winModal hidden">
+    <button class="closeWinModal">&times</button>
+    <h1>🍾 Stats 🎉</h1>
+    <hr>
+    <div class="stats-area">
+        <div>
+            <p>Correct:</p>
+            <p id="correctStat">0</p>
+        </div>
+        <div>
+            <p>Incorrect:</p>
+            <p id="inCorrectStat">0</p>
+        </div>
+        <div>
+            <p>Percent:</p>
+            <p id="percentStat">0</p>
+        </div>
+        <div>
+            <p>Total Score:</p>
+            <p id="scoreStat">0</p>
+        </div>
+        <!-- <div><p>Time: </p><p id="timeStat">0:00</p></div> -->
+    </div>
+</div><div class="winOverlay hidden"></div>
+
 <div class="aboutModal hidden">
     <button class="closeAboutModal">&times</button>
     <h1>Math Quiz</h1>
     <p>Math quiz is set up to randomly generate two numbers 
     along with a randomly generated operator so you never know
     what kind of question covering basic math you will get.
-    This is adapted from a Java app I wrote. I still have to add
-    an timing function, and a win state.
+    This is adapted from a Java app I wrote. I may add
+    an timing function in the future.
     </p><p>
     I made this with a combination of HTML, CSS and JS. 
     You can see the JavaScript by clicking the button below.
@@ -76,15 +109,13 @@
     <p><pre><code class="jsHidden hidden">
         <button class="closeJsModal">&times</button>
 let score = 0;
-let questionNum = 1;
-let loopNum = 10;
+let questionNum = 0;
+let correct = 0;
+let incorrect = 0;
 let answer;
 let usrIn = document.getElementById('usrIn');
 let questionNumText = document.getElementById('questionNumber');
 let scoreText = document.getElementById('score');
-questionNumText.textContent = questionNum;
-scoreText.textContent = score;
-
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
 const answerBtn = document.getElementById('AnswerBtn');
@@ -123,6 +154,8 @@ const messageTimeout = () => {
 }
 
 const questionRight = () => {
+    correct += 1
+    // console.log(`Correct: ${correct}`);
     bgColorChange.style.boxShadow = '0 0 50px 20px rgba(51, 253, 0, 0.575)';
     setTimeout(() =>{
         bgColorChange.style.boxShadow = '0 0 0 0';
@@ -134,12 +167,15 @@ const questionRight = () => {
 }
 
 const questionWrong = () => {
+    incorrect += 1
+    // console.log(`Incorrect: ${incorrect}`);
     bgColorChange.style.boxShadow = '0 0 50px 20px rgb(255, 46, 46)';
     setTimeout(() =>{
         bgColorChange.style.boxShadow = '0 0 0 0';
-    }, 1200);
+    }, 1800);
     messageArea.style.color = '#c1121f';
-    messageArea.textContent = 'Incorrect!'
+    // messageArea.textContent = 'Incorrect!'
+    messageArea.textContent = `The correct answer is: ${answer}`;
     clearField();
     messageTimeout();
 }
@@ -173,10 +209,30 @@ const correctCheck = () => {
     }
 }
 
+const hasWon = () => {
+    let correctStatText = document.getElementById('correctStat');
+    let incorrectStatText = document.getElementById('inCorrectStat');
+    let percentStatText = document.getElementById('percentStat');
+    let scorStatText = document.getElementById('scoreStat');
+    let percentCorrect = (correct/questionNum) * 100;
+    openWinModal();
+    correctStatText.textContent = correct;
+    incorrectStatText.textContent = incorrect;
+    scorStatText.textContent = score;
+    percentStatText.textContent = `${percentCorrect.toFixed(2)}%`;
+    // console.log(`Total Questions: ${questionNum}`);
+    // console.log(`correct: ${correct}`);
+    // console.log(`Incorrect: ${incorrect}`);
+    // console.log(`Percent correct:${percentCorrect.toFixed(2)}%`);
+}
+
 const nextQuestion = () => {
     questionNum += 1
     questionNumText.textContent = questionNum;
     questionConstructor();
+    if(questionNum === 5) {
+        hasWon();
+    }
     // console.log(answer);
 }
 
@@ -196,6 +252,31 @@ usrIn.addEventListener('keydown', (event) => {
 questionConstructor();
 // console.log(answer);
 // console.log(`${randOp}: ${typeof(randOp)}`);
+
+// Win modal
+
+const winModal = document.querySelector('.winModal');
+const winOverlay = document.querySelector('.winOverlay');
+
+const openWinModal = () => {
+    winModal.classList.remove('hidden');
+    winOverlay.classList.remove('hidden');
+}
+
+const closeWinModal = () => {
+    winModal.classList.add('hidden');
+    winOverlay.classList.add('hidden');
+    questionNum = 0;
+    score = 0;
+    correct = 0;
+    incorrect =0;
+    questionNumText.textContent = questionNum;
+    scoreText.textContent = score;
+    // console.log(questionNum)
+}
+
+document.querySelector('.closeWinModal').addEventListener('click', closeWinModal);
+document.querySelector('.winOverlay').addEventListener('click', closeWinModal);
     </code></pre></p>
 </div>
 </body>

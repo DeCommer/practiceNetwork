@@ -1,18 +1,16 @@
 let score = 0;
-let questionNum = 1;
-let loopNum = 10;
+let questionNum = 0;
+let correct = 0;
+let incorrect = 0;
 let answer;
 let usrIn = document.getElementById('usrIn');
 let questionNumText = document.getElementById('questionNumber');
 let scoreText = document.getElementById('score');
-questionNumText.textContent = questionNum;
-scoreText.textContent = score;
-
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
 const answerBtn = document.getElementById('AnswerBtn');
 
-const questionConstructor = () => {
+const allOperators = () => {
     opArr = ["+", "-", "x", "÷"];
     num1 = Math.floor(Math.random() * 10) + 1;
     num2 = Math.floor(Math.random() * 10) + 1;
@@ -46,6 +44,8 @@ const messageTimeout = () => {
 }
 
 const questionRight = () => {
+    correct += 1
+    // console.log(`Correct: ${correct}`);
     bgColorChange.style.boxShadow = '0 0 50px 20px rgba(51, 253, 0, 0.575)';
     setTimeout(() =>{
         bgColorChange.style.boxShadow = '0 0 0 0';
@@ -57,6 +57,8 @@ const questionRight = () => {
 }
 
 const questionWrong = () => {
+    incorrect += 1
+    // console.log(`Incorrect: ${incorrect}`);
     bgColorChange.style.boxShadow = '0 0 50px 20px rgb(255, 46, 46)';
     setTimeout(() =>{
         bgColorChange.style.boxShadow = '0 0 0 0';
@@ -97,10 +99,30 @@ const correctCheck = () => {
     }
 }
 
+const hasWon = () => {
+    let correctStatText = document.getElementById('correctStat');
+    let incorrectStatText = document.getElementById('inCorrectStat');
+    let percentStatText = document.getElementById('percentStat');
+    let scorStatText = document.getElementById('scoreStat');
+    let percentCorrect = (correct/questionNum) * 100;
+    openWinModal();
+    correctStatText.textContent = correct;
+    incorrectStatText.textContent = incorrect;
+    scorStatText.textContent = score;
+    percentStatText.textContent = `${percentCorrect.toFixed(2)}%`;
+    // console.log(`Total Questions: ${questionNum}`);
+    // console.log(`correct: ${correct}`);
+    // console.log(`Incorrect: ${incorrect}`);
+    // console.log(`Percent correct:${percentCorrect.toFixed(2)}%`);
+}
+
 const nextQuestion = () => {
     questionNum += 1
     questionNumText.textContent = questionNum;
-    questionConstructor();
+    allOperators();
+    if(questionNum === 5) {
+        hasWon();
+    }
     // console.log(answer);
 }
 
@@ -117,9 +139,34 @@ usrIn.addEventListener('keydown', (event) => {
     }
 });
 
-questionConstructor();
+allOperators();
 // console.log(answer);
 // console.log(`${randOp}: ${typeof(randOp)}`);
+
+// Win modal
+
+const winModal = document.querySelector('.winModal');
+const winOverlay = document.querySelector('.winOverlay');
+
+const openWinModal = () => {
+    winModal.classList.remove('hidden');
+    winOverlay.classList.remove('hidden');
+}
+
+const closeWinModal = () => {
+    winModal.classList.add('hidden');
+    winOverlay.classList.add('hidden');
+    questionNum = 0;
+    score = 0;
+    correct = 0;
+    incorrect =0;
+    questionNumText.textContent = 1;
+    scoreText.textContent = score;
+    // console.log(questionNum)
+}
+
+document.querySelector('.closeWinModal').addEventListener('click', closeWinModal);
+document.querySelector('.winOverlay').addEventListener('click', closeWinModal);
 
 //Old==================================================================
 
