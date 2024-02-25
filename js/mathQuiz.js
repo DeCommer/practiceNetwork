@@ -1,5 +1,5 @@
 let score = 0;
-let questionNum = 0;
+let questionNum = 1;
 let correct = 0;
 let incorrect = 0;
 let answer;
@@ -223,7 +223,7 @@ usrIn.addEventListener('keydown', ansEnter = (event) => {
 });
 
 const reset = () => {
-    questionNum = 0;
+    questionNum = 1;
     score = 0;
     correct = 0;
     incorrect = 0;
