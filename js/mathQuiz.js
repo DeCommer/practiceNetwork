@@ -46,12 +46,22 @@ const messageTimeout = () => {
 }
 
 const questionRight = () => {
+    bgColorChange.style.boxShadow = '0 0 50px 20px rgba(51, 253, 0, 0.575)';
+    setTimeout(() =>{
+        bgColorChange.style.boxShadow = '0 0 0 0';
+    }, 1200);
+    messageArea.style.color = '#A5DD9B';
     messageArea.textContent = 'Correct!'
     clearField();
     messageTimeout();
 }
 
 const questionWrong = () => {
+    bgColorChange.style.boxShadow = '0 0 50px 20px rgb(255, 46, 46)';
+    setTimeout(() =>{
+        bgColorChange.style.boxShadow = '0 0 0 0';
+    }, 1200);
+    messageArea.style.color = '#c1121f';
     messageArea.textContent = 'Incorrect!'
     clearField();
     messageTimeout();

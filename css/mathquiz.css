@@ -22,7 +22,7 @@ hr {
     justify-content: center;
     width: fit-content;
     background-color: rgba(255, 255, 255, 0.2);
-    /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
+    /* box-shadow: 0 0 50px 20px rgb(255, 46, 46); */
     margin-top: 50px;
     padding: 16px;
     border-radius: 16px;
@@ -67,6 +67,8 @@ p {
 }
 
 .mathText {
+    padding: 0;
+    margin: 20px 0 45px 0;
     font-size: 2.5rem;
     color: #11345f;
 }
@@ -74,7 +76,7 @@ p {
 #qArea {
     display: flex;
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 80%;
     margin: auto;
 }
@@ -91,6 +93,7 @@ p {
     border: none;
     font-family: inherit;
     font-size: 1.4rem;
+    background-color: rgba(255, 255, 255, 0.5);
     color: #345A7C;
     text-align: center;
     padding: 15px;
@@ -137,10 +140,17 @@ input:focus {
 }
 
 #messageArea {
+    height: 1.5rem;
     text-align: center;
     font-size: 1.5rem;
     color:#c1121f;
 }
+
+/* #rightWrongArea {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 25px 0 25px;
+} */
 
 #pts-area {
     width: auto;
@@ -148,7 +158,6 @@ input:focus {
     /* border: 1px solid rgb(25, 37, 84); */
     margin: 0 auto;
     padding: 5px 25px;
-    border-radius: 0 0 15px 15px;
 }
 
 @media screen and (max-width: 501) {
