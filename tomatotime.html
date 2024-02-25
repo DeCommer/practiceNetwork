@@ -42,13 +42,124 @@
 
     <div class="aboutModal hidden">
         <button class="closeAboutModal">&times</button>
-        <h1>Odd Even App</h1>
-        <p>Odd Even takes two numbers and performs each of the basic
-        math operations giving you the results, and whether the results 
-        are odd or even.</p>
+        <h1>Tomato Time</h1>
+        <p>Made after the popular pomodoro timer, this is a cusomizable timer to
+            track your work time along with breaks.</p><p>
+            Work for a set amount of minutes, break, work and so on...
+            Tomato Time!
+        </p>
         <p>I made this with a combination of HTML, CSS and JS. 
         You can see the JavaScript by clicking the button below.
         </p>
     </div><div class="aboutOverlay hidden"></div>
+
+    <div class="code">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
+let time = 25 * 60;
+let timerInterval;
+let currentMode = 'tomato';
+let MODES = {
+    tomato: 25,
+    short: 5,
+    long: 15
+}
+const DEFAULT_MODES = {
+    tomato: 25,
+    short: 5,
+    long: 15
+}
+let totalBreaks = 0;
+// const alarmSound = new Audio('nothinghereyet');
+document.querySelectorAll('#modes button')
+    .forEach(button => {
+        button.addEventListener('click', handleModeButtons)
+    });
+document.querySelectorAll('#duration-control input')
+    .forEach(function(input) {
+        input.addEventListener('change', durationControlHandler);
+        input.value = '';
+    });
+    function durationControlHandler(event) {
+        let value = event.target.value.trim();
+        let durationId = event.target.dataset.durationId;
+        if(value != '' && !isNaN(value) && Number.isInteger(parseFloat(value)) && parseInt(value) != 0) {
+            MODES[durationId] = parseInt(value);
+        }else {
+            MODES[durationId] = DEFAULT_MODES[durationId];
+        }
+        resetTimer();
+    }
+function handleModeButtons(event) {
+    switchMode(event.target.dataset.modeId)
+}
+function updateControlButtons(isRunning) {
+    let start_button = document.querySelector('.timer-control.start');
+    let pause_button = document.querySelector('.timer-control.pause');
+    if(isRunning) {
+        start_button.disabled = true;
+        pause_button.disabled = false;
+    }else {
+        start_button.disabled = false;
+        pause_button.disabled = true;
+    }
+}
+function switchMode(mode) {
+    currentMode = mode;
+    document.querySelector('.main-container').style.backgroundColor = `var(--${mode})`
+    document.querySelectorAll('#modes button')
+        .forEach(elem => {
+            elem.classList.remove('active');
+        });
+    document.querySelector(`button[data-mode-id='${mode}']`).classList.add('active');
+    resetTimer();
+};
+function startTimer() {
+    timerInterval = setInterval(updateTimer, 1000);
+    updateControlButtons(true);
+};
+function pauseTimer() {
+    clearInterval(timerInterval);
+    updateControlButtons(false);
+};
+function updateTimer() {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    document.getElementById('timer').textContent = `${minutes}:${seconds}`
+    document.title = `${minutes}:${seconds} - Tomato Time`
+    if(time <= 0 ) {
+        pauseTimer();
+        // alarmSound.play();
+        alert('Time is up!') //maybe switch to modal, or an on page message
+        // alarmSound.pause();
+        // alarmSound.currentTime = 0;
+        nextMode();
+        resetTimer();
+    }
+    time -= 1;
+};
+function nextMode() {
+    if(currentMode == 'tomato') {
+        totalBreaks += 1;
+        if(totalBreaks % 4 == 0) {
+            switchMode('long');
+        }else {
+            switchMode('long');
+        }
+    }else {
+        switchMode('tomato');
+    }
+}
+function resetTimer() {
+    time = MODES[currentMode] * 60;
+    clearInterval(timerInterval);
+    updateTimer();
+    updateControlButtons(false);
+}
+                </code></pre></p>
+            </div>
 </body>
 </html>

@@ -47,7 +47,8 @@
 
 .code pre{
   font-size: 0.7rem;
-    color: #3a3429;
+  color: #3a3429;
+  text-align: left;
 }
 
 /* About Modal */
