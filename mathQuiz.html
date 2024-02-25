@@ -49,10 +49,10 @@
         </div> -->
      <div id="pts-area">
         <h2>Scoring</h2>
-        <p>🥔 1 pt for addition</p>
-        <p>🫒 2 pts for subtraction </p>
-        <p>🍔 5 pts for multiplication</p>
-        <p>🍕 10 pts for division</p>
+        <p>🥒 1 pt for addition 🥒</p>
+        <p>🫒 2 pts for subtraction 🫒</p>
+        <p>🍔 5 pts for multiplication 🍔</p>
+        <p>🍕 10 pts for division 🍕</p>
      </div>
     </div>
 </div>
@@ -85,6 +85,7 @@ let scoreText = document.getElementById('score');
 questionNumText.textContent = questionNum;
 scoreText.textContent = score;
 
+const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
 const answerBtn = document.getElementById('AnswerBtn');
 
@@ -122,14 +123,24 @@ const messageTimeout = () => {
 }
 
 const questionRight = () => {
-    clearField();
+    bgColorChange.style.boxShadow = '0 0 50px 20px rgba(51, 253, 0, 0.575)';
+    setTimeout(() =>{
+        bgColorChange.style.boxShadow = '0 0 0 0';
+    }, 1200);
+    messageArea.style.color = '#A5DD9B';
     messageArea.textContent = 'Correct!'
+    clearField();
     messageTimeout();
 }
 
 const questionWrong = () => {
-    clearField();
+    bgColorChange.style.boxShadow = '0 0 50px 20px rgb(255, 46, 46)';
+    setTimeout(() =>{
+        bgColorChange.style.boxShadow = '0 0 0 0';
+    }, 1200);
+    messageArea.style.color = '#c1121f';
     messageArea.textContent = 'Incorrect!'
+    clearField();
     messageTimeout();
 }
 
@@ -155,7 +166,7 @@ const correctCheck = () => {
         questionRight();
         score += 10;
         scoreText.textContent = score;
-    } else if (Number(usrIn.value) !== Number(answer)) {
+    }else if (Number(usrIn.value) !== Number(answer)) {
         questionWrong();
         score -= 1;
         scoreText.textContent = score;
@@ -173,6 +184,13 @@ answerBtn.addEventListener('click', () => {
     correctCheck();
     nextQuestion();
     // console.log(`${randOp}: ${typeof(randOp)}`)
+});
+
+usrIn.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        correctCheck();
+        nextQuestion();
+    }
 });
 
 questionConstructor();

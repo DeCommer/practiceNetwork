@@ -153,8 +153,7 @@ input:focus {
 } */
 
 #pts-area {
-    width: auto;
-    text-align: left;
+    text-align: center;
     /* border: 1px solid rgb(25, 37, 84); */
     margin: 0 auto;
     padding: 5px 25px;

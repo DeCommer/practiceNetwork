@@ -60,9 +60,10 @@ const questionWrong = () => {
     bgColorChange.style.boxShadow = '0 0 50px 20px rgb(255, 46, 46)';
     setTimeout(() =>{
         bgColorChange.style.boxShadow = '0 0 0 0';
-    }, 1200);
+    }, 1800);
     messageArea.style.color = '#c1121f';
-    messageArea.textContent = 'Incorrect!'
+    // messageArea.textContent = 'Incorrect!'
+    messageArea.textContent = `The correct answer is: ${answer}`;
     clearField();
     messageTimeout();
 }
