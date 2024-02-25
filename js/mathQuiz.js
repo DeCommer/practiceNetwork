@@ -6,19 +6,54 @@ let answer;
 let usrIn = document.getElementById('usrIn');
 let questionNumText = document.getElementById('questionNumber');
 let scoreText = document.getElementById('score');
+
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
 const answerBtn = document.getElementById('AnswerBtn');
 
-const allOperators = () => {
+const modeBtn = document.querySelector('.modeBtn');
+
+const allOpsBtn = document.getElementById('all-ops-btn');
+const addBtn = document.getElementById('add-btn');
+const subBtn = document.getElementById('sub-btn');
+const multBtn = document.getElementById('mult-btn');
+const divBtn = document.getElementById('div-btn');
+
+const questionConstructor = () => {
     opArr = ["+", "-", "x", "÷"];
     num1 = Math.floor(Math.random() * 10) + 1;
     num2 = Math.floor(Math.random() * 10) + 1;
     randOp = opArr[Math.floor(Math.random() * opArr.length)];
-
     document.getElementById('leftNum').textContent = num1;
     document.getElementById('operator').textContent = randOp;
     document.getElementById('rightNum').textContent = num2;
+}
+
+const operatorModes = () => {
+    if(allOpsBtn.classList[1] === 'active') {
+        allOps();
+    }
+    if(addBtn.classList[1] === 'active') {
+        add();
+    }
+    if(subBtn.classList[1] === 'active') {
+        sub();
+    }
+    if(multBtn.classList[1] === 'active') {
+        mult();
+    }
+    if(divBtn.classList[1] === 'active') {
+        div();
+    }   
+}
+
+allOpsBtn.addEventListener('click', allOps = () => {
+    allOpsBtn.classList.add('active');
+    addBtn.classList.remove('active');
+    subBtn.classList.remove('active');
+    multBtn.classList.remove('active');
+    divBtn.classList.remove('active');
+    questionConstructor();
     if (randOp === '+') {
         answer = num1 + num2;
     }if (randOp === '-') {
@@ -29,8 +64,56 @@ const allOperators = () => {
         answer = num1 / num2;
         answer = answer.toFixed(2);
     }
-    return answer
-}
+});
+
+addBtn.addEventListener('click', add = () => {
+    allOpsBtn.classList.remove('active');
+    addBtn.classList.add('active');
+    subBtn.classList.remove('active');
+    multBtn.classList.remove('active');
+    divBtn.classList.remove('active');
+    questionConstructor();
+    answer = num1 + num2;
+    randOp = opArr[0];
+    document.getElementById('operator').textContent = randOp;
+});
+
+subBtn.addEventListener('click', sub = () => {
+    allOpsBtn.classList.remove('active');
+    addBtn.classList.remove('active');
+    subBtn.classList.add('active');
+    multBtn.classList.remove('active');
+    divBtn.classList.remove('active');
+    questionConstructor()
+    answer = num1 - num2;
+    randOp = opArr[1];
+    document.getElementById('operator').textContent = randOp;
+});
+
+multBtn.addEventListener('click', mult = () => {
+    allOpsBtn.classList.remove('active');
+    addBtn.classList.remove('active');
+    subBtn.classList.remove('active');
+    multBtn.classList.add('active');
+    divBtn.classList.remove('active');
+    questionConstructor()
+    answer = num1 * num2;
+    randOp = opArr[2];
+    document.getElementById('operator').textContent = randOp;
+});
+
+divBtn.addEventListener('click', div = () => {
+    allOpsBtn.classList.remove('active');
+    addBtn.classList.remove('active');
+    subBtn.classList.remove('active');
+    multBtn.classList.remove('active');
+    divBtn.classList.add('active');
+    questionConstructor()
+    answer = num1 / num2;
+    answer = answer.toFixed(2);
+    randOp = opArr[3];
+    document.getElementById('operator').textContent = randOp;
+});
 
 const clearField = () => {
     usrIn.value = null;
@@ -119,27 +202,36 @@ const hasWon = () => {
 const nextQuestion = () => {
     questionNum += 1
     questionNumText.textContent = questionNum;
-    allOperators();
+    operatorModes();
     if(questionNum === 5) {
         hasWon();
     }
     // console.log(answer);
 }
 
-answerBtn.addEventListener('click', () => {
+answerBtn.addEventListener('click', ansAction = () => {
     correctCheck();
     nextQuestion();
     // console.log(`${randOp}: ${typeof(randOp)}`)
 });
 
-usrIn.addEventListener('keydown', (event) => {
+usrIn.addEventListener('keydown', ansEnter = (event) => {
     if (event.key === 'Enter') {
         correctCheck();
         nextQuestion();
     }
 });
 
-allOperators();
+const reset = () => {
+    questionNum = 0;
+    score = 0;
+    correct = 0;
+    incorrect = 0;
+    questionNumText.textContent = 1;
+    scoreText.textContent = score;
+}
+
+operatorModes();
 // console.log(answer);
 // console.log(`${randOp}: ${typeof(randOp)}`);
 
@@ -156,12 +248,7 @@ const openWinModal = () => {
 const closeWinModal = () => {
     winModal.classList.add('hidden');
     winOverlay.classList.add('hidden');
-    questionNum = 0;
-    score = 0;
-    correct = 0;
-    incorrect =0;
-    questionNumText.textContent = 1;
-    scoreText.textContent = score;
+    reset();
     // console.log(questionNum)
 }
 

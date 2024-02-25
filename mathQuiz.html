@@ -17,15 +17,15 @@
         <a href="./index.html"><span class="homeColor">Home</span></a>
         <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
         <h1 class="title">Math Quiz <sup>+ - x ÷</sup></h1>
-        <!-- <h3>Select mode</h3> -->
+        <h3>Select mode</h3>
     </header>
-    <!-- <div class="mode-area">
-        <button id="all-Ops-btn" class="modeBtn active">+ - x ÷</button>
+    <div class="mode-area">
+        <button id="all-ops-btn" class="modeBtn active">+ - x ÷</button>
         <button id="add-btn" class="modeBtn">Addition</button>
         <button id="sub-btn"class="modeBtn">Subtraction</button>
         <button id="mult-btn" class="modeBtn">Multiplication</button>
         <button  id="div-btn"class="modeBtn">Division</button>
-    </div> -->
+    </div>
     <div id="mQMain">
         <hr>
         <div id="messageArea"></div>
@@ -120,15 +120,47 @@ const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
 const answerBtn = document.getElementById('AnswerBtn');
 
-const questionConstructor = () => {
+const modeBtn = document.querySelector('.modeBtn');
+
+const allOpsBtn = document.getElementById('all-ops-btn');
+const addBtn = document.getElementById('add-btn');
+const subBtn = document.getElementById('sub-btn');
+const multBtn = document.getElementById('mult-btn');
+const divBtn = document.getElementById('div-btn');
+
+console.log(addBtn.classList.contains === 'active');
+
+const questionConstrctor = () => {
     opArr = ["+", "-", "x", "÷"];
     num1 = Math.floor(Math.random() * 10) + 1;
     num2 = Math.floor(Math.random() * 10) + 1;
     randOp = opArr[Math.floor(Math.random() * opArr.length)];
-
     document.getElementById('leftNum').textContent = num1;
     document.getElementById('operator').textContent = randOp;
     document.getElementById('rightNum').textContent = num2;
+}
+
+const operatorModes = () => {
+    if(allOpsBtn.classList[1] === 'active') {
+        allOps();
+    }else if(addBtn.classList[1] === 'active') {
+        add();
+    }else if(subBtn.classList[1] === 'active') {
+        sub();
+    }else if(multBtn.classList[1] === 'active') {
+        mult();
+    }else if(divBtn.classList[1] === 'active') {
+        div();
+    }   
+}
+
+allOpsBtn.addEventListener('click', allOps = () => {
+    allOpsBtn.classList.add('active');
+    addBtn.classList.remove('active');
+    subBtn.classList.remove('active');
+    multBtn.classList.remove('active');
+    divBtn.classList.remove('active');
+    questionConstrctor();
     if (randOp === '+') {
         answer = num1 + num2;
     }if (randOp === '-') {
@@ -139,8 +171,56 @@ const questionConstructor = () => {
         answer = num1 / num2;
         answer = answer.toFixed(2);
     }
-    return answer
-}
+});
+
+addBtn.addEventListener('click', add = () => {
+    allOpsBtn.classList.remove('active');
+    addBtn.classList.add('active');
+    subBtn.classList.remove('active');
+    multBtn.classList.remove('active');
+    divBtn.classList.remove('active');
+    questionConstrctor()
+    answer = num1 + num2;
+    randOp = opArr[0];
+    document.getElementById('operator').textContent = randOp;
+});
+
+subBtn.addEventListener('click', sub = () => {
+    allOpsBtn.classList.remove('active');
+    addBtn.classList.remove('active');
+    subBtn.classList.add('active');
+    multBtn.classList.remove('active');
+    divBtn.classList.remove('active');
+    questionConstrctor()
+    answer = num1 - num2;
+    randOp = opArr[1];
+    document.getElementById('operator').textContent = randOp;
+});
+
+multBtn.addEventListener('click', mult = () => {
+    allOpsBtn.classList.remove('active');
+    addBtn.classList.remove('active');
+    subBtn.classList.remove('active');
+    multBtn.classList.add('active');
+    divBtn.classList.remove('active');
+    questionConstrctor()
+    answer = num1 * num2;
+    randOp = opArr[2];
+    document.getElementById('operator').textContent = randOp;
+});
+
+divBtn.addEventListener('click', div = () => {
+    allOpsBtn.classList.remove('active');
+    addBtn.classList.remove('active');
+    subBtn.classList.remove('active');
+    multBtn.classList.remove('active');
+    divBtn.classList.add('active');
+    questionConstrctor()
+    answer = num1 / num2;
+    answer = answer.toFixed(2);
+    randOp = opArr[3];
+    document.getElementById('operator').textContent = randOp;
+});
 
 const clearField = () => {
     usrIn.value = null;
@@ -229,7 +309,7 @@ const hasWon = () => {
 const nextQuestion = () => {
     questionNum += 1
     questionNumText.textContent = questionNum;
-    questionConstructor();
+    operatorModes();
     if(questionNum === 5) {
         hasWon();
     }
@@ -249,7 +329,7 @@ usrIn.addEventListener('keydown', (event) => {
     }
 });
 
-questionConstructor();
+operatorModes();
 // console.log(answer);
 // console.log(`${randOp}: ${typeof(randOp)}`);
 
@@ -270,7 +350,7 @@ const closeWinModal = () => {
     score = 0;
     correct = 0;
     incorrect =0;
-    questionNumText.textContent = questionNum;
+    questionNumText.textContent = 1;
     scoreText.textContent = score;
     // console.log(questionNum)
 }
