@@ -48,7 +48,7 @@ function updateControlButtons(isRunning) {
 }
 function switchMode(mode) {
     currentMode = mode;
-    document.documentElement.style.backgroundColor = `var(--${mode})`
+    document.querySelector('.main-container').style.backgroundColor = `var(--${mode})`
     document.querySelectorAll('#modes button')
         .forEach(elem => {
             elem.classList.remove('active');

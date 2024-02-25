@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/tomatotimer.css">
-    <!-- <link rel="stylesheet" href="./css/showhide.css"> -->
+    <link rel="stylesheet" href="./css/showhide.css">
     <script src="./js/tomatotimer.js" defer></script>
-    <!-- <script src="./js/showhide.js" defer></script> -->
+    <script src="./js/showhide.js" defer></script>
     <title>🍅 Tomato Time</title>
 </head>
 <body>
     <div class="main-container">
         <div class="title-container">
             <a href="./index.html"><span class="homeColor">Home</span></a>
-            <!-- <a class="aboutBtn" href="#"><span class="homeColor">About</span></a> -->
-            <h1 class="title">🍅 ⏲️</h1>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <h1 class="icons">🍅 ⏲️</h1>
             <h1 class="title"> Tomato Time!</h1>
             <p>By Joseph DeCommer</p>
         </div>
@@ -31,12 +31,24 @@
                 <button onclick="nextMode()" class="timer-control">Skip</button>
             </div>
         </div>
+        <hr>
+        <div id="duration-control">
+            <p>Want different tomato times?</p>
+            Work Time:<input type="number" placeholder="00" class="duration" data-duration-id="tomato">
+            Short Break:<input type="number" placeholder="00" class="duration" data-duration-id="short">
+            Long Break:<input type="number" placeholder="00" class="duration" data-duration-id="long">
+        </div>
     </div>
-    <div id="duration-control">
-        <p>Want different tomato times?</p>
-        Work Time: <input type="number" placeholder="00" class="duration" data-duration-id="tomato"><br>
-        Short Break: <input type="number" placeholder="00" class="duration" data-duration-id="short"><br>
-        Long Break: <input type="number" placeholder="00" class="duration" data-duration-id="long"><br>
-    </div>
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Odd Even App</h1>
+        <p>Odd Even takes two numbers and performs each of the basic
+        math operations giving you the results, and whether the results 
+        are odd or even.</p>
+        <p>I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
 </body>
 </html>

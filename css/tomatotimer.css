@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
-    --tomato: #c1121f;
-    --short: #17cec5;
-    --long: #8ec261;
+    --tomato: #ca4040;
+    --short: #cac340;
+    --long: #40ca80;
 }
 
 html {
     text-align: center;
-    background-color: #c1121f;
-    color: #fff;
+    color: #0000005e;
     display: flex;
     align-items: center;
     height: 100%;
@@ -20,11 +19,12 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;   
+    font-family: 'Roboto', sans-serif;
+    background-color: #007ACC;
 }
 
 a {
-    color:#ffffff;
+    color:#00000079;
     font-size: 1.5rem;
     margin: 20px;
     text-decoration: none;
@@ -34,47 +34,69 @@ a:hover {
     color: #0093E9;
 }
 
+.homeColor {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .homeColor:hover {
+    color:#0f4a89;
+    transition: ease-in 0.2s;
+  }
+
 .main-container {
-    display: flex;
     justify-content: center;
-    margin-top: 200px;
-}
-
-.title-container {
     margin-top: 50px;
+    width: fit-content;
+    background-color: #ca4040;
+    /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
+    padding: 45px;
+    border-radius: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+.icons {
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.412);
+    padding: 0px;
+    margin: 45px 0 0 0 ;
+}
+.title {
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.412);
+    padding: 0px;
+    margin: 0px ;
 }
 
-.title {
-    font-size: 5rem;
-    color: #0093E9;
-    margin: 0;
+.title-container p {
+    color: #fff;
 }
 
 #timer {
-    font-size: 10rem;
+    margin: 25px 0;
+    font-size: 5rem;
     font-weight:  bold;
     user-select: none;
-    
 }
 
 .mode {
     border: none;
     background:  none;
     cursor: pointer;
-    color: #fff;
+    color: rgba(0, 0, 0, 0.429);
     padding: 15px;
-    font-size: 2rem;
+    font-size: 1.4rem;
     transition: 0.2s;
 }
 
 .mode.active {
-    color: #fff;
-    border-bottom: 1px solid #fff;
+    color: rgba(255, 255, 255, 0.56);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.56);;
 }
 
 .mode.active:hover {
     color: #fff;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.56);;
 }
 
 .mode:hover {
@@ -83,12 +105,12 @@ a:hover {
 
 .timer-control {
     border: none;
-    background-color: #fff;
+    background-color: #ffffff86;
     border-radius: 5px;
     cursor: pointer;
-    color: #000;
+    color: #0000009b;
     padding: 10px 20px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     transition: 0.2s;
 }
 
@@ -105,15 +127,29 @@ a:hover {
     background-color: #0093E9;
     color: #fff;
 }
+hr {
+    border: 0;
+    margin-top: 25px;
+    height: 1px;
+    background: #02020266;
+}
 
 #duration-control {
-    margin-top: 5px;
+    margin-top: 25px;
     user-select:  none;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    /* border: 1px solid blue; */
 }
 
 #duration-control .duration {
-    background-color: #ffffff63;
-    margin-top: 5px;
+    /* background-color: #bebebe; */
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.46);
+    margin: 5px;
     font-size: 1rem;
     text-align: center;
     width: 45px;
