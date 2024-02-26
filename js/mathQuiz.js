@@ -226,18 +226,18 @@ const progressBar = () => {
     if (width >= 100) {
         progress.style.width = '100%';
     }if (questionNum == 0) {
-        width = 15+'%';
+        width = 0+'%';
         progress.style.width = width;
     }
     if (questionNum == 1) {
-        width = 30+'%';
+        width = 20+'%';
         progress.style.width = width;
     }
     if (questionNum == 2) {
-        width = 45+'%';
+        width = 40+'%';
         progress.style.width = width;
     }if (questionNum == 3) {
-        width = 65+'%';
+        width = 60+'%';
         progress.style.width = width;
     }
     if (questionNum == 4) {
