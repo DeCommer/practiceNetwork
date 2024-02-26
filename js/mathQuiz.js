@@ -226,26 +226,24 @@ const progressBar = () => {
     if (width >= 100) {
         progress.style.width = '100%';
     }if (questionNum == 0) {
-        width = 20+'%';
+        width = 15+'%';
         progress.style.width = width;
-    }if (questionNum == 1) {
-        width = 20+'%';
+    }
+    if (questionNum == 1) {
+        width = 30+'%';
         progress.style.width = width;
     }
     if (questionNum == 2) {
-        width = 40+'%';
+        width = 45+'%';
         progress.style.width = width;
     }if (questionNum == 3) {
-        width = 60+'%';
+        width = 65+'%';
         progress.style.width = width;
     }
     if (questionNum == 4) {
         width = 80+'%';
         progress.style.width = width;
     }
-    console.log(questionNum)
-    console.log(width)
-    console.log(stepsize)
 }
 progressBar()
 
