@@ -5,9 +5,9 @@ let correct = 0;
 let incorrect = 0;
 let answer;
 let usrIn = document.getElementById('usrIn');
-let questionNumText = document.getElementById('questionNumber');
+// let questionNumText = document.getElementById('questionNumber');
+// questionNumText.textContent = questionNum;
 let scoreText = document.getElementById('score');
-questionNumText.textContent = questionNum;
 
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
@@ -203,10 +203,41 @@ const hasWon = () => {
 
 const nextQuestion = () => {
     questionNum += 1
-    questionNumText.textContent = questionNum;
+    // questionNumText.textContent = questionNum;
     operatorModes();
     // console.log(answer);
 }
+
+const progressBar = () => {
+    let stepsize = 100 / numberOfQuestions;
+    let progress = document.querySelector('.progress-bar');
+    let width = progress.style.width.replace('%', '');
+    width = parseInt(width) + stepsize;
+    if (width >= 100) {
+        progress.style.width = '100%';
+    }if (questionNum == 0) {
+        width = 100+'%';
+        progress.style.width = width;
+    }if (questionNum == 1) {
+        width = 20+'%';
+        progress.style.width = width;
+    }
+    if (questionNum == 2) {
+        width = 40+'%';
+        progress.style.width = width;
+    }if (questionNum == 3) {
+        width = 60+'%';
+        progress.style.width = width;
+    }
+    if (questionNum == 4) {
+        width = 80+'%';
+        progress.style.width = width;
+    }
+    console.log(questionNum)
+    console.log(width)
+    console.log(stepsize)
+}
+progressBar()
 
 answerBtn.addEventListener('click', () => {
     correctCheck();
@@ -215,6 +246,8 @@ answerBtn.addEventListener('click', () => {
     if(questionNum === numberOfQuestions) {
         hasWon();
     }
+    progressBar()
+    
 });
 
 usrIn.addEventListener('keydown', (event) => {
@@ -226,6 +259,7 @@ usrIn.addEventListener('keydown', (event) => {
     if(questionNum === numberOfQuestions) {
         hasWon();
     }
+    progressBar()
 });
 
 const reset = () => {
@@ -233,7 +267,7 @@ const reset = () => {
     score = 0;
     correct = 0;
     incorrect = 0;
-    questionNumText.textContent = 0;
+    // questionNumText.textContent = 0;
     scoreText.textContent = score;
 }
 

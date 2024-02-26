@@ -33,18 +33,21 @@
             <p id="leftNum" class="mathText"></p>
             <p id="operator" class="mathText"></p>
             <p id="rightNum" class="mathText"></p>
-            <p class="mathText">=</p>
+            <!-- <p class="mathText">=</p> -->
         </div>  
         <div id="ansArea">
                 <input id="usrIn" placeholder="answer">
                 <button id="AnswerBtn">Enter</button>
         </div>
+        <div class="progess-bar-container">
+            <div class="progress-bar"></div>
+        </div>
         <hr>
         <div id="scoreArea">
-            <div class="questionNumText">
+            <!-- <div class="questionNumText">
                 <p>Question:</p>
                 <p id="questionNumber"></p>
-            </div>
+            </div> -->
             <div class="scoreText">
                 <p>Score:</p>
                 <p id="score">0</p>
@@ -94,13 +97,13 @@
     <button class="closeAboutModal">&times</button>
     <h1>Math Quiz</h1>
     <p>Math quiz is set up to randomly generate two numbers 
-    along with a randomly generated operator so you never know
-    what kind of question covering basic math you will get.
-    This is adapted from a Java app I wrote. I may add
-    an timing function in the future.
+        along with a randomly generated operator so you never know
+        what kind of question covering basic math you will get.
+        This is adapted from a Java app I wrote. I may add
+        an timing function in the future.
     </p><p>
-    I made this with a combination of HTML, CSS and JS. 
-    You can see the JavaScript by clicking the button below.
+        I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
     </p>
 </div><div class="aboutOverlay hidden"></div>
 
@@ -110,12 +113,15 @@
         <button class="closeJsModal">&times</button>
 let score = 0;
 let questionNum = 0;
+let numberOfQuestions = 5;
 let correct = 0;
 let incorrect = 0;
 let answer;
 let usrIn = document.getElementById('usrIn');
 let questionNumText = document.getElementById('questionNumber');
 let scoreText = document.getElementById('score');
+questionNumText.textContent = questionNum;
+
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
 const answerBtn = document.getElementById('AnswerBtn');
@@ -128,9 +134,7 @@ const subBtn = document.getElementById('sub-btn');
 const multBtn = document.getElementById('mult-btn');
 const divBtn = document.getElementById('div-btn');
 
-console.log(addBtn.classList.contains === 'active');
-
-const questionConstrctor = () => {
+const questionConstructor = () => {
     opArr = ["+", "-", "x", "÷"];
     num1 = Math.floor(Math.random() * 10) + 1;
     num2 = Math.floor(Math.random() * 10) + 1;
@@ -143,13 +147,17 @@ const questionConstrctor = () => {
 const operatorModes = () => {
     if(allOpsBtn.classList[1] === 'active') {
         allOps();
-    }else if(addBtn.classList[1] === 'active') {
+    }
+    if(addBtn.classList[1] === 'active') {
         add();
-    }else if(subBtn.classList[1] === 'active') {
+    }
+    if(subBtn.classList[1] === 'active') {
         sub();
-    }else if(multBtn.classList[1] === 'active') {
+    }
+    if(multBtn.classList[1] === 'active') {
         mult();
-    }else if(divBtn.classList[1] === 'active') {
+    }
+    if(divBtn.classList[1] === 'active') {
         div();
     }   
 }
@@ -160,7 +168,7 @@ allOpsBtn.addEventListener('click', allOps = () => {
     subBtn.classList.remove('active');
     multBtn.classList.remove('active');
     divBtn.classList.remove('active');
-    questionConstrctor();
+    questionConstructor();
     if (randOp === '+') {
         answer = num1 + num2;
     }if (randOp === '-') {
@@ -179,7 +187,7 @@ addBtn.addEventListener('click', add = () => {
     subBtn.classList.remove('active');
     multBtn.classList.remove('active');
     divBtn.classList.remove('active');
-    questionConstrctor()
+    questionConstructor();
     answer = num1 + num2;
     randOp = opArr[0];
     document.getElementById('operator').textContent = randOp;
@@ -191,7 +199,7 @@ subBtn.addEventListener('click', sub = () => {
     subBtn.classList.add('active');
     multBtn.classList.remove('active');
     divBtn.classList.remove('active');
-    questionConstrctor()
+    questionConstructor()
     answer = num1 - num2;
     randOp = opArr[1];
     document.getElementById('operator').textContent = randOp;
@@ -203,7 +211,7 @@ multBtn.addEventListener('click', mult = () => {
     subBtn.classList.remove('active');
     multBtn.classList.add('active');
     divBtn.classList.remove('active');
-    questionConstrctor()
+    questionConstructor()
     answer = num1 * num2;
     randOp = opArr[2];
     document.getElementById('operator').textContent = randOp;
@@ -215,7 +223,7 @@ divBtn.addEventListener('click', div = () => {
     subBtn.classList.remove('active');
     multBtn.classList.remove('active');
     divBtn.classList.add('active');
-    questionConstrctor()
+    questionConstructor()
     answer = num1 / num2;
     answer = answer.toFixed(2);
     randOp = opArr[3];
@@ -310,9 +318,6 @@ const nextQuestion = () => {
     questionNum += 1
     questionNumText.textContent = questionNum;
     operatorModes();
-    if(questionNum === 5) {
-        hasWon();
-    }
     // console.log(answer);
 }
 
@@ -320,6 +325,9 @@ answerBtn.addEventListener('click', () => {
     correctCheck();
     nextQuestion();
     // console.log(`${randOp}: ${typeof(randOp)}`)
+    if(questionNum === numberOfQuestions) {
+        hasWon();
+    }
 });
 
 usrIn.addEventListener('keydown', (event) => {
@@ -327,7 +335,20 @@ usrIn.addEventListener('keydown', (event) => {
         correctCheck();
         nextQuestion();
     }
+
+    if(questionNum === numberOfQuestions) {
+        hasWon();
+    }
 });
+
+const reset = () => {
+    questionNum = 0;
+    score = 0;
+    correct = 0;
+    incorrect = 0;
+    questionNumText.textContent = 0;
+    scoreText.textContent = score;
+}
 
 operatorModes();
 // console.log(answer);
@@ -346,18 +367,13 @@ const openWinModal = () => {
 const closeWinModal = () => {
     winModal.classList.add('hidden');
     winOverlay.classList.add('hidden');
-    questionNum = 0;
-    score = 0;
-    correct = 0;
-    incorrect =0;
-    questionNumText.textContent = 1;
-    scoreText.textContent = score;
+    reset();
     // console.log(questionNum)
 }
 
 document.querySelector('.closeWinModal').addEventListener('click', closeWinModal);
 document.querySelector('.winOverlay').addEventListener('click', closeWinModal);
-    </code></pre></p>
+</code></pre></p>
 </div>
 </body>
 </html>

@@ -32,7 +32,7 @@ a {
     margin: 20px;
 }
 
-.main-section {
+.main-container {
     background-color: rgba(255, 255, 255, 0.2);
     width: fit-content;
     border-radius: 10px;
@@ -47,6 +47,7 @@ a {
     font-size: 1rem;
     padding: 5px 10px;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .active {
@@ -59,7 +60,7 @@ input {
 }
 .results-section {
     border: 1px solid #282828;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.451);
     border-radius: 0px 10px 10px 10px;
     margin: 15px 0 0 5px;
     padding: 10px;
@@ -69,6 +70,6 @@ input {
     display: none;
 }
 .results-section p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 5px;
 }

@@ -2,7 +2,6 @@ const dispType = document.getElementById('dispType');
 const input = document.getElementById('input');
 const radBtn = document.getElementById('radBtn');
 const degBtn = document.getElementById('degBtn');
-const typeChng = document.getElementById('typeChng');
 const enterBtn = document.getElementById('enterBtn');
 const clearBtn = document.getElementById('clear-btn');
 const hide = document.getElementById('hide');
@@ -42,7 +41,8 @@ enterBtn.addEventListener('click', () => {
 });
 
 clearBtn.addEventListener('click', () => {
+    state = 'degrees';
     input.value = null;
-    dispType.textContent = '';
+    dispType.textContent = 'Deg - Rad';
     hide.classList.add('hide');
 });

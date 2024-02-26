@@ -3,17 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/tempconverter.css">
+    <link rel="stylesheet" href="./css/raddeg.css">
+    <link rel="stylesheet" href="./css/showhide.css">
     <script src="./js/tempconverter.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
     <title>Temperature converter</title>
 </head>
 <body>
-    <h1>Temperature Converter</h1>
-    <div class="inputs">
-        <p>Enter celsius</p>
-        <input class="c-input">
-        <p>Enter fahrenheit</p>
-        <input class="f-input">
+    <section class="main-container">
+        <header>
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+        </header>
+    <h1 class="title">Temperature Converter</h1>
+        <p>Choose conversion type: <span id="disp-type">C - F</span></p>
+        <button id="c-btn" class="btn active">Celsius</button>
+        <button id="f-btn" class="btn">Fahrenheit</button><br>
+        <section class="input-section">
+            <input id="input" type="number">
+            <button id="enter-btn" class="btn" >Enter</button>
+            <button id="clear-btn" class="btn" >Clear</button>
+        </section>
+    </section>
+    <section id="hide" class="results-section hide">
+        <p id="formula"></p>
+    </section>
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Celsius / Fahrenheit Converter</h1>
+        <p>This simple app uses a formula to convert
+        from Celsius to Fahrenheit and back
+        </p><p>
+        I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
+    <div class="code">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
+
+                </code>
+            </pre>
+        </p>
     </div>
 
 </body>
