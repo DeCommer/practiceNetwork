@@ -1,6 +1,6 @@
 let score = 0;
 let questionNum = 0;
-let numberOfQuestions = 6;
+let numberOfQuestions = 10;
 let correct = 0;
 let incorrect = 0;
 let answer;
@@ -223,11 +223,12 @@ const reset = () => {
 }
 
 const progressBar = () => {
-    let stepsize = 100 / numberOfQuestions;
+    let increment = 100 / numberOfQuestions;
+
     let progress = document.querySelector('.progress-bar');
     let width = progress.style.width.replace('%', '');
 
-    width = parseInt(width) + stepsize;
+    width = parseInt(width) + increment;
 
     width = (questionNum / numberOfQuestions) * 100+'%';
     progress.style.width = width;
