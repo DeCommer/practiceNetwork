@@ -1,11 +1,13 @@
 let score = 0;
-let questionNum = 1;
+let questionNum = 0;
+let numberOfQuestions = 5;
 let correct = 0;
 let incorrect = 0;
 let answer;
 let usrIn = document.getElementById('usrIn');
 let questionNumText = document.getElementById('questionNumber');
 let scoreText = document.getElementById('score');
+questionNumText.textContent = questionNum;
 
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
@@ -203,31 +205,35 @@ const nextQuestion = () => {
     questionNum += 1
     questionNumText.textContent = questionNum;
     operatorModes();
-    if(questionNum === 5) {
-        hasWon();
-    }
     // console.log(answer);
 }
 
-answerBtn.addEventListener('click', ansAction = () => {
+answerBtn.addEventListener('click', () => {
     correctCheck();
     nextQuestion();
     // console.log(`${randOp}: ${typeof(randOp)}`)
+    if(questionNum === numberOfQuestions) {
+        hasWon();
+    }
 });
 
-usrIn.addEventListener('keydown', ansEnter = (event) => {
+usrIn.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         correctCheck();
         nextQuestion();
     }
+
+    if(questionNum === numberOfQuestions) {
+        hasWon();
+    }
 });
 
 const reset = () => {
-    questionNum = 1;
+    questionNum = 0;
     score = 0;
     correct = 0;
     incorrect = 0;
-    questionNumText.textContent = 1;
+    questionNumText.textContent = 0;
     scoreText.textContent = score;
 }
 
