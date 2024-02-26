@@ -208,6 +208,16 @@ const nextQuestion = () => {
     // console.log(answer);
 }
 
+const reset = () => {
+    questionNum = 0;
+    score = 0;
+    correct = 0;
+    incorrect = 0;
+    progressBar();
+    // questionNumText.textContent = 0;
+    scoreText.textContent = score;
+}
+
 const progressBar = () => {
     let stepsize = 100 / numberOfQuestions;
     let progress = document.querySelector('.progress-bar');
@@ -216,7 +226,7 @@ const progressBar = () => {
     if (width >= 100) {
         progress.style.width = '100%';
     }if (questionNum == 0) {
-        width = 100+'%';
+        width = 20+'%';
         progress.style.width = width;
     }if (questionNum == 1) {
         width = 20+'%';
@@ -262,14 +272,7 @@ usrIn.addEventListener('keydown', (event) => {
     progressBar()
 });
 
-const reset = () => {
-    questionNum = 0;
-    score = 0;
-    correct = 0;
-    incorrect = 0;
-    // questionNumText.textContent = 0;
-    scoreText.textContent = score;
-}
+
 
 operatorModes();
 // console.log(answer);
