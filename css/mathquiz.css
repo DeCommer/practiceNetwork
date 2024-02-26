@@ -27,7 +27,8 @@ header h1 {
     font-size: 1.8rem;
     text-transform: uppercase;
     margin: 20px auto 25px auto;
-    color: #11345f;
+    color: #77cc00;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.718);
 }
 
 h3 {
@@ -36,6 +37,7 @@ h3 {
 
 sup {
     color: #c1121f;
+    text-shadow: none;
     font-size: 1.2rem;
 }
 
