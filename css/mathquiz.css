@@ -213,6 +213,7 @@ input:focus {
   }
   
   .winModal h1 {
+    border-bottom: 1px solid #beab86;
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #c1121f;
@@ -240,6 +241,7 @@ input:focus {
   }
 
   .stats-area {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,14 +250,13 @@ input:focus {
 
   .stats-area p {
     margin: 15px;
-    
   }
   
   .closeWinModal {
     float: right;
     top: 1rem;
     right: 1rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #444;
     cursor: pointer;
     border: none;
@@ -288,5 +289,18 @@ input:focus {
 
     .modeBtn {
         margin: 5px;
+    }
+
+    .stats-area {
+        /* border: 1px solid red; */
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+    .stat-title {
+        font-weight: 600;
     }
 }
