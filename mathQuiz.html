@@ -36,7 +36,7 @@
             <!-- <p class="mathText">=</p> -->
         </div>  
         <div id="ansArea">
-                <input id="usrIn" placeholder="answer">
+                <input id="usrIn" placeholder="=">
                 <button id="AnswerBtn">Enter</button>
         </div>
         <div class="progess-bar-container">
@@ -48,6 +48,10 @@
                 <p>Question:</p>
                 <p id="questionNumber"></p>
             </div> -->
+            <div class="time-container">
+                <p>Time:</p>
+                <p id="time-Number">0:00</p>
+            </div>
             <div class="scoreText">
                 <p>Score:</p>
                 <p id="score">0</p>
@@ -111,6 +115,7 @@
     <button class="jsBtn" >See the Javascript.</button>
     <p><pre><code class="jsHidden hidden">
         <button class="closeJsModal">&times</button>
+Note: This is not the full JS. It is getting longer than I would like to show.
 let score = 0;
 let questionNum = 0;
 let numberOfQuestions = 5;

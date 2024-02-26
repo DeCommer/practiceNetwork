@@ -18,11 +18,42 @@ hr {
     border-bottom: none;
 }
 
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin: 20px auto 25px auto;
+    color: #11345f;
+}
+
+h3 {
+    color:#0f4a89;
+}
+
+sup {
+    color: #c1121f;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;  
+}
+
+p {
+    font-size: 1.2rem; 
+    color: #343434;
+}
+
 .mode-area {
     display: flex;
+    gap: .5rem;
     align-items: center;
     justify-content: center;
-    margin: 25px auto;
+    margin: 0 auto 25px auto;
 }
 
 .modeBtn {
@@ -31,7 +62,6 @@ hr {
     background-color: #fff;
     color: #000;
     font-size: 1rem;
-    margin: 10px;
     padding: 2px 10px;
     cursor: pointer;
 }
@@ -54,31 +84,7 @@ hr {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
 
-header h1 {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    margin: 20px auto 25px auto;
-    color: #11345f;
-}
-
-sup {
-    color: #c1121f;
-    font-size: 1.2rem;
-}
-
-a {
-    text-decoration: none;  
-}
-
-p {
-    font-size: 1.2rem; 
-    color: #343434;
-}
 
 .homeColor {
     font-size: 1.2rem;

@@ -1,6 +1,6 @@
 let score = 0;
 let questionNum = 0;
-let numberOfQuestions = 5;
+let numberOfQuestions = 6;
 let correct = 0;
 let incorrect = 0;
 let answer;
@@ -184,6 +184,10 @@ const correctCheck = () => {
     }
 }
 
+const counter = () => {
+    // Coming soon.
+}
+
 const hasWon = () => {
     let correctStatText = document.getElementById('correctStat');
     let incorrectStatText = document.getElementById('inCorrectStat');
@@ -222,28 +226,39 @@ const progressBar = () => {
     let stepsize = 100 / numberOfQuestions;
     let progress = document.querySelector('.progress-bar');
     let width = progress.style.width.replace('%', '');
+
     width = parseInt(width) + stepsize;
-    if (width >= 100) {
-        progress.style.width = '100%';
-    }if (questionNum == 0) {
-        width = 0+'%';
-        progress.style.width = width;
-    }
-    if (questionNum == 1) {
-        width = 20+'%';
-        progress.style.width = width;
-    }
-    if (questionNum == 2) {
-        width = 40+'%';
-        progress.style.width = width;
-    }if (questionNum == 3) {
-        width = 60+'%';
-        progress.style.width = width;
-    }
-    if (questionNum == 4) {
-        width = 80+'%';
-        progress.style.width = width;
-    }
+
+    width = (questionNum / numberOfQuestions) * 100+'%';
+    progress.style.width = width;
+
+    // console.log(`QuestionNum: ${questionNum}`)
+    
+    // if (width >= 100) {
+    //     progress.style.width = '100%';
+    // }if (questionNum == 0) {
+    //     width = 0+'%';
+    //     progress.style.width = width;
+    // }
+    // if (questionNum == 1) {
+    //     width = (1 / numberOfQuestions) * 100+'%';
+    //     progress.style.width = width;
+    // }
+    // if (questionNum == 2) {
+    //     width = (2 / numberOfQuestions) * 100+'%';
+    //     progress.style.width = width;
+    // }if (questionNum == 3) {
+    //     width = (3 / numberOfQuestions) * 100+'%';
+    //     progress.style.width = width;
+    // }
+    // if (questionNum == 4) {
+    //     width = (4 / numberOfQuestions) * 100+'%';
+    //     progress.style.width = width;
+    // }
+
+
+    // console.log(`${numberOfQuestions}`)
+    // console.log(`${(questionNum / numberOfQuestions) * 100}`)
 }
 progressBar()
 
