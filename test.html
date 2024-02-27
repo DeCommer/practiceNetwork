@@ -11,103 +11,113 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #f9f1eb;
-            color: #282828;
+            background-color: #007ACC;
+            color: #153b61;
             display: flex;
             justify-content: center;
         }
-
-        h2 {
+        header {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
             margin: 10px;
         }
 
+        .homeColor {
+            color: #fff;
+        }
+
+        .homeColor:hover {
+            color:#0f4a89;;
+            transition: ease-in 0.2s;
+        }
+        h2 {
+            margin: 10px;
+        }
         .main-container {
             margin-top: 50px;
         }
-
         .progress-bar-container {
-            border: 1px solid rgb(10, 45, 113);
+            border: 1px solid rgb(44, 72, 126);
             background-color: #fff;
             border-radius: 10px;
             width: 500px;
             height: 15px;
         }
-
         .inputs {
             display: flex;
             align-items: center;
             margin: 10px;
         }
-
         input {
             border: 1px solid rgb(61, 81, 119);
+            background-color: #fff;
+            font-size: 1rem;
             margin-left: 10px;
             width: 100px;
-            padding: 5.5px 0;
+            padding: 3px 5px;
         }
-
         input:focus {
             outline: none;
         }
-
         .progress-bar {
             background-color: rgb(101, 227, 70);
             border-radius: 10px;
             width: 0%;
             height: 100%
         }
-
         .buttons {
             display: flex;
             justify-content: space-between;
             margin: 15px 35px;
             align-items: center;
         }
-
         .btn {
             background-color: rgb(61, 81, 119);
             border: none;
             padding: 4px 15px;
             font-size: 1rem;
             color: #fff;
+            cursor: pointer;
         }
-
+        .info {
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <div class="main-container">
+        <header>
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
             <h2 class=title">Incremental Progress Bar for n clicks</h2>
+        </header>
         <div class="inputs">
             <p>Enter number of clicks to fill bar: </p>
-            <input class="usrIn">
+            <input class="usrIn" value="10">
             <button class="enterBtn btn">Enter</button>
         </div>
         <div class="progress-bar-container">
             <div class="progress-bar"></div>
             <div class="buttons">
                 <button class="clickBtn btn">Click</button>
-                <p class="info"></p>
+                <p class="info">0/10</p>
                 <button class="resetBtn btn">reset</button>
             </div>
         </div>
     </div>
 </body>
-
-
 <script>
-
 const usrIn = document.querySelector('.usrIn');
 const enterBtn = document.querySelector('.enterBtn');
 const clickBtn = document.querySelector('.clickBtn');
 const resetBtn = document.querySelector('.resetBtn');
 const info = document.querySelector('.info');
-
 let num = 0;
-let total = 0;
-
+let total = 10;
 const progressBarFill = () => {
     let increment = 100 / total;
     let progress = document.querySelector('.progress-bar');
@@ -120,26 +130,37 @@ const progressBarFill = () => {
         reset();
     };
 };
-
 const reset = () => {
-    usrIn.value = '';
+    usrIn.value = 10;
     num = 0;
 };
-
 clickBtn.addEventListener('click', () => {
     num++
     progressBarFill();
-    
 });
-
 resetBtn.addEventListener('click', () => {
     reset();
     progressBarFill();
 });
-
 enterBtn.addEventListener('click', () => {
-    total = usrIn.value;
-    info.textContent = `${num} / ${total}`;
+    if(usrIn.value === total) {
+        reset();
+    }else {
+        total = usrIn.value;
+        info.textContent = `${num} / ${total}`;
+    }
 });
+
+usrIn.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        if(usrIn.value === total) {
+            reset();
+        }else {
+            total = usrIn.value;
+            info.textContent = `${num} / ${total}`;
+        }
+    }
+});
+
 </script>
 </html>
