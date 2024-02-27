@@ -31,7 +31,7 @@ header h1 {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.718);
 }
 
-h3 {
+h2, h3 {
     color:#0f4a89;
 }
 
@@ -80,6 +80,7 @@ p {
 
 .converter-container {
     background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #0f4a89;
     margin-top: 50px;
     padding: 16px;
     border-radius: 16px;
@@ -98,13 +99,17 @@ p {
 }
 
 .mathText {
-    padding: 0;
-    margin: 5px 0 45px 0;
+    /* border: 1px solid #0f4a89;
+    background-color: #fff;
+    border-radius: 10px; */
+    padding: 10px;
+    margin: 5px 0 35px 0;
     font-size: 4rem;
-    color: #ffffff;
+    color: #0f4a89;
 }
 
 #qArea {
+    /* border: 1px solid red; */
     display: flex;
     text-align: center;
     justify-content: space-between;
@@ -121,7 +126,7 @@ p {
 }
 
 #usrIn {
-    border: none;
+    /* border: none; */
     font-family: inherit;
     font-size: 1.4rem;
     background-color: rgba(255, 255, 255, 0.5);
@@ -206,6 +211,23 @@ input:focus {
     /* border: 1px solid rgb(25, 37, 84); */
     margin: 0 auto;
     padding: 5px 25px;
+}
+
+.tcTitle {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tcTitle p {
+    padding: 0;
+    margin: 0;
+}
+
+.time-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
 }
 
 /* Win modal */

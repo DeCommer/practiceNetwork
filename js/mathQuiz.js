@@ -11,8 +11,8 @@ let scoreText = document.getElementById('score');
 
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
-const answerBtn = document.getElementById('AnswerBtn');
 
+const answerBtn = document.getElementById('AnswerBtn');
 const modeBtn = document.querySelector('.modeBtn');
 
 const allOpsBtn = document.getElementById('all-ops-btn');
@@ -20,6 +20,67 @@ const addBtn = document.getElementById('add-btn');
 const subBtn = document.getElementById('sub-btn');
 const multBtn = document.getElementById('mult-btn');
 const divBtn = document.getElementById('div-btn');
+
+// Timer Section ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+const startTimeBtn = document.getElementById('time-start-btn')
+const pauseTimeBtn = document.getElementById('time-pause-btn')
+const resetTimeBtn = document.getElementById('time-reset-btn')
+const timer = document.getElementById('time-display')
+
+let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+let int = null;
+
+startTimeBtn.addEventListener('click', () => {
+    pauseTimeBtn.classList.remove('active');
+    startTimeBtn.classList.add('active');
+    if (int != null) {
+        clearInterval(int);
+    }
+    int = setInterval(displayTimer, 10)
+})
+
+pauseTimeBtn.addEventListener('click', () => {
+    pauseTimeBtn.classList.add('active');
+    startTimeBtn.classList.remove('active');
+    clearInterval(int);
+});
+
+resetTimeBtn.addEventListener('click', clearTime = () => {
+    pauseTimeBtn.classList.remove('active');
+    startTimeBtn.classList.remove('active');
+    clearInterval(int);
+
+    [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+    timer.innerHTML = '00:00:000';
+});
+
+const displayTimer = () => {
+    milliseconds += 10;
+    if(milliseconds == 1000) {
+        milliseconds = 0;
+        seconds++;
+        if(seconds == 60) {
+            seconds = 0;
+            minutes++
+        }
+        if (minutes == 60) {
+            minutes = 0
+            hours++;
+        }
+    }
+    let h = hours < 10 ? '0' + hours : hours;
+    let m = minutes < 10 ? '0' + minutes : minutes;
+    let s = seconds < 10 ? '0' + seconds : seconds;
+    let ms = milliseconds < 10 ? '00' + milliseconds : milliseconds < 100 ? '0' + milliseconds : milliseconds
+
+    let result = timer.innerHTML = `${m}:${s}:${ms}`;
+    return result;
+
+    
+}
+
+
+// Main Program ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 const questionConstructor = () => {
     opArr = ["+", "-", "x", "÷"];
@@ -184,10 +245,6 @@ const correctCheck = () => {
     }
 }
 
-const counter = () => {
-    // Coming soon.
-}
-
 const hasWon = () => {
     let correctStatText = document.getElementById('correctStat');
     let incorrectStatText = document.getElementById('inCorrectStat');
@@ -199,6 +256,9 @@ const hasWon = () => {
     incorrectStatText.textContent = incorrect;
     scorStatText.textContent = score;
     percentStatText.textContent = `${percentCorrect.toFixed(2)}%`;
+    const timeStat = document.getElementById('timeStat');
+    timeStat.innerHTML = displayTimer();
+    clearTime();
     // console.log(`Total Questions: ${questionNum}`);
     // console.log(`correct: ${correct}`);
     // console.log(`Incorrect: ${incorrect}`);
@@ -271,7 +331,6 @@ answerBtn.addEventListener('click', () => {
         hasWon();
     }
     progressBar()
-    
 });
 
 usrIn.addEventListener('keydown', (event) => {
@@ -285,9 +344,6 @@ usrIn.addEventListener('keydown', (event) => {
     }
     progressBar()
 });
-
-
-
 operatorModes();
 // console.log(answer);
 // console.log(`${randOp}: ${typeof(randOp)}`);

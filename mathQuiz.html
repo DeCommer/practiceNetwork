@@ -16,7 +16,7 @@
     <header>
         <a href="./index.html"><span class="homeColor">Home</span></a>
         <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-        <h1 class="title">Math Quiz <sup>+ - x ÷</sup></h1>
+        <h1 class="title"><sup>+ - x ÷</sup> Math Quiz <sup>+ - x ÷</sup></h1>
         <h3>Select mode</h3>
     </header>
     <div class="mode-area">
@@ -48,14 +48,23 @@
                 <p>Question:</p>
                 <p id="questionNumber"></p>
             </div> -->
-            <!-- <div class="time-container">
+            <div class="time-container">
                 <p>Time:</p>
-                <p id="time-Number">0:00</p>
-            </div> -->
+                <p id="time-display">00:00:000</p>
+            </div>
             <div class="scoreText">
                 <p>Score:</p>
                 <p id="score">0</p>
             </div>
+        </div>
+        <div class="tcTitle">
+            <p>Time Controls</p>
+            <hr>
+        </div>
+        <div class="time-controls">
+            <button id="time-start-btn" class="modeBtn">Start</button>
+            <button id="time-pause-btn" class="modeBtn">Pause</button>
+            <button id="time-reset-btn" class="modeBtn">Reset</button>
         </div>
         <hr>
         <!-- <div id="rightWrongArea">
@@ -92,10 +101,10 @@
             <p class="stat-title">Total Score:</p>
             <p id="scoreStat">0</p>
         </div>
-        <!-- <div>
-            <p class="stat-title">Time: </p><
-            p id="timeStat">0:00</p>
-        </div> -->
+        <div>
+            <p class="stat-title">Time: </p>
+            <p id="timeStat"></p>
+        </div>
     </div>
 </div><div class="winOverlay hidden"></div>
 
@@ -109,7 +118,7 @@
         an timing function in the future.
     </p><p>
         I made this with a combination of HTML, CSS and JS. 
-        You can see the JavaScript by clicking the button below.
+        You can see some of the JavaScript by clicking the button below.
     </p>
 </div><div class="aboutOverlay hidden"></div>
 
