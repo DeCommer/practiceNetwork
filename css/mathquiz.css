@@ -162,7 +162,9 @@ input:focus {
 }
 
 .progess-bar-container {
-    /* border: 1px solid red; */
+    border: 1px solid rgb(77, 104, 152);
+    background-color: #6fa6d3;
+    border-radius: 3px;
     margin: 0 auto;
     position: relative;
     width: 90%;
@@ -171,6 +173,7 @@ input:focus {
 
 .progress-bar {
     background-color: #77cc00;
+    border-radius: 3px;
     width: 0%;
     height: .2rem;
 }

@@ -3,10 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/tstesting.js"></script>
+    <!-- <script src="./js/tstesting.js"></script> -->
     <title>Testing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f1eb;
+            color: #282828;
+            display: flex;
+            justify-content: center;
+        }
+
+        h2 {
+            margin: 10px;
+        }
+
+        .main-container {
+            margin-top: 50px;
+        }
+
+        .progress-bar-container {
+            border: 1px solid rgb(10, 45, 113);
+            background-color: #fff;
+            border-radius: 10px;
+            width: 500px;
+            height: 15px;
+        }
+
+        .inputs {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+
+        input {
+            border: 1px solid rgb(61, 81, 119);
+            margin-left: 10px;
+            width: 100px;
+            padding: 5.5px 0;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .progress-bar {
+            background-color: rgb(101, 227, 70);
+            border-radius: 10px;
+            width: 0%;
+            height: 100%
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 35px;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: rgb(61, 81, 119);
+            border: none;
+            padding: 4px 15px;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+    </style>
 </head>
 <body>
-    
+    <div class="main-container">
+            <h2 class=title">Incremental Progress Bar for n clicks</h2>
+        <div class="inputs">
+            <p>Enter number of clicks to fill bar: </p>
+            <input class="usrIn">
+            <button class="enterBtn btn">Enter</button>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+            <div class="buttons">
+                <button class="clickBtn btn">Click</button>
+                <p class="info"></p>
+                <button class="resetBtn btn">reset</button>
+            </div>
+        </div>
+    </div>
 </body>
+
+
+<script>
+
+const usrIn = document.querySelector('.usrIn');
+const enterBtn = document.querySelector('.enterBtn');
+const clickBtn = document.querySelector('.clickBtn');
+const resetBtn = document.querySelector('.resetBtn');
+const info = document.querySelector('.info');
+
+let num = 0;
+let total = 0;
+
+const progressBarFill = () => {
+    let increment = 100 / total;
+    let progress = document.querySelector('.progress-bar');
+    let width = progress.style.width.replace('%', '');
+    width = parseInt(width) + increment;
+    width = (num / total) * 100+'%';
+    progress.style.width = width;
+    info.textContent = `${num} / ${total}`;
+    if(num == total) {
+        reset();
+    };
+};
+
+const reset = () => {
+    usrIn.value = '';
+    num = 0;
+};
+
+clickBtn.addEventListener('click', () => {
+    num++
+    progressBarFill();
+    
+});
+
+resetBtn.addEventListener('click', () => {
+    reset();
+    progressBarFill();
+});
+
+enterBtn.addEventListener('click', () => {
+    total = usrIn.value;
+    info.textContent = `${num} / ${total}`;
+});
+</script>
 </html>
