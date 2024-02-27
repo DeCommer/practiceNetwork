@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(234, 242, 242);
+    background-color: #007ACC;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -16,23 +16,43 @@ body {
 
 .main-wrapper {
     /* border: 1px solid magenta; */
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
     margin-top: 200px;
     text-align: center;
-    padding: 10px;
+    padding: 10px 25px;
 }
 
-.name {
-    color: #FF407D;
-}
+header {
+    text-align: center;
+  }
 
-.title {
+  .links {
     margin-bottom: 10px;
+  }
+
+.homeColor {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.homeColor:hover {
+    color:#0f4a89;
+    transition: ease-in 0.2s;
+}
+
+a {
+    text-decoration: none;
+    margin: 10px 10px;
+}
+.title {
     color: #1B3C73;
 }
 
 sup {
     font-size: 1rem;
     color:#FF407D;
+    text-shadow: 0 0 5px #ffffff;
 }
 
 .close {

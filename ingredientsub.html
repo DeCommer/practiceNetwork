@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/ingredientsub.js" defer></script>
     <link rel="stylesheet" href="./css/ingredientsub.css">
+    <link rel="stylesheet" href="./css/showhide.css">
+    <script src="./js/ingredientsub.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
     <title>Document</title>
 </head>
 <body>
     <section class="main-wrapper">
-        <h1 class="name">Constance's</h1>
-        <h1 class="title">Ingredient Subber <sup>Alpha</sup></h1>
+        <header>
+            <div class="links">
+                <a href="./index.html"><span class="homeColor">Home</span></a>
+                <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            </div>
+            <h1 class="title">Ingredient Subber <sup>Alpha</sup></h1>
+        </header>
         <input id="input">
         <button class="btn">Enter</button>
         <p class="directions">Enter missing ingredient</p>
@@ -18,5 +25,22 @@
         <section id="hidden" class="results-wrapper hide">
             <div id="display-data"></div>
         </section>
+        <div class="aboutModal hidden">
+            <button class="closeAboutModal">&times</button>
+            <h1>Ingredient Substitute Finder</h1>
+            <p>This is a functional but incomple substitute 
+                finder for cooking ingredients</p><p>
+                I will be adding ingredients here and there,
+                but mostly this is a proof of concept.
+                </p>
+        </div><div class="aboutOverlay hidden"></div>
+
+        <div class="code">
+            <button class="jsBtn" >See the Javascript.</button>
+            <p><pre><code class="jsHidden hidden">
+                <button class="closeJsModal">&times</button>
+                Work in progress...
+            </code></pre></p>
+        </div>
 </body>
 </html>
