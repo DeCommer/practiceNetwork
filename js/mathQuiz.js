@@ -281,8 +281,6 @@ const recordQuestions = () => {
     } else {
         questionLog.push(incorrectLog);
     }
-
-    console.log(questionLog);
 }
 
 const progressBar = () => {
