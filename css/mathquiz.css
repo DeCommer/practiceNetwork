@@ -400,3 +400,23 @@ input::placeholder {
         z-index: 5;
       } */
 }
+
+@media (max-width: 780px) {
+    .winModal {
+        position: absolute;
+        text-align: center;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, 3%);
+    }
+
+    .stats-area {
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: auto;
+      }
+}
