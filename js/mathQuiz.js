@@ -75,10 +75,7 @@ const displayTimer = () => {
 
     let result = timer.innerHTML = `${m}:${s}:${ms}`;
     return result;
-
-    
 }
-
 
 // Main Program ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -257,7 +254,11 @@ const hasWon = () => {
     scorStatText.textContent = score;
     percentStatText.textContent = `${percentCorrect.toFixed(2)}%`;
     const timeStat = document.getElementById('timeStat');
-    timeStat.innerHTML = displayTimer();
+    if(milliseconds === 0) {
+        timeStat.innerHTML = 0;
+    } else {
+        timeStat.innerHTML = displayTimer();
+    }
     clearTime();
     // console.log(`Total Questions: ${questionNum}`);
     // console.log(`correct: ${correct}`);
