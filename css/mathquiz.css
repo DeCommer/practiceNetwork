@@ -16,11 +16,13 @@ body {
 
 hr {
     border-bottom: none;
+    border: .5px solid #205b9b;
 }
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #205b9b;
 }
 
 header h1 {
@@ -102,7 +104,6 @@ p {
     /* border: 1px solid #0f4a89;
     background-color: #fff;
     border-radius: 10px; */
-    padding: 10px;
     margin: 5px 0 35px 0;
     font-size: 4rem;
     color: #0f4a89;
@@ -114,7 +115,11 @@ p {
     text-align: center;
     justify-content: space-between;
     width: 60%;
-    margin: auto;
+    margin: 0 auto;
+}
+
+input {
+    border: none;
 }
 
 input:focus {
@@ -132,7 +137,7 @@ input::placeholder {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 #usrIn {
@@ -144,10 +149,8 @@ input::placeholder {
     text-align: right;
     padding: 15px;
     height:38px;
-    width: 200px;
+    max-width: 200px;
 }
-
-
 
 #AnswerBtn {
     padding: 10px 25px;
@@ -170,8 +173,6 @@ input::placeholder {
     color: #fff;
     border: none;
     }
-
-
 
 .progess-bar-container {
     border: 1px solid rgb(77, 104, 152);
@@ -233,6 +234,10 @@ input::placeholder {
 }
 
 .time-controls {
+    border-top: 1px solid #0f4a89;
+    border-bottom: 1px solid #0f4a89;
+    margin: 20px 0;
+    padding: 19px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -321,8 +326,9 @@ input::placeholder {
     }
 
     .mode-area {
-        flex-direction: column;
+        flex-wrap: wrap;
     }
+
 
     .modeBtn {
         margin: 5px;
@@ -339,6 +345,10 @@ input::placeholder {
 
     .stat-title {
         font-weight: 600;
+    }
+
+    .time-controls {
+        flex-wrap: wrap;
     }
 
     .winOverlay {

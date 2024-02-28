@@ -18,16 +18,16 @@
         <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
         <h1 class="title"><sup>+ - x ÷</sup> Math Quiz <sup>+ - x ÷</sup></h1>
         <h3>Select mode</h3>
+
+        <div class="mode-area">
+            <button id="all-ops-btn" class="modeBtn active">+ - x ÷</button>
+            <button id="add-btn" class="modeBtn">Addition</button>
+            <button id="sub-btn"class="modeBtn">Subtraction</button>
+            <button id="mult-btn" class="modeBtn">Multiplication</button>
+            <button  id="div-btn"class="modeBtn">Division</button>
+        </div>
     </header>
-    <div class="mode-area">
-        <button id="all-ops-btn" class="modeBtn active">+ - x ÷</button>
-        <button id="add-btn" class="modeBtn">Addition</button>
-        <button id="sub-btn"class="modeBtn">Subtraction</button>
-        <button id="mult-btn" class="modeBtn">Multiplication</button>
-        <button  id="div-btn"class="modeBtn">Division</button>
-    </div>
     <div id="mQMain">
-        <hr>
         <div id="messageArea"></div>
         <div id="qArea">
             <p id="leftNum" class="mathText"></p>
@@ -36,8 +36,8 @@
             <!-- <p class="mathText">=</p> -->
         </div>  
         <div id="ansArea">
-                <input id="usrIn" placeholder="=">
-                <button id="AnswerBtn">Enter</button>
+            <input id="usrIn" placeholder="=">
+            <button id="AnswerBtn">Enter</button>
         </div>
         <div class="progess-bar-container">
             <div class="progress-bar"></div>
@@ -59,14 +59,12 @@
         </div>
         <div class="tcTitle">
             <p>Time Controls</p>
-            <hr>
         </div>
         <div class="time-controls">
             <button id="time-start-btn" class="modeBtn">Start</button>
             <button id="time-pause-btn" class="modeBtn">Pause</button>
             <button id="time-reset-btn" class="modeBtn">Reset</button>
         </div>
-        <hr>
         <!-- <div id="rightWrongArea">
             <p>Right: <span>0</span></p>
             <p>Wrong: <span>0</span></p>
