@@ -6,13 +6,12 @@ let incorrect = 0;
 let answer;
 let usrIn = document.getElementById('usrIn');
 let scoreText = document.getElementById('score');
+let questionLog = [];
 
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
-
 const answerBtn = document.getElementById('AnswerBtn');
 const modeBtn = document.querySelector('.modeBtn');
-
 const allOpsBtn = document.getElementById('all-ops-btn');
 const addBtn = document.getElementById('add-btn');
 const subBtn = document.getElementById('sub-btn');
@@ -86,6 +85,7 @@ const questionConstructor = () => {
     document.getElementById('operator').textContent = randOp;
     document.getElementById('rightNum').textContent = num2;
 }
+
 const operatorModes = () => {
     if(allOpsBtn.classList[1] === 'active') {
         allOps();
@@ -193,6 +193,7 @@ const questionRight = () => {
     messageArea.textContent = 'Correct!'
     clearField();
     messageTimeout();
+    return 'Correct'
 }
 
 const questionWrong = () => {
@@ -205,6 +206,7 @@ const questionWrong = () => {
     messageArea.textContent = `The correct answer is: ${answer}`;
     clearField();
     messageTimeout();
+    return 'Incorrect'
 }
 
 const correctCheck = () => {
@@ -231,16 +233,17 @@ const correctCheck = () => {
     }
 }
 
-const hasWon = () => {
+const stats = () => {
     let correctStatText = document.getElementById('correctStat');
     let incorrectStatText = document.getElementById('inCorrectStat');
     let percentStatText = document.getElementById('percentStat');
-    let scorStatText = document.getElementById('scoreStat');
+    let scoreStatText = document.getElementById('scoreStat');
+    let questionsList = document.getElementById('questions')
     let percentCorrect = (correct/questionNum) * 100;
     openWinModal();
     correctStatText.textContent = correct;
     incorrectStatText.textContent = incorrect;
-    scorStatText.textContent = score;
+    scoreStatText.textContent = score;
     percentStatText.textContent = `${percentCorrect.toFixed(2)}%`;
     const timeStat = document.getElementById('timeStat');
     if(milliseconds === 0) {
@@ -249,6 +252,10 @@ const hasWon = () => {
         timeStat.innerHTML = displayTimer();
     }
     clearTime();
+
+    // questionsList.innerText = questionLog.toString();
+    questionsList.innerHTML = questionLog.map(i => `<li><span>${i}</span></li>`).join('');
+
 }
 
 const nextQuestion = () => {
@@ -261,8 +268,21 @@ const reset = () => {
     score = 0;
     correct = 0;
     incorrect = 0;
+    questionLog = [];
     progressBar();
     scoreText.textContent = score;
+}
+
+const recordQuestions = () => {
+    let correctLog = `${num1} ${randOp} ${num2} = ${answer} : ✅`;
+    let incorrectLog = `${num1} ${randOp} ${num2} = ${answer} : ❌`;
+    if (Number(usrIn.value) === Number(answer)) {
+        questionLog.push(correctLog);
+    } else {
+        questionLog.push(incorrectLog);
+    }
+
+    console.log(questionLog);
 }
 
 const progressBar = () => {
@@ -276,21 +296,23 @@ const progressBar = () => {
 progressBar()
 
 answerBtn.addEventListener('click', () => {
+    recordQuestions();
     correctCheck();
     nextQuestion();
     if(questionNum === numberOfQuestions) {
-        hasWon();
+        stats();
     }
     progressBar()
 });
 
 usrIn.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
+        recordQuestions();
         correctCheck();
         nextQuestion();
     }
     if(questionNum === numberOfQuestions) {
-        hasWon();
+        stats();
     }
     progressBar()
 });
