@@ -297,7 +297,7 @@ answerBtn.addEventListener('click', () => {
     nextQuestion();
     if(questionNum === numberOfQuestions) {
         stats();
-        usrIn.remove.focus();
+        usrIn.blur();
     }
     progressBar()
 });
