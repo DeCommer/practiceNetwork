@@ -252,7 +252,6 @@ const stats = () => {
         timeStat.innerHTML = displayTimer();
     }
     clearTime();
-    // questionsList.innerText = questionLog.toString();
     questionsList.innerHTML = questionLog.map(i => `<li><span>${i}</span></li>`).join('');
 }
 
