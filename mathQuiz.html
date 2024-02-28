@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./css/mathquiz.css">
     <link rel="stylesheet" href="./css/showhide.css">
     <script src="./js/mathQuiz.js" defer></script>
@@ -49,11 +50,13 @@
                 <p id="questionNumber"></p>
             </div> -->
             <div class="time-container">
-                <p>Time:</p>
+                <p><span class="material-symbols-outlined">avg_time</span> Time:</p>
                 <p id="time-display">00:00:000</p>
             </div>
             <div class="scoreText">
-                <p>Score:</p>
+                <p><span class="material-symbols-outlined">
+                    scoreboard
+                    </span> Score:</p>
                 <p id="score">0</p>
             </div>
         </div>
@@ -128,30 +131,84 @@
     <button class="jsBtn" >See the Javascript.</button>
     <p><pre><code class="jsHidden hidden">
         <button class="closeJsModal">&times</button>
-Note: This is not the full JS. It is getting longer than I would like to show.
 let score = 0;
 let questionNum = 0;
-let numberOfQuestions = 5;
+let numberOfQuestions = 10;
 let correct = 0;
 let incorrect = 0;
 let answer;
 let usrIn = document.getElementById('usrIn');
-let questionNumText = document.getElementById('questionNumber');
 let scoreText = document.getElementById('score');
-questionNumText.textContent = questionNum;
+let questionLog = [];
 
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
 const answerBtn = document.getElementById('AnswerBtn');
-
 const modeBtn = document.querySelector('.modeBtn');
-
 const allOpsBtn = document.getElementById('all-ops-btn');
 const addBtn = document.getElementById('add-btn');
 const subBtn = document.getElementById('sub-btn');
 const multBtn = document.getElementById('mult-btn');
 const divBtn = document.getElementById('div-btn');
 
+// Timer Section ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+const startTimeBtn = document.getElementById('time-start-btn')
+const pauseTimeBtn = document.getElementById('time-pause-btn')
+const resetTimeBtn = document.getElementById('time-reset-btn')
+const timer = document.getElementById('time-display')
+
+let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+let int = null;
+
+startTimeBtn.addEventListener('click', () => {
+    pauseTimeBtn.classList.remove('active');
+    startTimeBtn.classList.add('active');
+    if (int != null) {
+        clearInterval(int);
+    }
+    int = setInterval(displayTimer, 10)
+    usrIn.focus();
+})
+
+pauseTimeBtn.addEventListener('click', () => {
+    pauseTimeBtn.classList.add('active');
+    startTimeBtn.classList.remove('active');
+    clearInterval(int);
+});
+
+resetTimeBtn.addEventListener('click', clearTime = () => {
+    pauseTimeBtn.classList.remove('active');
+    startTimeBtn.classList.remove('active');
+    clearInterval(int);
+
+    [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+    timer.innerHTML = '00:00:000';
+});
+
+const displayTimer = () => {
+    milliseconds += 10;
+    if(milliseconds == 1000) {
+        milliseconds = 0;
+        seconds++;
+        if(seconds == 60) {
+            seconds = 0;
+            minutes++
+        }
+        if (minutes == 60) {
+            minutes = 0
+            hours++;
+        }
+    }
+    // let h = hours < 10 ? '0' + hours : hours;
+    let m = minutes < 10 ? '0' + minutes : minutes;
+    let s = seconds < 10 ? '0' + seconds : seconds;
+    let ms = milliseconds < 10 ? '00' + milliseconds : milliseconds < 100 ? '0' + milliseconds : milliseconds
+
+    let result = timer.innerHTML = `${m}:${s}:${ms}`;
+    return result;
+}
+
+// Main Program ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 const questionConstructor = () => {
     opArr = ["+", "-", "x", "÷"];
     num1 = Math.floor(Math.random() * 10) + 1;
@@ -261,7 +318,6 @@ const messageTimeout = () => {
 
 const questionRight = () => {
     correct += 1
-    // console.log(`Correct: ${correct}`);
     bgColorChange.style.boxShadow = '0 0 50px 20px rgba(51, 253, 0, 0.575)';
     setTimeout(() =>{
         bgColorChange.style.boxShadow = '0 0 0 0';
@@ -270,41 +326,36 @@ const questionRight = () => {
     messageArea.textContent = 'Correct!'
     clearField();
     messageTimeout();
+    return 'Correct'
 }
 
 const questionWrong = () => {
     incorrect += 1
-    // console.log(`Incorrect: ${incorrect}`);
     bgColorChange.style.boxShadow = '0 0 50px 20px rgb(255, 46, 46)';
     setTimeout(() =>{
         bgColorChange.style.boxShadow = '0 0 0 0';
     }, 1800);
     messageArea.style.color = '#c1121f';
-    // messageArea.textContent = 'Incorrect!'
     messageArea.textContent = `The correct answer is: ${answer}`;
     clearField();
     messageTimeout();
+    return 'Incorrect'
 }
 
 const correctCheck = () => {
     if(randOp === '+' && Number(usrIn.value) === Number(answer)) {
-        // console.log("This was a plus question")
         questionRight();
         score += 1;
         scoreText.textContent = score;
-        // console.log(`The score is: ${score}`);
     }else if(randOp ==='-' && Number(usrIn.value) === Number(answer)) {
-        // console.log("This was a Minus question")
         questionRight();
         score += 2;
         scoreText.textContent = score;
     }else if(randOp === 'x' && Number(usrIn.value) === Number(answer)) {
-        // console.log("This was a multiplication question")
         questionRight();
         score += 5;
         scoreText.textContent = score;
     }else if(randOp === '÷' && Number(usrIn.value) === Number(answer)) {
-        // console.log("This was a Division question")
         questionRight();
         score += 10;
         scoreText.textContent = score;
@@ -315,65 +366,89 @@ const correctCheck = () => {
     }
 }
 
-const hasWon = () => {
+const stats = () => {
     let correctStatText = document.getElementById('correctStat');
     let incorrectStatText = document.getElementById('inCorrectStat');
     let percentStatText = document.getElementById('percentStat');
-    let scorStatText = document.getElementById('scoreStat');
+    let scoreStatText = document.getElementById('scoreStat');
+    let questionsList = document.getElementById('questions')
     let percentCorrect = (correct/questionNum) * 100;
     openWinModal();
     correctStatText.textContent = correct;
     incorrectStatText.textContent = incorrect;
-    scorStatText.textContent = score;
+    scoreStatText.textContent = score;
     percentStatText.textContent = `${percentCorrect.toFixed(2)}%`;
-    // console.log(`Total Questions: ${questionNum}`);
-    // console.log(`correct: ${correct}`);
-    // console.log(`Incorrect: ${incorrect}`);
-    // console.log(`Percent correct:${percentCorrect.toFixed(2)}%`);
+    const timeStat = document.getElementById('timeStat');
+    if(milliseconds === 0) {
+        timeStat.innerHTML = 0;
+    } else {
+        timeStat.innerHTML = displayTimer();
+    }
+    clearTime();
+    questionsList.innerHTML = questionLog.map(i => 'html'`${i}'html'`).join('');
 }
 
 const nextQuestion = () => {
     questionNum += 1
-    questionNumText.textContent = questionNum;
     operatorModes();
-    // console.log(answer);
 }
-
-answerBtn.addEventListener('click', () => {
-    correctCheck();
-    nextQuestion();
-    // console.log(`${randOp}: ${typeof(randOp)}`)
-    if(questionNum === numberOfQuestions) {
-        hasWon();
-    }
-});
-
-usrIn.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        correctCheck();
-        nextQuestion();
-    }
-
-    if(questionNum === numberOfQuestions) {
-        hasWon();
-    }
-});
 
 const reset = () => {
     questionNum = 0;
     score = 0;
     correct = 0;
     incorrect = 0;
-    questionNumText.textContent = 0;
+    questionLog = [];
+    progressBar();
     scoreText.textContent = score;
 }
 
+const recordQuestions = () => {
+    let correctLog = `${num1} ${randOp} ${num2} = ${answer} : ✅`;
+    let incorrectLog = `${num1} ${randOp} ${num2} = ${answer} : ❌`;
+    if (Number(usrIn.value) === Number(answer)) {
+        questionLog.push(correctLog);
+    } else {
+        questionLog.push(incorrectLog);
+    }
+    // console.log(`${questionLog}`)
+}
+
+const progressBar = () => {
+    let increment = 100 / numberOfQuestions;
+    let progress = document.querySelector('.progress-bar');
+    let width = progress.style.width.replace('%', '');
+    width = parseInt(width) + increment;
+    width = (questionNum / numberOfQuestions) * 100+'%';
+    progress.style.width = width;
+}
+progressBar()
+
+answerBtn.addEventListener('click', () => {
+    recordQuestions();
+    correctCheck();
+    nextQuestion();
+    if(questionNum === numberOfQuestions) {
+        stats();
+        usrIn.blur();
+    }
+    progressBar()
+});
+
+usrIn.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        recordQuestions();
+        correctCheck();
+        nextQuestion();
+    }
+    if(questionNum === numberOfQuestions) {
+        stats();
+    }
+    progressBar()
+});
 operatorModes();
-// console.log(answer);
-// console.log(`${randOp}: ${typeof(randOp)}`);
 
-// Win modal
-
+// Win modal ++++++++++++++++++++++++++++++++++++++++++++++++
 const winModal = document.querySelector('.winModal');
 const winOverlay = document.querySelector('.winOverlay');
 
@@ -386,9 +461,7 @@ const closeWinModal = () => {
     winModal.classList.add('hidden');
     winOverlay.classList.add('hidden');
     reset();
-    // console.log(questionNum)
 }
-
 document.querySelector('.closeWinModal').addEventListener('click', closeWinModal);
 document.querySelector('.winOverlay').addEventListener('click', closeWinModal);
 </code></pre></p>
