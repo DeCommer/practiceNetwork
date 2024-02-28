@@ -252,10 +252,8 @@ const stats = () => {
         timeStat.innerHTML = displayTimer();
     }
     clearTime();
-
     // questionsList.innerText = questionLog.toString();
     questionsList.innerHTML = questionLog.map(i => `<li><span>${i}</span></li>`).join('');
-
 }
 
 const nextQuestion = () => {
@@ -299,6 +297,7 @@ answerBtn.addEventListener('click', () => {
     nextQuestion();
     if(questionNum === numberOfQuestions) {
         stats();
+        usrIn.remove.focus();
     }
     progressBar()
 });
