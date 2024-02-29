@@ -292,13 +292,19 @@ const reset = () => {
     scoreText.textContent = score;
 }
 
+
 //Settings Section ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 const settingsBtn = document.getElementById('settings-btn');
 const settingsModal = document.querySelector('.settings-modal');
 const closeSettingsBtn = document.querySelector('.close-settings-modal');
+const qInTitle = document.getElementById('q-in-title')
+
+const qIn = document.getElementById('q-in');
+const qInEnterBtn = document.getElementById('q-in-enter-btn');
 
 settingsBtn.addEventListener('click', () => {
     settingsModal.classList.remove('hidden');
+    qIn.focus();
 });
 
 closeSettingsBtn.addEventListener('click', () => {
@@ -306,17 +312,35 @@ closeSettingsBtn.addEventListener('click', () => {
     reset();
 });
 
+qInEnterBtn.addEventListener('click', () => {
+    if(qIn.value === '') {
+        qInTitle.textContent = `Please enter a number`;
+        setTimeout( () => {
+            qInTitle.textContent = `How many questions?`;
+        }, 1200);
+        numberOfQuestions = 10;
+    } else {
+        numberOfQuestions = qIn.value;
+        qIn.value = '';
+        qInTitle.textContent = `You entered ${numberOfQuestions} questions.`
+        console.log(numberOfQuestions);
+    }
+})
+
+
 //Primary User Input ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 answerBtn.addEventListener('click', () => {
     recordQuestions();
     correctCheck();
     nextQuestion();
-    if(questionNum === numberOfQuestions) {
+    if(questionNum == numberOfQuestions) {
         stats();
         usrIn.blur();
     }
     progressBar()
+    console.log(`Questions: ${numberOfQuestions}`);
+    console.log(`Question number: ${questionNum}`);
 });
 
 usrIn.addEventListener('keydown', (event) => {
@@ -325,10 +349,12 @@ usrIn.addEventListener('keydown', (event) => {
         correctCheck();
         nextQuestion();
     }
-    if(questionNum === numberOfQuestions) {
+    if(questionNum == numberOfQuestions) {
         stats();
+        usrIn.blur();
     }
     progressBar()
+    
 });
 operatorModes();
 

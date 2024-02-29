@@ -212,6 +212,7 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid #205b9b;
 }
 
 #scoreArea p {
@@ -238,20 +239,27 @@ input::placeholder {
     text-align: center;
     /* border: 1px solid rgb(25, 37, 84); */
     margin: 0 auto;
-    padding: 5px 25px;
 }
 
-.tcTitle {
+#pts-area h2 {
+    margin: 15px 0;
+    padding: 0;
+}
+
+/* .tcTitle {
+    display: flex;
     text-align: center;
+    justify-content: center;
+    gap: 1rem;
     margin-bottom: 10px;
 }
 
 .tcTitle p {
     padding: 0;
     margin: 0;
-}
+} */
 
-.time-controls {
+/* .time-controls {
     border-top: 1px solid #0f4a89;
     border-bottom: 1px solid #0f4a89;
     margin: 20px 0;
@@ -260,7 +268,70 @@ input::placeholder {
     align-items: center;
     justify-content: center;
     gap: 3rem;
+} */
+/* Time Controls  *************************/
+nav {
+    /* border: 1px solid red; */
+    width : 80%; 
+    margin : 5px auto 0 auto;
+    text-align: center;
+  }
+
+label span {
+    /* border: 1px solid blue; */
+    padding : 0px;
+    color : white;
+    font-size : 1.2em;
+    cursor : pointer;
+    display: block;
+  }
+  
+ label span::after {
+    /* border: 1px solid red; */
+    margin-left: 5px;
+    content: "⬇";
+  }
+  
+  .slide {
+    /* border: 1px solid green; */
+    margin: 0px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    clear:both;
+    width:100%;
+    height:0px;
+    overflow: hidden;
+    text-align: center;
+    transition: height .4s ease;
+  }
+
+  .slide li {
+    /* margin-right: 25px; */
+    list-style-type: none;
 }
+
+  #touch {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+}    
+  
+  #touch:checked + .slide {
+    height: 45px;
+}
+
+.timeBtn {
+    border: none;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
 
 /* SETTINGS MODAL STYLES **********************************/
 
@@ -282,7 +353,7 @@ input::placeholder {
 .settings-modal {
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 600px;
@@ -303,6 +374,24 @@ input::placeholder {
     cursor: pointer;
     border: none;
     background: none;
+  }
+
+  #q-in {
+    border: 1px solid #c1121f;
+    font-size: 1rem;
+    padding: 3px;
+    margin: -5px;
+    text-align: center;
+  }
+
+  #q-in-enter-btn {
+    border: none;
+    border-radius: 3px;
+    background-color: #c1121f;
+    color: #fff;
+    font-size: 1rem;
+    padding: 4px 13px;
+    cursor: pointer;
   }
 
 /* WIN MODAL STYLES***************************/
@@ -448,6 +537,9 @@ input::placeholder {
     .time-controls {
         flex-wrap: wrap;
     }
+    .settings-modal {
+        top: 50%;
+    }
 /* 
     .winOverlay {
         position: absolute;
@@ -462,6 +554,10 @@ input::placeholder {
 }
 
 @media (max-width: 780px) {
+
+    .settings-modal { 
+        top: 50%;
+    }
     .winModal {
         position: absolute;
         text-align: center;

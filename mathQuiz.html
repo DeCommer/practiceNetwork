@@ -30,8 +30,9 @@
             <button id="mult-btn" class="modeBtn">Multiplication</button>
             <button  id="div-btn"class="modeBtn">Division</button>
         </div>
-        <!-- <input>
-        <button>Enter</button> -->
+        <p id="q-in-title">How many questions?</p>
+        <input id="q-in" type="number">
+        <button id="q-in-enter-btn">Enter</button>
     </div>
     <!-- Main App Section -->
     <div id="mQMain">
@@ -60,14 +61,15 @@
                 <p id="score">0</p>
             </div>
         </div>
-        <div class="tcTitle">
-            <h3>Time Controls</h3>
-        </div>
-        <div class="time-controls">
-            <button id="time-start-btn" class="modeBtn">Start</button>
-            <button id="time-pause-btn" class="modeBtn">Pause</button>
-            <button id="time-reset-btn" class="modeBtn">Reset</button>
-        </div>
+        <nav>
+            <label for="touch"><span>Time Controls</span></label>
+            <input type="checkbox" id="touch"> 
+            <ul class="slide">
+                <li><button id="time-start-btn" class="modeBtn">Start</button></li>
+                <li><button id="time-pause-btn" class="modeBtn">Pause</button></li>
+                <li><button id="time-reset-btn" class="modeBtn">Reset</button></li>
+            </ul>
+        </nav>
         <div id="pts-area">
             <h2>Scoring</h2>
             <p>🥒 1 pt for addition 🥒</p>
