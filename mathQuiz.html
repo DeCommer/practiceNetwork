@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./css/mathquiz.css">
     <link rel="stylesheet" href="./css/showhide.css">
     <script src="./js/mathQuiz.js" defer></script>
@@ -30,7 +29,7 @@
             <button id="mult-btn" class="modeBtn">Multiplication</button>
             <button  id="div-btn"class="modeBtn">Division</button>
         </div>
-        <p id="q-in-title">How many questions?</p>
+        <p id="q-in-title"></p>
         <input id="q-in" type="number">
         <button id="q-in-enter-btn">Enter</button>
     </div>
@@ -53,11 +52,11 @@
         <hr>
         <div id="scoreArea">
             <div class="time-container">
-                <p><span class="material-symbols-outlined">avg_time</span> Time:</p>
+                <p><span></span> Time:</p>
                 <p id="time-display">00:00:000</p>
             </div>
             <div class="scoreText">
-                <p><span class="material-symbols-outlined">scoreboard</span> Score:</p>
+                <p><span></span> Score:</p>
                 <p id="score">0</p>
             </div>
         </div>
@@ -82,7 +81,7 @@
 <!-- Modals ---------------->
 <div class="winModal hidden">
     <button class="closeWinModal">&times</button>
-    <h1>🍾 Stats 🎉</h1>
+    <h1>Stats</h1>
     <div class="stats-area">
         <div>
             <h2 class="stat-title">Correct:</h2>

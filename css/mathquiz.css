@@ -379,6 +379,7 @@ label span {
   #q-in {
     border: 1px solid #c1121f;
     font-size: 1rem;
+    width: 100px;
     padding: 3px;
     margin: -5px;
     text-align: center;

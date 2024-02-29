@@ -303,6 +303,7 @@ const qIn = document.getElementById('q-in');
 const qInEnterBtn = document.getElementById('q-in-enter-btn');
 
 settingsBtn.addEventListener('click', () => {
+    qInTitle.innerHTML = `How many questions? <br> Current: ${numberOfQuestions}`;
     settingsModal.classList.remove('hidden');
     qIn.focus();
 });
@@ -313,20 +314,18 @@ closeSettingsBtn.addEventListener('click', () => {
 });
 
 qInEnterBtn.addEventListener('click', () => {
-    if(qIn.value === '') {
-        qInTitle.textContent = `Please enter a number`;
+    if(qIn.value === '' || qIn.value < 1) {
+        qInTitle.textContent = `Please enter a number greater than 1`;
         setTimeout( () => {
-            qInTitle.textContent = `How many questions?`;
+            qInTitle.innerHTML = `How many questions? <br> Current: ${numberOfQuestions}`;
         }, 1200);
         numberOfQuestions = 10;
     } else {
         numberOfQuestions = qIn.value;
         qIn.value = '';
-        qInTitle.textContent = `You entered ${numberOfQuestions} questions.`
-        console.log(numberOfQuestions);
+        qInTitle.innerHTML = `How many questions? <br> Current: ${numberOfQuestions}`;
     }
 })
-
 
 //Primary User Input ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
