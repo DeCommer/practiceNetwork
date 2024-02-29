@@ -210,7 +210,6 @@ input::placeholder {
 
 #scoreArea {
     display: flex;
-    
     align-items: center;
     justify-content: center;
 }
@@ -218,6 +217,7 @@ input::placeholder {
 #scoreArea p {
     text-align: center;
     padding: 0 40px;
+    color: #0f3650;
     font-size: 1.5rem;
 }
 
@@ -262,7 +262,50 @@ input::placeholder {
     gap: 3rem;
 }
 
-/* Win modal */
+/* SETTINGS MODAL STYLES **********************************/
+
+.settings-btn {
+    font-family: inherit;
+    font-weight: 300;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.settings-btn:hover {
+    color:#0f4a89;
+    transition: ease-in 0.2s;
+}
+
+.settings-modal {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    width: fit-content;
+    background-color: rgb(247, 239, 224);
+    padding: 0 25px 25px 25px;
+    border-radius: 25px;
+    box-shadow: 0 0 10rem rgb(247, 239, 224);
+    z-index: 10;
+  }
+
+  .close-settings-modal {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #c1121f;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+/* WIN MODAL STYLES***************************/
 
 .hidden {
     display: none;

@@ -12,14 +12,17 @@
     <title>Math Quiz</title>
 </head>
 <body>
-
 <div class="converter-container">
     <header>
         <a href="./index.html"><span class="homeColor">Home</span></a>
         <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+        <button id="settings-btn" class="settings-btn">Settings</button>
         <h1 class="title"><sup>+ - x ÷</sup> Math Quiz <sup>+ - x ÷</sup></h1>
+    </header>
+    <!-- SETTINGS Section -->
+    <div class="settings-modal hidden">
+        <button class="close-settings-modal">&times</button>
         <h3>Select mode</h3>
-
         <div class="mode-area">
             <button id="all-ops-btn" class="modeBtn active">+ - x ÷</button>
             <button id="add-btn" class="modeBtn">Addition</button>
@@ -27,7 +30,10 @@
             <button id="mult-btn" class="modeBtn">Multiplication</button>
             <button  id="div-btn"class="modeBtn">Division</button>
         </div>
-    </header>
+        <!-- <input>
+        <button>Enter</button> -->
+    </div>
+    <!-- Main App Section -->
     <div id="mQMain">
         <div id="messageArea"></div>
         <div id="qArea">
@@ -45,18 +51,12 @@
         </div>
         <hr>
         <div id="scoreArea">
-            <!-- <div class="questionNumText">
-                <p>Question:</p>
-                <p id="questionNumber"></p>
-            </div> -->
             <div class="time-container">
                 <p><span class="material-symbols-outlined">avg_time</span> Time:</p>
                 <p id="time-display">00:00:000</p>
             </div>
             <div class="scoreText">
-                <p><span class="material-symbols-outlined">
-                    scoreboard
-                    </span> Score:</p>
+                <p><span class="material-symbols-outlined">scoreboard</span> Score:</p>
                 <p id="score">0</p>
             </div>
         </div>
@@ -68,20 +68,16 @@
             <button id="time-pause-btn" class="modeBtn">Pause</button>
             <button id="time-reset-btn" class="modeBtn">Reset</button>
         </div>
-        <!-- <div id="rightWrongArea">
-            <p>Right: <span>0</span></p>
-            <p>Wrong: <span>0</span></p>
-        </div> -->
-     <div id="pts-area">
-        <h2>Scoring</h2>
-        <p>🥒 1 pt for addition 🥒</p>
-        <p>🫒 2 pts for subtraction 🫒</p>
-        <p>🍔 5 pts for multiplication 🍔</p>
-        <p>🍕 10 pts for division 🍕</p>
-     </div>
+        <div id="pts-area">
+            <h2>Scoring</h2>
+            <p>🥒 1 pt for addition 🥒</p>
+            <p>🫒 2 pts for subtraction 🫒</p>
+            <p>🍔 5 pts for multiplication 🍔</p>
+            <p>🍕 10 pts for division 🍕</p>
+        </div>
     </div>
 </div>
-
+<!-- Modals ---------------->
 <div class="winModal hidden">
     <button class="closeWinModal">&times</button>
     <h1>🍾 Stats 🎉</h1>
@@ -107,10 +103,10 @@
             <p id="timeStat">0</p>
         </div>
     </div>
-        <div class="questions">
-            <h2>Questions:</h2>
-            <ul id="questions"></ul>
-        </div>
+    <div class="questions">
+        <h2>Questions:</h2>
+        <ul id="questions"></ul>
+    </div>
 </div><div class="winOverlay hidden"></div>
 
 <div class="aboutModal hidden">
@@ -464,7 +460,7 @@ const closeWinModal = () => {
 }
 document.querySelector('.closeWinModal').addEventListener('click', closeWinModal);
 document.querySelector('.winOverlay').addEventListener('click', closeWinModal);
-</code></pre></p>
-</div>
+        </code></pre></p>
+    </div>
 </body>
 </html>

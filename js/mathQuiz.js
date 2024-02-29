@@ -11,7 +11,6 @@ let questionLog = [];
 const bgColorChange = document.querySelector('.converter-container');
 const messageArea = document.getElementById('messageArea');
 const answerBtn = document.getElementById('AnswerBtn');
-const modeBtn = document.querySelector('.modeBtn');
 const allOpsBtn = document.getElementById('all-ops-btn');
 const addBtn = document.getElementById('add-btn');
 const subBtn = document.getElementById('sub-btn');
@@ -19,10 +18,10 @@ const multBtn = document.getElementById('mult-btn');
 const divBtn = document.getElementById('div-btn');
 
 // Timer Section ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-const startTimeBtn = document.getElementById('time-start-btn')
-const pauseTimeBtn = document.getElementById('time-pause-btn')
-const resetTimeBtn = document.getElementById('time-reset-btn')
-const timer = document.getElementById('time-display')
+const startTimeBtn = document.getElementById('time-start-btn');
+const pauseTimeBtn = document.getElementById('time-pause-btn');
+const resetTimeBtn = document.getElementById('time-reset-btn');
+const timer = document.getElementById('time-display');
 
 let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
 let int = null;
@@ -76,6 +75,17 @@ const displayTimer = () => {
 }
 
 // Main Program ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const progressBar = () => {
+    let increment = 100 / numberOfQuestions;
+    let progress = document.querySelector('.progress-bar');
+    let width = progress.style.width.replace('%', '');
+    width = parseInt(width) + increment;
+    width = (questionNum / numberOfQuestions) * 100+'%';
+    progress.style.width = width;
+}
+progressBar()
+
 const questionConstructor = () => {
     opArr = ["+", "-", "x", "÷"];
     num1 = Math.floor(Math.random() * 10) + 1;
@@ -103,7 +113,8 @@ const operatorModes = () => {
         div();
     }   
 }
-
+//Mode Buttons +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//planning to refactor out some of the duplicate code...
 allOpsBtn.addEventListener('click', allOps = () => {
     allOpsBtn.classList.add('active');
     addBtn.classList.remove('active');
@@ -260,16 +271,6 @@ const nextQuestion = () => {
     operatorModes();
 }
 
-const reset = () => {
-    questionNum = 0;
-    score = 0;
-    correct = 0;
-    incorrect = 0;
-    questionLog = [];
-    progressBar();
-    scoreText.textContent = score;
-}
-
 const recordQuestions = () => {
     let correctLog = `${num1} ${randOp} ${num2} = ${answer} : ✅`;
     let incorrectLog = `${num1} ${randOp} ${num2} = ${answer} : ❌`;
@@ -281,15 +282,31 @@ const recordQuestions = () => {
     // console.log(`${questionLog}`)
 }
 
-const progressBar = () => {
-    let increment = 100 / numberOfQuestions;
-    let progress = document.querySelector('.progress-bar');
-    let width = progress.style.width.replace('%', '');
-    width = parseInt(width) + increment;
-    width = (questionNum / numberOfQuestions) * 100+'%';
-    progress.style.width = width;
+const reset = () => {
+    questionNum = 0;
+    score = 0;
+    correct = 0;
+    incorrect = 0;
+    questionLog = [];
+    progressBar();
+    scoreText.textContent = score;
 }
-progressBar()
+
+//Settings Section ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+const settingsBtn = document.getElementById('settings-btn');
+const settingsModal = document.querySelector('.settings-modal');
+const closeSettingsBtn = document.querySelector('.close-settings-modal');
+
+settingsBtn.addEventListener('click', () => {
+    settingsModal.classList.remove('hidden');
+});
+
+closeSettingsBtn.addEventListener('click', () => {
+    settingsModal.classList.add('hidden');
+    reset();
+});
+
+//Primary User Input ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 answerBtn.addEventListener('click', () => {
     recordQuestions();
