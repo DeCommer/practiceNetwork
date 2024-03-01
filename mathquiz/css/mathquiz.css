@@ -400,11 +400,12 @@ label span {
   .winModal {
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 0%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 5%);
     max-width: 600px;
     width: fit-content;
+    height: fit-content;
     background-color: rgb(247, 239, 224);
     padding: 0 25px 25px 25px;
     border-radius: 25px;
@@ -452,6 +453,7 @@ label span {
   .questions {
     border: 1px solid rgb(16, 89, 134);
     background-color: #e3ecf3;
+    max-height: fit-content;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -467,7 +469,7 @@ label span {
 .questions ul, li {
     list-style-type: decimal;
     text-align: right;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 4px 0;
     margin: 0;
 }
