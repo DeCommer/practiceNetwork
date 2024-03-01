@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 300,
-  'GRAD' 0,
-  'opsz' 24;
-  
-}
-
 * {
 box-sizing: border-box;
 }
@@ -59,10 +49,12 @@ a {
     text-decoration: none;  
 }
 
-p {
+/* p {
+    margin: 0;
+    padding: 10px;
     font-size: 1.2rem; 
     color: #343434;
-}
+} */
 
 .mode-area {
     display: flex;
@@ -115,7 +107,7 @@ p {
     /* border: 1px solid #0f4a89;
     background-color: #fff;
     border-radius: 10px; */
-    margin: 5px 0 35px 0;
+    margin: 0px 0px 20px 0px;
     font-size: 4rem;
     color: #0f4a89;
 }
@@ -159,20 +151,20 @@ input::placeholder {
 #usrIn {
     /* border: none; */
     font-family: inherit;
-    font-size: 1.4rem;
+    font-size: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
     color: #345A7C;
     text-align: right;
-    padding: 15px;
-    height:38px;
-    max-width: 200px;
+    padding: 10px;
+    height: 29px;
+    max-width: 150px;
 }
 
 #AnswerBtn {
-    padding: 10px 25px;
+    padding: 5px 10px;
     border-radius: 0 10px 10px 0;
     background-color: #c1121f;
-    font-size: 1em;
+    font-size: 1rem;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -220,13 +212,14 @@ input::placeholder {
 #scoreArea {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     border-bottom: 1px solid #205b9b;
 }
 
 #scoreArea p {
     text-align: center;
-    padding: 0 40px;
+    margin: 10px;
+    padding: 0;
     color: #0f3650;
     font-size: 1.5rem;
 }
@@ -255,29 +248,6 @@ input::placeholder {
     padding: 0;
 }
 
-/* .tcTitle {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 10px;
-}
-
-.tcTitle p {
-    padding: 0;
-    margin: 0;
-} */
-
-/* .time-controls {
-    border-top: 1px solid #0f4a89;
-    border-bottom: 1px solid #0f4a89;
-    margin: 20px 0;
-    padding: 19px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-} */
 /* Time Controls  *************************/
 nav {
     /* border: 1px solid red; */
@@ -340,8 +310,6 @@ label span {
     padding: 2px 10px;
     cursor: pointer;
 }
-
-
 /* SETTINGS MODAL STYLES **********************************/
 
 .settings-btn {

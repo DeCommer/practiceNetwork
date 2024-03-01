@@ -326,7 +326,11 @@ qInEnterBtn.addEventListener('click', () => {
         numberOfQuestions = qIn.value;
         qIn.value = '';
         qInTitle.innerHTML = `How many questions? <br> Current: ${numberOfQuestions}`;
+        settingsModal.classList.add('hidden');
+        reset();
+        qInfoText.textContent = `${questionNum}/${numberOfQuestions}`;
     }
+
 })
 
 //Primary User Input ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
