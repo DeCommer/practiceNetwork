@@ -1,0 +1,65 @@
+.elem-logo {
+    z-index: -100;
+    color: #9ab8e3;
+    border: 3px solid #9ab8e3;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    /* background-color: #fff; */
+    /* word-wrap: break-word;
+    line-height: 3.5rem; */
+    margin: 25px;
+    padding: 0;
+    height: 100px;
+    width: 100px;
+    cursor: default;
+}
+
+.logo-upper-left p{
+    color: inherit;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1rem;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.logo-center h1 {
+    color: inherit;
+    position: absolute;
+    top: 17px;
+    left: 30px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 2rem;
+}
+
+.logo-center span {
+    color: inherit;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.5rem;
+}
+
+
+.logo-center p {
+    color: inherit;
+    position: absolute;
+    bottom: 23px;
+    left: 14px;
+    margin: 0px;
+    padding: 0px;
+    font-size: .8rem;
+}
+
+
+.logo-bottom-center p {
+    color: inherit;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1rem;
+    position: absolute;
+    bottom:2px;
+    left: 25px;
+}
