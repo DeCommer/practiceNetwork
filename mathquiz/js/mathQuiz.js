@@ -1,5 +1,3 @@
-
-
 let score = 0;
 let questionNum = 0;
 let numberOfQuestions = 10;
@@ -18,6 +16,7 @@ const addBtn = document.getElementById('add-btn');
 const subBtn = document.getElementById('sub-btn');
 const multBtn = document.getElementById('mult-btn');
 const divBtn = document.getElementById('div-btn');
+let qInfoText = document.querySelector('.question-info-text')
 
 // Timer Section ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 const startTimeBtn = document.getElementById('time-start-btn');
@@ -271,6 +270,7 @@ const stats = () => {
 const nextQuestion = () => {
     questionNum += 1
     operatorModes();
+    qInfoText.textContent = `${questionNum}/${numberOfQuestions}`;
 }
 
 const recordQuestions = () => {
@@ -312,6 +312,7 @@ settingsBtn.addEventListener('click', () => {
 closeSettingsBtn.addEventListener('click', () => {
     settingsModal.classList.add('hidden');
     reset();
+    qInfoText.textContent = `${questionNum}/${numberOfQuestions}`;
 });
 
 qInEnterBtn.addEventListener('click', () => {
@@ -371,6 +372,7 @@ const closeWinModal = () => {
     winModal.classList.add('hidden');
     winOverlay.classList.add('hidden');
     reset();
+    qInfoText.textContent = `${questionNum}/${numberOfQuestions}`;
 }
 document.querySelector('.closeWinModal').addEventListener('click', closeWinModal);
 document.querySelector('.winOverlay').addEventListener('click', closeWinModal);
