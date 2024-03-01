@@ -50,9 +50,10 @@ a:hover {
 
 header {
     border-bottom: 1px solid #f7efe0;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
-    align-items:end;
+    align-items: center;
 }
 header a {
     color:#f7efe0;
