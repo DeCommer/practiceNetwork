@@ -57,6 +57,7 @@ header {
 }
 header a {
     color:#f7efe0;
+    cursor: pointer;
 }
 
 .outer {
@@ -84,7 +85,6 @@ footer {
     padding: 0;
     height: 100px;
     width: 100px;
-    cursor: default;
 }
 
 .logo-upper-left p{
