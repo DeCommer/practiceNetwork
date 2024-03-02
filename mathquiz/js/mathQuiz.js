@@ -330,7 +330,6 @@ qInEnterBtn.addEventListener('click', () => {
         reset();
         qInfoText.textContent = `${questionNum}/${numberOfQuestions}`;
     }
-
 })
 
 //Primary User Input ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
