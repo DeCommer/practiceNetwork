@@ -49,7 +49,7 @@ p {
 .table-main {
     /* border: 1px solid magenta; */
     position: relative;
-    width: fit-content;
+    width: 100%;
 }
 
 .blank-card {
@@ -136,11 +136,11 @@ p {
 .row-8 {
     display: flex;
 }
-.row-11-spacer {
+.row-spacer {
     display: flex;
     height: 25px;
 }
-.row-10 {
+.row-9 {
     display: flex;
 }
 
@@ -175,6 +175,7 @@ p {
 .key {
     display: flex;
     align-items: center;
+    padding: 1px;
 }
 
 .key:hover {
@@ -302,22 +303,65 @@ p {
 
 /* ********************************************** Mobile */
 
-@media only screen 
-and (device-width: 428px) 
-and (device-height: 926px) {
-    
+@media (max-width: 500px) {
+
+    body {
+        background-color: #282828;
+        height: auto;
+    }
+
     main {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid blue;
-        width: 90%;
+        /* border: 1px solid blue; */
+    }
+
+    .key-area {
+        display: none;
+    }
+
+    h1::after {
+        font-size: 1rem;
+        content: '(mobile)';
     }
 
     .table-main {
-        border: 1px solid magenta;
-        position: relative;
-        width: fit-content;
-        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* border: 1px solid magenta; */
+        width: 90%;
+    }
+
+    .blank-card {
+        display: none;
+    }
+
+    .row-1 {
+        display: contents;
+    }
+    .row-2 {
+        display: contents;
+    }
+    .row-3 {
+        display: contents;
+    }
+    
+    .row-4 {
+        display: contents;
+    }
+    .row-5 {
+        display: contents;
+    }
+    .row-6 {
+        display: contents;
+    }
+    .row-7 {
+        display: contents;
+    }
+    .row-8 {
+        display: contents;
+    }
+    .row-9 {
+        display: contents;
     }
         
 }
