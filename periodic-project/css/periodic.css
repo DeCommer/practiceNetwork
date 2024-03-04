@@ -23,6 +23,8 @@ body {
     background: #fff;
     font-family: "Lato", sans-serif;;
     color: #282828;
+    display: flex;
+    justify-content: center;
 }
 
 main {
@@ -209,3 +211,68 @@ main {
     color: #2f577a;
 }
 /************************************************ END COLORS */
+
+/* ********************************************** Mobile */
+
+@media (max-width: 500px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid blue;
+        justify-content: center;
+        margin-top: 50px;
+        align-items: center;
+        width: 100%;
+    }
+    .table-main {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border: 1px solid red;
+        width: 100%;
+    }
+
+    .row-1 {
+        display: inline;
+
+    }
+    .row-2 {
+        display: inline;
+    }
+    .row-3 {
+        display: inline;
+    }
+    
+    .row-4 {
+        display: inline;
+    }
+    .row-5 {
+        display: inline;
+    }
+    .row-6 {
+        display: inline;
+    }
+    .row-7 {
+        display: inline;
+    }
+    
+    .lan-act {
+        position: absolute;
+        right: -4px;
+        bottom: 200px;
+        border: 1px solid red;
+        display: flex;
+        flex-direction: row;
+        width: 150px;
+        
+    }
+    .lan {
+        display: block;
+
+    }
+    .act {
+        display: block;
+    }
+    
+}
