@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --alkali-metals: #a5e7ed;
+    --alkali-earth-metals: #f0a9a3;
+    --trans-metals: #d6c9f1;
+    --post-metals: #9ee5ac;
+    --metaloids: #fdef97;
+    --reactive-nonmetals: #acd2f4;
+    --noble-gas: #ffc2f9;
+    --lanthanides: #71cccf;
+    --actinides: #f1b795;
+    --unknown: #c7d0d1;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +20,9 @@
 }
 
 body {
-    background: #d2e6d8;
+    background: #fff;
+    font-family: "Lato", sans-serif;;
     color: #282828;
-    display: flex;
-    flex-direction: column;
 }
 
 main {
@@ -22,16 +36,74 @@ main {
 }
 
 .table-main {
+    position: relative;
     /* border: 1px solid red; */
     max-width: 1250px;
-    margin-top: 50px;
+    margin-top: 75px;
+}
+
+.lrg-card {
+    border: 1px solid #282828;
+    position: absolute;
+    top: -40px;
+    left: 160px;
+    width: 200px;
+    height: 250px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    z-index: 100;
+}
+.info-area {
+    border: 1px solid #282828;
+    position: absolute;
+    top: -40px;
+    left: 390px;
+    width: 340px;
+    height: 250px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    z-index: 100;
+}
+
+.info-container {
+    /* border:1px solid red; */
+    height: 100px;
+    width: 100px;
 }
 
 .card {
-    border: 1px solid #282828;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #686868;
+    border-radius: 5px;
+    background: #fafafa;
     margin: 2px;
     width: 59px;
-    height: 85px;
+    height: 75px;
+    cursor: pointer;
+}
+
+.atom-num {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: .8rem;
+}
+
+.symbol {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.name {
+    font-size: .7rem;
+}
+
+.mass {
+    font-size: .6rem;
 }
 
 .row-left {
@@ -42,7 +114,7 @@ main {
 
 .mid-space {
     /* border: 1px solid blue; */
-    width: 505px;
+    width: 630px; /*504 with 2px margin on card, 472 without*/
 }
 
 .row-right {
@@ -59,7 +131,6 @@ main {
 }
 .row-3 {
     display: flex;
-
 }
 
 .row-4 {
@@ -76,14 +147,65 @@ main {
 }
 
 .lan-act {
-    margin: 25px 0 0 150px;
+    margin: 25px 20px 0 0;
     display: flex;
     flex-direction: column;
+    justify-content: right;
+    align-items: end;
 }
 .lan {
     display: flex;
 }
-
 .act {
     display: flex;
 }
+
+/************************************************ COLORS */
+.alkali-metals {
+    background-color: var(--alkali-metals);
+    color: #2f577a;
+}
+.alkali-earth-metals {
+    background-color: var(--alkali-earth-metals);
+    color: #f0a9a3;
+}
+.trans-metals {
+    background-color: var(--trans-metals);
+    color: #d6c9f1;
+}
+
+.post-metals {
+    background-color: var(--post-metals);
+    color: #9ee5ac;
+}
+
+.metaloids {
+    background-color: var(--metaloids);
+    color: #fdef97;
+}
+
+.reactive-nonmetals {
+    background-color: var(--reactive-nonmetals);
+    color: #3d5f7c;
+}
+
+.noble-gas {
+    background-color: var(--noble-gas);
+    color: #72476d;
+}
+
+.unknown {
+    background-color: var(--unknown);
+    color: #2f577a;
+}
+
+.lanthanides {
+    background-color: var(--lanthanides);
+    color: #2f577a;
+}
+
+.actinides {
+    background-color: var(--actinides);
+    color: #2f577a;
+}
+/************************************************ END COLORS */
