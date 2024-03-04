@@ -302,14 +302,22 @@ p {
 
 /* ********************************************** Mobile */
 
-@media (max-width: 500px) {
+@media only screen 
+and (device-width: 428px) 
+and (device-height: 926px) {
+    
     main {
         display: flex;
         flex-direction: column;
         border: 1px solid blue;
-        justify-content: center;
-        align-items: center;
         width: 90%;
+    }
+
+    .table-main {
+        border: 1px solid magenta;
+        position: relative;
+        width: fit-content;
+        width: 100%;
     }
         
 }
