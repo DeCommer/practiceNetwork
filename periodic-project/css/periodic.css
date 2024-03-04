@@ -5,7 +5,7 @@
     --alkali-earth-metals: #f0a9a3;
     --trans-metals: #d6c9f1;
     --post-metals: #9ee5ac;
-    --metaloids: #fdef97;
+    --metalloids: #fdef97;
     --reactive-nonmetals: #acd2f4;
     --noble-gas: #ffc2f9;
     --lanthanides: #71cccf;
@@ -21,10 +21,12 @@
 
 body {
     background: #fff;
-    font-family: "Lato", sans-serif;;
-    color: #282828;
+    height: 100vh;
+    font-family: "Lato", sans-serif;
+    background-color: #007ACC;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 main {
@@ -32,60 +34,57 @@ main {
     flex-direction: column;
     /* border: 1px solid blue; */
     justify-content: center;
-    margin-top: 50px;
     align-items: center;
-    width: 100%;
+    width: 90%;
+}
+
+h1 {
+    color: #fff;
+}
+
+p {
+    color: #fff;
 }
 
 .table-main {
+    /* border: 1px solid magenta; */
     position: relative;
-    /* border: 1px solid red; */
-    max-width: 1250px;
-    margin-top: 75px;
+    width: fit-content;
 }
 
-.lrg-card {
-    border: 1px solid #282828;
-    position: absolute;
-    top: -40px;
-    left: 160px;
-    width: 200px;
-    height: 250px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    z-index: 100;
-}
-.info-area {
-    border: 1px solid #282828;
-    position: absolute;
-    top: -40px;
-    left: 390px;
-    width: 340px;
-    height: 250px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    z-index: 100;
-}
-
-.info-container {
-    /* border:1px solid red; */
-    height: 100px;
-    width: 100px;
-}
-
-.card {
+.blank-card {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #686868;
     border-radius: 5px;
-    background: #fafafa;
-    margin: 2px;
-    width: 59px;
-    height: 75px;
+    margin: 1px;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
+}
+
+.card {
+    /* border: 1px solid blue; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 1px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.card:hover {
+    border: 1px solid #282828;
+}
+
+.card p {
+    color: inherit;
 }
 
 .atom-num {
@@ -108,25 +107,12 @@ main {
     font-size: .6rem;
 }
 
-.row-left {
-    /* border: 1px solid red; */
-    display: flex;
-
-}
-
-.mid-space {
-    /* border: 1px solid blue; */
-    width: 630px; /*504 with 2px margin on card, 472 without*/
-}
-
-.row-right {
-    /* border: 1px solid red; */
+.row-a {
     display: flex;
 }
 
 .row-1 {
     display: flex;
-    justify-content: space-between;
 }
 .row-2 {
     display: flex;
@@ -147,43 +133,109 @@ main {
 .row-7 {
     display: flex;
 }
-
-.lan-act {
-    margin: 25px 20px 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    align-items: end;
-}
-.lan {
+.row-8 {
     display: flex;
 }
-.act {
+.row-11-spacer {
+    display: flex;
+    height: 25px;
+}
+.row-10 {
     display: flex;
 }
 
-/************************************************ COLORS */
+/************************************************ Key and colors */
+
+.key-area {
+    border: 1px solid #ffffff;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    top: 3%;
+    left: 200px;
+    width: 450px;
+    height: 175px;
+    z-index: 100;
+}
+
+.key-text {
+    text-align: left;
+    font-size: 1rem;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
 .alkali-metals {
     background-color: var(--alkali-metals);
     color: #2f577a;
 }
+
+.key {
+    display: flex;
+    align-items: center;
+}
+
+.key:hover {
+    border: 1px solid #282828;
+    margin: 0;
+    padding: 0;
+}
+
+.alkali-metals-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--alkali-metals);
+}
+
 .alkali-earth-metals {
     background-color: var(--alkali-earth-metals);
-    color: #f0a9a3;
+    color: #783933;
 }
+
+.alkali-earth-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--alkali-earth-metals);
+}
+
 .trans-metals {
     background-color: var(--trans-metals);
-    color: #d6c9f1;
+    color: #4e3384;
+}
+
+.trans-metals-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--trans-metals);
 }
 
 .post-metals {
     background-color: var(--post-metals);
-    color: #9ee5ac;
+    color: #20662e;
 }
 
-.metaloids {
-    background-color: var(--metaloids);
-    color: #fdef97;
+.post-metals-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--post-metals);
+}
+
+.metalloids {
+    background-color: var(--metalloids);
+    color: #70651c;
+}
+
+.metalloids-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--metalloids);
 }
 
 .reactive-nonmetals {
@@ -191,14 +243,23 @@ main {
     color: #3d5f7c;
 }
 
+.reactive-nonmetals-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--reactive-nonmetals);
+}
+
 .noble-gas {
     background-color: var(--noble-gas);
     color: #72476d;
 }
 
-.unknown {
-    background-color: var(--unknown);
-    color: #2f577a;
+.noble-gas-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--noble-gas);
 }
 
 .lanthanides {
@@ -206,10 +267,37 @@ main {
     color: #2f577a;
 }
 
+.lanthanides-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--lanthanides);
+}
+
 .actinides {
     background-color: var(--actinides);
+    color: #864b34;
+}
+
+.actinides-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--actinides);
+}
+
+.unknown {
+    background-color: var(--unknown);
     color: #2f577a;
 }
+
+.unknown-key {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--unknown);
+}
+
 /************************************************ END COLORS */
 
 /* ********************************************** Mobile */
@@ -220,59 +308,8 @@ main {
         flex-direction: column;
         border: 1px solid blue;
         justify-content: center;
-        margin-top: 50px;
         align-items: center;
-        width: 100%;
+        width: 90%;
     }
-    .table-main {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        border: 1px solid red;
-        width: 100%;
-    }
-
-    .row-1 {
-        display: inline;
-
-    }
-    .row-2 {
-        display: inline;
-    }
-    .row-3 {
-        display: inline;
-    }
-    
-    .row-4 {
-        display: inline;
-    }
-    .row-5 {
-        display: inline;
-    }
-    .row-6 {
-        display: inline;
-    }
-    .row-7 {
-        display: inline;
-    }
-    
-    .lan-act {
-        position: absolute;
-        right: -4px;
-        bottom: 200px;
-        border: 1px solid red;
-        display: flex;
-        flex-direction: row;
-        width: 150px;
         
-    }
-    .lan {
-        display: block;
-
-    }
-    .act {
-        display: block;
-    }
-    
 }
