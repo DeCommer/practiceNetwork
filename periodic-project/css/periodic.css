@@ -94,7 +94,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 0px 10px 0px 0px;
     margin: 1px;
     width: 70px;
     height: 70px;
@@ -444,8 +444,8 @@ header {
     }
 
     img {
-        width: 100%;
-        height: 100%;
+        height: 400px;
+        width: 350px;
         margin: 0;
     }
 

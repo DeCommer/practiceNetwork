@@ -10,16 +10,6 @@ const closeModal = document.querySelector('.closeModal');
 
 const dataContainer = document.querySelector('.info-modal')
 
-const addGlobalEventListener = (type, selector, callback) => {
-    document.addEventListener(type, e => {
-        if(e.target.matches(selector)) callback(e);
-    });
-}
-
-    // data.elements.forEach(element => {
-    //     console.log(element.name);
-    // });
-
 tableMain.addEventListener('click',  e => {
     if (!e.target.matches('.card')) return;
     let test = Number(e.target.id);
@@ -39,7 +29,6 @@ tableMain.addEventListener('click',  e => {
                     <li><span>Catagory: </span>${data.elements[i].category}</li>
                     <li><span>Mass: </span>${data.elements[i].atomic_mass}</li>
                 </ul>
-                
             </div>
             `
             dataDisplay.innerHTML = html;
@@ -47,23 +36,6 @@ tableMain.addEventListener('click',  e => {
             dataContainer.classList.remove('hidden')
             
         }, {capture: true});
-    // const dataDisplay = document.querySelector('.data');
-
-
-    // let html =
-    //     `<h1>${data.elements[0].name}</h1>
-    //     <img src="${data.elements[0].image.url}" />
-    //     <p>${data.elements[0].summary}</p>
-    //     <ul>
-    //         <li>Number: ${data.elements[0].number}</li>
-    //         <li>Phase: ${data.elements[0].phase}</li>
-    //         <li>Catagory: ${data.elements[0].category}</li>
-    //         <li>Mass: ${data.elements[0].atomic_mass}</li>
-    //     </ul>
-    //     `
-    // dataDisplay.innerHTML = html;
-
-
 
     closeModal.addEventListener('click', () => {
         dataContainer.classList.add('hidden');
