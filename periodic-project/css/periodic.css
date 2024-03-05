@@ -155,7 +155,7 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
-    height: fit-content;
+    height: auto;
     background-color: #f7efe0;
     padding: 1.5rem;
     border-radius: 10px;
@@ -406,7 +406,7 @@ p {
 
     h1::after {
         font-size: 1rem;
-        content: '(mobile)';
+        content: ' (mobile)';
     }
 
     .table-main {

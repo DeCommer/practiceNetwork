@@ -27,8 +27,8 @@ tableMain.addEventListener('click',  e => {
         for(let i = 0; i < data.elements.length; i++) {
             let i = test;
             const dataDisplay = document.querySelector('.data');
-            let html =
-            `<h1>${data.elements[i].name}</h1>
+            let html =`
+            <h1>${data.elements[i].name}</h1>
             <img src="${data.elements[i].image.url}" />
             <p>${data.elements[i].summary}</p>
             <div class="card-stats">
