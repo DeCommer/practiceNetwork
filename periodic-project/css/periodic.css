@@ -45,6 +45,25 @@ p {
     color: #fff;
 }
 
+a {
+    text-decoration: none;  
+}
+
+header {
+    text-align: center;
+}
+
+.homeColor {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.homeColor:hover {
+    color:#0f4a89;
+    transition: ease-in 0.2s;
+}
+
 .hidden {
     display: none;
 }
@@ -198,11 +217,13 @@ p {
 
   .card-stats {
     background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #bdbaba;
     margin: 20px 0;
     display: flex;
     gap: 3rem;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
   .bmi {
@@ -216,7 +237,8 @@ p {
   }
 
   .data p {
-    color: #282828;
+    color: #643f07;
+    padding: 10px;
   }
 
   .info-modal li {
