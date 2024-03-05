@@ -20,7 +20,6 @@
 }
 
 body {
-    background: #fff;
     height: 100vh;
     font-family: "Lato", sans-serif;
     background-color: #007ACC;
@@ -46,13 +45,17 @@ p {
     color: #fff;
 }
 
+.hidden {
+    display: none;
+}
+
 .table-main {
     /* border: 1px solid magenta; */
     position: relative;
     width: fit-content;
 }
 
-.blank-card {
+.blank {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -144,6 +147,84 @@ p {
     display: flex;
 }
 
+/* *********************************************** Modals */
+
+.info-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    background-color: #f7efe0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
+    z-index: 11;
+  }
+
+  .data {
+    width: 100%;
+    height: 100%;
+  }
+
+  .data h1 {
+    color: #282828;
+    text-align: center;
+  }
+
+  .data h1::after {
+    content: '';
+  }
+
+  .closeModal {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: #282828;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  img {
+    border: 1px solid #646464;
+    height: 100%;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+  }
+
+  .card-stats {
+    background-color: #fff;
+    margin: 20px 0;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bmi {
+    border: none;
+    height: 100px;
+    width: 100px;
+  }
+
+  span {
+    font-weight: 600;
+  }
+
+  .data p {
+    color: #282828;
+  }
+
+  .info-modal li {
+    list-style-type: none;
+    color: #282828;
+  }
+
+
 /************************************************ Key and colors */
 
 .key-area {
@@ -157,7 +238,7 @@ p {
     left: 200px;
     width: 450px;
     height: 175px;
-    z-index: 100;
+    z-index: 10;
 }
 
 .key-text {
@@ -178,11 +259,11 @@ p {
     padding: 1px;
 }
 
-.key:hover {
+/* .key:hover {
     border: 1px solid #282828;
     margin: 0;
     padding: 0;
-}
+} */
 
 .alkali-metals-key {
     width: 10px;
@@ -268,6 +349,11 @@ p {
     color: #2f577a;
 }
 
+.lanthanides p {
+    color: #2f577a;
+}
+
+
 .lanthanides-key {
     width: 10px;
     height: 10px;
@@ -277,6 +363,10 @@ p {
 
 .actinides {
     background-color: var(--actinides);
+    color: #864b34;
+}
+
+.actinides p {
     color: #864b34;
 }
 
@@ -331,7 +421,7 @@ p {
         width: 90%;
     }
 
-    .blank-card {
+    .blank {
         display: none;
     }
 
@@ -363,5 +453,11 @@ p {
     .row-9 {
         display: contents;
     }
+
+    .closeModal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
         
 }
