@@ -174,12 +174,16 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
-    height: fit-content;
+    height: 900px;
     background-color: #f7efe0;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
     z-index: 11;
+  }
+
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.459);
   }
 
   .data {
@@ -219,17 +223,16 @@ header {
     background-color: #fff;
     border-radius: 10px;
     border: 1px solid #bdbaba;
-    margin: 20px 0;
+    margin: 10px 0;
     display: flex;
-    gap: 3rem;
     align-items: center;
     justify-content: space-evenly;
   }
 
   .bmi {
     border: none;
-    height: 100px;
-    width: 100px;
+    height: 125px;
+    width: 125px;
   }
 
   span {
@@ -245,7 +248,6 @@ header {
     list-style-type: none;
     color: #282828;
   }
-
 
 /************************************************ Key and colors */
 
@@ -445,7 +447,7 @@ header {
 
     .info-modal {
         width: 85%;
-        height: fit-content;
+        height: 675px;
     }
 
     img {
