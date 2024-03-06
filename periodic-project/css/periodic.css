@@ -445,9 +445,9 @@ header {
 
     .info-modal {
         position: absolute;
-        top:auto;
-        left: 50%;
+        top: 50%;
         width: 85%;
+        height: 700px;
     }
 
     img {
