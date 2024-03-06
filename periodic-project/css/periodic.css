@@ -174,7 +174,7 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
-    height: auto;
+    height: fit-content;
     background-color: #f7efe0;
     padding: 1.5rem;
     border-radius: 10px;
@@ -445,7 +445,7 @@ header {
 
     .info-modal {
         width: 85%;
-        height: 700px;
+        height: fit-content;
     }
 
     img {
