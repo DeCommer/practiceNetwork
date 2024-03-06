@@ -10,7 +10,11 @@
 <body>
     <dialog class="info-modal">
         <button class="closeModal">&times</button>
-        <div class="data"></div>
+        <div class="data">
+            <template>
+                
+            </template>
+        </div>
     </dialog>
     <main>
         <header>
@@ -21,18 +25,18 @@
         <div class="table-main">
             <div class="key-area">
                 <div class="key-area-left">
-                    <div class="key"><div class="alkali-metals-key"></div><p class="key-text">Alkali metals</p></div>
-                    <div class="key"><div class="alkali-earth-key"></div><p class="key-text">Alkaline earth metals</p></div>
-                    <div class="key"><div class="trans-metals-key"></div><p class="key-text">Transition metals</p></div>
-                    <div class="key"><div class="post-metals-key"></div><p class="key-text">Post-transition metals</p></div>
-                    <div class="key"><div class="metalloids-key"></div><p class="key-text">Metalloids</p></div>
+                    <div id="am-key" class="key key-1"><div class="alkali-metals-key "></div><p class="key-text ">Alkali metals</p></div>
+                    <div id="ae-key" class="key key-2"><div class="alkali-earth-key"></div><p class="key-text">Alkaline earth metals</p></div>
+                    <div id="tm-key" class="key key-3"><div class="trans-metals-key"></div><p class="key-text">Transition metals</p></div>
+                    <div id="pm-key" class="key key-4"><div class="post-metals-key"></div><p class="key-text">Post-transition metals</p></div>
+                    <div id="ml-key" class="key key-5"><div class="metalloids-key"></div><p class="key-text">Metalloids</p></div>
                 </div>
                 <div class="key-area-right">
-                    <div class="key"><div class="reactive-nonmetals-key"></div><p class="key-text">Reactive nonmetals</p></div>
-                    <div class="key"><div class="noble-gas-key"></div><p class="key-text">Noble gasses</p></div>
-                    <div class="key"><div class="lanthanides-key"></div><p class="key-text">Lanthanides</p></div>
-                    <div class="key"><div class="actinides-key"></div><p class="key-text">Actinides</p></div>
-                    <div class="key"><div class="unknown-key"></div><p class="key-text">Unknowns</p></div>
+                    <div id="rnm-key"class="key key-6"><div class="reactive-nonmetals-key"></div><p class="key-text">Reactive nonmetals</p></div>
+                    <div id="ng-key" class="key key-7"><div class="noble-gas-key"></div><p class="key-text">Noble gasses</p></div>
+                    <div id="la-key" class="key key-8"><div class="lanthanides-key"></div><p class="key-text">Lanthanides</p></div>
+                    <div id="ac-key" class="key key-9"><div class="actinides-key"></div><p class="key-text">Actinides</p></div>
+                    <div id="un-key" class="key key-10"><div class="unknown-key"></div><p class="key-text">Unknowns</p></div>
                 </div>
             </div>
             <div class="row-a">
@@ -438,7 +442,7 @@
                     <p class="name">Barium</p>
                     <p class="mass">137.327</p>
                 </div>
-                <div class="blank lanthanides">
+                <div class="card lanthanides">
                     <p class="atom-num">57-71</p>
                     <div class="row-spacer"></div>
                     <p class="name">Lanthanides</p>
@@ -548,7 +552,7 @@
                     <p class="name">Radium</p>
                     <p class="mass">226.025</p>
                 </div>
-                <div class="blank actinides">
+                <div class="card actinides">
                     <p class="atom-num">89-103</p>
                     <div class="row-spacer"></div>
                     <p class="name">Actinides</p>

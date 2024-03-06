@@ -101,6 +101,10 @@ header {
     cursor: pointer;
 }
 
+.muted {
+    opacity: 0.3;
+}
+
 .card:hover {
     border: 1px solid #282828;
 }
@@ -281,6 +285,11 @@ header {
     display: flex;
     align-items: center;
     padding: 1px;
+}
+
+.off {
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 /* .key:hover {
