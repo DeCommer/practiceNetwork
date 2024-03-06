@@ -34,7 +34,7 @@ tableMain.addEventListener('click',  e => {
         dataDisplay.innerHTML = html;
         }
         // dataContainer.classList.remove('hidden')
-        dataContainer.show()
+        dataContainer.showModal()
         
     }, {capture: true});
 
