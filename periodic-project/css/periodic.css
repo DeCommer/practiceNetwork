@@ -420,10 +420,14 @@ header {
     body {
         background-color: #282828;
         height: auto;
+        width: 100%;
     }
 
     .key-area {
         display: none;
+    }
+    main {
+        width: 100%;
     }
 
     h1::after {
@@ -440,13 +444,16 @@ header {
     }
 
     .info-modal {
-        width: 400px;
+        position: absolute;
+        top:auto;
+        left: 50%;
+        width: 85%;
     }
 
     img {
-        height: 400px;
-        width: 350px;
-        margin: 0;
+        height: 250px;
+        width: 270px;
+        margin: 0 10%;
     }
 
     .blank {
