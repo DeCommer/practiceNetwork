@@ -84,7 +84,7 @@ header {
     margin: 1px;
     width: 70px;
     height: 70px;
-    cursor: pointer;
+    pointer-events: none;
 }
 
 .card {
