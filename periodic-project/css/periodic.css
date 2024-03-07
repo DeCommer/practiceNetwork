@@ -452,7 +452,7 @@ header {
         width: 100%;
     }
 
-    h1::after {
+    .title::after {
         font-size: 1rem;
         content: ' (mobile)';
     }
