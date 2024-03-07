@@ -35,7 +35,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: fit-content;
 }
 
 h1 {
@@ -70,8 +70,12 @@ header {
 }
 
 .table-main {
-    /* border: 1px solid magenta; */
+    border: 1px solid magenta;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
@@ -173,7 +177,7 @@ header {
 
 .row-spacer {
     display: flex;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     height: 25px;
 }
 
@@ -452,7 +456,11 @@ header {
         display: none;
     }
     main {
-        width: 100%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .title::after {
@@ -463,7 +471,9 @@ header {
     .table-main {
         display: flex;
         flex-wrap: wrap;
+        flex-direction:  row;
         justify-content: center;
+        align-items: center;
         /* border: 1px solid magenta; */
         width: 90%;
     }

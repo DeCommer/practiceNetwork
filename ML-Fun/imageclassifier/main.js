@@ -1,13 +1,13 @@
-let poo;
+let img;
 let mobilenet
 function setup() {
     function ready() {
         console.log('Ready');
-        mobilenet.classify(poo, gotRes);
+        mobilenet.classify(img, gotRes);
     }
 
     function imgReady() {
-        image(poo, 0, 0, width, height);
+        image(img, 0, 0, width, height);
     }
 
     function gotRes(error, results) {
@@ -29,9 +29,9 @@ function setup() {
     let canvas = createCanvas(800, 600);
     canvas.parent('canvas');
     background(0);
-    poo = createImg('./images/pood.jpg', imgReady)
+    img = createImg('./images/lay.jpeg', imgReady)
     let mobilenet = ml5.imageClassifier('MobileNet', ready)
-    poo.hide();
+    img.hide();
 }
 
 
