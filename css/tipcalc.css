@@ -89,6 +89,10 @@ h1 {
     padding: 10px;
 }
 
+h2, h3, label {
+    color:#204b82;
+}
+
 input:focus {
     outline: none;
 }
@@ -96,7 +100,7 @@ input:focus {
 a {
     font-size: 1.5rem;
     text-decoration: none;
-    color: rgb(17 138 178);
+    color: rgb(9, 75, 97);
 }
 
 .formContainer {
@@ -187,7 +191,7 @@ a {
 }
 
 .calculate {
-    background-color: #c1121f;
+    background-color: #204b82;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
@@ -195,7 +199,7 @@ a {
 .reset {
     cursor: pointer;
     border-radius: 5px;
-    background-color: #c1121f;
+    background-color: #204b82;
     padding: 5px 10px;
     font-size: .8rem;
 }
