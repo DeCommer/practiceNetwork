@@ -177,7 +177,7 @@ header {
 
 .row-spacer {
     display: flex;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 25px;
 }
 
