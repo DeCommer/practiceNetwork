@@ -70,7 +70,7 @@ header {
 }
 
 .table-main {
-    border: 1px solid magenta;
+    /* border: 1px solid magenta; */
     position: relative;
     display: flex;
     flex-direction: column;
