@@ -30,9 +30,9 @@ body {
 }
 
 main {
+    /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
-    /* border: 1px solid blue; */
     justify-content: center;
     align-items: center;
     width: 90%;
@@ -72,7 +72,7 @@ header {
 .table-main {
     /* border: 1px solid magenta; */
     position: relative;
-    width: fit-content;
+    width: 100%;
 }
 
 .blank {
@@ -170,12 +170,15 @@ header {
 .row-7 {
     display: flex;
 }
-.row-8 {
-    display: flex;
-}
+
 .row-spacer {
     display: flex;
+    /* border: 1px solid red; */
     height: 25px;
+}
+
+.row-8 {
+    display: flex;
 }
 .row-9 {
     display: flex;
@@ -463,6 +466,10 @@ header {
         justify-content: center;
         /* border: 1px solid magenta; */
         width: 90%;
+    }
+
+    .header-info {
+        display: none;
     }
 
     .info-modal {
