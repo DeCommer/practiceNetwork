@@ -15,7 +15,7 @@ body {
 }
 
 p {
-    font-size: 15pt;
+    font-size: 1rem;
     color: #f7efe0;
 }
 
@@ -111,7 +111,7 @@ header a {
 }
 
 h1 {
-    color: #0d354a;
+    color: #f7efe0;
 }
 
 .links{
@@ -141,9 +141,8 @@ h1 {
 
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 25px;
-    text-align: center;
 }
 
 @media  (max-width: 800px) {
