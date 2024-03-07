@@ -47,7 +47,12 @@ p {
 }
 
 a {
-    text-decoration: none;  
+    text-decoration: none;
+}
+
+.info-link {
+    color: #007ACC;
+    margin-left: 10px;
 }
 
 header {

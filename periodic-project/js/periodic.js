@@ -20,6 +20,7 @@ const displayElements = (data) => {
                 <h1>${data.elements[i].name}</h1>
                 <img src="${data.elements[i].image.url}" />
                 <p>${data.elements[i].summary}</p>
+                <a class="info-link" href="${data.elements[i].source}" target="_blank" >Learn more!</a>
                 <div class="card-stats">
                     <img class="bmi" src="${data.elements[i].bohr_model_image}" />
                     <ul>
