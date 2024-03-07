@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/periodic.css">
+    <link rel="stylesheet" href="../css/showhide.css">
     <link rel="stylesheet" href="../css/logo.css">
     <script src="./js/periodic.js" defer></script>
+    <script src="../js/showhide.js" defer></script>
     <title>Periodic Table Project</title>
 </head>
 <body>
@@ -20,7 +22,7 @@
     <main>
         <header>
             <a class="links" href="../index.html"><span class="homeColor">Home</span></a>
-            <!-- <a class="aboutBtn" href="#"><span class="homeColor">About</span></a> -->
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
             <h1>Periodic Table</h1>
         </header>
         <div class="table-main">
@@ -840,6 +842,71 @@
             </div>
         </div>
     </main>
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Periodic Table</h1>
+        <p>I build this from scratch using vanilla(plain) javascript.
+            The next few iterations will include proper display on more 
+            screen sizes.
+        </p><p>
+        I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
+    <div class="code">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
+    There is more to this, but here is the core of how this table works.
+
+fetch("./assets/periodicdata.json")
+.then(response => response.json())
+.then(data => displayElements(data));
+
+const cards = document.querySelectorAll('.card')
+
+const displayElements = (data) => {
+    const tableMain = document.querySelector('.table-main');
+    const closeModal = document.querySelector('.closeModal');
+    const dataContainer = document.querySelector('.info-modal')
+
+    tableMain.addEventListener('click',  e => {
+        if (!e.target.matches('.card')) return
+            let elemId = Number(e.target.id);
+            for(let i = 0; i < data.elements.length; i++) {
+                let i = elemId;
+                const dataDisplay = document.querySelector('.data');
+                let html =`
+                &lt;h1&gt;${data.elements[i].name}&lt;/h1&gt;
+                &lt;img src="${data.elements[i].image.url}" /&gt;
+                &lt;p&gt;${data.elements[i].summary}&lt;/p&gt;
+                &lt;div class="card-stats"&gt;
+                    &lt;img class="bmi" src="${data.elements[i].bohr_model_image}" /&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;span&gt;Number: &lt;/span&gt;${data.elements[i].number}&lt;/li&gt;
+                        &lt;li&gt;&lt;span&gt;Phase: &lt;/span&gt;${data.elements[i].phase}&lt;/li&gt;
+                        &lt;li&gt;&lt;span&gt;Catagory: &lt;/span&gt;${data.elements[i].category}&lt;/li&gt;
+                        &lt;li&gt;&lt;span&gt;Mass: &lt;/span&gt;${data.elements[i].atomic_mass}&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                `
+                dataDisplay.innerHTML = html;
+            }
+            
+        dataContainer.showModal()
+            
+    },{capture: true});
+
+    closeModal.addEventListener('click', () => {
+        dataContainer.close();
+        ElemId = '';
+    });
+}
+    </code></pre></p>
+</div>
+
     <div class="elem-logo">
         <div class="logo-upper-left">
             <p>45</p>
