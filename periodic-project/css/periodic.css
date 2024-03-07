@@ -115,13 +115,13 @@ header {
 }
 
 .card::after {
-    content: 'ℹ';
+    content: 'i';
     font-size: 1rem;
     color: inherit;
     opacity: 0.5;
     position: absolute;
-    top: 0px;
-    right: 5px;
+    top: 3px;
+    right: 7px;
 }
 
 .atom-num {
