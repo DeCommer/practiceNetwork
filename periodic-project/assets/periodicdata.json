@@ -646,8 +646,8 @@
             "cpk-hex": "bfa6a6",
             "image": {
                 "title": "Pure aluminium foil. Original size in cm: 5 x 5",
-                "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Aluminium.jpg",
-                "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/aluminium.php "
+                "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Aluminium-4.jpg",
+                "attribution": "http://images-of-elements.com/aluminium.php, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons"
             },
             "block": "p"
         },
@@ -884,7 +884,7 @@
             "cpk-hex": "1ff01f",
             "image": {
                 "title": "A Sample of Chlorine",
-                "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Chlorine-sample-flip.jpg",
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Chlorine_liquid_in_an_ampoule.jpg/784px-Chlorine_liquid_in_an_ampoule.jpg",
                 "attribution": "Benjah-bmm27, Public domain, via Wikimedia Commons"
             },
             "block": "p"
@@ -1973,7 +1973,7 @@
             "cpk-hex": "ffa100",
             "image": {
                 "title": "Ultrapure Black, Amorphous Selenium, 3 - 4 grams. Original size in cm: 2",
-                "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Selenium.jpg",
+                "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/SeBlackRed.jpg",
                 "attribution": "Hi-Res Images ofChemical Elements, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/selenium.php"
             },
             "block": "p"
@@ -2026,7 +2026,7 @@
             "cpk-hex": "a62929",
             "image": {
                 "title": "99.5 % pure liquid Bromine in a 4 x 1 cm big glass ampoule, cast in acrylic",
-                "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Bromine-ampoule.jpg",
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bromine_vial_in_acrylic_cube.jpg/485px-Bromine_vial_in_acrylic_cube.jpg",
                 "attribution": "Jurii, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons, source: https://images-of-elements.com/bromine.php"
             },
             "block": "p"

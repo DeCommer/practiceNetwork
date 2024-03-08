@@ -84,13 +84,19 @@ header {
     width: 100%;
 }
 
+.col-info {
+    font-size: .7rem;
+    margin-bottom: 5px;
+    /* border: 1px solid red; */
+}
+
 .blank {
     position: relative;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
-    border-radius: 5px;
     margin: 1px;
     width: 70px;
     height: 70px;
