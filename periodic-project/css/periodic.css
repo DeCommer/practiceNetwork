@@ -20,7 +20,7 @@
 }
 
 body {
-    height: 100vh;
+    /* height: 100vh; */
     font-family: "Lato", sans-serif;
     background-color: #007ACC;
     display: flex;
@@ -455,6 +455,131 @@ header {
 
 /* ********************************************** Mobile */
 
+@media (min-width:500px) and (max-width:1300px) {
+
+    main {
+        /* border: 1px solid blue; */
+        width: 970px
+    }
+
+    .table-main {
+        /* border: 1px solid red; */
+        justify-content: left;
+        align-items: start;
+        width: 970px;
+    }
+
+    .key-area {
+        /* border: 1px solid magenta; */
+        left: 125px;
+    }
+
+    .card p {
+        font-size: .5rem;
+    }
+
+    .row-a {
+        width: 100%;
+    }
+    
+    .row-1 {
+        width: 100%;
+    }
+    .row-2 {
+        width: 100%;
+    }
+    .row-3 {
+        width: 100%;
+    }
+    
+    .row-4 {
+        width: 100%;
+    }
+    .row-5 {
+        width: 100%;
+    }
+    .row-6 {
+        width: 100%;
+    }
+    .row-7 {
+        width: 100%;
+    }
+    
+    .row-spacer {
+        display: flex;
+        /* border: 1px solid red; */
+        height: 25px;
+    }
+    
+    .row-8 {
+        width: 100%;
+    }
+    .row-9 {
+        width: 100%;
+    }
+
+}
+
+@media (min-width:500px) and (max-width:972px) {
+    main {
+        /* border: 1px solid blue; */
+        width: 750px
+    }
+
+    .table-main {
+        /* border: 1px solid red; */
+        justify-content: left;
+        align-items: start;
+        width: 750px;
+    }
+
+    .key-area {
+        /* border: 1px solid magenta; */
+        left: 125px;
+        width: fit-content;
+        height: fit-content;
+        top: 100px;
+    }
+
+    .key-area p {
+        font-size: .6rem;
+    }
+}
+
+@media (min-width:500px) and (max-width:750px) {
+    main {
+        /* border: 1px solid blue; */
+        width: 510px
+    }
+
+    .table-main {
+        /* border: 1px solid red; */
+        justify-content: left;
+        align-items: start;
+        width: 510px;
+    }
+
+    .table-main h2 {
+        font-size: .8rem;
+    }
+
+    .card p {
+        font-size: .2rem;
+    }
+
+    .key-area {
+        /* border: 1px solid magenta; */
+        top: 40px;
+        left: 90px;
+        width: 200px;
+        height: fit-content;
+    }
+
+    .key-area p {
+        font-size: .4rem;
+    }
+}
+
 @media (max-width: 500px) {
 
     body {
@@ -541,6 +666,5 @@ header {
         position: absolute;
         top: 1rem;
         right: 1rem;
-      }
-        
+      } 
 }
