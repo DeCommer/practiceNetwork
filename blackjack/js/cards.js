@@ -59,9 +59,6 @@ const startGame = () => {
     hidden = deck.pop();
     dealerSum += getValueOfEachCard(hidden);
     dealerAces += checkAce(hidden);
-    // console.log(hidden);
-    // console.log(dealerSum);
-    // console.log(dealerSum)
     let cardImage = document.createElement('img'); //creates a card that has been dealt
     let card = deck.pop();
     cardImage.src = `../assets/cards/${card}.png`
@@ -83,6 +80,10 @@ const startGame = () => {
     document.getElementById('dealer-sum').textContent = dealerShowing;
     hitBtn.addEventListener('click', hit)
     standBtn.addEventListener('click', stand)
+
+    console.log(hidden);
+    console.log(dealerSum);
+    console.log(playerSum)
 }
 
 const getValueOfEachCard = (card) => {
@@ -142,18 +143,6 @@ const stand = () => {
     aHit = false;
     document.getElementById('hidden').src = `../assets/cards/${hidden}.png`
 
-    let message = '';
-    if(playerSum > 21) {
-        message = 'bust'
-    }else if(dealerSum > 21) {
-        message = 'You win!'
-    }else if (playerSum == dealerSum) {
-        message = 'Push'
-    }else if(playerSum > dealerSum) {
-        message = 'You win!'
-    }else if(playerSum < dealerSum) {
-        message = 'You lose.'
-    }
     while (dealerSum < 17) {
         let cardImage = document.createElement('img'); //creates a card that has been dealt
         let card = deck.pop();
@@ -162,6 +151,20 @@ const stand = () => {
         dealerAces += checkAce(card);
         document.getElementById('dealer-cards').append(cardImage);
     }
+
+    let message = '';
+    if(playerSum > 21) {
+        message = 'Player busts'
+    }else if(dealerSum > 21) {
+        message = 'Dealer busts! You win!'
+    }else if (playerSum == dealerSum) {
+        message = 'Push'
+    }else if(playerSum > dealerSum) {
+        message = 'You win!'
+    }else if(playerSum < dealerSum) {
+        message = 'You lose.'
+    }
+
 
     document.getElementById('results').textContent = message;
     document.getElementById('dealer-sum').textContent = dealerSum;
