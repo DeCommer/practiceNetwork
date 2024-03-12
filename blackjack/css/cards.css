@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #007ACC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 5px;
+}
+
+main {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 50px;
+    width: 600px;
+    padding: 25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .homeColor {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.homeColor:hover {
+    color:#0f4a89;
+    transition: ease-in 0.2s;
+}
+
+a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(9, 75, 97);
+}
+
+.dealer-container {
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+#dealer-cards img {
+    height: 225px;
+    margin: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.player-container {
+    /* border: 1px solid blue; */
+    text-align: center;
+    margin-top: 25px;
+}
+
+#player-cards img {
+    height: 200px;
+    margin: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn-container {
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 20px 50px;
+    margin: 2px;
+    font-size: 1.5rem;
+    background-color: #2c6cab;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2eabff;
+}
+
+dialog {
+    border: none !important;
+    border-radius: 10px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 5px 20px rgba(0, 0, 0, 0.25);
+    padding: 1.6rem;
+    width: 300px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#results {
+    font-size: 2rem;
+}
+
+.reset-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ffd919;
+    border: none;
+    border-radius: 5px;
+}
