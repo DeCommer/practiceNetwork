@@ -1,5 +1,5 @@
-let dealerSum = 0;
 let dealerShowing = 0;
+let dealerSum = 0;
 let playerSum = 0;
 let dealerAces = 0;
 let playerAces = 0;
@@ -11,12 +11,26 @@ const hitBtn = document.getElementById('hit');
 const standBtn = document.getElementById('stand');
 const resetBtn =  document.getElementById('reset-btn');
 const dialog = document.getElementById("dialog");
+const nameDialog = document.getElementById('name-dialog');
+let usrName = document.getElementById('usr-name');
+const usrNameEnter = document.getElementById('usr-name-enter');
+
 
 window.onload = () => {
     buildDeck();
     shuffleDeck();
     startGame();
 }
+
+usrNameEnter.addEventListener('click', nameEntry =() => {
+    nameDialog.showModal();
+    let name = usrName.value;
+    console.log(name)
+    if(name !== '') {
+        nameDialog.close();
+        document.getElementById('player-name').textContent = name;
+    }
+})
 
 const buildDeck = () => {
     let values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
@@ -41,6 +55,7 @@ const shuffleDeck = () => {
 }
 
 const startGame = () => {
+    // nameEntry();
     hidden = deck.pop();
     dealerSum += getValueOfEachCard(hidden);
     dealerAces += checkAce(hidden);
@@ -70,57 +85,6 @@ const startGame = () => {
     standBtn.addEventListener('click', stand)
 }
 
-const hit = () => {
-    if(!aHit) {
-        return;
-    } else {
-        let cardImage = document.createElement('img'); //creates a card that has been dealt
-        let card = deck.pop();
-        cardImage.src = `../assets/cards/${card}.png`
-        playerSum += getValueOfEachCard(card);
-        playerAces += checkAce(card);
-        document.getElementById('player-cards').append(cardImage);
-        if(reduceAce(playerSum, playerAces) > 21) {
-            aHit = false;
-        }
-    }
-    document.getElementById('player-sum').textContent = playerSum;
-}
-
-const stand = () => {
-    dealerSum = reduceAce(dealerSum, dealerAces);
-    playerSum = reduceAce(playerSum, playerAces);
-    aHit = false;
-    document.getElementById('hidden').src = `../assets/cards/${hidden}.png`
-
-    let message = '';
-    if(playerSum > 21) {
-        message = 'You bust '
-    }else if(dealerSum > 21) {
-        message = 'You win!'
-    }else if (playerSum == dealerSum) {
-        message = 'Push'
-    }else if(playerSum > dealerSum) {
-        message = 'You win!'
-    }else if(playerSum < dealerSum) {
-        message = 'You lose.'
-    }
-    while (dealerSum < 17) {
-        let cardImage = document.createElement('img'); //creates a card that has been dealt
-        let card = deck.pop();
-        cardImage.src = `../assets/cards/${card}.png`
-        dealerSum += getValueOfEachCard(card);
-        dealerAces += checkAce(card);
-        document.getElementById('dealer-cards').append(cardImage);
-    }
-
-    document.getElementById('results').textContent = message;
-    document.getElementById('dealer-sum').textContent = dealerSum;
-    document.getElementById('player-sum').textContent = playerSum;
-
-    dialog.showModal();
-}
-
 const getValueOfEachCard = (card) => {
     let data = card.split('-');
     let value = data[0];
@@ -148,6 +112,62 @@ const reduceAce = (playerSum, playerAces) => {
         playerAces -= 1;
     }
     return playerSum;
+}
+
+const hit = () => {
+    if(!aHit) {
+        return;
+    } else {
+        let cardImage = document.createElement('img'); //creates a card that has been dealt
+        let card = deck.pop();
+        cardImage.src = `../assets/cards/${card}.png`
+        playerSum += getValueOfEachCard(card);
+        playerAces += checkAce(card);
+        document.getElementById('player-cards').append(cardImage);
+        if(reduceAce(playerSum, playerAces) > 21) {
+            aHit = false;
+        }
+    }
+    if(playerSum > 21) {
+        message = 'bust'
+        document.getElementById('results').textContent = message;
+        dialog.showModal();
+    }
+    document.getElementById('player-sum').textContent = playerSum;
+}
+
+const stand = () => {
+    dealerSum = reduceAce(dealerSum, dealerAces);
+    playerSum = reduceAce(playerSum, playerAces);
+    aHit = false;
+    document.getElementById('hidden').src = `../assets/cards/${hidden}.png`
+
+    let message = '';
+    if(playerSum > 21) {
+        message = 'bust'
+    }else if(dealerSum > 21) {
+        message = 'You win!'
+    }else if (playerSum == dealerSum) {
+        message = 'Push'
+    }else if(playerSum > dealerSum) {
+        message = 'You win!'
+    }else if(playerSum < dealerSum) {
+        message = 'You lose.'
+    }
+    while (dealerSum < 17) {
+        let cardImage = document.createElement('img'); //creates a card that has been dealt
+        let card = deck.pop();
+        cardImage.src = `../assets/cards/${card}.png`
+        dealerSum += getValueOfEachCard(card);
+        dealerAces += checkAce(card);
+        document.getElementById('dealer-cards').append(cardImage);
+    }
+
+    document.getElementById('results').textContent = message;
+    document.getElementById('dealer-sum').textContent = dealerSum;
+    document.getElementById('player-sum').textContent = playerSum;
+
+    dialog.showModal();
 }
 
 resetBtn.addEventListener('click', () => {

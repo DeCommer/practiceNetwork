@@ -59,6 +59,7 @@ a {
     height: 225px;
     margin: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .player-container {
@@ -71,6 +72,7 @@ a {
     height: 200px;
     margin: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .btn-container {
@@ -78,7 +80,7 @@ a {
 }
 
 .btn {
-    padding: 20px 50px;
+    padding: 10px 50px;
     margin: 2px;
     font-size: 1.5rem;
     background-color: #2c6cab;
@@ -99,7 +101,7 @@ dialog {
     padding: 1.6rem;
     width: 300px;
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
