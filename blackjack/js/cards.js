@@ -3,6 +3,7 @@ let dealerSum = 0;
 let playerSum = 0;
 let dealerAces = 0;
 let playerAces = 0;
+let credits = 9000;
 let hidden;
 let deck;
 let aHit = true;
@@ -66,6 +67,7 @@ const startGame = () => {
     dealerAces += checkAce(card);
     document.getElementById('dealer-cards').append(cardImage);
 
+    
     for(let i = 0; i < 2; i++) {
         let cardImage = document.createElement('img'); //creates a card that has been dealt
         let card = deck.pop();
@@ -76,6 +78,7 @@ const startGame = () => {
     }
     dealerShowing += getValueOfEachCard(card);
     
+    // document.getElementById('credit-txt').textContent = credits;
     document.getElementById('player-sum').textContent = playerSum;
     document.getElementById('dealer-sum').textContent = dealerShowing;
     hitBtn.addEventListener('click', hit)
@@ -164,7 +167,6 @@ const stand = () => {
     }else if(playerSum < dealerSum) {
         message = 'You lose.'
     }
-
 
     document.getElementById('results').textContent = message;
     document.getElementById('dealer-sum').textContent = dealerSum;
