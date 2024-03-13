@@ -130,7 +130,7 @@ const hit = () => {
         }
     }
     if(playerSum > 21) {
-        message = 'bust'
+        message = 'Player busts'
         document.getElementById('results').textContent = message;
         dialog.showModal();
     }
