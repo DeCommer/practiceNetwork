@@ -10,18 +10,11 @@ let aHit = true;
 
 const hitBtn = document.getElementById('hit');
 const standBtn = document.getElementById('stand');
-const resetBtn =  document.getElementById('reset-btn');
+const playAgainBtn =  document.getElementById('play-again-btn');
 const dialog = document.getElementById("dialog");
 const nameDialog = document.getElementById('name-dialog');
 let usrName = document.getElementById('usr-name');
 const usrNameEnter = document.getElementById('usr-name-enter');
-
-
-window.onload = () => {
-    buildDeck();
-    shuffleDeck();
-    startGame();
-}
 
 usrNameEnter.addEventListener('click', nameEntry =() => {
     nameDialog.showModal();
@@ -35,7 +28,7 @@ usrNameEnter.addEventListener('click', nameEntry =() => {
 
 const buildDeck = () => {
     let values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-    let suits = ['C', 'D', 'H', 'S'];
+    let suits = ['♧', '◇', '♡', '♤'];
     deck = []
     for(let i = 0; i < suits.length; i++) {
         for(let j = 0; j < values.length; j++) {
@@ -65,20 +58,20 @@ const startGame = () => {
     cardImage.src = `../assets/cards/${card}.png`
     dealerSum += getValueOfEachCard(card);
     dealerAces += checkAce(card);
-    document.getElementById('dealer-cards').append(cardImage);
+    dealerCards = document.getElementById('dealer-cards')
+    dealerCards.append(cardImage);
 
-    
     for(let i = 0; i < 2; i++) {
         let cardImage = document.createElement('img'); //creates a card that has been dealt
         let card = deck.pop();
         cardImage.src = `../assets/cards/${card}.png`
         playerSum += getValueOfEachCard(card);
         playerAces += checkAce(card);
-        document.getElementById('player-cards').append(cardImage);
+        playerCards = document.getElementById('player-cards')
+        playerCards.append(cardImage);
     }
     dealerShowing += getValueOfEachCard(card);
     
-    // document.getElementById('credit-txt').textContent = credits;
     document.getElementById('player-sum').textContent = playerSum;
     document.getElementById('dealer-sum').textContent = dealerShowing;
     hitBtn.addEventListener('click', hit)
@@ -86,7 +79,10 @@ const startGame = () => {
 
     console.log(hidden);
     console.log(dealerSum);
-    console.log(playerSum)
+    console.log(playerSum);
+    console.log(dealerCards)
+    console.log(playerCards)
+
 }
 
 const getValueOfEachCard = (card) => {
@@ -141,14 +137,15 @@ const hit = () => {
 }
 
 const stand = () => {
+    let card
     dealerSum = reduceAce(dealerSum, dealerAces);
     playerSum = reduceAce(playerSum, playerAces);
     aHit = false;
-    document.getElementById('hidden').src = `../assets/cards/${hidden}.png`
+    // document.getElementById('hidden').src = `../assets/cards/${hidden}.png`
 
     while (dealerSum < 17) {
         let cardImage = document.createElement('img'); //creates a card that has been dealt
-        let card = deck.pop();
+        card = deck.pop();
         cardImage.src = `../assets/cards/${card}.png`
         dealerSum += getValueOfEachCard(card);
         dealerAces += checkAce(card);
@@ -167,6 +164,7 @@ const stand = () => {
     }else if(playerSum < dealerSum) {
         message = 'You lose.'
     }
+    dealerCards.innerHTML = `<img src="../assets/cards/${hidden}.png"><img src="../assets/cards/${card}.png">`
 
     document.getElementById('results').textContent = message;
     document.getElementById('dealer-sum').textContent = dealerSum;
@@ -175,6 +173,26 @@ const stand = () => {
     dialog.showModal();
 }
 
-resetBtn.addEventListener('click', () => {
-    window.location.reload();
+const reset = () => {
+    dealerCards.innerHTML = `<img src="../assets/cards/BACK.png">`
+    playerCards.innerHTML = ''
+    dealerShowing = 0;
+    dealerSum = 0;
+    playerSum = 0;
+    dealerAces = 0;
+    playerAces = 0;
+    hidden;
+    deck;
+    aHit = true;
+    startGame();
+}
+
+buildDeck();
+shuffleDeck();
+startGame();
+
+playAgainBtn.addEventListener('click', () => {
+    dialog.close()
+    reset();
+
 });

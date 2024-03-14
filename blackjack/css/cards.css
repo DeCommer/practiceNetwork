@@ -58,8 +58,6 @@ h2 span {
 }
 
 .dealer-container {
-    /* border: 1px solid red; */
-    text-align: center;
     margin-bottom: 25px;
 }
 
@@ -70,16 +68,20 @@ h2 span {
     border-radius: 10px;
 }
 
-.betting-container {
-    border-bottom: 1px solid #282828;
-    display: flex;
-    justify-content: space-between;
+.bet-info-container {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.betting-container p {
-    font-size: 1.6rem;
-    color:#56fe5c
+#bet-dialog {
+    border-bottom: 1px solid #282828;
+    width: 450px;
+}
+
+.bet-btns {
+    margin: 20px;
 }
 
 .bet-btn {
@@ -147,10 +149,11 @@ dialog {
     font-size: 2rem;
 }
 
-.reset-btn {
+.play-again-btn {
     padding: 10px 20px;
     margin-top: 20px;
     background-color: #ffd919;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
