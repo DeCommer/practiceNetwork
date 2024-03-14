@@ -78,11 +78,11 @@ const startGame = () => {
     standBtn.addEventListener('click', stand)
 
     console.log(hidden);
+    console.log(card);
     console.log(dealerSum);
     console.log(playerSum);
     console.log(dealerCards)
     console.log(playerCards)
-
 }
 
 const getValueOfEachCard = (card) => {
@@ -137,12 +137,12 @@ const hit = () => {
 }
 
 const stand = () => {
-    let card
     dealerSum = reduceAce(dealerSum, dealerAces);
     playerSum = reduceAce(playerSum, playerAces);
     aHit = false;
     // document.getElementById('hidden').src = `../assets/cards/${hidden}.png`
-
+    console.log(`Hidden card; ${hidden}, card showing: ${dealerShowing}`);
+    
     while (dealerSum < 17) {
         let cardImage = document.createElement('img'); //creates a card that has been dealt
         card = deck.pop();
@@ -164,7 +164,9 @@ const stand = () => {
     }else if(playerSum < dealerSum) {
         message = 'You lose.'
     }
-    dealerCards.innerHTML = `<img src="../assets/cards/${hidden}.png"><img src="../assets/cards/${card}.png">`
+    
+
+    
 
     document.getElementById('results').textContent = message;
     document.getElementById('dealer-sum').textContent = dealerSum;
