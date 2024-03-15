@@ -16,16 +16,6 @@ const nameDialog = document.getElementById('name-dialog');
 let usrName = document.getElementById('usr-name');
 const usrNameEnter = document.getElementById('usr-name-enter');
 
-usrNameEnter.addEventListener('click', nameEntry =() => {
-    nameDialog.showModal();
-    let name = usrName.value;
-    console.log(name)
-    if(name !== '') {
-        nameDialog.close();
-        document.getElementById('player-name').textContent = name;
-    }
-})
-
 const buildDeck = () => {
     let values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
     let suits = ['♧', '◇', '♡', '♤'];
