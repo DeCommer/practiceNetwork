@@ -38,3 +38,8 @@ const getValueOfEachCard = (card) => {
 buildDeck();
 shuffleDeck();
 
+const deal = () => {
+    hand = [];
+    
+}
+
