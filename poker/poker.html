@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/poker.css">
+    <script src="js/poker.js" defer></script>
+    <title>Poker</title>
+</head>
+<body>
+
+    <main class="main-container">
+        <header>
+            <h1 class="title">$$$ Poker $$$</h1>
+        </header>
+        <div class="pay-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Hand</th>
+                        <th scope="col" class="right-align">1 coin</th>
+                        <th scope="col" class="right-align">2 coins</th>
+                        <th scope="col" class="right-align">3 coins</th>
+                        <th scope="col" class="right-align">4 coins</th>
+                        <th scope="col" class="right-align">5 coins</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Royal Flush</th>
+                        <td>250</td>
+                        <td>500</td>
+                        <td>750</td>
+                        <td>1000</td>
+                        <td>4000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Straight Flush</th>
+                        <td>50</td>
+                        <td>100</td>
+                        <td>300</td>
+                        <td>400</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4 of a Kind</th>
+                        <td>25</td>
+                        <td>50</td>
+                        <td>75</td>
+                        <td>100</td>
+                        <td>125</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Full House</th>
+                        <td>9</td>
+                        <td>18</td>
+                        <td>27</td>
+                        <td>36</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Flush</th>
+                        <td>6</td>
+                        <td>12</td>
+                        <td>18</td>
+                        <td>24</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Straight</th>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>12</td>
+                        <td>16</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3 of a Kind</th>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>9</td>
+                        <td>12</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2 Pair</th>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>6</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Jacks or Better</th>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="dealer-container">
+            <!-- <h2>Dealer: <span id="dealer-sum"></span></h2> -->
+            <div class="hand-container">
+                <div class="card" id="hand">
+                    <img src="../assets/cards/BACK.png">
+                    <img src="../assets/cards/BACK.png">
+                    <img src="../assets/cards/BACK.png">
+                    <img src="../assets/cards/BACK.png">
+                    <img src="../assets/cards/BACK.png">
+                </div>
+            </div>
+            <div class="hold-btns-container">
+                <button id="hold-btn-1" class="hold-btn btn">Hold</button>
+                <button id="hold-btn-2" class="hold-btn btn">Hold</button>
+                <button id="hold-btn-3" class="hold-btn btn">Hold</button>
+                <button id="hold-btn-4" class="hold-btn btn">Hold</button>
+                <button id="hold-btn-5" class="hold-btn btn">Hold</button>
+            </div>
+        </div>
+        <div class="info-container">
+            <h2 class="creditTxt">WIN: $<span class="creditNum">900</span></h2>
+            <h2 class="creditTxt">CREDIT: $<span class="creditNum">900</span></h2>
+        </div>
+        <div class="play-btn-container">
+            <div>
+                <button class="bet-btn btn">Bet One</button>
+                <button class="bet-btn btn">Bet Max</button>
+            </div>
+            <button class="deal-btn btn">Deal</button>
+        </div>
+
+
+    </main>
+    
+</body>
+</html>

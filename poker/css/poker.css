@@ -1,0 +1,139 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #007ACC;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    width: 70%;
+}
+
+header {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.title {
+    margin: 0;
+    font-size: 4rem;
+    color: red;
+    text-shadow: -2px -2px 0 #ffec16, 2px -2px 0 #ffec16, -2px 2px 0 #ffec16, 2px 2px 0 #ffec16;
+}
+
+.by-Line {
+    font-size: 1rem;
+    text-shadow: -1px -1px 0 #ffec16, 1px -1px 0 #ffec16, -1px 1px 0 #ffec16, 1px 1px 0 #ffec16;
+}
+
+.hand-container {
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card img {
+    height: 250px;
+    margin: 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.hold-btns-container {
+    /* border: 1px solid rgb(19, 241, 19); */
+    display: flex;
+    justify-content: space-around;
+}
+
+.info-container {
+    /* border: 1px solid rgb(19, 241, 19); */
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.info-container h2 {
+    font-size: 2rem;
+    margin: 0;
+    color: red;
+    text-shadow: -1px -1px 0 #ffec16, 1px -1px 0 #ffec16, -1px 1px 0 #ffec16, 1px 1px 0 #ffec16;
+}
+
+.play-btn-container {
+    border: 2px solid #fff;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 25px;
+}
+
+.btn {
+    border: 1px solid #0073ff;
+    background-color: #094fb0;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #3770c0;
+}
+
+.hold {
+    background-color: yellow;
+    color: #000;
+}
+
+.pay-table {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid yellow;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: yellow;
+  }
+
+  thead {
+    background-color: #0000ff;
+    border-bottom: 1px solid #ffec16;
+    color: #ff0000;
+    text-shadow: -1px -1px 0 #ffec16, 1px -1px 0 #ffec16, -1px 1px 0 #ffec16, 1px 1px 0 #ffec16;
+  }
+  
+  th {
+    border-left: 1px solid yellow;
+    padding: 2px 5px;
+    text-align: center;
+  }
+
+  td {
+    border-left: 1px solid yellow;
+    text-align: center;
+  }
+
+  th {
+    text-align: left;
+}
+  
+  tbody > tr:nth-of-type(even) {
+    background-color: #0303a7;
+  }
+
+  tbody > tr:nth-of-type(odd) {
+    background-color: #0303a7;
+  }
+
+  .right-align {
+    text-align: center;
+  }
+  
