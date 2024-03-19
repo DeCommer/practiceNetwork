@@ -1,15 +1,8 @@
 let deck;
-let holdCard1Bool = false;
-let holdCard2Bool = false;
-let holdCard3Bool = false;
-let holdCard4Bool = false;
-let holdCard5Bool = false;
+let isHeld = false;
+let round = 1;
 const dealBtn = document.querySelector('.deal-btn');
-const holdBtn1 = document.getElementById('hold-btn-1');
-const holdBtn2 = document.getElementById('hold-btn-2');
-const holdBtn3 = document.getElementById('hold-btn-3');
-const holdBtn4 = document.getElementById('hold-btn-4');
-const holdBtn5 = document.getElementById('hold-btn-5');
+const holdBtns = document.querySelectorAll('.hold-btn');
 
 const buildDeck = () => {
     let values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
@@ -32,55 +25,65 @@ const shuffleDeck = () => {
     }
 }
 
-const getValueOfEachCard = (card) => {
-    let data = card.split('-');
-    let value = data[0];
-    if(isNaN(value)) { //sets card values for lettered cards
-        if(value == 'A') {
-            return 11;
-        } else {
-            return 10;
-        }
-    }
-    return parseInt(value);
-}
-
 const deal = () => {
-    let handArray = []
+    let handArray = [];
     let cardImage = document.createElement('img');
-    for(let i = 0; i < 5; i++) {
-        cardImage = document.createElement('img');
-        card = deck.pop();
-        hand = document.getElementById('hand')
-        cardImage.src = `../assets/cards/${card}.png`
-        hand.append(cardImage);
-        handArray.push(card);
-    }
-    if(holdCard1Bool == true){
-        clearHand();
-        cardImage = document.createElement('img');
-        hand = document.getElementById('hand')
-        cardImage.src = `../assets/cards/${holdCard1}.png`
-        hand.append(cardImage);
-        handArray.push(holdCard1);
-    }
-    // console.log(`
-    // 1st card: ${handArray[0]}
-    // 2nd card: ${handArray[1]}
-    // 3rd card: ${handArray[2]}
-    // 4th card: ${handArray[3]}
-    // 5th card: ${handArray[4]}`
-    // );
-    holdBtn1.addEventListener('click', () => {
-        holdCard1Bool = true;
-        holdCard1 = handArray.splice(0, 1, handArray[0]);
-        holdBtn1.classList.add('hold');
-    });
+    if(round == 1) {
+        for(let i = 0; i < 5; i++) {
+            cardImage = document.createElement('img');
+            card = deck.splice(0, 1);
+            handArray.push(card);
+            hand = document.getElementById('hand');
+            cardImage.src = `../assets/cards/${card}.png`;
+            hand.append(cardImage);
+        };
+        console.log(`Hand: ${handArray}`);
+    }else if(round == 2){
+        if(isHeld == true) {
+            clearHand();
+            cardImage = document.createElement('img');
+            hand = document.getElementById('hand')
+            cardImage.src = `../assets/cards/${holdCard}.png`;
+            hand.append(cardImage);
+            handArray.splice(0, 1, holdCard); 
+            for(let i = 1; i < 5; i++) {
+                cardImage = document.createElement('img');
+                card = deck.pop();
+                hand = document.getElementById('hand');
+                cardImage.src = `../assets/cards/${card}.png`;
+                hand.append(cardImage);
+                handArray.push(card);
+            };
+        };
+        console.log(`Hand: ${handArray}`);
+    };
 
-}
+    for (i of holdBtns) {
+        i.addEventListener('click', function() {
+            round = 2; 
+            
+            if(isHeld == false) {
+                isHeld = true;
+                console.log('held on')
+                holdCard = handArray[this.id];
+                let temp = handArray[this.id];
+                handArray[this.id] = holdCard;
+                holdCard = temp;
+                this.classList.add('hold');
+                console.log(`Held: ${holdCard}`)
+            }else if(isHeld === true) {
+                isHeld = false;
+                this.classList.remove('hold');
+                holdCard = [];
+                console.log('held off')
+            }
 
+        });
+    };
+};
 const clearHand = () => {
     hand.innerHTML = '';
+    handArray = [];
 }
 
 dealBtn.addEventListener('click', () => {
@@ -89,4 +92,3 @@ dealBtn.addEventListener('click', () => {
     clearHand();
     deal();
 })
-
