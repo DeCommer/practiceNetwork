@@ -7,7 +7,8 @@ body {
 }
 
 main {
-    width: 70%;
+    border: 1px solid red;
+    width: 1100px;
 }
 
 header {
@@ -29,7 +30,7 @@ header {
 }
 
 .hand-container {
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -43,9 +44,9 @@ header {
 }
 
 .hold-btns-container {
-    /* border: 1px solid rgb(19, 241, 19); */
+    border: 1px solid rgb(19, 241, 19);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .info-container {
@@ -98,7 +99,7 @@ header {
 table {
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
     border-collapse: collapse;
-    width: 100%;
+    width: 90%;
     border: 1px solid yellow;
     font-family: sans-serif;
     font-size: 1.5rem;

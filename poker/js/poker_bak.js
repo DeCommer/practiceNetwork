@@ -66,7 +66,6 @@ const test = () => {
     console.log(deck);
 }
 
-
 hold1.addEventListener('click', () => {
     holdCard1 = handArray[0];
     // replaceCard(1);
@@ -87,7 +86,6 @@ dealBtn.addEventListener('click', () => {
         draw();
     }
 })
-
 
 // Function to generate a random playing card
 function generateRandomCard() {
