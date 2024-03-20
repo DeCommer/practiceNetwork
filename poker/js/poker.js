@@ -2,7 +2,7 @@ let deck;
 let isHeld = false;
 let round = 1;
 const dealBtn = document.querySelector('.deal-btn');
-const holdBtns = document.querySelectorAll('.hold-btn');
+const holdBtns = document.querySelectorAll('.btn');
 
 const buildDeck = () => {
     let values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
@@ -61,7 +61,6 @@ const deal = () => {
     for (i of holdBtns) {
         i.addEventListener('click', function() {
             round = 2; 
-            
             if(isHeld == false) {
                 isHeld = true;
                 console.log('held on')
@@ -71,14 +70,15 @@ const deal = () => {
                 holdCard = temp;
                 this.classList.add('hold');
                 console.log(`Held: ${holdCard}`)
-            }else if(isHeld === true) {
+            }else if(isHeld == true) {
                 isHeld = false;
                 this.classList.remove('hold');
-                holdCard = [];
+                holdCard = []
                 console.log('held off')
             }
-
         });
+
+ 
     };
 };
 const clearHand = () => {
