@@ -59,9 +59,9 @@ const replaceCard = (index) => {
 
 const draw = () => {
     round = 3
-    
+    let returnArray = []
+    console.log(`draw func handArray ${handArray}`);
     if(isHeld_1 || isHeld_2 || isHeld_3 || isHeld_4 || isHeld_5) {
-        console.log(`Held Array! ${heldArray}`);
         for(let i = 0; i < heldArray.length; i++) {
             cardImage = document.createElement('img');
             hand = document.getElementById('hand');
@@ -78,7 +78,9 @@ const draw = () => {
             hand.append(cardImage);
         };
     }
-    console.log(`Evaluate hand`);
+    console.log(`Held Array: ${heldArray}`);
+    console.log(`Held Array length: ${heldArray.length}`);
+    console.log(`Return array: ${returnArray}`);
 }
 
 const test = () => {
@@ -181,4 +183,6 @@ dealBtn.addEventListener('click', () => {
 });
 
 
-
+document.getElementById('dev-reset-btn').addEventListener('click', () => {
+    window.location.reload();
+})
