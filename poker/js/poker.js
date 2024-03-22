@@ -4,9 +4,10 @@ let isHeld_2 = false;
 let isHeld_3 = false;
 let isHeld_4 = false;
 let isHeld_5 = false;
-let round = 1; // round 1 is deal round, 2 is draw, and 3 is results round
-console.log('round 1')
+let round = 0; // round 0 is deal round, 1 is draw, and 2 is results round
+console.log(`round: ${round}`)
 let handArray = [];
+let holdArray = []
 
 // const holdBts = document.querySelectorAll('.hold-btn');
 const dealBtn = document.querySelector('.deal-btn');
@@ -38,7 +39,7 @@ const shuffleDeck = () => {
 }
 
 const deal = () => {
-    round = 2;
+    round = 1;
     let cardImage = document.createElement('img');
     for(let i = 0; i < 5; i++) {
         cardImage = document.createElement('img');
@@ -50,40 +51,34 @@ const deal = () => {
     };
     // test();
     console.log(`Initial Hand Array ${handArray}`)
-    console.log('round 2')
+    console.log(`round: ${round}`)
 };
 
 const draw = () => {
-    handArray = [];
-    for(let i = 0; i < 5; i++) {
-        handArray[i] = deck.splice(0, 1);
-        handArray.push(handArray[i]);
-    }
-    finalArray = [...returnArray, ...handArray];
-    finalArray = finalArray.slice(0, 5);
-    round = 3
+    round = 2
     if(isHeld_1 || isHeld_2 || isHeld_3 || isHeld_4 || isHeld_5) {
-        for(let i = 0; i < finalArray.length; i++) {
+        for(let i = 0; i < holdArray.length; i++) {
+            
             cardImage = document.createElement('img');
             hand = document.getElementById('hand');
-            cardImage.src = `../assets/cards/${finalArray[i]}.png`;
+            cardImage.src = `../assets/cards/${holdArray[i]}.png`;
             hand.append(cardImage);
         }
-
+        console.log(`Held Array: ${holdArray}`);
+        console.log(`Held Array length: ${holdArray.length}`);
+        console.log(`Hand Array: ${handArray}`);
+        console.log(`Hand Array length: ${handArray.length}`);
     }else {
         for(let i = 0; i < 5; i++) {
             cardImage = document.createElement('img');
-            handArray[i] = deck.splice(0, 1);
-            handArray.push(handArray[i]);
             hand = document.getElementById('hand');
             cardImage.src = `../assets/cards/${handArray[i]}.png`;
             hand.append(cardImage);
+            
         };
+        console.log(`No cards held: ${handArray}`);
     }
-    console.log(`Held Array: ${returnArray}`);
-    console.log(`Held Array length: ${returnArray.length}`);
-    console.log(`Hand Array: ${handArray}`);
-    console.log(`Hand Array length: ${handArray.length}`);
+    console.log(`round: ${round}, end`)
 }
 
 const test = () => {
@@ -97,21 +92,20 @@ const test = () => {
     console.log(`Card 6? ${handArray[5]}`);
     // console.log(deck);
 }
-let returnArray = []
 
 holdBtn_1.addEventListener('click', () => { //This is always position 1 if pressed.
     if(isHeld_1 == false) {
         isHeld_1 = true;
         holdBtn_1.classList.add('hold');
-        returnArray.push(handArray[0]);
-        console.log(`${returnArray[0]} is held at position ${returnArray.indexOf(returnArray[0])}`);
-        console.log(`return array: ${returnArray}`)
+        holdArray.push(handArray[0]);
+        console.log(`${handArray[0]} is held at position ${holdArray.indexOf(holdArray[0])}`);
+        console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_1 === true) {
         isHeld_1 = false;
-        returnArray.pop(handArray[0]);
+        holdArray.pop(handArray[0]);
         holdBtn_1.classList.remove('hold');
         console.log(`Card 1 is no longer held`);
-        console.log(`return array: ${returnArray}`)
+        console.log(`Hold array: ${holdArray}`)
     }
 });
 
@@ -119,15 +113,15 @@ holdBtn_2.addEventListener('click', () => {
     if(isHeld_2 == false) {
         isHeld_2 = true;
         holdBtn_2.classList.add('hold');
-        returnArray.push(handArray[1]);
-        console.log(`${returnArray[1]} is held at position ${returnArray.indexOf(returnArray[1])}`);
-        console.log(`return array: ${returnArray}`)
+        holdArray.push(handArray[1]);
+        console.log(`${handArray[1]} is held at position ${holdArray.indexOf(holdArray[1])}`);
+        console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_2 === true) {
         isHeld_2 = false;
-        returnArray.pop(handArray[1]);
+        holdArray.pop(handArray[1]);
         holdBtn_2.classList.remove('hold');
         console.log(`Card 2 is no longer held`);
-        console.log(`return array: ${returnArray}`)
+        console.log(`Hold array: ${holdArray}`)
     }
 });
 
@@ -135,12 +129,12 @@ holdBtn_3.addEventListener('click', () => {
     if(isHeld_3 == false) {
         isHeld_3 = true;
         holdBtn_3.classList.add('hold');
-        returnArray.push(handArray[2]);
-        console.log(`${returnArray[2]} is held at position ${returnArray.indexOf(returnArray[2])}`);
-        console.log(`return array: ${returnArray}`)
+        holdArray.push(handArray[2]);
+        console.log(`${handArray[2]} is held at position ${holdArray.indexOf(holdArray[2])}`);
+        console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_3 === true) {
         isHeld_3 = false;
-        returnArray.pop(handArray[2]);
+        holdArray.pop(handArray[2]);
         holdBtn_3.classList.remove('hold');
         console.log(`Card 3 is no longer held`);
     }
@@ -150,15 +144,15 @@ holdBtn_4.addEventListener('click', () => {
     if(isHeld_4 == false) {
         isHeld_4 = true;
         holdBtn_4.classList.add('hold');
-        returnArray.push(handArray[3]);
-        console.log(`${returnArray[3]} is held at position ${returnArray.indexOf(returnArray[3])}`);
-        console.log(`return array: ${returnArray}`)
+        holdArray.push(handArray[3]);
+        console.log(`${handArray[3]} is held at position ${holdArray.indexOf(holdArray[3])}`);
+        console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_4 === true) {
         isHeld_4 = false;
-        returnArray.pop(handArray[3]);
+        holdArray.pop(handArray[3]);
         holdBtn_4.classList.remove('hold');
         console.log(`Card 4 is no longer held`);
-        console.log(`return array: ${returnArray}`)
+        console.log(`Hold array: ${holdArray}`)
     }
 });
 
@@ -166,33 +160,46 @@ holdBtn_5.addEventListener('click', () => {
     if(isHeld_5 == false) {
         isHeld_5 = true;
         holdBtn_5.classList.add('hold');
-        returnArray.push(handArray[4]);
-        console.log(`${returnArray[4]} is held at position ${returnArray.indexOf(returnArray[4])}`);
-        console.log(`return array: ${returnArray}`)
+        holdArray.push(handArray[4]);
+        console.log(`${handArray[4]} is held at position ${holdArray.indexOf(holdArray[4])}`);
+        console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_5 === true) {
         isHeld_5 = false;
-        returnArray.pop(handArray[4]);
+        holdArray.pop(handArray[4]);
         holdBtn_5.classList.remove('hold');
         console.log(`Card 5 is no longer held`);
-        console.log(`return array: ${returnArray}`)
+        console.log(`Hold array: ${holdArray}`)
     }
 });
 
 const clearHand = () => {
     hand.innerHTML = '';
-    handArray = [];
 }
 
 dealBtn.addEventListener('click', () => {
     clearHand();
-    if(round == 1) {
+    if(round === 0) {
         buildDeck();
         shuffleDeck();
         deal();
-    }else if(round == 2) {
+    }else if(round === 1) {
         draw();
     }
 });
+
+// if(round === 1) {
+//     holdBtn_1.classList.add('inactive');
+//     holdBtn_2.classList.add('inactive'); 
+//     holdBtn_3.classList.add('inactive'); 
+//     holdBtn_4.classList.add('inactive'); 
+//     holdBtn_5.classList.add('inactive'); 
+// }if (round === 2) {
+//     holdBtn_1.classList.remove('inactive');
+//     holdBtn_2.classList.remove('inactive'); 
+//     holdBtn_3.classList.remove('inactive'); 
+//     holdBtn_4.classList.remove('inactive'); 
+//     holdBtn_5.classList.remove('inactive'); 
+// }
 
 document.getElementById('dev-reset-btn').addEventListener('click', () => {
     window.location.reload();

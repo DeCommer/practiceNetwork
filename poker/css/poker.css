@@ -9,6 +9,7 @@ body {
 main {
     /* border: 1px solid red; */
     width: 1100px;
+    text-align: center;
 }
 
 header {
@@ -70,6 +71,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 .btn {
@@ -79,6 +81,10 @@ header {
     color: #fff;
     padding: 10px 20px;
     cursor: pointer;
+}
+
+.inactive {
+    pointer-events: none;
 }
 
 .btn:hover {
