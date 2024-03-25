@@ -55,10 +55,13 @@ const deal = () => {
 };
 
 const draw = () => {
-    round = 2
+    round = 2;
+    finalHand = [];
+    console.log(`draw hold array: ${holdArray}`)
+    console.log(`draw final hand: ${finalHand}`)
+
     if(isHeld_1 || isHeld_2 || isHeld_3 || isHeld_4 || isHeld_5) {
         for(let i = 0; i < holdArray.length; i++) {
-            
             cardImage = document.createElement('img');
             hand = document.getElementById('hand');
             cardImage.src = `../assets/cards/${holdArray[i]}.png`;
@@ -98,7 +101,7 @@ holdBtn_1.addEventListener('click', () => { //This is always position 1 if press
         isHeld_1 = true;
         holdBtn_1.classList.add('hold');
         holdArray.push(handArray[0]);
-        console.log(`${handArray[0]} is held at position ${holdArray.indexOf(holdArray[0])}`);
+        console.log(`${handArray[0]} is held from position ${holdArray.indexOf(handArray[0])}`);
         console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_1 === true) {
         isHeld_1 = false;
@@ -114,7 +117,7 @@ holdBtn_2.addEventListener('click', () => {
         isHeld_2 = true;
         holdBtn_2.classList.add('hold');
         holdArray.push(handArray[1]);
-        console.log(`${handArray[1]} is held at position ${holdArray.indexOf(holdArray[1])}`);
+        console.log(`${handArray[1]} is held from position ${holdArray.indexOf(handArray[1])}`);
         console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_2 === true) {
         isHeld_2 = false;
@@ -130,7 +133,7 @@ holdBtn_3.addEventListener('click', () => {
         isHeld_3 = true;
         holdBtn_3.classList.add('hold');
         holdArray.push(handArray[2]);
-        console.log(`${handArray[2]} is held at position ${holdArray.indexOf(holdArray[2])}`);
+        console.log(`${handArray[2]} is held from position ${holdArray.indexOf(handArray[2])}`);
         console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_3 === true) {
         isHeld_3 = false;
@@ -145,7 +148,7 @@ holdBtn_4.addEventListener('click', () => {
         isHeld_4 = true;
         holdBtn_4.classList.add('hold');
         holdArray.push(handArray[3]);
-        console.log(`${handArray[3]} is held at position ${holdArray.indexOf(holdArray[3])}`);
+        console.log(`${handArray[3]} is held from position ${holdArray.indexOf(handArray[3])}`);
         console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_4 === true) {
         isHeld_4 = false;
@@ -161,7 +164,7 @@ holdBtn_5.addEventListener('click', () => {
         isHeld_5 = true;
         holdBtn_5.classList.add('hold');
         holdArray.push(handArray[4]);
-        console.log(`${handArray[4]} is held at position ${holdArray.indexOf(holdArray[4])}`);
+        console.log(`${handArray[4]} is held from position ${holdArray.indexOf(handArray[4])}`);
         console.log(`Hold array: ${holdArray}`)
     }else if (isHeld_5 === true) {
         isHeld_5 = false;
