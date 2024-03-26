@@ -49,7 +49,7 @@ const deal = () => {
         cardImage.src = `../assets/cards/${handArray[i]}.png`;
         hand.append(cardImage);
     };
-    // test();
+    test();
     console.log(`Initial Hand Array ${handArray}`)
     console.log(`round: ${round}`)
 };
