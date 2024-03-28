@@ -1,0 +1,25 @@
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #007ACC;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        color: #fff;
+    }
+
+
+    .main-container {
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        height:fit-content;
+        padding: 30px;
+    }
+
+    
