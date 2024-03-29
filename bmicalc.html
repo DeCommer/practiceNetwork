@@ -9,21 +9,26 @@
 </head>
     <body>
         <main class="main-container">
-
-            <h1>BMI Calculator</h1>
+            <header>
+             <h1>BMI Calculator</h1>
+            </header>
 
             <div class="height-area">
-                <label>Height</label>
+                <h2>Enter Height</h2>
+                <label id="ft-lab">Feet</label>
                 <input id="feet-input" type="number" class="feet-input">
+                <label id="in-lab">Inches</label>
                 <input id="inch-input" type="number" class="inches-input">
             </div>
 
-            <div id="mass-area">
-                <label>Weight</label>
+            <div class="mass-area">
+                <h2>Enter Weight</h2>
+                <label id="lb-lab">Pounds</label>
                 <input type="number" class="weight">
-            </div>
-            <div class="button-area">
                 <button id="calc-btn" class="calc-btn btn">Calculate</button>
+            </div>
+            <div class="results-area">
+                <p id="results-txt" class="hidden">Test</p>
             </div>
         </main>
     </body>
