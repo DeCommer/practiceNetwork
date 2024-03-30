@@ -75,28 +75,23 @@ header {
 
 .underweight-highlight{
     background-color: #8efbf2;
-    border-radius: 25px;
-    padding: 10px;
+    padding: 10px 20px;
     color: #227b74;
     
 }
 .normal-highlight{
     background-color: #9efb8e;
-    border-radius: 25px;
-    padding: 10px;
+    padding: 10px 20px;
     color: #216c14;
 }
 .overweight-highlight{
     background-color: #fff56b;
-    width: 100%;
-
-    padding: 10px;
+    padding: 10px 20px;
     color: #6c671e;
 }
 .obese-highlight{
     background-color: #f95757;
-    border-radius: 25px;
-    padding: 10px;
+    padding: 10px 20px;
     color: #842c2c;
 }
 

@@ -21,7 +21,7 @@ calc_btn.addEventListener('click', () => {
         body.textContent = `Height: ${feet.value}' ${inches.value}'' Weight: ${weight.value}lbs`;
     }
 
-    if(feet.value === '' || inches.value === '' || weight.value === '') {
+    if(feet.value == '' || inches.value == '' || weight.value == '') {
         results.classList.remove('hidden');
         message.textContent = `Enter your info above`
         setTimeout(() => {
