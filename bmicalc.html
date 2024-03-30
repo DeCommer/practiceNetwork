@@ -17,11 +17,31 @@
                 <label id="in-lab">Inches <input id="inch-input" type="number" class="inches-input"></label>
                 <label id="lb-lab">Pounds <input type="number" id="pounds-input"></label>
                 <button id="calc-btn" class="calc-btn btn">Calculate</button>
+                <button class="reset-btn btn">reset</button>
             </div>
-            <div class="results-area">
-                <p id="entered-txt" class="hidden"></p>
-                <p id="results-txt" class="hidden"></p>
-                <p id="message-txt" class="hidden"></p>
+            <div class="results-area hidden">
+                <p id="entered-txt"></p>
+                <p id="results-txt"></p>
+                <p id="message-txt"></p>
+            </div>
+
+            <div class="info-area">
+                <div class="tab-txt head">
+                    <h2>BMI</h2><h2>Status</h2>
+                </div>
+                <div class="tab-txt underweight">
+                    <p>≤ 18.4</p><p>Underweight</p>
+                </div>
+                <div class="tab-txt normal">
+                <p>18.5 ~ 24.9</p><p>Normal</p>
+                </div>
+                <div class="tab-txt overweight">
+                    <p>25.0 ~ 39.9</p><p>Overweight</p>
+                </div>
+                <div class="tab-txt obese">
+                    <p>≥ 40.0</p><p>Morbidly Obese</p>
+                </div>
+            </div>
             </div>
         </main>
     </body>
