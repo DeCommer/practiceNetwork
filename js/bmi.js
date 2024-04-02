@@ -15,7 +15,7 @@ calc_btn.addEventListener('click', () => {
     const totalHeightInInches = (Number(feet.value) * 12) + Number(inches.value);
     const bmi = (Number(weight.value) / ((totalHeightInInches) ** 2) * 703).toFixed(1);
 
-    const test = () =>{
+    const displayResults = () =>{
         results.classList.remove('hidden');
         resultsTxt.textContent = `Your BMI is: ${bmi}`;
         body.textContent = `Height: ${feet.value}' ${inches.value}'' Weight: ${weight.value}lbs`;
@@ -29,22 +29,24 @@ calc_btn.addEventListener('click', () => {
         },2000)
         
     }else if(bmi < 18.5) {
-        test();
+        displayResults();
         underweight.classList.add('underweight-highlight');
         message.textContent = `You are underweight`;
     } else if (bmi > 18.5 && bmi < 24.9) {
-        test();
+        displayResults();
         normal.classList.add('normal-highlight');
         message.textContent = `You are at a healthy weight`;
     } else if(bmi > 25 && bmi < 29.9) {
-        test();
+        displayResults();
         overweight.classList.add('overweight-highlight');
         message.textContent = `You are overweight`;
     } else {
-        test();
+        displayResults();
         obese.classList.add('obese-highlight');
         message.textContent = `You are obese`;
     }
+
+    
 });
 
 const resetbtn = document.querySelector('.reset-btn');

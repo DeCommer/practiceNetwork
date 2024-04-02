@@ -11,34 +11,60 @@ body {
     display: flex;
     height: 100vh;
     justify-content: center;
-    color: #fff;
+    color: #454545;
 }
 
-header {
-    margin-bottom: 25px;
-}
 
 .main-container {
-    /* border: 1px solid red; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-top: 50px;
+    padding: 15px;
     height: fit-content;
+    width: 375px;
+}
+header {
+    /* border: 1px solid blue; */
+    margin-bottom: 15px;
 }
 
 .field-container {
-    /* border: 1px solid #fff; */
-    background-color: #fff;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    color: #454545; 
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #454545;
+    font-size: 1.2rem;
     color: #454545;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    padding: 10px 20px;
+    margin: 10px;
+    width: 150px;
+}
+
+.btn-area{
+    margin: 10px;
+}
+
+.btn {
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 5px 15px;
 }
 
 .info-area {
-    /* border: 1px solid #fff; */
+    /* border: 1px solid greenyellow; */
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -47,12 +73,12 @@ header {
 }
 
 .info-area h2 {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #454545;
     /* width: 100%; */
 }
 
 .results-area {
-    border: 1px solid #fff;
+    border: 1px solid #454545;
     margin: 20px 0 40px;
     width: 90%;
     border-radius: 10px;
@@ -64,8 +90,6 @@ header {
     font-size: 1.5rem;
     padding: 5px;
 }
-
-
 
 .tab-txt {
     display: flex;
@@ -99,16 +123,3 @@ header {
     color: #842c2c;
 }
 
-input {
-    font-size: 1.2rem;
-    color: #454545;
-    padding: 2px;
-    margin: 10px;
-    width: 100px;
-}
-
-.btn {
-    border: 1px solid #454545;
-    border-radius: 15px;
-    padding: 5px 15px;
-}
