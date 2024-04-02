@@ -44,9 +44,7 @@ calc_btn.addEventListener('click', () => {
         displayResults();
         obese.classList.add('obese-highlight');
         message.textContent = `You are obese`;
-    }
-
-    
+    }    
 });
 
 const resetbtn = document.querySelector('.reset-btn');
