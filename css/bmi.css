@@ -64,6 +64,10 @@ input {
     width: 150px;
 }
 
+input:focus {
+    outline: none;
+}
+
 .btn-area{
     margin: 10px;
 }
@@ -75,13 +79,19 @@ input {
     border-radius: 15px;
     margin: 10px;
     padding: 5px 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #d82e2e;
 }
 
 .info-area {
-    /* border: 1px solid greenyellow; */
+    border-top: 1px solid #035891;
+    width: 75%;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
     width: 90%;
     font-size: 1.2rem;
 }
@@ -91,35 +101,16 @@ input {
     /* width: 100%; */
 }
 
-.results-area {
-    border: 1px solid #454545;
-    margin: 20px 0 40px;
-    width: 90%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.results-area p{
-    font-size: 1.5rem;
-    padding: 5px;
-}
-
 .tab-txt {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
 }
 
-.hidden {
-    display: none;
-}
-
 .underweight-highlight{
     background-color: #8efbf2;
     padding: 10px 20px;
     color: #227b74;
-    
 }
 .normal-highlight{
     background-color: #9efb8e;
@@ -133,7 +124,24 @@ input {
 }
 .obese-highlight{
     background-color: #f95757;
-    padding: 10px 20px;
+    padding: 10px 10px;
     color: #842c2c;
 }
 
+.results-area {
+    border: 1px solid #454545;
+    margin: 20px 0 40px;
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.results-area p{
+    font-size: 1.4rem;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
