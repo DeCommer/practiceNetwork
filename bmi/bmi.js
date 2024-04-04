@@ -27,19 +27,19 @@ calc_btn.addEventListener('click', () => {
     }else if(bmi < 18.5) {
         displayResults();
         resultsTxt.style.color = '#06d6ff'
-        message.innerHTML = `You are <span>Underweight<span>`;
+        message.innerHTML = `You are <span>Underweight</span>`;
     } else if (bmi > 18.5 && bmi < 24.9) {
         displayResults();
         resultsTxt.style.color = '#27ff06'
-        message.innerHTML = `You are <span>Healthy<span>`;
+        message.innerHTML = `You are <span>Healthy</span>`;
     } else if(bmi > 24.9 && bmi < 29.9) {
         displayResults();
         resultsTxt.style.color = '#fffb06'
-        message.innerHTML = `You are <span>overweight<span>`;
+        message.innerHTML = `You are <span>overweight</span>`;
     } else {
         displayResults();
         resultsTxt.style.color = '#c1121f'
-        message.innerHTML = `You are <span>Obese<span>`;
+        message.innerHTML = `You are <span>Obese</span>`;
     }
 });
 const resetbtn = document.querySelector('.reset-btn');
