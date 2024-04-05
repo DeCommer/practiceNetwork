@@ -32,7 +32,7 @@ calc_btn.addEventListener('click', () => {
         displayResults();
         resultsTxt.style.color = '#27ff06'
         message.innerHTML = `You are <span>Healthy</span>`;
-    } else if(bmi > 24.9 && bmi < 39.9) {
+    } else if(bmi > 24.9 && bmi < 29.9) {
         displayResults();
         resultsTxt.style.color = '#fffb06'
         message.innerHTML = `You are <span>overweight</span>`;
