@@ -5,7 +5,7 @@ const calc_btn = document.getElementById('calc-btn');
 const resultsTxt = document.getElementById('results-txt');
 const message = document.getElementById('message-txt');
 const body = document.getElementById('entered-txt');
-const results = document.querySelector('.results-area')
+const results = document.querySelector('.results-area');
 
 calc_btn.addEventListener('click', () => {
     const totalHeightInInches = (Number(feet.value) * 12) + Number(inches.value);
@@ -26,7 +26,7 @@ calc_btn.addEventListener('click', () => {
         },2000);        
     }else if(bmi < 18.5) {
         displayResults();
-        resultsTxt.style.color = '#06d6ff'
+        resultsTxt.style.color = '#06d6ff';
         message.innerHTML = `You are <span>Underweight</span>`;
     } else if (bmi > 18.5 && bmi < 24.9) {
         displayResults();
