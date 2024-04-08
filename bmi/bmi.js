@@ -27,7 +27,7 @@ calc_btn.addEventListener('click', () => {
         message.textContent = `Enter your info above`
         setTimeout(() => {
             results.classList.add('hidden');
-        },2000);        
+        },2000);
     }else if(bmi < 18.5) {
         displayResults();
         resultsTxt.style.color = '#06d6ff';
