@@ -63,7 +63,7 @@ a:hover {
 }
 .title {
     font-size: 3rem;
-    color: rgba(0, 0, 0, 0.412);
+    color: rgba(46, 5, 5, 0.5);
     padding: 0px;
     margin: 0px ;
 }
@@ -160,6 +160,10 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     display: none;
     margin: 0;
+}
+
+input::placeholder {
+    color: rgba(46, 5, 5, 0.5);
 }
 
 @media (max-width: 700px) {
