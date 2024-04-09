@@ -108,8 +108,23 @@ span {
     font-size: 1.2rem;
 }
 
+.underweight-color {
+    color: #06d6ff;
+}
+.normal-color {
+    color: #27ff06;
+}
+.overweight-color {
+    color: #fffb06;
+}
+.obese-color {
+    color: #c1121f;
+}
+
 .indicators-area {
     /* border: 1px solid red; */
+    margin-top: 20px;
+    font-size: 1.5rem;
     width: 100%;
     height: 25px;
     position: relative;
@@ -146,6 +161,7 @@ span {
 
 .info-area {
     /* border: 1px solid #454545; */
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     padding-top: 0px;
