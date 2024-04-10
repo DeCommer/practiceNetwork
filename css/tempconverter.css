@@ -56,8 +56,14 @@ header {
     display: flex;
 }
 
-.c-btn {
-    padding: 10px;
+#c-btn {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+#f-btn {
+    padding: 0px 10px;
+    font-size: 1rem;
 }
 
 .btn {
@@ -76,12 +82,12 @@ header {
 }
 
 .active {
-    background-color: #09396c;
-    color: #fff;
+    background-color: #42e31aff;
+    color: #235311;
 }
 
 .active:hover {
-    background-color: #0e57a5;
+    background-color: rgb(159, 232, 141);
 }
 
 input {
@@ -106,9 +112,10 @@ input:focus {
 
 .result-temp {
     font-size: 9rem;
+    color: #fff;
 }
 
-.results-section p {
-    font-size: 1.3rem;
-    padding: 5px;
+#formula {
+    font-size: 2rem;
+    padding-bottom: 20px;
 }
