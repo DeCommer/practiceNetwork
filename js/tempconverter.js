@@ -8,7 +8,7 @@ const result = document.getElementById('result');
 const formula = document.getElementById('formula');
 const resultTempTxt = document.getElementById('result-temp-txt');
 
-let state = 'f';
+let state = 'c';
 console.log(state);
 
 cBtn.addEventListener('click', () => {
@@ -29,7 +29,7 @@ fBtn.addEventListener('click', () => {
 
 enterBtn.addEventListener('click', () => {
     if(input.value === '') {
-        result.textContent = "Please enter a value";
+        formula.textContent = "Please enter a value";
     }else if(state === 'f') {
         let fahrenheit = input.value
         toC = ((fahrenheit - 32) * (5 / 9)).toFixed(2) ;
@@ -46,7 +46,7 @@ enterBtn.addEventListener('click', () => {
 clearBtn.addEventListener('click', () => {
     input.value = null;
     displayType.textContent = 'C - F';
-    resultTempTxt.textContent = ``;
+    resultTempTxt.textContent = `0`;
     formula.textContent = ``;
 });
 
