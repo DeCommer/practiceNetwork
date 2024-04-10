@@ -4,9 +4,9 @@ const fBtn = document.getElementById('f-btn');
 const usrIn = document.getElementById('input');
 const enterBtn = document.getElementById('enter-btn');
 const clearBtn = document.getElementById('clear-btn');
-const hide = document.getElementById('hide');
 const result = document.getElementById('result');
-const formula = document.getElementById('formula')
+const formula = document.getElementById('formula');
+const resultTempTxt = document.getElementById('result-temp-txt');
 
 let state = 'f';
 
@@ -30,20 +30,21 @@ enterBtn.addEventListener('click', () => {
     }else if(state === 'f') {
         let fahrenheit = input.value
         toC = ((fahrenheit - 32) * (5 / 9)).toFixed(2) ;
+        resultTempTxt.textContent = `${toC}`
         formula.textContent = `Formula: (${fahrenheit}°F - 32) x 5/9 = ${toC}°C`;
-        hide.classList.remove('hide');
     }else if (state === 'c') {
         let celsius = input.value
         toF = ((celsius * (9 / 5)) + 32).toFixed(2);
+        resultTempTxt.textContent = `${toF}`
         formula.textContent = `Formula: (${celsius}°C x 9 / 5) + 32 = ${toF}°F`;
-        hide.classList.remove('hide');
     }
 });
 
 clearBtn.addEventListener('click', () => {
     input.value = null;
-    displayType.textContent = 'C - F'
-    hide.classList.add('hide');
+    displayType.textContent = 'C - F';
+    resultTempTxt.textContent = ``;
+    formula.textContent = ``;
 });
 
 

@@ -30,6 +30,7 @@ hr {
     padding: 16px;
     border-radius: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
   }
 
   header {
@@ -72,7 +73,7 @@ label {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
 }
 
 span {
@@ -107,6 +108,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .txtField {
@@ -114,7 +116,6 @@ a {
     padding: 10px 15px;
     font-size: 1.5rem;
 }
-
 
 #bill {
     border: none;
@@ -163,7 +164,7 @@ a {
 }
 
 #tippers {
-    border: none;
+    border: 1px solid #204b82;
     width: 75%;
     text-align: center;
 }
@@ -188,10 +189,11 @@ a {
 
 .buttons p {
     color: #fff;
+    font-size: 1rem;
 }
 
 .calculate {
-    background-color: #204b82;
+    background-color: #c1121f;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
@@ -199,7 +201,7 @@ a {
 .reset {
     cursor: pointer;
     border-radius: 5px;
-    background-color: #204b82;
+    background-color: #c1121f;
     padding: 5px 10px;
     font-size: .8rem;
 }
