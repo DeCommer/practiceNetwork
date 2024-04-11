@@ -4,9 +4,9 @@ const radBtn = document.getElementById('radBtn');
 const degBtn = document.getElementById('degBtn');
 const enterBtn = document.getElementById('enterBtn');
 const clearBtn = document.getElementById('clear-btn');
-const hide = document.getElementById('hide');
 const result = document.getElementById('result');
 const formula = document.getElementById('formula')
+const resultTempTxt = document.getElementById('result-temp-txt');
 
 let state = 'degrees';
 
@@ -26,23 +26,22 @@ degBtn.addEventListener('click', () => {
 
 enterBtn.addEventListener('click', () => {
     if(input.value === '') {
-        result.textContent = "Please enter a value";
+        formula.textContent = "Please enter a value";
     }else if(state === 'degrees') {
         let deg = input.value
         toRad = ((deg * Math.PI) / 180).toFixed(3);
+        resultTempTxt.textContent = `${toRad}`;
         formula.textContent = `Formula: ${deg}° x π/180 = ${toRad}rad`;
-        hide.classList.remove('hide');
     }else if (state === 'radians') {
         let rad = input.value
         toDeg = ((rad * 180) / Math.PI).toFixed(3)
+        resultTempTxt.textContent = `${toDeg}`;
         formula.textContent = `Formula: ${rad}rad x 180/π = ${toDeg}°`;
-        hide.classList.remove('hide');
     }
 });
 
 clearBtn.addEventListener('click', () => {
     state = 'degrees';
-    input.value = null;
+    input.value = '';
     dispType.textContent = 'Deg - Rad';
-    hide.classList.add('hide');
 });

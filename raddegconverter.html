@@ -12,25 +12,29 @@
 </head>
 
 <body>
-    <section class="main-container">
+    <div class="main-container">
         <header>
             <a href="./index.html"><span class="homeColor">Home</span></a>
             <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <h1 class="title">Degrees/Radians Converter</h1>
+            <p>Choose conversion type: <span id="dispType">Deg - Rad</span></p>
         </header>
-    <h1 class="title">Degrees / Radians<br>Converter</h1>
-        <p>Choose conversion type: <span id="dispType">Deg - Rad</span></p>
-        <button class="btn active" id="degBtn">Degrees</button>
-        <button class="btn" id="radBtn">Radians</button><br>
-        <section class="input-section">
+        <div class="type-selection-area">
+            <button class="btn active" id="degBtn">Degrees</button>
+            <button class="btn" id="radBtn">Radians</button><br>
+        </div>
+        <div class="input-area">
             <input id="input" type="number">
+        </div>
+        <div class="calc-btn-area">
             <button class="btn" id="enterBtn">Enter</button>
             <button class="btn" id="clear-btn">Clear</button>
-        </section>
-    </section>
-    <section id="hide" class="results-section hide">
-        <p id="formula"></p>
-    </section>
-
+        </div>
+        <div class="results-area">
+            <p id="result-temp-txt" class="result-temp">0</p>
+            <p id="formula">Enter a value to convert</p>
+        </div>
+    </div>
     <div class="aboutModal hidden">
         <button class="closeAboutModal">&times</button>
         <h1>Radian / Degree Converter</h1>

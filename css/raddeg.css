@@ -12,12 +12,28 @@ body {
     align-items: center;
     background-color: #007acc;
     font-family: 'Roboto', sans-serif;
+    color: #09396c;
 }
 
 a {
     margin: 15px;
     text-decoration: none;
 }
+
+header {
+    text-align: center;
+}
+
+#radBtn {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+#degBtn {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
 
 .homeColor {
     font-size: 1.2rem;
@@ -33,30 +49,62 @@ a {
 }
 
 .main-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgba(255, 255, 255, 0.2);
-    width: fit-content;
-    border-radius: 10px;
-    text-align: center;
+    border-radius: 16px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
-    padding: 25px;
+    padding: 15px;
+    height: fit-content;
+    width: 475px;
 }
-.btn {
-    border: none;
-    background-color: #204c8f;
+
+#dispType {
+    font-size: 1.2rem;
     color: #fff;
-    font-size: 1rem;
-    padding: 5px 10px;
-    margin-top: 15px;
+}
+
+.btn {
+    background-color: #c1121f;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px 45px;
     cursor: pointer;
 }
 
-.active {
-    background-color: #c1121f;
-    color: #fff;
+.btn:hover {
+    background-color: #d82e2e;
 }
+
+.active {
+    background-color: #42e31aff;
+    color: #235311;
+}
+
+.active:hover {
+    background-color: rgb(159, 232, 141);
+}
+
 input {
-    border: 1px solid #282828;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid #09396c;
+    font-size: 2rem;
+    color: #fff;
+    margin: 10px;
+    width: 150px;
+    height: auto;
     padding: 5px;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
 }
 .results-section {
     border: 1px solid #282828;
@@ -66,10 +114,17 @@ input {
     padding: 10px;
     height: fit-content;
 }
-.hide {
-    display: none;
+.results-area {
+    text-align: center;
 }
-.results-section p {
-    font-size: 1.3rem;
-    padding: 5px;
+
+.result-temp {
+    font-size: 7rem;
+    color: #fff;
 }
+
+#formula {
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+}
+
