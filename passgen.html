@@ -21,12 +21,14 @@
             <p>Limit 50</p>
         </header>
         <div class="input-area">
-                <input id="input" type="number" placeholder="Number of characters" autocomplete="off">
-            </div>
+            <input id="input" type="number" placeholder="Number of characters" autocomplete="off">
+        </div>
+        <div class="btn-area">
             <button id="enter_btn" class="btn">Enter</button>
+            <button id="clr_btn" class="btn">Clear</button>
+        </div>
         <div class="results-area" id="result">
             <h2 id="result-txt">0</h2>
-           
         </div>
         <button id="copy-btn" class="hide">Copy</button>
         <p id="message"></p>
@@ -47,7 +49,7 @@
         <button class="jsBtn" >See the Javascript.</button>
         <p><pre><code class="jsHidden hidden">
             <button class="closeJsModal">&times</button>
-            const enterBtn = document.getElementById('enter_btn');
+const enterBtn = document.getElementById('enter_btn');
 
 enterBtn.addEventListener('click', () => {
     const chars = parseFloat(document.getElementById('input').value);
@@ -80,6 +82,22 @@ enterBtn.addEventListener('click', () => {
         result.innerHTML = '&lt;h2>Enter a number&lt;/h2&gt;';
     }
 });
+
+copy.addEventListener('click', () => {
+    let copyText = document.getElementById("result-txt").textContent;
+    let message = document.getElementById('message');
+  
+    navigator.clipboard.writeText(copyText)
+      .then(function() {
+        message.textContent = `✅ Password copied`
+        setTimeout(() =>{
+            message.textContent = '';
+        }, 1200);
+      })
+      .catch(function(error) {
+        console.log("Failed to copy text: " + error);
+      });
+  });
         </code></pre></p>
     </div>
 

@@ -1,11 +1,12 @@
 const enterBtn = document.getElementById('enter_btn');
 const copy = document.getElementById('copy-btn');
+const clear = document.getElementById('clr_btn');
 
 enterBtn.addEventListener('click', () => {
     const chars = parseFloat(document.getElementById('input').value);
     const result = document.getElementById('result-txt');
     if(chars > 50) {
-        result.textContent = `Enter number below 50 characters.`
+        message.textContent = `Enter number below 50 characters.`
     }else if(chars) {
         const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 
         'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -19,13 +20,12 @@ enterBtn.addEventListener('click', () => {
             for (let ch = 1; ch <= n_letters; ch++) {
             final_pass.push(alpha[Math.floor(Math.random() * alpha.length)]);
             }
-            // JavaScript arrays have a built-in method to shuffle
             final_pass.sort(() => Math.random() - 0.5);
             let final_rand_password = final_pass.join('');
             return final_rand_password;
         }
         result.innerHTML = `<h2 class="result-txt">${generateRandomPassword(chars)}</h2>`;
-        copy.classList.remove('hide')
+        copy.classList.remove('hide');
     } 
     else {
         result.innerHTML = '<h2>Enter a number</h2>';
@@ -42,9 +42,14 @@ copy.addEventListener('click', () => {
         setTimeout(() =>{
             message.textContent = '';
         }, 1200);
-        console.log("Text copied to clipboard: " + copyText);
       })
       .catch(function(error) {
         console.log("Failed to copy text: " + error);
       });
   });
+
+clear.addEventListener('click', () => {
+    document.getElementById('input').value = "";
+    result.textContent = `0`;
+    copy.classList.add('hide');
+})
