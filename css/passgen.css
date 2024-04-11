@@ -92,17 +92,31 @@ input:focus {
 
 .results-area {
     /* border: 1px solid #454545; */
-    word-wrap: break-word;
+    word-break: break-all;
     padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
-
 #result-txt {
-    word-wrap: break-word;
     overflow: hidden;
     font-size: 2rem;
+}
+
+#copy-btn {
+    background-color: #c1121f;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
 }

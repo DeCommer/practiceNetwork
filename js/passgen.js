@@ -1,10 +1,9 @@
 const enterBtn = document.getElementById('enter_btn');
+const copy = document.getElementById('copy-btn');
 
 enterBtn.addEventListener('click', () => {
     const chars = parseFloat(document.getElementById('input').value);
-    const result = document.getElementById('result-txt');   
-
-
+    const result = document.getElementById('result-txt');
     if(chars > 50) {
         result.textContent = `Enter number below 50 characters.`
     }else if(chars) {
@@ -26,8 +25,26 @@ enterBtn.addEventListener('click', () => {
             return final_rand_password;
         }
         result.innerHTML = `<h2 class="result-txt">${generateRandomPassword(chars)}</h2>`;
+        copy.classList.remove('hide')
     } 
     else {
         result.innerHTML = '<h2>Enter a number</h2>';
     }
 });
+
+copy.addEventListener('click', () => {
+    let copyText = document.getElementById("result-txt").textContent;
+    let message = document.getElementById('message');
+  
+    navigator.clipboard.writeText(copyText)
+      .then(function() {
+        message.textContent = `✅ Password copied`
+        setTimeout(() =>{
+            message.textContent = '';
+        }, 1200);
+        console.log("Text copied to clipboard: " + copyText);
+      })
+      .catch(function(error) {
+        console.log("Failed to copy text: " + error);
+      });
+  });
