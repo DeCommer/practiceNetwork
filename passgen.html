@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/oe.css">
+    <link rel="stylesheet" href="./css/passgen.css">
     <link rel="stylesheet" href="./css/logo.css">
     <link rel="stylesheet" href="./css/showhide.css">
     <script src="./js/passgen.js" defer></script>
@@ -12,22 +12,20 @@
     <title>Password Generator 9000</title>
 </head>
 <body>
-    <div class="converter-container">
+    <div class="main-container">
         <header>
             <a class="links" href="index.html"><span class="homeColor">Home</span></a>
             <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
             <h1>Password Generator</h1>
             <p>Up to how many characters?</p>
+            <p>Limit 50</p>
         </header>
-    
-        <div class="container-top">
-            <form method="post" action="somephp.php" id="genrate">
-                <input type="text" name="genrate" id="n_field" placeholder="characters" autocomplete="off">
-                <input type="submit" class="passGBtn" name="genrate" value="Generate">
-            </form>
-        </div>
-        <div class="container-bottom" id="answer">
-            <h2 class="invisible"></h2>
+        <div class="input-area">
+                <input id="input" type="number" placeholder="Number of characters" autocomplete="off">
+            </div>
+            <button id="enter_btn" class="btn">Enter</button>
+        <div class="results-area" id="result">
+            <h2 id="result-txt">0</h2>
         </div>
     </div>
     <div class="aboutModal hidden">
@@ -46,18 +44,16 @@
         <button class="jsBtn" >See the Javascript.</button>
         <p><pre><code class="jsHidden hidden">
             <button class="closeJsModal">&times</button>
-(function(){
+            const enterBtn = document.getElementById('enter_btn');
 
-document.getElementById('genrate').addEventListener('submit', function(e){
-    e.preventDefault();
+enterBtn.addEventListener('click', () => {
+    const chars = parseFloat(document.getElementById('input').value);
+    const result = document.getElementById('result-txt');   
 
-    const chars = parseFloat(document.getElementById('n_field').value); //gets number from textfield
-    const answer = document.getElementById('answer');
 
-    if(chars) {
-
-//const conversion = (chars * 1.609344).toFixed(3);
-
+    if(chars > 50) {
+        result.textContent = `Enter number below 50 characters.`
+    }else if(chars) {
         const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 
         'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
         'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X','Y', 'Z',
@@ -66,26 +62,21 @@ document.getElementById('genrate').addEventListener('submit', function(e){
         ';', '"', "'", '<', '>', ',', '.', '?', '/'];
 
         function generateRandomPassword(n_letters) {
-        let final_pass = [];
-        for (let ch = 1; ch <= n_letters; ch++) {
-        final_pass.push(alpha[Math.floor(Math.random() * alpha.length)]);
+            let final_pass = [];
+            for (let ch = 1; ch <= n_letters; ch++) {
+            final_pass.push(alpha[Math.floor(Math.random() * alpha.length)]);
+            }
+            // JavaScript arrays have a built-in method to shuffle
+            final_pass.sort(() => Math.random() - 0.5);
+            let final_rand_password = final_pass.join('');
+            return final_rand_password;
         }
-        // JavaScript arrays have a built-in method to shuffle
-        final_pass.sort(() => Math.random() - 0.5);
-        let final_rand_password = final_pass.join('');
-        return final_rand_password;
-        }
-        
-        //h2 elements are in quotes for rendering.
-        answer.innerHTML = `<'h2'>${generateRandomPassword(chars)}<'h2'>`;
+        result.innerHTML = `&lt;h2 class="result-txt">${generateRandomPassword(chars)}&lt;/h2>`;
     } 
-
     else {
-        answer.innerHTML = '<'h2'>Enter a number</'h2'>';
+        result.innerHTML = '&lt;h2>Enter a number&lt;/h2&gt;';
     }
 });
-
-})();
         </code></pre></p>
     </div>
 
