@@ -39,11 +39,22 @@
             margin: 10px;
         }
         .main-container {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-top: 50px;
+            padding: 15px;
+            height: fit-content;
+            width: 575px;
         }
+
         .progress-bar-container {
             border: 1px solid rgb(44, 72, 126);
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.4);
             border-radius: 10px;
             width: 500px;
             height: 15px;
@@ -54,8 +65,8 @@
             margin: 10px;
         }
         input {
-            border: 1px solid rgb(61, 81, 119);
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 1px solid #09396c;
             font-size: 1rem;
             margin-left: 10px;
             width: 100px;
@@ -72,12 +83,12 @@
         }
         .buttons {
             display: flex;
-            justify-content: space-between;
             margin: 15px 35px;
             align-items: center;
         }
+
         .btn {
-            background-color: rgb(61, 81, 119);
+            background-color: #c1121f;
             border: none;
             padding: 4px 15px;
             font-size: 1rem;
@@ -85,7 +96,11 @@
             cursor: pointer;
         }
         .info {
+            /* border: 1px solid #fff; */
+            text-align: center;
             color: #fff;
+            width: 100px;
+            margin: 0 100px;
         }
     </style>
 </head>
@@ -102,13 +117,14 @@
         </div>
         <div class="progress-bar-container">
             <div class="progress-bar"></div>
-            <div class="buttons">
-                <button class="clickBtn btn">Click</button>
-                <p class="info">0/10</p>
-                <button class="resetBtn btn">reset</button>
-            </div>
+        </div>
+        <div class="buttons">
+            <button class="clickBtn btn">Click</button>
+            <p class="info">0 / 10</p>
+            <button class="resetBtn btn">reset</button>
         </div>
     </div>
+
     <div class="elem-logo">
         <div class="logo-upper-left">
             <p>45</p>
@@ -173,6 +189,5 @@ usrIn.addEventListener('keydown', (event) => {
         }
     }
 });
-
 </script>
 </html>
