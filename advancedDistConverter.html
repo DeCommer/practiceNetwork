@@ -12,24 +12,28 @@
     <title>Advanced distance Converter</title>
 </head>
 <body>
-    <div class="converter-container">
+    <div class="main-container">
         <header>
-        <a href="./index.html"><span class="homeColor">Home</span></a>
-        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-        <h1>Distance Converter</h1>
-    </header>
-        <div class="container-top">
-            <p>Enter miles to convert to KM</p>
-            <form method="post" action="somephp.php" id="convert">
-                <input type="text" name="distance" id="distance" placeholder="distance" autocomplete="off">
-                <input class="btn" type="submit" name="convertdist" value="Convert Distance">
-            </form>
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <h1 class="title">Miles/Kilometers Converter</h1>
+            <p>Choose conversion type: <span id="dispType">Mi - Km</span></p>
+        </header>
+        <div class="type-selection-area">
+            <button class="btn active" id="mi-btn">Miles</button>
+            <button class="btn" id="km-btn">Kilometers</button><br>
         </div>
-    
-        <div class="container-bottom" id="answer">
-            <h2 class="invisible"></h2>
+        <div class="input-area">
+            <input id="input" type="number">
         </div>
-        <p id="instructions">Press k for kilometer conversion or m for mile conversion</p>
+        <div class="calc-btn-area">
+            <button class="btn" id="enterBtn">Enter</button>
+            <button class="btn" id="clear-btn">Clear</button>
+        </div>
+        <div class="results-area">
+            <p id="result-temp-txt" class="result-temp">0</p>
+            <p id="formula">Enter a value to convert</p>
+        </div>
     </div>
 
     <div class="aboutModal hidden">

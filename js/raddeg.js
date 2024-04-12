@@ -26,7 +26,10 @@ degBtn.addEventListener('click', () => {
 
 enterBtn.addEventListener('click', () => {
     if(input.value === '') {
-        formula.textContent = "Please enter a value";
+        formula.textContent = "Please enter numeric a value";
+        setTimeout(() => {
+            formula.textContent = "Enter a value to convert";
+        }, 1500);
     }else if(state === 'degrees') {
         let deg = input.value
         toRad = ((deg * Math.PI) / 180).toFixed(3);
@@ -44,4 +47,6 @@ clearBtn.addEventListener('click', () => {
     state = 'degrees';
     input.value = '';
     dispType.textContent = 'Deg - Rad';
+    resultTempTxt.textContent = `0`;
+    formula.textContent = `Enter a value to convert`;
 });

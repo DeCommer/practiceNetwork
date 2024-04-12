@@ -106,14 +106,6 @@ input {
 input:focus {
     outline: none;
 }
-.results-section {
-    border: 1px solid #282828;
-    background-color: rgba(255, 255, 255, 0.451);
-    border-radius: 0px 10px 10px 10px;
-    margin: 15px 0 0 5px;
-    padding: 10px;
-    height: fit-content;
-}
 .results-area {
     text-align: center;
 }
