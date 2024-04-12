@@ -1,10 +1,6 @@
+const calcBtn = document.getElementById('calc-btn');
 
-document.getElementById('answerForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    process();
-});
-
-function process() {
+calcBtn.addEventListener('click', () => {
     let num1 = document.getElementById('num1').value;
     let num2 = document.getElementById('num2').value;
     let oe1 = document.getElementById('num1OE');
@@ -59,7 +55,7 @@ function process() {
     else { 
         document.getElementById('res4OE').innerHTML = "odd";
     }
-}
+});
 
 
 

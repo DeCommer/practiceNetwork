@@ -1,28 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-* {
+*{
     box-sizing: border-box;
 }
-
 body {
-    height: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     background-color: #007acc;
     font-family: 'Roboto', sans-serif;
+    color: #09396c;
 }
 
-.converter-container {
-    margin-top: 50px;
-    width: fit-content;
+.main-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgba(255, 255, 255, 0.2);
-    /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
-    padding: 16px;
     border-radius: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 15px;
+    height: fit-content;
+    width: 475px;
+}
   
   header {
     text-align: center;
@@ -34,7 +37,6 @@ body {
       text-transform: uppercase;
       text-align: center;
       margin: 20px auto 15px auto;
-      color: #343434;
 }
 
 .homeColor {
@@ -100,15 +102,25 @@ input:focus {
     text-align: center;
 }
 
-.numCard input {
-    font-size: 1.5rem;
-    border: 1px solid #cbcbdd;
-    background-color: #ededf8;
-    color: #345A7C;
-    border-radius: 5px;
-    padding: 10px;
-    width: 200px;
+.numCard {
+    display: flex;
+    margin: 5px;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid #09396c;
+    font-size: 2rem;
+    color: #fff;
+    margin: 10px;
+    width: 150px;
+    height: auto;
+    padding: 5px;
     text-align: center;
+}
+
+input:focus {
+    outline: none;
 }
 
 .btn {
@@ -123,7 +135,7 @@ input:focus {
 }
 
 .btn:hover {
-    background-color: #c1121f;
+    background-color: #d62d38;
     color: #fff;
     border: none;
 }
@@ -140,7 +152,6 @@ input:focus {
 }
 
 #resCardContainer {
-    color: #345A7C;
     width: fit-content;
     display: flex;
 }
@@ -152,6 +163,7 @@ input:focus {
 
 .resNum {
     font-size: 2.5em;
+    color: #09396c;
 }
 
 @media screen and (max-width: 501px) {
