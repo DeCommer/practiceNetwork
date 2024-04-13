@@ -46,6 +46,16 @@ header h1 {
     margin: 15px;
 }
 
+#usBtn {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+#metricBtn {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
 .field-container {
     /* border: 1px solid blue; */
     display: flex;
