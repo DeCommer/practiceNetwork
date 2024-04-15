@@ -28,23 +28,31 @@ enterBtn.addEventListener('click', () => {
             let final_rand_password = final_pass.join('');
             return final_rand_password;
         }
-        result.textContent = `${generateRandomPassword(chars)}`;
+        result.innerHTML = `<h2 class="result-txt">${generateRandomPassword(chars)}</h2>`;
         copy.classList.remove('hide');
     } 
     else {
-        result.innerHTML = '<h2>Enter a number</h2>';
+        message.innerHTML = '<h2>Enter a number</h2>';
     }
 
-
-    if(chars <= 5) {
-        num = 1;
-        progress.style.backgroundColor = '#c1121f'
-        progressBarFill();
-    }else if(chars > 6 || chars < 10 ) {
-        num = 3;
-        progress.style.backgroundColor = '#fddf00'
-        progressBarFill();
-    }
+    // if(chars <= 5) {
+    //     num = 1;
+    //     progress.style.backgroundColor = '#c1121f'
+    //     progressBarFill();
+    // }if(chars > 6 || chars < 10 ) {
+    //     num = 3;
+    //     progress.style.backgroundColor = '#fddf00'
+    //     progressBarFill();
+    // }if(chars > 11 || chars < 15 ) {
+    //     num = 7;
+    //     progressBarFill();
+    //     progress.style.backgroundColor = '#42e31aff'
+    // }if(chars > 16 || chars <= 50) {
+    //     num = 10;
+    //     progressBarFill();
+    //     progress.style.backgroundColor = '#42e31aff'
+    // }
+    
 });
 
 copy.addEventListener('click', () => {
@@ -76,6 +84,6 @@ clear.addEventListener('click', () => {
     num = 0;
     progressBarFill();
     document.getElementById('input').value = "";
-    result.textContent = ``;
+    result.innerHTML = `<h2 id="result-txt">0</h2>`;
     copy.classList.add('hide');
 })
