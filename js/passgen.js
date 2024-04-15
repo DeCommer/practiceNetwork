@@ -93,6 +93,7 @@ copy.addEventListener('click', () => {
     progressBarFill();
     document.getElementById('input').value = "";
     result.innerHTML = `<h2 id="result-txt">0</h2>`;
+    message.innerHTML = '';
     copy.classList.add('hide');
   }
 
