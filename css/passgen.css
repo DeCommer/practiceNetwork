@@ -46,6 +46,10 @@ header h1 {
     margin: 15px;
 }
 
+h4 {
+    padding-top: 5px;
+}
+
 .field-container {
     /* border: 1px solid blue; */
     display: flex;
@@ -69,6 +73,25 @@ input {
 
 input:focus {
     outline: none;
+}
+
+.progress-bar-container {
+    border: 1px solid rgb(44, 72, 126);
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    width: 350px;
+    height: 10px;
+}
+
+.progress-bar {
+    background-color: rgb(101, 227, 70);
+    border-radius: 10px;
+    width: 0%;
+    height: 100%
+}
+
+.btn-area {
+    margin-top: 25px;
 }
 
 .btn {

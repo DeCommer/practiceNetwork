@@ -1,10 +1,14 @@
 const enterBtn = document.getElementById('enter_btn');
 const copy = document.getElementById('copy-btn');
 const clear = document.getElementById('clr_btn');
+let progress = document.querySelector('.progress-bar');
+let num = 0;
+let total = 10;
 
 enterBtn.addEventListener('click', () => {
     const chars = parseFloat(document.getElementById('input').value);
     const result = document.getElementById('result-txt');
+
     if(chars > 50) {
         message.textContent = `Enter number below 50 characters.`
     }else if(chars) {
@@ -24,11 +28,22 @@ enterBtn.addEventListener('click', () => {
             let final_rand_password = final_pass.join('');
             return final_rand_password;
         }
-        result.innerHTML = `<h2 class="result-txt">${generateRandomPassword(chars)}</h2>`;
+        result.textContent = `${generateRandomPassword(chars)}`;
         copy.classList.remove('hide');
     } 
     else {
         result.innerHTML = '<h2>Enter a number</h2>';
+    }
+
+
+    if(chars <= 5) {
+        num = 1;
+        progress.style.backgroundColor = '#c1121f'
+        progressBarFill();
+    }else if(chars > 6 || chars < 10 ) {
+        num = 3;
+        progress.style.backgroundColor = '#fddf00'
+        progressBarFill();
     }
 });
 
@@ -48,8 +63,19 @@ copy.addEventListener('click', () => {
       });
   });
 
+const progressBarFill = () => {
+    let increment = 100 / total;
+    let progress = document.querySelector('.progress-bar');
+    let width = progress.style.width.replace('%', '');
+    width = parseInt(width) + increment;
+    width = (num / total) * 100+'%';
+    progress.style.width = width;
+};
+
 clear.addEventListener('click', () => {
+    num = 0;
+    progressBarFill();
     document.getElementById('input').value = "";
-    result.textContent = `0`;
+    result.textContent = ``;
     copy.classList.add('hide');
 })

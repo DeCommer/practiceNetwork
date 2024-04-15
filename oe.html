@@ -17,48 +17,46 @@
             <a href="./index.html"><span class="homeColor">Home</span></a>
             <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
             <h1>Odd Even App</h1>
-            <p>by Joseph DeCommer</p>
         </header>
-            <div class="numCard">
-                <h2>Num 1</h2>
-                    <input class="num" type="text" id="num1" placeholder="0" autocomplete="off">
-                <h4 id="num1OE">Even</h4>
+        <div class="numCard">
+            <h2>Num 1</h2>
+                <input class="num" type="number" id="num1" placeholder="0" autocomplete="off">
+            <h4 id="num1OE">Even</h4>
+        </div>
+        <div class="numCard">
+            <h2>Num 2</h2>
+                <input class="num" type="number" id="num2" placeholder="0" autocomplete="off">
+            <h4 id="num2OE">Even</h4>
+        </div>
+        <div class="buttons">
+            <button id="calc-btn" class="btn">=</button>
+        </div>
+        <hr>
+        <h2>Results</h2>
+        <hr>
+        <div id="resCardContainer">
+            <div class="resNumCard">
+                <h2 class="operator">+</h2>
+                <div class="resNum" id="plusResult">0</div>
+                <h4 id="res1OE"></h4>
             </div>
-            <div class="numCard">
-                <h2>Num 2</h2>
-                    <input class="num" type="text" id="num2" placeholder="0" autocomplete="off">
-                <h4 id="num2OE">Even</h4>
+            <div class="resNumCard">
+                <h2 class="operator">-</h2>
+                <div class="resNum" id="minResult">0</div>
+                <h4 id="res2OE"></h4>
             </div>
-            <div class="buttons">
-                <button id="calc-btn" class="btn" onclick="process();">=</button>
-                <!-- <button class="btn">Reset</button> -->
+            <div class="resNumCard">
+                <h2 class="operator">x</h2>
+                <div class="resNum" id="timesResult">0</div>
+                <h4 id="res3OE"></h4>
             </div>
-            <hr style="margin-top: 35px;">
-            <h2>Results</h2>
-            <hr>
-            <div id="resCardContainer">
-                <div class="resNumCard">
-                    <h2 class="operator">+</h2>
-                    <div class="resNum" id="plusResult">0</div>
-                    <h4 id="res1OE"></h4>
-                </div>
-                <div class="resNumCard">
-                    <h2 class="operator">-</h2>
-                    <div class="resNum" id="minResult">0</div>
-                    <h4 id="res2OE"></h4>
-                </div>
-                <div class="resNumCard">
-                    <h2 class="operator">x</h2>
-                    <div class="resNum" id="timesResult">0</div>
-                    <h4 id="res3OE"></h4>
-                </div>
-                <div class="resNumCard">
-                    <h2 class="operator">÷</h2>
-                    <div class="resNum" id="divResult">0</div>
-                    <h4 id="res4OE"></h4>
-                </div>
+            <div class="resNumCard">
+                <h2 class="operator">÷</h2>
+                <div class="resNum" id="divResult">0</div>
+                <h4 id="res4OE"></h4>
             </div>
-</div>
+        </div>
+    </div>
 
 <div class="aboutModal hidden">
     <button class="closeAboutModal">&times</button>
