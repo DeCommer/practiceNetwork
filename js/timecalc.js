@@ -45,9 +45,20 @@ const calculateDifference = () => {
         document.getElementById('result').innerHTML = `${hoursDiff} hours and ${minutesDiff} minutes`;
     }
     document.getElementById('total-mins').innerHTML = `Total Minutes: <span>${differenceMinutes}</span>`
-    console.log(differenceMinutes)
 }
 
 enterBtn.addEventListener('click', () => {
     calculateDifference();
+})
+
+clearBtn.addEventListener('click', () => {
+    hours1.value = '';
+    minutes1.value = '';
+    ampm1.value = 'AM'
+    hours2.value = '';
+    minutes2.value = '';
+    ampm2.value = 'AM'
+    document.getElementById('message').innerHTML = ``;
+    document.getElementById('result').innerHTML = ``;
+    document.getElementById('total-mins').innerHTML = ``
 })
