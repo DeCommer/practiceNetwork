@@ -24,11 +24,11 @@ const calculateDifference = () => {
     let totalMinutes1 = hours1 * 60 + minutes1;
     let totalMinutes2 = hours2 * 60 + minutes2;
     let differenceMinutes = totalMinutes2 - totalMinutes1;
-    // Handle negative differences (when end time is before start time)
+
     if (differenceMinutes < 0) {
-        differenceMinutes += 24 * 60; // Add 24 hours in minutes
+        differenceMinutes += 24 * 60;
     }
-    // Convert difference back to hours and minutes
+
     let hoursDiff = Math.floor(differenceMinutes / 60);
     let minutesDiff = differenceMinutes % 60;
 
@@ -47,7 +47,11 @@ const calculateDifference = () => {
         document.getElementById('message').innerHTML = `The difference is:`;
         document.getElementById('result').innerHTML = `${hoursDiff} hours and ${minutesDiff} minutes`;
     }
-    document.getElementById('total-mins').innerHTML = `Total Minutes: <span>${differenceMinutes}</span>`
+    if(isNaN(differenceMinutes)) {
+        document.getElementById('total-mins').innerHTML = ``
+    }else {
+        document.getElementById('total-mins').innerHTML = `Total Minutes: <span>${differenceMinutes}</span>`
+    }
 }
 
 enterBtn.addEventListener('click', () => {
