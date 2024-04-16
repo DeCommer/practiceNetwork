@@ -1,8 +1,6 @@
 const enterBtn = document.getElementById('enter-btn');
 const clearBtn = document.getElementById('clear-btn');
 
-
-
 const calculateDifference = () => {
     let hours1 = parseInt(document.getElementById('hours1').value);
     let minutes1 = parseInt(document.getElementById('minutes1').value);
@@ -23,25 +21,30 @@ const calculateDifference = () => {
     if (ampm2 === 'AM' && hours2 === 12) {
         hours2 = 0;
     }
-
     let totalMinutes1 = hours1 * 60 + minutes1;
     let totalMinutes2 = hours2 * 60 + minutes2;
     let differenceMinutes = totalMinutes2 - totalMinutes1;
-
     // Handle negative differences (when end time is before start time)
     if (differenceMinutes < 0) {
         differenceMinutes += 24 * 60; // Add 24 hours in minutes
     }
-
     // Convert difference back to hours and minutes
     let hoursDiff = Math.floor(differenceMinutes / 60);
     let minutesDiff = differenceMinutes % 60;
 
-    document.getElementById('message').innerHTML = `The difference is:`;
-
-    if(hoursDiff == 1 && minutesDiff == 1) {
+    if(isNaN(hoursDiff) && isNaN(minutesDiff)) {
+        document.getElementById('message').innerHTML = `Please enter a time`;
+    }else if(hoursDiff <= 1 && minutesDiff <= 1) {
+        document.getElementById('message').innerHTML = `The difference is:`;
         document.getElementById('result').innerHTML = `${hoursDiff} hour and ${minutesDiff} minute`;
-    }else {
+    }else if(hoursDiff <= 1 && minutesDiff >= 2) {
+        document.getElementById('message').innerHTML = `The difference is:`;
+        document.getElementById('result').innerHTML = `${hoursDiff} hour and ${minutesDiff} minutes`;
+    }else if(hoursDiff >= 2 && minutesDiff <= 1) {
+        document.getElementById('message').innerHTML = `The difference is:`;
+        document.getElementById('result').innerHTML = `${hoursDiff} hours and ${minutesDiff} minute`;
+    } else if(hoursDiff >= 2 && minutesDiff >= 2) {
+        document.getElementById('message').innerHTML = `The difference is:`;
         document.getElementById('result').innerHTML = `${hoursDiff} hours and ${minutesDiff} minutes`;
     }
     document.getElementById('total-mins').innerHTML = `Total Minutes: <span>${differenceMinutes}</span>`
@@ -62,3 +65,11 @@ clearBtn.addEventListener('click', () => {
     document.getElementById('result').innerHTML = ``;
     document.getElementById('total-mins').innerHTML = ``
 })
+
+
+
+
+
+
+
+
