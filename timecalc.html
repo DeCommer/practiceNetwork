@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Calculator</title>
+    <link rel="stylesheet" href="./css/timecalc.css">
+    <link rel="stylesheet" href="./css/logo.css">
+    <script src="./js/timecalc.js" defer></script>
+</head>
+<body>
+
+    <div class="main-container">
+        <header>
+            <a class="links" href="index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <h1>Time Difference Calculator</h1>
+        </header>
+        <div class="input-area">
+            <div class="hour-1">
+                <label for="time1">Start Time:</label>
+                <input type="number" id="hours1" min="1" max="12" placeholder="Hour"> :
+                <input type="number" id="minutes1" min="0" max="59" placeholder="Minute">
+                <select id="ampm1">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            <div class="hour-2">
+                <label for="time2">End Time:</label>
+                <input type="number" id="hours2" min="1" max="12" placeholder="Hour"> :
+                <input type="number" id="minutes2" min="0" max="59" placeholder="Minute">
+                <select id="ampm2">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+        </div>
+        <div class="calc-btn-area">
+            <button class="btn" id="enter-btn" type="button">Enter</button>
+            <button class="btn" id="clear-btn" type="button">Clear</button>
+        </div>
+        <div class="results-area">
+            <p id="message"></p>
+            <p id="result"></p>
+            <p id="total-mins"></p>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+

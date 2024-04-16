@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #007acc;
+    font-family: 'Roboto', sans-serif;
+    color: #09396c;
+}
+
+a {
+    margin: 15px;
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+span {
+    color: #fff;
+}
+
+.homeColor {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.homeColor:hover {
+    color:#0f4a89;
+    transition: ease-in 0.2s;
+}
+
+.title {
+    margin: 20px 0;
+}
+
+.main-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 15px;
+    height: fit-content;
+    width: 475px;
+}
+
+header {
+    text-align: center;
+}
+header h1 {
+    margin-top: 10px;
+}
+.input-area {
+    margin: 10px 0;
+}
+
+input::placeholder {
+    color:#7097b1;
+}
+
+select {
+    height: 35px;
+    width: 45px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid #09396c;
+    color: #09396c;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid #09396c;
+    font-size: 2rem;
+    color: #fff;
+    margin: 10px;
+    width: 125px;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+.hour-1 {
+    display: flex;
+    align-items: center;
+}
+
+.hour-2 {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.btn {
+    background-color: #c1121f;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px 45px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #d82e2e;
+}
+
+.results-area {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#result {
+    font-size: 2.3rem;
+}
