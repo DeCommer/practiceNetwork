@@ -120,3 +120,13 @@ input:focus {
     justify-content: space-around;
     width: 75%;
 }
+
+@media (max-width: 500px) {
+    .main-container {
+        width: 390px;
+    }
+
+    .btn {
+        padding: 10px 25px;
+    }
+}
