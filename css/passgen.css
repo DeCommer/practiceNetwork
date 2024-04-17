@@ -143,3 +143,9 @@ input:focus {
 .hide {
     display: none;
 }
+
+@media (max-width: 500px){
+    .main-container {
+        width: 390px;
+    }
+}
