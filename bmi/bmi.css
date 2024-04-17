@@ -206,4 +206,37 @@ span {
     display: none;
 }
 
+@media (max-width: 500px) {
+    .main-container {
+        width: 420px;
+    }
 
+    .indicators-area{
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+
+    #ind-2 {
+        /* border: 1px solid yellowgreen; */
+        left: 150px;
+    }
+    #ind-3 {
+        /* border: 1px solid magenta; */
+        position: absolute;
+        width: 30px;
+        height: 20px;
+        left: 240px;
+    }
+    #ind-4 {
+        /* border: 1px solid yellow; */
+        position: absolute;
+        width: 30px;
+        height: 20px;
+        right: 30px;
+    }
+
+    .info-area {
+        font-size: .9rem;
+    }
+
+}
