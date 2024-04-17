@@ -208,7 +208,7 @@ span {
 
 @media (max-width: 500px) {
     .main-container {
-        width: 420px;
+        width: 400px;
     }
 
     .indicators-area{
