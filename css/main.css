@@ -8,7 +8,7 @@
 
 body {
     position: relative;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     justify-content: center;
     background-color: #007acc;
@@ -149,9 +149,15 @@ section h2 {
 
 footer {
     /* border: 1px solid red; */
-    position: absolute;
     display: flex;
-    bottom: 50px;
+    margin: 20px 0;
+}
+
+@media (max-width: 500px) {
+    footer p {
+        /* border: 1px solid red; */
+        font-size: .8rem;
+    }
 }
 
 @media  (max-width: 800px) {
@@ -160,10 +166,6 @@ footer {
         /* border: 1px solid black; */
         width: 100%;
         padding: 25px;
-    }
-    .links-left {
-        /* border: 1px solid yellow; */
-        margin-left: 0px;
     }
 
 }
