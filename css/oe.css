@@ -166,29 +166,25 @@ input:focus {
     color: #09396c;
 }
 
-@media screen and (max-width: 501px) {
-
-    .mainContain {
+@media screen and (max-width: 500px) {
+    .main-container {
         height: auto;
+        width: 350px;
     }
     
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
     .btn {
         margin-top: 20px;
-        width: 150px;
+        width: 125px;
     }
 
-    h4 {
-        padding: 0;
-        margin: 0;
+    input{
+        font-size: 1.5rem;
+        height: 50px;
+        width: 100px;
     }
 
     #resCardContainer {
+        display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;

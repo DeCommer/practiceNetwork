@@ -158,6 +158,10 @@ footer {
         /* border: 1px solid red; */
         font-size: .8rem;
     }
+
+    header {
+        width: 100%;
+    }
 }
 
 @media  (max-width: 800px) {
