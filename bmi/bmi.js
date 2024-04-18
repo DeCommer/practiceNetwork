@@ -16,7 +16,6 @@ const usBtn = document.getElementById('us-btn');
 const metricBtn = document.getElementById('metric-btn');
 const usIn = document.getElementById('us');
 const metIn = document.getElementById('metric');
-
 let state = 'us';
 // console.log(state);
 
@@ -141,9 +140,7 @@ calc_btn.addEventListener('click', () => {
     }
     
 });
-
 const resetbtn = document.querySelector('.reset-btn');
-
 const reset = () => {
         // state = 'us'
     // usBtn.classList.add('active');
@@ -163,7 +160,6 @@ const reset = () => {
     indicator_3.textContent = '';
     indicator_4.textContent = '';
 }
-
 resetbtn.addEventListener('click', () => {
     reset();
 });
