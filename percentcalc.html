@@ -14,40 +14,40 @@
     <div class="main-container">
         <header>
             <a class="links" href="index.html"><span class="homeColor">Home</span></a>
-            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <!-- <a class="aboutBtn" href="#"><span class="homeColor">About</span></a> -->
         </header>
         <div class="calculator-container">
 
             <div class="percentcalc-container container">
                 <h1>Percentage Calculator</h1>
                 <div class="input-area">
-                    <input placeholder="%"> of <input>
+                    <input id="pc-percent-in" autocomplete="off">% of <input id="pc-value-in" autocomplete="off">
                 </div>
                 <div class="btns-area">
-                    <button class="btn">Calculate</button>
-                    <button class="btn">Reset</button>
+                    <button id="pc-enter-btn" class="btn">Calculate</button>
+                    <button id="pc-reset-btn" class="btn">Reset</button>
                 </div>
                 <div class="results-area">
-                    <p class="formula"></p>
-                    <h3>0</h3>
-                    <p class="message"></p>
+                    <p id="pc-message" class="message"></p>
+                    <h3 id="pc-result">0</h3>
+                    <p id="pc-formula" class="formula"></p>
                 </div>
             </div>
 
             <div class="difference-container container">
                 <h1>Percentage Difference Calculator</h1>
                 <div class="input-area">
-                    Value 1<input>
-                    Value 2<input>
+                    Value 1<input id="diff-val-1" autocomplete="off">
+                    Value 2<input id="diff-val-2" autocomplete="off">
                 </div>
                 <div class="btns-area">
-                    <button class="btn">Calculate</button>
-                    <button class="btn">Reset</button>
+                    <button id="diff-enter-btn" class="btn">Calculate</button>
+                    <button id="diff-reset-btn" class="btn">Reset</button>
                 </div>
                 <div class="results-area">
-                    <p class="formula"></p>
-                    <h3>0</h3>
-                    <p class="message"></p>
+                    <p id="diff-message" class="message"></p>
+                    <h3 id="diff-result">0</h3>
+                    <p id="diff-formula" class="formula"></p>
                 </div>
             </div>
 
@@ -58,22 +58,22 @@
                     <button id="decr-btn" class="btn">Decrease</button><br>
                 </div>
                 <div class="input-area">
-                    <input><p>Increased by</p><input placeholder="%">
+                    <input id="chng-value-in" autocomplete="off"><p id="incr-decr-txt">Increased by</p><input id="chng-percent-in" autocomplete="off">%
                 </div>
                 <div class="btns-area">
-                    <button class="btn">Calculate</button>
-                    <button class="btn">Reset</button>
+                    <button id="chng-enter-btn" class="btn">Calculate</button>
+                    <button  id="chng-reset-btn"class="btn">Reset</button>
                 </div>
                 <div class="results-area">
-                    <p class="formula"></p>
-                    <h3>0</h3>
-                    <p class="message"></p>
+                    <p id="chng-message" class="message"></p>
+                    <h3 id="chng-result">0</h3>
+                    <p id="chng-formula" class="formula"></p>
                 </div>
             </div>
 
-            <div class="phrases-container container">
+            <!-- <div class="phrases-container container">
                 <div>
-                    <h1>In Common Phrases</h1>
+                    <h1>% In Common Phrases</h1>
                 </div>
                 <div class="input-area">
                     What is <input placeholder="%"> of <input>
@@ -90,7 +90,7 @@
                     <p class="message"></p>
                 </div>
             </div>
-            
+             -->
         </div>
     </div>
 </body>

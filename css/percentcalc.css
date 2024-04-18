@@ -34,6 +34,12 @@ h1 {
     margin: 10px;
 }
 
+h3 {
+    font-size: 2.5rem;
+    margin: 0px;
+    padding: 0px;
+}
+
 .main-container {
     /* border: 1px solid blue; */
     border-radius: 16px;
@@ -142,7 +148,7 @@ input::placeholder {
     color: #fff;
 }
 
-#formula {
-    font-size: 2rem;
-    padding-bottom: 20px;
+.formula {
+    font-size: .9rem;
+    /* padding-bottom: 20px; */
 }
