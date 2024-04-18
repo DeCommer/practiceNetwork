@@ -46,12 +46,12 @@ header h1 {
     margin: 15px;
 }
 
-#usBtn {
-    padding: 5px 10px;
+#us-btn {
+    padding: 5px 20px;
     font-size: 1rem;
 }
 
-#metricBtn {
+#metric-btn {
     padding: 5px 10px;
     font-size: 1rem;
 }
@@ -98,6 +98,19 @@ input:focus {
 
 .btn:hover {
     background-color: #d82e2e;
+}
+
+.active {
+    background-color: #42e31aff;
+    color: #235311;
+}
+
+.active:hover {
+    background-color: rgb(159, 232, 141);
+}
+
+.hide {
+    display: none;
 }
 
 .results-area {

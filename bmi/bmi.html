@@ -18,13 +18,17 @@
                 <h1>BMI Calculator</h1>
             </header>
             <div class="type-selection-area">
-                <button class="btn active" id="usBtn">US</button>
-                <button class="btn" id="metricBtn">Metric</button><br>
+                <button class="btn active" id="us-btn">US</button>
+                <button class="btn" id="metric-btn">Metric</button><br>
             </div>
-            <div class="field-container">
-                <label id="ft-lab">Feet:<input id="feet-input" type="number" class="feet-input"></label>
-                <label id="in-lab">Inches:<input id="inch-input" type="number" class="inches-input"></label>
-                <label id="lb-lab">Pounds:<input id="pounds-input" type="number" ></label>
+            <div id="us" class="field-container">
+                <label id="ft-lab">Feet:<input id="feet-input" type="number" min="0" max="12"class="feet-input"></label>
+                <label id="in-lab">Inches:<input id="inch-input" type="number" min="0" max="12" class="inches-input"></label>
+                <label id="lb-lab">Pounds:<input id="pounds-input" type="number" min="0" ></label>
+            </div>
+            <div id="metric" class="field-container hide">
+                <label id="in-lab">cm:<input id="cm-input" type="number" class="inches-input"></label>
+                <label id="lb-lab">Kg:<input id="kg-input" type="number" ></label>
             </div>
             <div class="btn-area">
                 <button id="calc-btn" class="calc-btn btn">Calculate</button>
@@ -60,7 +64,6 @@
                     <p>≥ 30.0</p>
                 </div>
             </div>
-            <p>Metric coming soon</p>
         </main>
         <div class="aboutModal hidden">
             <button class="closeAboutModal">&times</button>
