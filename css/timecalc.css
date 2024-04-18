@@ -89,7 +89,7 @@ select {
     border: 1px solid #09396c;
     color: #09396c;
     /* margin-left: 10px; */
-    font-size: 1rem;
+    font-size: .7rem;
 }
 
 input {
