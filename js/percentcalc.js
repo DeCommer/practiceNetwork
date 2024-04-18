@@ -16,8 +16,9 @@ pcEnterBtn.addEventListener('click', () =>{
 });
 
 pcResetBtn.addEventListener('click', () =>{
-    pcPercentIn.value = '';
-    pcValueIn.value = '';
+    pcPercentIn.value = 50;
+    pcValueIn.value = 100;
+    pcMessage.textContent = ``
     pcResult.textContent = `0`
     pcFormula.textContent = ``
 });
@@ -41,8 +42,8 @@ diffEnterBtn.addEventListener('click', () => {
 });
 
 diffResetBtn.addEventListener('click', () =>{
-    diffValue1.value = '';
-    diffValue2.value = '';
+    diffValue1.value = 50;
+    diffValue2.value = 100;
     diffResult.textContent = `0`
     diffFormula.textContent = ``
     diffMessage.textContent = ``
@@ -64,8 +65,8 @@ let state = 'incr';
 
 incrBtn.addEventListener('click', () => {
     state = 'incr'
-    chngValueIn.value = '';
-    chngPercentIn.value = '';
+    chngValueIn.value = 50;
+    chngPercentIn.value = 100;
     chngMessage.textContent =  ``
     chngResult.textContent = `0`;
     incrBtn.classList.add('active');
@@ -75,8 +76,8 @@ incrBtn.addEventListener('click', () => {
 
 decrBtn.addEventListener('click', () => {
     state = 'decr';
-    chngValueIn.value = '';
-    chngPercentIn.value = '';
+    chngValueIn.value = 50;
+    chngPercentIn.value = 100;
     chngMessage.textContent =  ``
     chngResult.textContent = `0`;
     incrBtn.classList.remove('active');
@@ -99,8 +100,8 @@ chngEnterBtn.addEventListener('click', () => {
 });
 
 chngResetBtn.addEventListener('click', () =>{
-    chngValueIn.value = '';
-    chngPercentIn.value = '';
+    chngValueIn.value = 50;
+    chngPercentIn.value = 100;
     chngResult.textContent = `0`
     chngFormula.textContent = ``
     chngMessage.textContent = ``
