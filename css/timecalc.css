@@ -160,13 +160,13 @@ input:focus {
     }
     
     select {
+        border-radius: none;
+        font-size: .5rem;
         height: 25px;
-        width: 45px;
+        width: 35px;
         background-color: rgba(255, 255, 255, 0.4);
         border: 1px solid #09396c;
         color: #09396c;
-        margin: 0px;
-        font-size: .7rem;
     }
 
     .btn {
