@@ -135,7 +135,7 @@ input:focus {
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 1200px) {
 
     .main-container {
         width: 400px;
@@ -148,11 +148,9 @@ input:focus {
     input {
         font-size: 1rem;
         margin: 5px;
-        width: 100px;
+        width: 90px;
     }
     
-
-
     select {
         height: 25px;
         width: 45px;
