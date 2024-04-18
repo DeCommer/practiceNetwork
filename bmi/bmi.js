@@ -21,6 +21,7 @@ let state = 'us';
 // console.log(state);
 
 usBtn.addEventListener('click', () => {
+    reset();
     state = 'us';
     usBtn.classList.add('active');
     metricBtn.classList.remove('active');
@@ -30,6 +31,7 @@ usBtn.addEventListener('click', () => {
 });
 
 metricBtn.addEventListener('click', () => {
+    reset();
     state = 'metric';
     usBtn.classList.remove('active');
     metricBtn.classList.add('active');
@@ -142,8 +144,8 @@ calc_btn.addEventListener('click', () => {
 
 const resetbtn = document.querySelector('.reset-btn');
 
-resetbtn.addEventListener('click', () => {
-    // state = 'us'
+const reset = () => {
+        // state = 'us'
     // usBtn.classList.add('active');
     // metricBtn.classList.remove('active');
     // usIn.classList.remove('hide');
@@ -160,4 +162,8 @@ resetbtn.addEventListener('click', () => {
     indicator_2.textContent = '';
     indicator_3.textContent = '';
     indicator_4.textContent = '';
+}
+
+resetbtn.addEventListener('click', () => {
+    reset();
 });
