@@ -26,11 +26,15 @@ resetBtn.addEventListener('click', () => {
     flips = 0;
     heads = 0;
     tails = 0;
+    headsPercent = 0;
+    tailsPercent = 0;
     coinIcon.innerHTML = `<img src="./assets/img/heads.png" alt="Heads">`;
     result.innerHTML = `<span>-</span><br>Result`;
     flipCountTxt.innerHTML = `<span>0</span><br>Flips`
     headsCountTxt.innerHTML = `<span>0</span><br>Heads`
     tailsCountTxt.innerHTML = `<span>0</span><br>Tails`
+    headsPercentTxt.innerHTML = `<span>0.00%</span><br>Heads`
+    tailsPercentTxt.innerHTML = `<span>0.00%</span><br>Tails`
 })
 
 const filpCoin = () => { 
@@ -60,7 +64,7 @@ const filpCoin = () => {
 
 const percentCalc = () => {
     headsPercent = (heads / flips) * 100;
-    headsPercentTxt.innerHTML = `<span>${headsPercent.toFixed(2)}%</span><br>Heads`
     tailsPercent = (tails / flips) * 100;
+    headsPercentTxt.innerHTML = `<span>${headsPercent.toFixed(2)}%</span><br>Heads`
     tailsPercentTxt.innerHTML = `<span>${tailsPercent.toFixed(2)}%</span><br>Tails`
 }
