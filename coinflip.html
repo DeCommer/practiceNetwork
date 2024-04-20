@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" href="./css/coinflip.css"/>
+        <script src="./js/coinflip.js" defer></script>
+		<title>Coin Toss</title> 
+	</head> 
+	<body> 
+		<div class="main-container"> 
+            <header>
+                <a href="./index.html"><span class="homeColor">Home</span></a>
+                <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+                <h1 class="title margin-top">Coin Flipper</h1>
+                <h2 class="title">9000</h2>
+            </header>
+			<div class="coin-area coin" id="coin"> 
+				<img src="./assets/img/heads.png"alt="Heads" /> 
+			</div> 
+            <div class="buttons-area">
+                <button id="toss-button" class="btn">Flip</button>
+                <button id="reset-button" class="btn">Reset</button>
+            </div>
+            <div class="results-area">
+                <p id="result"><span>-</span><br>Result</p>
+                <p id="flip-count"><span>0</span><br>Flips</p>
+                <p id="heads-count"><span>0</span><br>Heads</p>
+                <p id="tails-count"><span>0</span><br>Tails</p>
+            </div>
+            <div class="percent-area">
+                <p id="heads-percent"><span>0%</span><br>Heads</p>
+                <p id="tails-percent"><span>0%</span><br>Tails</p>
+            </div>
+		</div> 
+	</body> 
+</html> 
