@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sedan:ital@0;1&display=swap'); */
 
 *{
     margin: 0;
@@ -11,7 +12,8 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #007acc;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: "Sedan", serif;
     color: #09396c;
 }
 
@@ -26,7 +28,7 @@ body {
     margin-top: 50px;
     padding: 15px;
     height: fit-content;
-    width: 510px;
+    width: 425px;
 }
 
 a {
@@ -40,7 +42,7 @@ p {
 
 span {
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .margin-top {
@@ -49,7 +51,7 @@ span {
 
 h2 { 
     margin: 0;
-	font-size: 24px; 
+	font-size: 1.2rem; 
 } 
 
 .homeColor {
@@ -89,6 +91,7 @@ header {
 
 .btn {
     background-color: #c1121f;
+    font-family: inherit;
     color: #fff;
     font-size: 1.2rem;
     border: none;
@@ -104,6 +107,7 @@ header {
 
 .results-area { 
     /* border: 1px solid red; */
+    margin-top: 20px;
     display: flex;
     text-align: center;
 	font-size: 1.2rem; 
@@ -117,3 +121,8 @@ header {
     text-align: center;
 	color: #09396c;
 } 
+
+.array-area {
+    color: #fff;
+    font-size: 1.2rem;
+}
