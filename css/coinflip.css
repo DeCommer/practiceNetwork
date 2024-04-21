@@ -130,6 +130,7 @@ header {
 @media (max-width: 500px) {
 
     .main-container {
+        margin-top: 15px;
         width: 375px;
     }
 
@@ -138,13 +139,14 @@ header {
     }
     .coin img {
         border-radius: 50%;
-        height: 300px;
-        width: 300px;
-        margin: 20px;
+        height: 250px;
+        width: 250px;
+        margin: 5px;
     }
 
     .results-area {
         font-size: 1rem;
+        margin-top: 5px;
     }
 
     span {

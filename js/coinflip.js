@@ -8,8 +8,6 @@ const tailsCountTxt = document.getElementById('tails-count');
 const headsPercentTxt = document.getElementById('heads-percent');
 const tailsPercentTxt = document.getElementById('tails-percent');
 const arrayText = document.getElementById('array-txt');
-// coinIcon.insertAdjacentElement('afterend', result);
-
 
 let flips = 0;
 let heads = 0;
@@ -21,7 +19,7 @@ let htArray = [];
 tossBtn.addEventListener('click', () => { 
 	tossBtn.disabled = true; 
 	filpCoin(); 
-    flipCountTxt.innerHTML = `<span>${flips}</span><br>Flips`
+    flipCountTxt.innerHTML = `<span>${flips}</span><br>Flips`;
 });
 
 resetBtn.addEventListener('click', () => {
@@ -34,16 +32,15 @@ resetBtn.addEventListener('click', () => {
     arrayText.textContent  = '';
     coinIcon.innerHTML = `<img src="./assets/img/heads.png" alt="Heads">`;
     result.innerHTML = `<span>-</span><br>Result`;
-    flipCountTxt.innerHTML = `<span>0</span><br>Flips`
-    headsCountTxt.innerHTML = `<span>0</span><br>Heads`
-    tailsCountTxt.innerHTML = `<span>0</span><br>Tails`
-    headsPercentTxt.innerHTML = `<span>0.00%</span><br>Heads`
-    tailsPercentTxt.innerHTML = `<span>0.00%</span><br>Tails`
+    flipCountTxt.innerHTML = `<span>0</span><br>Flips`;
+    headsCountTxt.innerHTML = `<span>0</span><br>Heads`;
+    tailsCountTxt.innerHTML = `<span>0</span><br>Tails`;
+    headsPercentTxt.innerHTML = `<span>0.00%</span><br>Heads`;
+    tailsPercentTxt.innerHTML = `<span>0.00%</span><br>Tails`;
     
-})
+});
 
 const filpCoin = () => { 
-    console.log(htArray)
 	const randomVal = Math.random(); 
 	const faceCoin = randomVal < 0.5 ? 'Heads' : 'Tails'; 
 	const imageUrl = faceCoin === 'Heads' ? './assets/img/heads.png' : './assets/img/tails.png';
@@ -76,6 +73,6 @@ const filpCoin = () => {
 const percentCalc = () => {
     headsPercent = (heads / flips) * 100;
     tailsPercent = (tails / flips) * 100;
-    headsPercentTxt.innerHTML = `<span>${headsPercent.toFixed(2)}%</span><br>Heads`
-    tailsPercentTxt.innerHTML = `<span>${tailsPercent.toFixed(2)}%</span><br>Tails`
-}
+    headsPercentTxt.innerHTML = `<span>${headsPercent.toFixed(2)}%</span><br>Heads`;
+    tailsPercentTxt.innerHTML = `<span>${tailsPercent.toFixed(2)}%</span><br>Tails`;
+};
