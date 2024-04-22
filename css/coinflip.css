@@ -123,8 +123,16 @@ header {
 } 
 
 .array-area {
+    /* border: 1px solid red; */
+    text-align: center;
+    width: 90%;
+    height: fit-content;
     color: #fff;
     font-size: 1.2rem;
+}
+
+.array-area p {
+    margin: 0;
 }
 
 @media (max-width: 500px) {
@@ -137,6 +145,7 @@ header {
     p {
         margin: 10px 20px;
     }
+
     .coin img {
         border-radius: 50%;
         height: 250px;
