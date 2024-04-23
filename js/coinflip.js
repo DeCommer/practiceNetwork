@@ -45,7 +45,6 @@ const filpCoin = () => {
 	const faceCoin = randomVal < 0.5 ? 'Heads' : 'Tails'; 
 	const imageUrl = faceCoin === 'Heads' ? './assets/img/heads.png' : './assets/img/tails.png';
     flips += 1;
-
 	coinIcon.classList.add('flip'); 
 	setTimeout(() => { 
 		coinIcon.innerHTML = `<img src="${imageUrl}" alt="${faceCoin}">`; 
@@ -75,4 +74,8 @@ const percentCalc = () => {
     tailsPercent = (tails / flips) * 100;
     headsPercentTxt.innerHTML = `<span>${headsPercent.toFixed(2)}%</span><br>Heads`;
     tailsPercentTxt.innerHTML = `<span>${tailsPercent.toFixed(2)}%</span><br>Tails`;
+};
+
+const simulateNFlips = () => {
+    
 };
