@@ -37,7 +37,7 @@ a {
 }
 
 p {
-    margin: 10px 25px;
+    margin: 10px 15px;
 }
 
 span {
@@ -107,7 +107,7 @@ header {
 
 .results-area { 
     /* border: 1px solid red; */
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     text-align: center;
 	font-size: 1.2rem; 
@@ -124,6 +124,7 @@ header {
 
 .array-area {
     /* border: 1px solid red; */
+    margin-top: 10px;
     text-align: center;
     width: 90%;
     height: fit-content;
@@ -138,10 +139,12 @@ header {
 .input-area {
     display: flex;
     align-items: center;
+    margin-top: 20px;
 }
 
 input {
     background-color: rgba(255, 255, 255, 0.4);
+    font: inherit;
     border: 1px solid #09396c;
     font-size: 2rem;
     color: #fff;

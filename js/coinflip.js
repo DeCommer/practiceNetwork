@@ -5,10 +5,18 @@ const result = document.getElementById('result');
 const flipCountTxt = document.getElementById('flip-count');
 const headsCountTxt = document.getElementById('heads-count');
 const tailsCountTxt = document.getElementById('tails-count');
+const simFlipCountTxt = document.getElementById('sim-flip-count');
+const simHeadsCountTxt = document.getElementById('sim-heads-count');
+const simTailsCountTxt = document.getElementById('sim-tails-count');
 const headsPercentTxt = document.getElementById('heads-percent');
 const tailsPercentTxt = document.getElementById('tails-percent');
+const simHeadsPercentTxt = document.getElementById('sim-heads-percent');
+const simTailsPercentTxt = document.getElementById('sim-tails-percent');
 const arrayText = document.getElementById('array-txt');
+const simArrayText = document.getElementById('sim-array-txt');
 const numberOfFlipsIn = document.getElementById('number-of-flips-in');
+const flipsSimBtn = document.getElementById('flip-sim-btn');
+const resetSimBtn = document.getElementById('reset-sim-btn');
 
 let flips = 0;
 let heads = 0;
@@ -16,10 +24,11 @@ let tails = 0;
 let headsPercent = 0;
 let tailsPercent = 0;
 let htArray = [];
+let simHtArray = [];
 
 tossBtn.addEventListener('click', () => { 
+	coinFlipper9000(); 
 	tossBtn.disabled = true; 
-	filpCoin(); 
     flipCountTxt.innerHTML = `<span>${flips}</span><br>Flips`;
 });
 
@@ -38,10 +47,9 @@ resetBtn.addEventListener('click', () => {
     tailsCountTxt.innerHTML = `<span>0</span><br>Tails`;
     headsPercentTxt.innerHTML = `<span>0.00%</span><br>Heads`;
     tailsPercentTxt.innerHTML = `<span>0.00%</span><br>Tails`;
-    
 });
 
-const filpCoin = () => { 
+const coinFlipper9000 = () => { 
 	const randomVal = Math.random(); 
 	const faceCoin = randomVal < 0.5 ? 'Heads' : 'Tails'; 
 	const imageUrl = faceCoin === 'Heads' ? './assets/img/heads.png' : './assets/img/tails.png';
@@ -78,7 +86,45 @@ const percentCalc = () => {
 };
 
 const simulateNFlips = () => {
-    for(let n = 0; n = numberOfFlipsIn.value; n++) {
-        console.log(`This many: ${flips}`)
+    simHtArray = [];
+    var headsCount = 0;
+    var tailsCount = 0;
+    for (let i = 0; i < numberOfFlipsIn.value; i++) {
+        let outcome = Math.random() < 0.5 ? 'Heads' : 'Tails';
+        if (outcome === 'Heads') {
+            headsCount++;
+            simHtArray.push(' H');
+        } else {
+            tailsCount++;
+            simHtArray.push(' T');
+        }
+        console.log(simHtArray);
     }
+    var headsPercentage = (headsCount / numberOfFlipsIn.value * 100).toFixed(2);
+    var tailsPercentage = (tailsCount / numberOfFlipsIn.value * 100).toFixed(2);
+
+    console.log(`Number of flips: ${numberOfFlipsIn.value}.`)
+    console.log(`Heads Percentage: ${headsPercentage}%, Tails Percentage: ${tailsPercentage}%`)
+
+    simFlipCountTxt.innerHTML = `<span>${numberOfFlipsIn.value}</span><br>Flips`
+    simHeadsCountTxt.innerHTML = `<span>${headsCount}</span><br>Heads`
+    simTailsCountTxt.innerHTML = `<span>${tailsCount}</span><br>Tails`
+    simHeadsPercentTxt.innerHTML = `<span>${headsPercentage}%</span><br>Heads`;
+    simTailsPercentTxt.innerHTML = `<span>${tailsPercentage}%</span><br>Tails`;
+    simArrayText.textContent = simHtArray;
 };
+
+flipsSimBtn.addEventListener('click', () => {
+    simulateNFlips();
+});
+
+resetSimBtn.addEventListener('click', () => {
+    simHtArray = [];
+    numberOfFlipsIn.value = ''
+    simFlipCountTxt.innerHTML = `<span>0</span><br>Flips`
+    simHeadsCountTxt.innerHTML = `<span>0</span><br>Heads`
+    simTailsCountTxt.innerHTML = `<span>0</span><br>Tails`
+    simHeadsPercentTxt.innerHTML = `<span>0%</span><br>Heads`;
+    simTailsPercentTxt.innerHTML = `<span>0%</span><br>Tails`;
+    simArrayText.textContent = '';
+});
