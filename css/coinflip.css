@@ -135,6 +135,27 @@ header {
     margin: 0;
 }
 
+.input-area {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid #09396c;
+    font-size: 2rem;
+    color: #fff;
+    margin: 5px;
+    width: 125px;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
 @media (max-width: 500px) {
 
     .main-container {

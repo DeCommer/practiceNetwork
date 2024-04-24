@@ -1,5 +1,5 @@
 const coinIcon = document.getElementById('coin');
-const tossBtn = document.getElementById('toss-button');
+const tossBtn = document.getElementById('flip-button');
 const resetBtn = document.getElementById('reset-button');
 const result = document.getElementById('result');
 const flipCountTxt = document.getElementById('flip-count');
@@ -8,6 +8,7 @@ const tailsCountTxt = document.getElementById('tails-count');
 const headsPercentTxt = document.getElementById('heads-percent');
 const tailsPercentTxt = document.getElementById('tails-percent');
 const arrayText = document.getElementById('array-txt');
+const numberOfFlipsIn = document.getElementById('number-of-flips-in');
 
 let flips = 0;
 let heads = 0;
@@ -77,5 +78,7 @@ const percentCalc = () => {
 };
 
 const simulateNFlips = () => {
-    
+    for(let n = 0; n = numberOfFlipsIn.value; n++) {
+        console.log(`This many: ${flips}`)
+    }
 };
