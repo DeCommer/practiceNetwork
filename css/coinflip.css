@@ -89,6 +89,10 @@ header {
 	} 
 } 
 
+.buttons-area {
+    text-align: center;
+}
+
 .btn {
     background-color: #c1121f;
     font-family: inherit;
@@ -127,7 +131,8 @@ header {
     margin-top: 10px;
     text-align: center;
     width: 90%;
-    height: fit-content;
+    max-height: 250px;
+    overflow: scroll;
     color: #fff;
     font-size: 1.2rem;
 }

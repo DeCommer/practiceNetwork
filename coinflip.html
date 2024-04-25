@@ -26,7 +26,7 @@
                 <p id="array-txt"></p>
             </div>
             <div class="results-area">
-                <p id="result"><span>-</span><br>Result</p>
+                <p id="result"><span>H</span><br>Result</p>
                 <p id="flip-count"><span>0</span><br>Flips</p>
                 <p id="heads-count"><span>0</span><br>Heads</p>
                 <p id="tails-count"><span>0</span><br>Tails</p>
@@ -43,11 +43,12 @@
                 </header>
                 <div class="input-area">
                     <label>Number of flips: </label>
-                    <input id="number-of-flips-in" type="number" min="0" max="1000">
+                    <input id="number-of-flips-in" type="number" min="0" max="1000" step="10">
                 </div>
                 <div class="buttons-area">
                     <button id="flip-sim-btn" class="btn">Flip</button>
                     <button id="reset-sim-btn" class="btn">Reset</button>
+                    <p id="message"></p>
                 </div>
                 <div class="array-area">
                     <p id="sim-array-txt"></p>

@@ -17,6 +17,7 @@ const simArrayText = document.getElementById('sim-array-txt');
 const numberOfFlipsIn = document.getElementById('number-of-flips-in');
 const flipsSimBtn = document.getElementById('flip-sim-btn');
 const resetSimBtn = document.getElementById('reset-sim-btn');
+const simMessage = document.getElementById('message');
 
 let flips = 0;
 let heads = 0;
@@ -41,7 +42,7 @@ resetBtn.addEventListener('click', () => {
     htArray = [];
     arrayText.textContent  = '';
     coinIcon.innerHTML = `<img src="./assets/img/heads.png" alt="Heads">`;
-    result.innerHTML = `<span>-</span><br>Result`;
+    result.innerHTML = `<span>H</span><br>Result`;
     flipCountTxt.innerHTML = `<span>0</span><br>Flips`;
     headsCountTxt.innerHTML = `<span>0</span><br>Heads`;
     tailsCountTxt.innerHTML = `<span>0</span><br>Tails`;
@@ -51,8 +52,8 @@ resetBtn.addEventListener('click', () => {
 
 const coinFlipper9000 = () => { 
 	const randomVal = Math.random(); 
-	const faceCoin = randomVal < 0.5 ? 'Heads' : 'Tails'; 
-	const imageUrl = faceCoin === 'Heads' ? './assets/img/heads.png' : './assets/img/tails.png';
+	const faceCoin = randomVal < 0.5 ? 'H' : 'T'; 
+	const imageUrl = faceCoin === 'H' ? './assets/img/heads.png' : './assets/img/tails.png';
     flips += 1;
 	coinIcon.classList.add('flip'); 
 	setTimeout(() => { 
@@ -61,13 +62,13 @@ const coinFlipper9000 = () => {
 		setTimeout(() => { 
 			result.innerHTML = `<span>${faceCoin}</span><br>Result`; 
 			tossBtn.disabled = false; 
-        if(faceCoin === 'Heads') {
+        if(faceCoin === 'H') {
             heads +=1;
             headsCountTxt.innerHTML = `<span>${heads}</span><br>Heads`;
             percentCalc();
             htArray.push(' H');
             arrayText.textContent  = htArray;
-        }else if(faceCoin === 'Tails'){
+        }else if(faceCoin === 'T'){
             tails +=1;
             tailsCountTxt.innerHTML = `<span>${tails}</span><br>Tails`
             percentCalc();
@@ -98,8 +99,13 @@ const simulateNFlips = () => {
             tailsCount++;
             simHtArray.push(' T');
         }
-        console.log(simHtArray);
     }
+    if(numberOfFlipsIn.value >= 181) {
+        simMessage.textContent = ('🔻Scroll to see full results🔻');
+    }else {
+        simMessage.textContent = ('');
+    };
+    console.log(simHtArray);
     var headsPercentage = (headsCount / numberOfFlipsIn.value * 100).toFixed(2);
     var tailsPercentage = (tailsCount / numberOfFlipsIn.value * 100).toFixed(2);
 
@@ -115,11 +121,16 @@ const simulateNFlips = () => {
 };
 
 flipsSimBtn.addEventListener('click', () => {
-    simulateNFlips();
+    if(numberOfFlipsIn.value === '') {
+        simMessage.textContent = ('Enter a value');
+    } else {
+        simulateNFlips();
+    }
 });
 
 resetSimBtn.addEventListener('click', () => {
     simHtArray = [];
+    simMessage.textContent = ('')
     numberOfFlipsIn.value = ''
     simFlipCountTxt.innerHTML = `<span>0</span><br>Flips`
     simHeadsCountTxt.innerHTML = `<span>0</span><br>Heads`
