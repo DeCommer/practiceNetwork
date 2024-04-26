@@ -147,20 +147,6 @@ header {
     margin-top: 20px;
 }
 
-.hist-area {
-    border: 1px solid red;
-    display: flex;
-    height: 280px;
-}
-
-.rect {
-    border: 1px solid greenyellow;
-    display: flex;
-    margin: 10px;
-    width: 10px;
-    height: 90px;
-}
-
 input {
     background-color: rgba(255, 255, 255, 0.4);
     font: inherit;
@@ -177,6 +163,22 @@ input {
 input:focus {
     outline: none;
 }
+
+/* binomial distribution css */
+
+.fpt-button {
+    padding: 5px 10px;
+}
+
+.trial-button {
+    padding: 5px 10px;
+}
+
+.active {
+    background-color: #42e31aff;
+    color: #235311;
+}
+
 
 @media (max-width: 500px) {
 

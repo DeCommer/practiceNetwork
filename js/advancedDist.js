@@ -12,13 +12,13 @@ let state = 'miles';
 
 miBtn.addEventListener('click', () => {
     state = 'miles';
-    dispType.textContent = 'Mi - Km'
+    dispType.textContent = 'mi - km'
     miBtn.classList.add('active');
     kmBtn.classList.remove('active');
 });
 
 kmBtn.addEventListener('click', () => {
-    dispType.textContent = 'Km - Mi'
+    dispType.textContent = 'km - mi'
     state = 'kilometers';
     kmBtn.classList.add('active');
     miBtn.classList.remove('active');
@@ -33,12 +33,12 @@ enterBtn.addEventListener('click', () => {
     }else if(state === 'miles') {
         let mi = input.value
         toKm = mi * 1.609;
-        resultTempTxt.textContent = `${toKm}`;
+        resultTempTxt.innerHTML = `${toKm.toFixed(2)}<span>km</span>`;
         formula.textContent = `Formula: ${mi} x 1.609`;
     }else if (state === 'kilometers') {
         let km = input.value
         toMi = km / 1.609;
-        resultTempTxt.textContent = `${toMi.toFixed(4)}`;
+        resultTempTxt.innerHTML = `${toMi.toFixed(2)}<span>mi</span>`;
         formula.textContent = `Formula: ${km} / 1.609`;
     }
 });
@@ -46,7 +46,7 @@ enterBtn.addEventListener('click', () => {
 clearBtn.addEventListener('click', () => {
     state = 'miles';
     input.value = '';
-    dispType.textContent = 'Mi - Km';
+    dispType.textContent = 'mi - km';
     resultTempTxt.textContent = `0`;
     formula.textContent = `Enter a value to convert`;
 });

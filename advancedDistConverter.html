@@ -17,7 +17,7 @@
             <a href="./index.html"><span class="homeColor">Home</span></a>
             <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
             <h1 class="title">Miles/Kilometers Converter</h1>
-            <p>Choose conversion type: <span id="dispType">Mi - Km</span></p>
+            <p>Choose conversion type: <span id="dispType">mi - km</span></p>
         </header>
         <div class="type-selection-area">
             <button class="btn active" id="mi-btn">Miles</button>
@@ -38,9 +38,8 @@
 
     <div class="aboutModal hidden">
         <button class="closeAboutModal">&times</button>
-        <h1>KM / MI Distance Converter</h1>
-        <p>Press 'k' or 'm' to convert to Kilometers or Miles.
-        This is a basic converter app that uses the base 
+        <h1>km / mi Distance Converter</h1>
+        <p>This is a basic converter app that uses the base 
         units to calculate distance.
         </p><p>
         I made this with a combination of HTML, CSS and JS. 
@@ -54,53 +53,53 @@
             <button class="closeJsModal">&times</button>
 const dispType = document.getElementById('dispType');
 const input = document.getElementById('input');
-const radBtn = document.getElementById('radBtn');
-const degBtn = document.getElementById('degBtn');
+const miBtn = document.getElementById('mi-btn');
+const kmBtn = document.getElementById('km-btn');
 const enterBtn = document.getElementById('enterBtn');
 const clearBtn = document.getElementById('clear-btn');
 const result = document.getElementById('result');
 const formula = document.getElementById('formula')
 const resultTempTxt = document.getElementById('result-temp-txt');
 
-let state = 'degrees';
+let state = 'miles';
 
-radBtn.addEventListener('click', () => {
-    state = 'radians';
-    dispType.textContent = 'Rad - Deg'
-    radBtn.classList.add('active');
-    degBtn.classList.remove('active');
+miBtn.addEventListener('click', () => {
+    state = 'miles';
+    dispType.textContent = 'Mi - Km'
+    miBtn.classList.add('active');
+    kmBtn.classList.remove('active');
 });
 
-degBtn.addEventListener('click', () => {
-    dispType.textContent = 'Deg - Rad'
-    state = 'degrees';
-    degBtn.classList.add('active');
-    radBtn.classList.remove('active');
+kmBtn.addEventListener('click', () => {
+    dispType.textContent = 'Km - Mi'
+    state = 'kilometers';
+    kmBtn.classList.add('active');
+    miBtn.classList.remove('active');
 })
 
 enterBtn.addEventListener('click', () => {
     if(input.value === '') {
-        formula.textContent = "Please enter numeric a value";
+        formula.textContent = "Please enter a numeric value";
         setTimeout(() => {
             formula.textContent = "Enter a value to convert";
         }, 1500);
-    }else if(state === 'degrees') {
-        let deg = input.value
-        toRad = ((deg * Math.PI) / 180).toFixed(3);
-        resultTempTxt.textContent = `${toRad}`;
-        formula.textContent = `Formula: ${deg}° x π/180 = ${toRad}rad`;
-    }else if (state === 'radians') {
-        let rad = input.value
-        toDeg = ((rad * 180) / Math.PI).toFixed(3)
-        resultTempTxt.textContent = `${toDeg}`;
-        formula.textContent = `Formula: ${rad}rad x 180/π = ${toDeg}°`;
+    }else if(state === 'miles') {
+        let mi = input.value
+        toKm = mi * 1.609;
+        resultTempTxt.innerHTML = `${toKm.toFixed(2)}<span>KM</span>`;
+        formula.textContent = `Formula: ${mi} x 1.609`;
+    }else if (state === 'kilometers') {
+        let km = input.value
+        toMi = km / 1.609;
+        resultTempTxt.innerHTML = `${toMi.toFixed(2)}<span>MI</span>`;
+        formula.textContent = `Formula: ${km} / 1.609`;
     }
 });
 
 clearBtn.addEventListener('click', () => {
-    state = 'degrees';
+    state = 'miles';
     input.value = '';
-    dispType.textContent = 'Deg - Rad';
+    dispType.textContent = 'Mi - Km';
     resultTempTxt.textContent = `0`;
     formula.textContent = `Enter a value to convert`;
 });
