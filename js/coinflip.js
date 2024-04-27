@@ -108,10 +108,8 @@ const simulateNFlips = () => {
     console.log(simHtArray);
     var headsPercentage = (headsCount / numberOfFlipsIn.value * 100).toFixed(2);
     var tailsPercentage = (tailsCount / numberOfFlipsIn.value * 100).toFixed(2);
-
-    console.log(`Number of flips: ${numberOfFlipsIn.value}.`)
-    console.log(`Heads Percentage: ${headsPercentage}%, Tails Percentage: ${tailsPercentage}%`)
-
+    // console.log(`Number of flips: ${numberOfFlipsIn.value}.`)
+    // console.log(`Heads Percentage: ${headsPercentage}%, Tails Percentage: ${tailsPercentage}%`)
     simFlipCountTxt.innerHTML = `<span>${numberOfFlipsIn.value}</span><br>Flips`
     simHeadsCountTxt.innerHTML = `<span>${headsCount}</span><br>Heads`
     simTailsCountTxt.innerHTML = `<span>${tailsCount}</span><br>Tails`
