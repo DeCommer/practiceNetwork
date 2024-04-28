@@ -7,7 +7,6 @@ const pcFormula = document.getElementById('pc-formula');
 const pcResult = document.getElementById('pc-result');
 const pcMessage = document.getElementById('pc-message');
 
-
 pcEnterBtn.addEventListener('click', () =>{
     const pcOut = (pcPercentIn.value / 100) * pcValueIn.value;
     pcResult.textContent = `${pcOut.toFixed(2)}`

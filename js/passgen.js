@@ -2,7 +2,6 @@ const enterBtn = document.getElementById('enter_btn');
 const copy = document.getElementById('copy-btn');
 const clear = document.getElementById('clr_btn');
 let progress = document.querySelector('.progress-bar');
-
 let num = 0;
 let total = 10;
 
