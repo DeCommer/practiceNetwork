@@ -124,7 +124,7 @@ let type = 1;
 type1Btn.addEventListener('click', () => {
     type = 1;
     inputQuestionTxt.innerHTML = 'What is <input id="type-1-1" type="number" autocomplete="off">% of <input id="type-1-2" type="number" autocomplete="off">?';
-    console.log(`Type: ${type}`);
+    // console.log(`Type: ${type}`);
     type1Btn.classList.add('active');
     type2Btn.classList.remove('active');
     type3Btn.classList.remove('active');
