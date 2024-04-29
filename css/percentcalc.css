@@ -51,7 +51,7 @@ h3 {
     margin-top: 50px;
     padding: 15px;
     height: fit-content;
-    width: 100%;
+    width: 75%;
 }
 
 .calculator-container {
@@ -67,8 +67,8 @@ h3 {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     margin: 10px;
-    height: fit-content;
-    width: 350px;
+    height: auto;
+    width: 420px;
 }
 
 .input-area {
@@ -85,15 +85,8 @@ h3 {
     margin: 20px;    
 }
 
-#incr-btn {
-    padding: 5px 10px;
-    font-size: 1rem;
-}
 
-#decr-btn {
-    padding: 5px 10px;
-    font-size: 1rem;
-}
+
 
 input {
     background-color: rgba(255, 255, 255, 0);
@@ -125,6 +118,11 @@ input::placeholder {
     margin: 10px;
     padding: 10px 25px;
     cursor: pointer;
+}
+
+.type-btn {
+    padding: 5px 10px;
+    font-size: 1rem;
 }
 
 .btn:hover {

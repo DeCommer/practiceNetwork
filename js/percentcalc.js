@@ -15,8 +15,8 @@ pcEnterBtn.addEventListener('click', () =>{
 });
 
 pcResetBtn.addEventListener('click', () =>{
-    pcPercentIn.value = 50;
-    pcValueIn.value = 100;
+    pcPercentIn.value = '';
+    pcValueIn.value = '';
     pcMessage.textContent = ``
     pcResult.textContent = `0`
     pcFormula.textContent = ``
@@ -41,8 +41,8 @@ diffEnterBtn.addEventListener('click', () => {
 });
 
 diffResetBtn.addEventListener('click', () =>{
-    diffValue1.value = 50;
-    diffValue2.value = 100;
+    diffValue1.value = '';
+    diffValue2.value = '';
     diffResult.textContent = `0`
     diffFormula.textContent = ``
     diffMessage.textContent = ``
@@ -64,8 +64,8 @@ let state = 'incr';
 
 incrBtn.addEventListener('click', () => {
     state = 'incr'
-    chngValueIn.value = 50;
-    chngPercentIn.value = 100;
+    chngValueIn.value = '';
+    chngPercentIn.value = '';
     chngMessage.textContent =  ``
     chngResult.textContent = `0`;
     incrBtn.classList.add('active');
@@ -75,8 +75,8 @@ incrBtn.addEventListener('click', () => {
 
 decrBtn.addEventListener('click', () => {
     state = 'decr';
-    chngValueIn.value = 50;
-    chngPercentIn.value = 100;
+    chngValueIn.value = '';
+    chngPercentIn.value = '';
     chngMessage.textContent =  ``
     chngResult.textContent = `0`;
     incrBtn.classList.remove('active');
@@ -99,12 +99,52 @@ chngEnterBtn.addEventListener('click', () => {
 });
 
 chngResetBtn.addEventListener('click', () =>{
-    chngValueIn.value = 50;
-    chngPercentIn.value = 100;
+    chngValueIn.value = '';
+    chngPercentIn.value = '';
     chngResult.textContent = `0`
     chngFormula.textContent = ``
     chngMessage.textContent = ``
 });
 
 //Common Phrases Calculator
+const type_1_1 = document.getElementById('type-1-1');
+const type_1_2 = document.getElementById('type-1-2');
+const type_2_1 = document.getElementById('type-2-1');
+const type_2_2 = document.getElementById('type-2-2');
+const type_3_1 = document.getElementById('type-3-1');
+const type_3_2 = document.getElementById('type-3-2');
+const type1Btn = document.getElementById('type-1-btn');
+const type2Btn = document.getElementById('type-2-btn');
+const type3Btn = document.getElementById('type-3-btn');
+const typeEnterBtn = document.getElementById('type-enter-btn');
+const typeResetBtn = document.getElementById('type-reset-btn');
+const typeMessage = document.getElementById('type-message');
+const typeResult = document.getElementById('ype-result');
+const typeFormula = document.getElementById('type-formula');
+const inputQuestionTxt = document.getElementById('input-question-type');
+
+let type = 1;
+
+type1Btn.addEventListener('click', () => {
+    type1Btn.classList.add('active');
+    type2Btn.classList.remove('active');
+    type3Btn.classList.remove('active');
+    inputQuestionTxt.innerHTML = 'What is <input id="type-1-1" type="number" autocomplete="off">% of <input id="type-1-2" type="number" autocomplete="off">'
+});
+
+type2Btn.addEventListener('click', () => {
+    type1Btn.classList.remove('active');
+    type2Btn.classList.add('active');
+    type3Btn.classList.remove('active');
+    inputQuestionTxt.innerHTML = '<input id="type-2-1" type="number" autocomplete="off"> is what % of <input id="type-2-2" type="number" autocomplete="off">'
+});
+
+type3Btn.addEventListener('click', () => {
+    type1Btn.classList.remove('active');
+    type2Btn.classList.remove('active');
+    type3Btn.classList.add('active');
+    inputQuestionTxt.innerHTML = '<input id="type-3-1" type="number" autocomplete="off">is<input id="type-3-2" type="number" autocomplete="off">% of what'
+});
+
+
 
