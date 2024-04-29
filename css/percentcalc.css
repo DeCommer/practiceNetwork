@@ -142,6 +142,7 @@ input::placeholder {
 
 .results-area {
     text-align: center;
+
 }
 
 .result-temp {
@@ -152,4 +153,17 @@ input::placeholder {
 .formula {
     font-size: .9rem;
     /* padding-bottom: 20px; */
+}
+
+@media (max-width: 500px) {
+
+    .main-container {
+        width: 100%;
+        padding: 5px;
+
+    }
+
+    .container {
+        width: 350px;
+    }
 }
