@@ -136,7 +136,7 @@ type1Btn.addEventListener('click', () => {
 type2Btn.addEventListener('click', () => {
     type = 2;
     inputQuestionTxt.innerHTML = '<input id="type-2-1" type="number" autocomplete="off"> is what % of <input id="type-2-2" type="number" autocomplete="off">?';
-    console.log(`Type: ${type}`);
+    // console.log(`Type: ${type}`);
     type1Btn.classList.remove('active');
     type2Btn.classList.add('active');
     type3Btn.classList.remove('active');
@@ -148,7 +148,7 @@ type2Btn.addEventListener('click', () => {
 type3Btn.addEventListener('click', () => {
     type = 3;
     inputQuestionTxt.innerHTML = '<input id="type-3-1" type="number" autocomplete="off">is<input id="type-3-2" type="number" autocomplete="off">% of what ?';
-    console.log(`Type: ${type}`);
+    // console.log(`Type: ${type}`);
     type1Btn.classList.remove('active');
     type2Btn.classList.remove('active');
     type3Btn.classList.add('active');
