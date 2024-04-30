@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/weightconverter.css">
+    <link rel="stylesheet" href="./css/logo.css">
+    <link rel="stylesheet" href="./css/showhide.css">
+    <script src="./js/weightconverter.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
+    <title>Weight converter</title>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <h1 class="title">Weight Converter</h1>
+            <p>Current conversion type: <span id="disp-type">kg - lbs</span></p>
+        </header>
+        <div class="type-selection-area">
+            <button id="lb-btn" class="btn active" >Pounds</button><br>
+            <button id="kg-btn" class="btn">Kilograms</button>
+        </div>
+        <div class="input-area">
+            <label>Enter Weight:</label><input id="input" type="number">
+        </div>
+        <div class="calc-btn-area">
+            <button id="enter-btn" class="btn" >Enter</button>
+            <button id="reset-btn" class="btn" >Reset</button>
+        </div>
+        <div class="results-area">
+            <p id="message"></p>
+            <p id="result-temp-txt" class="result-temp">0</p>
+            <p id="formula"></p>
+        </div>
+    </div>
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Weight Converter</h1>
+        <p>This simple app uses a formula to convert
+        from one unit of weight to another and back. More units
+        will possibly be added over time.
+        </p><p>
+        I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
+    <div class="code">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
+const kgBtn = document.getElementById('kg-btn');
+const lbBtn = document.getElementById('lb-btn');
+const displayType = document.getElementById('disp-type');
+const input = document.getElementById('input');
+const enterBtn = document.getElementById('enter-btn');
+const resetBtn = document.getElementById('reset-btn');
+const messageTxt = document.getElementById('message');
+const resultTxt = document.getElementById('result-temp-txt');
+const formula = document.getElementById('formula');
+
+let state = 'lb';
+
+kgBtn.addEventListener('click', () => {
+    state = 'kg';
+    kgBtn.classList.add('active');
+    lbBtn.classList.remove('active');
+    displayType.textContent = 'kg - lbs';
+    input.value = '';
+    messageTxt.textContent = ``
+    resultTxt.innerHTML = '0';
+    formula.textContent = ``;
+});
+
+lbBtn.addEventListener('click', () => {
+    state = 'lb'
+    kgBtn.classList.remove('active');
+    lbBtn.classList.add('active');
+    displayType.textContent = 'lbs - kg';
+    input.value = ``;
+    messageTxt.textContent = ``
+    resultTxt.innerHTML = '0';
+    formula.textContent = ``;
+});
+
+enterBtn.addEventListener('click', () => {
+    if(state === 'lb') {
+        const kgsOut = (input.value / 2.20462).toFixed(2)
+        messageTxt.textContent = `${input.value}lb in kilograms is:`;
+        resultTxt.innerHTML = `${kgsOut}`;
+        formula.textContent = 'Formula: mass / 2.20462'
+
+    }else if(state === 'kg') {
+        const lbsOut = (input.value * 2.20462).toFixed(2);
+        messageTxt.textContent = `${input.value}kg in pounds is:`;
+        resultTxt.innerHTML = `${lbsOut}`;
+        formula.textContent = 'Formula: mass x 2.20462'
+    }
+});
+
+resetBtn.addEventListener('click', () => {
+    state = 'lb';
+    kgBtn.classList.remove('active');
+    lbBtn.classList.add('active');
+    displayType.textContent = 'kg - lbs';
+    input.value = '';
+    messageTxt.textContent = ``
+    resultTxt.innerHTML = '0';
+    formula.textContent = ``;
+});
+                </code>
+            </pre>
+        </p>
+    </div>
+    <div class="elem-logo">
+        <div class="logo-upper-left">
+            <p>45</p>
+        </div>
+        <div class="logo-center">
+            <h1>D<span>e</span></h1><br>
+            <p>DeCommer</p>
+        </div>
+        <div class="logo-bottom-center">
+            <p>19.79</p>
+        </div>
+      </div>
+</body>
+</html>
