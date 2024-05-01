@@ -35,15 +35,15 @@ lbBtn.addEventListener('click', () => {
 enterBtn.addEventListener('click', () => {
     if(state === 'lb') {
         const kgsOut = (input.value / 2.20462).toFixed(2)
-        messageTxt.textContent = `${input.value}lb in kilograms is:`;
+        messageTxt.textContent = `${input.value}lb in kilograms equals:`;
         resultTxt.innerHTML = `<p id="result-temp-txt" class="result-temp">${kgsOut}<span> kg</span></p>`;
-        formula.textContent = 'Formula: mass / 2.20462'
+        formula.textContent = 'Formula: pounds / 2.20462 = kilograms'
 
     }else if(state === 'kg') {
         const lbsOut = (input.value * 2.20462).toFixed(2);
-        messageTxt.textContent = `${input.value}kg in pounds is:`;
+        messageTxt.textContent = `${input.value}kg in pounds equals:`;
         resultTxt.innerHTML = `<p id="result-temp-txt" class="result-temp">${lbsOut}<span> lbs</span></p>`;
-        formula.textContent = 'Formula: mass x 2.20462'
+        formula.textContent = 'Formula: kilograms x 2.20462 = pounds'
     }
 });
 

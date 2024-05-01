@@ -4,6 +4,7 @@ const miBtn = document.getElementById('mi-btn');
 const kmBtn = document.getElementById('km-btn');
 const enterBtn = document.getElementById('enterBtn');
 const clearBtn = document.getElementById('clear-btn');
+const message = document.getElementById('message');
 const result = document.getElementById('result');
 const formula = document.getElementById('formula')
 const resultTempTxt = document.getElementById('result-temp-txt');
@@ -33,13 +34,15 @@ enterBtn.addEventListener('click', () => {
     }else if(state === 'miles') {
         let mi = input.value
         toKm = mi * 1.609;
+        message.textContent = `${input.value} miles equals`
         resultTempTxt.innerHTML = `${toKm.toFixed(2)}<span>km</span>`;
-        formula.textContent = `Formula: ${mi} x 1.609`;
+        formula.textContent = `Formula: miles x 1.609 = kilometers`;
     }else if (state === 'kilometers') {
         let km = input.value
         toMi = km / 1.609;
+        message.textContent = `${input.value} kilometers equals`
         resultTempTxt.innerHTML = `${toMi.toFixed(2)}<span>mi</span>`;
-        formula.textContent = `Formula: ${km} / 1.609`;
+        formula.textContent = `Formula: kilometers / 1.609 = miles`;
     }
 });
 
@@ -47,8 +50,9 @@ clearBtn.addEventListener('click', () => {
     state = 'miles';
     input.value = '';
     dispType.textContent = 'mi - km';
+    message.textContent = ``;
     resultTempTxt.textContent = `0`;
-    formula.textContent = `Enter a value to convert`;
+    formula.textContent = ``;
 });
 
 
