@@ -7,7 +7,8 @@
 
 body {
     background-color: #007acc;
-    font-family: 'Roboto', sans-serif;
+    color: #09396c;
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,15 +34,14 @@ a {
 
 header {
     text-align: center;
-    margin-bottom: 5px;
 }
 
 .title {
-    margin: 15px;
+    margin: 5px;
 }
 
 .directions {
-    margin: 10px;
+    margin-bottom: 20px;
 }
 
 .inputs-container {
@@ -52,13 +52,20 @@ header {
 }
 
 input {
-    border-radius: 5px;
-    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
     border: none;
+    border-bottom: 2px solid #09396c;
+    text-align: center;
+    color: #fff;
 }
 
-input:focus::placeholder {
-    color: transparent;
+input:focus {
+    outline: none;
+}
+
+input::placeholder{
+    text-align: center;
+    color: #fff;
 }
 
 .eqText {
@@ -68,13 +75,13 @@ input:focus::placeholder {
 .varIn {
     width: 50px;
     font-size: 1.2rem;
-    margin: 5px;
+    margin: 10px;
 }
 
 .terms-container {
     display: flex;
-    justify-content: space-between;
-    margin: 15px;
+    justify-content: space-evenly;
+    margin: 15px 0 15px 30px;
 }
 
 .terms-container p {
@@ -90,6 +97,7 @@ input:focus::placeholder {
     font-size: 1rem;
     padding: 5px;
     width: 100%;
+    cursor: pointer;
 }
 
 .results-container {
@@ -111,7 +119,6 @@ input:focus::placeholder {
     transition: ease-in 0.2s;
 }
 
-
 .calculator-container {
     /* border: 1px solid yellow; */
     text-align: center;
@@ -123,12 +130,14 @@ input:focus::placeholder {
 }
 
 #calculator {
-    box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
+    border: 1px solid #0f4a89;
     width: 600px;
     height: 400px;
 }
 
 cite {
+    font-size: .8rem;
     margin: 15px;
 }
 
