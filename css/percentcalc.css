@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -43,6 +45,7 @@ h3 {
 span {
     font-size: 1.6rem;
     font-weight: 100;
+    color: #09396c;
 }
 
 .main-container {
@@ -141,17 +144,18 @@ input::placeholder {
 }
 
 .results-area {
+    margin-top: 10px;
     text-align: center;
 }
 
-.result-temp {
-    font-size: 9rem;
+.result-number {
     color: #fff;
+    font-size: 3rem;
 }
 
 .formula {
-    font-size: .9rem;
-    /* padding-bottom: 20px; */
+    font-size: 1rem;
+    padding-bottom: 20px;
 }
 
 @media (max-width: 500px) {

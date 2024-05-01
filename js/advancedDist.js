@@ -29,7 +29,7 @@ enterBtn.addEventListener('click', () => {
     if(input.value === '') {
         formula.textContent = "Please enter a numeric value";
         setTimeout(() => {
-            formula.textContent = "Enter a value to convert";
+            formula.textContent = "";
         }, 1500);
     }else if(state === 'miles') {
         let mi = input.value
