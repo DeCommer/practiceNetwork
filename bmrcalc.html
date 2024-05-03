@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bmrcalc.css">
+    <link rel="stylesheet" href="../css/logo.css">
+    <link rel="stylesheet" href="../css/showhide.css">
+    <script src="./js/bmrcalc.js" defer></script>
+    <script src="../js/showhide.js" defer></script>
+    <title>Basal Metabolic Rate Calculator</title>
+</head>
+    <body>
+        <main class="main-container">
+            <header>
+                <a href="../index.html"><span class="homeColor">Home</span></a>
+                <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+                <h1>Basal Metabolic Rate (BMR) Calculator</h1>
+            </header>
+            <div class="type-selection-area">
+                <button class="sm-btn btn active" id="m-btn">Male</button>
+                <button class="sm-btn btn" id="f-btn">Female</button><br>
+            </div>
+            <div id="us" class="field-container">
+                <label id="ft-lab">Age:<input id="age-input" type="number" min="0" max="100"class="age-input"></label>
+                <label id="ft-lab">Feet:<input id="feet-input" type="number" min="0" max="12"class="feet-input"></label>
+                <label id="in-lab">Inches:<input id="inch-input" type="number" min="0" max="12" class="inches-input"></label>
+                <label id="lb-lab">Pounds:<input id="pounds-input" type="number" min="0" ></label>
+            </div>
+            <div id="metric" class="field-container hide">
+                <label id="in-lab">cm:<input id="cm-input" type="number" class="inches-input"></label>
+                <label id="lb-lab">Kg:<input id="kg-input" type="number" ></label>
+            </div>
+            <div class="btn-area">
+                <button id="calc-btn" class="calc-btn btn">Calculate</button>
+                <button class="reset-btn btn">reset</button>
+            </div>
+            <div class="results-area">
+                <h3>Your BMR is:</h3>
+                <p id="results-txt">0</p>
+                <p id="entered-txt"></p>
+                <p id="message-txt">Enter info above</p>
+            </div>
+
+            <div class="info-area">
+            </div>
+            <p id="formula"></p>
+        </main>
+        <div class="aboutModal hidden">
+            <button class="closeAboutModal">&times</button>
+            <h1>Basal Metabolic Rate Calculator</h1>
+            <p>This simple app calculates your Basal Metabolic Rate which is an indicator
+                of resting calorie usage.
+            </p>
+            <p>I made this with a combination of HTML, CSS and JS. 
+            You can see the JavaScript by clicking the button below.
+            </p>
+        </div><div class="aboutOverlay hidden"></div>
+
+        <div class="code">
+            <button class="jsBtn" >See the Javascript.</button>
+            <p><pre><code class="jsHidden hidden">
+                <button class="closeJsModal">&times</button>
+ 
+        </code></pre></p>
+        </div>
+    </body>
+</html>
