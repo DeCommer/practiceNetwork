@@ -50,9 +50,12 @@ header h1 {
     /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: end;
+    align-items: center;
     color: #09396c; 
+}
+
+.left {
+    margin-left: 10px;
 }
 
 input {
