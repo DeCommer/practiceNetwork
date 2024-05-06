@@ -18,8 +18,16 @@
                 <h1>Basal Metabolic Rate (BMR) Calculator</h1>
             </header>
             <div class="type-selection-area">
-                <button class="sm-btn btn active" id="m-btn">Male</button>
-                <button class="sm-btn btn" id="f-btn">Female</button><br>
+                <div class="left">
+                    <label>Unit:</label>
+                    <button class="sm-btn btn active" id="us-btn">US</button>
+                    <button class="sm-btn btn" id="metric-btn">Metric</button>
+                </div>
+                <div class="right">
+                    <label>Gender:</label>
+                    <button class="sm-btn btn active" id="m-btn">Male</button>
+                    <button class="sm-btn btn" id="f-btn">Female</button>
+                </div>
             </div>
             <div id="us" class="field-container">
                 <div class="left">
@@ -27,28 +35,25 @@
                     <label id="in-lab">in:<input id="inch-input" type="number" min="0" max="12" class="inches-input"></label>
                 </div>
                 <div class="right">
-                    <label id="ft-lab">Age:<input id="age-input" type="number" min="0" max="100"class="age-input"></label>
-                    <label id="lb-lab">lbs:<input id="pounds-input" type="number" min="0" ></label>
+                    <label id="age-lab">Age:<input id="age-input" type="number" min="0" max="100"class="age-input"></label>
+                    <label id="pounds-lab">lbs:<input id="pounds-input" type="number" min="0" ></label>
                 </div>
             </div>
             <div id="metric" class="field-container hide">
                 <label id="in-lab">cm:<input id="cm-input" type="number" class="inches-input"></label>
+                <label id="age-lab">Age:<input id="met-age-input" type="number" min="0" max="100"class="age-input"></label>
                 <label id="lb-lab">Kg:<input id="kg-input" type="number" ></label>
             </div>
             <div class="btn-area">
                 <button id="calc-btn" class="calc-btn btn">Calculate</button>
-                <button class="reset-btn btn">reset</button>
+                <button id="reset-btn" class="reset-btn btn">reset</button>
             </div>
             <div class="results-area">
-                <h3>Your BMR is:</h3>
-                <p id="results-txt">0</p>
-                <p id="entered-txt"></p>
-                <p id="message-txt">Enter info above</p>
-            </div>
 
-            <div class="info-area">
+                <p id="message-txt">Enter info above</p>
+                <p id="results-txt">0</p>
+                <p id="formula-txt"></p>
             </div>
-            <p id="formula"></p>
         </main>
         <div class="aboutModal hidden">
             <button class="closeAboutModal">&times</button>
