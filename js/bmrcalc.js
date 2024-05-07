@@ -6,7 +6,8 @@ const ftIn = document.getElementById('feet-input');
 const inIn = document.getElementById('inch-input');
 const ageIn = document.getElementById('age-input');
 const poundsIn = document.getElementById('pounds-input');
-const metricContainer = document.getElementById('metric');
+const usIn = document.getElementById('us');
+const metIn = document.getElementById('metric');
 const cmIn = document.getElementById('cm-input');
 const metAgeIn = document.getElementById('met-age-input');
 const kgIn = document.getElementById('kg-input');
@@ -23,12 +24,16 @@ usBtn.addEventListener('click', () => {
     unit = 'us';
     usBtn.classList.add('active');
     metricBtn.classList.remove('active');
+    usIn.classList.remove('hidden');
+    metIn.classList.add('hidden');
 });
 
 metricBtn.addEventListener('click', () => {
     unit = 'metric';
     usBtn.classList.remove('active');
     metricBtn.classList.add('active');
+    usIn.classList.add('hidden');
+    metIn.classList.remove('hidden');
 });
 
 maleBtn.addEventListener('click', () => {
@@ -44,6 +49,8 @@ femaleBtn.addEventListener('click', () => {
 });
 
 calcBtn.addEventListener('click', () => {
+    
+
 
 });
 
