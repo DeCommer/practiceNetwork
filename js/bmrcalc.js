@@ -26,6 +26,9 @@ usBtn.addEventListener('click', () => {
     metricBtn.classList.remove('active');
     usIn.classList.remove('hide');
     metIn.classList.add('hide');
+    messageTxt.textContent = `Enter info above`
+    resultsTxt.innerHTML = `<p id="results-txt">0<span>calories/day</span></p>`;
+    formulaTxt.textContent = ``
 });
 
 metricBtn.addEventListener('click', () => {
@@ -34,18 +37,27 @@ metricBtn.addEventListener('click', () => {
     metricBtn.classList.add('active');
     usIn.classList.add('hide');
     metIn.classList.remove('hide');
+    messageTxt.textContent = `Enter info above`
+    resultsTxt.innerHTML = `<p id="results-txt">0<span>calories/day</span></p>`;
+    formulaTxt.textContent = ``
 });
 
 maleBtn.addEventListener('click', () => {
     gender = 'm';
     maleBtn.classList.add('active');
     femaleBtn.classList.remove('active');
+    messageTxt.textContent = `Enter info above`
+    resultsTxt.innerHTML = `<p id="results-txt">0<span>calories/day</span></p>`;
+    formulaTxt.textContent = ``
 });
 
 femaleBtn.addEventListener('click', () => {
     gender = 'f';
     maleBtn.classList.remove('active');
     femaleBtn.classList.add('active');
+    messageTxt.textContent = `Enter info above`
+    resultsTxt.innerHTML = `<p id="results-txt">0<span>calories/day</span></p>`;
+    formulaTxt.textContent = ``
 });
 
 calcBtn.addEventListener('click', () => {
