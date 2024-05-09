@@ -24,16 +24,16 @@ usBtn.addEventListener('click', () => {
     unit = 'us';
     usBtn.classList.add('active');
     metricBtn.classList.remove('active');
-    usIn.classList.remove('hidden');
-    metIn.classList.add('hidden');
+    usIn.classList.remove('hide');
+    metIn.classList.add('hide');
 });
 
 metricBtn.addEventListener('click', () => {
     unit = 'metric';
     usBtn.classList.remove('active');
     metricBtn.classList.add('active');
-    usIn.classList.add('hidden');
-    metIn.classList.remove('hidden');
+    usIn.classList.add('hide');
+    metIn.classList.remove('hide');
 });
 
 maleBtn.addEventListener('click', () => {
@@ -51,7 +51,7 @@ femaleBtn.addEventListener('click', () => {
 calcBtn.addEventListener('click', () => {
     //BMR = 10W + 6.25H - 5A + 5 (Men)
     //BMR = 10W + 6.25H - 5A - 161 (Women)
-    
+
 
 
 });
