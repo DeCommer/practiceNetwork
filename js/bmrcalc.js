@@ -74,13 +74,15 @@ calcBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
     unit = 'us';
     gender ='m';
+    inIn.value = '';
+    ftIn.value = '';
     poundsIn.value = '';
     ageIn.value = 0;
     usBtn.classList.add('active');
     metricBtn.classList.remove('active');
     usIn.classList.remove('hide');
     metIn.classList.add('hide');
-    messageTxt.textContent = ``
-    resultsTxt.innerHTML = `<p id="results-txt">Enter info above<span>calories/day</span></p>`;
+    messageTxt.textContent = `Enter info above`
+    resultsTxt.innerHTML = `<p id="results-txt">0<span>calories/day</span></p>`;
     formulaTxt.textContent = ``
 });
