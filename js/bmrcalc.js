@@ -51,9 +51,16 @@ femaleBtn.addEventListener('click', () => {
 calcBtn.addEventListener('click', () => {
     //BMR = 10W + 6.25H - 5A + 5 (Men)
     //BMR = 10W + 6.25H - 5A - 161 (Women)
-
-
-
+    // states: us||male, us||female, metric||male, metric||female
+    if(unit === 'us' && gender === 'm') {
+        resultsTxt.textContent = "us / male";
+    }else if (unit == 'us' && gender === 'f') {
+        resultsTxt.textContent = "us / female";
+    }else if (unit === 'metric' && gender === 'm') {
+        resultsTxt.textContent = "metric / male";
+    }else if (unit === 'metric' && gender === female) {
+        resultsTxt.textContent = "metric / female";
+    }
 });
 
 resetBtn.addEventListener('click', () => {
