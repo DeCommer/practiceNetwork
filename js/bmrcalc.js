@@ -49,6 +49,8 @@ femaleBtn.addEventListener('click', () => {
 });
 
 calcBtn.addEventListener('click', () => {
+    //BMR = 10W + 6.25H - 5A + 5 (Men)
+    //BMR = 10W + 6.25H - 5A - 161 (Women)
     
 
 
