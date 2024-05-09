@@ -55,9 +55,11 @@ calcBtn.addEventListener('click', () => {
     const h = (Number(ftIn.value) * 12) + Number(inIn.value);
     const w = poundsIn.value;
     const a = ageIn.value;
-    const bmrMale = (10 * w) + (6.25 * h) - (5 * a) + 5;
+    const bmrMale = 10 * w + 6.25 * h - 5 * a + 5;
     if(unit === 'us' && gender === 'm') {
-        resultsTxt.textContent = `${bmrMale}`;
+        messageTxt.textContent = `Your BMR is:`
+        resultsTxt.textContent = `${bmrMale.toFixed(0)} calories/day`;
+        formulaTxt.textContent = `10W + 6.25H - 5A + 5`
     }else if (unit == 'us' && gender === 'f') {
         resultsTxt.textContent = "us / female";
     }else if (unit === 'metric' && gender === 'm') {
