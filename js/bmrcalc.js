@@ -77,9 +77,13 @@ calcBtn.addEventListener('click', () => {
         resultsTxt.innerHTML = `<p id="results-txt">${bmrFemale.toFixed(0)}<span>calories/day</span></p>`;
         formulaTxt.textContent = `10W + 6.25H - 5A - 161`
     }else if (unit === 'metric' && gender === 'm') {
-        resultsTxt.textContent = "metric / male";
+        messageTxt.textContent = `Your BMR is:`
+        resultsTxt.innerHTML = `<p id="results-txt">${bmrMale.toFixed(0)}<span>calories/day</span></p>`;
+        formulaTxt.textContent = `10W + 6.25H - 5A + 5`
     }else if (unit === 'metric' && gender === 'f') {
-        resultsTxt.textContent = "metric / female";
+        messageTxt.textContent = `Your BMR is:`
+        resultsTxt.innerHTML = `<p id="results-txt">${bmrFemale.toFixed(0)}<span>calories/day</span></p>`;
+        formulaTxt.textContent = `10W + 6.25H - 5A - 161`
     };
 });
 
@@ -95,6 +99,6 @@ resetBtn.addEventListener('click', () => {
     usIn.classList.remove('hide');
     metIn.classList.add('hide');
     messageTxt.textContent = `Enter info above`
-    resultsTxt.innerHTML = `<p id="results-txt">0<span>calories/day</span></p>`;
-    formulaTxt.textContent = ``
+    resultsTxt.innerHTML = `<p id="results-txt">0</p>`;
+    formulaTxt.textContent = ``;
 });
