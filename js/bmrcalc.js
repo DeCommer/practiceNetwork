@@ -52,8 +52,8 @@ calcBtn.addEventListener('click', () => {
     //BMR = 10W + 6.25H - 5A + 5 (Men)
     //BMR = 10W + 6.25H - 5A - 161 (Women)
     // states: us||male, us||female, metric||male, metric||female
-    const h = (Number(ftIn.value) * 12) + Number(inIn.value);
-    const w = poundsIn.value;
+    const h = ((Number(ftIn.value) * 12) + Number(inIn.value)) * 2.54;
+    const w = poundsIn.value * 0.45359237;
     const a = ageIn.value;
     const bmrMale = 10 * w + 6.25 * h - 5 * a + 5;
     if(unit === 'us' && gender === 'm') {
