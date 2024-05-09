@@ -51,24 +51,36 @@ femaleBtn.addEventListener('click', () => {
 calcBtn.addEventListener('click', () => {
     //BMR = 10W + 6.25H - 5A + 5 (Men)
     //BMR = 10W + 6.25H - 5A - 161 (Women)
-    // states: us||male, us||female, metric||male, metric||female
-    const h = ((Number(ftIn.value) * 12) + Number(inIn.value)) * 2.54;
-    const w = poundsIn.value * 0.45359237;
+    const h = ((Number(ftIn.value) * 12) + Number(inIn.value)) * 2.54; //converts to cm
+    const w = poundsIn.value * 0.45359237; //converts to kg
     const a = ageIn.value;
     const bmrMale = 10 * w + 6.25 * h - 5 * a + 5;
+    const bmrFemale = 10 * w + 6.25 * h - 5 * a - 161;
     if(unit === 'us' && gender === 'm') {
         messageTxt.textContent = `Your BMR is:`
         resultsTxt.innerHTML = `<p id="results-txt">${bmrMale.toFixed(0)}<span>calories/day</span></p>`;
         formulaTxt.textContent = `10W + 6.25H - 5A + 5`
     }else if (unit == 'us' && gender === 'f') {
-        resultsTxt.textContent = "us / female";
+        messageTxt.textContent = `Your BMR is:`
+        resultsTxt.innerHTML = `<p id="results-txt">${bmrFemale.toFixed(0)}<span>calories/day</span></p>`;
+        formulaTxt.textContent = `10W + 6.25H - 5A - 161`
     }else if (unit === 'metric' && gender === 'm') {
         resultsTxt.textContent = "metric / male";
     }else if (unit === 'metric' && gender === 'f') {
         resultsTxt.textContent = "metric / female";
-    }
+    };
 });
 
 resetBtn.addEventListener('click', () => {
-
+    unit = 'us';
+    gender ='m';
+    poundsIn.value = '';
+    ageIn.value = 0;
+    usBtn.classList.add('active');
+    metricBtn.classList.remove('active');
+    usIn.classList.remove('hide');
+    metIn.classList.add('hide');
+    messageTxt.textContent = ``
+    resultsTxt.innerHTML = `<p id="results-txt">Enter info above<span>calories/day</span></p>`;
+    formulaTxt.textContent = ``
 });
