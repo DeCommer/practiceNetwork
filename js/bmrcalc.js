@@ -58,7 +58,7 @@ calcBtn.addEventListener('click', () => {
         resultsTxt.textContent = "us / female";
     }else if (unit === 'metric' && gender === 'm') {
         resultsTxt.textContent = "metric / male";
-    }else if (unit === 'metric' && gender === female) {
+    }else if (unit === 'metric' && gender === 'f') {
         resultsTxt.textContent = "metric / female";
     }
 });
