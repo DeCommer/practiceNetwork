@@ -58,7 +58,7 @@ calcBtn.addEventListener('click', () => {
     const bmrMale = 10 * w + 6.25 * h - 5 * a + 5;
     if(unit === 'us' && gender === 'm') {
         messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${bmrMale.toFixed(0)}</p><span>calories/day</span>`;
+        resultsTxt.innerHTML = `<p id="results-txt">${bmrMale.toFixed(0)}<span>calories/day</span></p>`;
         formulaTxt.textContent = `10W + 6.25H - 5A + 5`
     }else if (unit == 'us' && gender === 'f') {
         resultsTxt.textContent = "us / female";
