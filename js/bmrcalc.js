@@ -83,11 +83,11 @@ calcBtn.addEventListener('click', () => {
 
     if(unit === 'us' && gender === 'm') {
         messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${Number(usCalc() + 5)}<span>calories/day</span></p>`;
+        resultsTxt.innerHTML = `<p id="results-txt">${Number(usCalc() + Number(5))}<span>calories/day</span></p>`;
         formulaTxt.textContent = `10W + 6.25H - 5A + 5`
     }else if (unit == 'us' && gender === 'f') {
         messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${Number(usCalc() - 161)}<span>calories/day</span></p>`;
+        resultsTxt.innerHTML = `<p id="results-txt">${Number(usCalc() - Number(161))}<span>calories/day</span></p>`;
         formulaTxt.textContent = `10W + 6.25H - 5A - 161`
     }else if (unit === 'metric' && gender === 'm') {
         messageTxt.textContent = `Your BMR is:`
