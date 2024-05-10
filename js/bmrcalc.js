@@ -43,10 +43,6 @@ const resetInput = () => {
     ftIn.value = '';
     poundsIn.value = '';
     ageIn.value = '';
-    usBtn.classList.add('active');
-    metricBtn.classList.remove('active');
-    usIn.classList.remove('hide');
-    metIn.classList.add('hide');
     messageTxt.textContent = `Enter info above`
     resultsTxt.innerHTML = `<p id="results-txt">0</p>`;
     formulaTxt.textContent = ``;
@@ -109,5 +105,9 @@ calcBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
     unit = 'us';
     gender ='m';
+    usBtn.classList.add('active');
+    metricBtn.classList.remove('active');
+    usIn.classList.remove('hide');
+    metIn.classList.add('hide');
     resetInput();
 });
