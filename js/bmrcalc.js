@@ -26,8 +26,8 @@ const usCalc = () => {
     const w = poundsIn.value * 0.45359237; //converts to kg 86.1826
     const a = ageIn.value;
     const bmr = 10 * w + 6.25 * h - 5 * a;  //should = 1159.7
+    console.log(bmr);
     return bmr.toFixed(2);
-    
 };
 
 const metricBmr = () => {
