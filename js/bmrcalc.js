@@ -21,6 +21,8 @@ const formulaTxt = document.getElementById('formula-txt');
 let unit = 'us';
 let gender = 'm';
 
+console.log(`Unit: ${unit}, Gender: ${gender}`);
+
 const usCalcMale = () => {
     //BMR = 10W + 6.25H - 5A + 5 (Men)
     //BMR = 10W + 6.25H - 5A - 161 (Women)
@@ -37,7 +39,7 @@ const usCalcFemale = () => {
     const h = (((Number(ftIn.value)) + (Number(inIn.value)) / 10) * 30.48).toFixed(2); //to cm
     const w = poundsIn.value / 2.205; //converts to kg 86.1826
     const a = ageIn.value;
-    const bmrM = 10 * w + 6.25 * h - 5 * a - 161;
+    const bmrM = (10 * w) + (6.25 * h) - (5 * a) - 161;
     return bmrM.toFixed(0);
 };
 
@@ -45,7 +47,7 @@ const metricBmrMale = () => {
     const h = (Number(cmIn.value));
     const w = kgIn.value
     const a = metAgeIn.value;
-    const metricBmr = 10 * w + 6.25 * h - 5 * a;
+    const metricBmr = (10 * w) + (6.25 * h) - (5 * a) + 5;
     return metricBmr.toFixed(2);
 };
 
@@ -54,13 +56,16 @@ const metricBmrFemale = () => {
     const h = (Number(cmIn.value));
     const w = kgIn.value
     const a = metAgeIn.value;
-    const metricBmr = 10 * w + 6.25 * h - 5 * a - 161;
+    const metricBmr = (10 * w) + (6.25 * h) - (5 * a) - 161;
     return metricBmr.toFixed(2);
 };
 
 const resetInput = () => {
     inIn.value = '';
     ftIn.value = '';
+    cmIn.value = '';
+    metAgeIn.value = '';
+    kgIn.value = '';
     poundsIn.value = '';
     ageIn.value = '';
     messageTxt.textContent = `Enter info above`
@@ -75,6 +80,7 @@ usBtn.addEventListener('click', () => {
     usIn.classList.remove('hide');
     metIn.classList.add('hide');
     resetInput();
+    console.log(`Unit: ${unit}, Gender: ${gender}`);
 });
 
 metricBtn.addEventListener('click', () => {
@@ -84,6 +90,7 @@ metricBtn.addEventListener('click', () => {
     usIn.classList.add('hide');
     metIn.classList.remove('hide');
     resetInput();
+    console.log(`Unit: ${unit}, Gender: ${gender}`);
 });
 
 maleBtn.addEventListener('click', () => {
@@ -91,6 +98,7 @@ maleBtn.addEventListener('click', () => {
     maleBtn.classList.add('active');
     femaleBtn.classList.remove('active');
     resetInput();
+    console.log(`Unit: ${unit}, Gender: ${gender}`);
 });
 
 femaleBtn.addEventListener('click', () => {
@@ -98,34 +106,30 @@ femaleBtn.addEventListener('click', () => {
     maleBtn.classList.remove('active');
     femaleBtn.classList.add('active');
     resetInput();
+    console.log(`Unit: ${unit}, Gender: ${gender}`);
 });
 
 calcBtn.addEventListener('click', () => {
     if(unit === 'us' && gender === 'm') {
-        messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${usCalcMale()}<span>cal/day</span></p>`;
+        messageTxt.textContent = `Estimated resting calories burned per day:`
+        resultsTxt.innerHTML = `${usCalcMale()}`;
         formulaTxt.textContent = `BMR = 9.99W + 6.25H - 4/92A + 5`
     }else if (unit == 'us' && gender === 'f') {
-        messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${usCalcFemale()}<span>calories/day</span></p>`;
+        messageTxt.textContent = `Estimated resting calories burned per day:`
+        resultsTxt.innerHTML = `${usCalcFemale()}`;
         formulaTxt.textContent = `BMR = 10W + 6.25H - 5A - 161`
     }else if (unit === 'metric' && gender === 'm') {
-        messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${Number(metricBmrMale() + Number(5))}<span>calories/day</span></p>`;
+        messageTxt.textContent = `Estimated resting calories burned per day:`
+        resultsTxt.innerHTML = `${Number(metricBmrMale())}`;
         formulaTxt.textContent = `BMR = 10W + 6.25H - 5A + 5`
     }else if (unit === 'metric' && gender === 'f') {
-        messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${Number(metricBmrFemale() - Number(161))}<span>calories/day</span></p>`;
+        messageTxt.textContent = `Estimated resting calories burned per day:`
+        resultsTxt.innerHTML = `${Number(metricBmrFemale())}`;
         formulaTxt.textContent = `BMR = 10W + 6.25H - 5A - 161`
     };
 });
 
 resetBtn.addEventListener('click', () => {
-    unit = 'us';
-    gender ='m';
-    usBtn.classList.add('active');
-    metricBtn.classList.remove('active');
-    usIn.classList.remove('hide');
-    metIn.classList.add('hide');
     resetInput();
+    console.log(`Unit: ${unit}, Gender: ${gender}`);
 });
