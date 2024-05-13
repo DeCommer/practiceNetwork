@@ -21,20 +21,40 @@ const formulaTxt = document.getElementById('formula-txt');
 let unit = 'us';
 let gender = 'm';
 
-const usCalc = () => {
-    const h = ((Number(ftIn.value) * 12) + Number(inIn.value) * 2.54); //converts to cm 82.86
-    const w = poundsIn.value * 0.45359237; //converts to kg 86.1826
+const usCalcMale = () => {
+    //BMR = 10W + 6.25H - 5A + 5 (Men)
+    //BMR = 10W + 6.25H - 5A - 161 (Women)
+    const h = (((Number(ftIn.value)) + (Number(inIn.value)) / 10) * 30.48).toFixed(2); //to cm
+    const w = (poundsIn.value / 2.205).toFixed(2); //to Kg
     const a = ageIn.value;
-    const bmr = 10 * w + 6.25 * h - 5 * a;  //should = 1159.7
-    console.log(bmr);
-    return bmr.toFixed(2);
+    const bmrM = (9.99 * w) + (6.25 * h) - (4.92 * a) + 5;
+    console.log(`Height: ${h}, Weight: ${w}, Age: ${a} = ${bmrM}`)
+    return bmrM.toFixed(0);
 };
 
-const metricBmr = () => {
+const usCalcFemale = () => {
+    //BMR = 10W + 6.25H - 5A + 5 (Men)
+    const h = (((Number(ftIn.value)) + (Number(inIn.value)) / 10) * 30.48).toFixed(2); //to cm
+    const w = poundsIn.value / 2.205; //converts to kg 86.1826
+    const a = ageIn.value;
+    const bmrM = 10 * w + 6.25 * h - 5 * a - 161;
+    return bmrM.toFixed(0);
+};
+
+const metricBmrMale = () => {
     const h = (Number(cmIn.value));
     const w = kgIn.value
     const a = metAgeIn.value;
     const metricBmr = 10 * w + 6.25 * h - 5 * a;
+    return metricBmr.toFixed(2);
+};
+
+const metricBmrFemale = () => {
+    //BMR = 10W + 6.25H - 5A - 161 (Women)
+    const h = (Number(cmIn.value));
+    const w = kgIn.value
+    const a = metAgeIn.value;
+    const metricBmr = 10 * w + 6.25 * h - 5 * a - 161;
     return metricBmr.toFixed(2);
 };
 
@@ -81,23 +101,21 @@ femaleBtn.addEventListener('click', () => {
 });
 
 calcBtn.addEventListener('click', () => {
-    //BMR = 10W + 6.25H - 5A + 5 (Men)
-    //BMR = 10W + 6.25H - 5A - 161 (Women)
     if(unit === 'us' && gender === 'm') {
         messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${Number(usCalc() + Number(5))}<span>calories/day</span></p>`;
-        formulaTxt.textContent = `BMR = 10W + 6.25H - 5A + 5`
+        resultsTxt.innerHTML = `<p id="results-txt">${usCalcMale()}<span>cal/day</span></p>`;
+        formulaTxt.textContent = `BMR = 9.99W + 6.25H - 4/92A + 5`
     }else if (unit == 'us' && gender === 'f') {
         messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${Number(usCalc() - Number(161))}<span>calories/day</span></p>`;
+        resultsTxt.innerHTML = `<p id="results-txt">${usCalcFemale()}<span>calories/day</span></p>`;
         formulaTxt.textContent = `BMR = 10W + 6.25H - 5A - 161`
     }else if (unit === 'metric' && gender === 'm') {
         messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${Number(metricBmr() + Number(5))}<span>calories/day</span></p>`;
+        resultsTxt.innerHTML = `<p id="results-txt">${Number(metricBmrMale() + Number(5))}<span>calories/day</span></p>`;
         formulaTxt.textContent = `BMR = 10W + 6.25H - 5A + 5`
     }else if (unit === 'metric' && gender === 'f') {
         messageTxt.textContent = `Your BMR is:`
-        resultsTxt.innerHTML = `<p id="results-txt">${Number(metricBmr() - Number(161))}<span>calories/day</span></p>`;
+        resultsTxt.innerHTML = `<p id="results-txt">${Number(metricBmrFemale() - Number(161))}<span>calories/day</span></p>`;
         formulaTxt.textContent = `BMR = 10W + 6.25H - 5A - 161`
     };
 });
