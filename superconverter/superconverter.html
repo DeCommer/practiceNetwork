@@ -15,7 +15,7 @@
             <h1>Super Converter 9000</h1>
          </header>
         <div class="type-select-container">
-            <select id="type-select">
+            <select id="type-selector">
                 <option value="area">Area</option>
                 <option value="Length">Length</option>
                 <option value="Mass">Mass</option>
@@ -26,8 +26,8 @@
         </div>
         <div class="unit-container">
             <div class="units">
-                <input value="0">
-                <select id="unit-1-select">
+                <input id="unit-1-value" value="1">
+                <select id="unit-1-selector">
                     <option value="squareKm">Square Kilometer</option>
                     <option value="SquareM">Square Meter</option>
                     <option value="squareMi">Square Mile</option>
@@ -40,8 +40,8 @@
             </div>
            <p>=</p>
             <div class="units">
-                <input value="0">
-                <select id="unit-2-select">
+                <input id = unit-2-value value="0">
+                <select id="unit-2-selector">
                     <option value="squareKm">Square Kilometer</option>
                     <option value="SquareM">Square Meter</option>
                     <option value="squareMi">Square Mile</option>
@@ -55,8 +55,7 @@
         </div>
         <div class="results-container">
             <div class="message"></div>
-            <div class="result"></div>
-            <div class="formula"></div>
+            <div class="formula"><p><span class="highlight">Formula</span>multiply the area value by 1e+6</p></div>
         </div>
     </div>
 </body>

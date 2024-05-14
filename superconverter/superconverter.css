@@ -41,7 +41,7 @@ a {
 
 p {
     color:#fff;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 header h1 {
@@ -67,7 +67,6 @@ select:focus {
     padding: 0 3.4%;
     width: 100%;
 }
-
 
 .unit-container {
     /* border: 1px solid blue; */
@@ -100,4 +99,20 @@ input {
 
 input:focus {
     outline: none;
+}
+
+.results-container {
+    /* border: 1px solid #09396c; */
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+    display: flex;
+}
+
+.highlight {
+    background-color: #42e31aff;
+    border-radius: 5px;
+    color: #235311;
+    margin: 15px;
+    padding: 3px 6px;
 }
