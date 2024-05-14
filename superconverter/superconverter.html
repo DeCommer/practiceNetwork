@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Converter</title>
+    <link rel="stylesheet" href="./superconverter.css">
+    <script src="./superconverter.js" defer></script>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <a href="../index.html"><span class="homeColor">Home</span></a>
+            <!-- <a class="aboutBtn" href="#"><span class="homeColor">About</span></a> -->
+            <h1>Super Converter 9000</h1>
+         </header>
+        <div class="type-select-container">
+            <select id="type-select">
+                <option value="area">Area</option>
+                <option value="Length">Length</option>
+                <option value="Mass">Mass</option>
+                <option value="speed">Speed</option>
+                <option value="temperature">Temperature</option>
+                <option value="time">Time</option>
+            </select>
+        </div>
+        <div class="unit-container">
+            <div class="units">
+                <input value="0">
+                <select id="unit-1-select">
+                    <option value="squareKm">Square Kilometer</option>
+                    <option value="SquareM">Square Meter</option>
+                    <option value="squareMi">Square Mile</option>
+                    <option value="squareYd">Square Yard</option>
+                    <option value="squareFt">Square Foot</option>
+                    <option value="squareIn">Square Inch</option>
+                    <option value="hectare">Hectare</option>
+                    <option value="acre">Acre</option>
+                </select>
+            </div>
+           <p>=</p>
+            <div class="units">
+                <input value="0">
+                <select id="unit-2-select">
+                    <option value="squareKm">Square Kilometer</option>
+                    <option value="SquareM">Square Meter</option>
+                    <option value="squareMi">Square Mile</option>
+                    <option value="squareYd">Square Yard</option>
+                    <option value="squareFt">Square Foot</option>
+                    <option value="squareIn">Square Inch</option>
+                    <option value="hectare">Hectare</option>
+                    <option value="acre">Acre</option>
+                </select>
+            </div>
+        </div>
+        <div class="results-container">
+            <div class="message"></div>
+            <div class="result"></div>
+            <div class="formula"></div>
+        </div>
+    </div>
+</body>
+</html>

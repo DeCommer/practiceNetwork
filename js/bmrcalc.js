@@ -131,5 +131,5 @@ calcBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', () => {
     resetInput();
-    console.log(`Unit: ${unit}, Gender: ${gender}`);
+    // console.log(`Unit: ${unit}, Gender: ${gender}`);
 });
