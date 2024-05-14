@@ -5,58 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Converter</title>
     <link rel="stylesheet" href="./superconverter.css">
+    <link rel="stylesheet" href="../css/logo.css"/>
+    <link rel="stylesheet" href="../css/showhide.css"/>
     <script src="./superconverter.js" defer></script>
+    <script src="../js/showhide.js" defer></script>
 </head>
 <body>
-    <div class="main-container">
+    <div class="converter-container">
         <header>
-            <a href="../index.html"><span class="homeColor">Home</span></a>
-            <!-- <a class="aboutBtn" href="#"><span class="homeColor">About</span></a> -->
-            <h1>Super Converter 9000</h1>
-         </header>
-        <div class="type-select-container">
-            <select id="type-selector">
-                <option value="area">Area</option>
-                <option value="Length">Length</option>
-                <option value="Mass">Mass</option>
-                <option value="speed">Speed</option>
-                <option value="temperature">Temperature</option>
-                <option value="time">Time</option>
-            </select>
-        </div>
-        <div class="unit-container">
-            <div class="units">
-                <input id="unit-1-value" value="1">
-                <select id="unit-1-selector">
-                    <option value="squareKm">Square Kilometer</option>
-                    <option value="SquareM">Square Meter</option>
-                    <option value="squareMi">Square Mile</option>
-                    <option value="squareYd">Square Yard</option>
-                    <option value="squareFt">Square Foot</option>
-                    <option value="squareIn">Square Inch</option>
-                    <option value="hectare">Hectare</option>
-                    <option value="acre">Acre</option>
+            <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+        </header>
+        <h2>Super Converter <span>9000</span></h2>
+        <div class="content">
+            <div class="type-select-container">
+                <select id="type-selector">
+                    <option value="area">Area</option>
+                    <option value="Length">Length</option>
+                    <option value="Mass">Mass</option>
+                    <option value="speed">Speed</option>
+                    <option value="temperature">Temperature</option>
+                    <option value="time">Time</option>
                 </select>
             </div>
-           <p>=</p>
-            <div class="units">
-                <input id = unit-2-value value="0">
-                <select id="unit-2-selector">
-                    <option value="squareKm">Square Kilometer</option>
-                    <option value="SquareM">Square Meter</option>
-                    <option value="squareMi">Square Mile</option>
-                    <option value="squareYd">Square Yard</option>
-                    <option value="squareFt">Square Foot</option>
-                    <option value="squareIn">Square Inch</option>
-                    <option value="hectare">Hectare</option>
-                    <option value="acre">Acre</option>
-                </select>
+            <input class="input-amount" type="number" value="1" placeholder="Enter amount">
+            <div class="unit-select-container custom-select">
+                <Section>
+                    <select name="" id="from">
+                        <option value="sqk">Square Kilometer</option>
+                    </select>
+                    <select name="" id="to">
+                        <option value="sqm">Square Meter</option>
+                    </select>
+                </Section>
+                    <div class="swap-btn">
+                        <p>⇢<br>Swap Units<br>⇠</p>
+                    </div>
             </div>
-        </div>
-        <div class="results-container">
-            <div class="message"></div>
-            <div class="formula"><p><span class="highlight">Formula</span>multiply the area value by 1e+6</p></div>
+            <div class="result-area">
+                <div class="result"><p>0</p><span class="result-span">Sq Meter</span></div>
+            </div>
+            <div class="formula"><p><span>Formula</span>multiply the area value by 1000000</p></div>
         </div>
     </div>
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Currency Converter</h1>
+        <p></p>
+        <p>
+        I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
+    <div class="code">
+        <button class="jsBtn">See the Javascript.</button>
+        <pre>
+            <code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
+            </code>
+        </pre>
+    </div>
+    <div class="elem-logo">
+        <div class="logo-upper-left">
+            <p>45</p>
+        </div>
+        <div class="logo-center">
+            <h1>D<span>e</span></h1><br>
+            <p>DeCommer</p>
+        </div>
+        <div class="logo-bottom-center">
+            <p>19.79</p>
+        </div>
+      </div>
 </body>
 </html>
