@@ -40,7 +40,7 @@ a {
     max-width: 550px;
     width: fit-content;
     background-color: rgba(255, 255, 255, 0.2);
-    /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 16px;
     border-radius: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -78,7 +78,7 @@ h2 span {
 .converter-container input,
 .converter-container select {
     width: 100%;
-    padding: 10px 16px;
+    padding: 10px 6px;
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid #09396c;
     margin-top: 5px;
@@ -86,7 +86,6 @@ h2 span {
     font-family: inherit;
     font-size: 1.5rem;
     outline: none;
-    appearance: none;
 }
 
 .converter-container .unit-select-container {

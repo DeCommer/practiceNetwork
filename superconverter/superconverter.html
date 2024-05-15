@@ -13,7 +13,7 @@
 <body>
     <div class="converter-container">
         <header>
-            <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a href="../index.html"><span class="homeColor">Home</span></a>
             <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
         </header>
         <h2>Super Converter <span>9000</span></h2>
@@ -21,31 +21,45 @@
             <div class="type-select-container">
                 <select id="type-selector">
                     <option value="area">Area</option>
-                    <option value="Length">Length</option>
+                    <!-- <option value="Length">Length</option>
                     <option value="Mass">Mass</option>
                     <option value="speed">Speed</option>
                     <option value="temperature">Temperature</option>
-                    <option value="time">Time</option>
+                    <option value="time">Time</option> -->
                 </select>
             </div>
-            <input class="input-amount" type="number" value="1" placeholder="Enter amount">
+            <input id="input" type="number" value="1" placeholder="Enter amount">
             <div class="unit-select-container custom-select">
                 <Section>
-                    <select name="" id="from">
+                    <select name="unit-1" id="from">
                         <option value="sqk">Square Kilometer</option>
-                    </select>
-                    <select name="" id="to">
                         <option value="sqm">Square Meter</option>
+                        <option value="sqmi">Square Mile</option>
+                        <option value="sqy">Square Yard</option>
+                        <option value="sqft">Square Foot</option>
+                        <option value="sqin">Square Inch</option>
+                        <option value="hec">Hectare</option>
+                        <option value="acre">Acre</option>
+                    </select>
+                    <select name="unit-2" id="to">
+                        <option value="sqk">Square Kilometer</option>
+                        <option value="sqm">Square Meter</option>
+                        <option value="sqmi">Square Mile</option>
+                        <option value="sqy">Square Yard</option>
+                        <option value="sqft">Square Foot</option>
+                        <option value="sqin">Square Inch</option>
+                        <option value="hec">Hectare</option>
+                        <option value="acre">Acre</option>
                     </select>
                 </Section>
-                    <div class="swap-btn">
+                    <div class="swap-btn" id="swap-btn">
                         <p>⇢<br>Swap Units<br>⇠</p>
                     </div>
             </div>
             <div class="result-area">
-                <div class="result"><p>0</p><span class="result-span">Sq Meter</span></div>
+                <div class="result" id="result"><p>0</p><span class="result-span">Sq Meter</span></div>
             </div>
-            <div class="formula"><p><span>Formula</span>multiply the area value by 1000000</p></div>
+            <div id="formula" class="formula"><p><span>Formula</span>multiply the area value by 1000000</p></div>
         </div>
     </div>
 

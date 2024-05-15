@@ -1,64 +1,27 @@
-const exchangeRates = {usd: 1};
-const fromCurrency = document.querySelector('.converter-container #from');
-const toCurrency = document.querySelector('.converter-container #to');
-const inputAmount = document.querySelector('.converter-container .input-amount');
-const result = document.querySelector('.converter-container .result');
-const swapBtn = document.querySelector('.converter-container .swap-btn');
-
-const init = async () => {
-try {
-    const res = await fetch(floatratesUrl);
-    const data = await res.json();
-
-    if(res.ok) {
-        for (const currencyCode in data) {
-            const currencyInfo = data[currencyCode];
-            const { code, name} = currencyInfo;
-            
-            exchangeRates[currencyCode] = currencyInfo.rate;
-
-            const option1 = document.createElement('option');
-            option1.value = code;
-            option1.textContent = `${code} - ${name}`;
-
-            const option2 = option1.cloneNode(true);
-
-            fromCurrency.appendChild(option1);
-            toCurrency.appendChild(option2);
-        }
-        toCurrency.value = toCurrency.options[1].value;
-        convert();
-    }
-}catch (error){
-    console.log("Work in progress")
-}
-};
-
-init();
+const input = document.getElementById('input');
+const from = document.getElementById('from');
+const to = document.getElementById('to');
+const result = document.getElementById('result');
+const swapBtn = document.getElementById('swap-btn');
 
 const convert = () => {
-    const inputValue = parseFloat(inputAmount.value);
-    const fromCurrencyValue = fromCurrency.value.toLowerCase();
-    const toCurrencyValue = toCurrency.value.toLowerCase();
-
-    const convertedValue = (inputValue * exchangeRates[toCurrencyValue]) 
-    / exchangeRates[fromCurrencyValue];
-    const resultValue = `<span class='result-currency'>${toCurrencyValue}</span> 
-    ${convertedValue.toFixed(2)}`;
-    
-    result.innerHTML = isNaN(convertedValue) ? "Enter amount above" : resultValue;
+    const convertedValue = (input.value) * 1000000;
+    result.innerHTML = `<div class="result" id="result"><p>${convertedValue}</p><span class="result-span">Sq Meter</span></div>`;
 };
 
-toCurrency.addEventListener('change', convert);
-fromCurrency.addEventListener('change', convert);
-inputAmount.addEventListener('input', convert);
-swapBtn.addEventListener('click', () => {
-    const fromCurrencyValue = fromCurrency.value;
-    const toCurrencyValue = toCurrency.value;
 
-    fromCurrency.value = toCurrencyValue;
-    toCurrency.value = fromCurrencyValue;
+
+to.addEventListener('change', convert);
+from.addEventListener('change', convert);
+input.addEventListener('input', convert);
+
+swapBtn.addEventListener('click', () => {
+    const fromVal = from.value;
+    const toVal = to.value;
+    from.value = toVal;
+    to.value = fromVal;
 
     convert();
 });
 
+convert();
