@@ -17,7 +17,7 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 a {
@@ -43,29 +43,16 @@ a {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 16px;
     border-radius: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .converter-container h2 {
-    margin: 0;
-    margin-bottom: 30px;
-    font-size: 30px;
+    font-size: 2.5rem;
     font-weight: lighter;
-    position: relative;
 }
 
 h2 span {
-    font-size: 1rem;
-}
-
-.converter-container h2::after {
-    position:absolute;
-    content: "";
-    height: 2px;
-    width: 130px;
-    left: 0;
-    bottom: -6px;
-    background-color: #21396d;
+    font-size: 1.5rem;
+    color: #c1121f;
 }
 
 .converter-container .content {
@@ -137,7 +124,7 @@ h2 span {
     padding: 3px 6px;
 }
 
-.converter-container .result-span {
+.result-span {
     font-size: 1.5rem;
     text-transform: uppercase;
     color: #09396c;
