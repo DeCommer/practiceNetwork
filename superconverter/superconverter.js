@@ -6,6 +6,8 @@ const result = document.getElementById('result');
 const swapBtn = document.getElementById('swap-btn');
 const formula = document.getElementById('formula');
 
+let state = 'area';
+
 const convert = () => {
     if(typeSelector.value === 'area') {
         if(from.value === 'sqk' && to.value === 'sqk') {
@@ -32,7 +34,6 @@ swapBtn.addEventListener('click', () => {
     const toVal = to.value;
     from.value = toVal;
     to.value = fromVal;
-
     convert();
 });
 
