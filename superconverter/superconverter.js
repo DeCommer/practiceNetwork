@@ -7,6 +7,7 @@ const swapBtn = document.getElementById('swap-btn');
 const formula = document.getElementById('formula');
 
 let state = 'area';
+let unit = '';
 
 const convert = () => {
     if(typeSelector.value === 'area') {
