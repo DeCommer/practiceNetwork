@@ -199,7 +199,7 @@ const questionRight = () => {
     correct += 1
     bgColorChange.style.boxShadow = '0 0 50px 20px rgba(51, 253, 0, 0.575)';
     setTimeout(() =>{
-        bgColorChange.style.boxShadow = '0 0 0 0';
+        bgColorChange.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
     }, 1200);
     messageArea.style.color = '#A5DD9B';
     messageArea.textContent = 'Correct!'
@@ -212,7 +212,7 @@ const questionWrong = () => {
     incorrect += 1
     bgColorChange.style.boxShadow = '0 0 50px 20px rgb(255, 46, 46)';
     setTimeout(() =>{
-        bgColorChange.style.boxShadow = '0 0 0 0';
+        bgColorChange.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
     }, 1800);
     messageArea.style.color = '#c1121f';
     messageArea.textContent = `The correct answer is: ${answer}`;
