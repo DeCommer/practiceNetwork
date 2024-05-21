@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/showhide.css"/>
     <script src="./js/population.js" defer></script>
     <script src="./js/showhide.js" defer></script>
-    <title>Currency Converter</title>
+    <title>Population Counter</title>
 </head>
 <body>
     <div class="converter-container">
@@ -18,15 +18,22 @@
             <h2>Population Counter</h2>
         </header>
         <div class="counter-area">
-            <p id="worldPop">8,000,000,000</p>
-            <p id="usPop">333,000,000</p>
+            <label>World Population</label>
+            <div class="world-pop-container">
+                <p class="pop-txt" id="world-pop-txt"></p>
+            </div>
+            <!-- <div class="us-pop-container">
+                <label>U.S. Population</label>
+                <p class="pop-txt" id="us-pop-txt">336,459,390</p>
+            </div> -->
         </div>
     </div>
-
+    <p class="outside-p">Estimated -- updated daily</p>
     <div class="aboutModal hidden">
         <button class="closeAboutModal">&times</button>
         <h1>Population Counter</h1>
-        <p></p>
+        <p>Simple population counter based on latest Census data.</p>
+        
     </div><div class="aboutOverlay hidden"></div>
 
     <div class="code">
@@ -34,7 +41,23 @@
         <pre>
             <code class="jsHidden hidden">
             <button class="closeJsModal">&times</button>
+let population = 8110872986; 
+const growthRatePerSecond = 2.4;
+const worldPopTxt = document.getElementById('world-pop-txt');
 
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function updatePopulation() {
+    const secondsSinceLoad = (new Date().getTime() - startTime) / 1000;
+    const currentPopulation = population + (secondsSinceLoad * growthRatePerSecond);
+    worldPopTxt.textContent = formatNumber(Math.floor(currentPopulation));
+}
+
+const startTime = new Date().getTime();
+updatePopulation();
+setInterval(updatePopulation, 1000);
             </code>
         </pre>
     </div>
