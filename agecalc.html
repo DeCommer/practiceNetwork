@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Calculator</title>
+    <link rel="stylesheet" href="./css/agecalc.css">
+    <script src="./js/agecalc.js" defer></script>
+</head>
+<body>
+
+    <div class="main-container">
+        <header>
+            <a class="links" href="index.html"><span class="homeColor">Home</span></a>
+            <!-- <a class="aboutBtn" href="#"><span class="homeColor">About</span></a> -->
+            <h1>Age Calculator</h1>
+        </header>
+        <div class="input-area">
+            <div class="input-box">
+                <input type="date" id="date">
+            </div>
+        </div>
+        <div class="calc-btn-area">
+            <button class="btn" id="enter-btn" type="button">Enter</button>
+            <button class="btn" id="clear-btn" type="button">Clear</button>
+        </div>
+        <div class="results-area">
+            <h3 id="message"></h3>
+            <p id="result"></p>
+        </div>
+        <div class="additional-area">
+            <h3 id="additional"></h3>
+            <p id="hours"></p>
+            <p id="minutes"></p>
+            <p id="seconds"></p>
+        </div>
+    </div>
+</body>
+</html>
