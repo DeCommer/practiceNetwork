@@ -1,6 +1,15 @@
 const calcBtn = document.getElementById('calc-btn');
+const resetBtn = document.getElementById('reset-btn');
+const res10E = document.getElementById('res1OE');
+const res20E = document.getElementById('res2OE');
+const res30E = document.getElementById('res3OE');
+const res40E = document.getElementById('res4OE');
+const plusResult = document.getElementById('plusResult');
+const minResult = document.getElementById('minResult');
+const timesResult = document.getElementById('timesResult');
+const divResult = document.getElementById('divResult');
 
-calcBtn.addEventListener('click', () => {
+const calculate = () => {
     let num1 = document.getElementById('num1').value;
     let num2 = document.getElementById('num2').value;
     let oe1 = document.getElementById('num1OE');
@@ -23,47 +32,47 @@ calcBtn.addEventListener('click', () => {
         oe2.innerHTML = "odd";
     }
 
-    document.getElementById('plusResult').innerHTML = plusRes;
+    plusResult.innerHTML = plusRes;
     if(plusRes % 2 == 0) {
-        document.getElementById('res1OE').innerHTML = "even"
+        res10E.innerHTML = "even"
     }
     else {
-        document.getElementById('res1OE').innerHTML = "odd"
+        res10E.innerHTML = "odd"
     }
-    document.getElementById('minResult').innerHTML = minRes;
+    minResult.innerHTML = minRes;
     if(minRes % 2 == 0) {
-        document.getElementById('res2OE').innerHTML = "even"
+        res20E.innerHTML = "even"
     }
     else {
-        document.getElementById('res2OE').innerHTML = "odd"
+        res20E.innerHTML = "odd"
     }
-    document.getElementById('timesResult').innerHTML = timesRes;
+    timesResult.innerHTML = timesRes;
     if(timesRes % 2 == 0) {
-        document.getElementById('res3OE').innerHTML = "even"
+        res30E.innerHTML = "even"
     }
     else {
-        document.getElementById('res3OE').innerHTML = "odd"
+        res30E.innerHTML = "odd"
     }
 
-    document.getElementById('divResult').innerHTML = divRes;
+    divResult.innerHTML = divRes;
     if(divRes % 2 == 0) {
-        document.getElementById('res4OE').innerHTML = "even";
+        res40E.innerHTML = "even";
     }
     else if(divRes < 1){
-        document.getElementById('res4OE').innerHTML = "decimal";
+        res40E.innerHTML = "decimal";
     }
     else { 
-        document.getElementById('res4OE').innerHTML = "odd";
+        res40E.innerHTML = "odd";
     }
+
+    if(divRes == 'NaN') {
+        divResult.innerHTML = 0;
+        res40E.innerHTML = "even";
+    }
+};
+
+calcBtn.addEventListener('click', calculate);
+
+resetBtn.addEventListener('click', () => {
+    window.location.reload();
 });
-
-
-
-
-
-
-
-
-
-
-
