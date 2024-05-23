@@ -22,7 +22,7 @@ body {
     margin-top: 50px;
     padding: 15px;
     height: fit-content;
-    width: 475px;
+    width: fit-content;
 }
   
   header {
@@ -39,7 +39,7 @@ body {
 
 .homeColor {
     font-size: 1.2rem;
-    color: #fff;
+    color: #F1FAEE;
 }
 
 .homeColor:hover {
@@ -75,7 +75,7 @@ input:focus {
 .passGBtn {
     border: none;
     background-color: #c1121f;
-    color: #fff;
+    color: #F1FAEE;
     padding: 10px 15px;
 }
 .container-top {
@@ -108,7 +108,7 @@ input {
     background-color: rgba(255, 255, 255, 0.4);
     border: 1px solid #09396c;
     font-size: 2rem;
-    color: #fff;
+    color: #F1FAEE;
     margin: 10px;
     width: 150px;
     height: auto;
@@ -130,20 +130,20 @@ input:focus {
     margin-top: 20px;
     padding: 5px 50px;
     background-color: #c1121f;
-    color: #fff;
+    color: #F1FAEE;
     border: none;
     cursor: pointer;
 }
 
 .btn:hover {
     background-color: #d62d38;
-    color: #fff;
+    color: #F1FAEE;
     border: none;
 }
 
 .btn:active {
     background-color: #c1121f;
-    color: #fff;
+    color: #F1FAEE;
     border: none;
 }
 
@@ -164,7 +164,7 @@ input:focus {
 
 .resNum {
     font-size: 2.5em;
-    color: #fff;
+    color: #F1FAEE;
 }
 
 @media screen and (max-width: 500px) {
