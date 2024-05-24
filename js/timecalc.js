@@ -34,6 +34,9 @@ const calculateDifference = () => {
 
     if(isNaN(hoursDiff) && isNaN(minutesDiff)) {
         document.getElementById('message').innerHTML = `Please enter a time`;
+        setTimeout(() => {
+            document.getElementById('message').innerHTML = ``;
+        }, 1500);
     }else if(hoursDiff <= 1 && minutesDiff <= 1) {
         document.getElementById('message').innerHTML = `The difference is:`;
         document.getElementById('result').innerHTML = `${hoursDiff} hour and ${minutesDiff} minute`;
@@ -43,7 +46,7 @@ const calculateDifference = () => {
     }else if(hoursDiff >= 2 && minutesDiff <= 1) {
         document.getElementById('message').innerHTML = `The difference is:`;
         document.getElementById('result').innerHTML = `${hoursDiff} hours and ${minutesDiff} minute`;
-    } else if(hoursDiff >= 2 && minutesDiff >= 2) {
+    } else if(hoursDiff >= 2 && minutesDiff >= 2 ) {
         document.getElementById('message').innerHTML = `The difference is:`;
         document.getElementById('result').innerHTML = `${hoursDiff} hours and ${minutesDiff} minutes`;
     }
