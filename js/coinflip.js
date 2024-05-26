@@ -133,7 +133,7 @@ resetSimBtn.addEventListener('click', () => {
     simFlipCountTxt.innerHTML = `<span>0</span><br>Flips`
     simHeadsCountTxt.innerHTML = `<span>0</span><br>Heads`
     simTailsCountTxt.innerHTML = `<span>0</span><br>Tails`
-    simHeadsPercentTxt.innerHTML = `<span>0%</span><br>Heads`;
-    simTailsPercentTxt.innerHTML = `<span>0%</span><br>Tails`;
+    simHeadsPercentTxt.innerHTML = `<span>0.00%</span><br>Heads`;
+    simTailsPercentTxt.innerHTML = `<span>0.00%</span><br>Tails`;
     simArrayText.textContent = '';
 });
