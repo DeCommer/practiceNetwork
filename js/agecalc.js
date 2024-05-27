@@ -3,6 +3,7 @@ const futureDate = new Date().toISOString().split('T')[0];
 const message = document.getElementById('message');
 const result = document.getElementById('result');
 const additional = document.getElementById('additional');
+const days = document.getElementById('days');
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
@@ -54,6 +55,7 @@ const calculateAge = () => {
         message.innerHTML = `You have been alive for:`;
         result.innerHTML = `${y3} <span>years,</span> ${m3} <span>months and</span> ${d3} <span>days.</span>`;
         additional.innerHTML = 'That is:'
+        days.innerHTML = `${formatNumber((bdHours / 24).toFixed(0))} <span>Days</span>`;
         hours.innerHTML = `${formatNumber(bdHours)} <span>hours</span>`;
         minutes.innerHTML = `${formatNumber(bdMinutes)} <span>minutes and</span>`;
         seconds.innerHTML = `${formatNumber(bdSeconds)} <span>seconds</span>`;
