@@ -154,9 +154,6 @@ const stand = () => {
     }else if(playerSum < dealerSum) {
         message = 'You lose.'
     }
-    
-
-    
 
     document.getElementById('results').textContent = message;
     document.getElementById('dealer-sum').textContent = dealerSum;
@@ -174,7 +171,8 @@ const reset = () => {
     dealerAces = 0;
     playerAces = 0;
     hidden;
-    deck;
+    buildDeck();
+    shuffleDeck();
     aHit = true;
     startGame();
 }
@@ -186,5 +184,4 @@ startGame();
 playAgainBtn.addEventListener('click', () => {
     dialog.close()
     reset();
-
 });
