@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #007ACC;
+    text-align:center;
+    height: 100vh;
+    color: #09396c;
+}
+
+.main-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 50px auto 0 auto;
+    width: 75%;
+}
+
+.homeColor {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.homeColor:hover {
+    color:#0f4a89;
+    transition: ease-in 0.2s;
+}
+
+p {
+    padding: 15px;
+}
+
+a {
+    text-decoration: none;
+    margin: 10px;
+}
+
+header h1 {
+    /* border: 1px solid blue; */
+    margin: 15px;
+}
+
+.map-container {
+    /* border: 1px solid #0f4a89; */
+    border-radius: 10px;
+    width: 100%;
+}
+
+.map-container path {
+    fill: #fff;
+    stroke:#09396c;
+    stroke-width: 1px;
+    transition: fill, 0.3s;
+    /* outline: 1px solid #09396c; */
+}
+
+.map-container :hover {
+    fill: #007ACC;
+}
