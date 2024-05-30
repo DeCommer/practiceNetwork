@@ -168,13 +168,13 @@ typeEnterBtn.addEventListener('click', () => {
         const type_2_1 = document.getElementById('type-2-1');
         const type_2_2 = document.getElementById('type-2-2');
         const type2Out = (Number(type_2_1.value) / Number(type_2_2.value));
-        typeResult.innerHTML = `<span>${type_2_1.value} is</span> ${(type2Out * 100).toFixed(4)}% <span>of ${type_2_2.value}</span>`;
+        typeResult.innerHTML = `<span>${type_2_1.value} is</span> ${(type2Out * 100).toFixed(2)}% <span>of ${type_2_2.value}</span>`;
         typeFormula.textContent = 'Formula: (Value 1 / Value 2) * 100';
     }else if(type === 3) {
         const type_3_1 = document.getElementById('type-3-1');
         const type_3_2 = document.getElementById('type-3-2');
         const type3Out = (Number(type_3_1.value) / (Number(type_3_2.value) / 100));
-        typeResult.innerHTML = `<span>${type_3_1.value} is ${type_3_2.value}% of</span> ${(type3Out).toFixed(4)}`;
+        typeResult.innerHTML = `<span>${type_3_1.value} is ${type_3_2.value}% of</span> ${(type3Out).toFixed(2)}`;
         typeFormula.textContent = 'Formula: (Value 1 / (Value 2 / 100))';
     }
 
