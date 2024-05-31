@@ -13,15 +13,14 @@ body {
 }
 
 .main-container {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgba(255, 255, 255, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* background-color: rgba(255, 255, 255, 0.2); */
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 50px auto 0 auto;
-    padding: 10px;
     width: fit-content;
     height: auto;
 }
@@ -70,4 +69,35 @@ header h1 {
 .svg {
     width:1200px;
     height: 800px;
+}
+
+.modal {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: fit-content;
+    width: 500px;
+    max-height: 90%;
+    overflow: scroll;
+    background-color: #f7efe0;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 10;
+  }
+
+  #closeModal {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: #c1121f;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+.hidden {
+    display: none;
 }
