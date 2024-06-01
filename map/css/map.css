@@ -57,7 +57,7 @@ header h1 {
     fill: #90c4ed;
     stroke: rgb(92, 149, 218);
     stroke-linejoin: round;
-    stroke-width: 1px;
+    stroke-width: .5px;
     transition: fill, 0.3s;
     /* outline: 1px solid #09396c; */
 }
@@ -73,7 +73,7 @@ header h1 {
 
 .modal {
     position: absolute;
-    top: 49%;
+    top: 39%;
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: fit-content;

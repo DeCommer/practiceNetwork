@@ -2,12 +2,12 @@
 
 const jsModal = document.querySelector('.jsHidden');
 
-const openJsModal = function() {
+const openJsModal = () => {
     jsModal.classList.remove('hidden');
     aboutOverlay.classList.remove('hidden');
 }
 
-const closeJsModal = function() {
+const closeJsModal = () => {
     jsModal.classList.add('hidden');
     aboutOverlay.classList.add('hidden');
 }
@@ -22,12 +22,12 @@ document.querySelector('.aboutOverlay').addEventListener('click', closeJsModal);
 const aboutModal = document.querySelector('.aboutModal');
 const aboutOverlay = document.querySelector('.aboutOverlay');
 
-const openAboutModal = function() {
+const openAboutModal = () => {
     aboutModal.classList.remove('hidden');
     aboutOverlay.classList.remove('hidden');
 }
 
-const closeAboutModal = function() {
+const closeAboutModal = () => {
     aboutModal.classList.add('hidden');
     aboutOverlay.classList.add('hidden');
 }
