@@ -62,6 +62,10 @@ header h1 {
     /* outline: 1px solid #09396c; */
 }
 
+.state {
+    cursor: pointer;
+}
+
 .map-container :hover {
     fill: #3dade6;
 }
