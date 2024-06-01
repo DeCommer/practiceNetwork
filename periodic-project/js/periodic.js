@@ -40,7 +40,7 @@ const displayElements = (data) => {
 
     closeModal.addEventListener('click', () => {
         dataContainer.close();
-        ElemId = '';
+        elemId = '';
     });
 }
 //Key functionality

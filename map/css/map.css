@@ -71,23 +71,26 @@ header h1 {
     height: 800px;
 }
 
-.modal {
+.info-modal {
     position: absolute;
-    top: 39%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: fit-content;
-    width: 500px;
-    max-height: 90%;
-    overflow: scroll;
+    width: fit-content;
+    height: fit-content;
     background-color: #f7efe0;
-    padding: 2rem;
-    border-radius: 25px;
+    padding: 50px;
+    border-radius: 10px;
+    border: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    z-index: 10;
+    z-index: 11;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.459);
   }
 
-  #closeModal {
+.closeModal {
     position: absolute;
     top: 1.2rem;
     right: 2rem;
@@ -96,8 +99,9 @@ header h1 {
     cursor: pointer;
     border: none;
     background: none;
-  }
-
-.hidden {
-    display: none;
 }
+
+.info-modal li {
+    list-style-type: none;
+    color: #282828;
+  }
