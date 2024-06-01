@@ -105,3 +105,12 @@ dialog::backdrop {
     list-style-type: none;
     color: #282828;
   }
+
+.data-container {
+    text-align: justify;
+}
+
+.data-container .title {
+    margin-bottom: 10px;
+    color:#09396c;
+}
