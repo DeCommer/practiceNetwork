@@ -20,10 +20,12 @@ const displayStates = (data) => {
             if (!e.target.matches('.state')) return;
             let stateId = Number(e.target.id);
             let i = stateId;
+            console.log(i)
             const dataDisplay = document.querySelector('.data');
             let html =`
             <div class="data-container">
                 <h1 class="title">${data.USStates[i].name}</h1>
+                <img src="${data.USStates[i].flag}">
                 <div class="info-container">
                     <ul>
                         <li><span>Capital: </span>${data.USStates[i].capital}</li>
@@ -34,8 +36,8 @@ const displayStates = (data) => {
                         <li><span>Population: </span>${formatNumber(data.USStates[i].population)}</li>
                         <li><span>Area (sq mi): </span>${formatNumber(data.USStates[i].area_sq_mi)}</li>
                     </ul>
-                    <a href="${data.USStates[i].wiki}" target="_blank">Learn more!</a>
                 </div>
+                    <a class="info-link" href="${data.USStates[i].wiki}" target="_blank">Learn more!</a>
             </div>
             `
             dataDisplay.innerHTML = html;

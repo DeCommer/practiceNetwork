@@ -9,7 +9,8 @@
         "nickname": "Yellowhammer State",
         "population": 4903185,
         "area_sq_mi": 52420,
-        "wiki":"https://en.wikipedia.org/wiki/Michigan"
+        "wiki":"https://en.wikipedia.org/wiki/Alabama",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Alabama.svg/300px-Flag_of_Alabama.svg.png"
         },
     {
         "name": "Alaska", 
@@ -20,7 +21,8 @@
         "nickname": "The Last Frontier",
         "population": 731545,
         "area_sq_mi": 665384,
-        "wiki":"https://en.wikipedia.org/wiki/Alaska"
+        "wiki":"https://en.wikipedia.org/wiki/Alaska",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Alaska.svg/283px-Flag_of_Alaska.svg.png"
         },
     {
         "name":   "Arizona",
@@ -31,7 +33,8 @@
         "nickname": "The Grand Canyon State",
         "population": 7278717,
         "area_sq_mi": 113990,
-        "wiki":"https://en.wikipedia.org/wiki/Arizona"
+        "wiki":"https://en.wikipedia.org/wiki/Arizona",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arizona.svg/300px-Flag_of_Arizona.svg.png"
         },
     {
         "name":  "Arkansas",
@@ -42,7 +45,8 @@
         "nickname": "The Natural State",
         "population": 3017804,
         "area_sq_mi": 53179,
-        "wiki":"https://en.wikipedia.org/wiki/Arkansas"
+        "wiki":"https://en.wikipedia.org/wiki/Arkansas",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arkansas.svg/300px-Flag_of_Arkansas.svg.png"
         },
     {
         "name":"California", 
@@ -53,7 +57,8 @@
         "nickname": "The Golden State",
         "population": 39512223,
         "area_sq_mi": 163695,
-        "wiki":"https://en.wikipedia.org/wiki/California"
+        "wiki":"https://en.wikipedia.org/wiki/California",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/300px-Flag_of_California.svg.png"
         },
     {
         "name":  "Colorado",
@@ -64,7 +69,8 @@
         "nickname": "The Centennial State",
         "population": 5758736,
         "area_sq_mi": 104094,
-        "wiki":"https://en.wikipedia.org/wiki/Colorado"
+        "wiki":"https://en.wikipedia.org/wiki/Colorado",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Flag_of_Colorado.svg/300px-Flag_of_Colorado.svg.png"
         },
     {
         "name":"Connecticut", 
@@ -75,7 +81,8 @@
         "nickname": "The Constitution State",
         "population": 3565287,
         "area_sq_mi": 5543,
-        "wiki":"https://en.wikipedia.org/wiki/Connecticut"
+        "wiki":"https://en.wikipedia.org/wiki/Connecticut",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Flag_of_Connecticut.svg/254px-Flag_of_Connecticut.svg.png"
         },
     {
         "name":  "Delaware",
@@ -86,7 +93,8 @@
         "nickname": "The First State",
         "population": 973764,
         "area_sq_mi": 2489,
-        "wiki":"https://en.wikipedia.org/wiki/Delaware"
+        "wiki":"https://en.wikipedia.org/wiki/Delaware",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Flag_of_Delaware.svg/300px-Flag_of_Delaware.svg.png"
         },
     {
         "name": "Florida",
@@ -97,7 +105,8 @@
         "nickname": "The Sunshine State",
         "population": 21477737,
         "area_sq_mi": 65758,
-        "wiki":"https://en.wikipedia.org/wiki/Florida"
+        "wiki":"https://en.wikipedia.org/wiki/Florida",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Florida.svg/300px-Flag_of_Florida.svg.png"
         },
     {
         "name": "Georgia",
@@ -108,7 +117,8 @@
         "nickname": "The Peach State",
         "population": 10617423,
         "area_sq_mi": 59425,
-        "wiki":"https://en.wikipedia.org/wiki/Georgia"
+        "wiki":"https://en.wikipedia.org/wiki/Georgia",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_the_State_of_Georgia.svg/320px-Flag_of_the_State_of_Georgia.svg.png"
         },
     {
         "name": "Hawaii",
@@ -119,7 +129,8 @@
         "nickname": "The Aloha State",
         "population": 1415872,
         "area_sq_mi": 10932,
-        "wiki":"https://en.wikipedia.org/wiki/Hawaii"
+        "wiki":"https://en.wikipedia.org/wiki/Hawaii",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Flag_of_Hawaii.svg/360px-Flag_of_Hawaii.svg.png"
         },
     {
         "name":"Idaho",
@@ -130,7 +141,8 @@
         "nickname": "The Gem State",
         "population": 1787065,
         "area_sq_mi": 83569,
-        "wiki":"https://en.wikipedia.org/wiki/Idaho"
+        "wiki":"https://en.wikipedia.org/wiki/Idaho",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_Idaho.svg/254px-Flag_of_Idaho.svg.png"
         },
     {
         "name":  "Illinois",
@@ -141,7 +153,8 @@
         "nickname": "The Prairie State",
         "population": 12671821,
         "area_sq_mi": 57914,
-        "wiki":"https://en.wikipedia.org/wiki/Illinois"
+        "wiki":"https://en.wikipedia.org/wiki/Illinois",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Illinois.svg/334px-Flag_of_Illinois.svg.png"
         },
     {
         "name": "Indiana",
@@ -152,7 +165,8 @@
         "nickname": "The Hoosier State",
         "population": 6732219,
         "area_sq_mi": 36420,
-        "wiki":"https://en.wikipedia.org/wiki/Indiana"
+        "wiki":"https://en.wikipedia.org/wiki/Indiana",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Flag_of_Indiana.svg/301px-Flag_of_Indiana.svg.png"
         },
     {
         "name":"Iowa",
@@ -163,7 +177,8 @@
         "nickname": "The Hawkeye State",
         "population": 3155070,
         "area_sq_mi": 56273,
-        "wiki":"https://en.wikipedia.org/wiki/Iowa"
+        "wiki":"https://en.wikipedia.org/wiki/Iowa",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Iowa.svg/300px-Flag_of_Iowa.svg.png"
         },
     {
         "name":    "Kansas",
@@ -174,7 +189,8 @@
         "nickname": "The Sunflower State",
         "population": 2913314,
         "area_sq_mi": 82278,
-        "wiki":"https://en.wikipedia.org/wiki/Kansas"
+        "wiki":"https://en.wikipedia.org/wiki/Kansas",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag_of_Kansas.svg/334px-Flag_of_Kansas.svg.png"
         },
     {
         "name":  "Kentucky",
@@ -185,7 +201,8 @@
         "nickname": "The Bluegrass State",
         "population": 4467673,
         "area_sq_mi": 40408,
-        "wiki":"https://en.wikipedia.org/wiki/Kentucky"
+        "wiki":"https://en.wikipedia.org/wiki/Kentucky",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Flag_of_Kentucky.svg/360px-Flag_of_Kentucky.svg.png"
         },
     {
         "name": "Louisiana",
@@ -196,7 +213,8 @@
         "nickname": "The Pelican State",
         "population": 4648794,
         "area_sq_mi": 52378,
-        "wiki":"https://en.wikipedia.org/wiki/Louisiana"
+        "wiki":"https://en.wikipedia.org/wiki/Louisiana",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Flag_of_Louisiana.svg/309px-Flag_of_Louisiana.svg.png"
         },
     {
         "name":"Maine",
@@ -207,7 +225,8 @@
         "nickname": "The Pine Tree State",
         "population": 1344212,
         "area_sq_mi": 35380,
-        "wiki":"https://en.wikipedia.org/wiki/Maine"
+        "wiki":"https://en.wikipedia.org/wiki/Maine",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Flag_of_the_State_of_Maine.svg/254px-Flag_of_the_State_of_Maine.svg.png"
         },
     {
         "name":  "Maryland",
@@ -218,7 +237,8 @@
         "nickname": "The Old Line State",
         "population": 6045680,
         "area_sq_mi": 12406,
-        "wiki":"https://en.wikipedia.org/wiki/Maryland"
+        "wiki":"https://en.wikipedia.org/wiki/Maryland",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flag_of_Maryland.svg/300px-Flag_of_Maryland.svg.png"
         },
     {
         "name": "Massachusetts",
@@ -229,7 +249,8 @@
         "nickname": "The Bay State",
         "population": 6892503,
         "area_sq_mi": 10554,
-        "wiki":"https://en.wikipedia.org/wiki/Massachusetts"
+        "wiki":"https://en.wikipedia.org/wiki/Massachusetts",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Massachusetts.svg/334px-Flag_of_Massachusetts.svg.png"
         },
     {
         "name": "Michigan",
@@ -240,7 +261,8 @@
         "nickname": "The Great Lakes State",
         "population": 9986857,
         "area_sq_mi": 96714,
-        "wiki":"https://en.wikipedia.org/wiki/Michigan"
+        "wiki":"https://en.wikipedia.org/wiki/Michigan",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Flag_of_Michigan.svg/300px-Flag_of_Michigan.svg.png"
         },
     {
         "name": "Minnesota",
@@ -251,7 +273,8 @@
         "nickname": "The North Star State",
         "population": 5639632,
         "area_sq_mi": 86936,
-        "wiki":"https://en.wikipedia.org/wiki/Minnesota"
+        "wiki":"https://en.wikipedia.org/wiki/Minnesota",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Minnesota.svg/334px-Flag_of_Minnesota.svg.png"
         },
     {
         "name":"Mississippi",
@@ -262,7 +285,8 @@
         "nickname": "The Magnolia State",
         "population": 2976149,
         "area_sq_mi": 48432,
-        "wiki":"https://en.wikipedia.org/wiki/Mississippi"
+        "wiki":"https://en.wikipedia.org/wiki/Mississippi",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_Mississippi.svg/334px-Flag_of_Mississippi.svg.png"
         },
     {
         "name":  "Missouri",
@@ -273,7 +297,8 @@
         "nickname": "The Show Me State",
         "population": 6137428,
         "area_sq_mi": 69707,
-        "wiki":"https://en.wikipedia.org/wiki/Missouri"
+        "wiki":"https://en.wikipedia.org/wiki/Missouri",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Flag_of_Missouri.svg/343px-Flag_of_Missouri.svg.png"
         },
     {
         "name":   "Montana",
@@ -284,7 +309,8 @@
         "nickname": "The Treasure State",
         "population": 1068778,
         "area_sq_mi": 147040,
-        "wiki":"https://en.wikipedia.org/wiki/Montana"
+        "wiki":"https://en.wikipedia.org/wiki/Montana",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_Montana.svg/300px-Flag_of_Montana.svg.png"
         },
     {
         "name":  "Nebraska",
@@ -295,7 +321,8 @@
         "nickname": "The Cornhusker State",
         "population": 1934408,
         "area_sq_mi": 77348,
-        "wiki":"https://en.wikipedia.org/wiki/Nebraska"
+        "wiki":"https://en.wikipedia.org/wiki/Nebraska",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Flag_of_Nebraska.svg/334px-Flag_of_Nebraska.svg.png"
         },
     {
         "name":    "Nevada",
@@ -306,7 +333,8 @@
         "nickname": "The Silver State",
         "population": 3080156,
         "area_sq_mi": 110572,
-        "wiki":"https://en.wikipedia.org/wiki/Nevada"
+        "wiki":"https://en.wikipedia.org/wiki/Nevada",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Flag_of_Nevada.svg/300px-Flag_of_Nevada.svg.png"
         },
     {
         "name":"New Hampshire",
@@ -317,7 +345,8 @@
         "nickname": "The Granite State",
         "population": 1359711,
         "area_sq_mi": 9349,
-        "wiki":"https://en.wikipedia.org/wiki/New_Hampshire"
+        "wiki":"https://en.wikipedia.org/wiki/New_Hampshire",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Flag_of_New_Hampshire.svg/300px-Flag_of_New_Hampshire.svg.png"
         },
     {
         "name":"New Jersey",
@@ -328,7 +357,8 @@
         "nickname": "The Garden State",
         "population": 8882190,
         "area_sq_mi": 8723,
-        "wiki":"https://en.wikipedia.org/wiki/New_Jersey"
+        "wiki":"https://en.wikipedia.org/wiki/New_Jersey",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_New_Jersey.svg/333px-Flag_of_New_Jersey.svg.png"
         },
     {
         "name":"New Mexico",
@@ -339,7 +369,8 @@
         "nickname": "The Land of Enchantment",
         "population": 2096829,
         "area_sq_mi": 121590,
-        "wiki":"https://en.wikipedia.org/wiki/New_Mexico"
+        "wiki":"https://en.wikipedia.org/wiki/New_Mexico",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_New_Mexico.svg/300px-Flag_of_New_Mexico.svg.png"
         },
     {
         "name":  "New York",
@@ -350,7 +381,8 @@
         "nickname": "The Empire State",
         "population": 19453561,
         "area_sq_mi": 54555,
-        "wiki":"https://en.wikipedia.org/wiki/New_York"
+        "wiki":"https://en.wikipedia.org/wiki/New_York",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_New_York.svg/360px-Flag_of_New_York.svg.png"
         },
     {
         "name": "North Carolina",
@@ -361,7 +393,8 @@
         "nickname": "The Tar Heel State",
         "population": 10488084,
         "area_sq_mi": 53819,
-        "wiki":"https://en.wikipedia.org/wiki/North_Carolina"
+        "wiki":"https://en.wikipedia.org/wiki/North_Carolina",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Flag_of_North_Carolina.svg/300px-Flag_of_North_Carolina.svg.png"
         },
     {
         "name":"North Dakota",
@@ -372,7 +405,8 @@
         "nickname": "The Peace Garden State",
         "population": 762062,
         "area_sq_mi": 70698,
-        "wiki":"https://en.wikipedia.org/wiki/North_Dakota"
+        "wiki":"https://en.wikipedia.org/wiki/North_Dakota",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Flag_of_North_Dakota.svg/254px-Flag_of_North_Dakota.svg.png"
         },
     {
         "name":"Ohio",
@@ -383,7 +417,8 @@
         "nickname": "The Buckeye State",
         "population": 11689100,
         "area_sq_mi": 44826,
-        "wiki":"https://en.wikipedia.org/wiki/Ohio"
+        "wiki":"https://en.wikipedia.org/wiki/Ohio",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Ohio.svg/325px-Flag_of_Ohio.svg.png"
         },
     {
         "name": "Oklahoma",
@@ -394,7 +429,8 @@
         "nickname": "The Sooner State",
         "population": 3956971,
         "area_sq_mi": 69899,
-        "wiki":"https://en.wikipedia.org/wiki/Oklahoma"
+        "wiki":"https://en.wikipedia.org/wiki/Oklahoma",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Flag_of_Oklahoma.svg/300px-Flag_of_Oklahoma.svg.png"
         },
     {
         "name": "Oregon",
@@ -405,7 +441,8 @@
         "nickname": "The Beaver State",
         "population": 4217737,
         "area_sq_mi": 98379,
-        "wiki":"https://en.wikipedia.org/wiki/Oregon"
+        "wiki":"https://en.wikipedia.org/wiki/Oregon",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Oregon.svg/300px-Flag_of_Oregon.svg.png"
         },
     {
         "name": "Pennsylvania",
@@ -416,7 +453,8 @@
         "nickname": "The Keystone State",
         "population": 12801989,
         "area_sq_mi": 46054,
-        "wiki":"https://en.wikipedia.org/wiki/Pennsylvania"
+        "wiki":"https://en.wikipedia.org/wiki/Pennsylvania",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Pennsylvania.svg/274px-Flag_of_Pennsylvania.svg.png"
         },
     {
         "name": "Rhode Island", 
@@ -427,7 +465,8 @@
         "nickname": "The Ocean State",
         "population": 1059361,
         "area_sq_mi": 1545,
-        "wiki":"https://en.wikipedia.org/wiki/Rhode_Island"
+        "wiki":"https://en.wikipedia.org/wiki/Rhode_Island",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Rhode_Island.svg/228px-Flag_of_Rhode_Island.svg.png"
         },
     {
         "name": "South Carolina",
@@ -438,7 +477,8 @@
         "nickname": "The Palmetto State",
         "population": 5148714,
         "area_sq_mi": 32020,
-        "wiki":"https://en.wikipedia.org/wiki/South_Carolina"
+        "wiki":"https://en.wikipedia.org/wiki/South_Carolina",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_South_Carolina.svg/300px-Flag_of_South_Carolina.svg.png"
         },
     {
         "name": "South Dakota",
@@ -449,7 +489,8 @@
         "nickname": "The Mount Rushmore State",
         "population": 884659,
         "area_sq_mi": 77116,
-        "wiki":"https://en.wikipedia.org/wiki/South_Dakota"
+        "wiki":"https://en.wikipedia.org/wiki/South_Dakota",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_South_Dakota.svg/320px-Flag_of_South_Dakota.svg.png"
         },
     {
         "name": "Tennessee",
@@ -460,7 +501,8 @@
         "nickname": "The Volunteer State",
         "population": 6829174,
         "area_sq_mi": 42144,
-        "wiki":"https://en.wikipedia.org/wiki/Tennessee"
+        "wiki":"https://en.wikipedia.org/wiki/Tennessee",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Tennessee.svg/334px-Flag_of_Tennessee.svg.png"
         },
     {
         "name":"Texas",
@@ -471,7 +513,8 @@
         "nickname": "The Lone Star State",
         "population": 28995881,
         "area_sq_mi": 268596,
-        "wiki":"https://en.wikipedia.org/wiki/Texas"
+        "wiki":"https://en.wikipedia.org/wiki/Texas",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Texas.svg/300px-Flag_of_Texas.svg.png"
         },
     {
         "name":"Utah",
@@ -482,7 +525,8 @@
         "nickname": "The Beehive State",
         "population": 3205958,
         "area_sq_mi": 84897,
-        "wiki":"https://en.wikipedia.org/wiki/Utah"
+        "wiki":"https://en.wikipedia.org/wiki/Utah",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Utah.svg/334px-Flag_of_Utah.svg.png"
         },
     {
         "name": "Vermont",
@@ -493,7 +537,8 @@
         "nickname": "The Green Mountain State",
         "population": 623989,
         "area_sq_mi": 9616,
-        "wiki":"https://en.wikipedia.org/wiki/Vermont"
+        "wiki":"https://en.wikipedia.org/wiki/Vermont",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Vermont.svg/334px-Flag_of_Vermont.svg.png"
         },
     {
         "name":  "Virginia", 
@@ -504,7 +549,8 @@
         "nickname": "The Old Dominion State",
         "population": 8535519,
         "area_sq_mi": 42775,
-        "wiki":"https://en.wikipedia.org/wiki/Virginia"
+        "wiki":"https://en.wikipedia.org/wiki/Virginia",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Flag_of_Virginia.svg/301px-Flag_of_Virginia.svg.png"
         },
     {
         "name":"Washington", 
@@ -515,7 +561,8 @@
         "nickname": "The Evergreen State",
         "population": 7614893,
         "area_sq_mi": 71298,
-        "wiki":"https://en.wikipedia.org/wiki/Washington"
+        "wiki":"https://en.wikipedia.org/wiki/Washington",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Flag_of_Washington.svg/337px-Flag_of_Washington.svg.png"
         },
     {
         "name":"West Virginia",
@@ -526,7 +573,8 @@
         "nickname": "The Mountain State",
         "population": 1792147,
         "area_sq_mi": 24230,
-        "wiki":"https://en.wikipedia.org/wiki/West_Virginia"
+        "wiki":"https://en.wikipedia.org/wiki/West_Virginia",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_West_Virginia.svg/360px-Flag_of_West_Virginia.svg.png"
         },
     {
         "name": "Wisconsin",
@@ -537,7 +585,8 @@
         "nickname": "The Badger State",
         "population": 5822434,
         "area_sq_mi": 65496,
-        "wiki":"https://en.wikipedia.org/wiki/Wisconsin"
+        "wiki":"https://en.wikipedia.org/wiki/Wisconsin",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_Wisconsin.svg/300px-Flag_of_Wisconsin.svg.png"
         },
     {
         "name":   "Wyoming", 
@@ -548,7 +597,8 @@
         "nickname": "The Equality State",
         "population": 578759,
         "area_sq_mi": 97813,
-        "wiki":"https://en.wikipedia.org/wiki/Wyoming"
+        "wiki":"https://en.wikipedia.org/wiki/Wyoming",
+        "flag":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Wyoming.svg/286px-Flag_of_Wyoming.svg.png"
         }
     ]
 }
