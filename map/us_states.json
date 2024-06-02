@@ -1,5 +1,5 @@
 {
-    "elements": [
+    "USStates": [
     {
         "name": "Alabama",
         "capital": "Montgomery",
@@ -8,9 +8,10 @@
         "state_flower": "Camellia",
         "nickname": "Yellowhammer State",
         "population": 4903185,
-        "area_sq_mi": 52420
+        "area_sq_mi": 52420,
+        "wiki":"https://en.wikipedia.org/wiki/Michigan"
         },
-        {
+    {
         "name": "Alaska", 
         "capital": "Juneau",
         "largest_city": "Anchorage",
@@ -18,9 +19,10 @@
         "state_flower": "Forget-me-not",
         "nickname": "The Last Frontier",
         "population": 731545,
-        "area_sq_mi": 665384
+        "area_sq_mi": 665384,
+        "wiki":"https://en.wikipedia.org/wiki/Alaska"
         },
-        {
+    {
         "name":   "Arizona",
         "capital": "Phoenix",
         "largest_city": "Phoenix",
@@ -28,430 +30,525 @@
         "state_flower": "Saguaro Cactus Blossom",
         "nickname": "The Grand Canyon State",
         "population": 7278717,
-        "area_sq_mi": 113990
+        "area_sq_mi": 113990,
+        "wiki":"https://en.wikipedia.org/wiki/Arizona"
         },
-    {"name":  "Arkansas",
+    {
+        "name":  "Arkansas",
         "capital": "Little Rock",
         "largest_city": "Little Rock",
         "state_bird": "Mockingbird",
         "state_flower": "Apple Blossom",
         "nickname": "The Natural State",
         "population": 3017804,
-        "area_sq_mi": 53179
+        "area_sq_mi": 53179,
+        "wiki":"https://en.wikipedia.org/wiki/Arkansas"
         },
-        {"name":"California", 
+    {
+        "name":"California", 
         "capital": "Sacramento",
         "largest_city": "Los Angeles",
         "state_bird": "California Quail",
         "state_flower": "California Poppy",
         "nickname": "The Golden State",
         "population": 39512223,
-        "area_sq_mi": 163695
+        "area_sq_mi": 163695,
+        "wiki":"https://en.wikipedia.org/wiki/California"
         },
-    {"name":  "Colorado",
+    {
+        "name":  "Colorado",
         "capital": "Denver",
         "largest_city": "Denver",
         "state_bird": "Lark Bunting",
         "state_flower": "Rocky Mountain Columbine",
         "nickname": "The Centennial State",
         "population": 5758736,
-        "area_sq_mi": 104094
+        "area_sq_mi": 104094,
+        "wiki":"https://en.wikipedia.org/wiki/Colorado"
         },
-        {"name":"Connecticut", 
+    {
+        "name":"Connecticut", 
         "capital": "Hartford",
         "largest_city": "Bridgeport",
         "state_bird": "American Robin",
         "state_flower": "Mountain Laurel",
         "nickname": "The Constitution State",
         "population": 3565287,
-        "area_sq_mi": 5543
+        "area_sq_mi": 5543,
+        "wiki":"https://en.wikipedia.org/wiki/Connecticut"
         },
-    {"name":  "Delaware",
+    {
+        "name":  "Delaware",
         "capital": "Dover",
         "largest_city": "Wilmington",
         "state_bird": "Delaware Blue Hen",
         "state_flower": "Peach Blossom",
         "nickname": "The First State",
         "population": 973764,
-        "area_sq_mi": 2489
+        "area_sq_mi": 2489,
+        "wiki":"https://en.wikipedia.org/wiki/Delaware"
         },
-    {"name": "Florida",
+    {
+        "name": "Florida",
         "capital": "Tallahassee",
         "largest_city": "Jacksonville",
         "state_bird": "Northern Mockingbird",
         "state_flower": "Orange Blossom",
         "nickname": "The Sunshine State",
         "population": 21477737,
-        "area_sq_mi": 65758
+        "area_sq_mi": 65758,
+        "wiki":"https://en.wikipedia.org/wiki/Florida"
         },
-    {"name": "Georgia",
+    {
+        "name": "Georgia",
         "capital": "Atlanta",
         "largest_city": "Atlanta",
         "state_bird": "Brown Thrasher",
         "state_flower": "Cherokee Rose",
         "nickname": "The Peach State",
         "population": 10617423,
-        "area_sq_mi": 59425
+        "area_sq_mi": 59425,
+        "wiki":"https://en.wikipedia.org/wiki/Georgia"
         },
-    {"name": "Hawaii",
+    {
+        "name": "Hawaii",
         "capital": "Honolulu",
         "largest_city": "Honolulu",
         "state_bird": "Nene",
         "state_flower": "Yellow Hibiscus",
         "nickname": "The Aloha State",
         "population": 1415872,
-        "area_sq_mi": 10932
+        "area_sq_mi": 10932,
+        "wiki":"https://en.wikipedia.org/wiki/Hawaii"
         },
-        {"name":"Idaho",
+    {
+        "name":"Idaho",
         "capital": "Boise",
         "largest_city": "Boise",
         "state_bird": "Mountain Bluebird",
         "state_flower": "Syringa",
         "nickname": "The Gem State",
         "population": 1787065,
-        "area_sq_mi": 83569
+        "area_sq_mi": 83569,
+        "wiki":"https://en.wikipedia.org/wiki/Idaho"
         },
-    {"name":  "Illinois",
+    {
+        "name":  "Illinois",
         "capital": "Springfield",
         "largest_city": "Chicago",
         "state_bird": "Northern Cardinal",
         "state_flower": "Violet",
         "nickname": "The Prairie State",
         "population": 12671821,
-        "area_sq_mi": 57914
+        "area_sq_mi": 57914,
+        "wiki":"https://en.wikipedia.org/wiki/Illinois"
         },
-    {"name": "Indiana",
+    {
+        "name": "Indiana",
         "capital": "Indianapolis",
         "largest_city": "Indianapolis",
         "state_bird": "Northern Cardinal",
         "state_flower": "Peony",
         "nickname": "The Hoosier State",
         "population": 6732219,
-        "area_sq_mi": 36420
+        "area_sq_mi": 36420,
+        "wiki":"https://en.wikipedia.org/wiki/Indiana"
         },
-        {"name":"Iowa",
+    {
+        "name":"Iowa",
         "capital": "Des Moines",
         "largest_city": "Des Moines",
         "state_bird": "Eastern Goldfinch",
         "state_flower": "Wild Prairie Rose",
         "nickname": "The Hawkeye State",
         "population": 3155070,
-        "area_sq_mi": 56273
+        "area_sq_mi": 56273,
+        "wiki":"https://en.wikipedia.org/wiki/Iowa"
         },
-    {"name":    "Kansas",
+    {
+        "name":    "Kansas",
         "capital": "Topeka",
         "largest_city": "Wichita",
         "state_bird": "Western Meadowlark",
         "state_flower": "Sunflower",
         "nickname": "The Sunflower State",
         "population": 2913314,
-        "area_sq_mi": 82278
+        "area_sq_mi": 82278,
+        "wiki":"https://en.wikipedia.org/wiki/Kansas"
         },
-    {"name":  "Kentucky",
+    {
+        "name":  "Kentucky",
         "capital": "Frankfort",
         "largest_city": "Louisville",
         "state_bird": "Northern Cardinal",
         "state_flower": "Goldenrod",
         "nickname": "The Bluegrass State",
         "population": 4467673,
-        "area_sq_mi": 40408
+        "area_sq_mi": 40408,
+        "wiki":"https://en.wikipedia.org/wiki/Kentucky"
         },
-    {"name": "Louisiana",
+    {
+        "name": "Louisiana",
         "capital": "Baton Rouge",
         "largest_city": "New Orleans",
         "state_bird": "Brown Pelican",
         "state_flower": "Magnolia",
         "nickname": "The Pelican State",
         "population": 4648794,
-        "area_sq_mi": 52378
+        "area_sq_mi": 52378,
+        "wiki":"https://en.wikipedia.org/wiki/Louisiana"
         },
-        {"name":"Maine",
+    {
+        "name":"Maine",
         "capital": "Augusta",
         "largest_city": "Portland",
         "state_bird": "Chickadee",
         "state_flower": "White Pine Cone and Tassel",
         "nickname": "The Pine Tree State",
         "population": 1344212,
-        "area_sq_mi": 35380
+        "area_sq_mi": 35380,
+        "wiki":"https://en.wikipedia.org/wiki/Maine"
         },
-    {"name":  "Maryland",
+    {
+        "name":  "Maryland",
         "capital": "Annapolis",
         "largest_city": "Baltimore",
         "state_bird": "Baltimore Oriole",
         "state_flower": "Black-eyed Susan",
         "nickname": "The Old Line State",
         "population": 6045680,
-        "area_sq_mi": 12406
+        "area_sq_mi": 12406,
+        "wiki":"https://en.wikipedia.org/wiki/Maryland"
         },
-        {"name": "Massachusetts",
+    {
+        "name": "Massachusetts",
         "capital": "Boston",
         "largest_city": "Boston",
         "state_bird": "Black-capped Chickadee",
         "state_flower": "Mayflower",
         "nickname": "The Bay State",
         "population": 6892503,
-        "area_sq_mi": 10554
+        "area_sq_mi": 10554,
+        "wiki":"https://en.wikipedia.org/wiki/Massachusetts"
         },
-    {"name":  "Michigan",
+    {
+        "name": "Michigan",
         "capital": "Lansing",
         "largest_city": "Detroit",
         "state_bird": "American Robin",
         "state_flower": "Apple Blossom",
         "nickname": "The Great Lakes State",
         "population": 9986857,
-        "area_sq_mi": 96714
+        "area_sq_mi": 96714,
+        "wiki":"https://en.wikipedia.org/wiki/Michigan"
         },
-    {"name": "Minnesota",
+    {
+        "name": "Minnesota",
         "capital": "Saint Paul",
         "largest_city": "Minneapolis",
         "state_bird": "Common Loon",
         "state_flower": "Pink and White Lady's Slipper",
         "nickname": "The North Star State",
         "population": 5639632,
-        "area_sq_mi": 86936
+        "area_sq_mi": 86936,
+        "wiki":"https://en.wikipedia.org/wiki/Minnesota"
         },
-        {"name":"Mississippi",
+    {
+        "name":"Mississippi",
         "capital": "Jackson",
         "largest_city": "Jackson",
         "state_bird": "Northern Mockingbird",
         "state_flower": "Magnolia",
         "nickname": "The Magnolia State",
         "population": 2976149,
-        "area_sq_mi": 48432
+        "area_sq_mi": 48432,
+        "wiki":"https://en.wikipedia.org/wiki/Mississippi"
         },
-    {"name":  "Missouri",
+    {
+        "name":  "Missouri",
         "capital": "Jefferson City",
         "largest_city": "Kansas City",
         "state_bird": "Eastern Bluebird",
         "state_flower": "Hawthorn",
         "nickname": "The Show Me State",
         "population": 6137428,
-        "area_sq_mi": 69707
+        "area_sq_mi": 69707,
+        "wiki":"https://en.wikipedia.org/wiki/Missouri"
         },
-    {"name":   "Montana",
+    {
+        "name":   "Montana",
         "capital": "Helena",
         "largest_city": "Billings",
         "state_bird": "Western Meadowlark",
         "state_flower": "Bitterroot",
         "nickname": "The Treasure State",
         "population": 1068778,
-        "area_sq_mi": 147040
+        "area_sq_mi": 147040,
+        "wiki":"https://en.wikipedia.org/wiki/Montana"
         },
-    {"name":  "Nebraska",
+    {
+        "name":  "Nebraska",
         "capital": "Lincoln",
         "largest_city": "Omaha",
         "state_bird": "Western Meadowlark",
         "state_flower": "Goldenrod",
         "nickname": "The Cornhusker State",
         "population": 1934408,
-        "area_sq_mi": 77348
+        "area_sq_mi": 77348,
+        "wiki":"https://en.wikipedia.org/wiki/Nebraska"
         },
-    {"name":    "Nevada",
+    {
+        "name":    "Nevada",
         "capital": "Carson City",
         "largest_city": "Las Vegas",
         "state_bird": "Mountain Bluebird",
         "state_flower": "Sagebrush",
         "nickname": "The Silver State",
         "population": 3080156,
-        "area_sq_mi": 110572
+        "area_sq_mi": 110572,
+        "wiki":"https://en.wikipedia.org/wiki/Nevada"
         },
-        {"name":"New Hampshire",
+    {
+        "name":"New Hampshire",
         "capital": "Concord",
         "largest_city": "Manchester",
         "state_bird": "Purple Finch",
         "state_flower": "Purple Lilac",
         "nickname": "The Granite State",
         "population": 1359711,
-        "area_sq_mi": 9349
+        "area_sq_mi": 9349,
+        "wiki":"https://en.wikipedia.org/wiki/New_Hampshire"
         },
-        {"name":"New Jersey",
+    {
+        "name":"New Jersey",
         "capital": "Trenton",
         "largest_city": "Newark",
         "state_bird": "Eastern Goldfinch",
         "state_flower": "Violet",
         "nickname": "The Garden State",
         "population": 8882190,
-        "area_sq_mi": 8723
+        "area_sq_mi": 8723,
+        "wiki":"https://en.wikipedia.org/wiki/New_Jersey"
         },
-        {"name":"New Mexico",
+    {
+        "name":"New Mexico",
         "capital": "Santa Fe",
         "largest_city": "Albuquerque",
         "state_bird": "Greater Roadrunner",
         "state_flower": "Yucca Flower",
         "nickname": "The Land of Enchantment",
         "population": 2096829,
-        "area_sq_mi": 121590
+        "area_sq_mi": 121590,
+        "wiki":"https://en.wikipedia.org/wiki/New_Mexico"
         },
-    {"name":  "New York",
+    {
+        "name":  "New York",
         "capital": "Albany",
         "largest_city": "New York City",
         "state_bird": "Eastern Bluebird",
         "state_flower": "Rose",
         "nickname": "The Empire State",
         "population": 19453561,
-        "area_sq_mi": 54555
+        "area_sq_mi": 54555,
+        "wiki":"https://en.wikipedia.org/wiki/New_York"
         },
-        {"name": "North Carolina",
+    {
+        "name": "North Carolina",
         "capital": "Raleigh",
         "largest_city": "Charlotte",
         "state_bird": "Northern Cardinal",
         "state_flower": "Dogwood",
         "nickname": "The Tar Heel State",
         "population": 10488084,
-        "area_sq_mi": 53819
+        "area_sq_mi": 53819,
+        "wiki":"https://en.wikipedia.org/wiki/North_Carolina"
         },
-        {"name":"North Dakota",
+    {
+        "name":"North Dakota",
         "capital": "Bismarck",
         "largest_city": "Fargo",
         "state_bird": "Western Meadowlark",
         "state_flower": "Wild Prairie Rose",
         "nickname": "The Peace Garden State",
         "population": 762062,
-        "area_sq_mi": 70698
+        "area_sq_mi": 70698,
+        "wiki":"https://en.wikipedia.org/wiki/North_Dakota"
         },
-        {"name":"Ohio",
+    {
+        "name":"Ohio",
         "capital": "Columbus",
         "largest_city": "Columbus",
         "state_bird": "Northern Cardinal",
         "state_flower": "Scarlet Carnation",
         "nickname": "The Buckeye State",
         "population": 11689100,
-        "area_sq_mi": 44826
+        "area_sq_mi": 44826,
+        "wiki":"https://en.wikipedia.org/wiki/Ohio"
         },
-    {"name":  "Oklahoma",
+    {
+        "name": "Oklahoma",
         "capital": "Oklahoma City",
         "largest_city": "Oklahoma City",
         "state_bird": "Scissor-tailed Flycatcher",
         "state_flower": "Mistletoe",
         "nickname": "The Sooner State",
         "population": 3956971,
-        "area_sq_mi": 69899
+        "area_sq_mi": 69899,
+        "wiki":"https://en.wikipedia.org/wiki/Oklahoma"
         },
-    {"name":    "Oregon",
+    {
+        "name": "Oregon",
         "capital": "Salem",
         "largest_city": "Portland",
         "state_bird": "Western Meadowlark",
         "state_flower": "Oregon Grape",
         "nickname": "The Beaver State",
         "population": 4217737,
-        "area_sq_mi": 98379
+        "area_sq_mi": 98379,
+        "wiki":"https://en.wikipedia.org/wiki/Oregon"
         },
-        {"name":"Pennsylvania",
+    {
+        "name": "Pennsylvania",
         "capital": "Harrisburg",
         "largest_city": "Philadelphia",
         "state_bird": "Ruffed Grouse",
         "state_flower": "Mountain Laurel",
         "nickname": "The Keystone State",
         "population": 12801989,
-        "area_sq_mi": 46054
+        "area_sq_mi": 46054,
+        "wiki":"https://en.wikipedia.org/wiki/Pennsylvania"
         },
-        {"name":"Rhode Island", 
+    {
+        "name": "Rhode Island", 
         "capital": "Providence",
         "largest_city": "Providence",
         "state_bird": "Rhode Island Red",
         "state_flower": "Violet",
         "nickname": "The Ocean State",
         "population": 1059361,
-        "area_sq_mi": 1545
+        "area_sq_mi": 1545,
+        "wiki":"https://en.wikipedia.org/wiki/Rhode_Island"
         },
-        {"name":"South Carolina",
+    {
+        "name": "South Carolina",
         "capital": "Columbia",
         "largest_city": "Charleston",
         "state_bird": "Carolina Wren",
         "state_flower": "Yellow Jessamine",
         "nickname": "The Palmetto State",
         "population": 5148714,
-        "area_sq_mi": 32020
+        "area_sq_mi": 32020,
+        "wiki":"https://en.wikipedia.org/wiki/South_Carolina"
         },
-        {"name":"South Dakota",
+    {
+        "name": "South Dakota",
         "capital": "Pierre",
         "largest_city": "Sioux Falls",
         "state_bird": "Ring-necked Pheasant",
         "state_flower": "American Pasque Flower",
         "nickname": "The Mount Rushmore State",
         "population": 884659,
-        "area_sq_mi": 77116
+        "area_sq_mi": 77116,
+        "wiki":"https://en.wikipedia.org/wiki/South_Dakota"
         },
-    {"name": "Tennessee",
+    {
+        "name": "Tennessee",
         "capital": "Nashville",
         "largest_city": "Nashville",
         "state_bird": "Northern Mockingbird",
         "state_flower": "Iris",
         "nickname": "The Volunteer State",
         "population": 6829174,
-        "area_sq_mi": 42144
+        "area_sq_mi": 42144,
+        "wiki":"https://en.wikipedia.org/wiki/Tennessee"
         },
-        {"name":"Texas",
+    {
+        "name":"Texas",
         "capital": "Austin",
         "largest_city": "Houston",
         "state_bird": "Northern Mockingbird",
         "state_flower": "Bluebonnet",
         "nickname": "The Lone Star State",
         "population": 28995881,
-        "area_sq_mi": 268596
+        "area_sq_mi": 268596,
+        "wiki":"https://en.wikipedia.org/wiki/Texas"
         },
-        {"name":"Utah",
+    {
+        "name":"Utah",
         "capital": "Salt Lake City",
         "largest_city": "Salt Lake City",
         "state_bird": "California Gull",
         "state_flower": "Sego Lily",
         "nickname": "The Beehive State",
         "population": 3205958,
-        "area_sq_mi": 84897
+        "area_sq_mi": 84897,
+        "wiki":"https://en.wikipedia.org/wiki/Utah"
         },
-    {"name": "Vermont",
+    {
+        "name": "Vermont",
         "capital": "Montpelier",
         "largest_city": "Burlington",
         "state_bird": "Hermit Thrush",
         "state_flower": "Red Clover",
         "nickname": "The Green Mountain State",
         "population": 623989,
-        "area_sq_mi": 9616
+        "area_sq_mi": 9616,
+        "wiki":"https://en.wikipedia.org/wiki/Vermont"
         },
-    {"name":  "Virginia", 
+    {
+        "name":  "Virginia", 
         "capital": "Richmond",
         "largest_city": "Virginia Beach",
         "state_bird": "Northern Cardinal",
         "state_flower": "Dogwood",
         "nickname": "The Old Dominion State",
         "population": 8535519,
-        "area_sq_mi": 42775
+        "area_sq_mi": 42775,
+        "wiki":"https://en.wikipedia.org/wiki/Virginia"
         },
-        {"name":"Washington", 
+    {
+        "name":"Washington", 
         "capital": "Olympia",
         "largest_city": "Seattle",
         "state_bird": "Willow Goldfinch",
         "state_flower": "Coast Rhododendron",
         "nickname": "The Evergreen State",
         "population": 7614893,
-        "area_sq_mi": 71298
+        "area_sq_mi": 71298,
+        "wiki":"https://en.wikipedia.org/wiki/Washington"
         },
-        {"name":"West Virginia",
+    {
+        "name":"West Virginia",
         "capital": "Charleston",
         "largest_city": "Charleston",
         "state_bird": "Northern Cardinal",
         "state_flower": "Rhododendron",
         "nickname": "The Mountain State",
         "population": 1792147,
-        "area_sq_mi": 24230
+        "area_sq_mi": 24230,
+        "wiki":"https://en.wikipedia.org/wiki/West_Virginia"
         },
-    {"name": "Wisconsin",
+    {
+        "name": "Wisconsin",
         "capital": "Madison",
         "largest_city": "Milwaukee",
         "state_bird": "American Robin",
         "state_flower": "Wood Violet",
         "nickname": "The Badger State",
         "population": 5822434,
-        "area_sq_mi": 65496
+        "area_sq_mi": 65496,
+        "wiki":"https://en.wikipedia.org/wiki/Wisconsin"
         },
-    {"name":   "Wyoming", 
+    {
+        "name":   "Wyoming", 
         "capital": "Cheyenne",
         "largest_city": "Cheyenne",
         "state_bird": "Western Meadowlark",
         "state_flower": "Indian Paintbrush",
         "nickname": "The Equality State",
         "population": 578759,
-        "area_sq_mi": 97813
+        "area_sq_mi": 97813,
+        "wiki":"https://en.wikipedia.org/wiki/Wyoming"
         }
     ]
 }

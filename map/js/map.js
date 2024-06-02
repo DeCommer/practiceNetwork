@@ -15,38 +15,34 @@ const displayStates = (data) => {
     // const tableMain = document.querySelector('.table-main');
     const closeModal = document.querySelector('.closeModal');
     const dataContainer = document.querySelector('.info-modal')
-
     states.forEach((state) => {
         state.addEventListener('click',  e => {
             if (!e.target.matches('.state')) return;
             let stateId = Number(e.target.id);
             let i = stateId;
-            console.log(i);
-            console.log(data.elements[i].name);
             const dataDisplay = document.querySelector('.data');
             let html =`
             <div class="data-container">
-                <h1 class="title">${data.elements[i].name}</h1>
+                <h1 class="title">${data.USStates[i].name}</h1>
                 <div class="info-container">
                     <ul>
-                        <li><span>Capital: </span>${data.elements[i].capital}</li>
-                        <li><span>Largest City: </span>${data.elements[i].largest_city}</li>
-                        <li><span>State Bird: </span>${data.elements[i].state_bird}</li>
-                        <li><span>State Flower: </span>${data.elements[i].state_flower}</li>
-                        <li><span>Nickname: </span>${data.elements[i].nickname}</li>
-                        <li><span>Population: </span>${formatNumber(data.elements[i].population)}</li>
-                        <li><span>Area (sq mi): </span>${formatNumber(data.elements[i].area_sq_mi)}</li>
+                        <li><span>Capital: </span>${data.USStates[i].capital}</li>
+                        <li><span>Largest City: </span>${data.USStates[i].largest_city}</li>
+                        <li><span>State Bird: </span>${data.USStates[i].state_bird}</li>
+                        <li><span>State Flower: </span>${data.USStates[i].state_flower}</li>
+                        <li><span>Nickname: </span>${data.USStates[i].nickname}</li>
+                        <li><span>Population: </span>${formatNumber(data.USStates[i].population)}</li>
+                        <li><span>Area (sq mi): </span>${formatNumber(data.USStates[i].area_sq_mi)}</li>
                     </ul>
+                    <a href="${data.USStates[i].wiki}" target="_blank">Learn more!</a>
                 </div>
             </div>
-                `
+            `
             dataDisplay.innerHTML = html;
             dataContainer.showModal()
         },{capture: true});
     });
-
     closeModal.addEventListener('click', () => {
         dataContainer.close();
-        elemId = '';
     });
 }
