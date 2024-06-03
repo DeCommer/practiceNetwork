@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Calculator</title>
     <link rel="stylesheet" href="./css/agecalc.css">
+    <link rel="stylesheet" href="./css/showhide.css">
     <link rel="stylesheet" href="./css/logo.css">
     <script src="./js/agecalc.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
 </head>
 <body>
 
     <div class="main-container">
         <header>
             <a class="links" href="index.html"><span class="homeColor">Home</span></a>
-            <!-- <a class="aboutBtn" href="#"><span class="homeColor">About</span></a> -->
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
             <h1>Age Calculator</h1>
         </header>
         <div class="input-area">
@@ -37,6 +39,109 @@
             <p id="seconds"></p>
         </div>
     </div>
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Age Calculator</h1>
+        <p>Enter your birth date to calculate the hours, minutes, seconds, you have been alive.</p>
+        <p>I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
+    <div class="code">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
+const userInput = document.getElementById('date');
+const futureDate = new Date().toISOString().split('T')[0];
+const message = document.getElementById('message');
+const result = document.getElementById('result');
+const additional = document.getElementById('additional');
+const days = document.getElementById('days');
+const hours = document.getElementById('hours');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
+const enterBtn = document.getElementById('enter-btn');
+const clearBtn = document.getElementById('clear-btn');
+
+const calculateAge = () => {
+    let bd = new Date(userInput.value);
+    let bdHours = bd.getHours(userInput.value);
+    let bdMinutes = bd.getMinutes(userInput.value);
+    let bdSeconds = bd.getSeconds(userInput.value);
+    let d1 = bd.getDate();
+    let m1 = bd.getMonth() + 1;
+    let y1 = bd.getFullYear();
+    let today = new Date();
+
+    bdHours = (Math.abs(bd - Date.now()) / 36e5).toFixed(0);
+    bdMinutes = (Math.abs(bd - Date.now()) / 36e5 * 24).toFixed(0);
+    bdSeconds = (Math.abs(bd - Date.now()) / 36e5 * 60).toFixed(0);
+
+    let d2 = today.getDate();
+    let m2 = today.getMonth() + 1;
+    let y2 = today.getFullYear();
+
+    let d3, m3, y3; y3 = y2 - y1;
+
+    if(bd > Date.now() || bd == 'Invalid Date') {
+        result.innerHTML = `Invalid date`;
+        setTimeout(() => {
+            result.innerHTML = ``;
+        }, 1500)
+    } else {
+        if(m2 >= m1) {
+            m3 = m2 - m1;
+        }else {
+            y3--;
+            m3 = 12 + m2 - m1;
+        }
+        if(d2 >= d1) {
+            d3 = d2 - d1;
+        }else {
+            m3--;
+            d3 = getDaysInMonth(y1, m1) + d2 - d1; 
+        }
+        if(m3 < 0) {
+            m3 = 11;
+            y3--;
+        }
+        message.innerHTML = `You have been alive for:`;
+        result.innerHTML = `${y3} years, ${m3} months and${d3} days.`;
+        additional.innerHTML = 'That is:'
+        days.innerHTML = `${formatNumber((bdHours / 24).toFixed(0))} Days`;
+        hours.innerHTML = `${formatNumber(bdHours)} hours`;
+        minutes.innerHTML = `${formatNumber(bdMinutes)} minutes and`;
+        seconds.innerHTML = `${formatNumber(bdSeconds)} seconds`;
+
+        console.log(bd)
+    }
+    }; 
+
+    function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+    const getDaysInMonth = (year, month) => {
+    return new Date(year, month, 0).getDate();
+    }
+
+    const clear = () => {
+    userInput.value = ``;
+    message.innerHTML = ``;
+    result.innerHTML = ``;
+    additional.innerHTML = ''
+    hours.innerHTML = ``;
+    minutes.innerHTML = ``;
+    seconds.innerHTML = ``;
+    }
+
+    enterBtn.addEventListener('click', calculateAge);
+    clearBtn.addEventListener('click', clear);
+    </code></pre></p>
+    </div>
+
     <div class="elem-logo">
         <div class="logo-upper-left">
             <p>45</p>
