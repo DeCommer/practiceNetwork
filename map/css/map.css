@@ -34,24 +34,24 @@ body {
     transition: ease-in 0.2s;
 }
 
+/* header {
+    border: 1px solid #fff;
+    
+} */
+
 p {
     padding: 15px;
 }
 
 a {
     text-decoration: none;
-    margin: 10px;
-}
-
-header h1 {
-    /* border: 1px solid blue; */
     margin: 15px;
 }
 
-span {
-    font-weight: bold;
-    margin-right: 50px;
+header h1 {
+    margin: 15px;
 }
+
 
 .map-container {
     margin-bottom: 25px;
@@ -141,6 +141,12 @@ img {
     letter-spacing: .6rem;
     border-bottom: 1px solid #09396c;
     color: #09396c;
+}
+
+.data-container span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 50px;
 }
 
 .info-container {
