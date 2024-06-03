@@ -145,5 +145,8 @@ img {
 
 .info-container {
     padding: 15px;
+}
 
+.closeModal:focus {
+    outline: none;
 }
