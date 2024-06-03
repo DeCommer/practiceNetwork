@@ -116,9 +116,7 @@ dialog::backdrop {
 }
 
 img {
-    width: 170px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 .info-modal li {
@@ -136,13 +134,16 @@ img {
 .info-link:hover {
     color: #3dade6;
 }
-
 .data-container .title {
-    margin-bottom: 25px;
-    text-decoration: underline;
-    color:#09396c;
+    margin-bottom: 10px;
+    font-size: 3rem;
+    font-weight: lighter;
+    letter-spacing: .6rem;
+    border-bottom: 1px solid #09396c;
+    color: #09396c;
 }
 
 .info-container {
-    margin-bottom: 25px;
+    padding: 15px;
+
 }

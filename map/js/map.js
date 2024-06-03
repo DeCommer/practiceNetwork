@@ -1,7 +1,4 @@
 const states = document.querySelectorAll('.state');
-// const stateName = document.getElementById('state-name');
-// const display = document.getElementById('display');
-// const closeModal = document.getElementById('closeModal');
 
 fetch("./us_states.json")
 .then(response => response.json())
@@ -20,7 +17,7 @@ const displayStates = (data) => {
             if (!e.target.matches('.state')) return;
             let stateId = Number(e.target.id);
             let i = stateId;
-            console.log(i)
+            // console.log(i)
             const dataDisplay = document.querySelector('.data');
             let html =`
             <div class="data-container">
@@ -33,6 +30,7 @@ const displayStates = (data) => {
                         <li><span>State Bird: </span>${data.USStates[i].state_bird}</li>
                         <li><span>State Flower: </span>${data.USStates[i].state_flower}</li>
                         <li><span>Nickname: </span>${data.USStates[i].nickname}</li>
+                        <li><span>Became a State: </span>${data.USStates[i].Became_a_state}</li>
                         <li><span>Population: </span>${formatNumber(data.USStates[i].population)}</li>
                         <li><span>Area (sq mi): </span>${formatNumber(data.USStates[i].area_sq_mi)}</li>
                     </ul>
