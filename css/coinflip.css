@@ -7,15 +7,19 @@
     box-sizing: border-box;
 }
 body {
-    height: 100vh;
+
     display: flex;
-    /* flex-direction: column; */
-    /* align-items: center; */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     background-color: #007acc;
     /* font-family: 'Roboto', sans-serif; */
     font-family: "Sedan", serif;
     color: #09396c;
+}
+
+.outer-container {
+    display: flex;
 }
 
 .main-container {
@@ -66,6 +70,7 @@ h2 {
 
 header {
     text-align: center;
+    margin-top: 50px;
 }
 
 .coin img {
@@ -183,12 +188,17 @@ input:focus {
 @media (max-width: 500px) {
 
     body {
-        flex-wrap: wrap;
+        flex-direction: column;
     }
 
     .main-container {
         margin-top: 15px;
         width: 375px;
+    }
+
+    .outer-container {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     p {

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="./js/tstesting.js"></script> -->
     <link rel="stylesheet" href="./css/logo.css"/>
+    <link rel="stylesheet" href="./css/showhide.css"/>
+    <script src="./js/showhide.js" defer></script>
     <title>Testing</title>
     <style>
         * {
@@ -17,7 +18,9 @@
             background-color: #007ACC;
             color: #153b61;
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
         header {
             text-align: center;
@@ -108,6 +111,7 @@
     <div class="main-container">
         <header>
             <a href="./index.html"><span class="homeColor">Home</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
             <h2 class=title">Incremental Progress Bar Example</h2>
         </header>
         <div class="inputs">
@@ -123,6 +127,72 @@
             <p class="info">0 / 10</p>
             <button class="resetBtn btn">reset</button>
         </div>
+    </div>
+
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Progress Bar</h1>
+        <p>This is an example of a progress bar you can add to any application.</p>
+        <p>I made this with a combination of HTML, CSS and JS. 
+        You can see the JavaScript by clicking the button below.
+        </p>
+    </div><div class="aboutOverlay hidden"></div>
+
+    <div class="code">
+        <button class="jsBtn" >See the Javascript.</button>
+        <p><pre><code class="jsHidden hidden">
+            <button class="closeJsModal">&times</button>
+const usrIn = document.querySelector('.usrIn');
+const enterBtn = document.querySelector('.enterBtn');
+const clickBtn = document.querySelector('.clickBtn');
+const resetBtn = document.querySelector('.resetBtn');
+const info = document.querySelector('.info');
+let num = 0;
+let total = 10;
+const progressBarFill = () => {
+    let increment = 100 / total;
+    let progress = document.querySelector('.progress-bar');
+    let width = progress.style.width.replace('%', '');
+    width = parseInt(width) + increment;
+    width = (num / total) * 100+'%';
+    progress.style.width = width;
+    info.textContent = `${num} / ${total}`;
+    if(num == total) {
+        reset();
+    };
+};
+const reset = () => {
+    usrIn.value = 10;
+    num = 0;
+};
+clickBtn.addEventListener('click', () => {
+    num++
+    progressBarFill();
+});
+resetBtn.addEventListener('click', () => {
+    reset();
+    progressBarFill();
+});
+enterBtn.addEventListener('click', () => {
+    if(usrIn.value === total) {
+        reset();
+    }else {
+        total = usrIn.value;
+        info.textContent = `${num} / ${total}`;
+    }
+});
+
+usrIn.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        if(usrIn.value === total) {
+            reset();
+        }else {
+            total = usrIn.value;
+            info.textContent = `${num} / ${total}`;
+        }
+    }
+});
+    </code></pre></p>
     </div>
 
     <div class="elem-logo">
