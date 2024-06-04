@@ -265,6 +265,16 @@ input:focus {
         width: 375px;
     }
 
+    .main-container-2 {
+        margin-top: 15px;
+        width: 375px;
+    }
+
+    .stat-results {
+        margin-top: 15px;
+        width: 375px;
+    }
+
     .outer-container {
         display: flex;
         flex-wrap: wrap;
