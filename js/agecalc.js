@@ -76,7 +76,8 @@ const calculateAge = () => {
     userInput.value = ``;
     message.innerHTML = ``;
     result.innerHTML = ``;
-    additional.innerHTML = ''
+    additional.innerHTML = '';
+    days.innerHTML = ``;
     hours.innerHTML = ``;
     minutes.innerHTML = ``;
     seconds.innerHTML = ``;

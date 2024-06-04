@@ -407,36 +407,36 @@
         <button class="jsBtn" >See the Javascript.</button>
         <p><pre><code class="jsHidden hidden">
             <button class="closeJsModal">&times</button>
-            const states = document.querySelectorAll('.state');
+const states = document.querySelectorAll('.state');
 
-            fetch("./us_states.json")
-            .then(response => response.json())
-            .then(data => displayStates(data));
-            
-            function formatNumber(num) {
-                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            }
-            
-            const displayStates = (data) => {
-                // const tableMain = document.querySelector('.table-main');
-                const closeModal = document.querySelector('.closeModal');
-                const dataContainer = document.querySelector('.info-modal')
-                states.forEach((state) => {
-                    state.addEventListener('click',  e => {
-                        if (!e.target.matches('.state')) return;
-                        let stateId = Number(e.target.id);
-                        let i = stateId;
-                        // console.log(i)
-                        const dataDisplay = document.querySelector('.data');
-                        let html =`*** HTML data block goes here ***`
-                        dataDisplay.innerHTML = html;
-                        dataContainer.showModal()
-                    },{capture: true});
-                });
-                closeModal.addEventListener('click', () => {
-                    dataContainer.close();
-                });
-            }
+fetch("./us_states.json")
+.then(response => response.json())
+.then(data => displayStates(data));
+
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+const displayStates = (data) => {
+    // const tableMain = document.querySelector('.table-main');
+    const closeModal = document.querySelector('.closeModal');
+    const dataContainer = document.querySelector('.info-modal')
+    states.forEach((state) => {
+        state.addEventListener('click',  e => {
+            if (!e.target.matches('.state')) return;
+            let stateId = Number(e.target.id);
+            let i = stateId;
+            // console.log(i)
+            const dataDisplay = document.querySelector('.data');
+            let html =`*** HTML data block goes here ***`
+            dataDisplay.innerHTML = html;
+            dataContainer.showModal()
+        },{capture: true});
+    });
+    closeModal.addEventListener('click', () => {
+        dataContainer.close();
+    });
+}
     </code></pre></p>
     </div>
 
