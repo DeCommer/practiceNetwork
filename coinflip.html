@@ -87,6 +87,7 @@
                         <canvas class="hidden" id="myChart" width="400" height="300"></canvas>
                     </div>
                 </div>
+                <button class="jsBtn" >See the Javascript.</button>
             </div>
         </div>
     </div>
@@ -101,138 +102,138 @@
         </div><div class="aboutOverlay hidden"></div>
 
         <div class="code">
-            <button class="jsBtn" >See the Javascript.</button>
+
             <p><pre><code class="jsHidden hidden">
                 <button class="closeJsModal">&times</button>
-                const coinIcon = document.getElementById('coin');
-                const tossBtn = document.getElementById('flip-button');
-                const resetBtn = document.getElementById('reset-button');
-                const result = document.getElementById('result');
-                const flipCountTxt = document.getElementById('flip-count');
-                const headsCountTxt = document.getElementById('heads-count');
-                const tailsCountTxt = document.getElementById('tails-count');
-                const simFlipCountTxt = document.getElementById('sim-flip-count');
-                const simHeadsCountTxt = document.getElementById('sim-heads-count');
-                const simTailsCountTxt = document.getElementById('sim-tails-count');
-                const headsPercentTxt = document.getElementById('heads-percent');
-                const tailsPercentTxt = document.getElementById('tails-percent');
-                const simHeadsPercentTxt = document.getElementById('sim-heads-percent');
-                const simTailsPercentTxt = document.getElementById('sim-tails-percent');
-                const arrayText = document.getElementById('array-txt');
-                const simArrayText = document.getElementById('sim-array-txt');
-                const numberOfFlipsIn = document.getElementById('number-of-flips-in');
-                const flipsSimBtn = document.getElementById('flip-sim-btn');
-                const resetSimBtn = document.getElementById('reset-sim-btn');
-                const simMessage = document.getElementById('message');
-                
-                let flips = 0;
-                let heads = 0;
-                let tails = 0;
-                let headsPercent = 0;
-                let tailsPercent = 0;
-                let htArray = [];
-                let simHtArray = [];
-                
-                tossBtn.addEventListener('click', () => { 
-                    coinFlipper9000(); 
-                    tossBtn.disabled = true; 
-                    flipCountTxt.innerHTML = `HTML Content`;
-                });
-                
-                resetBtn.addEventListener('click', () => {
-                    flips = 0;
-                    heads = 0;
-                    tails = 0;
-                    headsPercent = 0;
-                    tailsPercent = 0;
-                    htArray = [];
-                    arrayText.textContent  = '';
-                    HTML Content
-                });
-                
-                const coinFlipper9000 = () => { 
-                    const randomVal = Math.random(); 
-                    const faceCoin = randomVal < 0.5 ? 'H' : 'T'; 
-                    const imageUrl = faceCoin === 'H' ? './assets/img/heads.png' : './assets/img/tails.png';
-                    flips += 1;
-                    coinIcon.classList.add('flip'); 
-                    setTimeout(() => { 
-                        coinIcon.innerHTML = HTML Content; 
-                        coinIcon.classList.remove('flip'); 
-                        setTimeout(() => { 
-                            result.innerHTML = `HTML Content`; 
-                            tossBtn.disabled = false; 
-                        if(faceCoin === 'H') {
-                            heads +=1;
-                            headsCountTxt.innerHTML = `HTML Content`;
-                            percentCalc();
-                            htArray.push(' H');
-                            arrayText.textContent  = htArray;
-                        }else if(faceCoin === 'T'){
-                            tails +=1;
-                            tailsCountTxt.innerHTML = `HTML Content`
-                            percentCalc();
-                            htArray.push(' T');
-                            arrayText.textContent  = htArray;
-                        }
-                        }, 100); 
-                    }, 400);
-                };
-                
-                const percentCalc = () => {
-                    headsPercent = (heads / flips) * 100;
-                    tailsPercent = (tails / flips) * 100;
-                    headsPercentTxt.innerHTML = `HTML Content`;
-                    tailsPercentTxt.innerHTML = `HTML Content`;
-                };
-                
-                const simulateNFlips = () => {
-                    simHtArray = [];
-                    var headsCount = 0;
-                    var tailsCount = 0;
-                    for (let i = 0; i < numberOfFlipsIn.value; i++) {
-                        let outcome = Math.random() < 0.5 ? 'Heads' : 'Tails';
-                        if (outcome === 'Heads') {
-                            headsCount++;
-                            simHtArray.push(' H');
-                        } else {
-                            tailsCount++;
-                            simHtArray.push(' T');
-                        }
-                    }
-                    if(numberOfFlipsIn.value >= 181) {
-                        simMessage.textContent = ('🔻Scroll to see full results🔻');
-                    }else {
-                        simMessage.textContent = ('');
-                    };
-                    console.log(simHtArray);
-                    var headsPercentage = (headsCount / numberOfFlipsIn.value * 100).toFixed(2);
-                    var tailsPercentage = (tailsCount / numberOfFlipsIn.value * 100).toFixed(2);
-                    // console.log(`Number of flips: ${numberOfFlipsIn.value}.`)
-                    // console.log(`Heads Percentage: ${headsPercentage}%, Tails Percentage: ${tailsPercentage}%`)
-                    simFlipCountTxt.innerHTML = `HTML Content`
-                    simHeadsCountTxt.innerHTML = `HTML Content`
-                    simTailsCountTxt.innerHTML = `HTML Content`
-                    simHeadsPercentTxt.innerHTML = `HTML Content`;
-                    simTailsPercentTxt.innerHTML = `HTML Content`;
-                    simArrayText.textContent = simHtArray;
-                };
-                
-                flipsSimBtn.addEventListener('click', () => {
-                    if(numberOfFlipsIn.value === '') {
-                        simMessage.textContent = ('Enter a value');
-                    } else {
-                        simulateNFlips();
-                    }
-                });
-                
-                resetSimBtn.addEventListener('click', () => {
-                    simHtArray = [];
-                    simMessage.textContent = ('')
-                    numberOfFlipsIn.value = ''
-                    HTML Content
-                    simArrayText.textContent = '';
-                });
+const coinIcon = document.getElementById('coin');
+const tossBtn = document.getElementById('flip-button');
+const resetBtn = document.getElementById('reset-button');
+const result = document.getElementById('result');
+const flipCountTxt = document.getElementById('flip-count');
+const headsCountTxt = document.getElementById('heads-count');
+const tailsCountTxt = document.getElementById('tails-count');
+const simFlipCountTxt = document.getElementById('sim-flip-count');
+const simHeadsCountTxt = document.getElementById('sim-heads-count');
+const simTailsCountTxt = document.getElementById('sim-tails-count');
+const headsPercentTxt = document.getElementById('heads-percent');
+const tailsPercentTxt = document.getElementById('tails-percent');
+const simHeadsPercentTxt = document.getElementById('sim-heads-percent');
+const simTailsPercentTxt = document.getElementById('sim-tails-percent');
+const arrayText = document.getElementById('array-txt');
+const simArrayText = document.getElementById('sim-array-txt');
+const numberOfFlipsIn = document.getElementById('number-of-flips-in');
+const flipsSimBtn = document.getElementById('flip-sim-btn');
+const resetSimBtn = document.getElementById('reset-sim-btn');
+const simMessage = document.getElementById('message');
+
+let flips = 0;
+let heads = 0;
+let tails = 0;
+let headsPercent = 0;
+let tailsPercent = 0;
+let htArray = [];
+let simHtArray = [];
+
+tossBtn.addEventListener('click', () => { 
+    coinFlipper9000(); 
+    tossBtn.disabled = true; 
+    flipCountTxt.innerHTML = `HTML Content`;
+});
+
+resetBtn.addEventListener('click', () => {
+    flips = 0;
+    heads = 0;
+    tails = 0;
+    headsPercent = 0;
+    tailsPercent = 0;
+    htArray = [];
+    arrayText.textContent  = '';
+    HTML Content
+});
+
+const coinFlipper9000 = () => { 
+    const randomVal = Math.random(); 
+    const faceCoin = randomVal < 0.5 ? 'H' : 'T'; 
+    const imageUrl = faceCoin === 'H' ? './assets/img/heads.png' : './assets/img/tails.png';
+    flips += 1;
+    coinIcon.classList.add('flip'); 
+    setTimeout(() => { 
+        coinIcon.innerHTML = HTML Content; 
+        coinIcon.classList.remove('flip'); 
+        setTimeout(() => { 
+            result.innerHTML = `HTML Content`; 
+            tossBtn.disabled = false; 
+        if(faceCoin === 'H') {
+            heads +=1;
+            headsCountTxt.innerHTML = `HTML Content`;
+            percentCalc();
+            htArray.push(' H');
+            arrayText.textContent  = htArray;
+        }else if(faceCoin === 'T'){
+            tails +=1;
+            tailsCountTxt.innerHTML = `HTML Content`
+            percentCalc();
+            htArray.push(' T');
+            arrayText.textContent  = htArray;
+        }
+        }, 100); 
+    }, 400);
+};
+
+const percentCalc = () => {
+    headsPercent = (heads / flips) * 100;
+    tailsPercent = (tails / flips) * 100;
+    headsPercentTxt.innerHTML = `HTML Content`;
+    tailsPercentTxt.innerHTML = `HTML Content`;
+};
+
+const simulateNFlips = () => {
+    simHtArray = [];
+    var headsCount = 0;
+    var tailsCount = 0;
+    for (let i = 0; i < numberOfFlipsIn.value; i++) {
+        let outcome = Math.random() < 0.5 ? 'Heads' : 'Tails';
+        if (outcome === 'Heads') {
+            headsCount++;
+            simHtArray.push(' H');
+        } else {
+            tailsCount++;
+            simHtArray.push(' T');
+        }
+    }
+    if(numberOfFlipsIn.value >= 181) {
+        simMessage.textContent = ('🔻Scroll to see full results🔻');
+    }else {
+        simMessage.textContent = ('');
+    };
+    console.log(simHtArray);
+    var headsPercentage = (headsCount / numberOfFlipsIn.value * 100).toFixed(2);
+    var tailsPercentage = (tailsCount / numberOfFlipsIn.value * 100).toFixed(2);
+    // console.log(`Number of flips: ${numberOfFlipsIn.value}.`)
+    // console.log(`Heads Percentage: ${headsPercentage}%, Tails Percentage: ${tailsPercentage}%`)
+    simFlipCountTxt.innerHTML = `HTML Content`
+    simHeadsCountTxt.innerHTML = `HTML Content`
+    simTailsCountTxt.innerHTML = `HTML Content`
+    simHeadsPercentTxt.innerHTML = `HTML Content`;
+    simTailsPercentTxt.innerHTML = `HTML Content`;
+    simArrayText.textContent = simHtArray;
+};
+
+flipsSimBtn.addEventListener('click', () => {
+    if(numberOfFlipsIn.value === '') {
+        simMessage.textContent = ('Enter a value');
+    } else {
+        simulateNFlips();
+    }
+});
+
+resetSimBtn.addEventListener('click', () => {
+    simHtArray = [];
+    simMessage.textContent = ('')
+    numberOfFlipsIn.value = ''
+    HTML Content
+    simArrayText.textContent = '';
+});
         </code></pre></p>
 </div>
         
