@@ -105,8 +105,8 @@ header {
     font-size: 1.2rem;
     border: none;
     border-radius: 5px;
-    margin: 10px;
-    padding: 10px 45px;
+    margin: 10px 10px;
+    padding: 10px 25px;
     cursor: pointer;
 }
 
@@ -116,7 +116,7 @@ header {
 
 .results-area { 
     /* border: 1px solid red; */
-    margin-top: 10px;
+    margin-top: 0px;
     display: flex;
     text-align: center;
 	font-size: 1.2rem; 
@@ -133,7 +133,7 @@ header {
 
 .array-area {
     /* border: 1px solid red; */
-    margin-top: 0px;
+    margin: 0px;
     text-align: center;
     width: 90%;
     max-height: 250px;

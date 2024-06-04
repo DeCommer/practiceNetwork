@@ -121,6 +121,9 @@ const simulateNFlips = () => {
 flipsSimBtn.addEventListener('click', () => {
     if(numberOfFlipsIn.value === '') {
         simMessage.textContent = ('Enter a value');
+        setInterval(() =>{
+            simMessage.textContent = ('');
+        }, 1500)
     } else {
         simulateNFlips();
     }
@@ -203,7 +206,6 @@ const simulate = () => {
     }
     myChart = new Chart(ctx, config);
 }
-
 
 binomBtn.addEventListener('click', () =>{
     simulate();
