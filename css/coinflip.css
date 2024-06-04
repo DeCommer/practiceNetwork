@@ -13,8 +13,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #007acc;
-    /* font-family: 'Roboto', sans-serif; */
-    font-family: "Sedan", serif;
+    font-family:'Times New Roman', Times, serif;
     color: #09396c;
 }
 
@@ -171,19 +170,32 @@ input:focus {
 
 /* binomial distribution css */
 
-.fpt-button {
-    padding: 5px 10px;
+.main-container.stat-results {
+    height: fit-content;
+    color: rgba(75, 192, 192, 1)';
 }
 
-.trial-button {
-    padding: 5px 10px;
+.hidden {
+    display: none;
 }
 
-.active {
-    background-color: #42e31aff;
-    color: #235311;
+.dist-flips-entry-area {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.binom-data-area {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.binom-results-area {
+    margin: 10px;
+}
 
 @media (max-width: 500px) {
 

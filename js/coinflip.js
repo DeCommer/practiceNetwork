@@ -137,3 +137,74 @@ resetSimBtn.addEventListener('click', () => {
     simTailsPercentTxt.innerHTML = `<span>0.00%</span><br>Tails`;
     simArrayText.textContent = '';
 });
+
+const binomBtn = document.getElementById('binom-btn');
+const binomReset = document.getElementById('binom-reset-btn');
+
+let myChart = null;
+
+function simulate() {
+    const flips = parseInt(document.getElementById('flips').value);
+    const trials = parseInt(document.getElementById('trials').value);
+
+    let results = new Array(flips + 1).fill(0);
+
+    for (let i = 0; i < trials; i++) {
+        let heads = 0;
+        for (let j = 0; j < flips; j++) {
+            if (Math.random() < 0.5) {
+                heads++;
+            }
+        }
+        results[heads]++;
+    }
+
+    const labels = [];
+    for (let i = 0; i <= flips; i++) {
+        labels.push(i.toString());
+    }
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Number of Heads',
+            data: results,
+            backgroundColor: '#42e31aff',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+    
+    if (myChart) {
+        myChart.destroy();
+    }
+
+    myChart = new Chart(ctx, config);
+
+}
+
+
+binomBtn.addEventListener('click', () =>{
+    simulate();
+});
+
+binomReset.addEventListener('click', () => {
+    myChart.destroy();
+});
+
+
+
