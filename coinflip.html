@@ -43,7 +43,7 @@
             </div>
 		</div> 
         <div class="right-area">
-            <div class="main-container n-flips">
+            <div class="main-container-2 n-flips">
                     <h1 class="title margin-top">n Flips Simulator</h1>
                 <div class="input-area">
                     <label>Number of flips: </label>
@@ -67,7 +67,8 @@
                     <p id="sim-tails-percent"><span>0.00%</span><br>Tails</p>
                 </div>
             </div>
-            <div class="main-container stat-results">
+            <div class="stat-results">
+                <button id="enlarge-btn" class="size-btn">↕</button>
                     <h1 class="title margin-top">Binomial Distribution</h1>
                     <div class="dist-flips-entry-area">
                         <div class="binom-data-area">
@@ -84,7 +85,7 @@
                         <button class="btn" id="binom-reset-btn"">Reset</button>
                     </div>
                     <div class="binom-results-area">
-                        <canvas class="hidden" id="myChart" width="400" height="300"></canvas>
+                        <canvas class="hidden graph" id="myChart" width="400" height="300"></canvas>
                     </div>
                 </div>
                 <button class="jsBtn" >See the Javascript.</button>

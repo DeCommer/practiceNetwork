@@ -210,6 +210,34 @@ const simulate = () => {
     myChart = new Chart(ctx, config);
 }
 
+let lrgState = 'small';
+
+console.log(lrgState);
+
+const enlargeBtn = document.getElementById('enlarge-btn');
+
+enlargeBtn.addEventListener('click', () => {
+
+    if(lrgState === 'small') {
+        lrgState = 'large';
+        const statResults = document.querySelector('.stat-results');
+        document.querySelector('.graph').classList.add('big-graph');
+        document.querySelector('.main-container').classList.add('hidden');
+        document.querySelector('.main-container-2').classList.add('hidden');
+        statResults.classList.add('big');
+        simulate();
+    }else if(lrgState === 'large') {
+        lrgState = 'small';
+        const statResults = document.querySelector('.stat-results');
+        document.querySelector('.graph').classList.remove('big-graph');
+        document.querySelector('.main-container').classList.remove('hidden');
+        document.querySelector('.main-container-2').classList.remove('hidden');
+        statResults.classList.remove('big');
+        myChart.destroy();
+    }
+
+});
+
 binomBtn.addEventListener('click', () =>{
     simulate();
 });

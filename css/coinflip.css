@@ -42,6 +42,19 @@ body {
     width: 425px;
 }
 
+.main-container-2 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    margin: 25px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    height: fit-content;
+    width: 425px;
+}
+
 a {
     margin: 15px ;
     text-decoration: none;
@@ -178,9 +191,28 @@ input:focus {
 
 /* binomial distribution css */
 
-.main-container.stat-results {
+.stat-results {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    margin: 25px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    width: 425px;
     height: fit-content;
-    color: rgba(75, 192, 192, 1)';
+}
+
+.size-btn {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transform: rotate(45deg);
 }
 
 .hidden {
@@ -204,6 +236,16 @@ input:focus {
 
 .binom-results-area {
     margin: 10px;
+    width: auto;
+}
+
+.big {
+    width: 1000px;
+    font-size: 2.5rem;
+}
+
+.big-graph {
+    width: 599px;
 }
 
 @media (max-width: 500px) {
