@@ -68,15 +68,14 @@
                 </div>
             </div>
             <div class="main-container stat-results">
-
                     <h1 class="title margin-top">Binomial Distribution</h1>
                     <div class="dist-flips-entry-area">
                         <div class="binom-data-area">
-                            <label for="flips">Number of flips per trial:</label>
-                            <input type="number" id="flips" min="0" max="50" value="50" step="10">
+                            <label for="flips">Flips per trial:</label>
+                            <input type="number" id="flips" min="0" max="50" value="10" step="10">
                         </div>
                         <div class="binom-data-area">
-                            <label for="trials">Number of trials:</label>
+                            <label for="trials">Trials:</label>
                             <input type="number" id="trials" min="1" value="100">
                         </div>
                     </div>
@@ -85,7 +84,7 @@
                         <button class="btn" id="binom-reset-btn"">Reset</button>
                     </div>
                     <div class="binom-results-area">
-                        <canvas class="hidden" id="myChart" width="400" height="200"></canvas>
+                        <canvas class="hidden" id="myChart" width="400" height="300"></canvas>
                     </div>
                 </div>
             </div>

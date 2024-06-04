@@ -143,10 +143,11 @@ const binomReset = document.getElementById('binom-reset-btn');
 
 let myChart = null;
 
-function simulate() {
+const simulate = () => {
     const flips = parseInt(document.getElementById('flips').value);
     const trials = parseInt(document.getElementById('trials').value);
-
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const labels = [];
     let results = new Array(flips + 1).fill(0);
 
     for (let i = 0; i < trials; i++) {
@@ -159,7 +160,6 @@ function simulate() {
         results[heads]++;
     }
 
-    const labels = [];
     for (let i = 0; i <= flips; i++) {
         labels.push(i.toString());
     }
@@ -179,22 +179,29 @@ function simulate() {
         type: 'bar',
         data: data,
         options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: '#fff'
+                    }
+                }
+            },
             scales: {
                 y: {
-                    beginAtZero: true
+                    ticks: { color: '#fff', beginAtZero: true }
+                },
+                x: {
+                    ticks: { color: '#fff', beginAtZero: true }
                 }
             }
         }
     };
 
-    const ctx = document.getElementById('myChart').getContext('2d');
-    
     if (myChart) {
         myChart.destroy();
     }
-
     myChart = new Chart(ctx, config);
-
 }
 
 
