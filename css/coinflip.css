@@ -207,7 +207,8 @@ input:focus {
 
 .size-btn {
     position: absolute;
-    right: 15px;
+    top: 5px;
+    right: 5px;
     background: none;
     border: none;
     color: #fff;
