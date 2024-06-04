@@ -173,7 +173,7 @@ const simulate = () => {
             label: 'Number of Heads',
             data: results,
             backgroundColor: '#42e31aff',
-            borderColor: 'rgba(75, 192, 192, 1)',
+            borderColor: '#27830f',
             borderWidth: 1
         }]
     };
@@ -186,16 +186,19 @@ const simulate = () => {
                 legend: {
                     display: true,
                     labels: {
-                        color: '#fff'
+                        color: '#fff',
+                        font: {
+                            size: 20
+                          }
                     }
                 }
             },
             scales: {
                 y: {
-                    ticks: { color: '#fff', beginAtZero: true }
+                    ticks: { color: '#fff', beginAtZero: true}
                 },
                 x: {
-                    ticks: { color: '#fff', beginAtZero: true }
+                    ticks: { color: '#fff', beginAtZero: true}
                 }
             }
         }
