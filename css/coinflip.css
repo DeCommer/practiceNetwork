@@ -261,23 +261,32 @@ input:focus {
     }
 
     .main-container {
-        margin-top: 15px;
-        width: 375px;
+        margin: 15px auto;
+        width: 90%;
     }
 
     .main-container-2 {
-        margin-top: 15px;
-        width: 375px;
+        /* border: 1px solid red; */
+        margin: 15px auto;
+        width: fit-content;
+        padding: 20px;
     }
 
     .stat-results {
-        margin-top: 15px;
-        width: 375px;
+        /* border: 1px solid red; */
+        margin: 15px auto;
+        width: fit-content;
+        padding: 20px;
+    }
+
+    .size-btn {
+        display: none;
     }
 
     .outer-container {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     p {
