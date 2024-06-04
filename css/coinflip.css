@@ -212,7 +212,12 @@ input:focus {
     border: none;
     color: #fff;
     font-size: 1.5rem;
-    transform: rotate(45deg);
+    transform: rotate(140deg);
+    cursor: pointer;
+}
+
+.size-btn:hover {
+    color:#c1121f;
 }
 
 .hidden {
