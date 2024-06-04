@@ -105,7 +105,7 @@ const simulateNFlips = () => {
     }else {
         simMessage.textContent = ('');
     };
-    console.log(simHtArray);
+    // console.log(simHtArray);
     var headsPercentage = (headsCount / numberOfFlipsIn.value * 100).toFixed(2);
     var tailsPercentage = (tailsCount / numberOfFlipsIn.value * 100).toFixed(2);
     // console.log(`Number of flips: ${numberOfFlipsIn.value}.`)
@@ -147,15 +147,15 @@ const binomReset = document.getElementById('binom-reset-btn');
 let myChart = null;
 
 const simulate = () => {
-    const flips = parseInt(document.getElementById('flips').value);
+    const binomFlips = parseInt(document.getElementById('binomFlips').value);
     const trials = parseInt(document.getElementById('trials').value);
     const ctx = document.getElementById('myChart').getContext('2d');
     const labels = [];
-    let results = new Array(flips + 1).fill(0);
+    let results = new Array(binomFlips + 1).fill(0);
 
     for (let i = 0; i < trials; i++) {
         let heads = 0;
-        for (let j = 0; j < flips; j++) {
+        for (let j = 0; j < binomFlips; j++) {
             if (Math.random() < 0.5) {
                 heads++;
             }
@@ -163,7 +163,7 @@ const simulate = () => {
         results[heads]++;
     }
 
-    for (let i = 0; i <= flips; i++) {
+    for (let i = 0; i <= binomFlips; i++) {
         labels.push(i.toString());
     }
 
@@ -211,13 +211,9 @@ const simulate = () => {
 }
 
 let lrgState = 'small';
-
-console.log(lrgState);
-
 const enlargeBtn = document.getElementById('enlarge-btn');
 
 enlargeBtn.addEventListener('click', () => {
-
     if(lrgState === 'small') {
         lrgState = 'large';
         const statResults = document.querySelector('.stat-results');
@@ -235,7 +231,6 @@ enlargeBtn.addEventListener('click', () => {
         statResults.classList.remove('big');
         myChart.destroy();
     }
-
 });
 
 binomBtn.addEventListener('click', () =>{
@@ -243,6 +238,8 @@ binomBtn.addEventListener('click', () =>{
 });
 
 binomReset.addEventListener('click', () => {
+    trials.value = 100;
+    binomFlips.value = 10;
     myChart.destroy();
 });
 
