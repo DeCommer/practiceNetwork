@@ -55,7 +55,9 @@ header h1 {
 
 
 .map-container {
-    margin-bottom: 25px;
+    /* border: 1px solid #09396c;
+    padding: 10px; */
+    margin-bottom: 5px;
 
 }
 
@@ -84,7 +86,7 @@ header h1 {
 }
 
 #map-txt {
-    fill: #000;
+    fill: #09396c;
     cursor: pointer;
     user-select: none;
 }
