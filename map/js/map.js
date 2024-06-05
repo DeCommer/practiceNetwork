@@ -1,4 +1,5 @@
 const states = document.querySelectorAll('.state');
+const mapTxt = document.getElementById('svg');
 
 fetch("./us_states.json")
 .then(response => response.json())
@@ -46,3 +47,7 @@ const displayStates = (data) => {
         dataContainer.close();
     });
 }
+
+// mapTxt.addEventListener('click', () => {
+//     console.log("Clicked");
+// });

@@ -14,6 +14,7 @@ body {
 .main-container {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     /* background-color: rgba(255, 255, 255, 0.2); */
+
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -55,9 +56,11 @@ header h1 {
 
 .map-container {
     margin-bottom: 25px;
+
 }
 
 .map-container path {
+    
     fill: #90c4ed;
     stroke: rgb(92, 149, 218);
     stroke-linejoin: round;
@@ -68,6 +71,7 @@ header h1 {
 
 .state {
     cursor: pointer;
+    
 }
 
 .map-container :hover {
@@ -77,6 +81,12 @@ header h1 {
 .svg {
     width:1200px;
     height: 800px;
+}
+
+#map-txt {
+    fill: #000;
+    cursor: pointer;
+    user-select: none;
 }
 
 .info-modal {
