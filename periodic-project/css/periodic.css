@@ -591,7 +591,6 @@ header {
 @media (max-width: 500px) {
 
     body {
-
         background-color: #282828;
         width: 100%;
     }
@@ -629,7 +628,7 @@ header {
 
     .info-modal {
         width: 85%;
-        height: 655px;
+        height: 700px;
     }
 
     img {

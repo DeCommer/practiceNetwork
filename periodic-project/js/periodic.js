@@ -35,14 +35,25 @@ const displayElements = (data) => {
             }
             
         dataContainer.showModal()
-            
+
+        if(elemId > 0) {
+            console.log('Modal open');
+            //set position of modal to 50% reletive to top
+
+        }
     },{capture: true});
 
     closeModal.addEventListener('click', () => {
         dataContainer.close();
         elemId = '';
     });
+
+
 }
+
+
+let modal = document.getElementById("info-modal-id");
+
 
 //Key functionality
 const key1 = document.querySelector('.key-1');
