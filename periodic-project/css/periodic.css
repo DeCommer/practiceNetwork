@@ -128,9 +128,10 @@ header {
 
 .card p {
     color: inherit;
+    pointer-events: none;
 }
 
-.card::after {
+/* .card::after {
     content: 'i';
     font-size: 1rem;
     color: inherit;
@@ -138,7 +139,7 @@ header {
     position: absolute;
     top: 3px;
     right: 7px;
-}
+} */
 
 .atom-num {
     position: absolute;
@@ -150,6 +151,7 @@ header {
 .symbol {
     font-size: 1.2rem;
     margin-top: 5px;
+    pointer-events: none;
 }
 
 .name {
