@@ -4,6 +4,8 @@ fetch("./assets/periodicdata.json")
 
 const cards = document.querySelectorAll('.card')
 
+const modal = document.getElementById('info-modal-id');
+
 const displayElements = (data) => {
     const tableMain = document.querySelector('.table-main');
     const closeModal = document.querySelector('.closeModal');
@@ -39,6 +41,8 @@ const displayElements = (data) => {
         if(elemId > 0) {
             console.log('Modal open');
             //set position of modal to 50% reletive to top
+            modal.style.position = 'fixed';
+            modal.style.top = `-${document.body.scrollY}px`;
 
         }
     },{capture: true});
@@ -50,9 +54,6 @@ const displayElements = (data) => {
 
 
 }
-
-
-let modal = document.getElementById("info-modal-id");
 
 
 //Key functionality
