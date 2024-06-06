@@ -62,7 +62,6 @@ header h1 {
 }
 
 .map-container path {
-    
     fill: #90c4ed;
     stroke: rgb(92, 149, 218);
     stroke-linejoin: round;
@@ -86,7 +85,7 @@ header h1 {
 }
 
 #map-txt {
-    fill: #2a6099;
+    fill: #06478d;
     cursor: pointer;
     pointer-events: none;
 }

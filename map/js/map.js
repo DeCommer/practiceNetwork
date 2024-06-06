@@ -1,7 +1,7 @@
 const states = document.querySelectorAll('.state');
 const mapTxt = document.getElementById('svg');
 
-fetch("./us_states.json")
+fetch("./assets/us_states.json")
 .then(response => response.json())
 .then(data => displayStates(data));
 
