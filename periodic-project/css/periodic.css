@@ -242,11 +242,15 @@ header {
     top: 1.5rem;
     right: 1.5rem;
     font-size: 2rem;
-    color: #282828;
+    color: #c1121f;
     cursor: pointer;
     border: none;
     background: none;
   }
+
+  .closeModal:focus {
+    outline: none;
+}
 
   img {
     border: 1px solid #646464;
@@ -587,14 +591,15 @@ header {
 @media (max-width: 500px) {
 
     body {
+
         background-color: #282828;
-        height: auto;
         width: 100%;
     }
 
     .key-area {
         display: none;
     }
+    
     main {
         width: 90%;
         display: flex;
@@ -624,7 +629,7 @@ header {
 
     .info-modal {
         width: 85%;
-        height: 675px;
+        height: fit-content;
     }
 
     img {

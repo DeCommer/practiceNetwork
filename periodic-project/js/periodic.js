@@ -43,6 +43,7 @@ const displayElements = (data) => {
         elemId = '';
     });
 }
+
 //Key functionality
 const key1 = document.querySelector('.key-1');
 const key2 = document.querySelector('.key-2');
