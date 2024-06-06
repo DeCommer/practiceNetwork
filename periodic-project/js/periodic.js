@@ -39,11 +39,8 @@ const displayElements = (data) => {
         dataContainer.showModal()
 
         if(elemId > 0) {
-            console.log('Modal open');
-            //set position of modal to 50% reletive to top
             modal.style.position = 'fixed';
             modal.style.top = `-${document.body.scrollY}px`;
-
         }
     },{capture: true});
 
@@ -51,10 +48,7 @@ const displayElements = (data) => {
         dataContainer.close();
         elemId = '';
     });
-
-
 }
-
 
 //Key functionality
 const key1 = document.querySelector('.key-1');

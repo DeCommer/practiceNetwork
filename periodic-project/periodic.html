@@ -897,7 +897,12 @@ const displayElements = (data) => {
                 dataDisplay.innerHTML = html;
             }
             
-        dataContainer.showModal()
+        dataContainer.showModal();
+
+        if(elemId > 0) {
+            modal.style.position = 'fixed';
+            modal.style.top = `-${document.body.scrollY}px`;
+        }
             
     },{capture: true});
 
