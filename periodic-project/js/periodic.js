@@ -12,7 +12,7 @@ const displayElements = (data) => {
     tableMain.addEventListener('click',  e => {
         if (!e.target.matches('.card')) return;
         let elemId = Number(e.target.id);
-        console.log(e.target.id)
+        // console.log(e.target.id)
         for(let i = 0; i < data.elements.length; i++) {
                 let i = elemId;
                 const dataDisplay = document.querySelector('.data');
