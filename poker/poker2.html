@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacks or Better Poker</title>
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.game-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+}
+
+.message {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Jacks or Better Poker</h1>
+        <div class="card-container" id="card-container">
+            <!-- Cards will be dynamically added here -->
+        </div>
+        <div class="buttons">
+            <button id="deal-button">Deal</button>
+            <button id="draw-button" disabled>Draw</button>
+        </div>
+        <div class="message" id="message"></div>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const suits = ["♠", "♥", "♦", "♣"];
+    const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    let deck = [];
+    let hand = [];
+    let heldCards = [false, false, false, false, false];
+
+    const cardContainer = document.getElementById("card-container");
+    const dealButton = document.getElementById("deal-button");
+    const drawButton = document.getElementById("draw-button");
+    const message = document.getElementById("message");
+
+    function createDeck() {
+        deck = [];
+        for (let suit of suits) {
+            for (let value of values) {
+                deck.push({ value, suit });
+            }
+        }
+    }
+
+    function shuffleDeck() {
+        for (let i = deck.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [deck[i], deck[j]] = [deck[j], deck[i]];
+        }
+    }
+
+    function dealCards() {
+        hand = [];
+        for (let i = 0; i < 5; i++) {
+            hand.push(deck.pop());
+        }
+        renderCards();
+    }
+
+    function renderCards() {
+        cardContainer.innerHTML = '';
+        hand.forEach((card, index) => {
+            const cardDiv = document.createElement("div");
+            cardDiv.className = "card";
+            cardDiv.innerHTML = `${card.value}${card.suit}`;
+            cardDiv.addEventListener("click", () => toggleHoldCard(index));
+            if (heldCards[index]) {
+                cardDiv.style.backgroundColor = "#f39c12";
+            }
+            cardContainer.appendChild(cardDiv);
+        });
+    }
+
+    function toggleHoldCard(index) {
+        heldCards[index] = !heldCards[index];
+        renderCards();
+    }
+
+    function drawCards() {
+        for (let i = 0; i < 5; i++) {
+            if (!heldCards[i]) {
+                hand[i] = deck.pop();
+            }
+        }
+        renderCards();
+        checkHand();
+    }
+
+    function checkHand() {
+        const valueCount = {};
+        hand.forEach(card => {
+            if (!valueCount[card.value]) {
+                valueCount[card.value] = 0;
+            }
+            valueCount[card.value]++;
+        });
+
+        const pairs = [];
+        let threeOfAKind = false;
+        let fourOfAKind = false;
+
+        for (let value in valueCount) {
+            if (valueCount[value] === 2) {
+                pairs.push(value);
+            } else if (valueCount[value] === 3) {
+                threeOfAKind = true;
+            } else if (valueCount[value] === 4) {
+                fourOfAKind = true;
+            }
+        }
+
+        if (pairs.length === 1 && (pairs[0] === "J" || pairs[0] === "Q" || pairs[0] === "K" || pairs[0] === "A")) {
+            message.textContent = "You have Jacks or Better!";
+        } else if (pairs.length === 2) {
+            message.textContent = "You have Two Pair!";
+        } else if (threeOfAKind) {
+            message.textContent = "You have Three of a Kind!";
+        } else if (fourOfAKind) {
+            message.textContent = "You have Four of a Kind!";
+        } else if (pairs.length === 1) {
+            message.textContent = "You have a Pair!";
+        } else {
+            message.textContent = "No Winning Hand!";
+        }
+
+        drawButton.disabled = true;
+        dealButton.disabled = false;
+    }
+
+    dealButton.addEventListener("click", () => {
+        createDeck();
+        shuffleDeck();
+        dealCards();
+        heldCards = [false, false, false, false, false];
+        message.textContent = '';
+        drawButton.disabled = false;
+        dealButton.disabled = true;
+    });
+
+    drawButton.addEventListener("click", () => {
+        drawCards();
+    });
+});
+
+    </script>
+</body>
+
+</html>
