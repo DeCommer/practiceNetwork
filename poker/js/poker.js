@@ -104,15 +104,15 @@ const draw = () => {
 }
 
 const test = () => {
-    // console.log(`Hand type: ${typeof(handArray)}`);
-    // console.log(`Hand: ${handArray}`);
-    // console.log(`Card 1: ${handArray[0]}`);
-    // console.log(`Card 2: ${handArray[1]}`);
-    // console.log(`Card 3: ${handArray[2]}`);
-    // console.log(`Card 4: ${handArray[3]}`);
-    // console.log(`Card 5: ${handArray[4]}`);
-    // console.log(`Card 6? ${handArray[5]}`);
-    // console.log(deck);
+    console.log(`Hand type: ${typeof(handArray)}`);
+    console.log(`Hand: ${handArray}`);
+    console.log(`Card 1: ${handArray[0]}`);
+    console.log(`Card 2: ${handArray[1]}`);
+    console.log(`Card 3: ${handArray[2]}`);
+    console.log(`Card 4: ${handArray[3]}`);
+    console.log(`Card 5: ${handArray[4]}`);
+    console.log(`Card 6? ${handArray[5]}`);
+    console.log(deck);
 }
 
 holdBtn_1.addEventListener('click', () => { //This is always position 1 if pressed.
@@ -206,6 +206,12 @@ dealBtn.addEventListener('click', () => {
         deal();
     }else if(round === 1) {
         draw();
+        dealBtn.textContent = "Deal";
+    }else if(round === 2) {
+        clearHand();
+        buildDeck();
+        shuffleDeck();
+        deal();
     }
 });
 
