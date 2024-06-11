@@ -11,12 +11,12 @@ let handArray = [];
 let holdArray = []
 
 // const holdBts = document.querySelectorAll('.hold-btn');
-const dealBtn = document.querySelector('.deal-btn');
-const holdBtn_1 = document.querySelector('.hold-btn-1');
-const holdBtn_2 = document.querySelector('.hold-btn-2');
-const holdBtn_3 = document.querySelector('.hold-btn-3');
-const holdBtn_4 = document.querySelector('.hold-btn-4');
-const holdBtn_5 = document.querySelector('.hold-btn-5');
+// const dealBtn = document.querySelector('.deal-btn');
+// const holdBtn_1 = document.querySelector('.hold-btn-1');
+// const holdBtn_2 = document.querySelector('.hold-btn-2');
+// const holdBtn_3 = document.querySelector('.hold-btn-3');
+// const holdBtn_4 = document.querySelector('.hold-btn-4');
+// const holdBtn_5 = document.querySelector('.hold-btn-5');
 
 
 if(round === 0) {
@@ -84,7 +84,6 @@ const draw = () => {
             cardImage.src = `../assets/cards/${holdArray[i]}.png`;
             hand.append(cardImage);
             
-
         }
         // console.log(`Held Array: ${holdArray}`);
         // console.log(`Held Array length: ${holdArray.length}`);
