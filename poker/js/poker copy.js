@@ -10,13 +10,13 @@ console.log(`round: ${round}`)
 let handArray = [];
 let holdArray = []
 
-const holdBts = document.querySelectorAll('.hold-btn');
-const dealBtn = document.querySelector('.deal-btn');
-const holdBtn_1 = document.querySelector('.hold-btn-1');
-const holdBtn_2 = document.querySelector('.hold-btn-2');
-const holdBtn_3 = document.querySelector('.hold-btn-3');
-const holdBtn_4 = document.querySelector('.hold-btn-4');
-const holdBtn_5 = document.querySelector('.hold-btn-5');
+// const holdBts = document.querySelectorAll('.hold-btn');
+// const dealBtn = document.querySelector('.deal-btn');
+// const holdBtn_1 = document.querySelector('.hold-btn-1');
+// const holdBtn_2 = document.querySelector('.hold-btn-2');
+// const holdBtn_3 = document.querySelector('.hold-btn-3');
+// const holdBtn_4 = document.querySelector('.hold-btn-4');
+// const holdBtn_5 = document.querySelector('.hold-btn-5');
 
 
 if(round === 0) {
@@ -37,6 +37,7 @@ const buildDeck = () => {
         }
     }
     return deck;
+    
 }
 
 const shuffleDeck = () => {
@@ -65,34 +66,12 @@ const deal = () => {
         hand.append(cardImage);
     };
     test();
-    console.log(`Initial Hand: ${handArray}`)
+    console.log(`Initial Hand Array ${handArray}`)
     console.log(`round: ${round}`)
     dealBtn.textContent = "Draw";
 };
 
-//use parts of this!!!
-// function createNewArray(handArray, holdIndex) {
-//     let newArray = [];
-//     for (let i = 0; i < handArray.length; i++) {
-//         if (i === holdIndex) {
-//             newArray.push(handArray[i]);
-//         } else {
-//             newArray.push(Math.floor(Math.random() * 100) + 1);  // Generate new random element
-//         }
-//     }
-//     return newArray;
-// }
-// // Example usage
-// let originalArray = [10, 20, 30, 40, 50];
-// let holdIndex = 2;  // Let's hold the element at index 2
-
-// let newArray = createNewArray(handArray, holdIndex);
-// // console.log("Original array:", handArray);
-// // console.log("hold position:", holdIndex);
-// // console.log("New array:", newArray);
-
-
-const draw = (handArray, holdIndex) => {
+const draw = () => {
     round = 2;
     finalHand = [];
     console.log(`draw hold array: ${holdArray}`)
@@ -104,6 +83,7 @@ const draw = (handArray, holdIndex) => {
             hand = document.getElementById('hand');
             cardImage.src = `../assets/cards/${holdArray[i]}.png`;
             hand.append(cardImage);
+            
         }
         // console.log(`Held Array: ${holdArray}`);
         // console.log(`Held Array length: ${holdArray.length}`);
@@ -113,7 +93,7 @@ const draw = (handArray, holdIndex) => {
         for(let i = 0; i < 5; i++) {
             cardImage = document.createElement('img');
             hand = document.getElementById('hand');
-            cardImage.src = `../assets/cards/${holdArray[i]}.png`;
+            cardImage.src = `../assets/cards/${handArray[i]}.png`;
             hand.append(cardImage);
             
         };
@@ -123,15 +103,15 @@ const draw = (handArray, holdIndex) => {
 }
 
 const test = () => {
-    // console.log(`Hand type: ${typeof(handArray)}`);
-    // console.log(`Hand: ${handArray}`);
-    // console.log(`Card 1: ${handArray[0]}`);
-    // console.log(`Card 2: ${handArray[1]}`);
-    // console.log(`Card 3: ${handArray[2]}`);
-    // console.log(`Card 4: ${handArray[3]}`);
-    // console.log(`Card 5: ${handArray[4]}`);
-    // console.log(`Card 6? ${handArray[5]}`);
-    // console.log(deck);
+    console.log(`Hand type: ${typeof(handArray)}`);
+    console.log(`Hand: ${handArray}`);
+    console.log(`Card 1: ${handArray[0]}`);
+    console.log(`Card 2: ${handArray[1]}`);
+    console.log(`Card 3: ${handArray[2]}`);
+    console.log(`Card 4: ${handArray[3]}`);
+    console.log(`Card 5: ${handArray[4]}`);
+    console.log(`Card 6? ${handArray[5]}`);
+    console.log(deck);
 }
 
 holdBtn_1.addEventListener('click', () => { //This is always position 1 if pressed.
@@ -252,3 +232,26 @@ document.getElementById('dev-reset-btn').addEventListener('click', () => {
     window.location.reload();
 });
 
+//use parts of this!!!
+
+
+function createNewArray(originalArray, holdIndex) {
+    let newArray = [];
+    for (let i = 0; i < originalArray.length; i++) {
+        if (i === holdIndex) {
+            newArray.push(originalArray[i]);
+        } else {
+            newArray.push(Math.floor(Math.random() * 100) + 1);  // Generate new random element
+        }
+    }
+    return newArray;
+}
+
+// Example usage
+let originalArray = [10, 20, 30, 40, 50];
+let holdIndex = 2;  // Let's hold the element at index 2
+
+let newArray = createNewArray(originalArray, holdIndex);
+console.log("Original array:", originalArray);
+console.log("hold position:", holdIndex);
+console.log("New array:", newArray);
