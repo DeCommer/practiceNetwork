@@ -107,6 +107,10 @@ input::placeholder{
     margin-top: 15px;
 }
 
+.results-container p {
+    padding: 5px;
+}
+
 .output {
     color: #fff;
 }
