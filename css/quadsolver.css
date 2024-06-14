@@ -16,6 +16,7 @@ body {
 
 .main-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: fit-content;
@@ -119,6 +120,19 @@ input::placeholder{
     transition: ease-in 0.2s;
 }
 
+.central-container {
+    display: flex;
+}
+
+.left-container {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+}
+
 .calculator-container {
     /* border: 1px solid yellow; */
     text-align: center;
@@ -146,6 +160,11 @@ cite {
     .main-container {
         flex-direction: column;
         margin-top: 25px;
+    }
+
+    .central-container {
+        display: flex;
+        flex-direction: column;
     }
 
     .varIn {

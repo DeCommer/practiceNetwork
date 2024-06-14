@@ -13,36 +13,38 @@
     </head>
     <body>
         <main class="main-container">
-            <div class="left-container">
-                <header>
-                    <a href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-                    <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-                    <h1 class="title">Quadratic Solver</h1>
+            <header>
+                <a href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
+                <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+                <h1 class="title">Quadratic Solver</h1>
+            </header>
+            <div class="central-container">
+                <div class="left-container">
                     <h3 class="directions">Enter values of variables</h3>
-                </header>
-                <div class="inputs-container">
-                    <p class="eqText">y = </p>
-                    <input id="a" class="varIn" type="number" placeholder="a">
-                    <p class="eqText">x<sup>2</sup> + </p>
-                    <input id="b" class="varIn" type="number" placeholder="b">
-                    <p class="eqText">x + </p>
-                    <input id="c" class="varIn" type="number" placeholder="c">
+                    <div class="inputs-container">
+                        <p class="eqText">y = </p>
+                        <input id="a" class="varIn" type="number" placeholder="a">
+                        <p class="eqText">x<sup>2</sup> + </p>
+                        <input id="b" class="varIn" type="number" placeholder="b">
+                        <p class="eqText">x + </p>
+                        <input id="c" class="varIn" type="number" placeholder="c">
+                    </div>
+                    <div class="terms-container">
+                        <p class="test">Square term</p>
+                        <p class="test">linear term</p>
+                        <p class="test">Constant term</p>
+                    </div>
+                    <button class="solveBtn btn">Solve</button>
+                    <div class="results-container">
+                        <p>The vertex is: <span class="output" id="vertex"></span></p>
+                        <p>The y-intercept is: <span class="output" id="yInt"></span></p>
+                        <p>The x-intercepts are: <span class="output" id="zeros"></span></p>
+                    </div>
                 </div>
-                <div class="terms-container">
-                    <p class="test">Square term</p>
-                    <p class="test">linear term</p>
-                    <p class="test">Constant term</p>
+                <div class="calculator-container">
+                    <div id="calculator"></div>
+                    <cite>Desmos API used with permission from Desmos Studio PBC</cite>
                 </div>
-                <button class="solveBtn btn">Solve</button>
-                <div class="results-container">
-                    <p>The vertex is: <span class="output" id="vertex"></span></p>
-                    <p>The y-intercept is: <span class="output" id="yInt"></span></p>
-                    <p>The x-intercepts are: <span class="output" id="zeros"></span></p>
-                </div>
-            </div>
-            <div class="calculator-container">
-                <div id="calculator"></div>
-                <cite>Desmos API used with permission from Desmos Studio PBC</cite>
             </div>
         </main>
         
