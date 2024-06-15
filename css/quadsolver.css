@@ -155,8 +155,8 @@ input::placeholder{
 #calculator {
     /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
     border: 1px solid #0f4a89;
-    width: 600px;
-    height: 400px;
+    width: 800px;
+    height: 600px;
 }
 
 cite {
@@ -176,6 +176,12 @@ cite {
         flex-direction: column;
     }
 
+    .left-container {
+        /* border: 1px solid red; */
+        background: none;
+        border: none;
+    }
+
     .varIn {
         width: 45px;
     }
@@ -192,7 +198,7 @@ cite {
     #calculator {
         box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3);
         min-width: 300px;
-        width: 90%;
+        width: 100%;
         height: 650px;
     }
 }
