@@ -10,4 +10,4 @@ enterBtn.addEventListener('click', () => {
 
 clearBtn.addEventListener('click', () => {
     countNum.innerHTML = 0;
-})
+});

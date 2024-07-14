@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click Counter</title>
     <link rel="stylesheet" href="./css/clickcounter.css">
+    <link rel="stylesheet" href="./css/showhide.css">
+    <link rel="stylesheet" href="./css/logo.css">
     <script src="./js/clickcounter.js" defer></script>
+    <script src="./js/showhide.js" defer></script>
 
 </head>
 <body>
@@ -29,6 +32,44 @@
             <p id="formula"></p>
         </div> -->
     </div>
+    <button class="jsBtn" >See the Javascript.</button>
+    <div class="aboutModal hidden">
+        <button class="closeAboutModal">&times</button>
+        <h1>Counter App</h1>
+        <p>A super simple counter to count things like how many times a
+            co-worker says "uuum", "uhh", or "Like" and more!</p>
+        <p>Check out the JavaScript below.</p>
+    </div><div class="aboutOverlay hidden"></div>
     
+    <p><pre><code class="jsHidden hidden">
+        <button class="closeJsModal">&times</button>
+let countNum = document.getElementById('count-num');
+const enterBtn = document.getElementById('enter-btn');
+const clearBtn = document.getElementById('clear-btn');
+
+countNum.innerHTML = 0;
+
+enterBtn.addEventListener('click', () => {
+    countNum.innerHTML++;
+});
+
+clearBtn.addEventListener('click', () => {
+    countNum.innerHTML = 0;
+});
+</code></pre></p>
+</div>
+
+<div class="elem-logo">
+    <div class="logo-upper-left">
+        <p>45</p>
+    </div>
+    <div class="logo-center">
+        <h1>D<span>e</span></h1><br>
+        <p>DeCommer</p>
+    </div>
+    <div class="logo-bottom-center">
+        <p>19.79</p>
+    </div>
+</div>
 </body>
 </html>
