@@ -2,6 +2,7 @@ const enterBtn = document.getElementById('enter-btn');
 const clearBtn = document.getElementById('clear-btn');
 const addBtn = document.getElementById('add-btn');
 const subBtn = document.getElementById('sub-btn');
+const addSubClearBtn = document.getElementById('as-clear-btn');
 
 const calculateDifference = () => {
     let hours1 = parseInt(document.getElementById('hours1').value);
@@ -104,8 +105,16 @@ const addTime = () => {
 
     // console.log(newTime);
 
-    document.getElementById('addMessage').innerHTML = `The new time is:`;
-    result.innerHTML = newTime;
+    if(isNaN(hours) || isNaN(minutes) || isNaN(minutesAdded)) {
+        document.getElementById('addMessage').innerHTML = `Please enter a time`;
+        setTimeout(() => {
+            document.getElementById('addMessage').innerHTML = ``;
+            result.innerHTML = '';
+        }, 1500);
+    }else {
+        document.getElementById('addMessage').innerHTML = `The new time is:`;
+        result.innerHTML = newTime;
+    }
 
     return { hours, minutes, newAmpm };
 }
@@ -139,10 +148,17 @@ const subTime = () => {
     
     let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
 
-    // console.log(newTime);
-
-    document.getElementById('addMessage').innerHTML = `The new time is:`;
-    result.innerHTML = newTime;
+    
+    if(isNaN(hours) || isNaN(minutes) || isNaN(minutesSubtracted)) {
+        document.getElementById('addMessage').innerHTML = `Please enter a time`;
+        setTimeout(() => {
+            document.getElementById('addMessage').innerHTML = ``;
+            result.innerHTML = '';
+        }, 1500);
+    }else {
+        document.getElementById('addMessage').innerHTML = `The new time is:`;
+        result.innerHTML = newTime;
+    }
 
     return { hours, minutes, newAmpm };
 }
@@ -171,6 +187,13 @@ subBtn.addEventListener('click', () =>{
     updateSubTime();
 });
 
-
+addSubClearBtn.addEventListener('click', () => {
+    document.getElementById('hours1-add').value = '';
+    document.getElementById('minutes1-add').value = '';
+    document.getElementById('add-minutes1-add').value = '';
+    document.getElementById('ampm3').value = 'AM';
+    document.getElementById('addMessage').innerHTML = ''; 
+    document.getElementById('time-after-addition').innerHTML = ''; 
+});
 
 
