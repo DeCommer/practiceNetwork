@@ -101,21 +101,24 @@ const addTime = () => {
     
     let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
 
-    console.log(newTime);
+    // console.log(newTime);
 
     document.getElementById('addMessage').innerHTML = `The new time is:`;
     result.innerHTML = newTime;
 
-    return hours, minutes;
+    return { hours, minutes, newAmpm };
 }
 
-// const updateAddTime = () => {
-    
-// }
+const updateAddTime = () => {
+    const newTime = addTime();
+    document.getElementById('hours1-add').value = String(newTime.hours).padStart(2, '');
+    document.getElementById('minutes1-add').value = String(newTime.minutes).padStart(2, '0');
+    document.getElementById('ampm3').value = newTime.newAmpm;
+};
 
 addBtn.addEventListener('click', () =>{
     addTime();
-    // updateAddTime();
+    updateAddTime();
 });
 
 
