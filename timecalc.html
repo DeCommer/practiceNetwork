@@ -21,18 +21,18 @@
         <div class="input-area">
             <div class="hour-1">
                 <label for="time1">Start Time:</label>
-                <input type="number" id="hours1" min="1" max="12" placeholder="Hour"><h2>:</h2>
-                <input type="number" id="minutes1" min="0" max="59" placeholder="Minute">
-                <select id="ampm1">
+                <input type="number" id="hours1" min="1" max="12" placeholder="HH"><h2>:</h2>
+                <input type="number" id="minutes1" min="0" max="59" placeholder="MM">
+                <select class="ampm" id="ampm1">
                     <option value="AM">AM</option>
                     <option value="PM">PM</option>
                 </select>
             </div>
             <div class="hour-2">
                 <label for="time2">End Time:</label>
-                <input type="number" id="hours2" min="1" max="12" placeholder="Hour"><h2>:</h2>
-                <input type="number" id="minutes2" min="0" max="59" placeholder="Minute">
-                <select id="ampm2">
+                <input type="number" id="hours2" min="1" max="12" placeholder="HH"><h2>:</h2>
+                <input type="number" id="minutes2" min="0" max="59" placeholder="MM">
+                <select class="ampm" id="ampm2">
                     <option value="AM">AM</option>
                     <option value="PM">PM</option>
                 </select>
@@ -44,11 +44,40 @@
         </div>
         <div class="results-area">
             <p id="message"></p>
-            <p id="result"></p>
+            <p class="result" id="result"></p>
             <p id="total-mins"></p>
         </div>
     </div>
-
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <div class="main-container">
+        <header>
+            <h1>[ + - ] Time Calculator</h1>
+        </header>
+        <div class="input-area">
+            <div class="hour-1">
+                <label for="add-time1">Start Time:</label>
+                <input type="number" id="hours1-add" min="1" max="12" placeholder="HH"><h2>:</h2>
+                <input type="number" id="minutes1-add" min="0" max="59" placeholder="MM">
+                <select class="ampm" id="ampm3">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            <div class="add-area">
+                <label for="addMins">Number of Minutes</label>
+                <input type="number" id="add-minutes1-add" min="0" max="59" placeholder="MM">
+            </div>
+            <div class="add-btn-area">
+                <button class="btn-sm" id="add-btn" type="button">Add time</button>
+                <!-- <button class="btn-sm" id="sub-btn" type="button">Subtract time</button> -->
+            </div>
+        </div>
+        <div class="results-area">
+            <p id="addMessage"></p>
+            <p class="result" id="time-after-addition"></p>
+        </div>
+    </div>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <div class="elem-logo">
         <div class="logo-upper-left">
             <p>45</p>

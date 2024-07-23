@@ -1,5 +1,6 @@
 const enterBtn = document.getElementById('enter-btn');
 const clearBtn = document.getElementById('clear-btn');
+const addBtn = document.getElementById('add-btn');
 
 const calculateDifference = () => {
     let hours1 = parseInt(document.getElementById('hours1').value);
@@ -55,11 +56,12 @@ const calculateDifference = () => {
     }else {
         document.getElementById('total-mins').innerHTML = `Total Minutes: <span>${differenceMinutes}</span>`
     }
+    return hoursDiff, minutesDiff
 }
 
 enterBtn.addEventListener('click', () => {
     calculateDifference();
-})
+});
 
 clearBtn.addEventListener('click', () => {
     hours1.value = '';
@@ -71,11 +73,90 @@ clearBtn.addEventListener('click', () => {
     document.getElementById('message').innerHTML = ``;
     document.getElementById('result').innerHTML = ``;
     document.getElementById('total-mins').innerHTML = ``
-})
+});
 
 
+const addTime = () => {
+    let hours = parseInt(document.getElementById('hours1-add').value);
+    let minutes = parseInt(document.getElementById('minutes1-add').value);
+    let ampm = document.getElementById('ampm3').value;
+    let minutesAdded = parseInt(document.getElementById('add-minutes1-add').value);
+    let result = document.getElementById('time-after-addition');
+
+    if (ampm === "PM" && hours !== 12) {
+        hours += 12;
+    } else if (ampm === "AM" && hours === 12) {
+        hours = 0;
+    }
+    minutes += minutesAdded;
+    
+    hours += Math.floor(minutes / 60);
+    minutes = minutes % 60;
+    
+    hours = hours % 24;
+    
+    newAmpm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours === 0 ? 12 : hours;
+    
+    let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
+
+    console.log(newTime);
+
+    document.getElementById('addMessage').innerHTML = `The new time is:`;
+    result.innerHTML = newTime;
+
+    return hours, minutes;
+}
+
+// const updateAddTime = () => {
+    
+// }
+
+addBtn.addEventListener('click', () =>{
+    addTime();
+    // updateAddTime();
+});
 
 
+// function addMinutesToTime(userTime, minutesToAdd) {
+//     // Extract the time and the period (AM/PM)
+//     let [time, period] = userTime.split(' ');
+//     let [hours, minutes] = time.split(':').map(Number);
+    
+//     // Convert hours to 24-hour format
+//     if (period === "PM" && hours !== 12) {
+//         hours += 12;
+//     } else if (period === "AM" && hours === 12) {
+//         hours = 0;
+//     }
+    
+//     // Add the minutes
+//     minutes += minutesToAdd;
+    
+//     // Calculate the new hours and minutes
+//     hours += Math.floor(minutes / 60);
+//     minutes = minutes % 60;
+    
+//     // Adjust for hours overflow (if hours go above 23)
+//     hours = hours % 24;
+    
+//     // Convert back to 12-hour format and determine new period
+//     period = hours >= 12 ? 'PM' : 'AM';
+//     hours = hours % 12;
+//     hours = hours === 0 ? 12 : hours; // Adjust for 0 hour
+    
+//     // Format the new time as HH:MM AM/PM
+//     let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${period}`;
+    
+//     return newTime;
+// }
+
+// Example usage:
+// let userTime = "02:35 PM";
+// let minutesToAdd = 12;
+// let newTime = addMinutesToTime(userTime, minutesToAdd);
+// console.log("New Time:", newTime); // Output: "04:00 PM"
 
 
 

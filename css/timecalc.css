@@ -77,6 +77,21 @@ header h1 {
     margin: 10px 0;
 }
 
+.add-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.add-btn-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 input::placeholder {
     color:#7097b1;
 }
@@ -130,6 +145,21 @@ input:focus {
     cursor: pointer;
 }
 
+.btn-sm {
+    background-color: #c1121f;
+    color: #fff;
+    font-size: .9rem;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.btn-sm:hover {
+    background-color: #d82e2e;
+}
+
 .btn:hover {
     background-color: #d82e2e;
 }
@@ -139,7 +169,13 @@ input:focus {
     text-align: center;
 }
 
-#result {
+.ampm {
+    width: 55px;
+    cursor: pointer;
+}
+
+
+.result {
     font-size: 2.3rem;
 }
 
