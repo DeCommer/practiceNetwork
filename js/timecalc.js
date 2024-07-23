@@ -77,7 +77,6 @@ clearBtn.addEventListener('click', () => {
     document.getElementById('total-mins').innerHTML = ``
 });
 
-
 const addTime = () => {
     let hours = parseInt(document.getElementById('hours1-add').value);
     let minutes = parseInt(document.getElementById('minutes1-add').value);
@@ -148,7 +147,6 @@ const subTime = () => {
     
     let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
 
-    
     if(isNaN(hours) || isNaN(minutes) || isNaN(minutesSubtracted)) {
         document.getElementById('addMessage').innerHTML = `Please enter a time`;
         setTimeout(() => {
