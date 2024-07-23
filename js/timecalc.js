@@ -119,45 +119,5 @@ addBtn.addEventListener('click', () =>{
 });
 
 
-// function addMinutesToTime(userTime, minutesToAdd) {
-//     // Extract the time and the period (AM/PM)
-//     let [time, period] = userTime.split(' ');
-//     let [hours, minutes] = time.split(':').map(Number);
-    
-//     // Convert hours to 24-hour format
-//     if (period === "PM" && hours !== 12) {
-//         hours += 12;
-//     } else if (period === "AM" && hours === 12) {
-//         hours = 0;
-//     }
-    
-//     // Add the minutes
-//     minutes += minutesToAdd;
-    
-//     // Calculate the new hours and minutes
-//     hours += Math.floor(minutes / 60);
-//     minutes = minutes % 60;
-    
-//     // Adjust for hours overflow (if hours go above 23)
-//     hours = hours % 24;
-    
-//     // Convert back to 12-hour format and determine new period
-//     period = hours >= 12 ? 'PM' : 'AM';
-//     hours = hours % 12;
-//     hours = hours === 0 ? 12 : hours; // Adjust for 0 hour
-    
-//     // Format the new time as HH:MM AM/PM
-//     let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${period}`;
-    
-//     return newTime;
-// }
-
-// Example usage:
-// let userTime = "02:35 PM";
-// let minutesToAdd = 12;
-// let newTime = addMinutesToTime(userTime, minutesToAdd);
-// console.log("New Time:", newTime); // Output: "04:00 PM"
-
-
 
 
