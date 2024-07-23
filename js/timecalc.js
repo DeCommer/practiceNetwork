@@ -1,6 +1,7 @@
 const enterBtn = document.getElementById('enter-btn');
 const clearBtn = document.getElementById('clear-btn');
 const addBtn = document.getElementById('add-btn');
+const subBtn = document.getElementById('sub-btn');
 
 const calculateDifference = () => {
     let hours1 = parseInt(document.getElementById('hours1').value);
@@ -109,8 +110,52 @@ const addTime = () => {
     return { hours, minutes, newAmpm };
 }
 
+const subTime = () => {
+    let hours = parseInt(document.getElementById('hours1-add').value);
+    let minutes = parseInt(document.getElementById('minutes1-add').value);
+    let ampm = document.getElementById('ampm3').value;
+    let minutesSubtracted = parseInt(document.getElementById('add-minutes1-add').value);
+    let result = document.getElementById('time-after-addition');
+
+    if (ampm === "PM" && hours !== 12) {
+        hours += 12;
+    } else if (ampm === "AM" && hours === 12) {
+        hours = 0;
+    }
+    minutes -= minutesSubtracted;
+    
+    while (minutes < 0) {
+        minutes += 60;
+        hours -= 1;
+    }
+
+    if (hours < 0) {
+        hours = 24 + (hours % 24);
+    }
+    
+    newAmpm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours === 0 ? 12 : hours;
+    
+    let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
+
+    // console.log(newTime);
+
+    document.getElementById('addMessage').innerHTML = `The new time is:`;
+    result.innerHTML = newTime;
+
+    return { hours, minutes, newAmpm };
+}
+
 const updateAddTime = () => {
     const newTime = addTime();
+    document.getElementById('hours1-add').value = String(newTime.hours).padStart(2, '');
+    document.getElementById('minutes1-add').value = String(newTime.minutes).padStart(2, '0');
+    document.getElementById('ampm3').value = newTime.newAmpm;
+};
+
+const updateSubTime = () => {
+    const newTime = subTime();
     document.getElementById('hours1-add').value = String(newTime.hours).padStart(2, '');
     document.getElementById('minutes1-add').value = String(newTime.minutes).padStart(2, '0');
     document.getElementById('ampm3').value = newTime.newAmpm;
@@ -119,6 +164,11 @@ const updateAddTime = () => {
 addBtn.addEventListener('click', () =>{
     addTime();
     updateAddTime();
+});
+
+subBtn.addEventListener('click', () =>{
+    subTime();
+    updateSubTime();
 });
 
 
