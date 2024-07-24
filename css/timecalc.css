@@ -164,8 +164,17 @@ input:focus {
     background-color: #d82e2e;
 }
 
+.active {
+    background-color: #42e31aff;
+    color: #235311;
+}
+
+.active:hover {
+    background-color: rgb(159, 232, 141);
+}
+
 .results-area {
-    margin-top: 10px;
+    margin-top: 0px;
     text-align: center;
 }
 

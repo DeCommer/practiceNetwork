@@ -4,6 +4,19 @@ const addBtn = document.getElementById('add-btn');
 const subBtn = document.getElementById('sub-btn');
 const addSubClearBtn = document.getElementById('as-clear-btn');
 
+const diffSwitchBtn = document.getElementById('diff-switch-btn');
+const addSubSwitchBtn = document.getElementById('addsub-switch-btn');
+
+diffSwitchBtn.addEventListener('click', () => {
+    document.getElementById('diff-container').classList.remove('hidden');
+    document.getElementById('add-sub-container').classList.add('hidden');
+});
+
+addSubSwitchBtn.addEventListener('click', () => {
+    document.getElementById('add-sub-container').classList.remove('hidden');
+    document.getElementById('diff-container').classList.add('hidden');
+});
+
 const calculateDifference = () => {
     let hours1 = parseInt(document.getElementById('hours1').value);
     let minutes1 = parseInt(document.getElementById('minutes1').value);
@@ -65,6 +78,14 @@ enterBtn.addEventListener('click', () => {
     calculateDifference();
 });
 
+const originalTimeDisplay = () => {
+    let hours = parseInt(document.getElementById('hours1-add').value);
+    let minutes = parseInt(document.getElementById('minutes1-add').value);
+    let originalTimeText = document.getElementById('original-time');
+    originalTimeText.innerHTML = `Previous time entered: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+    return originalTimeText
+}
+
 clearBtn.addEventListener('click', () => {
     hours1.value = '';
     minutes1.value = '';
@@ -89,6 +110,9 @@ const addTime = () => {
     } else if (ampm === "AM" && hours === 12) {
         hours = 0;
     }
+
+    let originalTime = originalTimeDisplay();
+
     minutes += minutesAdded;
     
     hours += Math.floor(minutes / 60);
@@ -102,16 +126,15 @@ const addTime = () => {
     
     let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
 
-    // console.log(newTime);
-
     if(isNaN(hours) || isNaN(minutes) || isNaN(minutesAdded)) {
-        document.getElementById('addMessage').innerHTML = `Please enter a time`;
+        document.getElementById('add-message').innerHTML = `Please enter a valid time`;
         setTimeout(() => {
-            document.getElementById('addMessage').innerHTML = ``;
+            document.getElementById('add-message').innerHTML = ``;
             result.innerHTML = '';
         }, 1500);
     }else {
-        document.getElementById('addMessage').innerHTML = `The new time is:`;
+        originalTime.originalTimeText;
+        document.getElementById('add-message').innerHTML = `The new time is:`;
         result.innerHTML = newTime;
     }
 
@@ -130,6 +153,9 @@ const subTime = () => {
     } else if (ampm === "AM" && hours === 12) {
         hours = 0;
     }
+
+    let originalTime = originalTimeDisplay();
+
     minutes -= minutesSubtracted;
     
     while (minutes < 0) {
@@ -148,13 +174,14 @@ const subTime = () => {
     let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
 
     if(isNaN(hours) || isNaN(minutes) || isNaN(minutesSubtracted)) {
-        document.getElementById('addMessage').innerHTML = `Please enter a time`;
+        document.getElementById('add-message').innerHTML = `Please enter a valid time`;
         setTimeout(() => {
-            document.getElementById('addMessage').innerHTML = ``;
+            document.getElementById('add-message').innerHTML = ``;
             result.innerHTML = '';
         }, 1500);
     }else {
-        document.getElementById('addMessage').innerHTML = `The new time is:`;
+        originalTime.originalTimeText;
+        document.getElementById('add-message').innerHTML = `The new time is:`;
         result.innerHTML = newTime;
     }
 
@@ -190,8 +217,9 @@ addSubClearBtn.addEventListener('click', () => {
     document.getElementById('minutes1-add').value = '';
     document.getElementById('add-minutes1-add').value = '';
     document.getElementById('ampm3').value = 'AM';
-    document.getElementById('addMessage').innerHTML = ''; 
-    document.getElementById('time-after-addition').innerHTML = ''; 
+    document.getElementById('add-message').innerHTML = ''; 
+    document.getElementById('time-after-addition').innerHTML = '';
+    document.getElementById('original-time').innerHTML = ''; 
 });
 
-
+//add minutes added to results display

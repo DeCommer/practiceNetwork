@@ -11,11 +11,45 @@
     <script src="./js/showhide.js" defer></script>
 </head>
 <body>
-
-    <div class="main-container">
+    <div class="main-container" id="add-sub-container">
         <header>
             <a class="links" href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a><br>
+            <button class="btn-sm active" id="diff-switch-btn" type="button">Difference Calculator</button>
+            <h1>[ + - ] Time Calculator</h1>
+        </header>
+        <div class="input-area">
+            <div class="hour-1">
+                <label for="add-time1">Start Time:</label>
+                <input type="number" id="hours1-add" min="1" max="12" placeholder="HH"><h2>:</h2>
+                <input type="number" id="minutes1-add" min="0" max="59" placeholder="MM">
+                <select class="ampm" id="ampm3">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            <div class="add-area">
+                <label for="addMins">Number of Minutes</label>
+                <input type="number" id="add-minutes1-add" min="0" max="59" placeholder="MM">
+            </div>
+            <div class="add-btn-area">
+                <button class="btn-sm" id="add-btn" type="button">Add time</button>
+                <button class="btn-sm" id="sub-btn" type="button">Subtract time</button>
+                <button class="btn-sm" id="as-clear-btn" type="button">Clear</button>
+            </div>
+        </div>
+        <div class="results-area">
+            <p id="original-time"></p>
+            <p id="add-message"></p>
+            <p class="result" id="time-after-addition"></p>
+        </div>
+    </div>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <div class="main-container hidden" id="diff-container">
+        <header>
+            <a class="links" href="https://www.decommer.com/"><span class="homeColor">Home</span></a> 
+            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a><br>
+            <button class="btn-sm active" id="addsub-switch-btn" type="button">[ + - ] Time Calculator</button>
             <h1>Time Difference Calculator</h1>
         </header>
         <div class="input-area">
@@ -49,36 +83,7 @@
         </div>
     </div>
     <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-    <div class="main-container">
-        <header>
-            <h1>[ + - ] Time Calculator</h1>
-        </header>
-        <div class="input-area">
-            <div class="hour-1">
-                <label for="add-time1">Start Time:</label>
-                <input type="number" id="hours1-add" min="1" max="12" placeholder="HH"><h2>:</h2>
-                <input type="number" id="minutes1-add" min="0" max="59" placeholder="MM">
-                <select class="ampm" id="ampm3">
-                    <option value="AM">AM</option>
-                    <option value="PM">PM</option>
-                </select>
-            </div>
-            <div class="add-area">
-                <label for="addMins">Number of Minutes</label>
-                <input type="number" id="add-minutes1-add" min="0" max="59" placeholder="MM">
-            </div>
-            <div class="add-btn-area">
-                <button class="btn-sm" id="add-btn" type="button">Add time</button>
-                <button class="btn-sm" id="sub-btn" type="button">Subtract time</button>
-                <button class="btn-sm" id="as-clear-btn" type="button">Clear</button>
-            </div>
-        </div>
-        <div class="results-area">
-            <p id="addMessage"></p>
-            <p class="result" id="time-after-addition"></p>
-        </div>
-    </div>
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
     <div class="elem-logo">
         <div class="logo-upper-left">
             <p>45</p>
@@ -93,10 +98,11 @@
     </div>
     <div class="aboutModal hidden">
         <button class="closeAboutModal">&times</button>
-        <h1>Time Difference Calculator</h1>
+        <h1>Time Calculator</h1>
         <p>This app calculates the difference between the entered start and end time.
             and shows total elapsed minutes.
-        </p>
+        </p><p>The add and sub time calculator adds and subtracts minutes to an 
+            entered start time.</p>
         <p>I made this with a combination of HTML, CSS and JS. 
         You can see the JavaScript by clicking the button below.
         </p>
@@ -108,6 +114,22 @@
             <button class="closeJsModal">&times</button>
 const enterBtn = document.getElementById('enter-btn');
 const clearBtn = document.getElementById('clear-btn');
+const addBtn = document.getElementById('add-btn');
+const subBtn = document.getElementById('sub-btn');
+const addSubClearBtn = document.getElementById('as-clear-btn');
+
+const diffSwitchBtn = document.getElementById('diff-switch-btn');
+const addSubSwitchBtn = document.getElementById('addsub-switch-btn');
+
+diffSwitchBtn.addEventListener('click', () => {
+    document.getElementById('diff-container').classList.remove('hidden');
+    document.getElementById('add-sub-container').classList.add('hidden');
+});
+
+addSubSwitchBtn.addEventListener('click', () => {
+    document.getElementById('add-sub-container').classList.remove('hidden');
+    document.getElementById('diff-container').classList.add('hidden');
+});
 
 const calculateDifference = () => {
     let hours1 = parseInt(document.getElementById('hours1').value);
@@ -161,13 +183,22 @@ const calculateDifference = () => {
     if(isNaN(differenceMinutes)) {
         document.getElementById('total-mins').innerHTML = ``
     }else {
-        document.getElementById('total-mins').innerHTML = `Total Minutes: ${differenceMinutes}`
+        document.getElementById('total-mins').innerHTML = `Total Minutes: <span>${differenceMinutes}</span>`
     }
+    return hoursDiff, minutesDiff
 }
 
 enterBtn.addEventListener('click', () => {
     calculateDifference();
-})
+});
+
+const originalTimeDisplay = () => {
+    let hours = parseInt(document.getElementById('hours1-add').value);
+    let minutes = parseInt(document.getElementById('minutes1-add').value);
+    let originalTimeText = document.getElementById('original-time');
+    originalTimeText.innerHTML = `Previous time entered: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+    return originalTimeText
+}
 
 clearBtn.addEventListener('click', () => {
     hours1.value = '';
@@ -179,7 +210,131 @@ clearBtn.addEventListener('click', () => {
     document.getElementById('message').innerHTML = ``;
     document.getElementById('result').innerHTML = ``;
     document.getElementById('total-mins').innerHTML = ``
-})
+});
+
+const addTime = () => {
+    let hours = parseInt(document.getElementById('hours1-add').value);
+    let minutes = parseInt(document.getElementById('minutes1-add').value);
+    let ampm = document.getElementById('ampm3').value;
+    let minutesAdded = parseInt(document.getElementById('add-minutes1-add').value);
+    let result = document.getElementById('time-after-addition');
+
+    if (ampm === "PM" && hours !== 12) {
+        hours += 12;
+    } else if (ampm === "AM" && hours === 12) {
+        hours = 0;
+    }
+
+    let originalTime = originalTimeDisplay();
+
+    minutes += minutesAdded;
+    
+    hours += Math.floor(minutes / 60);
+    minutes = minutes % 60;
+    
+    hours = hours % 24;
+    
+    newAmpm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours === 0 ? 12 : hours;
+    
+    let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
+
+    if(isNaN(hours) || isNaN(minutes) || isNaN(minutesAdded)) {
+        document.getElementById('add-message').innerHTML = `Please enter a valid time`;
+        setTimeout(() => {
+            document.getElementById('add-message').innerHTML = ``;
+            result.innerHTML = '';
+        }, 1500);
+    }else {
+        originalTime.originalTimeText;
+        document.getElementById('add-message').innerHTML = `The new time is:`;
+        result.innerHTML = newTime;
+    }
+
+    return { hours, minutes, newAmpm };
+}
+
+const subTime = () => {
+    let hours = parseInt(document.getElementById('hours1-add').value);
+    let minutes = parseInt(document.getElementById('minutes1-add').value);
+    let ampm = document.getElementById('ampm3').value;
+    let minutesSubtracted = parseInt(document.getElementById('add-minutes1-add').value);
+    let result = document.getElementById('time-after-addition');
+
+    if (ampm === "PM" && hours !== 12) {
+        hours += 12;
+    } else if (ampm === "AM" && hours === 12) {
+        hours = 0;
+    }
+
+    let originalTime = originalTimeDisplay();
+
+    minutes -= minutesSubtracted;
+    
+    while (minutes < 0) {
+        minutes += 60;
+        hours -= 1;
+    }
+
+    if (hours < 0) {
+        hours = 24 + (hours % 24);
+    }
+    
+    newAmpm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours === 0 ? 12 : hours;
+    
+    let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
+
+    if(isNaN(hours) || isNaN(minutes) || isNaN(minutesSubtracted)) {
+        document.getElementById('add-message').innerHTML = `Please enter a valid time`;
+        setTimeout(() => {
+            document.getElementById('add-message').innerHTML = ``;
+            result.innerHTML = '';
+        }, 1500);
+    }else {
+        originalTime.originalTimeText;
+        document.getElementById('add-message').innerHTML = `The new time is:`;
+        result.innerHTML = newTime;
+    }
+
+    return { hours, minutes, newAmpm };
+}
+
+const updateAddTime = () => {
+    const newTime = addTime();
+    document.getElementById('hours1-add').value = String(newTime.hours).padStart(2, '');
+    document.getElementById('minutes1-add').value = String(newTime.minutes).padStart(2, '0');
+    document.getElementById('ampm3').value = newTime.newAmpm;
+};
+
+const updateSubTime = () => {
+    const newTime = subTime();
+    document.getElementById('hours1-add').value = String(newTime.hours).padStart(2, '');
+    document.getElementById('minutes1-add').value = String(newTime.minutes).padStart(2, '0');
+    document.getElementById('ampm3').value = newTime.newAmpm;
+};
+
+addBtn.addEventListener('click', () =>{
+    addTime();
+    updateAddTime();
+});
+
+subBtn.addEventListener('click', () =>{
+    subTime();
+    updateSubTime();
+});
+
+addSubClearBtn.addEventListener('click', () => {
+    document.getElementById('hours1-add').value = '';
+    document.getElementById('minutes1-add').value = '';
+    document.getElementById('add-minutes1-add').value = '';
+    document.getElementById('ampm3').value = 'AM';
+    document.getElementById('add-message').innerHTML = ''; 
+    document.getElementById('time-after-addition').innerHTML = '';
+    document.getElementById('original-time').innerHTML = ''; 
+});
     </code></pre></p>
     </div>
 </body>
