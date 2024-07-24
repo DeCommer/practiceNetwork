@@ -3,7 +3,6 @@ const clearBtn = document.getElementById('clear-btn');
 const addBtn = document.getElementById('add-btn');
 const subBtn = document.getElementById('sub-btn');
 const addSubClearBtn = document.getElementById('as-clear-btn');
-
 const diffSwitchBtn = document.getElementById('diff-switch-btn');
 const addSubSwitchBtn = document.getElementById('addsub-switch-btn');
 
@@ -49,7 +48,7 @@ const calculateDifference = () => {
     let minutesDiff = differenceMinutes % 60;
 
     if(isNaN(hoursDiff) && isNaN(minutesDiff)) {
-        document.getElementById('message').innerHTML = `Please enter a time`;
+        document.getElementById('message').innerHTML = `Please enter a valid time`;
         setTimeout(() => {
             document.getElementById('message').innerHTML = ``;
         }, 1500);
@@ -156,8 +155,8 @@ const subTime = () => {
     let hours = parseInt(document.getElementById('hours1-add').value);
     let minutes = parseInt(document.getElementById('minutes1-add').value);
     let ampm = document.getElementById('ampm3').value;
-    let addedMinsDisplay = document.getElementById('added-minutes');
     let minutesSubtracted = parseInt(document.getElementById('add-minutes1-add').value);
+    let addedMinsDisplay = document.getElementById('added-minutes');
     let result = document.getElementById('time-after-addition');
 
     if (ampm === "PM" && hours !== 12) {
