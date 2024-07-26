@@ -82,6 +82,7 @@ const originalTimeDisplay = () => {
     let minutes = parseInt(document.getElementById('minutes1-add').value);
     let minutesAdded = parseInt(document.getElementById('add-minutes1-add').value);
     let originalTimeText = document.getElementById('original-time');
+    let ampm = document.getElementById('ampm3').value;
     if(isNaN(hours) || isNaN(minutes) || isNaN(minutesAdded)) {
         document.getElementById('add-message').innerHTML = `Please enter a valid time`;
         setTimeout(() => {
@@ -89,18 +90,15 @@ const originalTimeDisplay = () => {
             result.innerHTML = '';
         }, 1500);
     }else {
-       originalTimeText.innerHTML = `Previous time entered: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+       originalTimeText.innerHTML = `Previous time entered: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${ampm}`;
     }
     return originalTimeText
 }
 
 clearBtn.addEventListener('click', () => {
-    hours1.value = '';
-    minutes1.value = '';
-    ampm1.value = 'AM'
-    hours2.value = '';
-    minutes2.value = '';
-    ampm2.value = 'AM'
+    hours1.value, hours2.value = '';
+    minutes1.value, minutes2.value  = '';
+    ampm1.value, ampm2.value = 'AM'
     document.getElementById('message').innerHTML = ``;
     document.getElementById('result').innerHTML = ``;
     document.getElementById('total-mins').innerHTML = ``
