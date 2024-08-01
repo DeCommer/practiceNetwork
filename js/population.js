@@ -9,7 +9,7 @@
 // }
 // setInterval(startPop, 1500);
 
-let population = 8_064_594_892; 
+let population = 8_064_694_892; 
 const growthRatePerSecond = 2.4;
 const worldPopTxt = document.getElementById('world-pop-txt');
 
