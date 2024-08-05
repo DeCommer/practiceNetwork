@@ -71,8 +71,3 @@ document.querySelector('.solveBtn').addEventListener('click', () => {
     calculator.setExpression({ id: 'c-slider', latex: `c = ${c}` });
 
 });
-
-
-
-
-
