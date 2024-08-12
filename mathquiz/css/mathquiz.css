@@ -51,7 +51,7 @@ p {
     margin: 0;
     padding: 5px;
     font-size: 1.2rem; 
-    color: #082c52;
+    color: #0f4a89;;
 }
 
 .mode-area {
@@ -73,7 +73,7 @@ p {
 }
 
 .modeBtn:hover {
-    background-color: #0f4a89;
+    background-color: #c1121f;
     color: #fff;
 }
 
@@ -219,7 +219,7 @@ input::placeholder {
     text-align: center;
     margin: 10px;
     padding: 0;
-    color: #0f3650;
+    color: #0f4a89;
     font-size: 1.5rem;
 }
 
@@ -238,8 +238,18 @@ input::placeholder {
 
 #pts-area {
     text-align: center;
-    /* border: 1px solid rgb(25, 37, 84); */
+    border-top: 1px solid #205b9b;
     margin: 0 auto;
+}
+
+#pts-area p {
+    color: #fff;
+}
+
+#pts-area p:last-child {
+    margin-top: 15px;
+    color: #77cc00;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.718);
 }
 
 #pts-area h2 {
@@ -248,6 +258,7 @@ input::placeholder {
 }
 
 /* Time Controls  *************************/
+
 nav {
     /* border: 1px solid red; */
     width : 80%; 
