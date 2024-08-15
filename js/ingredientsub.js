@@ -1,10 +1,8 @@
-fetch("./assets/notes.json")
+fetch("https://decommer.github.io/practiceNetwork/assets/notes.json")
 .then(response => response.json())
 .then(data => showInfo(data));
 
 function showInfo(data) {
-
-    console.log(data)
 
     const display = document.getElementById('display-data');
     const input = document.getElementById('input');

@@ -68,9 +68,9 @@ hr {
 
 input {
     border: 1px solid #c1c1c1;
-    margin: 20px 0;
+    margin: 10px 0 0 0;
     font-size: 1rem;
-    padding: 2px;
+    padding: 0px;
 }
 
 input:focus {
@@ -89,13 +89,12 @@ input:focus {
 }
 
 .directions {
+    margin-top: 10px;
     color: #1B3C73;
 }
 
 p {
-    margin: 5px 5px 5px 15px;
-    padding: 5px;
-    color:#50292f;
+    color: #fff;
 }
 
 span {

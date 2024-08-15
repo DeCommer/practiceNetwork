@@ -86,6 +86,13 @@
         "amount": "1 cup",
         "substitute1": "1 cup Silken tofu", 
         "substitute2": "1 cup Apple sauce"
+    },
+    "cheese" :{
+        "name" : "Cheese",
+        "amount": "1 cup",
+        "substitute1": "1 cup Cashew cheese", 
+        "substitute2": "1 cup Greek yogurt",
+        "substitute3": "1 cup Tofu"
     }
 }
 
