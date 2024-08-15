@@ -80,6 +80,12 @@
         "amount": "1 cup",
         "substitute1": "1 cup yogurt", 
         "substitute2": "1 tablespoon lemon juice or vinegar plus enough milk to make 1 cup"
+    },
+    "eggs" :{
+        "name" : "Eggs",
+        "amount": "1 cup",
+        "substitute1": "1 cup Silken tofu", 
+        "substitute2": "1 cup Apple sauce"
     }
 }
 
