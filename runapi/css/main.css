@@ -1,0 +1,108 @@
+:root {
+    --backgroundBlue: #007acc;
+    --buttonRed: #c1121f;
+    --darkBlue: #03346E;
+    --barFgColor: #06D001;
+    --barBgColor: #fff;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #ff5900;
+    --hover: #ff5900;
+    --h2: #fff;
+    --white: #fff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--backgroundBlue);
+}
+
+.main-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    margin: 25px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    height: fit-content;
+    width: fit-content;
+}
+
+header {
+    text-align: center;
+    margin: 20px;
+}
+
+header h1 {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px auto 15px auto;
+}
+
+a {
+    text-decoration: none;
+    margin: 15px;
+}
+
+.homeColor {
+    font-size: 1.2rem;
+    color: #F1FAEE;
+}
+
+.homeColor:hover {
+    color:var(--darkBlue);
+    transition: ease-in 0.2s;
+}
+
+table.runTable {
+    /* border: 1px solid #000000; */
+    background: none;
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid var(--white);
+}
+
+table.runTable td, table.runTable th {
+    /* border: 1px solid #000000; */
+    padding: 5px 10px;
+}
+
+table.runTable tbody td {
+    text-align: center;
+    color: var(--darkBlue);
+    font-size: 1.5rem;
+}
+
+table.runTable th {
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.page-num-container {
+    display: flex;
+    align-items: center;
+}
+
+  #pagination { 
+    text-align: center; 
+} 
+
+.pagination {
+    display: inline-block;
+  }
+  
+.pagination a {
+    color: var(--white);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
