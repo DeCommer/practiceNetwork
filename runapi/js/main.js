@@ -3,23 +3,6 @@ fetch("./data/rundata.json")
 .then(data => displayRuns(data));
 
 const displayRuns = (data) => {
-
-    // let table = document.getElementById('runTable');
-    // data.runs.forEach(function(object) {
-    //     let tr = document.createElement('tr');
-    //     tr.innerHTML = 
-    //     '<td>' + object.id + '</td>' +
-    //     '<td>' + object.day + '</td>' +
-    //     '<td>' + object.month + '</td>' +
-    //     '<td>' + object.dom + '</td>' +
-    //     '<td>' + object.year + '</td>' +
-    //     '<td>' + object.avg_pace + '</td>' +
-    //     '<td>' + object.distance + '</td>' +
-    //     '<td>' + object.duration + '</td>' +
-    //     '<td>' + object.est_calories + '</td>';
-    //     table.appendChild(tr);
-    // });
-
     let listElement = document.getElementById('runTable'); 
     const paginationElement = document.getElementById("pagination"); 
     let currPage = 1;
