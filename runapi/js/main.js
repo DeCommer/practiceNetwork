@@ -4,7 +4,7 @@ fetch("./data/rundata.json")
 
 const displayRuns = (data) => {
 
-    // let table = document.getElementById('run-table');
+    // let table = document.getElementById('runTable');
     // data.runs.forEach(function(object) {
     //     let tr = document.createElement('tr');
     //     tr.innerHTML = 
@@ -20,86 +20,85 @@ const displayRuns = (data) => {
     //     table.appendChild(tr);
     // });
 
-    const rowsPerPage = 10; 
-    let currentPage = 1; 
+    let listElement = document.getElementById('runTable'); 
+    const paginationElement = document.getElementById("pagination"); 
+    let currPage = 1;
+    let rows = 10;
 
-    function displayTable(page) { 
-        const table = document.getElementById("runTable"); 
-        const startIndex = (page - 1) * rowsPerPage; 
-        const endIndex = startIndex + rowsPerPage; 
-        const slicedData = data.runs.slice(startIndex, endIndex); 
+    function displayList(items, wrapper, rowsPerPage, page) {
+        wrapper.innerHTML = 
+        `<tr>
+        <th>id</th>
+        <th>Day</th>
+        <th>Month</th>
+        <th>Day of Month</th>
+        <th>Year</th>
+        <th>Avg Pace</th>
+        <th>Distance</th>
+        <th>Duration</th>
+        <th>Estimated Calories</th>
+        </tr>`;
 
-        // Clear existing table rows 
-        table.innerHTML = ` 
-                <tr> 
-                    <th>id</th> 
-                    <th>day</th> 
-                    <th>month</th> 
-                    <th>dom</th> 
-                    <th>year</th> 
-                    <th>Average pace</th> 
-                    <th>distance</th> 
-                    <th>duation</th> 
-                    <th>est calories</th>
-                </tr> `; 
-                
-        // Add new rows to the table 
-        slicedData.forEach(run => { 
-            const row = table.insertRow(); 
-            const idCell = row.insertCell(0); 
-            const dayCell = row.insertCell(1); 
-            const monthCell = row.insertCell(2); 
-            const domCell = row.insertCell(3); 
-            const yearCell = row.insertCell(4); 
-            const avg_paceCell = row.insertCell(5); 
-            const distanceCell = row.insertCell(6); 
-            const durationCell = row.insertCell(7); 
-            const est_caloriesCell = row.insertCell(8); 
-            idCell.innerHTML = run.id; 
-            dayCell.innerHTML = run.day; 
-            monthCell.innerHTML = run.month;
-            domCell.innerHTML = run.dom;
-            yearCell.innerHTML = run.year;
-            avg_paceCell.innerHTML = run.avg_pace;
-            distanceCell.innerHTML = run.distance;
-            durationCell.innerHTML = run.duration;
-            est_caloriesCell.innerHTML = run.est_calories;
-        }); 
+        page--;
 
-        // Update pagination 
-        updatePagination(page); 
-    } 
-    function updatePagination(currentPage) { 
-        let pageCount = Math.ceil(data.runs.length / rowsPerPage); 
-        const paginationContainer = document.getElementById("pagination"); 
-        paginationContainer.innerHTML = ""; 
+        let start = rowsPerPage * page;
+        let end = start + rowsPerPage;
+        let pageItems = items.slice(start, end);
 
-        for (let i = 1; i <= 10; i++) { 
-            const pageLink = document.createElement("a"); 
-            pageLink.href = "#"; 
-            pageLink.innerText = i; 
-            pageLink.onclick = function () { 
-                displayTable(i); 
-            }; 
-            if (i === currentPage) { 
-                pageLink.style.fontWeight = "bold"; 
-                pageLink.style.color = "#c1121f"; 
-            }
-            paginationContainer.appendChild(pageLink); 
-            paginationContainer.appendChild(document.createTextNode(""));
-
-        }   
-        console.log(`page count: ${pageCount}`);
+        for (let i = 0; i < pageItems.length; i++) {
+            let items = pageItems[i];
+            // let table = document.getElementById('runTable');
+            let tr = document.createElement('tr');
+            tr.innerHTML =
+            '<td>' + items.id + '</td>' +
+            '<td>' + items.day + '</td>' +
+            '<td>' + items.month + '</td>' +
+            '<td>' + items.dom + '</td>' +
+            '<td>' + items.year + '</td>' +
+            '<td>' + items.avg_pace + '</td>' +
+            '<td>' + items.distance + '</td>' +
+            '<td>' + items.duration + '</td>' +
+            '<td>' + items.est_calories + '</td>';
+            wrapper.appendChild(tr);
+            console.log(items);
+        }
     }
 
-    // Initial display 
-    displayTable(currentPage); 
+    function setPagination (items, wrapper, rowsPerPage) {
+        wrapper.innerHTML = ``;
+
+        // let pageCount = Math.ceil(items.length / rowsPerPage);
+        for(let i = 1; i < 5+ 1; i++) {
+            let button = pageBtn(i, items);
+            wrapper.appendChild(button);
+        }
+    }
+
+    function pageBtn(page, items) {
+        let button = document.createElement('button');
+        button.innerText = page;
+
+        console.log(currPage);
 
 
+        if(currPage == page) {
+            button.classList.add('active');
+        }
 
+        button.addEventListener('click', () => {
+            currPage = page;
+            displayList(items, listElement, rows, currPage);
+            let currentBtn = document.querySelector('.pageNumbers button.active');
+            currentBtn.classList.remove('active');
 
+            button.classList.add('active');
 
+        });
+        return button;
+    }
 
+    displayList(data.runs, listElement, rows, currPage);
+    setPagination(data.runs, paginationElement, rows);
 }
 
 
