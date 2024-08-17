@@ -3,7 +3,7 @@ fetch("./data/rundata.json")
 .then(data => displayRuns(data));
 
 const displayRuns = (data) => {
-    const items = data.runs;
+    const runs = data.runs;
     const wrapper = document.getElementById('runTable');
     const rowsPerPage = 10;
     const initialPage = 1;
@@ -19,7 +19,7 @@ const displayRuns = (data) => {
             <th>Avg Pace</th>
             <th>Distance</th>
             <th>Duration</th>
-            <th>Estimated Calories</th>
+            <th>Est Calories Burned</th>
         </tr>`;
 
         page--;
@@ -101,5 +101,5 @@ const displayRuns = (data) => {
         pagination.appendChild(lastButton);
     }
     
-    displayList(items, wrapper, rowsPerPage, initialPage);
+    displayList(runs, wrapper, rowsPerPage, initialPage);
 }

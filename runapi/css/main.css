@@ -82,6 +82,8 @@ table.run-data-table {
     width: 100%;
     text-align: center;
     border-collapse: collapse;
+    max-width: 1200px;
+    min-width: 1200px;
   
 }
 table.run-data-table th {
