@@ -2,8 +2,8 @@
     const paginationElement = document.getElementById("pagination"); 
     let currPage = 1;
     let rows = 10;
-    
-    function displayList(items, wrapper, rowsPerPage, page) {
+
+    displayList = (items, wrapper, rowsPerPage, page) => {
         wrapper.innerHTML = 
         `<tr>
         <th>id</th>
@@ -71,8 +71,6 @@
             button.classList.add('active');
         });
 
-
-        
         return button;
     }
 
