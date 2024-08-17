@@ -43,15 +43,18 @@ const displayRuns = (data) => {
             <td>${item.est_calories}</td>`;
             wrapper.appendChild(tr);
         }
+       
 
         //Controls
         const pagination = document.getElementById('pagination');
         const totalPages = Math.ceil(items.length / rowsPerPage);
+        
 
         pagination.innerHTML = '';
 
         const firstButton = document.createElement('button');
         firstButton.innerText = 'First';
+        firstButton.className = 'first-button';
         firstButton.disabled = page === 0;
         firstButton.addEventListener('click', () => {
             displayList(items, wrapper, rowsPerPage, 1);

@@ -1,3 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #007acc;
@@ -42,16 +47,25 @@ a {
     margin: 15px;
 }
 
+p {
+    margin: 4px;
+}
+
 .page-num-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5px 0 10px;
 }
 
+.first-button {
+    margin: 0 5px;
+    padding: 1px 3px;
+}
 
-#pagination {
-    margin-top: 10px;
-    text-align: center;
+.prev-button {
+    margin: 0 5px;
+    padding: 3px 5px;
 }
 
 .pagination-button {
@@ -61,11 +75,13 @@ a {
 }
 
 .next-button {
-    margin: 5px;
+    margin: 0 5px;
+    padding: 3px 5px;
 }
 
-.prev-button {
-    margin: 5px;
+.last-button {
+    margin: 0 5px;
+    padding:1px 3px;
 }
 
 .pagination-button:disabled {
@@ -82,8 +98,8 @@ table.run-data-table {
     width: 100%;
     text-align: center;
     border-collapse: collapse;
-    max-width: 1200px;
-    min-width: 1200px;
+    max-width: 1050px;
+    min-width: 1050px;
   
 }
 table.run-data-table th {
