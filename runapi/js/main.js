@@ -43,7 +43,6 @@ const displayRuns = (data) => {
             <td>${item.est_calories}</td>`;
             wrapper.appendChild(tr);
         }
-       
 
         //Controls
         const pagination = document.getElementById('pagination');
