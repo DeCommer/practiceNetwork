@@ -48,7 +48,6 @@ const displayRuns = (data) => {
         const pagination = document.getElementById('pagination');
         const totalPages = Math.ceil(items.length / rowsPerPage);
         
-
         pagination.innerHTML = '';
 
         const firstButton = document.createElement('button');
