@@ -22,7 +22,6 @@ body {
 
 header {
     text-align: center;
-
 }
 
 .homeColor {
@@ -95,23 +94,22 @@ table.run-data-table {
     background-color: rgba(255, 255, 255, 0.2);
     /* background-color: #fff; */
     border: 1px solid #000000;
-    margin: 10px 0 20px 0;
+    margin: 10px 0 10px 0;
     width: 100%;
     text-align: center;
     border-collapse: collapse;
-    max-width: 1050px;
-    min-width: 1050px;
-  
+    min-width: 900px;
 }
+
 table.run-data-table th {
     border: 1px solid #000000;
     color: #174076;
-    padding: 6px 10px;
+    padding: 6px 0px;
     font-size: 1.2rem;
 }
 
-  table.run-data-table td{
+table.run-data-table td{
     border: 1px solid #000000;
-    padding: 6px 10px;
+    padding: 6px 0px;
     font-size: 1.2rem;
-  }
+}

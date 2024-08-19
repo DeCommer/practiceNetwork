@@ -10,16 +10,15 @@ const displayRuns = (data) => {
 
     displayList = (items, wrapper, rowsPerPage, page) => {
         wrapper.innerHTML = 
-        `<tr>
-            <th>id</th>
-            <th>Day</th>
+        `<tr> 
+            <th>Weekday</th>
             <th>Month</th>
-            <th>Day of Month</th>
+            <th>Day</th>
             <th>Year</th>
             <th>Avg Pace</th>
             <th>Distance</th>
             <th>Duration</th>
-            <th>Est Calories Burned</th>
+            <th>Calories</th>
         </tr>`;
 
         page--;
@@ -32,7 +31,7 @@ const displayRuns = (data) => {
             const item = pageItems[i];
             const tr = document.createElement('tr');
             tr.innerHTML =
-            `<td>${item.id}</td>
+            `
             <td>${item.day}</td>
             <td>${item.month}</td>
             <td>${item.dom}</td>
@@ -47,7 +46,7 @@ const displayRuns = (data) => {
         //Controls
         const pagination = document.getElementById('pagination');
         const totalPages = Math.ceil(items.length / rowsPerPage);
-        
+
         pagination.innerHTML = '';
 
         const firstButton = document.createElement('button');
