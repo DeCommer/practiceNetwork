@@ -10,16 +10,19 @@ const displayRuns = (data) => {
 
     displayList = (items, wrapper, rowsPerPage, page) => {
         wrapper.innerHTML = 
-        `<tr> 
-            <th>Weekday</th>
-            <th>Month</th>
-            <th>Day</th>
-            <th>Year</th>
-            <th>Avg Pace</th>
-            <th>Distance</th>
-            <th>Duration</th>
-            <th>Calories</th>
-        </tr>`;
+
+        `<thead>
+            <tr> 
+                <th>Weekday</th>
+                <th>Month</th>
+                <th>Day</th>
+                <th>Year</th>
+                <th>Avg Pace</th>
+                <th>Distance</th>
+                <th>Duration</th>
+                <th>Calories</th>
+            </tr>
+        </thead>`;
 
         page--;
 
@@ -31,15 +34,16 @@ const displayRuns = (data) => {
             const item = pageItems[i];
             const tr = document.createElement('tr');
             tr.innerHTML =
-            `
-            <td>${item.day}</td>
-            <td>${item.month}</td>
-            <td>${item.dom}</td>
-            <td>${item.year}</td>
-            <td>${item.avg_pace}</td>
-            <td>${item.distance}</td>
-            <td>${item.duration}</td>
-            <td>${item.est_calories}</td>`;
+            `<tbody>
+                <td>${item.day}</td>
+                <td>${item.month}</td>
+                <td>${item.dom}</td>
+                <td>${item.year}</td>
+                <td>${item.avg_pace}</td>
+                <td>${item.distance}</td>
+                <td>${item.duration}</td>
+                <td>${item.est_calories}</td>
+            </tbody>`;
             wrapper.appendChild(tr);
         }
 
