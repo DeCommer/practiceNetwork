@@ -58,6 +58,15 @@ const displayRuns = (data) => {
         });
         pagination.appendChild(firstButton);
 
+        // const minusTenButton = document.createElement('button');
+        // minusTenButton.innerText = '-10';
+        // minusTenButton.className = 'minusTenButton';
+        // minusTenButton.disabled = page === 0;
+        // minusTenButton.addEventListener('click', () => {
+        //     displayList(items, wrapper, rowsPerPage, page - 9);
+        // });
+        // pagination.appendChild(minusTenButton);
+
         const prevButton = document.createElement('button');
         prevButton.innerText = 'Previous';
         prevButton.className = 'prev-button';
@@ -90,6 +99,15 @@ const displayRuns = (data) => {
             displayList(items, wrapper, rowsPerPage, page + 2);
         });
         pagination.appendChild(nextButton);
+
+        const plusTenButton = document.createElement('button');
+        plusTenButton.innerText = '+10';
+        plusTenButton.className = 'plusTenButton';
+        plusTenButton.disabled = page === totalPages - 1;
+        plusTenButton.addEventListener('click', () => {
+            displayList(items, wrapper, rowsPerPage, page + 10);
+        });
+        pagination.appendChild(plusTenButton);
 
         const lastButton = document.createElement('button');
         lastButton.innerText = 'Last';

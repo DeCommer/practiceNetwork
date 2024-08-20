@@ -1561,3 +1561,4 @@ INSERT INTO runData (id, day, month, dom, year, avg_pace, distance, Duration, es
 INSERT INTO runData (id, day, month, dom, year, avg_pace, distance, Duration, est_calories) VALUES ('1536', 'Tuesday', 'August', '13', '2024', '8`53``', '7.03', '1:02:28', '851');
 INSERT INTO runData (id, day, month, dom, year, avg_pace, distance, Duration, est_calories) VALUES ('1537', 'Thursday', 'August', '15', '2024', '8`07``', '3.18', '25:48', '400');
 INSERT INTO runData (id, day, month, dom, year, avg_pace, distance, Duration, est_calories) VALUES ('1538', 'Saturday', 'August', '17', '2024', '8`30``', '10.49', '1:29:10', '1290');
+INSERT INTO runData (id, day, month, dom, year, avg_pace, distance, Duration, est_calories) VALUES ('1539', 'Monday', 'August', '19', '2024', '8`58``', '6.74', '1:00:26', '844');

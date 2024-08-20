@@ -1,3 +1,17 @@
+:root {
+    --backgroundBlue: #007acc;
+    --buttonRed: #c1121f;
+    --darkBlue: #03346E;
+    --barFgColor: #06D001;
+    --barBgColor: #fff;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #ff5900;
+    --hover: #ff5900;
+    --h2: #fff;
+    --white: #fff;
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -5,7 +19,7 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #007acc;
+    background-color: var(--backgroundBlue);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +27,7 @@ body {
 }
 
 .main-container {
-    color: #fff;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,19 +40,12 @@ header {
 
 .homeColor {
     font-size: 1.2rem;
-    color: #F1FAEE;
+    color: var(--white);
 }
 
 .homeColor:hover {
-    color:#0f4a89;
+    color: var(--darkBlue);
     transition: ease-in 0.2s;
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    width: 80%;
-    background: #003049;
 }
 
 a {
@@ -52,10 +59,11 @@ p {
 
 .page-num-container {
     /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 5px 0 10px;
+}
+
+button {
+    border: none;
 }
 
 .first-button {
@@ -79,21 +87,26 @@ p {
     padding: 3px 5px;
 }
 
-.last-button {
+.plusTenButton {
     margin: 0 5px;
     padding:1px 3px;
 }
 
+.last-button {
+    margin: 0 5px;
+    padding:0px 1px;
+}
+
 .pagination-button:disabled {
-    color: #fff;
-    background-color: #c1121f;;
+    color: var(--white);
+    background-color: var(--buttonRed);
 }
 
 table.run-data-table {
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.2);
     /* background-color: #fff; */
-    border: 1px solid #000000;
+    border: 1px solid var(--darkBlue);
     margin: 10px 0 10px 0;
     width: 100%;
     text-align: center;
@@ -102,14 +115,14 @@ table.run-data-table {
 }
 
 table.run-data-table th {
-    border: 1px solid #000000;
-    color: #174076;
+    border: 1px solid var(--darkBlue);
+    color: var(--darkBlue);
     padding: 6px 0px;
     font-size: 1.2rem;
 }
 
 table.run-data-table td{
-    border: 1px solid #000000;
+    border: 1px solid var(--darkBlue);
     padding: 6px 0px;
     font-size: 1.2rem;
 }
