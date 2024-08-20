@@ -145,7 +145,6 @@ table.run-data-table td{
     table.run-data-table, thead, tbody, th, td, tr {
         display: flex;
         flex-direction: column;
-        width: 100%;
     }
 
     table.run-data-table thead tr {
@@ -155,16 +154,16 @@ table.run-data-table td{
     }
 
     table.run-data-table tr {
+        width: 100%;
         margin:0;
     }
 
     table.run-data-table tr:nth-child(odd) {
         background: #ccc;
-        background-color: #03346E;
+        background-color: #104787;
     }
 
     table.run-data-table td {
-        /* Behave  like a "row" */
         border: none;
         border-bottom: 1px solid #111;
         position: relative;

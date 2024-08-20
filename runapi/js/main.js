@@ -13,7 +13,7 @@ const displayRuns = (data) => {
 
         `<thead>
             <tr> 
-                <th class="id-header">#</th>
+                <th scope="col" class="id-header">#</th>
                 <th>Weekday</th>
                 <th>Month</th>
                 <th>Day</th>
@@ -36,15 +36,15 @@ const displayRuns = (data) => {
             const tr = document.createElement('tr');
             tr.innerHTML =
             `<tbody>
-                <td>${item.id}</td>
-                <td>${item.day}</td>
-                <td>${item.month}</td>
-                <td>${item.dom}</td>
-                <td>${item.year}</td>
-                <td>${item.avg_pace}</td>
-                <td>${item.distance}</td>
-                <td>${item.duration}</td>
-                <td>${item.est_calories}</td>
+                <td data-label="#">${item.id}</td>
+                <td data-label="Weekday">${item.day}</td>
+                <td data-label="Month">${item.month}</td>
+                <td data-label="Day">${item.dom}</td>
+                <td data-label="Year">${item.year}</td>
+                <td data-label="Avg Pace">${item.avg_pace}</td>
+                <td data-label="Distance">${item.distance}</td>
+                <td data-label="Duration">${item.duration}</td>
+                <td data-label="Calories">${item.est_calories}</td>
             </tbody>`;
             wrapper.appendChild(tr);
         }
