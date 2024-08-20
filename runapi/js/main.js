@@ -13,6 +13,7 @@ const displayRuns = (data) => {
 
         `<thead>
             <tr> 
+                <th class="id-header">#</th>
                 <th>Weekday</th>
                 <th>Month</th>
                 <th>Day</th>
@@ -35,6 +36,7 @@ const displayRuns = (data) => {
             const tr = document.createElement('tr');
             tr.innerHTML =
             `<tbody>
+                <td>${item.id}</td>
                 <td>${item.day}</td>
                 <td>${item.month}</td>
                 <td>${item.dom}</td>

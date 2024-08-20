@@ -107,6 +107,10 @@ button {
     background-color: var(--buttonRed);
 }
 
+table.run-data-table th.id-header {
+    padding: 0px 10px;
+}
+
 table.run-data-table {
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.2);
@@ -142,62 +146,66 @@ table.run-data-table td{
         display: flex;
         flex-direction: column;
         width: 100%;
-      }
-      table.run-data-table thead tr {
+    }
+
+    table.run-data-table thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;
-      }
+    }
 
-      table.run-data-table tr {
+    table.run-data-table tr {
         margin:0;
-      }
+    }
 
-      table.run-data-table tr:nth-child(odd) {
+    table.run-data-table tr:nth-child(odd) {
         background: #ccc;
         background-color: #03346E;
-      }
+    }
 
-      table.run-data-table td {
+    table.run-data-table td {
         /* Behave  like a "row" */
         border: none;
         border-bottom: 1px solid #111;
         position: relative;
         left: 45px;
         padding-left: 25px;
-      }
+    }
 
-      table.run-data-table td:before {
+    table.run-data-table td:before {
         position: absolute;
         top: 0;
         left: 2px;
         width: 75%;
         padding-right: 10px;
         white-space: nowrap;
-      }
-
-      table.run-data-table td:nth-of-type(1):before {
-        content: "Day";
-      }
-      table.run-data-table td:nth-of-type(2):before {
-        content: "Month";
-      }
-      table.run-data-table td:nth-of-type(3):before {
-        content: "Day of Month";
-      }
-      table.run-data-table td:nth-of-type(4):before {
-        content: "Year";
-      }
-      table.run-data-table td:nth-of-type(5):before {
-        content: "Avg Pace";
-      }
-      table.run-data-table td:nth-of-type(6):before {
-        content: "Distance";
-      }
-      table.run-data-table td:nth-of-type(7):before {
-        content: "Duration";
-      }
-      table.run-data-table td:nth-of-type(8):before {
-        content: "Calories";
-      }
     }
+
+    table.run-data-table td:nth-of-type(1):before {
+        content: "#";
+    }
+    table.run-data-table td:nth-of-type(2):before {
+        content: "Day";
+    }
+    table.run-data-table td:nth-of-type(3):before {
+        content: "Month";
+    }
+    table.run-data-table td:nth-of-type(4):before {
+        content: "Day of Month";
+    }
+    table.run-data-table td:nth-of-type(5):before {
+        content: "Year";
+    }
+    table.run-data-table td:nth-of-type(6):before {
+        content: "Avg Pace";
+    }
+    table.run-data-table td:nth-of-type(7):before {
+        content: "Distance";
+    }
+    table.run-data-table td:nth-of-type(8):before {
+        content: "Duration";
+    }
+    table.run-data-table td:nth-of-type(9):before {
+        content: "Calories";
+    }
+}
