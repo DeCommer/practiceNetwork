@@ -58,14 +58,14 @@ const displayRuns = (data) => {
         });
         pagination.appendChild(firstButton);
 
-        // const minusTenButton = document.createElement('button');
-        // minusTenButton.innerText = '-10';
-        // minusTenButton.className = 'minusTenButton';
-        // minusTenButton.disabled = page === 0;
-        // minusTenButton.addEventListener('click', () => {
-        //     displayList(items, wrapper, rowsPerPage, page - 9);
-        // });
-        // pagination.appendChild(minusTenButton);
+        const prev10Button = document.createElement('button');
+        prev10Button.innerText = '<<';
+        prev10Button.className = 'prev10-button';
+        prev10Button.disabled = page <= 10;
+        prev10Button.addEventListener('click', () => {
+            displayList(items, wrapper, rowsPerPage, Math.max(1, page - 10));
+        });
+        pagination.appendChild(prev10Button);
 
         const prevButton = document.createElement('button');
         prevButton.innerText = 'Previous';
@@ -100,14 +100,16 @@ const displayRuns = (data) => {
         });
         pagination.appendChild(nextButton);
 
-        const plusTenButton = document.createElement('button');
-        plusTenButton.innerText = '+10';
-        plusTenButton.className = 'plusTenButton';
-        plusTenButton.disabled = page === totalPages - 1;
-        plusTenButton.addEventListener('click', () => {
-            displayList(items, wrapper, rowsPerPage, page + 10);
+        const next10Button = document.createElement('button');
+        next10Button.innerText = '>>';
+        next10Button.className = 'next10-button';
+        next10Button.disabled = page >= totalPages - 9;
+        next10Button.addEventListener('click', () => {
+            displayList(items, wrapper, rowsPerPage, Math.min(totalPages, page + 10));
         });
-        pagination.appendChild(plusTenButton);
+        pagination.appendChild(next10Button);
+
+        console.log(page)
 
         const lastButton = document.createElement('button');
         lastButton.innerText = 'Last';

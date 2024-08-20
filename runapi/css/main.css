@@ -68,7 +68,7 @@ button {
 
 .first-button {
     margin: 0 5px;
-    padding: 1px 3px;
+    padding: 2px 3px;
 }
 
 .prev-button {
@@ -76,25 +76,30 @@ button {
     padding: 3px 5px;
 }
 
+.prev10-button {
+    margin: 0 5px;
+    padding: 5px 7px;
+}
+
 .pagination-button {
     margin: 0 5px;
-    padding: 5px 10px;
+    padding: 8px 13px;
     cursor: pointer;
 }
 
 .next-button {
     margin: 0 5px;
-    padding: 3px 5px;
+    padding: 5px 7px;
 }
 
-.plusTenButton {
+.next10-button {
     margin: 0 5px;
-    padding:1px 3px;
+    padding: 3px 5px;
 }
 
 .last-button {
     margin: 0 5px;
-    padding:0px 1px;
+    padding: 2px 3px;
 }
 
 .pagination-button:disabled {
