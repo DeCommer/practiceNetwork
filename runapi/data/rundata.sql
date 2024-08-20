@@ -7,7 +7,7 @@ USE running;
 
 -- DESCRIBE runData;
 
-SELECT * FROM runData;
+-- SELECT * FROM runData;
 
 CREATE TABLE runData 
 (
