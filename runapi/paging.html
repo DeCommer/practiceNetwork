@@ -5,24 +5,162 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Running Data - Joseph DeCommer</title>
         <link href="./css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/logo.css">
+        <link rel="stylesheet" href="../css/showhide.css">
         <script src="./js/main.js"></script>
+        <script src="../js/showhide.js" defer></script>
     </head>
     <body>
         <div class="main-container">
             <header>
                 <a href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-                <!-- <a class="aboutBtn" href="#"><span class="homeColor">About</span></a> -->
+                <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
                 <div>
                     <h1>Pagination Example</h1>
                     <p>With my Nike+ run data from 2010 - 2024</p>
-                    <P>Not yet mobile friendly (Wip)</P>
                 </div>
             </header>
+            <div class="page-counter"></div>
             <table class="run-data-table" id="runTable"> </table>
             <div class="page-num-container">
                 <div class="pageNumbers" id="pagination"></div>
             </div>
+        </div>
 
+        <div class="aboutModal hidden">
+            <button class="closeAboutModal">&times</button>
+            <h1>Pagination Example</h1>
+            <p>The Pagination Example App is a straightforward web application 
+                designed to display a list of items in a manageable and user-friendly way. 
+                It demonstrates how to split a large set of data into smaller, 
+                more digestible pages.</p>
+            <p>I made this with a combination of HTML, CSS and JS. 
+            You can see the JavaScript by clicking the button below.
+            </p>
+        </div><div class="aboutOverlay hidden"></div>
+
+        <div class="code">
+            <button class="jsBtn" >See the Javascript.</button>
+            <p><pre><code class="jsHidden hidden">
+                <button class="closeJsModal">&times</button>
+fetch("./data/rundata.json")
+.then(response => response.json())
+.then(data => displayRuns(data));
+
+const displayRuns = (data) => {
+    const runs = data.runs;
+    const wrapper = document.getElementById('runTable');
+    const rowsPerPage = 10;
+    const initialPage = 1;
+
+    displayList = (items, wrapper, rowsPerPage, page) => {
+        wrapper.innerHTML = 
+        `CONTAINS COLUMN DATA`;
+        page--;
+        const start = rowsPerPage * page;
+        const end = start + rowsPerPage;
+        const pageItems = items.slice(start, end);
+        for (let i = 0; i < pageItems.length; i++) {
+            const item = pageItems[i];
+            const tr = document.createElement('tr');
+            tr.innerHTML =
+            `CONTAINS ROW DATA`;
+            wrapper.appendChild(tr);
+        }
+        //Controls
+        const pagination = document.getElementById('pagination');
+        const totalPages = Math.ceil(items.length / rowsPerPage);
+
+        pagination.innerHTML = '';
+
+        const firstButton = document.createElement('button');
+        firstButton.innerText = 'First';
+        firstButton.className = 'first-button';
+        firstButton.disabled = page === 0;
+        firstButton.addEventListener('click', () => {
+            displayList(items, wrapper, rowsPerPage, 1);
+        });
+        pagination.appendChild(firstButton);
+
+        const prev10Button = document.createElement('button');
+        prev10Button.innerText = '<<';
+        prev10Button.className = 'prev10-button';
+        prev10Button.disabled = page <= 10;
+        prev10Button.addEventListener('click', () => {
+            displayList(items, wrapper, rowsPerPage, Math.max(1, page - 10));
+        });
+        pagination.appendChild(prev10Button);
+
+        const prevButton = document.createElement('button');
+        prevButton.innerText = 'Previous';
+        prevButton.className = 'prev-button';
+        prevButton.disabled = page === 0;
+        prevButton.addEventListener('click', () => {
+            displayList(items, wrapper, rowsPerPage, page);
+        });
+        pagination.appendChild(prevButton);
+
+        //Page Number Buttons
+        const startPage = Math.max(1, page - 1); 
+        const endPage = Math.min(totalPages, startPage + 4);
+
+        for (let i = startPage; i <= endPage; i++) {
+            const button = document.createElement('button');
+            button.innerText = i;
+            button.className = 'pagination-button';
+            button.disabled = i === page + 1;
+            button.addEventListener('click', () => {
+                displayList(items, wrapper, rowsPerPage, i);
+            });
+            pagination.appendChild(button);
+        }
+
+        const pageCounterDisplay = document.querySelector('.page-counter');
+pageCounterDisplay.innerHTML = `<p>Current Page = </p><span>${page + 1}</span>`;
+
+        const nextButton = document.createElement('button');
+        nextButton.innerText = 'Next';
+        nextButton.className = 'next-button';
+        nextButton.disabled = page === totalPages - 1;
+        nextButton.addEventListener('click', () => {
+            displayList(items, wrapper, rowsPerPage, page + 2);
+        });
+        pagination.appendChild(nextButton);
+
+        const next10Button = document.createElement('button');
+        next10Button.innerText = '>>';
+        next10Button.className = 'next10-button';
+        next10Button.disabled = page >= totalPages - 9;
+        next10Button.addEventListener('click', () => {
+            displayList(items, wrapper, rowsPerPage, Math.min(totalPages, page + 10));
+        });
+        pagination.appendChild(next10Button);
+
+        const lastButton = document.createElement('button');
+        lastButton.innerText = 'Last';
+        lastButton.className = 'last-button';
+        lastButton.disabled = page === totalPages - 1;
+        lastButton.addEventListener('click', () => {
+            displayList(items, wrapper, rowsPerPage, totalPages);
+        });
+        pagination.appendChild(lastButton);
+    }
+    
+    displayList(runs, wrapper, rowsPerPage, initialPage);
+}
+        </code></pre></p>
+        </div>
+        <div class="elem-logo">
+            <div class="logo-upper-left">
+                <p>45</p>
+            </div>
+            <div class="logo-center">
+                <h1>D<span>e</span></h1><br>
+                <p>DeCommer</p>
+            </div>
+            <div class="logo-bottom-center">
+                <p>19.79</p>
+            </div>
         </div>
     </body>
 </html>

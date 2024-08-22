@@ -81,8 +81,8 @@ const displayRuns = (data) => {
         pagination.appendChild(prevButton);
 
         //Page Number Buttons
-        const startPage = Math.max(1, page - 4); 
-        const endPage = Math.min(totalPages, startPage + 9);
+        const startPage = Math.max(1, page - 1); 
+        const endPage = Math.min(totalPages, startPage + 4);
 
         for (let i = startPage; i <= endPage; i++) {
             const button = document.createElement('button');
@@ -94,6 +94,9 @@ const displayRuns = (data) => {
             });
             pagination.appendChild(button);
         }
+
+        const pageCounterDisplay = document.querySelector('.page-counter');
+pageCounterDisplay.innerHTML = `<p>Current Page = </p><span>${page + 1}</span>`;
 
         const nextButton = document.createElement('button');
         nextButton.innerText = 'Next';
@@ -124,4 +127,7 @@ const displayRuns = (data) => {
     }
     
     displayList(runs, wrapper, rowsPerPage, initialPage);
+
+    
 }
+
