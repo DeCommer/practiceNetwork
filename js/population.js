@@ -17,7 +17,7 @@ function formatNumber(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function updatePopulation() {
+const updatePopulation = () => {
     const secondsSinceLoad = (new Date().getTime() - startTime) / 1000;
     const currentPopulation = population + (secondsSinceLoad * growthRatePerSecond);
     worldPopTxt.textContent = formatNumber(Math.floor(currentPopulation));
@@ -26,3 +26,4 @@ function updatePopulation() {
 const startTime = new Date().getTime();
 updatePopulation();
 setInterval(updatePopulation, 1000);
+

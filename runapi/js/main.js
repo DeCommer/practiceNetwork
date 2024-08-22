@@ -10,7 +10,6 @@ const displayRuns = (data) => {
 
     displayList = (items, wrapper, rowsPerPage, page) => {
         wrapper.innerHTML = 
-
         `<thead>
             <tr> 
                 <th scope="col" class="id-header">#</th>
@@ -24,7 +23,6 @@ const displayRuns = (data) => {
                 <th>Calories</th>
             </tr>
         </thead>`;
-
         page--;
 
         const start = rowsPerPage * page;
@@ -114,8 +112,6 @@ const displayRuns = (data) => {
             displayList(items, wrapper, rowsPerPage, Math.min(totalPages, page + 10));
         });
         pagination.appendChild(next10Button);
-
-        console.log(page)
 
         const lastButton = document.createElement('button');
         lastButton.innerText = 'Last';

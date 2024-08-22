@@ -1,14 +1,12 @@
 :root {
     --backgroundBlue: #007acc;
-    --buttonRed: #c1121f;
+    --lightBlue: #05cff7;
     --darkBlue: #03346E;
-    --barFgColor: #06D001;
-    --barBgColor: #fff;
-    --leftGrad: #05cff7;
-    --centerGrad: #a2faa7;
+    --buttonRed: #c1121f;
+    --lighterGreen: #a2faa7;
+    --lightGreen: #06D001;
     --rightGrad: #ff5900;
-    --hover: #ff5900;
-    --h2: #fff;
+    --btnColor: #ddd;
     --white: #fff;
 }
 
@@ -64,6 +62,7 @@ p {
 
 button {
     border: none;
+    background-color: var(--btnColor);
 }
 
 .first-button {
