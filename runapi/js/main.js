@@ -1,4 +1,4 @@
-fetch("./data/rundata.json")
+fetch("./data/rundata-exp.json")
 .then(response => response.json())
 .then(data => displayRuns(data));
 
