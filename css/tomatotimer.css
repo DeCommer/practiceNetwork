@@ -2,6 +2,9 @@
     --tomato: #ca4040;
     --short: #cac340;
     --long: #40ca80;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #007acc;
 }
 
 html {
@@ -18,7 +21,7 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #007ACC;
+    background-color: #fff;
 }
 
 a {
@@ -43,13 +46,15 @@ a:hover {
   }
 
 .main-container {
+    border: 1px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     justify-content: center;
     margin-top: 50px;
     width: fit-content;
     background-color: #ca4040;
     /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
     padding: 45px;
-    border-radius: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 

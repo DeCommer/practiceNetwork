@@ -68,6 +68,9 @@ enterBtn.addEventListener('click', () => {
         console.log(num)
     }else {
         message.innerHTML = '<h2>Enter a number</h2>';
+        setTimeout(() =>{
+            message.textContent = '';
+        }, 1200);
     }
 });
 
