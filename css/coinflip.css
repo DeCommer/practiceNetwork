@@ -1,5 +1,12 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sedan:ital@0;1&display=swap'); */
+:root {
+    --bg: #fff;
+    --text: #007acc;
+    --highlight: #FF6969;
+    --slate: #b6c5e0;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #007acc;
+}
 
 *{
     margin: 0;
@@ -12,9 +19,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #007acc;
+    background-color: #fff;
     font-family:'Times New Roman', Times, serif;
-    color: #09396c;
+    color: #007acc;
 }
 
 .outer-container {
@@ -29,9 +36,9 @@ body {
 }
 
 .main-container {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     margin: 25px 10px;
     display: flex;
     flex-direction: column;
@@ -42,9 +49,9 @@ body {
 }
 
 .main-container-2 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     margin: 25px 10px 0px 10px;
     display: flex;
     flex-direction: column;
@@ -64,7 +71,7 @@ p {
 }
 
 span {
-    color: #fff;
+    color: #007acc;
     font-size: 2.5rem;
 }
 
@@ -79,11 +86,11 @@ h2 {
 
 .homeColor {
     font-size: 1.2rem;
-    color: #fff;
+    color: #007acc;
 }
 
 .homeColor:hover {
-    color:#0f4a89;
+    color:#FF6969;
     transition: ease-in 0.2s;
 }
 
@@ -139,7 +146,7 @@ header {
     display: flex;
     text-align: center;
 	font-size: 1.2rem; 
-	color: #09396c;
+	color: #007acc;
 } 
 
 .percent-area { 
@@ -147,7 +154,7 @@ header {
     display: flex;
 	font-size: 1.2rem; 
     text-align: center;
-	color: #09396c;
+	color: #007acc;
 } 
 
 .array-area {
@@ -157,7 +164,7 @@ header {
     width: 90%;
     max-height: 250px;
     overflow: scroll;
-    color: #fff;
+    color: #007acc;
     font-size: 1.2rem;
 }
 
@@ -176,7 +183,7 @@ input {
     font: inherit;
     border: 1px solid #09396c;
     font-size: 2rem;
-    color: #fff;
+    color: #007acc;
     margin: 5px;
     width: 125px;
     height: auto;
@@ -192,9 +199,9 @@ input:focus {
 
 .stat-results {
     position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     margin: 25px 10px;
     display: flex;
     flex-direction: column;
@@ -210,7 +217,7 @@ input:focus {
     right: 5px;
     background: none;
     border: none;
-    color: #fff;
+    color: #007acc;
     font-size: 1.5rem;
     transform: rotate(140deg);
     cursor: pointer;

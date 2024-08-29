@@ -1,3 +1,13 @@
+:root {
+    --bg: #fff;
+    --text: #007acc;
+    --highlight: #FF6969;
+    --slate: #b6c5e0;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #007acc;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +16,11 @@
 
 body {
     font-family: sans-serif;
-    background-color: #007ACC;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #fff;
+    color: #007acc;
 }
 
 h2 {
@@ -19,9 +29,9 @@ h2 {
 }
 
 main {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,11 +49,11 @@ header {
 
   .homeColor {
     font-size: 1.2rem;
-    color: #fff;
+    color: #007acc;
 }
 
 .homeColor:hover {
-    color:#0f4a89;
+    color:#FF6969;
     transition: ease-in 0.2s;
 }
 
@@ -54,7 +64,7 @@ a {
 }
 
 h2 span {
-    color:#ffd919;
+    color:#FF6969;
 }
 
 .dealer-container {
@@ -87,7 +97,7 @@ h2 span {
 .bet-btn {
     border: none;
     padding: 5px 10px;
-    color: #fff;
+    color: #007acc;
     background-color: #1a4663;
     font-size: 1rem;
     margin: 5px;
@@ -152,7 +162,8 @@ dialog {
 .play-again-btn {
     padding: 10px 20px;
     margin-top: 20px;
-    background-color: #ffd919;
+    background-color: #FF6969;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
