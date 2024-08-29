@@ -1539,6 +1539,7 @@
         {"id":1538, "day":"Saturday", "month":"August", "dom":17, "year":"2024", "avg_pace":"8`30``", "distance":10.49, "duration":"1:29:10", "est_calories":1290},
         {"id":1539, "day":"Monday", "month":"August", "dom":19, "year":"2024", "avg_pace":"8`58``", "distance":6.74, "duration":"1:00:26", "est_calories":844},
         {"id":1540, "day":"Thursday", "month":"August", "dom":22, "year":"2024", "avg_pace":"9`16``", "distance":5.10, "duration":"47:19", "est_calories":655},
-        {"id":1541, "day":"Saturday", "month":"August", "dom":24, "year":"2024", "avg_pace":"9`16``", "distance":7.55, "duration":"1:10:01", "est_calories":1020}
+        {"id":1541, "day":"Saturday", "month":"August", "dom":24, "year":"2024", "avg_pace":"9`16``", "distance":7.55, "duration":"1:10:01", "est_calories":1020},
+        {"id":1542, "day":"Tuesday", "month":"August", "dom":27, "year":"2024", "avg_pace":"8`03``", "distance":3.17, "duration":"25:32", "est_calories":408}
     ]
 }

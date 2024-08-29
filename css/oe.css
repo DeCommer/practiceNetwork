@@ -1,3 +1,13 @@
+:root {
+    --bg: #fff;
+    --text: #007acc;
+    --highlight: #FF6969;
+    --slate: #b6c5e0;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #007acc;
+}
+
 *{
     box-sizing: border-box;
 }
@@ -6,15 +16,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #007acc;
+    background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     color: #09396c;
 }
 
 .main-container {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     margin: 0px auto;
     display: flex;
     flex-direction: column;
@@ -39,11 +49,11 @@ body {
 
 .homeColor {
     font-size: 1.2rem;
-    color: #F1FAEE;
+    color: #007acc;
 }
 
 .homeColor:hover {
-    color:#0f4a89;
+    color:#FF6969;
     transition: ease-in 0.2s;
 }
 
@@ -75,7 +85,7 @@ input:focus {
 .passGBtn {
     border: none;
     background-color: #c1121f;
-    color: #F1FAEE;
+    color: #007acc;
     padding: 10px 15px;
 }
 .container-top {
@@ -108,7 +118,7 @@ input {
     background-color: rgba(255, 255, 255, 0.4);
     border: 1px solid #09396c;
     font-size: 2rem;
-    color: #F1FAEE;
+    color: #007acc;
     margin: 10px;
     width: 150px;
     height: auto;
@@ -164,7 +174,7 @@ input:focus {
 
 .resNum {
     font-size: 2.5em;
-    color: #F1FAEE;
+    color: #007acc;
 }
 
 @media screen and (max-width: 500px) {

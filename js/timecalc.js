@@ -96,8 +96,10 @@ const originalTimeDisplay = () => {
 }
 
 clearBtn.addEventListener('click', () => {
-    hours1.value, hours2.value = '';
-    minutes1.value, minutes2.value  = '';
+    hours1.value = ''; 
+    hours2.value = '';
+    minutes1.value = ''; 
+    minutes2.value  = '';
     ampm1.value, ampm2.value = 'AM'
     document.getElementById('message').innerHTML = ``;
     document.getElementById('result').innerHTML = ``;
