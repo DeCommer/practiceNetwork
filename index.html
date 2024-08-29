@@ -1,74 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
+    <title>Joseph DeCommer</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <script src="./js/main.js" defer></script>
-    <title>Javascript Projects</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="The Website of Joseph DeCommer">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.decommer.com">
+    <meta property="og:description" content="This site serves as an example of JavaScript work by Joseph DeCommer">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:name" content="DeCommer.com">
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- <script src="./js/appCounter.js" defer></script> -->
+    <noscript>If you are seeing this message JavaScript is disabled on your device.</noscript>
+  </head>
+  <body>
     <div class="main-container">
-        <header>
-            <a class="homeColor" href="https://www.decommer.com">
+      <header>
+        <nav class="nav-bar">
+          <div class="header-links">
+            <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+            <button id="mode-btn" class="theme-btn">🌑</button>
+          </div>
+        </nav>
+          <div class="hero">
             <div class="elem-logo">
-                <div class="logo-upper-left">
-                    <p>45</p>
-                </div>
-                <div class="logo-center">
-                    <h1>D<span>e</span></h1><br>
-                    <p>DeCommer</p>
-                </div>
-                <div class="logo-bottom-center">
-                    <p>19.79</p>
-                </div>
-              </div>
-            </a>
-            <h1>JavaScript Examples</h1>
+              <p class="logo-upper-left randNum">00</p>
+              <h1 class="logo-center">D<span>e</span></h1>
+              <p class="logo-bottom-center-name">DeCommer</p>
+              <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+            </div>
+            <div class="title-container">
+              <h2 class="title">Joseph DeCommer</h2>
+              <p class="description-text">Developer</p>
+            </div>
+          </div>
         </header>
-        <div class="links">
-            <section class="section"><h2>🚀 Calculators</h2>
-                <div class="icon">œ <a href="./oe.html">Odd / Even Calculator</a></div>
-                <div class="icon">⏳ <a href="./timecalc.html">Hours Calculator</a></div>
-                <div class="icon">🔋 <a href="./percentcalc.html">Percent Calculator</a></div>
-                <div class="icon">🫃🏻 <a href="./bmi/bmi.html">BMI Calculator</a></div>
-                <div class="icon">🪑 <a href="./bmrcalc.html">BMR Calculator</a></div>
-                <div class="icon">👴 <a href="./agecalc.html">Age Calculator</a></div>
-                <div class="icon">💳 <a href="./tipclac.html">Tip Calculator</a></div>
-                <div class="icon">🎢 <a href="./quadratic-solver.html">Quadratic Solver</a></div>
-            </section>
-            <section class="section"><h2>🧰 Tools</h2>
-                <div class="icon">🗳️ <a href="./counter.html">Counter</a></div>
-                <div class="icon">📊 <a href="./progressbartest.html">Progress Bar</a></div>
-                <div class="icon">🍅 <a href="./tomatotime.html">Tomato Timer</a></div>
-                <div class="icon">🕵️‍♂️ <a href="./passgen.html">Password Gen</a></div>
-                <div class="icon">⌚️ <a href="./timezone.html">Timezone Converter(wip)</a></div>
-                <div class="icon">💵 <a href="./currencyconvert.html">Currency Converter</a></div>
-                <div class="icon">🏃‍➡️ <a href="./advancedDistConverter.html">KM / MI Converter</a></div>
-                <div class="icon">🌡️ <a href="./tempconverter.html">Temp Converter</a></div>
-                <div class="icon">⚖️ <a href="./weightconverter.html">Weight Converter</a></div>
-                <div class="icon">📐 <a href="./raddegconverter.html">Radians/Degrees</a></div>
-                <div class="icon">🧂 <a href="./ingredientsub.html">Ingredient Sub(WIP)</a></div>
-            </section>
-            <section class="section"><h2>🎊 Fun</h2>
-                <!-- <a href="./blackjack/blackjack.html">Blackjack</a> -->
-                <div class="icon">🪙 <a href="./coinflip.html">Coin Flipper</a></div>
-                <div class="icon">🗺️ <a href="./map/map.html">State Facts Map</a></div>
-                <div class="icon">🔬 <a href="./periodic-project/periodic.html">Periodic Table</a></div>
-                <div class="icon">🃏 <a href="./blackjack/blackjack.html">Blackjack</a></div>
-                <div class="icon">🧮 <a href="./mathquiz/mathQuiz.html">Math Quiz</a></div>
-                <div class="icon">👫 <a href="./population.html">Population Counter</a></div>
-                <div class="icon">🧠 <a href="./match.html">Match Game</a></div>
-                <div class="icon">🤔 <a href="./guess.html">Guessing Game</a></div>
-                <div class="icon">🔐 <a href="./improvedguessing.html">Guessing Game 2</a></div>
-            </section>
-        </div>
-        <footer>
-            <p>Made by Joseph DeCommer </p> <p class="year">  </p><p> Hosted by GitHub <i class="fa-brands fa-github w3-xlarge"></i></p>
-        </footer>
+      <div class="apps-main-container" id="apps">
+        <section class="calculators app-card">
+          <h2><span class="h2-icon">🚀</span> Calculators</h2>
+          <!-- <p id="cal-apps" class="count-app-txt">##</p> -->
+          <div><span class="app-link-icon">🔗</span><a href="https://decommer.github.io/practiceNetwork/oe.html">Odd / Even Calculator</a></div>
+          <div><span class="app-link-icon">⏳</span><a href="https://decommer.github.io/practiceNetwork/timecalc.html">Hours Calculator</a></div>
+          <div><span class="app-link-icon">🔋</span><a href="https://decommer.github.io/practiceNetwork/percentcalc.html">Percent Calculator</a></div>
+          <div><span class="app-link-icon">🫃🏻</span><a href="https://decommer.github.io/practiceNetwork/bmi/bmi.html">BMI Calculator</a></div>
+          <div><span class="app-link-icon">🪑</span><a href="https://decommer.github.io/practiceNetwork/bmrcalc.html">BMR Calculator</a></div>
+          <div><span class="app-link-icon">👴</span><a href="https://decommer.github.io/practiceNetwork/agecalc.html">Age Calculator</a></div>
+          <div><span class="app-link-icon">💳</span><a href="https://decommer.github.io/practiceNetwork/tipclac.html">Tip Calculator</a></div>
+        </section>
+        <section class="tools app-card">
+          <h2><span class="h2-icon">🧰</span> Tools</h2>
+          <!-- <p id="tools-apps" class="count-app-txt">##</p> -->
+          <div><span class="app-link-icon">🗳️</span><a href="https://decommer.github.io/practiceNetwork/clickcount.html">Counter</a></div>
+          <div><span class="app-link-icon">📊</span><a href="https://decommer.github.io/practiceNetwork/progressbartest.html">Progress Bar</a></div>
+          <div><span class="app-link-icon">🍅</span><a href="https://decommer.github.io/practiceNetwork/tomatotime.html">Tomato Timer</a></div>
+          <div><span class="app-link-icon">🕵️‍♂️</span><a href="https://decommer.github.io/practiceNetwork/passgen.html">Password Gen</a></div>
+          <div><span class="app-link-icon">🏃‍➡️</span><a href="https://decommer.github.io/practiceNetwork/advancedDistConverter.html">KM / MI Converter</a></div>
+          <div><span class="app-link-icon">🌡️</span><a href="https://decommer.github.io/practiceNetwork/tempconverter.html">Temp Converter</a></div>
+          <div><span class="app-link-icon">⚖️</span><a href="https://decommer.github.io/practiceNetwork/weightconverter.html">Weight Converter</a></div>
+          <div><span class="app-link-icon">📐</span><a href="https://decommer.github.io/practiceNetwork/raddegconverter.html">Radians/Degrees</a></div>
+        </section>
+        <section class="api app-card">
+          <h2><span class="h2-icon">🎛️</span> API</h2>
+          <!-- <p id="api-apps" class="count-app-txt">##</p> -->
+          <div><span class="app-link-icon">📖</span><a href="https://decommer.github.io/practiceNetwork/runapi/paging.html">Pagination API</a></div>
+          <div><span class="app-link-icon">🔬</span><a href="https://decommer.github.io/practiceNetwork/periodic-project/periodic.html">Periodic Table API</a></div>
+          <div><span class="app-link-icon">🗺️</span><a href="https://decommer.github.io/practiceNetwork/map/map.html">State Facts Map API</a></div>
+          <!-- <div><span class="app-link-icon">🧂</span><a href="https://decommer.github.io/practiceNetwork/ingredientsub.html">Ingredient Sub API(WIP)</a></div> -->
+          <div><span class="app-link-icon">💵</span><a href="https://decommer.github.io/practiceNetwork/currencyconvert.html">Currency Converter API</a></div>
+          <div><span class="app-link-icon">👫</span><a href="https://decommer.github.io/practiceNetwork/population.html">Population Counter API</a></div>
+          <div><span class="app-link-icon">🎢</span><a href="https://decommer.github.io/practiceNetwork/quadratic-solver.html">Quadratic Solver API</a></div>
+        </section>
+        <section class="fun app-card">
+          <h2><span class="h2-icon">🎊</span> Fun</h2>
+          <!-- <p id="fun-apps" class="count-app-txt">##</p> -->
+          <div><span class="app-link-icon">🪙</span><a href="https://decommer.github.io/practiceNetwork/coinflip.html">Coin Flipper</a></div>
+          <div><span class="app-link-icon">🃏</span><a href="https://decommer.github.io/practiceNetwork/blackjack/blackjack.html">Blackjack</a></div>
+          <div><span class="app-link-icon">🧮</span><a href="https://decommer.github.io/practiceNetwork/mathquiz/mathQuiz.html">Math Quiz</a></div>
+          <div><span class="app-link-icon">🧠</span><a href="https://decommer.github.io/practiceNetwork/match.html">Match Game</a></div>
+          <div><span class="app-link-icon">🤔</span><a href="https://decommer.github.io/practiceNetwork/guess.html">Guessing Game</a></div>
+          <div><span class="app-link-icon">🔐</span><a href="https://decommer.github.io/practiceNetwork/improvedguessing.html">Guessing Game 2</a></div>
+        </section>
+      </div>
     </div>
+    <footer>
+      <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+    </footer>
 
-    </body>
+    <script data-name="BMC-Widget" 
+      data-cfasync="false" 
+      data-id="JosephDeCommer" 
+      data-description="Support me on Buy me a coffee!" 
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+      data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18"
+      data-message="If you like these apps you can show your appreciation with a coffee!">
+    </script>
+
+    <script> 
+      const year = document.querySelectorAll('.year');
+      year.forEach(year => {
+        yearText = new Date().getFullYear();
+        year.textContent = yearText;
+      })
+
+      const randNum = document.querySelectorAll(".randNum");
+      setInterval(() =>{
+        randNum.forEach(randNum => {
+        let num = Math.floor(Math.random() * 90 + 10);
+        randNum.innerHTML = `${num}`;
+      });
+      }, 500)
+
+      const modeBtn = document.querySelector('#mode-btn');
+      modeBtn.addEventListener('click', () => {
+          const theme = document.getElementsByTagName('link')[0]; 
+          if (theme.getAttribute('href') == './css/main.css') { 
+              theme.setAttribute('href', './css/dark.css');
+              modeBtn.innerHTML = '🌕';
+          } else { 
+              theme.setAttribute('href', './css/main.css');
+              modeBtn.innerHTML = '🌑'; 
+          } 
+      });
+
+    </script> 
+  </body>
 </html>
