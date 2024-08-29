@@ -1,13 +1,12 @@
 :root {
-    --backgroundBlue: #007acc;
-    --lightBlue: #05cff7;
-    --darkBlue: #03346E;
+    --bg: #fff;
     --buttonRed: #c1121f;
-    --lighterGreen: #a2faa7;
-    --lightGreen: #06D001;
-    --rightGrad: #ff5900;
-    --btnColor: #ddd;
-    --white: #fff;
+    --text: #007acc;
+    --highlight: #FF6969;
+    --slate: #b6c5e0;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #007acc;
 }
 
 *{
@@ -17,7 +16,8 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: var(--backgroundBlue);
+    background-color: var(--bg);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,11 +31,11 @@ header {
 
 .homeColor {
     font-size: 1.2rem;
-    color: var(--white);
+    color: var(--text);
 }
 
 .homeColor:hover {
-    color: var(--darkBlue);
+    color: var(--highlight);
     transition: ease-in 0.2s;
 }
 
@@ -49,11 +49,14 @@ p {
 }
 
 .main-container {
-    color: var(--white);
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    padding: 25px;
 }
 
 .page-counter {
@@ -65,7 +68,7 @@ p {
 
 .page-counter span {
     color: var(--lighterGreen);
-    border: 1px solid var(--white);
+    border: 1px solid var(--highlight);
     padding: 5px;
 }
 
@@ -76,7 +79,8 @@ p {
 
 button {
     border: none;
-    background-color: var(--btnColor);
+    background-color: var(--slate);
+    color: var(--text);
     cursor: pointer;
 }
 
@@ -116,7 +120,7 @@ button {
 }
 
 .pagination-button:disabled {
-    color: var(--white);
+    color: var(--bg);
     background-color: var(--buttonRed);
 }
 
@@ -125,10 +129,6 @@ table.run-data-table th.id-header {
 }
 
 table.run-data-table {
-    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 0.2);
-    /* background-color: #fff; */
-    border: 1px solid var(--darkBlue);
     margin: 10px 0 10px 0;
     width: 100%;
     text-align: center;
@@ -137,14 +137,14 @@ table.run-data-table {
 }
 
 table.run-data-table th {
-    border: 1px solid var(--darkBlue);
+    border-bottom: 1px solid var(--text);
     color: var(--darkBlue);
     padding: 6px 0px;
     font-size: 1.2rem;
 }
 
 table.run-data-table td{
-    border: 1px solid var(--darkBlue);
+    border-bottom: 1px solid var(--text);
     padding: 6px 0px;
     font-size: 1.2rem;
 }

@@ -1,3 +1,13 @@
+:root {
+    --bg: #fff;
+    --text: #007acc;
+    --highlight: #FF6969;
+    --slate: #b6c5e0;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #007acc;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,9 +20,9 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #007acc;
+    background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
-    color: #09396c;
+    color: #007acc;
 }
 
 header {
@@ -27,22 +37,22 @@ a {
 
 .homeColor {
     font-size: 1.2rem;
-    color: #fff;
+    color: #007acc;
 }
 
 .homeColor:hover {
-    color:#0f4a89;
+    color:#FF6969;
     transition: ease-in 0.2s;
 }
 
 .converter-container {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     margin-top: 50px;
     max-width: 550px;
     width: fit-content;
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 16px;
-    border-radius: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -66,7 +76,7 @@ h2 span {
     width: 130px;
     left: 0;
     bottom: -6px;
-    background-color: #21396d;
+    background-color: #007acc;
 }
 
 .converter-container .content {
@@ -82,7 +92,7 @@ h2 span {
     padding: 10px 16px;
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid #09396c;
-    color: #fff;
+    color: #007acc;
     font-family: inherit;
     font-size: 1.5rem;
     outline: none;
@@ -119,7 +129,7 @@ h2 span {
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     font-size: 3rem;
-    color: #fff;
+    color: #007acc;
     text-align: center;
     padding-block: 20px;
 }

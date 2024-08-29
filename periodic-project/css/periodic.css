@@ -11,6 +11,14 @@
     --lanthanides: #71cccf;
     --actinides: #f1b795;
     --unknown: #c7d0d1;
+
+    --bg: #fff;
+    --text: #007acc;
+    --highlight: #FF6969;
+    --slate: #b6c5e0;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #007acc;
 }
 
 * {
@@ -22,7 +30,7 @@
 body {
     /* height: 100vh; */
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #007ACC;
+    background-color: var(--bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,11 +48,11 @@ main {
 }
 
 h1 {
-    color: #fff;
+    color: var(--text);
 }
 
 p {
-    color: #fff;
+    color: var(--text);
 }
 
 a {
@@ -62,12 +70,12 @@ header {
 
 .homeColor {
     font-size: 1.2rem;
-    color: #fff;
+    color: var(--text);
     margin-right: 15px;
 }
 
 .homeColor:hover {
-    color:#0f4a89;
+    color: var(--highlight);
     transition: ease-in 0.2s;
 }
 
@@ -293,7 +301,7 @@ header {
 /************************************************ Key and colors */
 
 .key-area {
-    border: 1px solid #ffffff;
+    border: 1px solid var(--slate);
     position: absolute;
     display: flex;
     /* flex-wrap: wrap; */
