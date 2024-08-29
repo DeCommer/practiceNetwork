@@ -48,6 +48,10 @@ p {
     margin: 4px;
 }
 
+.description {
+    color: var(--highlight);
+}
+
 .main-container {
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
@@ -74,12 +78,13 @@ p {
 
 .page-num-container {
     /* border: 1px solid red; */
-    margin: 5px 0 10px;
+    margin: 15px 0 10px;
 }
 
 button {
     border: none;
-    background-color: var(--slate);
+    background-color: #eee;
+    border: 1px solid var(--slate);
     color: var(--text);
     cursor: pointer;
 }
@@ -129,7 +134,8 @@ table.run-data-table th.id-header {
 }
 
 table.run-data-table {
-    margin: 10px 0 10px 0;
+    border-top: 1px solid var(--text);
+    margin: 25px 0 10px 0;
     width: 100%;
     text-align: center;
     border-collapse: collapse;
@@ -138,8 +144,8 @@ table.run-data-table {
 
 table.run-data-table th {
     border-bottom: 1px solid var(--text);
-    color: var(--darkBlue);
-    padding: 6px 0px;
+    color: var(--highlight);
+    padding: 10px 0px;
     font-size: 1.2rem;
 }
 
