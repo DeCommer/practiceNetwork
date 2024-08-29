@@ -73,7 +73,7 @@ calc_btn.addEventListener('click', () => {
             indicator_4.textContent = '';
         } else if(bmi > 24.9 && bmi < 29.9) {
             displayResults();
-            resultsTxt.style.color = '#fffb06'
+            resultsTxt.style.color = '#bfbc13'
             message.innerHTML = `You are <span class='overweight-color'>overweight</span>`;
             indicator_1.textContent = '';
             indicator_2.textContent = '';
@@ -122,7 +122,7 @@ calc_btn.addEventListener('click', () => {
             indicator_4.textContent = '';
         } else if(metricBmi > 24.9 && metricBmi < 29.9) {
             displayResults();
-            resultsTxt.style.color = '#fffb06'
+            resultsTxt.style.color = '#bfbc13'
             message.innerHTML = `You are <span class='overweight-color'>overweight</span>`;
             indicator_1.textContent = '';
             indicator_2.textContent = '';
