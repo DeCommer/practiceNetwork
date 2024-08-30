@@ -24,9 +24,6 @@ body {
 }
 
 .main-container {
-    border: 2px solid;
-    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,7 +161,10 @@ input::placeholder{
 
 #calculator {
     /* box-shadow: 0 8px 50px -8px rgba(0, 0, 0, 0.3); */
-    border: 1px solid #0f4a89;
+    /* border: 1px solid #0f4a89; */
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     width: 800px;
     height: 600px;
 }
