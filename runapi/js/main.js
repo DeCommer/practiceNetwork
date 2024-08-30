@@ -35,14 +35,14 @@ const displayRuns = (data) => {
             tr.innerHTML =
             `<tbody>
                 <td data-label="#">${item.id}</td>
-                <td data-label="Weekday">${item.day}</td>
+                <td data-label="Weekday">${item.weekday}</td>
                 <td data-label="Month">${item.month}</td>
                 <td data-label="Day">${item.dom}</td>
                 <td data-label="Year">${item.year}</td>
                 <td data-label="Avg Pace">${item.avg_pace}</td>
                 <td data-label="Distance">${item.distance}</td>
                 <td data-label="Duration">${item.duration}</td>
-                <td data-label="Calories">${item.est_calories}</td>
+                <td data-label="Calories">${item.calories}</td>
             </tbody>`;
             wrapper.appendChild(tr);
         }
