@@ -30,7 +30,7 @@ let simHtArray = [];
 tossBtn.addEventListener('click', () => { 
 	coinFlipper9000(); 
 	tossBtn.disabled = true; 
-    flipCountTxt.innerHTML = `<span>${flips}</span><br>Flips`;
+    flipCountTxt.innerHTML = `<span class="span">${flips}</span><br>Flips`;
 });
 
 resetBtn.addEventListener('click', () => {
@@ -42,12 +42,12 @@ resetBtn.addEventListener('click', () => {
     htArray = [];
     arrayText.textContent  = '';
     coinIcon.innerHTML = `<img src="./assets/img/heads.png" alt="Heads">`;
-    result.innerHTML = `<span>H</span><br>Result`;
-    flipCountTxt.innerHTML = `<span>0</span><br>Flips`;
-    headsCountTxt.innerHTML = `<span>0</span><br>Heads`;
-    tailsCountTxt.innerHTML = `<span>0</span><br>Tails`;
-    headsPercentTxt.innerHTML = `<span>0.00%</span><br>Heads`;
-    tailsPercentTxt.innerHTML = `<span>0.00%</span><br>Tails`;
+    result.innerHTML = `<span class="span">H</span><br>Result`;
+    flipCountTxt.innerHTML = `<span class="span">0</span><br>Flips`;
+    headsCountTxt.innerHTML = `<span class="span">0</span><br>Heads`;
+    tailsCountTxt.innerHTML = `<span class="span">0</span><br>Tails`;
+    headsPercentTxt.innerHTML = `<span class="span">0.00%</span><br>Heads`;
+    tailsPercentTxt.innerHTML = `<span class="span">0.00%</span><br>Tails`;
 });
 
 const coinFlipper9000 = () => { 
@@ -60,17 +60,17 @@ const coinFlipper9000 = () => {
 		coinIcon.innerHTML = `<img src="${imageUrl}" alt="${faceCoin}">`; 
 		coinIcon.classList.remove('flip'); 
 		setTimeout(() => { 
-			result.innerHTML = `<span>${faceCoin}</span><br>Result`; 
+			result.innerHTML = `<span class="span">${faceCoin}</span><br>Result`; 
 			tossBtn.disabled = false; 
         if(faceCoin === 'H') {
             heads +=1;
-            headsCountTxt.innerHTML = `<span>${heads}</span><br>Heads`;
+            headsCountTxt.innerHTML = `<span class="span">${heads}</span><br>Heads`;
             percentCalc();
             htArray.push(' H');
             arrayText.textContent  = htArray;
         }else if(faceCoin === 'T'){
             tails +=1;
-            tailsCountTxt.innerHTML = `<span>${tails}</span><br>Tails`
+            tailsCountTxt.innerHTML = `<span class="span">${tails}</span><br>Tails`
             percentCalc();
             htArray.push(' T');
             arrayText.textContent  = htArray;
@@ -82,8 +82,8 @@ const coinFlipper9000 = () => {
 const percentCalc = () => {
     headsPercent = (heads / flips) * 100;
     tailsPercent = (tails / flips) * 100;
-    headsPercentTxt.innerHTML = `<span>${headsPercent.toFixed(2)}%</span><br>Heads`;
-    tailsPercentTxt.innerHTML = `<span>${tailsPercent.toFixed(2)}%</span><br>Tails`;
+    headsPercentTxt.innerHTML = `<span class="span">${headsPercent.toFixed(2)}%</span><br>Heads`;
+    tailsPercentTxt.innerHTML = `<span class="span">${tailsPercent.toFixed(2)}%</span><br>Tails`;
 };
 
 const simulateNFlips = () => {
@@ -110,11 +110,11 @@ const simulateNFlips = () => {
     var tailsPercentage = (tailsCount / numberOfFlipsIn.value * 100).toFixed(2);
     // console.log(`Number of flips: ${numberOfFlipsIn.value}.`)
     // console.log(`Heads Percentage: ${headsPercentage}%, Tails Percentage: ${tailsPercentage}%`)
-    simFlipCountTxt.innerHTML = `<span>${numberOfFlipsIn.value}</span><br>Flips`
-    simHeadsCountTxt.innerHTML = `<span>${headsCount}</span><br>Heads`
-    simTailsCountTxt.innerHTML = `<span>${tailsCount}</span><br>Tails`
-    simHeadsPercentTxt.innerHTML = `<span>${headsPercentage}%</span><br>Heads`;
-    simTailsPercentTxt.innerHTML = `<span>${tailsPercentage}%</span><br>Tails`;
+    simFlipCountTxt.innerHTML = `<span class="span">${numberOfFlipsIn.value}</span><br>Flips`
+    simHeadsCountTxt.innerHTML = `<span class="span">${headsCount}</span><br>Heads`
+    simTailsCountTxt.innerHTML = `<span class="span">${tailsCount}</span><br>Tails`
+    simHeadsPercentTxt.innerHTML = `<span class="span">${headsPercentage}%</span><br>Heads`;
+    simTailsPercentTxt.innerHTML = `<span class="span">${tailsPercentage}%</span><br>Tails`;
     simArrayText.textContent = simHtArray;
 };
 
@@ -133,11 +133,11 @@ resetSimBtn.addEventListener('click', () => {
     simHtArray = [];
     simMessage.textContent = ('')
     numberOfFlipsIn.value = ''
-    simFlipCountTxt.innerHTML = `<span>0</span><br>Flips`
-    simHeadsCountTxt.innerHTML = `<span>0</span><br>Heads`
-    simTailsCountTxt.innerHTML = `<span>0</span><br>Tails`
-    simHeadsPercentTxt.innerHTML = `<span>0.00%</span><br>Heads`;
-    simTailsPercentTxt.innerHTML = `<span>0.00%</span><br>Tails`;
+    simFlipCountTxt.innerHTML = `<span class="span">0</span><br>Flips`
+    simHeadsCountTxt.innerHTML = `<span class="span">0</span><br>Heads`
+    simTailsCountTxt.innerHTML = `<span class="span">0</span><br>Tails`
+    simHeadsPercentTxt.innerHTML = `<span class="span">0.00%</span><br>Heads`;
+    simTailsPercentTxt.innerHTML = `<span class="span">0.00%</span><br>Tails`;
     simArrayText.textContent = '';
 });
 

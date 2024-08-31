@@ -4,20 +4,41 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link rel="stylesheet" href="./css/coinflip.css"/>
-		<link rel="stylesheet" href="./css/showhide.css"/>
-		<link rel="stylesheet" href="./css/logo.css"/>
+		<link rel="stylesheet" href="./css/main.css"/>
         <script src="./js/coinflip.js" defer></script>
-        <script src="./js/showhide.js" defer></script>
+        <script src="./js/scripts.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-		<title>Coin Toss</title> 
+		<title>Coin Filp Lab</title> 
 	</head> 
 	<body> 
         <header>
-            <a href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-        </header>
-        <div class="outer-container">
-            
+            <nav class="nav-bar">
+              <div class="header-links">
+                <div class="left-header-links">
+                  <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+                  <a href="https://www.decommer.com/">Home</a>
+              </div>
+                <!-- <button id="mode-btn" class="theme-btn">🌑</button> -->
+              </div>
+            </nav>
+              <div class="hero">
+                <div class="elem-logo">
+                  <p class="logo-upper-left randNum">00</p>
+                  <h1 class="logo-center">D<span class="span">e</span></h1>
+                  <p class="logo-bottom-center-name">DeCommer</p>
+                  <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+                </div>
+                <div class="title-container">
+                  <h2>Joseph DeCommer</h2>
+                  <p class="description-text">Coin Filp Lab</p>
+                </div>
+              </div>
+            </header>
+        <div class="outer-container"> 
+            <div class="title-container app-hidden">
+                <h2 class="title">DeCommer.com</h2>
+                <p class="description-text">Coin Filp Lab</p>
+            </div>        
 		<div class="main-container"> 
             <h1 class="title margin-top">Coin Flipper</h1>
             <h2 class="title">9000</h2>
@@ -32,14 +53,14 @@
                 <p id="array-txt"></p>
             </div>
             <div class="results-area">
-                <p id="result"><span>H</span><br>Result</p>
-                <p id="flip-count"><span>0</span><br>Flips</p>
-                <p id="heads-count"><span>0</span><br>Heads</p>
-                <p id="tails-count"><span>0</span><br>Tails</p>
+                <p id="result"><span class="span">H</span><br>Result</p>
+                <p id="flip-count"><span class="span">0</span><br>Flips</p>
+                <p id="heads-count"><span class="span">0</span><br>Heads</p>
+                <p id="tails-count"><span class="span">0</span><br>Tails</p>
             </div>
             <div class="percent-area">
-                <p id="heads-percent"><span>0.00%</span><br>Heads</p>
-                <p id="tails-percent"><span>0.00%</span><br>Tails</p>
+                <p id="heads-percent"><span class="span">0.00%</span><br>Heads</p>
+                <p id="tails-percent"><span class="span">0.00%</span><br>Tails</p>
             </div>
 		</div> 
         <div class="right-area">
@@ -58,13 +79,13 @@
                     <p id="sim-array-txt"></p>
                 </div>
                 <div class="results-area">
-                    <p id="sim-flip-count"><span>0</span><br>Flips</p>
-                    <p id="sim-heads-count"><span>0</span><br>Heads</p>
-                    <p id="sim-tails-count"><span>0</span><br>Tails</p>
+                    <p id="sim-flip-count"><span class="span">0</span><br>Flips</p>
+                    <p id="sim-heads-count"><span class="span"n>0</span><br>Heads</p>
+                    <p id="sim-tails-count"><span class="span">0</span><br>Tails</p>
                 </div>
                 <div class="percent-area">
-                    <p id="sim-heads-percent"><span>0.00%</span><br>Heads</p>
-                    <p id="sim-tails-percent"><span>0.00%</span><br>Tails</p>
+                    <p id="sim-heads-percent"><span class="span">0.00%</span><br>Heads</p>
+                    <p id="sim-tails-percent"><span class="span">0.00%</span><br>Tails</p>
                 </div>
             </div>
             <div class="stat-results">
@@ -88,167 +109,20 @@
                         <canvas class="hidden graph" id="myChart" width="400" height="200"></canvas>
                     </div>
                 </div>
-                <button class="jsBtn" >See the Javascript.</button>
             </div>
         </div>
-    </div>
 
-        <div class="aboutModal hidden">
-            <button class="closeAboutModal">&times</button>
-            <h1>Coin Flipper</h1>
-            <p>View stats on your coin flips, including heads vs. tails counts and streaks</p>
-            <p>I made this with a combination of HTML, CSS and JS. 
-            You can see the JavaScript by clicking the button below.
-            </p>
-        </div><div class="aboutOverlay hidden"></div>
-
-        <div class="code">
-
-            <p><pre><code class="jsHidden hidden">
-                <button class="closeJsModal">&times</button>
-const coinIcon = document.getElementById('coin');
-const tossBtn = document.getElementById('flip-button');
-const resetBtn = document.getElementById('reset-button');
-const result = document.getElementById('result');
-const flipCountTxt = document.getElementById('flip-count');
-const headsCountTxt = document.getElementById('heads-count');
-const tailsCountTxt = document.getElementById('tails-count');
-const simFlipCountTxt = document.getElementById('sim-flip-count');
-const simHeadsCountTxt = document.getElementById('sim-heads-count');
-const simTailsCountTxt = document.getElementById('sim-tails-count');
-const headsPercentTxt = document.getElementById('heads-percent');
-const tailsPercentTxt = document.getElementById('tails-percent');
-const simHeadsPercentTxt = document.getElementById('sim-heads-percent');
-const simTailsPercentTxt = document.getElementById('sim-tails-percent');
-const arrayText = document.getElementById('array-txt');
-const simArrayText = document.getElementById('sim-array-txt');
-const numberOfFlipsIn = document.getElementById('number-of-flips-in');
-const flipsSimBtn = document.getElementById('flip-sim-btn');
-const resetSimBtn = document.getElementById('reset-sim-btn');
-const simMessage = document.getElementById('message');
-
-let flips = 0;
-let heads = 0;
-let tails = 0;
-let headsPercent = 0;
-let tailsPercent = 0;
-let htArray = [];
-let simHtArray = [];
-
-tossBtn.addEventListener('click', () => { 
-    coinFlipper9000(); 
-    tossBtn.disabled = true; 
-    flipCountTxt.innerHTML = `HTML Content`;
-});
-
-resetBtn.addEventListener('click', () => {
-    flips = 0;
-    heads = 0;
-    tails = 0;
-    headsPercent = 0;
-    tailsPercent = 0;
-    htArray = [];
-    arrayText.textContent  = '';
-    HTML Content
-});
-
-const coinFlipper9000 = () => { 
-    const randomVal = Math.random(); 
-    const faceCoin = randomVal < 0.5 ? 'H' : 'T'; 
-    const imageUrl = faceCoin === 'H' ? './assets/img/heads.png' : './assets/img/tails.png';
-    flips += 1;
-    coinIcon.classList.add('flip'); 
-    setTimeout(() => { 
-        coinIcon.innerHTML = HTML Content; 
-        coinIcon.classList.remove('flip'); 
-        setTimeout(() => { 
-            result.innerHTML = `HTML Content`; 
-            tossBtn.disabled = false; 
-        if(faceCoin === 'H') {
-            heads +=1;
-            headsCountTxt.innerHTML = `HTML Content`;
-            percentCalc();
-            htArray.push(' H');
-            arrayText.textContent  = htArray;
-        }else if(faceCoin === 'T'){
-            tails +=1;
-            tailsCountTxt.innerHTML = `HTML Content`
-            percentCalc();
-            htArray.push(' T');
-            arrayText.textContent  = htArray;
-        }
-        }, 100); 
-    }, 400);
-};
-
-const percentCalc = () => {
-    headsPercent = (heads / flips) * 100;
-    tailsPercent = (tails / flips) * 100;
-    headsPercentTxt.innerHTML = `HTML Content`;
-    tailsPercentTxt.innerHTML = `HTML Content`;
-};
-
-const simulateNFlips = () => {
-    simHtArray = [];
-    var headsCount = 0;
-    var tailsCount = 0;
-    for (let i = 0; i < numberOfFlipsIn.value; i++) {
-        let outcome = Math.random() < 0.5 ? 'Heads' : 'Tails';
-        if (outcome === 'Heads') {
-            headsCount++;
-            simHtArray.push(' H');
-        } else {
-            tailsCount++;
-            simHtArray.push(' T');
-        }
-    }
-    if(numberOfFlipsIn.value >= 181) {
-        simMessage.textContent = ('🔻Scroll to see full results🔻');
-    }else {
-        simMessage.textContent = ('');
-    };
-    console.log(simHtArray);
-    var headsPercentage = (headsCount / numberOfFlipsIn.value * 100).toFixed(2);
-    var tailsPercentage = (tailsCount / numberOfFlipsIn.value * 100).toFixed(2);
-    // console.log(`Number of flips: ${numberOfFlipsIn.value}.`)
-    // console.log(`Heads Percentage: ${headsPercentage}%, Tails Percentage: ${tailsPercentage}%`)
-    simFlipCountTxt.innerHTML = `HTML Content`
-    simHeadsCountTxt.innerHTML = `HTML Content`
-    simTailsCountTxt.innerHTML = `HTML Content`
-    simHeadsPercentTxt.innerHTML = `HTML Content`;
-    simTailsPercentTxt.innerHTML = `HTML Content`;
-    simArrayText.textContent = simHtArray;
-};
-
-flipsSimBtn.addEventListener('click', () => {
-    if(numberOfFlipsIn.value === '') {
-        simMessage.textContent = ('Enter a value');
-    } else {
-        simulateNFlips();
-    }
-});
-
-resetSimBtn.addEventListener('click', () => {
-    simHtArray = [];
-    simMessage.textContent = ('')
-    numberOfFlipsIn.value = ''
-    HTML Content
-    simArrayText.textContent = '';
-});
-        </code></pre></p>
-</div>
-        
-        <div class="elem-logo">
-            <div class="logo-upper-left">
-                <p>45</p>
-            </div>
-            <div class="logo-center">
-                <h1>D<span>e</span></h1><br>
-                <p>DeCommer</p>
-            </div>
-            <div class="logo-bottom-center">
-                <p>19.79</p>
-            </div>
-        </div>
+        <footer>
+            <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+        </footer>
+          
+    <script data-name="BMC-Widget" 
+        data-cfasync="false" 
+        data-id="JosephDeCommer" 
+        data-description="Support me on Buy me a coffee!" 
+        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+        data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18"
+        data-message="If you like these apps you can show your appreciation with a coffee!">
+    </script>
 	</body> 
 </html> 

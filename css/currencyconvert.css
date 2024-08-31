@@ -8,48 +8,15 @@
     --rightGrad: #007acc;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #007acc;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-a {
-    margin: 15px;
-    text-decoration: none;
-}
-
-.homeColor {
-    font-size: 1.2rem;
-    color: #007acc;
-}
-
-.homeColor:hover {
-    color:#FF6969;
-    transition: ease-in 0.2s;
+.app-hidden {
+    display: none;
 }
 
 .converter-container {
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    margin-top: 50px;
+    margin-top: 0px;
     max-width: 550px;
     width: fit-content;
     padding: 16px;
@@ -57,8 +24,7 @@ a {
 }
 
 .converter-container h2 {
-    margin: 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 30px;
     font-weight: lighter;
     position: relative;
@@ -67,6 +33,10 @@ a {
 h2 span {
     margin-left: 40px;
     font-size: 2rem;
+}
+
+.content .input-amount {
+    width: 90%;
 }
 
 .converter-container h2::after {
@@ -138,4 +108,26 @@ h2 span {
     font-size: 1.5rem;
     text-transform: uppercase;
     color: #09396c;
+}
+
+@media(max-width: 900px) {
+
+    h2 span {
+        margin-left: 4px;
+        font-size: 1.5rem;
+    }
+
+    .converter-container h2::after {
+        display: none;
+    }
+
+    .app-hidden {
+        display: block;
+    }
+    .hero {
+        display: none !important;
+    }
+    .title-container {
+        color: var(--text);
+    }
 }

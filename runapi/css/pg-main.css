@@ -9,43 +9,8 @@
     --rightGrad: #007acc;
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-}
-
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-header {
-    text-align: center;
-}
-
-.homeColor {
-    font-size: 1.2rem;
-    color: var(--text);
-}
-
-.homeColor:hover {
-    color: var(--highlight);
-    transition: ease-in 0.2s;
-}
-
-a {
-    text-decoration: none;
-    margin: 15px;
-}
-
-p {
-    margin: 4px;
+.app-hidden {
+    display: none;
 }
 
 .description {
@@ -56,20 +21,19 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
-    padding: 25px;
 }
 
 .page-counter {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .page-counter span {
     color: var(--lighterGreen);
     border: 1px solid var(--highlight);
+    margin: 10px;
     padding: 5px;
 }
 
@@ -132,6 +96,7 @@ button {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     /* padding-bottom: 15px ; */
     margin: 15px 0;
+    color: var(--text);
 }
 
 table.run-data-table th.id-header {
@@ -160,7 +125,17 @@ table.run-data-table td{
     font-size: 1.2rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+
+    .app-hidden {
+        display: block;
+    }
+    .hero {
+        display: none !important;
+    }
+    .title-container {
+        color: var(--text);
+    }
 
     .pagination-button {
         display: none;

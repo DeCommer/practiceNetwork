@@ -5,22 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/passgen.css">
-    <link rel="stylesheet" href="./css/logo.css">
-    <link rel="stylesheet" href="./css/showhide.css">
+    <link rel="stylesheet" href="./css/main.css">
     <script src="./js/passgen.js" defer></script>
-    <script src="./js/showhide.js" defer></script>
+    <script src="./js/scripts.js" defer></script>
     <title>Password Generator 9000</title>
 </head>
 <body>
-    <div class="main-container">
-        <header>
-            <a class="links" href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-            <h1>Password Generator</h1>
+    <header>
+        <nav class="nav-bar">
+          <div class="header-links">
+            <div class="left-header-links">
+              <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+              <a href="https://www.decommer.com/">Home</a>
+          </div>
+            <!-- <button id="mode-btn" class="theme-btn">🌑</button> -->
+          </div>
+        </nav>
+          <div class="hero">
+            <div class="elem-logo">
+              <p class="logo-upper-left randNum">00</p>
+              <h1 class="logo-center">D<span>e</span></h1>
+              <p class="logo-bottom-center-name">DeCommer</p>
+              <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+            </div>
+            <div class="title-container">
+              <h2>Joseph DeCommer</h2>
+              <p class="description-text">Password Generator</p>
+            </div>
+          </div>
+        </header>
+    <div class="apps-container">
+        <div class="title-container app-hidden">
+            <h2 class="title">DeCommer.com</h2>
+            <p class="description-text">Odd Even Calculator</p>
+        </div>
+
+        <div class="input-area">
             <p>Up to how many characters?</p>
             <p>Limit 50</p>
-        </header>
-        <div class="input-area">
             <input id="input" type="number" placeholder="Number of characters" autocomplete="off">
         </div>
         <div class="progress-bar-container">
@@ -32,90 +54,22 @@
             <button id="clr_btn" class="btn">Clear</button>
         </div>
         <div class="results-area" id="result">
-            <h2 id="result-txt">0</h2>
+            <h3 id="result-txt">0</h3>
         </div>
         <button id="copy-btn" class="hide">Copy</button>
         <p id="message"></p>
     </div>
-    <div class="aboutModal hidden">
-        <button class="closeAboutModal">&times</button>
-        <h1>Password Generator</h1>
-        <p>This uses an array of all the alhpabet, number and special
-        characters and combines them in a random order to give a unique
-        password based on the number of characters entered.
-        </p><p>
-        I made this with a combination of HTML, CSS and JS. 
-        Check out the JavaScript to see how it works by clicking the button below.
-        </p>
-    </div><div class="aboutOverlay hidden"></div>
-
-    <div class="code">
-        <button class="jsBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden hidden">
-            <button class="closeJsModal">&times</button>
-const enterBtn = document.getElementById('enter_btn');
-
-enterBtn.addEventListener('click', () => {
-    const chars = parseFloat(document.getElementById('input').value);
-    const result = document.getElementById('result-txt');   
-
-
-    if(chars > 50) {
-        result.textContent = `Enter number below 50 characters.`
-    }else if(chars) {
-        const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 
-        'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
-        'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X','Y', 'Z',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8' ,'9',
-        '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', '|', '\\', ':',
-        ';', '"', "'", '<', '>', ',', '.', '?', '/'];
-
-        function generateRandomPassword(n_letters) {
-            let final_pass = [];
-            for (let ch = 1; ch <= n_letters; ch++) {
-            final_pass.push(alpha[Math.floor(Math.random() * alpha.length)]);
-            }
-            // JavaScript arrays have a built-in method to shuffle
-            final_pass.sort(() => Math.random() - 0.5);
-            let final_rand_password = final_pass.join('');
-            return final_rand_password;
-        }
-        result.innerHTML = `&lt;h2 class="result-txt">${generateRandomPassword(chars)}&lt;/h2>`;
-    } 
-    else {
-        result.innerHTML = '&lt;h2>Enter a number&lt;/h2&gt;';
-    }
-});
-
-copy.addEventListener('click', () => {
-    let copyText = document.getElementById("result-txt").textContent;
-    let message = document.getElementById('message');
-  
-    navigator.clipboard.writeText(copyText)
-      .then(function() {
-        message.textContent = `✅ Password copied`
-        setTimeout(() =>{
-            message.textContent = '';
-        }, 1200);
-      })
-      .catch(function(error) {
-        console.log("Failed to copy text: " + error);
-      });
-  });
-        </code></pre></p>
-    </div>
-
-    <div class="elem-logo">
-        <div class="logo-upper-left">
-            <p>45</p>
-        </div>
-        <div class="logo-center">
-            <h1>D<span>e</span></h1><br>
-            <p>DeCommer</p>
-        </div>
-        <div class="logo-bottom-center">
-            <p>19.79</p>
-        </div>
-      </div>
+    <footer>
+        <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+    </footer>
+      
+<script data-name="BMC-Widget" 
+    data-cfasync="false" 
+    data-id="JosephDeCommer" 
+    data-description="Support me on Buy me a coffee!" 
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+    data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18"
+    data-message="If you like these apps you can show your appreciation with a coffee!">
+</script>
 </body>
 </html>

@@ -3,22 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/showhide.css" />
     <link rel="stylesheet" href="./css/improvedGuessing.css" />
-    <link rel="stylesheet" href="./css/logo.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/improvedGuessing.js" defer></script>
-    <script src="./js/showhide.js" defer></script>
+    <script src="./js/scripts.js" defer></script>
     <title>Guess the Secret Number</title>
 </head>
 <body>
-    <div class="converter-container">
-        <header>
-            <a class="links" href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
+    <header>
+        <nav class="nav-bar">
+          <div class="header-links">
+            <div class="left-header-links">
+              <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+              <a href="https://www.decommer.com/">Home</a>
+          </div>
+            <!-- <button id="mode-btn" class="theme-btn">🌑</button> -->
+          </div>
+        </nav>
+          <div class="hero">
+            <div class="elem-logo">
+              <p class="logo-upper-left randNum">00</p>
+              <h1 class="logo-center">D<span>e</span></h1>
+              <p class="logo-bottom-center-name">DeCommer</p>
+              <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+            </div>
+            <div class="title-container">
+              <h2>Joseph DeCommer</h2>
+              <p class="description-text">Odd Even Calculator</p>
+            </div>
+          </div>
+        </header>
+    <div class="apps-container">
+        <div class="title-container app-hidden">
+            <h2 class="title">DeCommer.com</h2>
+            <p class="description-text">Odd Even Calculator</p>
+        </div>
             <h1>Guess the Secret Number</h1>
             <div class="number">🔒</div>
             <p class="between">( Between 1 and 100 )</p>
-        </header>
         <section class="top">
             <button class="btn resetbtn">Reset</button>
             <input type="number" class="guess" />
@@ -31,86 +53,17 @@
             <p class="label-highscore">Highscore: <span class="highscore">0</span></p>
         </section>
     </div>
-    <div class="aboutModal hidden">
-        <button class="closeAboutModal">&times</button>
-        <h1>Improved Guessing Game</h1>
-        <p>Visually improved and with added features like keeping a score
-            and letting user know remaining guesses.
-        </p><p>Check out the JavaScript below.</p>
-    </div><div class="aboutOverlay hidden"></div>
-
-    <div class="code">
-        <button class="jsBtn">See the Javascript.</button>
-        <p><pre><code class="jsHidden hidden">
-            <button class="closeJsModal">&times</button>
-let secretNumber = Math.trunc(Math.random() * 100) + 1;
-let guesses = 20;
-let highscore = 0;
-
-const messageDisp = function(message) {
-    document.querySelector('.message').textContent = message;
-}
-
-const clearTxt = function() {
-    document.querySelector('.guess').value = '';
-}
-
-const prevGuessDisplay = function(prevGuess) {
-    document.querySelector('.prevGuess').textContent = prevGuess
-};
-
-document.querySelector('.guessBtn').addEventListener('click', function(){
-    const guess = Number(document.querySelector('.guess').value);
-    clearTxt();
-    if(!guess) {
-            messageDisp("🚫 You must enter a number. 🚫");
-            
-    }else if (guess === secretNumber) {
-        messageDisp("🚀 You got it! 🍪");
-        document.querySelector('.number').textContent = "🔓";
-        if (guesses > highscore) {
-            highscore = guesses;
-            document.querySelector('.highscore').textContent = highscore;
-        };
-    }else if(guess !== secretNumber) { //replaces below
-        guess > secretNumber ? messageDisp("🏔️ Your guess is too high ⛰️") :
-        messageDisp("🏚️ Your guess is too low 🏚️");
-        guesses--;
-        document.querySelector('.score').textContent = guesses;
-        prevGuessDisplay(`Your previous guess was: ${guess}`);
-        };
-    if (guesses < 1) {
-        messageDisp("😫 You lose! 🤢");
-        document.querySelector('.score').textContent = 0;
-        document.querySelector('.number').textContent = "🪦";
-        };
-});
-    
-document.querySelector('.resetbtn').addEventListener('click', function() {
-    guesses = 20;
-    secretNumber = Math.trunc(Math.random() * 20) + 1;
-    console.log(secretNumber);
-    messageDisp("🤨 Enter your guess! 😏");
-    document.querySelector('.score').textContent = guesses;
-    document.querySelector('.number').textContent = '🔒';
-    clearTxt();
-    document.querySelector('body').style.backgroundColor = "#669bbc";
-    prevGuessDisplay(``);
-});
-
-        </code></pre></p>
-    </div>
-    <div class="elem-logo">
-        <div class="logo-upper-left">
-            <p>45</p>
-        </div>
-        <div class="logo-center">
-            <h1>D<span>e</span></h1><br>
-            <p>DeCommer</p>
-        </div>
-        <div class="logo-bottom-center">
-            <p>19.79</p>
-        </div>
-      </div>
+    <footer>
+        <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+    </footer>
+      
+<script data-name="BMC-Widget" 
+    data-cfasync="false" 
+    data-id="JosephDeCommer" 
+    data-description="Support me on Buy me a coffee!" 
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+    data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18"
+    data-message="If you like these apps you can show your appreciation with a coffee!">
+</script>
 </body>
 </html>

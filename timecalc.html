@@ -5,22 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Calculator</title>
     <link rel="stylesheet" href="./css/timecalc.css">
-    <link rel="stylesheet" href="./css/logo.css">
-    <link rel="stylesheet" href="./css/showhide.css">
+    <link rel="stylesheet" href="./css/main.css">
     <script src="./js/timecalc.js" defer></script>
-    <script src="./js/showhide.js" defer></script>
+    <script src="./js/scripts.js" defer></script>
 </head>
 <body>
-    <div class="main-container" id="add-sub-container">
-        <header>
-            <a class="links" href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a><br>
-            <button class="btn-sm active" id="diff-switch-btn" type="button">Difference Calculator</button>
-            <h1>[ + - ] Time Calculator</h1>
-        </header>
+    <header>
+    <nav class="nav-bar">
+      <div class="header-links">
+        <div class="left-header-links">
+          <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+          <a href="https://www.decommer.com">Home</a>
+      </div>
+        <!-- <button id="mode-btn" class="theme-btn">🌑</button> -->
+      </div>
+    </nav>
+      <div class="hero">
+        <div class="elem-logo">
+          <p class="logo-upper-left randNum">00</p>
+          <h1 class="logo-center">D<span>e</span></h1>
+          <p class="logo-bottom-center-name">DeCommer</p>
+          <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+        </div>
+        <div class="title-container">
+          <h2 class="title">Joseph DeCommer</h2>
+          <p class="description-text">Time Calculator</p>
+        </div>
+      </div>
+    </header>
+    <div class="apps-container" id="add-sub-container">
+        <div class="title-container app-hidden">
+            <h2 class="title">DeCommer.com</h2>
+            <p class="description-text">Time Calculator</p>
+        </div>
+        <button class="sm-btn active" id="diff-switch-btn" type="button">Difference Mode</button>
+        <h1>[+ -] Calculator</h1>
         <div class="input-area">
+            <label for="add-time1">Start Time:</label>
             <div class="hour-1">
-                <label for="add-time1">Start Time:</label>
                 <input type="number" id="hours1-add" min="1" max="12" placeholder="HH"><h2>:</h2>
                 <input type="number" id="minutes1-add" min="0" max="59" placeholder="MM">
                 <select class="ampm" id="ampm3">
@@ -33,9 +55,9 @@
                 <input type="number" id="add-minutes1-add" min="0" max="59" placeholder="MM">
             </div>
             <div class="add-btn-area">
-                <button class="btn-sm" id="add-btn" type="button">Add time</button>
-                <button class="btn-sm" id="sub-btn" type="button">Subtract time</button>
-                <button class="btn-sm" id="as-clear-btn" type="button">Clear</button>
+                <button class="sm-btn btn" id="add-btn" type="button">Add time</button>
+                <button class=" sm-btn btn" id="sub-btn" type="button">Subtract time</button>
+                <button class="sm-btn btn" id="as-clear-btn" type="button">Clear</button>
             </div>
         </div>
         <div class="results-area">
@@ -46,14 +68,14 @@
         </div>
     </div>
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-    <div class="main-container hidden" id="diff-container">
-        <header>
-            <a class="links" href="https://www.decommer.com/"><span class="homeColor">Home</span></a> 
-            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a><br>
-            <button class="btn-sm active" id="addsub-switch-btn" type="button">[ + - ] Time Calculator</button>
+    <div class="apps-container apps-container-hidden" id="diff-container">
+        <div class="title-container app-hidden">
+            <h2 class="title">Joseph DeCommer</h2>
+            <p class="description-text">Time Calculator</p>
+        </div>
+            <button class="sm-btn btn-sm active" id="addsub-switch-btn" type="button">[ + - ] Mode</button>
+            <div class="input-area">
             <h1>Time Difference Calculator</h1>
-        </header>
-        <div class="input-area">
             <div class="hour-1">
                 <label for="time1">Start Time:</label>
                 <input type="number" id="hours1" min="1" max="12" placeholder="HH"><h2>:</h2>
@@ -74,8 +96,8 @@
             </div>
         </div>
         <div class="calc-btn-area">
-            <button class="btn" id="enter-btn" type="button">Enter</button>
-            <button class="btn" id="clear-btn" type="button">Clear</button>
+            <button class="sm-btn btn" id="enter-btn" type="button">Enter</button>
+            <button class="sm-btn btn" id="clear-btn" type="button">Clear</button>
         </div>
         <div class="results-area">
             <p id="message"></p>
@@ -83,261 +105,17 @@
             <p id="total-mins"></p>
         </div>
     </div>
-    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-    <div class="elem-logo">
-        <div class="logo-upper-left">
-            <p>45</p>
-        </div>
-        <div class="logo-center">
-            <h1>D<span>e</span></h1><br>
-            <p>DeCommer</p>
-        </div>
-        <div class="logo-bottom-center">
-            <p>19.79</p>
-        </div>
-    </div>
-    <div class="aboutModal hidden">
-        <button class="closeAboutModal">&times</button>
-        <h1>Time Calculator</h1>
-        <p>This app calculates the difference between the entered start and end time.
-            and shows total elapsed minutes.
-        </p><p>The add and sub time calculator adds and subtracts minutes to an 
-            entered start time.</p>
-        <p>I made this with a combination of HTML, CSS and JS. 
-        You can see the JavaScript by clicking the button below.
-        </p>
-    </div><div class="aboutOverlay hidden"></div>
-    
-    <div class="code">
-        <button class="jsBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden hidden">
-            <button class="closeJsModal">&times</button>
-const enterBtn = document.getElementById('enter-btn');
-const clearBtn = document.getElementById('clear-btn');
-const addBtn = document.getElementById('add-btn');
-const subBtn = document.getElementById('sub-btn');
-const addSubClearBtn = document.getElementById('as-clear-btn');
-
-const diffSwitchBtn = document.getElementById('diff-switch-btn');
-const addSubSwitchBtn = document.getElementById('addsub-switch-btn');
-
-diffSwitchBtn.addEventListener('click', () => {
-    document.getElementById('diff-container').classList.remove('hidden');
-    document.getElementById('add-sub-container').classList.add('hidden');
-});
-
-addSubSwitchBtn.addEventListener('click', () => {
-    document.getElementById('add-sub-container').classList.remove('hidden');
-    document.getElementById('diff-container').classList.add('hidden');
-});
-
-const calculateDifference = () => {
-    let hours1 = parseInt(document.getElementById('hours1').value);
-    let minutes1 = parseInt(document.getElementById('minutes1').value);
-    let ampm1 = document.getElementById('ampm1').value;
-    let hours2 = parseInt(document.getElementById('hours2').value);
-    let minutes2 = parseInt(document.getElementById('minutes2').value);
-    let ampm2 = document.getElementById('ampm2').value;
-
-    if (ampm1 === 'PM' && hours1 !== 12) {
-        hours1 += 12;
-    }
-    if (ampm2 === 'PM' && hours2 !== 12) {
-        hours2 += 12;
-    }
-    if (ampm1 === 'AM' && hours1 === 12) {
-        hours1 = 0;
-    }
-    if (ampm2 === 'AM' && hours2 === 12) {
-        hours2 = 0;
-    }
-    let totalMinutes1 = hours1 * 60 + minutes1;
-    let totalMinutes2 = hours2 * 60 + minutes2;
-    let differenceMinutes = totalMinutes2 - totalMinutes1;
-
-    if (differenceMinutes < 0) {
-        differenceMinutes += 24 * 60;
-    }
-
-    let hoursDiff = Math.floor(differenceMinutes / 60);
-    let minutesDiff = differenceMinutes % 60;
-
-    if(isNaN(hoursDiff) && isNaN(minutesDiff)) {
-        document.getElementById('message').innerHTML = `Please enter a time`;
-        setTimeout(() => {
-            document.getElementById('message').innerHTML = ``;
-        }, 1500);
-    }else if(hoursDiff <= 1 && minutesDiff <= 1) {
-        document.getElementById('message').innerHTML = `The difference is:`;
-        document.getElementById('result').innerHTML = `${hoursDiff} hour and ${minutesDiff} minute`;
-    }else if(hoursDiff <= 1 && minutesDiff >= 2) {
-        document.getElementById('message').innerHTML = `The difference is:`;
-        document.getElementById('result').innerHTML = `${hoursDiff} hour and ${minutesDiff} minutes`;
-    }else if(hoursDiff >= 2 && minutesDiff <= 1) {
-        document.getElementById('message').innerHTML = `The difference is:`;
-        document.getElementById('result').innerHTML = `${hoursDiff} hours and ${minutesDiff} minute`;
-    } else if(hoursDiff >= 2 && minutesDiff >= 2 ) {
-        document.getElementById('message').innerHTML = `The difference is:`;
-        document.getElementById('result').innerHTML = `${hoursDiff} hours and ${minutesDiff} minutes`;
-    }
-    if(isNaN(differenceMinutes)) {
-        document.getElementById('total-mins').innerHTML = ``
-    }else {
-        document.getElementById('total-mins').innerHTML = `Total Minutes: <span>${differenceMinutes}</span>`
-    }
-    return hoursDiff, minutesDiff
-}
-
-enterBtn.addEventListener('click', () => {
-    calculateDifference();
-});
-
-const originalTimeDisplay = () => {
-    let hours = parseInt(document.getElementById('hours1-add').value);
-    let minutes = parseInt(document.getElementById('minutes1-add').value);
-    let originalTimeText = document.getElementById('original-time');
-    originalTimeText.innerHTML = `Previous time entered: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
-    return originalTimeText
-}
-
-clearBtn.addEventListener('click', () => {
-    hours1.value = '';
-    minutes1.value = '';
-    ampm1.value = 'AM'
-    hours2.value = '';
-    minutes2.value = '';
-    ampm2.value = 'AM'
-    document.getElementById('message').innerHTML = ``;
-    document.getElementById('result').innerHTML = ``;
-    document.getElementById('total-mins').innerHTML = ``
-});
-
-const addTime = () => {
-    let hours = parseInt(document.getElementById('hours1-add').value);
-    let minutes = parseInt(document.getElementById('minutes1-add').value);
-    let ampm = document.getElementById('ampm3').value;
-    let minutesAdded = parseInt(document.getElementById('add-minutes1-add').value);
-    let result = document.getElementById('time-after-addition');
-
-    if (ampm === "PM" && hours !== 12) {
-        hours += 12;
-    } else if (ampm === "AM" && hours === 12) {
-        hours = 0;
-    }
-
-    let originalTime = originalTimeDisplay();
-
-    minutes += minutesAdded;
-    
-    hours += Math.floor(minutes / 60);
-    minutes = minutes % 60;
-    
-    hours = hours % 24;
-    
-    newAmpm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours === 0 ? 12 : hours;
-    
-    let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
-
-    if(isNaN(hours) || isNaN(minutes) || isNaN(minutesAdded)) {
-        document.getElementById('add-message').innerHTML = `Please enter a valid time`;
-        setTimeout(() => {
-            document.getElementById('add-message').innerHTML = ``;
-            result.innerHTML = '';
-        }, 1500);
-    }else {
-        originalTime.originalTimeText;
-        document.getElementById('add-message').innerHTML = `The new time is:`;
-        result.innerHTML = newTime;
-    }
-
-    return { hours, minutes, newAmpm };
-}
-
-const subTime = () => {
-    let hours = parseInt(document.getElementById('hours1-add').value);
-    let minutes = parseInt(document.getElementById('minutes1-add').value);
-    let ampm = document.getElementById('ampm3').value;
-    let minutesSubtracted = parseInt(document.getElementById('add-minutes1-add').value);
-    let result = document.getElementById('time-after-addition');
-
-    if (ampm === "PM" && hours !== 12) {
-        hours += 12;
-    } else if (ampm === "AM" && hours === 12) {
-        hours = 0;
-    }
-
-    let originalTime = originalTimeDisplay();
-
-    minutes -= minutesSubtracted;
-    
-    while (minutes < 0) {
-        minutes += 60;
-        hours -= 1;
-    }
-
-    if (hours < 0) {
-        hours = 24 + (hours % 24);
-    }
-    
-    newAmpm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours === 0 ? 12 : hours;
-    
-    let newTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${newAmpm}`;
-
-    if(isNaN(hours) || isNaN(minutes) || isNaN(minutesSubtracted)) {
-        document.getElementById('add-message').innerHTML = `Please enter a valid time`;
-        setTimeout(() => {
-            document.getElementById('add-message').innerHTML = ``;
-            result.innerHTML = '';
-        }, 1500);
-    }else {
-        originalTime.originalTimeText;
-        document.getElementById('add-message').innerHTML = `The new time is:`;
-        result.innerHTML = newTime;
-    }
-
-    return { hours, minutes, newAmpm };
-}
-
-const updateAddTime = () => {
-    const newTime = addTime();
-    document.getElementById('hours1-add').value = String(newTime.hours).padStart(2, '');
-    document.getElementById('minutes1-add').value = String(newTime.minutes).padStart(2, '0');
-    document.getElementById('ampm3').value = newTime.newAmpm;
-};
-
-const updateSubTime = () => {
-    const newTime = subTime();
-    document.getElementById('hours1-add').value = String(newTime.hours).padStart(2, '');
-    document.getElementById('minutes1-add').value = String(newTime.minutes).padStart(2, '0');
-    document.getElementById('ampm3').value = newTime.newAmpm;
-};
-
-addBtn.addEventListener('click', () =>{
-    addTime();
-    updateAddTime();
-});
-
-subBtn.addEventListener('click', () =>{
-    subTime();
-    updateSubTime();
-});
-
-addSubClearBtn.addEventListener('click', () => {
-    document.getElementById('hours1-add').value = '';
-    document.getElementById('minutes1-add').value = '';
-    document.getElementById('add-minutes1-add').value = '';
-    document.getElementById('ampm3').value = 'AM';
-    document.getElementById('add-message').innerHTML = ''; 
-    document.getElementById('time-after-addition').innerHTML = '';
-    document.getElementById('original-time').innerHTML = ''; 
-});
-    </code></pre></p>
-    </div>
+    <footer>
+        <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+    </footer>
+    <script data-name="BMC-Widget" 
+    data-cfasync="false" 
+    data-id="JosephDeCommer" 
+    data-description="Support me on Buy me a coffee!" 
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+    data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18"
+    data-message="If you like these apps you can show your appreciation with a coffee!">
+</script>
 </body>
 </html>
 

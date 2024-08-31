@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/logo.css"/>
-    <link rel="stylesheet" href="./css/showhide.css"/>
-    <script src="./js/showhide.js" defer></script>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <script src="./js/scripts.js" defer></script>
     <title>Testing</title>
     <style>
         :root {
@@ -17,51 +16,10 @@
             --centerGrad: #a2faa7;
             --rightGrad: #007acc;
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #fff;
-            color: #007acc;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        header {
-            text-align: center;
-        }
-        a {
-            text-decoration: none;
-            margin: 10px;
-        }
 
-        .homeColor {
-            color: #007acc;
-        }
 
-        .homeColor:hover {
-            color:#FF6969;;
-            transition: ease-in 0.2s;
-        }
-        h2 {
-            margin: 10px;
-        }
-        .main-container {
-            border: 2px solid;
-            border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-            margin: 0px auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 50px;
-            padding: 15px;
-            height: fit-content;
-            width: 575px;
+        .app-hidden {
+            display: none;
         }
 
         .progress-bar-container {
@@ -87,46 +45,78 @@
         input:focus {
             outline: none;
         }
+
         .progress-bar {
             background-color: rgb(101, 227, 70);
             border-radius: 10px;
             width: 0%;
             height: 100%
         }
+
         .buttons {
             display: flex;
-            margin: 15px 35px;
+            margin: 15px 0px;
             align-items: center;
         }
 
-        .btn {
-            background-color: #c1121f;
-            border: none;
-            padding: 4px 15px;
-            font-size: 1rem;
-            color: #fff;
-            cursor: pointer;
-        }
         .info {
             /* border: 1px solid #fff; */
             text-align: center;
-            color: #fff;
+            color: #000;
             width: 100px;
-            margin: 0 100px;
+            margin: 0 10px;
         }
+
+    @media(max-width: 900px) {
+        .app-hidden {
+            display: block;
+        }
+        .hero {
+            display: none !important;
+        }
+        .title-container {
+            color: var(--text);
+        }
+
+        .progress-bar-container {
+            width: 90%;
+        }
+    }
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <header>
-            <a href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-            <h2 class=title">Incremental Progress Bar Example</h2>
+    <header>
+        <nav class="nav-bar">
+          <div class="header-links">
+            <div class="left-header-links">
+              <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+              <a href="https://www.decommer.com/">Home</a>
+          </div>
+            <!-- <button id="mode-btn" class="theme-btn">🌑</button> -->
+          </div>
+        </nav>
+          <div class="hero">
+            <div class="elem-logo">
+              <p class="logo-upper-left randNum">00</p>
+              <h1 class="logo-center">D<span>e</span></h1>
+              <p class="logo-bottom-center-name">DeCommer</p>
+              <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+            </div>
+            <div class="title-container">
+              <h2>Joseph DeCommer</h2>
+              <p class="description-text">Progress Bar Example</p>
+            </div>
+          </div>
         </header>
+    <div class="apps-container">
+        <div class="title-container app-hidden">
+            <h2 class="title">DeCommer.com</h2>
+            <p class="description-text">Progress Bar Example</p>
+        </div>
         <div class="inputs">
-            <p>Enter number of clicks to fill bar: </p>
+            <p>Enter number of clicks: </p>
             <input class="usrIn" value="10">
-            <button class="enterBtn btn">Enter</button>
+            <button class="sm-btn enterBtn btn">Enter</button>
         </div>
         <div class="progress-bar-container">
             <div class="progress-bar"></div>
@@ -137,86 +127,18 @@
             <button class="resetBtn btn">reset</button>
         </div>
     </div>
-
-    <div class="aboutModal hidden">
-        <button class="closeAboutModal">&times</button>
-        <h1>Progress Bar</h1>
-        <p>This is an example of a progress bar you can add to any application.</p>
-        <p>I made this with a combination of HTML, CSS and JS. 
-        You can see the JavaScript by clicking the button below.
-        </p>
-    </div><div class="aboutOverlay hidden"></div>
-
-    <div class="code">
-        <button class="jsBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden hidden">
-            <button class="closeJsModal">&times</button>
-const usrIn = document.querySelector('.usrIn');
-const enterBtn = document.querySelector('.enterBtn');
-const clickBtn = document.querySelector('.clickBtn');
-const resetBtn = document.querySelector('.resetBtn');
-const info = document.querySelector('.info');
-let num = 0;
-let total = 10;
-const progressBarFill = () => {
-    let increment = 100 / total;
-    let progress = document.querySelector('.progress-bar');
-    let width = progress.style.width.replace('%', '');
-    width = parseInt(width) + increment;
-    width = (num / total) * 100+'%';
-    progress.style.width = width;
-    info.textContent = `${num} / ${total}`;
-    if(num == total) {
-        reset();
-    };
-};
-const reset = () => {
-    usrIn.value = 10;
-    num = 0;
-};
-clickBtn.addEventListener('click', () => {
-    num++
-    progressBarFill();
-});
-resetBtn.addEventListener('click', () => {
-    reset();
-    progressBarFill();
-});
-enterBtn.addEventListener('click', () => {
-    if(usrIn.value === total) {
-        reset();
-    }else {
-        total = usrIn.value;
-        info.textContent = `${num} / ${total}`;
-    }
-});
-
-usrIn.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        if(usrIn.value === total) {
-            reset();
-        }else {
-            total = usrIn.value;
-            info.textContent = `${num} / ${total}`;
-        }
-    }
-});
-    </code></pre></p>
-    </div>
-
-    <div class="elem-logo">
-        <div class="logo-upper-left">
-            <p>45</p>
-        </div>
-        <div class="logo-center">
-            <h1>D<span>e</span></h1><br>
-            <p>DeCommer</p>
-        </div>
-        <div class="logo-bottom-center">
-            <p>19.79</p>
-        </div>
-      </div>
-</body>
+    <footer>
+        <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+    </footer>
+      
+<script data-name="BMC-Widget" 
+    data-cfasync="false" 
+    data-id="JosephDeCommer" 
+    data-description="Support me on Buy me a coffee!" 
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+    data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18"
+    data-message="If you like these apps you can show your appreciation with a coffee!">
+</script>
 <script>
 const usrIn = document.querySelector('.usrIn');
 const enterBtn = document.querySelector('.enterBtn');
@@ -238,7 +160,9 @@ const progressBarFill = () => {
     };
 };
 const reset = () => {
+    info.textContent = `${num} / ${total}`;
     usrIn.value = 10;
+    total = 10;
     num = 0;
 };
 clickBtn.addEventListener('click', () => {
@@ -269,4 +193,5 @@ usrIn.addEventListener('keydown', (event) => {
     }
 });
 </script>
+</body>
 </html>

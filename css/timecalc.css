@@ -8,81 +8,26 @@
     --rightGrad: #007acc;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.app-hidden {
+    display: none;
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--bg);
-    font-family: Arial, Helvetica, sans-serif;
-    color: #007acc;
+.apps-container-hidden {
+    display: none !important;
 }
-
-a {
-    margin: 15px;
-    text-decoration: none;
-}
-
-p {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
-
-h2 {
-    font-size: 2.5rem;
-}
+  
 
 label {
     font-size: 1.2rem;
 }
 
-span {
-    color: #FF6969;
-}
-
-.homeColor {
-    font-size: 1.2rem;
-    color: #007acc;
-}
-
-.homeColor:hover {
-    color:#FF6969;
-    transition: ease-in 0.2s;
-}
-
-.title {
-    margin: 20px 0;
-}
-
-.main-container {
-    border: 2px solid;
-    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    margin: 0px auto;
+.input-area {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    padding: 15px;
-    height: fit-content;
-    width: 475px;
-}
-
-header {
-    text-align: center;
-}
-header h1 {
-    margin-top: 10px;
-}
-
-.input-area {
     margin: 10px 0;
+    text-align: center;
 }
 
 .add-area {
@@ -142,39 +87,8 @@ input:focus {
     margin-left: 8px;
 }
 
-.btn {
-    background-color: #c1121f;
-    color: #fff;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px 45px;
-    cursor: pointer;
-}
-
-.btn-sm {
-    background-color: #c1121f;
-    color: #fff;
-    font-size: .9rem;
-    border: none;
-    border-radius: 5px;
-    margin: 15px;
-    padding: 5px 15px;
-    cursor: pointer;
-}
-
-.btn-sm:hover {
-    background-color: #d82e2e;
-}
-
 .btn:hover {
     background-color: #d82e2e;
-}
-
-.active {
-    background-color: #42e31aff;
-    color: #235311;
 }
 
 .active:hover {
@@ -191,17 +105,20 @@ input:focus {
     cursor: pointer;
 }
 
-
 .result {
     font-size: 2.5rem;
     color: #42e31aff;
 }
 
-
-@media (max-width: 1200px) {
-
-    .main-container {
-        width: 400px;
+@media(max-width: 900px) {
+    .app-hidden {
+        display: block;
+    }
+    .hero {
+        display: none !important;
+    }
+    .title-container {
+        color: var(--text);
     }
 
     .input-area {
@@ -222,12 +139,6 @@ input:focus {
         background-color: rgba(255, 255, 255, 0.4);
         border: 1px solid #09396c;
         color: #09396c;
-    }
-
-    .btn {
-        font-size: 1rem;
-        margin: 10px;
-        padding: 5px 25px;
     }
 
 }

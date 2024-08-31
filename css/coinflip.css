@@ -8,20 +8,8 @@
     --rightGrad: #007acc;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    font-family:'Times New Roman', Times, serif;
-    color: #007acc;
+.app-hidden {
+    display: none;
 }
 
 .outer-container {
@@ -39,7 +27,6 @@ body {
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    margin: 25px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,7 +39,6 @@ body {
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    margin: 25px 10px 0px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,43 +47,15 @@ body {
     width: 425px;
 }
 
-a {
-    margin: 15px ;
-    text-decoration: none;
-}
-
-p {
-    margin: 10px 15px;
-}
-
-span {
+.span {
     color: #007acc;
     font-size: 2.5rem;
+    padding: 30px;
 }
 
-.margin-top {
+/* .margin-top {
     margin-top: 10px;
-}
-
-h2 { 
-    margin: 0;
-	font-size: 1.2rem; 
-} 
-
-.homeColor {
-    font-size: 1.2rem;
-    color: #007acc;
-}
-
-.homeColor:hover {
-    color:#FF6969;
-    transition: ease-in 0.2s;
-}
-
-header {
-    text-align: center;
-    margin-top: 50px;
-}
+} */
 
 .coin img {
     border-radius: 50%;
@@ -124,25 +82,9 @@ header {
     text-align: center;
 }
 
-.btn {
-    background-color: #c1121f;
-    font-family: inherit;
-    color: #fff;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    margin: 10px 10px;
-    padding: 10px 25px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #d82e2e;
-}
-
 .results-area { 
     /* border: 1px solid red; */
-    margin-top: 0px;
+    margin-top: 20px;
     display: flex;
     text-align: center;
 	font-size: 1.2rem; 
@@ -151,6 +93,7 @@ header {
 
 .percent-area { 
     /* border: 1px solid red; */
+    margin-top: 20px;
     display: flex;
 	font-size: 1.2rem; 
     text-align: center;
@@ -269,7 +212,6 @@ input:focus {
     }
 
     .main-container {
-        margin: 15px auto;
         width: 90%;
     }
 
@@ -310,14 +252,20 @@ input:focus {
 
     .results-area {
         font-size: 1rem;
-        margin-top: 5px;
-    }
-
-    span {
-        font-size: 1.6rem;
+        margin: 5px;
     }
 
     .array-area {
         font-size: 1rem;
+    }
+
+    .app-hidden {
+        display: block;
+    }
+    .hero {
+        display: none !important;
+    }
+    .title-container {
+        color: var(--text);
     }
 }

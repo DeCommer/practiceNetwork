@@ -17,9 +17,19 @@
     color: #007acc;
 }
 
+#mi-btn {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+#km-btn {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
 input {
     background-color: rgba(255, 255, 255, 0.4);
-    border: 1px solid #007acc;
+    border: 1px solid #09396c;
     font-size: 2rem;
     color: #007acc;
     margin: 10px;
@@ -32,6 +42,7 @@ input {
 input:focus {
     outline: none;
 }
+
 .results-area {
     margin-top: 10px;
     text-align: center;
@@ -45,7 +56,6 @@ input:focus {
 #formula {
     font-size: 1.5rem;
     padding-bottom: 20px;
-    color: #FF6969;
 }
 
 @media(max-width: 900px) {

@@ -4,19 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/guess.css">
-    <link rel="stylesheet" href="css/logo.css">
-    <link rel="stylesheet" href="css/showhide.css">
+    <link rel="stylesheet" href="css/main.css">
     <script defer src="./js/guess.js"></script>
-    <script defer src="./js/showhide.js"></script>
+    <script defer src="./js/scripts.js"></script>
     <title>Guessing Game</title>
 </head>
 <body>
-    <div class="converter-container">
-        <header>
-            <a class="links" href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-            <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-            <h1>Guess the Secret Number</h1>
+    <header>
+        <nav class="nav-bar">
+          <div class="header-links">
+            <div class="left-header-links">
+              <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+              <a href="https://www.decommer.com/">Home</a>
+          </div>
+            <!-- <button id="mode-btn" class="theme-btn">🌑</button> -->
+          </div>
+        </nav>
+          <div class="hero">
+            <div class="elem-logo">
+              <p class="logo-upper-left randNum">00</p>
+              <h1 class="logo-center">D<span>e</span></h1>
+              <p class="logo-bottom-center-name">DeCommer</p>
+              <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+            </div>
+            <div class="title-container">
+              <h2>Joseph DeCommer</h2>
+              <p class="description-text">Guessing Game v1</p>
+            </div>
+          </div>
         </header>
+    <div class="apps-container">
+        <div class="title-container app-hidden">
+            <h2>DeCommer.com</h2>
+            <p class="description-text">Guessing Game v1</p>
+          </div>
         <div>
             <h2 class="betweenText">(between 1 and 10)</h2>
             <input type="text" id="guessBox" placeholder="Enter a number"/>
@@ -28,69 +49,17 @@
         <button type="button" id="reset" class="reset_btn" onClick="guess()">reset</button>
     </div>
 
-    <div class="aboutModal hidden">
-        <button class="closeAboutModal">&times</button>
-        <h1>Guessing Game</h1>
-        <p>A simple, fun, guessing game. Based on a series of logical
-            if else statements.
-        </p><p>
-        I made this with a combination of HTML, CSS and JS. 
-        You can see the JavaScript by clicking the button below.
-        </p>
-    </div><div class="aboutOverlay hidden"></div>
-
-<div class="code">
-        <button class="jsBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden hidden">
-            <button class="closeJsModal">&times</button>
-const guessBox = document.getElementById("guessBox");
-const remaining = document.getElementById("remaining");
-const result = document.getElementById("result");
-const enterButton = document.getElementById("enterButton");
-
-let secret_number = Math.floor(Math.random() * 10) + 1;
-let guesses = 3;
-
-function guess(){
-    guesses - 1
-    let userGuess = Number(guessBox.value);
-    console.log(secret_number);   
-    if (isNaN(userGuess)) {
-        result.textContent = "You must enter a number.";   
-    }else if (userGuess == secret_number) {
-        result.textContent = "You got it!"
-    }else if (guesses == 1){
-        remaining.textContent = (`You have: ${guesses - 1} guesses left`);
-        result.textContent = `You lose! The secret number was ${secret_number}`
-    } else if(userGuess > secret_number) {
-        guesses --;
-        remaining.textContent = (`You have: ${guesses} guesses left`);
-        result.textContent = (`${userGuess} is too high`);
-    }else if(userGuess < secret_number) {
-        guesses --;
-        remaining.textContent = (`You have: ${guesses} guesses left`);
-        result.textContent = (`${userGuess} is too low`);
-    }
-
-    //reset area
-    document.getElementById('reset').addEventListener('click', () => {
-        location.reload();
-    })
-
-};
-    </code></pre></p>
-</div>
-<div class="elem-logo">
-    <div class="logo-upper-left">
-        <p>45</p>
-    </div>
-    <div class="logo-center">
-        <h1>D<span>e</span></h1><br>
-        <p>DeCommer</p>
-    </div>
-    <div class="logo-bottom-center">
-        <p>19.79</p>
-    </div>
-  </div>
+    <footer>
+        <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+    </footer>
+      
+<script data-name="BMC-Widget" 
+    data-cfasync="false" 
+    data-id="JosephDeCommer" 
+    data-description="Support me on Buy me a coffee!" 
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+    data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18"
+    data-message="If you like these apps you can show your appreciation with a coffee!">
+</script>
 </body>
 </html>

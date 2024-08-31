@@ -26,10 +26,10 @@ const displayElements = (data) => {
                 <div class="card-stats">
                     <img class="bmi" src="${data.elements[i].bohr_model_image}" />
                     <ul>
-                        <li><span>Number: </span>${data.elements[i].number}</li>
-                        <li><span>Phase: </span>${data.elements[i].phase}</li>
-                        <li><span>Catagory: </span>${data.elements[i].category}</li>
-                        <li><span>Mass: </span>${data.elements[i].atomic_mass}</li>
+                        <li><span class="span">Number: </span>${data.elements[i].number}</li>
+                        <li><span class="span">Phase: </span>${data.elements[i].phase}</li>
+                        <li><span class="span">Catagory: </span>${data.elements[i].category}</li>
+                        <li><span class="span">Mass: </span>${data.elements[i].atomic_mass}</li>
                     </ul>
                 </div>
                 `

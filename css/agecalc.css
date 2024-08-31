@@ -8,58 +8,8 @@
     --rightGrad: #007acc;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fff;
-    text-align:center;
-    height: 100vh;
-    color: #007acc;
-}
-
-.main-container {
-    border: 2px solid;
-    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px auto 0 auto;
-    padding: 15px;
-    width: 475px;
-}
-
-.homeColor {
-    font-size: 1.2rem;
-    color: #007acc;
-}
-
-.homeColor:hover {
-    color:#FF6969;
-    transition: ease-in 0.2s;
-}
-
-p {
-    padding: 5px;
-}
-
-a {
-    text-decoration: none;
-    margin: 10px;
-}
-
-header h1 {
-    /* border: 1px solid blue; */
-    margin: 15px;
-}
-
-h3 {
-    padding: 10px;
+.app-hidden {
+    display: none;
 }
 
 input {
@@ -80,39 +30,48 @@ input:focus {
 input::-webkit-datetime-edit-day-field:focus,
 input::-webkit-datetime-edit-month-field:focus,
 input::-webkit-datetime-edit-year-field:focus {
-    background-color: #007acc;
     border-radius: 5px;
     color: #007acc;
     outline: none;
 }
+
 .btn-area{
     margin: 10px;
 }
 
-.btn {
-    background-color: #c1121f;
-    color: #fff;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px 45px;
-    cursor: pointer;
-}
-
-span {
+.span {
     font-size: 1.2rem;
     color: #09396c;
 }
 
+.results-area {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
 .results-area p {
     font-size: 2.2rem;
-    color: #FF6969;
+    color: var(--text)
+
+}
+
+.additional-area {
     text-align: center;
 }
 
 .additional-area p {
     font-size: 2.2rem;
     color: #FF6969;
-    text-align: center;
+}
+
+@media(max-width: 900px) {
+    .app-hidden {
+        display: block;
+    }
+    .hero {
+        display: none !important;
+    }
+    .title-container {
+        color: var(--text);
+    }
 }

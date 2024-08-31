@@ -53,12 +53,12 @@ const calculateAge = () => {
             y3--;
         }
         message.innerHTML = `You have been alive for:`;
-        result.innerHTML = `${y3} <span>years,</span> ${m3} <span>months and</span> ${d3} <span>days.</span>`;
+        result.innerHTML = `${y3} <span class="span">years,</span> ${m3} <span class="span">months and</span> ${d3} <span class="span">days.</span>`;
         additional.innerHTML = 'That is:'
-        days.innerHTML = `${formatNumber((bdHours / 24).toFixed(0))} <span>Days</span>`;
-        hours.innerHTML = `${formatNumber(bdHours)} <span>hours</span>`;
-        minutes.innerHTML = `${formatNumber(bdMinutes)} <span>minutes and</span>`;
-        seconds.innerHTML = `${formatNumber(bdSeconds)} <span>seconds</span>`;
+        days.innerHTML = `${formatNumber((bdHours / 24).toFixed(0))} <span class="span">Days</span>`;
+        hours.innerHTML = `${formatNumber(bdHours)} <span class="span">hours</span>`;
+        minutes.innerHTML = `${formatNumber(bdMinutes)} <span class="span">minutes and</span>`;
+        seconds.innerHTML = `${formatNumber(bdSeconds)} <span class="span">seconds</span">`;
 
         console.log(bd)
     }

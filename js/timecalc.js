@@ -7,13 +7,13 @@ const diffSwitchBtn = document.getElementById('diff-switch-btn');
 const addSubSwitchBtn = document.getElementById('addsub-switch-btn');
 
 diffSwitchBtn.addEventListener('click', () => {
-    document.getElementById('diff-container').classList.remove('hidden');
-    document.getElementById('add-sub-container').classList.add('hidden');
+    document.getElementById('diff-container').classList.remove('apps-container-hidden');
+    document.getElementById('add-sub-container').classList.add('apps-container-hidden');
 });
 
 addSubSwitchBtn.addEventListener('click', () => {
-    document.getElementById('add-sub-container').classList.remove('hidden');
-    document.getElementById('diff-container').classList.add('hidden');
+    document.getElementById('add-sub-container').classList.remove('apps-container-hidden');
+    document.getElementById('diff-container').classList.add('apps-container-hidden');
 });
 
 const calculateDifference = () => {

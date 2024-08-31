@@ -5,20 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/match.css">
-    <link rel="stylesheet" href="./css/logo.css">
-    <link rel="stylesheet" href="./css/showhide.css">
+    <link rel="stylesheet" href="./css/main.css">
     <script src="./js/match.js" defer></script>
-    <script src="./js/showhide.js" defer></script>
+    <script src="./js/scripts.js" defer></script>
     <script src="./js/confetti.js" defer></script>
     <title>Matching Memory Game</title>
 </head>
 <body>
-    <div class="converter-container">
     <header>
-        <a class="links" href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-        <h1>Match Game</h1>
-    </header>
+        <nav class="nav-bar">
+          <div class="header-links">
+            <div class="left-header-links">
+              <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+              <a href="https://www.decommer.com/">Home</a>
+          </div>
+            <!-- <button id="mode-btn" class="theme-btn">🌑</button> -->
+          </div>
+        </nav>
+          <div class="hero">
+            <div class="elem-logo">
+              <p class="logo-upper-left randNum">00</p>
+              <h1 class="logo-center">D<span>e</span></h1>
+              <p class="logo-bottom-center-name">DeCommer</p>
+              <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+            </div>
+            <div class="title-container">
+              <h2>Joseph DeCommer</h2>
+              <p class="description-text">Matching Memory Game</p>
+            </div>
+          </div>
+        </header>
+    <div class="converter-container">
+        <div class="title-container app-hidden">
+            <h2 class="title">DeCommer.com</h2>
+            <p class="description-text">Matching Memory Game</p>
+        </div>
     <section class="game">
         <div class="card" data-framework="pizza">
             <div class="front"><p>🍕</p></div>
@@ -78,117 +99,17 @@
          </button>       
     </section>
     <div class="overlay"></div>
-
-    <div class="aboutModal hidden">
-        <button class="closeAboutModal">&times</button>
-        <h1>Match Game</h1>
-        <p>Uncover pairs of matching cards by clicking on them. 
-        Your goal is to match all the cards on the board.</p><p>This game is 
-        powered by a combination of JavaScript, HTML, and CSS, making it a 
-        sleek and efficient web-based game. The use of these technologies 
-        ensures a smooth and responsive gaming experience while showcasing 
-        the capabilities of modern web development.</p>
-        </p>
-    </div><div class="aboutOverlay hidden"></div>
-
-    <div class="code">
-        <button class="jsBtn" >See the Javascript.</button>
-        <p><pre><code class="jsHidden hidden">
-            <button class="closeJsModal">&times</button>
-const cards = document.querySelectorAll('.card');
-
-let cardsUp =  0;
-let flipped = false;
-let freeze = false;
-let originCard, matchCard;
-
-function flip() {
-    if(freeze) return;
-    if(this === originCard) return;
-    this.classList.add('flip');
-    if(!flipped) {
-        flipped = true;
-        originCard = this;
-        return;
-    } 
-    matchCard = this;
-    checkMatch();
-}
-
-function hasClass(element, clsName) {
-    return (' ' + element.className + ' ').indexOf(' ' + clsName + ' ') > -1;
-}
-
-function checkMatch() {
-    let match = originCard.dataset.framework === matchCard.dataset.framework 
-    match ? flippedCards() : notFlippedCards();
-
-}
-function checkWin() {
-    if(cardsUp === 12) {
-        document.querySelector('.modal').classList.add('active');
-        document.querySelector('.overlay').classList.add('active');
-        start();
-        stop();
-        
-        document.querySelector('.modal').addEventListener('click') = window.location.reload();
-    }
-}
-
-const start = () => {
-    setTimeout(function() {
-        confetti.start();
-    }, 200)
-}
-const stop = () => {
-    setTimeout(function() {
-        confetti.stop();
-    }, 5000)
-}
-
-function flippedCards() {
-    originCard.removeEventListener('click', flip);
-    matchCard.removeEventListener('click', flip);
-    cardsUp += 2;
-    checkWin();
-    reset();
-}
-
-function notFlippedCards() {
-    freeze = true;
-    setTimeout(() => {
-        originCard.classList.remove('flip');
-        matchCard.classList.remove('flip');
-        reset();
-    }, 1000);
-}
-
-function reset() {
-    [flipped, freeze] = [false, false];
-    [originCard, matchCard] = [null, null];
-}
-
-(function shuffleOrder() {
-    cards.forEach(card => {
-        let position = Math.floor(Math.random() * 12);
-        card.style.order = position;
-    })
-})();
-
-cards.forEach(card => card.addEventListener('click', flip));
-        </code></pre></p>
-    </div>
-    <div class="elem-logo">
-        <div class="logo-upper-left">
-            <p>45</p>
-        </div>
-        <div class="logo-center">
-            <h1>D<span>e</span></h1><br>
-            <p>DeCommer</p>
-        </div>
-        <div class="logo-bottom-center">
-            <p>19.79</p>
-        </div>
-      </div>
+    <footer>
+        <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+    </footer>
+      
+<script data-name="BMC-Widget" 
+    data-cfasync="false" 
+    data-id="JosephDeCommer" 
+    data-description="Support me on Buy me a coffee!" 
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+    data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18"
+    data-message="If you like these apps you can show your appreciation with a coffee!">
+</script>
 </body>
 </html>
