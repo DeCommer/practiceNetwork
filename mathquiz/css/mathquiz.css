@@ -195,7 +195,7 @@ input::placeholder {
 
 .progess-bar-container {
     border: 1px solid rgb(77, 104, 152);
-    background-color: #6fa6d3;
+    background-color: var(--slate);
     border-radius: 3px;
     margin: 0 auto;
     position: relative;
