@@ -84,6 +84,28 @@
 
 
 @media(max-width: 900px) {
+
+  .apps-container {
+    width: 80% !important;
+  }
+
+  .btn {
+    font-size: 1rem !important;
+    padding: 10px 20px !important;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .app-title {
+    font-size: 1.6rem;
+  }
+
+  .message {
+    font-size: 1.6rem;
+  }
+
   .app-hidden {
       display: block;
   }
