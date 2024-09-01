@@ -273,7 +273,7 @@ input::placeholder {
 .app-card h2 {
     margin-bottom: 15px;
     border-bottom: 1px solid var(--slate);
-    color: var(--highlight);
+    color: var(--orange);
 }
 
 .h2-icon {
