@@ -144,6 +144,7 @@ const addTime = () => {
     }else {
         originalTime.originalTimeText;
         addedMinsDisplay.innerHTML = `+ ${minutesAdded} minutes`;
+        addedMinsDisplay.style.color = '#42e31aff';
         document.getElementById('add-message').innerHTML = `The new time is:`;
         result.innerHTML = newTime;
     }
@@ -193,6 +194,7 @@ const subTime = () => {
     }else {
         originalTime.originalTimeText;
         addedMinsDisplay.innerHTML = `- ${minutesSubtracted} minutes`;
+        addedMinsDisplay.style.color = '#c1121f';
         document.getElementById('add-message').innerHTML = `The new time is:`;
         result.innerHTML = newTime;
     }

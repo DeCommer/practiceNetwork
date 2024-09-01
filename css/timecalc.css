@@ -1,6 +1,5 @@
 :root {
     --bg: #fff;
-    --green: #42e31aff;
     --text: #007acc;
     --highlight: #FF6969;
     --slate: #b6c5e0;
@@ -89,14 +88,8 @@ input:focus {
 
 .results-area {
     text-align: center;
-    p{
-        margin: 10px;
-    }
 }
 
-.added-minutes-text {
-    color: var(--green);
-}
 
 .ampm {
     width: 50px;
