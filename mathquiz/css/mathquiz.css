@@ -1,3 +1,8 @@
+#mQMain {
+    width: 250px;
+    padding: 0 25px;
+}
+
 #qArea {
     /* border: 1px solid red; */
     display: flex;
@@ -9,7 +14,6 @@
     /* border: 1px solid #0f4a89;
     background-color: #fff;
     border-radius: 10px; */
-    margin: 0px 0px 10px 0px;
     font-size: 6rem;
     color: var(--text);
 }
@@ -17,6 +21,7 @@
 .op {
     font-size: 3rem;
     padding: 0 20px;
+    color: var(--orange);
 }
 
 #ansArea {
@@ -67,9 +72,9 @@
 }
 
 #messageArea {
-    height: 1.5rem;
+    height: 1.3rem;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color:#c1121f;
 }
 
