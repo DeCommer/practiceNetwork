@@ -126,4 +126,8 @@ input::placeholder {
     .title-container {
         color: var(--text);
     }
+
+    .main-container {
+        width: 350px;
+    }
 }

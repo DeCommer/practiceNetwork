@@ -1,13 +1,3 @@
-:root {
-    --bg: #fff;
-    --text: #007acc;
-    --highlight: #FF6969;
-    --slate: #b6c5e0;
-    --leftGrad: #05cff7;
-    --centerGrad: #a2faa7;
-    --rightGrad: #007acc;
-}
-
 .app-hidden {
     display: none;
 }

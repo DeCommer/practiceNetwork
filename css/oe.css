@@ -1,11 +1,3 @@
-:root {
-    --bg: #fff;
-    --text: #007acc;
-    --highlight: #FF6969;
-    --btnRed: #c1121f;
-    --slate: #31363F;
-}
-
 .app-hidden {
     display: none;
 }
@@ -21,13 +13,6 @@
     gap: 10px;
 }
 
-input {
-    text-align: center;
-    font-size: 1.3rem;
-    padding: 10px;
-    width: 100px;
-}
-
 .results-txt {
     border-top: 1px solid var(--text);
     border-bottom: 1px solid var(--text);
@@ -39,12 +24,17 @@ input {
 }
 
 #resCardContainer {
+    /* border: 1px solid red; */
     display: flex;
-    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 300px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
 
 .apps-container .operator {
-    color: var(--btnRed);
+    color: var(--orange);
 }
 
 .resNumCard {
@@ -58,12 +48,10 @@ input {
 
 @media(max-width: 900px) {
     .app-hidden {
-        display: block;
+        display: flex;
     }
     .hero {
         display: none !important;
     }
-    .title-container {
-        color: var(--text);
-    }
+
 }

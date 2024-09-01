@@ -33,14 +33,22 @@
         </div>
       </div>
     </header>
-    <div class="apps-container" id="add-sub-container">
-        <div class="title-container app-hidden">
+    <div class="mobile-title-container app-hidden">
+        <div class="sm-elem-logo">
+            <p class="sm-logo-upper-left randNum">00</p>
+            <h1 class="sm-logo-center">D<span class="sm-logo-sm-txt">e</span></h1>
+            <p class="sm-logo-bottom-center-name">DeCommer</p>
+            <p class="sm-logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+        </div>
+        <div>
             <h2 class="title">DeCommer.com</h2>
             <p class="description-text">Time Calculator</p>
         </div>
+    </div>
+    <div class="apps-container" id="add-sub-container">
         <button class="sm-btn active" id="diff-switch-btn" type="button">Difference Mode</button>
         <h1>[+ -] Calculator</h1>
-        <div class="results-area app-hide">
+        <div class="results-area hide">
             <p id="original-time"></p>
             <p class="added-minutes-text" id="added-minutes"></p>
             <p id="add-message"></p>
@@ -69,45 +77,42 @@
     </div>
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <div class="apps-container apps-container-hidden" id="diff-container">
-        <div class="title-container app-hidden">
-            <h2 class="title">Joseph DeCommer</h2>
-            <p class="description-text">Time Calculator</p>
-        </div>
+
             <button class="sm-btn btn-sm active" id="addsub-switch-btn" type="button">[ + - ] Mode</button>
-            <div class="input-area">
-            <h1>Time Difference Calculator</h1>
-            <div class="results-area">
+            <h1>Difference Calculator</h1>
+            <div class="diff-results-area hide">
                 <p id="message"></p>
                 <p class="result" id="result"></p>
                 <p id="total-mins"></p>
             </div>
-            <label for="time1">Start Time:</label>
-            <div class="hour-1">
-                <input type="number" id="hours1" min="1" max="12" placeholder="HH"><h2>:</h2>
-                <input type="number" id="minutes1" min="0" max="59" placeholder="MM">
-                <select class="ampm" id="ampm1">
-                    <option value="AM">AM</option>
-                    <option value="PM">PM</option>
-                </select>
+            <div class="input-area">
+                <label for="time1">Start Time:</label>
+                <div class="hour-1">
+                    <input type="number" id="hours1" min="1" max="12" placeholder="HH"><h2>:</h2>
+                    <input type="number" id="minutes1" min="0" max="59" placeholder="MM">
+                    <select class="ampm" id="ampm1">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+                <label for="time2">End Time:</label>
+                <div class="hour-2">
+                    <input type="number" id="hours2" min="1" max="12" placeholder="HH"><h2>:</h2>
+                    <input type="number" id="minutes2" min="0" max="59" placeholder="MM">
+                    <select class="ampm" id="ampm2">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
             </div>
-            <label for="time2">End Time:</label>
-            <div class="hour-2">
-                <input type="number" id="hours2" min="1" max="12" placeholder="HH"><h2>:</h2>
-                <input type="number" id="minutes2" min="0" max="59" placeholder="MM">
-                <select class="ampm" id="ampm2">
-                    <option value="AM">AM</option>
-                    <option value="PM">PM</option>
-                </select>
+            <div class="calc-btn-area">
+                <button class="sm-btn btn" id="enter-btn" type="button">Enter</button>
+                <button class="sm-btn btn" id="clear-btn" type="button">Clear</button>
             </div>
         </div>
-        <div class="calc-btn-area">
-            <button class="sm-btn btn" id="enter-btn" type="button">Enter</button>
-            <button class="sm-btn btn" id="clear-btn" type="button">Clear</button>
-        </div>
-    </div>
-    <footer>
-        <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
-    </footer>
+        <footer>
+            <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+        </footer>
     <script data-name="BMC-Widget" 
     data-cfasync="false" 
     data-id="JosephDeCommer" 

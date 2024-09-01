@@ -5,6 +5,8 @@ const subBtn = document.getElementById('sub-btn');
 const addSubClearBtn = document.getElementById('as-clear-btn');
 const diffSwitchBtn = document.getElementById('diff-switch-btn');
 const addSubSwitchBtn = document.getElementById('addsub-switch-btn');
+const resultsArea = document.querySelector('.results-area');
+const diffResultsArea = document.querySelector('.diff-results-area');
 
 diffSwitchBtn.addEventListener('click', () => {
     document.getElementById('diff-container').classList.remove('apps-container-hidden');
@@ -74,6 +76,7 @@ const calculateDifference = () => {
 }
 
 enterBtn.addEventListener('click', () => {
+    diffResultsArea.classList.remove('hide');
     calculateDifference();
 });
 
@@ -96,6 +99,7 @@ const originalTimeDisplay = () => {
 }
 
 clearBtn.addEventListener('click', () => {
+    diffResultsArea.classList.add('hide');
     hours1.value = ''; 
     hours2.value = '';
     minutes1.value = ''; 
@@ -144,7 +148,7 @@ const addTime = () => {
     }else {
         originalTime.originalTimeText;
         addedMinsDisplay.innerHTML = `+ ${minutesAdded} minutes`;
-        addedMinsDisplay.style.color = '#42e31aff';
+        addedMinsDisplay.style.color = '#2cdb00';
         document.getElementById('add-message').innerHTML = `The new time is:`;
         result.innerHTML = newTime;
     }
@@ -194,7 +198,7 @@ const subTime = () => {
     }else {
         originalTime.originalTimeText;
         addedMinsDisplay.innerHTML = `- ${minutesSubtracted} minutes`;
-        addedMinsDisplay.style.color = '#c1121f';
+        addedMinsDisplay.style.color = '#ff5500';
         document.getElementById('add-message').innerHTML = `The new time is:`;
         result.innerHTML = newTime;
     }
@@ -217,16 +221,19 @@ const updateSubTime = () => {
 };
 
 addBtn.addEventListener('click', () =>{
+    resultsArea.classList.remove('hide');
     addTime();
     updateAddTime();
 });
 
 subBtn.addEventListener('click', () =>{
+    resultsArea.classList.remove('hide');
     subTime();
     updateSubTime();
 });
 
 addSubClearBtn.addEventListener('click', () => {
+    resultsArea.classList.add('hide');
     document.getElementById('hours1-add').value = '';
     document.getElementById('minutes1-add').value = '';
     document.getElementById('add-minutes1-add').value = '';

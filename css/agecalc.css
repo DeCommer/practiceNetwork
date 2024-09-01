@@ -1,42 +1,22 @@
-:root {
-    --bg: #fff;
-    --text: #007acc;
-    --highlight: #FF6969;
-    --slate: #b6c5e0;
-    --leftGrad: #05cff7;
-    --centerGrad: #a2faa7;
-    --rightGrad: #007acc;
-}
-
 .app-hidden {
     display: none;
-}
-
-input {
-    background-color: rgba(255, 255, 255, 0.4);
-    border: 1px solid #007acc;
-    font-size: 2rem;
-    color: #007acc;
-    margin: 10px;
-    height: auto;
-    padding: 5px;
-    text-align: center;
-}
-
-input:focus {
-    outline: none;
 }
 
 input::-webkit-datetime-edit-day-field:focus,
 input::-webkit-datetime-edit-month-field:focus,
 input::-webkit-datetime-edit-year-field:focus {
-    border-radius: 5px;
+    width: 200px;
     color: #007acc;
     outline: none;
 }
 
-.btn-area{
-    margin: 10px;
+.input-box input {
+    margin-top: 20px;
+    width: 175px;
+}
+
+.calc-btn-area{
+    margin-top: 10px;
 }
 
 .span {
@@ -46,7 +26,6 @@ input::-webkit-datetime-edit-year-field:focus {
 
 .results-area {
     text-align: center;
-    margin-bottom: 25px;
 }
 
 .results-area p {
@@ -56,7 +35,7 @@ input::-webkit-datetime-edit-year-field:focus {
 }
 
 .additional-area {
-    text-align: center;
+    text-align: left;
 }
 
 .additional-area p {

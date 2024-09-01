@@ -34,11 +34,19 @@
             </div>
           </div>
         </header>
+        <div class="mobile-title-container app-hidden">
+          <div class="sm-elem-logo">
+              <p class="sm-logo-upper-left randNum">00</p>
+              <h1 class="sm-logo-center">D<span class="sm-logo-sm-txt">e</span></h1>
+              <p class="sm-logo-bottom-center-name">DeCommer</p>
+              <p class="sm-logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+          </div>
+          <div>
+              <h2 class="title">DeCommer.com</h2>
+              <p class="description-text">Miles/Kilometers Converter</p>
+          </div>
+      </div>
     <div class="apps-container">
-        <div class="title-container app-hidden">
-            <h2 class="title">DeCommer.com</h2>
-            <p class="description-text">Miles/Kilometers Converter</p>
-        </div>
             <p>Choose conversion type: <span id="dispType">mi - km</span></p>
         <div class="type-selection-area">
             <button class="btn active" id="mi-btn">Miles</button>
@@ -46,7 +54,7 @@
         </div>
         <div class="input-area">
             <label>Distance</label>
-            <input id="input" type="number">
+            <input id="input" type="number" placeholder="0">
         </div>
         <div class="calc-btn-area">
             <button class="btn" id="enterBtn">Enter</button>
@@ -54,7 +62,7 @@
         </div>
         <div class="results-area">
             <p id="message"></p>
-            <p id="result-temp-txt" class="result-temp">0</p>
+            <p id="result-temp-txt" class="results-text">0</p>
             <p id="formula"></p>
         </div>
     </div>

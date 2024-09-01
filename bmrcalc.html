@@ -9,7 +9,8 @@
     <script src="./js/scripts.js" defer></script>
     <title>Basal Metabolic Rate Calculator</title>
 </head>
-    <body> <header>
+    <body>
+      <header>
         <nav class="nav-bar">
           <div class="header-links">
             <div class="left-header-links">
@@ -32,11 +33,19 @@
             </div>
           </div>
         </header>
+        <div class="mobile-title-container app-hidden">
+          <div class="sm-elem-logo">
+              <p class="sm-logo-upper-left randNum">00</p>
+              <h1 class="sm-logo-center">D<span class="sm-logo-sm-txt">e</span></h1>
+              <p class="sm-logo-bottom-center-name">DeCommer</p>
+              <p class="sm-logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+          </div>
+          <div>
+              <h2 class="title">DeCommer.com</h2>
+              <p class="description-text">(BMR) Calculator</p>
+          </div>
+      </div>
         <main class="apps-container">
-            <div class="title-container app-hidden">
-                <h2 class="title">DeCommer.com</h2>
-                <p class="description-text">Basal Metabolic Rate (BMR) Calculator</p>
-            </div>
             <div class="type-selection-area">
                 <div class="left">
                     <label>Unit:</label>
@@ -51,18 +60,18 @@
             </div>
             <div id="us" class="field-container">
                 <div class="left">
-                    <label id="ft-lab">ft:<input id="feet-input" type="number" min="0" max="12"class="feet-input" value=""></label>
-                    <label id="in-lab">in:<input id="inch-input" type="number" min="0" max="12" class="inches-input" value=""></label>
+                    <label id="ft-lab">ft:<input id="feet-input" type="number" min="0" max="12"class="feet-input" value="" placeholder="0"></label>
+                    <label id="in-lab">in:<input id="inch-input" type="number" min="0" max="12" class="inches-input" value="" placeholder="0"></label>
                 </div>
                 <div class="right">
-                    <label id="age-lab">Age:<input id="age-input" type="number" min="15" max="100"class="age-input" value=""></label>
-                    <label id="pounds-lab">lbs:<input id="pounds-input" type="number" min="0" value=""></label>
+                    <label id="age-lab">Age:<input id="age-input" type="number" min="15" max="100"class="age-input" value="" placeholder="0"></label>
+                    <label id="pounds-lab">lbs:<input id="pounds-input" type="number" min="0" value="" placeholder="0"></label>
                 </div>
             </div>
             <div id="metric" class="field-container hide">
-                <label id="in-lab">cm:<input id="cm-input" type="number" class="inches-input"></label>
-                <label id="age-lab">Age:<input id="met-age-input" type="number" min="0" max="100"class="age-input"></label>
-                <label id="lb-lab">Kg:<input id="kg-input" type="number" ></label>
+                <label id="in-lab">cm:<input id="cm-input" type="number" class="inches-input" placeholder="0"></label>
+                <label id="age-lab">Age:<input id="met-age-input" type="number" min="0" max="100"class="age-input" placeholder="0"></label>
+                <label id="lb-lab">Kg:<input id="kg-input" type="number" placeholder="0"></label>
             </div>
             <div class="btn-area">
                 <button id="calc-btn" class="calc-btn btn">Calculate</button>
@@ -70,7 +79,7 @@
             </div>
             <div class="results-area">
                 <p id="message-txt"></p>
-                <p id="results-txt">0</p>
+                <p id="results-txt" class="results-text">0</p>
                 <p id="formula-txt"></p>
             </div>
         </main>  

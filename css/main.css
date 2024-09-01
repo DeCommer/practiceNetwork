@@ -1,15 +1,26 @@
 :root {
     --bg: #fff;
     --text: #007acc;
-    --highlight: #FF6969;
+    --orange: #ff5500;
+    --orangeHi: #ff7b00;
     --slate: #b6c5e0;
+    --activeGreen: #2cdb00;
+    --activeGreenHi: #00e650;
     --leftGrad: #05cff7;
     --centerGrad: #a2faa7;
     --rightGrad: #007acc;
 }
 
+.hide {
+    display: none;
+}
+
+.app-hidden {
+    display: none;
+}
+
 *{
-    margin:0px;
+    margin: 0px;
     padding: 0;
 }
 
@@ -39,6 +50,10 @@ h3 {
     padding: 0px;
 }
 
+h4 {
+    color: var(--text);
+}
+
 header {
     width: 100%;
 }
@@ -51,9 +66,27 @@ a {
 }
 
 a:hover {
-    color: var(--highlight);
+    color: var(--orange);
     opacity: 1;
     transition: all 0.3s ease;
+}
+
+input {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin: 5px;
+    width: 100px;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--slate);
 }
 
 .nav-bar {
@@ -105,11 +138,11 @@ a:hover {
 }
 
 .title {
-    color: var(--blue);
+    color: var(--text);
 }
 
 .description-text {
-    color: var(--highlight)
+    color: var(--orange)
 }
 
 .elem-logo {
@@ -135,18 +168,18 @@ a:hover {
 
 .logo-center {
     position: absolute;
-    top: 15px;
-    left: 50px;
+    top: 30px;
+    left: 55px;
     margin: 0px;
     padding: 0px;
     font-size: 7rem;
     font-weight: 200;
 }
 
-.logo-center span {
+.logo-sm-txt {
     margin: 0px;
     padding: 0px;
-    font-size: 8rem;
+    font-size: 5rem;
 }
 
 .logo-bottom-center-name {
@@ -163,6 +196,58 @@ a:hover {
     position: absolute;
     bottom: 10px;
     left: 75px;
+}
+
+.sm-elem-logo {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    color: var(--text);
+    position: relative;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+    cursor: default;
+}
+
+.sm-logo-upper-left {
+    margin: 0px;
+    padding: 0px;
+    font-size: .5rem;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.sm-logo-center {
+    position: absolute;
+    top: 9px;
+    left: 13px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.sm-logo-sm-txt {
+    margin: 0px;
+    padding: 0px;
+    font-size: .8rem;
+}
+
+.sm-logo-bottom-center-name {
+    position: absolute;
+    font-size: .5rem;
+    bottom: 9px;
+    left: 5px;
+}
+
+.sm-logo-bottom-center {
+    margin: 0px;
+    padding: 0px;
+    font-size: .5rem;
+    position: absolute;
+    bottom: 0px;
+    left: 14px;
 }
 
 .apps-main-container {
@@ -250,13 +335,76 @@ footer {
     object-fit: cover;
   }
 
+
+
+.apps-container {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.btn {
+    background-color: var(--orange);
+    color: var(--bg);
+    font-size: 1.2rem;
+    border: none;
+    margin: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--orangeHi);
+}
+
+.sm-btn {
+    padding: 5px 20px;
+    font-size: 1rem;
+}
+
+.active {
+    background-color: var(--activeGreen);
+    border: none;
+    margin: 10px;
+    color: var(--bg);
+}
+
+.active:hover {
+    background-color: var(--activeGreenHi);
+}
+
+.results-text {
+    color: var(--activeGreen);
+    font-size: 4rem;
+}
+
 /*************************** Mobile *******************************************/
 @media(max-width: 900px) {
 
-    .hero {
-        flex-direction: column;
+    input {
+        width: 75px;
+    }
+    
+    .mobile-title-container {
+        text-align: center;
+        margin-bottom: 10px;
+        display: flex;
     }
 
+    .apps-container {
+        max-width: 350px;
+    }
+
+    .hero {
+        display: none !important;
+    }
+    
     .apps-main-container {
         flex-direction: column;
         justify-content: center;
@@ -271,48 +419,14 @@ footer {
         --num-cols: 2;
         --row-height: 200px;
       }
+
+      .results-text {
+        font-size: 2rem;
+    }
+    
+    #formula {
+        font-size: 1rem;
+        padding-bottom: 0px;
+    }
 }
 /***************************  End Mobile *******************************************/
-
-.apps-container {
-    border: 2px solid;
-    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    display: flex;
-    width: fit-content;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.btn {
-    background-color: #c1121f;
-    color: #fff;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px 30px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #d82e2e;
-}
-
-.sm-btn {
-    padding: 5px 20px;
-    font-size: 1rem;
-}
-
-.active {
-    background-color: #42e31aff;
-    border: none;
-    margin: 10px;
-    color: #235311;
-}
-
-.active:hover {
-    background-color: rgb(159, 232, 141);
-}

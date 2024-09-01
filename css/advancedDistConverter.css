@@ -1,13 +1,3 @@
-:root {
-    --bg: #fff;
-    --text: #007acc;
-    --highlight: #FF6969;
-    --slate: #b6c5e0;
-    --leftGrad: #05cff7;
-    --centerGrad: #a2faa7;
-    --rightGrad: #007acc;
-}
-
 .app-hidden {
     display: none;
 }
@@ -25,22 +15,6 @@
 #km-btn {
     padding: 5px 10px;
     font-size: 1rem;
-}
-
-input {
-    background-color: rgba(255, 255, 255, 0.4);
-    border: 1px solid #09396c;
-    font-size: 2rem;
-    color: #007acc;
-    margin: 10px;
-    width: 150px;
-    height: auto;
-    padding: 5px;
-    text-align: center;
-}
-
-input:focus {
-    outline: none;
 }
 
 .results-area {

@@ -33,15 +33,23 @@
             </div>
           </div>
         </header>
+        <div class="mobile-title-container app-hidden">
+            <div class="sm-elem-logo">
+                <p class="sm-logo-upper-left randNum">00</p>
+                <h1 class="sm-logo-center">D<span class="sm-logo-sm-txt">e</span></h1>
+                <p class="sm-logo-bottom-center-name">DeCommer</p>
+                <p class="sm-logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+            </div>
+            <div>
+                <h2 class="title">DeCommer.com</h2>
+                <p class="description-text">Percent Calculator</p>
+            </div>
+        </div>
         <div class="calculator-container">
             <div class="percentcalc-container container">
-                <div class="title-container app-hidden">
-                    <h2 class="title">DeCommer.com</h2>
-                    <p class="description-text">Percent Calcuator</p>
-                </div>
                 <h1>Percentage Difference Calculator</h1>
                 <div class="input-area">
-                    <input id="pc-percent-in" autocomplete="off" >% of <input id="pc-value-in" autocomplete="off">
+                    <input id="pc-percent-in" autocomplete="off" placeholder="0">% of <input id="pc-value-in" placeholder="0" autocomplete="off">
                 </div>
                 <div class="btns-area">
                     <button id="pc-enter-btn" class="btn">Calculate</button>
@@ -49,7 +57,7 @@
                 </div>
                 <div class="results-area">
                     <p id="pc-message" class="message"></p>
-                    <p id="pc-result" class="result-number">0</p>
+                    <p id="pc-result" class="results-text">0</p>
                     <p id="pc-formula" class="formula"></p>
                 </div>
             </div>
@@ -57,8 +65,8 @@
             <div class="difference-container container">
                 <h1>Percentage Difference Calculator</h1>
                 <div class="input-area">
-                    Value 1<input id="diff-val-1" autocomplete="off">
-                    Value 2<input id="diff-val-2" autocomplete="off">
+                    Value 1<input id="diff-val-1" placeholder="0" autocomplete="off">
+                    Value 2<input id="diff-val-2" placeholder="0" autocomplete="off">
                 </div>
                 <div class="btns-area">
                     <button id="diff-enter-btn" class="btn">Calculate</button>
@@ -66,18 +74,18 @@
                 </div>
                 <div class="results-area">
                     <p id="diff-message" class="message"></p>
-                    <p id="diff-result" class="result-number">0</p>
+                    <p id="diff-result" class="results-text">0</p>
                     <p id="diff-formula" class="formula"></p>
                 </div>
             </div>
             <div class="change-container container">
                 <h1>Percentage Change Calculator</h1>
                 <div class="type-selection-area">
-                    <button id="incr-btn" class="type-btn btn active">Increase</button>
-                    <button id="decr-btn" class="type-btn btn">Decrease</button><br>
+                    <button id="incr-btn" class="sm-btn btn active">Increase</button>
+                    <button id="decr-btn" class="sm-btn btn">Decrease</button><br>
                 </div>
                 <div class="input-area">
-                    <input id="chng-value-in" autocomplete="off"><p id="incr-decr-txt">Increased by</p><input id="chng-percent-in" autocomplete="off">%
+                    <input id="chng-value-in" placeholder="0" autocomplete="off"><p id="incr-decr-txt">Increased by</p><input id="chng-percent-in" autocomplete="off">%
                 </div>
                 <div class="btns-area">
                     <button id="chng-enter-btn" class="btn">Calculate</button>
@@ -85,22 +93,21 @@
                 </div>
                 <div class="results-area">
                     <p id="chng-message" class="message"></p>
-                    <p id="chng-result" class="result-number">0</p>
+                    <p id="chng-result" class="results-text">0</p>
                     <p id="chng-formula" class="formula"></p>
                 </div>
             </div>
-
             <div class="phrases-container container">
                 <div>
                     <h1>Problem Types</h1>
                 </div>
                 <div class="type-selection-area">
-                    <button id="type-1-btn" class="type-btn btn active">Type 1</button>
-                    <button id="type-2-btn" class="type-btn btn">Type 2</button>
-                    <button id="type-3-btn" class="type-btn btn">Type 3</button>
+                    <button id="type-1-btn" class="sm-btn btn active">Type 1</button>
+                    <button id="type-2-btn" class="sm-btn btn">Type 2</button>
+                    <button id="type-3-btn" class="sm-btn btn">Type 3</button>
                 </div>
                 <div id="input-question-type" class="input-area">
-                    What is <input id="type-1-1" type="number" autocomplete="off">% of <input id="type-1-2" type="number" autocomplete="off">?
+                    What is <input id="type-1-1" type="number" placeholder="0" autocomplete="off">% of <input id="type-1-2" type="number" placeholder="0" autocomplete="off">?
                 </div>
                 <div class="btns-area">
                     <button id="type-enter-btn" class="btn">Calculate</button>
@@ -108,7 +115,7 @@
                 </div>
                 <div class="results-area">
                     <p id="type-message" class="message"></p>
-                    <p id="type-result" class="result-number">0</p>
+                    <p id="type-result" class="results-text">0</p>
                     <p id="type-formula" class="formula"></p>
                 </div>
             </div>

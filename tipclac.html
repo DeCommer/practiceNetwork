@@ -34,14 +34,22 @@
             </div>
           </div>
         </header>
+        <div class="mobile-title-container app-hidden">
+          <div class="sm-elem-logo">
+              <p class="sm-logo-upper-left randNum">00</p>
+              <h1 class="sm-logo-center">D<span class="sm-logo-sm-txt">e</span></h1>
+              <p class="sm-logo-bottom-center-name">DeCommer</p>
+              <p class="sm-logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+          </div>
+          <div>
+              <h2 class="title">DeCommer.com</h2>
+              <p class="description-text">Tip Calculator</p>
+          </div>
+      </div>
     <div class="apps-container">
-        <div class="title-container app-hidden">
-            <h2 class="title">DeCommer.com</h2>
-            <p class="description-text">Tip Calculator</p>
-        </div>
          <div class="input-area">
-            <label>Bill Total $<input id="bill-total-input" class="field" type="number" autocomplete="off"></label>
-            <label>Tip %<input id="percent-input" class="field" type="number" autocomplete="off"></label>
+            <label>Bill Total $<input id="bill-total-input" class="field" type="number" autocomplete="off" placeholder="0"></label>
+            <label>Tip %<input id="percent-input" class="field" type="number" autocomplete="off" placeholder="0"></label>
             <label>Tippers<input id="tippers-input" class="field" type="number" value="1" autocomplete="off"></label>
         </div>
         <div class="buttons-area">
@@ -50,22 +58,22 @@
          </div>
         <div class="results-area">
             <div class="results-area-left">
-                <h3>Tip Amount:</h3>
-                <h3>Per Person</h3>
-                <h3>Per Person Total:</h3>
+                <p>Tip Amount:</p>
+                <p>Per Person</p>
+                <p>Per Person Total:</p>
             </div>
             <div class="results-area-right">
-                <div class="amount-txt"><h3 id="tip-amount">$0</h3></div>
-                <div class="amount-txt"><h3 id="per-person-amount">$0</h3></div>
-                <div class="amount-txt"><h3 id="per-person-total-amount">$0</h3></div>
+                <div class="amount-txt"><p id="tip-amount">$0</p></div>
+                <div class="amount-txt"><p id="per-person-amount">$0</p></div>
+                <div class="amount-txt"><p id="per-person-total-amount">$0</p></div>
             </div>
         </div>
         <div class="total-area">
             <div class="total-area-left">
-                <h3>Total:</h2>
+                <p>Total:</p>
             </div>
             <div class="total-area-right">
-                <div class="amount-txt"><h3 id="total-amount">$0</h2></div>
+                <div class="amount-txt"><p id="total-amount">$0</p></div>
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@
               <div class="hero">
                 <div class="elem-logo">
                   <p class="logo-upper-left randNum">00</p>
-                  <h1 class="logo-center">D<span>e</span></h1>
+                  <h1 class="logo-center">D<span class="logo-sm-txt">e</span></h1>
                   <p class="logo-bottom-center-name">DeCommer</p>
                   <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
                 </div>
@@ -33,23 +33,31 @@
                 </div>
               </div>
             </header>
-        <main class="apps-container">
-            <div class="title-container app-hidden">
-                <h2 class="title">DeCommer.com</h2>
-                <p class="description-text">BMI Calculator</p>
+            <div class="mobile-title-container app-hidden">
+                <div class="sm-elem-logo">
+                    <p class="sm-logo-upper-left randNum">00</p>
+                    <h1 class="sm-logo-center">D<span class="sm-logo-sm-txt">e</span></h1>
+                    <p class="sm-logo-bottom-center-name">DeCommer</p>
+                    <p class="sm-logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+                </div>
+                <div>
+                    <h2 class="title">DeCommer.com</h2>
+                    <p class="description-text">BMI Calculator</p>
+                </div>
             </div>
+        <main class="apps-container">
             <div class="type-selection-area">
                 <button class="sm-btn btn active" id="us-btn">US</button>
                 <button class="sm-btn btn" id="metric-btn">Metric</button><br>
             </div>
             <div id="us" class="field-container">
-                <label id="ft-lab">ft:<input id="feet-input" type="number" min="0" max="12"class="feet-input"></label>
-                <label id="in-lab">in:<input id="inch-input" type="number" min="0" max="12" class="inches-input"></label>
-                <label id="lb-lab">lbs:<input id="pounds-input" type="number" min="0" ></label>
+                <label id="ft-lab">ft:<input id="feet-input" type="number" min="0" max="12"class="feet-input" placeholder="0"></label>
+                <label id="in-lab">in:<input id="inch-input" type="number" min="0" max="12" class="inches-input" placeholder="0"></label>
+                <label id="lb-lab">lbs:<input id="pounds-input" type="number" min="0" placeholder="0"></label>
             </div>
             <div id="metric" class="field-container hide">
-                <label id="in-lab">cm:<input id="cm-input" type="number" class="inches-input"></label>
-                <label id="lb-lab">kg:<input id="kg-input" type="number" ></label>
+                <label id="in-lab">cm:<input id="cm-input" type="number" class="inches-input" placeholder="0"></label>
+                <label id="lb-lab">kg:<input id="kg-input" type="number" placeholder="0"></label>
             </div>
             <div class="btn-area">
                 <button id="calc-btn" class="calc-btn btn">Calculate</button>
