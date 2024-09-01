@@ -1,5 +1,6 @@
 :root {
     --bg: #fff;
+    --green: #42e31aff;
     --text: #007acc;
     --highlight: #FF6969;
     --slate: #b6c5e0;
@@ -84,24 +85,21 @@ input:focus {
 .hour-2 {
     display: flex;
     align-items: center;
-    margin-left: 8px;
-}
-
-.btn:hover {
-    background-color: #d82e2e;
-}
-
-.active:hover {
-    background-color: rgb(159, 232, 141);
 }
 
 .results-area {
-    margin-bottom: 20px;
     text-align: center;
+    p{
+        margin: 10px;
+    }
+}
+
+.added-minutes-text {
+    color: var(--green);
 }
 
 .ampm {
-    width: 55px;
+    width: 50px;
     cursor: pointer;
 }
 
@@ -111,6 +109,10 @@ input:focus {
 }
 
 @media(max-width: 900px) {
+    .apps-container {
+        width: 80% !important;
+    }
+
     .app-hidden {
         display: block;
     }
@@ -119,10 +121,6 @@ input:focus {
     }
     .title-container {
         color: var(--text);
-    }
-
-    .input-area {
-        margin: 5px 0;
     }
 
     input {

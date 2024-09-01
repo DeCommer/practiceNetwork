@@ -55,14 +55,14 @@
                 <input type="number" id="add-minutes1-add" min="0" max="59" placeholder="MM">
             </div>
             <div class="add-btn-area">
-                <button class="sm-btn btn" id="add-btn" type="button">Add time</button>
-                <button class=" sm-btn btn" id="sub-btn" type="button">Subtract time</button>
+                <button class="sm-btn btn" id="add-btn" type="button">+ Time</button>
+                <button class="sm-btn btn" id="sub-btn" type="button">- Time</button>
                 <button class="sm-btn btn" id="as-clear-btn" type="button">Clear</button>
             </div>
         </div>
         <div class="results-area">
             <p id="original-time"></p>
-            <p id="added-minutes"></p>
+            <p class="added-minutes-text" id="added-minutes"></p>
             <p id="add-message"></p>
             <p class="result" id="time-after-addition"></p>
         </div>
@@ -76,8 +76,8 @@
             <button class="sm-btn btn-sm active" id="addsub-switch-btn" type="button">[ + - ] Mode</button>
             <div class="input-area">
             <h1>Time Difference Calculator</h1>
+            <label for="time1">Start Time:</label>
             <div class="hour-1">
-                <label for="time1">Start Time:</label>
                 <input type="number" id="hours1" min="1" max="12" placeholder="HH"><h2>:</h2>
                 <input type="number" id="minutes1" min="0" max="59" placeholder="MM">
                 <select class="ampm" id="ampm1">
@@ -85,8 +85,8 @@
                     <option value="PM">PM</option>
                 </select>
             </div>
+            <label for="time2">End Time:</label>
             <div class="hour-2">
-                <label for="time2">End Time:</label>
                 <input type="number" id="hours2" min="1" max="12" placeholder="HH"><h2>:</h2>
                 <input type="number" id="minutes2" min="0" max="59" placeholder="MM">
                 <select class="ampm" id="ampm2">
