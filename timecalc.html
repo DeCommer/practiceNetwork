@@ -40,6 +40,12 @@
         </div>
         <button class="sm-btn active" id="diff-switch-btn" type="button">Difference Mode</button>
         <h1>[+ -] Calculator</h1>
+        <div class="results-area">
+            <p id="original-time"></p>
+            <p class="added-minutes-text" id="added-minutes"></p>
+            <p id="add-message"></p>
+            <p class="result" id="time-after-addition"></p>
+        </div>
         <div class="input-area">
             <label for="add-time1">Start Time:</label>
             <div class="hour-1">
@@ -60,12 +66,6 @@
                 <button class="sm-btn btn" id="as-clear-btn" type="button">Clear</button>
             </div>
         </div>
-        <div class="results-area">
-            <p id="original-time"></p>
-            <p class="added-minutes-text" id="added-minutes"></p>
-            <p id="add-message"></p>
-            <p class="result" id="time-after-addition"></p>
-        </div>
     </div>
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <div class="apps-container apps-container-hidden" id="diff-container">
@@ -76,6 +76,11 @@
             <button class="sm-btn btn-sm active" id="addsub-switch-btn" type="button">[ + - ] Mode</button>
             <div class="input-area">
             <h1>Time Difference Calculator</h1>
+            <div class="results-area">
+                <p id="message"></p>
+                <p class="result" id="result"></p>
+                <p id="total-mins"></p>
+            </div>
             <label for="time1">Start Time:</label>
             <div class="hour-1">
                 <input type="number" id="hours1" min="1" max="12" placeholder="HH"><h2>:</h2>
@@ -98,11 +103,6 @@
         <div class="calc-btn-area">
             <button class="sm-btn btn" id="enter-btn" type="button">Enter</button>
             <button class="sm-btn btn" id="clear-btn" type="button">Clear</button>
-        </div>
-        <div class="results-area">
-            <p id="message"></p>
-            <p class="result" id="result"></p>
-            <p id="total-mins"></p>
         </div>
     </div>
     <footer>
