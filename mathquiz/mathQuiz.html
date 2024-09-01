@@ -5,20 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/mathquiz.css">
-    <link rel="stylesheet" href="../css/logo.css">
-    <link rel="stylesheet" href="./css/showhide.css">
+    <link rel="stylesheet" href="../css/main.css">
     <script src="./js/mathQuiz.js" defer></script>
-    <script src="./js/showhide.js" defer></script>
+    <script src="../js/scripts.js" defer></script>
     <title>Math Quiz</title>
 </head>
 <body>
-<div class="converter-container">
     <header>
-        <a href="https://www.decommer.com/"><span class="homeColor">Home</span></a>
-        <a class="aboutBtn" href="#"><span class="homeColor">About</span></a>
-        <button id="settings-btn" class="settings-btn">Settings</button>
-        <h1 class="title"><sup>+ - x ÷</sup> Math Quiz <sup>+ - x ÷</sup></h1>
-    </header>
+    <nav class="nav-bar">
+        <div class="header-links">
+          <div class="left-header-links">
+            <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+            <a href="https://www.decommer.com/">Home</a>
+            <button id="settings-btn" class="settings-btn">Settings</button>
+        </div>
+          <!-- <button id="mode-btn" class="theme-btn">🌑</button> -->
+        </div>
+      </nav>
+        <div class="hero">
+          <div class="elem-logo">
+            <p class="logo-upper-left randNum">00</p>
+            <h1 class="logo-center">D<span>e</span></h1>
+            <p class="logo-bottom-center-name">DeCommer</p>
+            <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+          </div>
+          <div class="title-container">
+            <h2>Joseph DeCommer</h2>
+            <p class="description-text">+_x÷ Math Quiz</p>
+          </div>
+        </div>
+      </header>
+      <div class="mobile-title-container app-hidden">
+          <div class="sm-elem-logo">
+              <p class="sm-logo-upper-left randNum">00</p>
+              <h1 class="sm-logo-center">D<span class="sm-logo-sm-txt">e</span></h1>
+              <p class="sm-logo-bottom-center-name">DeCommer</p>
+              <p class="sm-logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+          </div>
+          <div>
+              <h2 class="title">DeCommer.com</h2>
+              <p class="description-text">+_x÷ Math Quiz</p>
+          </div>
+      </div>
+<div class="apps-container">
     <!-- SETTINGS Section -->
     <div class="settings-modal hidden">
         <button class="close-settings-modal">&times</button>
@@ -45,9 +74,9 @@
         </div>  
         <div id="ansArea">
             <input id="usrIn" placeholder="=">
-            <button id="AnswerBtn">Enter</button>
+            <button class="btn" id="answer-btn">Enter</button>
         </div>
-        <p class="question-info-text"></p>
+        <p class="question-info-text">0/0</p>
         <div class="progess-bar-container">
             <div class="progress-bar"></div>
         </div>
@@ -62,7 +91,7 @@
                 <p id="score">0</p>
             </div>
         </div>
-        <nav>
+        <nav class="tmNav">
             <label for="touch"><span>Time Controls</span></label>
             <input type="checkbox" id="touch">
             <ul class="slide">
@@ -111,371 +140,6 @@
         <h2>Questions:</h2>
         <ul id="questions"></ul>
     </div>
-</div><div class="winOverlay hidden"></div>
-
-<div class="aboutModal hidden">
-    <button class="closeAboutModal">&times</button>
-    <h1>Math Quiz</h1>
-    <p>Math quiz is set up to randomly generate two numbers 
-        along with a randomly generated operator so you never know
-        what kind of question covering basic math you will get.
-        This is adapted from a Java app I wrote.
-    </p><p>
-        I made this with a combination of HTML, CSS and JS. 
-        You can see some of the JavaScript by clicking the button below.
-    </p>
-</div><div class="aboutOverlay hidden"></div>
-
-<div class="code">
-    <button class="jsBtn" >See the Javascript.</button>
-    <p><pre><code class="jsHidden hidden">
-        <button class="closeJsModal">&times</button>
-let score = 0;
-let questionNum = 0;
-let numberOfQuestions = 10;
-let correct = 0;
-let incorrect = 0;
-let answer;
-let usrIn = document.getElementById('usrIn');
-let scoreText = document.getElementById('score');
-let questionLog = [];
-
-const bgColorChange = document.querySelector('.converter-container');
-const messageArea = document.getElementById('messageArea');
-const answerBtn = document.getElementById('AnswerBtn');
-const modeBtn = document.querySelector('.modeBtn');
-const allOpsBtn = document.getElementById('all-ops-btn');
-const addBtn = document.getElementById('add-btn');
-const subBtn = document.getElementById('sub-btn');
-const multBtn = document.getElementById('mult-btn');
-const divBtn = document.getElementById('div-btn');
-
-// Timer Section ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-const startTimeBtn = document.getElementById('time-start-btn')
-const pauseTimeBtn = document.getElementById('time-pause-btn')
-const resetTimeBtn = document.getElementById('time-reset-btn')
-const timer = document.getElementById('time-display')
-
-let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-let int = null;
-
-startTimeBtn.addEventListener('click', () => {
-    pauseTimeBtn.classList.remove('active');
-    startTimeBtn.classList.add('active');
-    if (int != null) {
-        clearInterval(int);
-    }
-    int = setInterval(displayTimer, 10)
-    usrIn.focus();
-})
-
-pauseTimeBtn.addEventListener('click', () => {
-    pauseTimeBtn.classList.add('active');
-    startTimeBtn.classList.remove('active');
-    clearInterval(int);
-});
-
-resetTimeBtn.addEventListener('click', clearTime = () => {
-    pauseTimeBtn.classList.remove('active');
-    startTimeBtn.classList.remove('active');
-    clearInterval(int);
-
-    [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-    timer.innerHTML = '00:00:000';
-});
-
-const displayTimer = () => {
-    milliseconds += 10;
-    if(milliseconds == 1000) {
-        milliseconds = 0;
-        seconds++;
-        if(seconds == 60) {
-            seconds = 0;
-            minutes++
-        }
-        if (minutes == 60) {
-            minutes = 0
-            hours++;
-        }
-    }
-    // let h = hours < 10 ? '0' + hours : hours;
-    let m = minutes < 10 ? '0' + minutes : minutes;
-    let s = seconds < 10 ? '0' + seconds : seconds;
-    let ms = milliseconds < 10 ? '00' + milliseconds : milliseconds < 100 ? '0' + milliseconds : milliseconds
-
-    let result = timer.innerHTML = `${m}:${s}:${ms}`;
-    return result;
-}
-
-// Main Program ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-const questionConstructor = () => {
-    opArr = ["+", "-", "x", "÷"];
-    num1 = Math.floor(Math.random() * 10) + 1;
-    num2 = Math.floor(Math.random() * 10) + 1;
-    randOp = opArr[Math.floor(Math.random() * opArr.length)];
-    document.getElementById('leftNum').textContent = num1;
-    document.getElementById('operator').textContent = randOp;
-    document.getElementById('rightNum').textContent = num2;
-}
-
-const operatorModes = () => {
-    if(allOpsBtn.classList[1] === 'active') {
-        allOps();
-    }
-    if(addBtn.classList[1] === 'active') {
-        add();
-    }
-    if(subBtn.classList[1] === 'active') {
-        sub();
-    }
-    if(multBtn.classList[1] === 'active') {
-        mult();
-    }
-    if(divBtn.classList[1] === 'active') {
-        div();
-    }   
-}
-
-allOpsBtn.addEventListener('click', allOps = () => {
-    allOpsBtn.classList.add('active');
-    addBtn.classList.remove('active');
-    subBtn.classList.remove('active');
-    multBtn.classList.remove('active');
-    divBtn.classList.remove('active');
-    questionConstructor();
-    if (randOp === '+') {
-        answer = num1 + num2;
-    }if (randOp === '-') {
-        answer = num1 - num2;
-    }if (randOp === 'x') {
-        answer = num1 * num2;
-    }if (randOp === '÷') {
-        answer = num1 / num2;
-        answer = answer.toFixed(2);
-    }
-});
-
-addBtn.addEventListener('click', add = () => {
-    allOpsBtn.classList.remove('active');
-    addBtn.classList.add('active');
-    subBtn.classList.remove('active');
-    multBtn.classList.remove('active');
-    divBtn.classList.remove('active');
-    questionConstructor();
-    answer = num1 + num2;
-    randOp = opArr[0];
-    document.getElementById('operator').textContent = randOp;
-});
-
-subBtn.addEventListener('click', sub = () => {
-    allOpsBtn.classList.remove('active');
-    addBtn.classList.remove('active');
-    subBtn.classList.add('active');
-    multBtn.classList.remove('active');
-    divBtn.classList.remove('active');
-    questionConstructor()
-    answer = num1 - num2;
-    randOp = opArr[1];
-    document.getElementById('operator').textContent = randOp;
-});
-
-multBtn.addEventListener('click', mult = () => {
-    allOpsBtn.classList.remove('active');
-    addBtn.classList.remove('active');
-    subBtn.classList.remove('active');
-    multBtn.classList.add('active');
-    divBtn.classList.remove('active');
-    questionConstructor()
-    answer = num1 * num2;
-    randOp = opArr[2];
-    document.getElementById('operator').textContent = randOp;
-});
-
-divBtn.addEventListener('click', div = () => {
-    allOpsBtn.classList.remove('active');
-    addBtn.classList.remove('active');
-    subBtn.classList.remove('active');
-    multBtn.classList.remove('active');
-    divBtn.classList.add('active');
-    questionConstructor()
-    answer = num1 / num2;
-    answer = answer.toFixed(2);
-    randOp = opArr[3];
-    document.getElementById('operator').textContent = randOp;
-});
-
-const clearField = () => {
-    usrIn.value = null;
-    usrIn.focus();
-}
-
-const messageTimeout = () => {
-    setTimeout(() =>{
-        messageArea.textContent = '';
-    }, 1500);
-}
-
-const questionRight = () => {
-    correct += 1
-    bgColorChange.style.boxShadow = '0 0 50px 20px rgba(51, 253, 0, 0.575)';
-    setTimeout(() =>{
-        bgColorChange.style.boxShadow = '0 0 0 0';
-    }, 1200);
-    messageArea.style.color = '#A5DD9B';
-    messageArea.textContent = 'Correct!'
-    clearField();
-    messageTimeout();
-    return 'Correct'
-}
-
-const questionWrong = () => {
-    incorrect += 1
-    bgColorChange.style.boxShadow = '0 0 50px 20px rgb(255, 46, 46)';
-    setTimeout(() =>{
-        bgColorChange.style.boxShadow = '0 0 0 0';
-    }, 1800);
-    messageArea.style.color = '#c1121f';
-    messageArea.textContent = `The correct answer is: ${answer}`;
-    clearField();
-    messageTimeout();
-    return 'Incorrect'
-}
-
-const correctCheck = () => {
-    if(randOp === '+' && Number(usrIn.value) === Number(answer)) {
-        questionRight();
-        score += 1;
-        scoreText.textContent = score;
-    }else if(randOp ==='-' && Number(usrIn.value) === Number(answer)) {
-        questionRight();
-        score += 2;
-        scoreText.textContent = score;
-    }else if(randOp === 'x' && Number(usrIn.value) === Number(answer)) {
-        questionRight();
-        score += 5;
-        scoreText.textContent = score;
-    }else if(randOp === '÷' && Number(usrIn.value) === Number(answer)) {
-        questionRight();
-        score += 10;
-        scoreText.textContent = score;
-    }else if (Number(usrIn.value) !== Number(answer)) {
-        questionWrong();
-        score -= 1;
-        scoreText.textContent = score;
-    }
-}
-
-const stats = () => {
-    let correctStatText = document.getElementById('correctStat');
-    let incorrectStatText = document.getElementById('inCorrectStat');
-    let percentStatText = document.getElementById('percentStat');
-    let scoreStatText = document.getElementById('scoreStat');
-    let questionsList = document.getElementById('questions')
-    let percentCorrect = (correct/questionNum) * 100;
-    openWinModal();
-    correctStatText.textContent = correct;
-    incorrectStatText.textContent = incorrect;
-    scoreStatText.textContent = score;
-    percentStatText.textContent = `${percentCorrect.toFixed(2)}%`;
-    const timeStat = document.getElementById('timeStat');
-    if(milliseconds === 0) {
-        timeStat.innerHTML = 0;
-    } else {
-        timeStat.innerHTML = displayTimer();
-    }
-    clearTime();
-    questionsList.innerHTML = questionLog.map(i => 'html'`${i}'html'`).join('');
-}
-
-const nextQuestion = () => {
-    questionNum += 1
-    operatorModes();
-}
-
-const reset = () => {
-    questionNum = 0;
-    score = 0;
-    correct = 0;
-    incorrect = 0;
-    questionLog = [];
-    progressBar();
-    scoreText.textContent = score;
-}
-
-const recordQuestions = () => {
-    let correctLog = `${num1} ${randOp} ${num2} = ${answer} : ✅`;
-    let incorrectLog = `${num1} ${randOp} ${num2} = ${answer} : ❌`;
-    if (Number(usrIn.value) === Number(answer)) {
-        questionLog.push(correctLog);
-    } else {
-        questionLog.push(incorrectLog);
-    }
-    // console.log(`${questionLog}`)
-}
-
-const progressBar = () => {
-    let increment = 100 / numberOfQuestions;
-    let progress = document.querySelector('.progress-bar');
-    let width = progress.style.width.replace('%', '');
-    width = parseInt(width) + increment;
-    width = (questionNum / numberOfQuestions) * 100+'%';
-    progress.style.width = width;
-}
-progressBar()
-
-answerBtn.addEventListener('click', () => {
-    recordQuestions();
-    correctCheck();
-    nextQuestion();
-    if(questionNum === numberOfQuestions) {
-        stats();
-        usrIn.blur();
-    }
-    progressBar()
-});
-
-usrIn.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        recordQuestions();
-        correctCheck();
-        nextQuestion();
-    }
-    if(questionNum === numberOfQuestions) {
-        stats();
-    }
-    progressBar()
-});
-operatorModes();
-
-// Win modal ++++++++++++++++++++++++++++++++++++++++++++++++
-const winModal = document.querySelector('.winModal');
-const winOverlay = document.querySelector('.winOverlay');
-
-const openWinModal = () => {
-    winModal.classList.remove('hidden');
-    winOverlay.classList.remove('hidden');
-}
-
-const closeWinModal = () => {
-    winModal.classList.add('hidden');
-    winOverlay.classList.add('hidden');
-    reset();
-}
-document.querySelector('.closeWinModal').addEventListener('click', closeWinModal);
-document.querySelector('.winOverlay').addEventListener('click', closeWinModal);
-        </code></pre></p>
-    </div>
-    <div class="elem-logo">
-        <div class="logo-upper-left">
-            <p>45</p>
-        </div>
-        <div class="logo-center">
-            <h1>D<span>e</span></h1><br>
-            <p>DeCommer</p>
-        </div>
-        <div class="logo-bottom-center">
-            <p>19.79</p>
-        </div>
-    </div>
+    <div class="winOverlay hidden"></div>
 </body>
 </html>

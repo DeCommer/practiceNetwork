@@ -8,9 +8,9 @@ let usrIn = document.getElementById('usrIn');
 let scoreText = document.getElementById('score');
 let questionLog = [];
 
-const bgColorChange = document.querySelector('.converter-container');
+const bgColorChange = document.querySelector('.apps-container');
 const messageArea = document.getElementById('messageArea');
-const answerBtn = document.getElementById('AnswerBtn');
+const answerBtn = document.getElementById('answer-btn');
 const allOpsBtn = document.getElementById('all-ops-btn');
 const addBtn = document.getElementById('add-btn');
 const subBtn = document.getElementById('sub-btn');

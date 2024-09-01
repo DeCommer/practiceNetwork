@@ -1,153 +1,23 @@
-:root {
-    --bg: #fff;
-    --text: #007acc;
-    --highlight: #FF6969;
-    --slate: #b6c5e0;
-    --leftGrad: #05cff7;
-    --centerGrad: #a2faa7;
-    --rightGrad: #007acc;
-}
-
-* {
-box-sizing: border-box;
-}
-
-body {
-    height: 100%;
+#qArea {
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
-
-hr {
-    border-bottom: none;
-    border: .5px solid #007acc;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 2px;
-    border-bottom: 1px solid #007acc;
-}
-
-header h1 {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    margin: 20px auto 25px auto;
-    color: #FF6969;
-    /* text-shadow: 0 0 2px rgba(0, 0, 0, 0.9); */
-}
-
-h2, h3 {
-    color:#007acc;
-}
-
-sup {
-    color: #c1121f;
-    text-shadow: none;
-    font-size: 1.2rem;
-}
-
-a {
-    text-decoration: none;  
-}
-
-p {
-    margin: 0;
-    padding: 5px;
-    font-size: 1.2rem; 
-    color: #007acc;;
-}
-
-.mode-area {
-    display: flex;
-    gap: .5rem;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px auto;
-}
-
-.modeBtn {
-    border: none;
-    border-radius: 3px;
-    background-color: #007acc;
-    color: #fff;
-    font-size: 1rem;
-    padding: 2px 10px;
-    cursor: pointer;
-}
-
-.modeBtn:hover {
-    background-color: #c1121f;
-    color: #fff;
-}
-
-.active {
-    background-color: #c1121f;
-    color: #fff;
-}
-
-.converter-container {
-    border: 2px solid;
-    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    width: 400px;
-    margin-top: 50px;
-    padding: 16px;
-}
-
-.homeColor {
-    font-size: 1.2rem;
-    color: #007acc;
-    margin-right: 15px;
-}
-
-.homeColor:hover {
-    color:#0f4a89;
-    transition: ease-in 0.2s;
 }
 
 .mathText {
     /* border: 1px solid #0f4a89;
     background-color: #fff;
     border-radius: 10px; */
-    margin: 0px 0px 20px 0px;
-    font-size: 4rem;
-    color: #0f4a89;
-}
-
-#qArea {
-    /* border: 1px solid red; */
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    align-items: center;
-    width: 55%;
-    margin: 0 auto;
+    margin: 0px 0px 10px 0px;
+    font-size: 6rem;
+    color: var(--text);
 }
 
 .op {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    padding: 0 20px;
 }
-
-input {
-    border: none;
-}
-
-input:focus {
-    outline: none;
-    border: none;
-}
-
-input::placeholder {
-    text-align: center;
-  
-  }
 
 #ansArea {
     display: flex;
@@ -157,47 +27,10 @@ input::placeholder {
     margin-bottom: 5px;
 }
 
-#usrIn {
-    /* border: none; */
-    font-family: inherit;
-    font-size: 1rem;
-    border: 1px solid #6fa6d3;
-    border-radius: 10px 0 0 10px;
-    border-right: 0;
-    color: #007acc;
-    text-align: right;
-    padding: 10px;
-    height: 29px;
-    max-width: 150px;
-}
-
-#AnswerBtn {
-    padding: 6px 10px;
-    border-radius: 0 10px 10px 0;
-    background-color: #c1121f;
-    font-size: 1rem;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    }
-    
-#AnswerBtn:hover {
-    background-color: #c1121f;
-    color: #fff;
-    border: none;
-    }
-    
-#AnswerBtn:active {
-    background-color: #c1121f;
-    color: #007acc;
-    border: none;
-    }
-
 .progess-bar-container {
     border: 1px solid rgb(77, 104, 152);
-    background-color: var(--slate);
-    border-radius: 3px;
-    margin: 0 auto;
+    background-color: var(--bg);
+    margin: 10px auto;
     position: relative;
     width: 90%;
     height: .6rem;
@@ -213,11 +46,9 @@ input::placeholder {
 }
 
 .progress-bar {
-    background-color: #a2faa7;
-    border-top: 1px solid #007acc;
-    border-radius: 3px;
+    background-color: var(--activeGreen);
     width: 0%;
-    height: .3rem;
+    height: 9px;
 }
 
 #scoreArea {
@@ -242,12 +73,6 @@ input::placeholder {
     color:#c1121f;
 }
 
-/* #rightWrongArea {
-    display: flex;
-    justify-content: space-between;
-    margin: 25px 25px 0 25px;
-} */
-
 #pts-area {
     text-align: center;
     border-top: 1px solid #205b9b;
@@ -255,23 +80,26 @@ input::placeholder {
 }
 
 #pts-area p {
+    font-size: 1.3rem;
+    padding: 6px 0;
     color: #007acc;
 }
 
 #pts-area p:last-child {
     margin-top: 15px;
-    color: #FF6969;
+    color: var(--orange);
     /* text-shadow: 0 0 5px rgba(0, 0, 0, 0.718); */
 }
 
 #pts-area h2 {
+    color: var(--orange);
     margin: 15px 0;
     padding: 0;
 }
 
 /* Time Controls  *************************/
 
-nav {
+.tmNav {
     /* border: 1px solid red; */
     width : 80%; 
     margin : 5px auto 0 auto;
@@ -325,7 +153,6 @@ label span {
 
 .timeBtn {
     border: none;
-    border-radius: 3px;
     background-color: #007acc;
     color: #fff;
     font-size: 1rem;
@@ -333,6 +160,19 @@ label span {
     cursor: pointer;
 }
 /* SETTINGS MODAL STYLES **********************************/
+.modeBtn {
+    border: none;
+    background-color: var(--orange);
+    color: #fff;
+    font-size: 1rem;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.modeBtn:hover {
+    background-color: var(--orangeHi);
+    color: #fff;
+}
 
 .settings-btn {
     font-family: inherit;
@@ -345,22 +185,22 @@ label span {
 }
 
 .settings-btn:hover {
-    color:#FF6969;
+    color: var(--orange);
     transition: ease-in 0.2s;
 }
 
 .settings-modal {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: rgba(70, 20, 50, 1) 5px 5px 75px;
     position: absolute;
     text-align: center;
-    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 600px;
     width: fit-content;
-    background-color: rgb(247, 239, 224);
+    background-color: var(--bg);
     padding: 0 25px 25px 25px;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 10;
   }
 
@@ -369,14 +209,14 @@ label span {
     top: .5rem;
     right: 1rem;
     font-size: 2rem;
-    color: #c1121f;
+    color: var(--orange);
     cursor: pointer;
     border: none;
     background: none;
   }
 
   #q-in {
-    border: 1px solid #c1121f;
+    color: var(--orange);
     font-size: 1rem;
     width: 100px;
     padding: 3px;
@@ -386,12 +226,15 @@ label span {
 
   #q-in-enter-btn {
     border: none;
-    border-radius: 3px;
-    background-color: #c1121f;
+    background-color: var(--orange);
     color: #fff;
     font-size: 1rem;
     padding: 4px 13px;
     cursor: pointer;
+  }
+
+  #q-in-enter-btn:hover {
+    background-color: var(--orangeHi);
   }
 
 /* WIN MODAL STYLES***************************/
@@ -400,38 +243,48 @@ label span {
     display: none;
   }
   
+  .winOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+
   .winModal h1 {
     border-bottom: 1px solid #beab86;
     font-size: 2.5rem;
-    color: #c1121f;
+    color: var(--orange);
   }
   
   .winModal p {
     font-size: 1.8rem;
     padding: 5px;
-    color: #282828;
+    color: var(--activeGreen)
   }
 
   .winModal h2 {
     font-size: 2rem;
     padding: 5px 15px;
     margin: 0 5px;
-    color: #31537f;
+    color: var(--text);
   }
 
   .winModal {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: rgba(70, 20, 50, 1) 5px 5px 75px;
     position: absolute;
     text-align: center;
-    top: 0%;
+    margin-top: 50px;
     left: 50%;
     transform: translate(-50%, 5%);
     max-width: 600px;
     width: fit-content;
     height: fit-content;
-    background-color: rgb(247, 239, 224);
+    background-color:  var(--bg);
     padding: 0 25px 25px 25px;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 10;
   }
 
@@ -453,7 +306,7 @@ label span {
     top: 1rem;
     right: 1rem;
     font-size: 2rem;
-    color: #c1121f;
+    color: var(--orange);
     cursor: pointer;
     border: none;
     background: none;
@@ -461,15 +314,6 @@ label span {
 
   .closeWinModal:hover {
     rotate: 20deg;
-  }
-
-  .winOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
   }
 
   .questions {
@@ -501,10 +345,11 @@ label span {
     right: -30px;
 }
 
-@media (max-width: 501px) {
-    .converter-container {
-        width: 90%;
-    }
+@media (max-width: 900px) {
+
+    #q-in {
+        width: 50px;
+      }
 
     .mode-area {
         flex-wrap: wrap;
@@ -542,20 +387,6 @@ label span {
     .settings-modal {
         top: 50%;
     }
-/* 
-    .winOverlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 135%;
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
-        z-index: 5;
-      } */
-}
-
-@media (max-width: 780px) {
 
     .settings-modal { 
         top: 50%;
@@ -577,4 +408,15 @@ label span {
         width: 300px;
         height: auto;
       }
+/* 
+    .winOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 135%;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 5;
+      } */
 }
