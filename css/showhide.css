@@ -1,0 +1,47 @@
+
+.modal-button {
+  display: block;
+  margin: 40px auto;
+  border: 0;
+  border-radius: 8px;
+  padding: 7px 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background: rgb(0, 149, 246);
+  cursor: pointer;
+  color: #FFF;
+  transition: all 240ms linear;
+}
+.modal-button:hover {
+  filter: brightness(0.8);
+}
+.modal-button:active {
+  transform: scale(0.9);
+}
+.modal-dialog {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
+  margin: 50px auto;
+  width: 80%;
+  max-width: fit-content;
+  max-height: 1000px;
+  background-color: #fff;
+  padding: 10px;
+}
+.modal-dialog > p {
+  text-align: center;
+  margin: 0;
+}
+.modal-dialog > p:first-of-type {
+  margin: 0 auto 20px;
+  font-size: 32px;
+  font-weight: 600;
+}
+.modal-dialog > .modal-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  margin: 0px auto;
+}
