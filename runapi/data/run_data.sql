@@ -1565,7 +1565,7 @@ INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duratio
 INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1539', 'Monday', 'August', '19', '2024', '8`58``', '6.74', '1:00:26', '844');
 INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1540', 'Thursday', 'August', '22', '2024', '9`16``', '5.10', '00:47:19', '655');
 INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1541', 'Saturday', 'August', '24', '2024', '9`16``', '7.55', '1:10:01', '1020');
-INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1542', 'Tuesday', 'August', '27', '2024', '8`03``', '3.17', '25:32', '408');
-INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1543', 'Thursday', 'August', '29', '2024', '7`51``', '3.18', '24:58', '392');
-INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1544', 'Saturday', 'August', '31', '2024', '9`29``', '5.45', '51:42', '672');
+INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1542', 'Tuesday', 'August', '27', '2024', '8`03``', '3.17', '00:25:32', '408');
+INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1543', 'Thursday', 'August', '29', '2024', '7`51``', '3.18', '00:24:58', '392');
+INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1544', 'Saturday', 'August', '31', '2024', '9`29``', '5.45', '00:51:42', '672');
 INSERT INTO run_data (id, weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('1545', 'Monday', 'September', '2', '2024', '8`35``', '10.58', '1:30:54', '1300');
