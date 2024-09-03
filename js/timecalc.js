@@ -220,13 +220,13 @@ const updateSubTime = () => {
     document.getElementById('ampm3').value = newTime.newAmpm;
 };
 
-addBtn.addEventListener('click', () =>{
+addBtn.addEventListener('click', () => {
     resultsArea.classList.remove('hide');
     addTime();
     updateAddTime();
 });
 
-subBtn.addEventListener('click', () =>{
+subBtn.addEventListener('click', () => {
     resultsArea.classList.remove('hide');
     subTime();
     updateSubTime();
