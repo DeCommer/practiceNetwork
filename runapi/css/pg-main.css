@@ -87,34 +87,26 @@ button {
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
 }
 
 .data-container {
-    border-bottom: 1px solid #6d87a1;
+    border-bottom: 1px solid var(--slate);
     display: flex;
-    text-align: center;
-    /* margin: 10px; */
-    padding: 5px;
+    padding: 2px 0;
 }
 
 .data-title {
-    /* width: 100%; */
-    margin: 0 auto;
+    width: 100%;
     /* border: 1px solid green; */
+    text-align: center;
     color: var(--text);
-    padding: 5px;
 }
 
 .data-item {
     /* border: 1px solid blue; */
     color: var(--orange);
-    text-align: center;
-    padding: 5px;
+    padding: 5px 0;
 }
-
 
 @media (max-width: 900px) {
 
@@ -135,17 +127,16 @@ button {
 
     .data-container {
         font-size: .6rem;
+        margin: 0;
+        padding: 0;
     }
-    
     .data-title {
-        /* border: 1px solid red; */
-        color: var(--text);
-        padding: 2px;
+        padding: 0;
+        width: 100%;
     }
     
     .data-item {
-        /* border: 1px solid yellow; */
-        color: var(--orange);
-        padding: 2px;
+        padding: 0;
     }
+
 }
