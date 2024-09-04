@@ -112,6 +112,7 @@ button {
     .app-hidden {
         display: block;
     }
+
     .hero {
         display: none !important;
     }
@@ -123,6 +124,11 @@ button {
     .pagination-button {
         display: none;
     }
+    
+    .main-container {
+        width: 100%;
+        /* border: 1px solid red; */
+    }
 
     .run-data-container {
         width: 90%;
@@ -130,13 +136,13 @@ button {
 
     .data-container {
         font-size: .6rem;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        padding: 0px;
     }
+
     .data-title {
-        padding: 0;
         width: 100%;
+        /* border: 1px solid green; */
+        padding: 5px 0;
     }
     
     .data-item {
