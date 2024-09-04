@@ -1,20 +1,10 @@
-:root {
-    --bg: #fff;
-    --buttonRed: #c1121f;
-    --text: #007acc;
-    --highlight: #FF6969;
-    --slate: #b6c5e0;
-    --leftGrad: #05cff7;
-    --centerGrad: #a2faa7;
-    --rightGrad: #007acc;
-}
 
 .app-hidden {
     display: none;
 }
 
 .description {
-    color: var(--highlight);
+    color: var(--orange);
 }
 
 .main-container {
@@ -31,8 +21,8 @@
 }
 
 .page-counter span {
-    color: var(--lighterGreen);
-    border: 1px solid var(--highlight);
+    color: var(--text);
+    border: 1px solid var(--orange);
     margin: 10px;
     padding: 5px;
 }
@@ -87,43 +77,35 @@ button {
 
 .pagination-button:disabled {
     color: var(--bg);
-    background-color: var(--buttonRed);
+    background-color: var(--orange);
 }
 
-.table-wrapper {
+.run-data-container {
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    /* padding-bottom: 15px ; */
-    margin: 15px 0;
-    color: var(--text);
 }
 
-table.run-data-table th.id-header {
-    padding: 0px 10px;
-}
-
-table.run-data-table {
-    border-top: 1px solid var(--text);
-    /* margin: 25px 0 10px 0; */
-    width: 100%;
+.data-container {
+    border: 1px solid #6d87a1;
     text-align: center;
-    border-collapse: collapse;
-    min-width: 900px;
+    display: flex;
+    margin: 10px;
+    padding: 5px;
 }
 
-table.run-data-table th {
-    border-bottom: 1px solid var(--text);
-    color: var(--highlight);
-    padding: 10px 0px;
-    font-size: 1.2rem;
+.data-title {
+    /* border: 1px solid red; */
+    color: var(--text);
+    padding: 0 10px;
 }
 
-table.run-data-table td{
-    border-bottom: 1px solid var(--text);
-    padding: 6px 0px;
-    font-size: 1.2rem;
+.data-item {
+    /* border: 1px solid yellow; */
+    color: var(--orange);
+    padding: 0 10px;
 }
+
 
 @media (max-width: 900px) {
 
@@ -141,69 +123,19 @@ table.run-data-table td{
         display: none;
     }
 
-    table.run-data-table, thead, tbody, th, td, tr {
-        display: flex;
-        flex-direction: column;
+    .data-container {
+        font-size: .6rem;
     }
-
-    table.run-data-table thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
+    
+    .data-title {
+        /* border: 1px solid red; */
+        color: var(--text);
+        padding: 2px;
     }
-
-    table.run-data-table tr {
-        width: 100%;
-        margin:0;
-    }
-
-    table.run-data-table tr:nth-child(odd) {
-        background: #ccc;
-        background-color: #104787;
-    }
-
-    table.run-data-table td {
-        border: none;
-        border-bottom: 1px solid #111;
-        position: relative;
-        left: 45px;
-        padding-left: 25px;
-    }
-
-    table.run-data-table td:before {
-        position: absolute;
-        top: 0;
-        left: 2px;
-        width: 75%;
-        padding-right: 10px;
-        white-space: nowrap;
-    }
-
-    table.run-data-table td:nth-of-type(1):before {
-        content: "#";
-    }
-    table.run-data-table td:nth-of-type(2):before {
-        content: "Day";
-    }
-    table.run-data-table td:nth-of-type(3):before {
-        content: "Month";
-    }
-    table.run-data-table td:nth-of-type(4):before {
-        content: "Day of Month";
-    }
-    table.run-data-table td:nth-of-type(5):before {
-        content: "Year";
-    }
-    table.run-data-table td:nth-of-type(6):before {
-        content: "Avg Pace";
-    }
-    table.run-data-table td:nth-of-type(7):before {
-        content: "Distance";
-    }
-    table.run-data-table td:nth-of-type(8):before {
-        content: "Duration";
-    }
-    table.run-data-table td:nth-of-type(9):before {
-        content: "Calories";
+    
+    .data-item {
+        /* border: 1px solid yellow; */
+        color: var(--orange);
+        padding: 2px;
     }
 }

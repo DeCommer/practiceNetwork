@@ -4,54 +4,59 @@ fetch("./data/rundata-exp.json")
 
 const displayRuns = (data) => {
     const runs = data.runs;
-    const wrapper = document.getElementById('runTable');
+    const wrapper = document.getElementById('run-data-container');
     const rowsPerPage = 10;
     const initialPage = 1;
 
     displayList = (items, wrapper, rowsPerPage, page) => {
-        wrapper.innerHTML = 
-        `<thead>
-            <tr> 
-                <th scope="col" class="id-header">#</th>
-                <th>Weekday</th>
-                <th>Month</th>
-                <th>Day</th>
-                <th>Year</th>
-                <th>Avg Pace</th>
-                <th>Distance</th>
-                <th>Duration</th>
-                <th>Calories</th>
-            </tr>
-        </thead>`;
+        wrapper.innerHTML = ``
+
         page--;
 
         const start = rowsPerPage * page;
         const end = start + rowsPerPage;
         const pageItems = items.slice(start, end);
 
+        // for (let i = 0; i < pageItems.length; i++) {
+        //     const item = pageItems[i];
+        //     const tr = document.createElement('tr');
+        //     tr.innerHTML =
+        //     `<tbody>
+        //         <td data-label="#">${item.id}</td>
+        //         <td data-label="Weekday">${item.weekday}</td>
+        //         <td data-label="Month">${item.month}</td>
+        //         <td data-label="Day">${item.dom}</td>
+        //         <td data-label="Year">${item.year}</td>
+        //         <td data-label="Avg Pace">${item.avg_pace}</td>
+        //         <td data-label="Distance">${item.distance}</td>
+        //         <td data-label="Duration">${item.duration}</td>
+        //         <td data-label="Calories">${item.calories}</td>
+        //     </tbody>`;
+        //     wrapper.appendChild(tr);
+        // }
         for (let i = 0; i < pageItems.length; i++) {
             const item = pageItems[i];
-            const tr = document.createElement('tr');
-            tr.innerHTML =
-            `<tbody>
-                <td data-label="#">${item.id}</td>
-                <td data-label="Weekday">${item.weekday}</td>
-                <td data-label="Month">${item.month}</td>
-                <td data-label="Day">${item.dom}</td>
-                <td data-label="Year">${item.year}</td>
-                <td data-label="Avg Pace">${item.avg_pace}</td>
-                <td data-label="Distance">${item.distance}</td>
-                <td data-label="Duration">${item.duration}</td>
-                <td data-label="Calories">${item.calories}</td>
-            </tbody>`;
-            wrapper.appendChild(tr);
+            const div = document.createElement('div');
+            div.innerHTML =
+            `<div class="data-container">
+                <div class="data-title">#        <div class="data-item" data-label="#">       ${item.id}      </div></div> 
+                <div class="data-title">Weekday  <div class="data-item" data-label="Weekday"> ${item.weekday} </div></div>
+                <div class="data-title">Month    <div class="data-item" data-label="Month">   ${item.month}   </div></div> 
+                <div class="data-title">Day      <div class="data-item" data-label="Day">     ${item.dom}     </div></div> 
+                <div class="data-title">Year     <div class="data-item" data-label="Year">    ${item.year}    </div></div>
+                <div class="data-title">Avg Pace <div class="data-item" data-label="Avg Pace">${item.avgPace} </div></div> 
+                <div class="data-title">Distance <div class="data-item" data-label="Distance">${item.distance}</div></div>
+                <div class="data-title">Duration <div class="data-item" data-label="Duration">${item.duration}</div></div>
+                <div class="data-title">Calories <div class="data-item" data-label="Calories">${item.calories}</div></div>
+            </div>`;
+            wrapper.appendChild(div);
         }
 
         //Controls
         const pagination = document.getElementById('pagination');
         const totalPages = Math.ceil(items.length / rowsPerPage);
 
-        pagination.innerHTML = '';
+        pagination.innerHTML = ``;
 
         const firstButton = document.createElement('button');
         firstButton.innerText = 'First';
