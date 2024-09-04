@@ -86,7 +86,7 @@ button {
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    width: 100%;
+    width: 75%;
 }
 
 .data-container {
@@ -109,7 +109,6 @@ button {
 }
 
 @media (max-width: 900px) {
-
     .app-hidden {
         display: block;
     }
@@ -125,8 +124,13 @@ button {
         display: none;
     }
 
+    .run-data-container {
+        width: 90%;
+    }
+
     .data-container {
         font-size: .6rem;
+        width: 100%;
         margin: 0;
         padding: 0;
     }
@@ -138,5 +142,4 @@ button {
     .data-item {
         padding: 0;
     }
-
 }
