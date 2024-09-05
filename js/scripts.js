@@ -12,6 +12,16 @@ setInterval(() =>{
 });
 }, 500)
 
+let url = window.location.href;
+console.log(url)
+
+console.log("local");
+
+if(url.includes( "127.0.0.1" || url.includes("10.0.0"))) {
+  document.querySelector(".title").innerHTML = `Joseph DeCommer (Local)`;
+}
+
+
 // const modeBtn = document.querySelector('#mode-btn');
 // modeBtn.addEventListener('click', () => {
 //     const theme = document.getElementsByTagName('link')[0]; 

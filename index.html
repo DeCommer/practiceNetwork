@@ -11,6 +11,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:name" content="DeCommer.com">
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/scripts.js" defer></script>
     <!-- <script src="./js/appCounter.js" defer></script> -->
     <noscript>If you are seeing this message JavaScript is disabled on your device.</noscript>
   </head>
@@ -110,34 +111,5 @@
       data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18"
       data-message="If you like these apps you can show your appreciation with a coffee!">
     </script>
-
-    <script> 
-      const year = document.querySelectorAll('.year');
-      year.forEach(year => {
-        yearText = new Date().getFullYear();
-        year.textContent = yearText;
-      })
-
-      const randNum = document.querySelectorAll(".randNum");
-      setInterval(() =>{
-        randNum.forEach(randNum => {
-          let num = Math.floor(Math.random() * 90 + 10);
-          randNum.innerHTML = `${num}`;
-        });
-      }, 500)
-
-      // const modeBtn = document.querySelector('#mode-btn');
-      // modeBtn.addEventListener('click', () => {
-      //     const theme = document.getElementsByTagName('link')[0]; 
-      //     if (theme.getAttribute('href') == './css/main.css') { 
-      //         theme.setAttribute('href', './css/dark.css');
-      //         modeBtn.innerHTML = '🌕';
-      //     } else { 
-      //         theme.setAttribute('href', './css/main.css');
-      //         modeBtn.innerHTML = '🌑'; 
-      //     } 
-      // });
-
-    </script> 
   </body>
 </html>

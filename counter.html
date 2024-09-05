@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin-top: 200px;
+        }
+        .main-container {
+            border: 1px solid red;
+            text-align: center;
+            background-color: #dfdfdf;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        p {
+            font-size: 5.5rem;
+            color: #cf212d;
+            margin: 0;
+            padding: 0;
+        }
+        .btn {
+            font-size: 1rem;
+            padding: 15px 25px;
+            background-color: #cf212d;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-container">
+        <P class="numbers">0</P>
+        <button class="dwnBtn btn">-</button>
+        <button class="resBtn btn">Reset</button>
+        <button class="upBtn btn">+</button>
+    </main>
+    <script>
+        let dwnBtn = document.querySelector('.dwnBtn.btn');
+        let resetBtn = document.querySelector('.resBtn.btn');
+        let upBtn = document.querySelector('.upBtn.btn');
+        let numbers = document.querySelector('.numbers');
+        let num = 0;
+        dwnBtn.addEventListener('click', () => {
+            num -= 1;
+            numbers.textContent = num;
+        });
+        upBtn.addEventListener('click', () => {
+            num += 1;
+            numbers.textContent = num;
+        });
+        resetBtn.addEventListener('click', () => {
+            num = 0;
+            numbers.textContent = '0';
+        });
+    </script>
+</body>
+</html>
