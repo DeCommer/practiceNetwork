@@ -116,6 +116,7 @@ button {
     color: var(--orange);
     padding: 10px 0;
 }
+
 @media (max-width: 900px) {
     .app-hidden {
         display: block;
