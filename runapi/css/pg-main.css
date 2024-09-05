@@ -90,8 +90,8 @@ button {
 }
 
 .data-title-container {
-    /* border: 1px solid red; */
-    border-bottom: 2px solid var(--slate);
+    border-bottom: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     display: flex;
     padding: 5px 0;
 }
