@@ -89,25 +89,33 @@ button {
     width: 75%;
 }
 
+.data-title-container {
+    /* border: 1px solid red; */
+    border-bottom: 2px solid var(--slate);
+    display: flex;
+    padding: 5px 0;
+}
+
 .data-container {
     border-bottom: 1px solid var(--slate);
     display: flex;
-    padding: 2px 0;
 }
 
 .data-title {
-    width: 100%;
     /* border: 1px solid green; */
+    font-weight: bold;
+    width: 100%;
     text-align: center;
     color: var(--text);
 }
 
 .data-item {
     /* border: 1px solid blue; */
+    width: 100%;
+    text-align: center;
     color: var(--orange);
-    padding: 5px 0;
+    padding: 10px 0;
 }
-
 @media (max-width: 900px) {
     .app-hidden {
         display: block;
@@ -124,28 +132,22 @@ button {
     .pagination-button {
         display: none;
     }
-    
-    .main-container {
-        width: 100%;
-        /* border: 1px solid red; */
-    }
 
     .run-data-container {
-        width: 90%;
+        font-size: .6rem;
+        width: 100%;
     }
 
     .data-container {
-        font-size: .6rem;
-        padding: 0px;
+        text-align: center;
+        padding: 0px 0px;
     }
 
     .data-title {
-        width: 100%;
-        /* border: 1px solid green; */
-        padding: 5px 0;
+        text-align: center;
     }
     
     .data-item {
-        padding: 0;
+        padding: 2px 0px;
     }
 }

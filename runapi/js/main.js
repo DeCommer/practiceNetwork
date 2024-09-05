@@ -9,7 +9,6 @@ const displayRuns = (data) => {
     const initialPage = 1;
 
     displayList = (items, wrapper, rowsPerPage, page) => {
-        wrapper.innerHTML = ``
 
         page--;
 
@@ -17,20 +16,33 @@ const displayRuns = (data) => {
         const end = start + rowsPerPage;
         const pageItems = items.slice(start, end);
 
+        wrapper.innerHTML = `
+        <div class="data-title-container">
+            <div class="data-title">#       </div>
+            <div class="data-title">Weekday </div>
+            <div class="data-title">Month   </div>
+            <div class="data-title">Day     </div>
+            <div class="data-title">Year    </div>
+            <div class="data-title">Avg Pace</div>
+            <div class="data-title">Distance</div>
+            <div class="data-title">Duration</div>
+            <div class="data-title">Calories</div>
+        </div>
+        `
         for (let i = 0; i < pageItems.length; i++) {
             const item = pageItems[i];
             const div = document.createElement('div');
             div.innerHTML =
                 `<div class="data-container">
-                    <div class="data-title">#<div class="data-item" data-label="#">${item.id}</div></div> 
-                    <div class="data-title">Weekday<div class="data-item" data-label="Weekday">${item.weekday}</div></div>
-                    <div class="data-title">Month<div class="data-item" data-label="Month">${item.month}</div></div> 
-                    <div class="data-title">Day<div class="data-item" data-label="Day">${item.dom}</div></div> 
-                    <div class="data-title">Year<div class="data-item" data-label="Year">${item.year}</div></div>
-                    <div class="data-title">Avg Pace <div class="data-item" data-label="Avg Pace">${item.avg_pace}</div></div> 
-                    <div class="data-title">Distance <div class="data-item" data-label="Distance">${item.distance}</div></div>
-                    <div class="data-title">Duration <div class="data-item" data-label="Duration">${item.duration}</div></div>
-                    <div class="data-title">Calories <div class="data-item" data-label="Calories">${item.calories}</div></div>
+                     <div class="data-item" data-label="#">${item.id}</div>             
+                     <div class="data-item" data-label="Weekday">${item.weekday}</div> 
+                     <div class="data-item" data-label="Month">${item.month}</div>      
+                     <div class="data-item" data-label="Day">${item.dom}</div>          
+                     <div class="data-item" data-label="Year">${item.year}</div>       
+                     <div class="data-item" data-label="Avg Pace">${item.avg_pace}</div>
+                     <div class="data-item" data-label="Distance">${item.distance}</div>
+                     <div class="data-item" data-label="Duration">${item.duration}</div>
+                     <div class="data-item" data-label="Calories">${item.calories}</div>
                 </div>`;
             wrapper.appendChild(div);
         }
