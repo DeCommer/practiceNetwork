@@ -11,6 +11,32 @@
     --rightGrad: #007acc;
 }
 
+html[data-theme='light'] {
+    --bg: #fff;
+    --text: #007acc;
+    --orange: #ff5500;
+    --orangeHi: #ff7b00;
+    --slate: #b6c5e0;
+    --activeGreen: #2cdb00;
+    --activeGreenHi: #00e650;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #007acc;
+}
+
+html[data-theme='dark'] {
+        --bg: #222831;
+        --text: #bdbdbd;
+        --orange: #76ABAE;
+        --orangeHi: #9fe5e8;
+        --activeGreen: #26b402;
+        --activeGreenHi: #049637;
+        --slate: #31363F;
+        --leftGrad: #229799;
+        --centerGrad: #48CFCB;
+        --rightGrad: #F5F5F5;
+}
+
 .hide {
     display: none;
 }
