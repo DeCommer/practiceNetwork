@@ -38,8 +38,8 @@
 button {
     border: none;
     background-color: #eee;
-    border: 1px solid var(--slate);
-    color: var(--text);
+    background-color: var(--orange);
+    color: var(--bg);
     cursor: pointer;
 }
 
@@ -79,8 +79,8 @@ button {
 }
 
 .pagination-button:disabled {
-    color: var(--bg);
-    background-color: var(--orange);
+    color: var(--text);
+    background-color: var(--activeGreen);
 }
 
 .run-data-container {
