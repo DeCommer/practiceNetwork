@@ -6,7 +6,7 @@ input::-webkit-datetime-edit-day-field:focus,
 input::-webkit-datetime-edit-month-field:focus,
 input::-webkit-datetime-edit-year-field:focus {
     width: 200px;
-    color: #007acc;
+    color: var(--text);
     outline: none;
 }
 
@@ -21,7 +21,7 @@ input::-webkit-datetime-edit-year-field:focus {
 
 .span {
     font-size: 1.2rem;
-    color: #09396c;
+    color: var(--text);
 }
 
 .results-area {
@@ -40,7 +40,7 @@ input::-webkit-datetime-edit-year-field:focus {
 
 .additional-area p {
     font-size: 2.2rem;
-    color: #FF6969;
+    color: var(--orange);
 }
 
 @media(max-width: 900px) {

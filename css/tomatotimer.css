@@ -1,8 +1,4 @@
 :root {
-    --tomato: #fff;
-    --short: #42f5a1;
-    --long: #009dff;
-    --btnRed: #c1121f;
     --leftGrad: #05cff7;
     --centerGrad: #a2faa7;
     --rightGrad: #007acc;
@@ -22,7 +18,7 @@
     justify-content: center;
     align-items: center;
     width: fit-content;
-    background-color: #fff;
+    background-color: var(--tomato);
     padding: 25px;
   }
 
@@ -35,7 +31,7 @@
 
 .mode {
     border: none;
-    background-color: var(--btnRed);
+    background-color: var(--orange);
     cursor: pointer;
     color: #fff;
     padding: 15px;

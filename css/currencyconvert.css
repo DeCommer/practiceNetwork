@@ -1,13 +1,3 @@
-:root {
-    --bg: #fff;
-    --text: #007acc;
-    --highlight: #FF6969;
-    --slate: #b6c5e0;
-    --leftGrad: #05cff7;
-    --centerGrad: #a2faa7;
-    --rightGrad: #007acc;
-}
-
 .app-hidden {
     display: none;
 }
@@ -24,6 +14,7 @@
 }
 
 .converter-container h2 {
+    color: var(--text);
     margin-bottom: 20px;
     font-size: 30px;
     font-weight: lighter;
@@ -33,6 +24,7 @@
 h2 span {
     margin-left: 40px;
     font-size: 2rem;
+    
 }
 
 .content .input-amount {
@@ -46,7 +38,7 @@ h2 span {
     width: 130px;
     left: 0;
     bottom: -6px;
-    background-color: #007acc;
+    background-color: var(--text);
 }
 
 .converter-container .content {
@@ -56,13 +48,12 @@ h2 span {
     gap: 10px;
 }
 
-.converter-container input,
 .converter-container select {
     width: 100%;
     padding: 10px 16px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid #09396c;
-    color: #007acc;
+    background-color: var(--inputBg);
+    border: 1px solid var(--text);
+    color: var(--text);
     font-family: inherit;
     font-size: 1.5rem;
     outline: none;
@@ -96,10 +87,10 @@ h2 span {
 
 .converter-container .result {
     margin-top: 10px;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-top: 1px solid var(--text);
+    border-bottom: 1px solid var(--text);
     font-size: 3rem;
-    color: #007acc;
+    color: var(--text);
     text-align: center;
     padding-block: 20px;
 }
@@ -107,7 +98,7 @@ h2 span {
 .converter-container .result-currency {
     font-size: 1.5rem;
     text-transform: uppercase;
-    color: #09396c;
+    color: var(--orange);
 }
 
 @media(max-width: 900px) {

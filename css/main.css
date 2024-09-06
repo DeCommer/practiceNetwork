@@ -13,7 +13,9 @@
 
 html[data-theme='light'] {
     --bg: #fff;
+    --inputBg: #fff;
     --text: #007acc;
+    --labelTxt: #000;
     --orange: #ff5500;
     --orangeHi: #ff7b00;
     --slate: #b6c5e0;
@@ -22,19 +24,27 @@ html[data-theme='light'] {
     --leftGrad: #05cff7;
     --centerGrad: #a2faa7;
     --rightGrad: #007acc;
+    --tomato: #fff;
+    --short: #42f5a1;
+    --long: #009dff;
 }
 
 html[data-theme='dark'] {
         --bg: #222831;
-        --text: #bdbdbd;
+        --inputBg: #5c6971;
+        --text: #ECDFCC;
+        --labelTxt: #ccc;
         --orange: #76ABAE;
         --orangeHi: #9fe5e8;
-        --activeGreen: #26b402;
+        --activeGreen: #1c8a00;
         --activeGreenHi: #049637;
         --slate: #31363F;
         --leftGrad: #229799;
         --centerGrad: #48CFCB;
         --rightGrad: #F5F5F5;
+        --tomato: #31363F;
+        --short: #258558;
+        --long: #004c7b;
 }
 
 .hide {
@@ -57,6 +67,7 @@ html{
 body {
     /* border: 1px solid red; */
     background-color: var(--bg);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,6 +110,8 @@ a:hover {
 
 input {
     color: var(--text);
+    background-color: var(--inputBg);
+    border: 1px solid var(--text);
     font-size: 1.5rem;
     margin: 5px;
     width: 100px;
@@ -113,6 +126,20 @@ input:focus {
 
 input::placeholder {
     color: var(--slate);
+}
+
+label {
+    color: var(--labelTxt);
+}
+
+select {
+    height: 35px;
+    width: 45px;
+    color: var(--text);
+    background-color: var(--inputBg);
+    border: 1px solid var(--text);
+    /* margin-left: 10px; */
+    font-size: .7rem;
 }
 
 .nav-bar {

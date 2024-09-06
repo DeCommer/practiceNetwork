@@ -32,6 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--text);
 }
 
 .phrases-container .input-area {
@@ -51,6 +52,7 @@ input:focus {
 .results-area {
     margin-top: 10px;
     text-align: center;
+    color: var(--text);
 }
 
 .formula {

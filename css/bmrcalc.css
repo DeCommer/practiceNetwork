@@ -13,7 +13,7 @@
     flex-direction: column;
     gap: 10px;
     text-align: right;
-    color: #09396c; 
+    color: var(--text); 
 }
 
 .btn-area{
@@ -26,6 +26,7 @@
 
 .results-area {
     /* border: 1px solid #454545; */
+    color: var(--text);
     text-align: center;
     height: fit-content;
     width: 90%;

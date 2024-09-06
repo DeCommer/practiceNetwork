@@ -4,7 +4,7 @@
 
 .count-txt {
     font-size: 5rem;
-    color: #007acc;
+    color: var(--text);
 }
 
 @media(max-width: 900px) {

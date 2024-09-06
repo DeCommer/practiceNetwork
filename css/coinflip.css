@@ -38,7 +38,7 @@
 }
 
 .span {
-    color: #007acc;
+    color: var(--text);
     font-size: 2.5rem;
     padding: 30px;
 }
@@ -74,7 +74,7 @@
     display: flex;
     text-align: center;
 	font-size: 1.2rem; 
-	color: #007acc;
+	color: var(--text);
 } 
 
 .percent-area { 
@@ -83,7 +83,7 @@
     display: flex;
 	font-size: 1.2rem; 
     text-align: center;
-	color: #007acc;
+	color: var(--text);
 } 
 
 .array-area {
@@ -93,7 +93,7 @@
     width: 90%;
     max-height: 250px;
     overflow: scroll;
-    color: #007acc;
+    color: var(--text);
     font-size: 1.2rem;
 }
 
@@ -129,14 +129,14 @@
     right: 5px;
     background: none;
     border: none;
-    color: #007acc;
+    color: var(--text);
     font-size: 1.5rem;
     transform: rotate(140deg);
     cursor: pointer;
 }
 
 .size-btn:hover {
-    color:#c1121f;
+    color:var(--orange);
 }
 
 .hidden {

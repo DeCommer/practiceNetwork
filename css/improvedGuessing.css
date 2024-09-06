@@ -14,9 +14,9 @@
   }
   
   .number {
-    background: #ffffff7d;
-    color: #c1121f;
-    border: 1px solid #719bb5;
+    background: var(--slate);
+    color: var(--orange);
+    border: 1px solid var(--orange);
     border-radius: 15px;
     font-size: 6rem;
     width: 150px;
@@ -27,6 +27,7 @@
   }
   
   .between {
+    color: var(--text);
     text-align: center;
     font-size: 1.4rem;
     margin: 0 auto;
@@ -40,22 +41,9 @@
     display: none;
   }
   
-  .guess {
-    background: #fff;
-    border: 1px solid #F0EDCF;
-    width: 150px;
-    border-radius: 5px;
-    border: 1px solid #669bbc;
-    font-family: inherit;
-    color: #232323;
-    font-size: 1.5rem;
-    padding: .7rem;
-    text-align: center;
-  }
-  
   .btn {
-    background-color: #c1121f;
-    color: #fff;
+    background-color: var(--orange);
+    color: var(--bg);
     font-size: 1.2rem;
     border: none;
     border-radius: 5px;
@@ -65,7 +53,7 @@
 }
 
 .btn:hover {
-    background-color: #d82e2e;
+    background-color: var(--orange);
 }
   
   .btn:active {
@@ -73,13 +61,19 @@
   }
   
   .message {
+    color: var(--text);
     font-size: 1.5em;
     margin-bottom: 1rem;
     height: 3rem;
   }
   
   .label-score {
+    color: var(--text);
     margin-bottom: 1rem;
+  }
+
+  .label-highscore {
+    color: var(--text);
   }
 
 

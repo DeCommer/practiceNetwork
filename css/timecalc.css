@@ -34,15 +34,6 @@ label {
     align-items: center;
 }
 
-select {
-    height: 35px;
-    width: 45px;
-    /* border: 1px solid #09396c; */
-    color: var(--text);
-    /* margin-left: 10px; */
-    font-size: .7rem;
-}
-
 .hour-1 {
     display: flex;
     align-items: center;

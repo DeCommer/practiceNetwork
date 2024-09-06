@@ -48,6 +48,5 @@ document.querySelector('.resetbtn').addEventListener('click', function() {
     document.querySelector('.score').textContent = guesses;
     document.querySelector('.number').textContent = '🔒';
     clearTxt();
-    document.querySelector('body').style.backgroundColor = "#669bbc";
     prevGuessDisplay(``);
 });

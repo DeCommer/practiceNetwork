@@ -35,15 +35,21 @@
             </div>
           </div>
         </header>
-    <div class="apps-container">
-        <div class="title-container app-hidden">
-            <h2 class="title">DeCommer.com</h2>
-            <p class="description-text">Guessing Game v1</p>
+        <div class="mobile-title-container app-hidden">
+          <div class="sm-elem-logo">
+              <p class="sm-logo-upper-left randNum">00</p>
+              <h1 class="sm-logo-center">D<span class="sm-logo-sm-txt">e</span></h1>
+              <p class="sm-logo-bottom-center-name">DeCommer</p>
+              <p class="sm-logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
           </div>
-        <div>
-            <h2 class="betweenText">(between 1 and 10)</h2>
+          <div>
+              <h2 class="title">DeCommer.com</h2>
+              <p class="description-text">Matching Memory Game</p>
+          </div>
+      </div>
+    <div class="apps-container">
+            <h2>(between 1 and 10)</h2>
             <input type="text" id="guessBox" placeholder="0"/>
-
             <button type="button" id="enterButton" class="btn" onClick="guess()">Guess</button>
             <h3 id="remaining"> </h3>
             <p id="result"></p>

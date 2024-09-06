@@ -4,7 +4,7 @@
 
 #dispType {
     font-size: 1.2rem;
-    color: #007acc;
+    color: var(--orange);
 }
 
 #mi-btn {
@@ -18,13 +18,14 @@
 }
 
 .results-area {
+    color: var(--text);
     margin-top: 10px;
     text-align: center;
 }
 
 .result-temp {
     font-size: 5rem;
-    color: #007acc;
+    color: var(--text);
 }
 
 #formula {

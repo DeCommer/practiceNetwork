@@ -18,12 +18,16 @@
 
 .homeColor {
     font-size: 1.2rem;
-    color: #007acc;
+    color: var(--text);
 }
 
 .homeColor:hover {
     color:#FF6969;
     transition: ease-in 0.2s;
+}
+
+.est-txt {
+    color: var(--text);
 }
 
 .converter-container {
@@ -43,11 +47,12 @@
     border-radius: 10px;
     margin: 10px 0;
     padding: 5px;
-    color: #c1121f;
+    color: var(--orange);
 }
 
 label {
     font-size: 1.5rem;
+    color: var(--text);
 }
 
 .pop-txt {

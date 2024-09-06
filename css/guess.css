@@ -12,16 +12,8 @@
     text-align: left;
 }
 
-input:focus {
-    outline: none;
-    border: 0;
-}
-
-#guessBox {
-    outline: none;
-    padding: 15px 10px;
-    text-align: center;
-    font-size: 1em;
+h2 {
+    color: var(--text);
 }
 
 #remaining {
@@ -33,21 +25,22 @@ input:focus {
     text-align: center;
     padding: 4px;
     font-size: 1.5em;
+    color: var(--text);
 }
 
 .reset_btn {
     display: flex;
     font-size: 1.4rem;
-    background-color: #c1121f;
+    background-color: var(--orange);
     margin: 0px;
     padding: 5px 10px;
-    color: #fff;
+    color: var(--bg);
     border: none;
     cursor: pointer;
 }
 
 .reset_btn:hover {
-    color: #c1121f;
+    color: var(--orangeHi);
 }
 
 @media screen and (max-width: 900px) {

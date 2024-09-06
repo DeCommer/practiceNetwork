@@ -24,7 +24,6 @@
 
 .mainContain {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #fff;
     border: 1px solid #003049;
     color: #003049;
     border-radius: 25px;
@@ -80,12 +79,12 @@
 }
 
 .back {
-    background-color: #007acc;
+    background-color: var(--slate);
 }
 
 .front {
     transform: rotateY(180deg);
-    background-color: #fff;
+    background-color: var(--inputBg);
 }
 
 .modal {

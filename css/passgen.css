@@ -3,13 +3,14 @@
 }
 
 .input-area {
+    color: var(--text);
     margin-top: 10px;
     text-align: center;
 }
 
 .progress-bar-container {
-    border: 1px solid rgb(44, 72, 126);
-    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--slate);
+    background-color: var(--inputBg);
     margin: 15px 0;
     text-align: center;
     width: 350px;
@@ -17,7 +18,7 @@
 }
 
 .progress-bar {
-    background-color: rgb(101, 227, 70);
+    background-color: var(--activeGreen);
     width: 0%;
     height: 100%
 }
@@ -40,17 +41,6 @@
     overflow: hidden;
     word-break: break-all;
     color: var(--activeGreen)
-}
-
-#copy-btn {
-    background-color: var(--orange);
-    color: #fff;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
 }
 
 .hide {
