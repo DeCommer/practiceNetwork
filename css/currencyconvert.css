@@ -50,12 +50,12 @@ h2 span {
 
 .converter-container select {
     width: 100%;
-    padding: 10px 16px;
+    padding: 0px 10px;
     background-color: var(--inputBg);
     border: 1px solid var(--text);
     color: var(--text);
     font-family: inherit;
-    font-size: 1.5rem;
+    font-size: 1rem;
     outline: none;
     appearance: none;
 }
