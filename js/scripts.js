@@ -15,12 +15,11 @@ setInterval(() =>{
 let url = window.location.href;
 console.log(url)
 
-console.log("local");
+console.log("local url");
 
-if(url.includes( "127.0.0.1" || url.includes("10.0.0"))) {
+if(url.includes("10.0.0") || url.includes("127.0.0.1")) {
   document.querySelector(".title").innerHTML = `Joseph DeCommer (Local)`;
 }
-
 
 // const modeBtn = document.querySelector('#mode-btn');
 // modeBtn.addEventListener('click', () => {
