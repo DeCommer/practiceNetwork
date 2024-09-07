@@ -39,7 +39,7 @@ const displayRuns = (data) => {
                      <div class="data-item" data-label="Month">${item.month}</div>      
                      <div class="data-item" data-label="Day">${item.dom}</div>          
                      <div class="data-item" data-label="Year">${item.year}</div>       
-                     <div class="data-item" data-label="Avg Pace">${item.avg_pace}</div>
+                     <div class="data-item" data-label="Avg Pace">${item.avgPace}</div>
                      <div class="data-item" data-label="Distance">${item.distance}</div>
                      <div class="data-item" data-label="Duration">${item.duration}</div>
                      <div class="data-item" data-label="Calories">${item.calories}</div>

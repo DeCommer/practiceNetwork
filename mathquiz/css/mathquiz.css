@@ -324,7 +324,7 @@ label span {
 
   .questions {
     border: 1px solid rgb(16, 89, 134);
-    background-color: #e3ecf3;
+    background-color: var(--slate);
     max-height: fit-content;
     border-radius: 10px;
     display: flex;
