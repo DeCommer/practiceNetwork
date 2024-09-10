@@ -2,6 +2,7 @@ fetch("./data/rundata-exp.json")
 .then(response => response.json())
 .then(data => displayRuns(data));
 
+// Data Handler
 const displayRuns = (data) => {
     const runs = data.runs;
     const wrapper = document.getElementById('run-data-container');
@@ -47,7 +48,7 @@ const displayRuns = (data) => {
             wrapper.appendChild(div);
         }
 
-        //metrics
+//Metrics
         function formatNumber(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
@@ -68,7 +69,7 @@ const displayRuns = (data) => {
         totalDist.innerHTML = `<p>Distance: <span>${formatNumber(Math.round(distSum))}</span> mi`
         totalCal.innerHTML = `<p>Calories: <span>${formatNumber(Math.round(calSum))}</span>`
 
-        //Controls
+//Controls
         const pagination = document.getElementById('pagination');
         const totalPages = Math.ceil(items.length / rowsPerPage);
 
@@ -101,7 +102,7 @@ const displayRuns = (data) => {
         });
         pagination.appendChild(prevButton);
 
-        //Page Number Buttons
+//Page Number Buttons
         const startPage = Math.max(1, page - 1); 
         const endPage = Math.min(totalPages, startPage + 4);
 
