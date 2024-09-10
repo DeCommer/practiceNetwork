@@ -145,7 +145,5 @@ const displayRuns = (data) => {
     }
     
     displayList(runs, wrapper, rowsPerPage, initialPage);
-
-    
 }
 
