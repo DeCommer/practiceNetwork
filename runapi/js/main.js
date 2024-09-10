@@ -7,7 +7,6 @@ const displayRuns = (data) => {
     const wrapper = document.getElementById('run-data-container');
     const rowsPerPage = 10;
     const initialPage = 1;
-
     displayList = (items, wrapper, rowsPerPage, page) => {
 
         page--;
@@ -32,20 +31,42 @@ const displayRuns = (data) => {
         for (let i = 0; i < pageItems.length; i++) {
             const item = pageItems[i];
             const div = document.createElement('div');
+            
             div.innerHTML =
                 `<div class="data-container">
-                     <div class="data-item" data-label="#">${item.id}</div>             
-                     <div class="data-item" data-label="Weekday">${item.weekday}</div> 
-                     <div class="data-item" data-label="Month">${item.month}</div>      
-                     <div class="data-item" data-label="Day">${item.dom}</div>          
-                     <div class="data-item" data-label="Year">${item.year}</div>       
-                     <div class="data-item" data-label="Avg Pace">${item.avgPace}</div>
+                     <div class="data-item" data-label="#">       ${item.id}      </div>
+                     <div class="data-item" data-label="Weekday"> ${item.weekday} </div>
+                     <div class="data-item" data-label="Month">   ${item.month}   </div>
+                     <div class="data-item" data-label="Day">     ${item.dom}     </div>
+                     <div class="data-item" data-label="Year">    ${item.year}    </div>
+                     <div class="data-item" data-label="Avg Pace">${item.avgPace} </div>
                      <div class="data-item" data-label="Distance">${item.distance}</div>
                      <div class="data-item" data-label="Duration">${item.duration}</div>
                      <div class="data-item" data-label="Calories">${item.calories}</div>
                 </div>`;
             wrapper.appendChild(div);
         }
+
+        //metrics
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        const totalRuns = document.querySelector('.total-runs');
+        const totalDist = document.querySelector('.total-distance');
+        const totalCal = document.querySelector('.total-cal')
+        
+        let runSum = 0
+        let distSum = 0
+        let calSum = 0
+        runs.forEach(run => {
+                runSum = run.id;
+                calSum += run.calories;
+                distSum += run.distance;
+        }); 
+        totalRuns.innerHTML = `<p>Total Runs: <span>${formatNumber(Math.round(runSum))}</span>`
+        totalDist.innerHTML = `<p>Distance: <span>${formatNumber(Math.round(distSum))}</span> mi`
+        totalCal.innerHTML = `<p>Calories: <span>${formatNumber(Math.round(calSum))}</span>`
 
         //Controls
         const pagination = document.getElementById('pagination');
@@ -94,9 +115,6 @@ const displayRuns = (data) => {
             });
             pagination.appendChild(button);
         }
-
-        const pageCounterDisplay = document.querySelector('.page-counter');
-pageCounterDisplay.innerHTML = `<p>Current Page = </p><span>${page + 1}</span>`;
 
         const nextButton = document.createElement('button');
         nextButton.innerText = 'Next';
