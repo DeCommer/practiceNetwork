@@ -80,8 +80,12 @@ h1 {
     margin: 10px;
 }
 
+/* h2 {
+    font-size: 2.5rem;
+} */
+
 h3 {
-    font-size: 2.2rem;
+    /* font-size: 2.2rem; */
     color: var(--text);
     margin: 10px 0;
     padding: 0px;
