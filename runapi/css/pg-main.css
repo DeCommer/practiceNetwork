@@ -27,7 +27,6 @@
     color: var(--text);
     margin-left: 5px;
     padding-bottom: 4px;
-    border-bottom: 1px solid var(--orange);
 }
 
 .totals {

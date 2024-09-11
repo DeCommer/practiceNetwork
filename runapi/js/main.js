@@ -36,13 +36,13 @@ const displayRuns = (data) => {
             div.innerHTML =
                 `<div class="data-container">
                      <div class="data-item" data-label="#">       ${formatNumber(item.id)}      </div>
-                     <div class="data-item" data-label="Weekday"> ${item.weekday} </div>
-                     <div class="data-item" data-label="Month">   ${item.month}   </div>
-                     <div class="data-item" data-label="Day">     ${item.dom}     </div>
-                     <div class="data-item" data-label="Year">    ${item.year}    </div>
-                     <div class="data-item" data-label="Avg Pace">${item.avgPace} </div>
-                     <div class="data-item" data-label="Distance">${item.distance}</div>
-                     <div class="data-item" data-label="Duration">${item.duration}</div>
+                     <div class="data-item" data-label="Weekday"> ${item.weekday}               </div>
+                     <div class="data-item" data-label="Month">   ${item.month}                 </div>
+                     <div class="data-item" data-label="Day">     ${item.dom}                   </div>
+                     <div class="data-item" data-label="Year">    ${item.year}                  </div>
+                     <div class="data-item" data-label="Avg Pace">${item.avgPace}               </div>
+                     <div class="data-item" data-label="Distance">${item.distance}              </div>
+                     <div class="data-item" data-label="Duration">${item.duration}              </div>
                      <div class="data-item" data-label="Calories">${formatNumber(item.calories)}</div>
                 </div>`;
             wrapper.appendChild(div);
