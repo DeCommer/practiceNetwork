@@ -17147,6 +17147,17 @@
         "distance": 3.18,
         "duration": "00:25:47",
         "calories": 404
+    },
+    {
+      "id": 1561,
+      "weekday": "Wednesday",
+      "month": "September",
+      "dom": 11,
+      "year": "2024",
+      "avgPace": "8`00``",
+      "distance": 3.17,
+      "duration": "00:25:23",
+      "calories": 398
     }
   ]
 }

@@ -8,8 +8,6 @@ USE running;
 
 -- DESCRIBE run_data;
 
-SELECT * FROM run_data;
-
 CREATE TABLE run_data 
 (
     id	BIGINT AUTO_INCREMENT NOT NULL,
@@ -1583,3 +1581,7 @@ INSERT INTO run_data (weekday, month, dom, year, avg_pace, distance, duration, c
 INSERT INTO run_data (weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('Saturday', 'September', '7', '2024', '7`58``', '6.28', '00:50:03', '786');
 INSERT INTO run_data (weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('Monday', 'September', '9', '2024', '8`32``', '3.24', '00:27:40', '395');
 INSERT INTO run_data (weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('Tuesday', 'September', '10', '2024', '8`06``', '3.18', '00:25:47', '404');
+INSERT INTO run_data (weekday, month, dom, year, avg_pace, distance, duration, calories) VALUES ('Wednesday', 'September', '11', '2024', '8`00``', '3.17', '00:25:23', '398');
+
+
+SELECT * FROM run_data;
