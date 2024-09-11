@@ -35,7 +35,7 @@ function displayDebitModal() {
     return id;
 }
 
-function addFunds(debitBalance, savingsBalance, id) {
+function addFunds() {
     if(displayDebitModal.id == 1) {
         console.log("Hooraaay!!!!");
     }else {
