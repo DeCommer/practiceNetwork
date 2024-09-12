@@ -68,15 +68,22 @@
 
         <div class="apps-container hide">
             <div class="title-area">
-                <h2>Welcome, <span id="greeting-txt"></span></h2>
-                <p id="date-time" class="date-time-txt"></p>
+                <div class="left">
+                   <p class="logout-link" id="logout">Logout</P>
+                </div>
+                <div class="right">
+                    <h2>Welcome, <span id="greeting-txt"></span></h2>
+                    <p id="date-time" class="date-time-txt"></p>
+                </div>
             </div>
             <div class="account-info">
                 <p class="total-balance-txt">Total balance: <span id="total-balance">$0</span></p>
                 <p id="account-number" class="account-number-txt">Account Number: j001</p>
             </div>
-            <div class="account-area">
+            <div class="accounts-title-container">
                 <h2>Accounts</h2>
+            </div>
+            <div class="account-area">
                 <div class="account-card">
                     <p class="debit-account-name">Debit</p>
                     <p class="balance-txt">Account balance: <span id="debit-balance">$0</span></p>
@@ -91,6 +98,5 @@
                 </div>
             </div>
         </div>
-        <p>Work in progress</p>
     </body>
 </html>

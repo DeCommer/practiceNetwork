@@ -7,6 +7,15 @@ body{
     display: none !important;
 }
 
+.left {
+    float: left;
+}
+
+.logout-link:hover {
+    cursor: pointer;
+    color: var(--orange);
+}
+
 .login-apps-container {
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
@@ -30,7 +39,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    gap: 25px;
+    margin-top: 10px;
     width: 100%;
 }
 
@@ -42,10 +52,14 @@ body{
     font-size: 1.2rem;
 }
 
+.accounts-title-container {
+    text-align: left;
+    margin-top: 20px;
+}
+
 .account-area {
     display: flex;
     align-items: center;
-    margin-top: 20px;
 }
 
 .account-card {
@@ -123,17 +137,22 @@ body{
     .title-area h2 {
         font-size: 1.3rem;
     }
+
     .account-area {
         display: block;
         text-align: left;
-        width: 90%;
+        width: 100%;
     }
     .account-info {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        margin-top: 10px;
+        gap: 0px;
+        margin: 50px 0 50px 0;
         padding: 0px;
+    }
+    .input-modal {
+        width: 75%;
     }
   }

@@ -4,10 +4,10 @@ const overlay = document.querySelector(".overlay");
 const debitBtn = document.getElementById("debit-btn");
 const savingsBtn = document.getElementById("savings-btn");
 const accountNumber = Math.random().toString(36).slice(2);
-document.getElementById('account-number').innerHTML = `Account Number: ${accountNumber}`
+document.getElementById('account-number').innerHTML = `Account Number: ${accountNumber}`;
 
 const now = new Date();
-getDate.innerHTML=`Today is ${now.toLocaleString()}`
+getDate.innerHTML=`Today is ${now.toLocaleString()}`;
 
 let debitBalance = 0;
 let savingsBalance = 0;
@@ -28,13 +28,13 @@ function displayDebitModal() {
         <input id="amt-in" type="number" placeholder="0">
         <button id="debit-enter-button" class="sm-btn btn">Enter</button>
         <a class="close-input-modal">x</a>
-    `
+    `;
     const debitEntBtn = document.getElementById('debit-enter-button');
     debitEntBtn.addEventListener('click', () => {
         addDebitFunds();
         updtateTotalBalance();
     });
-}
+};
 
 function addDebitFunds() {
     const debitBalanceDisplay = document.getElementById('debit-balance');
@@ -43,7 +43,7 @@ function addDebitFunds() {
     debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
     overlay.style.display = "none";
     inputModal.classList.add('hidden');
-}
+};
 
 function displaySavingsModal() {
     overlay.style.display = "block";
@@ -56,13 +56,13 @@ function displaySavingsModal() {
         <input id="amt-in" type="number" placeholder="0">
         <button id="savings-enter-button" class="sm-btn btn">Enter</button>
         <a class="close-input-modal">x</a>
-    `
+    `;
     const savingsEntBtn = document.getElementById('savings-enter-button');
     savingsEntBtn.addEventListener('click', () => {
         addSavingsFunds();
         updtateTotalBalance();
     });
-}
+};
 
 function addSavingsFunds() {
     const savingsBalanceDisplay = document.getElementById('savings-balance');
@@ -71,14 +71,13 @@ function addSavingsFunds() {
     savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
     overlay.style.display = "none";
     inputModal.classList.add('hidden');
-}
+};
 
 function updtateTotalBalance() {
     const totalBalanceDisplay = document.getElementById("total-balance");
     let totalBalance = debitBalance + savingsBalance;
     totalBalanceDisplay.innerHTML = `${moneyFormatter.format(totalBalance)}`;
-    
-}
+};
 
 function closeModal() {
     const closeImageBtn = document.querySelector('.close-input-modal');
@@ -113,9 +112,9 @@ function login() {
         setTimeout(() => {
             document.getElementById('message').innerHTML = ''
         },1500);
-        document.getElementById('message').innerHTML = 'Invalid credentials'
+        document.getElementById('message').innerHTML = 'Invalid credentials';
     }
-}
+};
 
 passwordIn.addEventListener("keyup", function(e) {
     if (e.key === "Enter") {
@@ -126,6 +125,14 @@ passwordIn.addEventListener("keyup", function(e) {
 const loginBtn = document.getElementById("login-btn");
 loginBtn.addEventListener('click', () => {
     login();
+});
+
+const logout = document.getElementById('logout');
+logout.addEventListener('click', () => {
+    document.querySelector(".login-apps-container").classList.remove('hide'); 
+    document.querySelector(".apps-container").classList.add('hide'); 
+    userIn.value = "";
+    passwordIn.value = "";
 });
 
 
