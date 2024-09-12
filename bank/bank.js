@@ -100,12 +100,12 @@ savingsBtn.addEventListener("click", (e) => {
 
 //Login
 
-const loginBtn = document.getElementById("login-btn");
-loginBtn.addEventListener('click', () => {
-    const userIn = document.getElementById("user-in").value;
-    const passwordIn = document.getElementById("pass-in").value;
-    let userName = userIn;
-    if(passwordIn === '1234') {
+const userIn = document.getElementById("user-in");
+const passwordIn = document.getElementById("pass-in");
+
+function login() {
+    let userName = userIn.value;
+    if(passwordIn.value === '1234') {
         document.querySelector(".login-apps-container").classList.add('hide'); 
         document.querySelector(".apps-container").classList.remove('hide'); 
         document.getElementById("greeting-txt").innerHTML = `${userName}`;
@@ -115,6 +115,17 @@ loginBtn.addEventListener('click', () => {
         },1500);
         document.getElementById('message').innerHTML = 'Invalid credentials'
     }
-})
+}
+
+passwordIn.addEventListener("keyup", function(e) {
+    if (e.key === "Enter") {
+        login();
+    }
+  });
+
+const loginBtn = document.getElementById("login-btn");
+loginBtn.addEventListener('click', () => {
+    login();
+});
 
 
