@@ -14,6 +14,10 @@ color: var(--orange);
     float: left;
 }
 
+input {
+    width: 145px !important;
+}
+
 .logout-link:hover {
     cursor: pointer;
     color: var(--orange);
@@ -39,11 +43,13 @@ color: var(--orange);
 }
 
 .account-info {
+    border-top: 1px solid var(--text);
+    border-bottom: 1px solid var(--text);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 25px;
-    margin-top: 10px;
+    padding-top: 25px;
     width: 100%;
 }
 
@@ -56,8 +62,9 @@ color: var(--orange);
 }
 
 .accounts-title-container {
+    width: 100%;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .account-area {
@@ -133,6 +140,7 @@ color: var(--orange);
   }
 
   @media (max-width: 900px) {
+
     .apps-container {
         display: flex;
         justify-content: center;
@@ -149,14 +157,14 @@ color: var(--orange);
         text-align: left;
         width: 100%;
     }
+    
     .account-info {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         gap: 0px;
-        margin: 50px 0 50px 0;
-        padding: 0px;
+        padding: 10px 0;
     }
     .input-modal {
         width: 75%;

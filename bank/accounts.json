@@ -2,17 +2,23 @@
         {
             "username": "Demo",
             "password": 1234,
-            "accountNumber": 10000
+            "accountNumber": "0000-demo",
+            "debitBalance": 0.00,
+            "savingsBalance": 0.00
         },
         {
             "username": "Constance",
-            "password": 1234,
-            "accountNumber": 10001
+            "password": "password",
+            "accountNumber": "0001",
+            "debitBalance": 500.00,
+            "savingsBalance": 100000.00
         },
         {
             "username": "Joseph",
-            "password": 1234,
-            "accountNumber": 10002
+            "password": "pass",
+            "accountNumber": "0002",
+            "debitBalance": 0.00,
+            "savingsBalance": 0.00
         }
     ]
 }
