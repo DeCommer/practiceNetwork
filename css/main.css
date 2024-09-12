@@ -392,8 +392,6 @@ footer {
     object-fit: cover;
   }
 
-
-
 .apps-container {
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
