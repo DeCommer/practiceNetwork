@@ -1,10 +1,20 @@
-const getDate = document.getElementById('date-time');
+fetch("./accounts.json")
+.then(response => response.json())
+.then(data => getAccounts(data));
+
+
+getAccounts = (data) => {
+    const accounts = data.accounts;
+    console.log(accounts);
+}
+
+const getDate = document.getElementById('date-time')
 const inputModal = document.querySelector('.input-modal');
 const overlay = document.querySelector(".overlay");
 const debitBtn = document.getElementById("debit-btn");
 const savingsBtn = document.getElementById("savings-btn");
 const accountNumber = Math.random().toString(36).slice(2);
-document.getElementById('account-number').innerHTML = `Account Number: ${accountNumber}`;
+document.getElementById('account-number').innerHTML = `${accountNumber}`;
 
 const now = new Date();
 getDate.innerHTML=`Today is ${now.toLocaleString()}`;
@@ -36,8 +46,9 @@ function displayDebitModal() {
     });
 };
 
+const debitBalanceDisplay = document.getElementById('debit-balance');
+
 function addDebitFunds() {
-    const debitBalanceDisplay = document.getElementById('debit-balance');
     let debitIn = document.getElementById('amt-in').value;
     debitBalance += Number(debitIn);
     debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
@@ -64,8 +75,9 @@ function displaySavingsModal() {
     });
 };
 
+const savingsBalanceDisplay = document.getElementById('savings-balance');
+
 function addSavingsFunds() {
-    const savingsBalanceDisplay = document.getElementById('savings-balance');
     let savingsIn = document.getElementById('amt-in').value;
     savingsBalance += Number(savingsIn);
     savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
@@ -97,10 +109,9 @@ savingsBtn.addEventListener("click", (e) => {
     closeModal();
 });
 
-//Login
+//Login / logout
 
 const userIn = document.getElementById("user-in");
-const passwordIn = document.getElementById("pass-in");
 
 function login() {
     let userName = userIn.value;
@@ -116,6 +127,8 @@ function login() {
     }
 };
 
+const passwordIn = document.getElementById("pass-in");
+
 passwordIn.addEventListener("keyup", function(e) {
     if (e.key === "Enter") {
         login();
@@ -123,6 +136,7 @@ passwordIn.addEventListener("keyup", function(e) {
   });
 
 const loginBtn = document.getElementById("login-btn");
+
 loginBtn.addEventListener('click', () => {
     login();
 });
