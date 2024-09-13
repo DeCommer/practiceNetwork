@@ -204,7 +204,7 @@ getAccounts = (data) => {
         if(userName === accounts[0].username && passwordIn.value === accounts[0].password) {
             document.querySelector(".login-apps-container").classList.add('hide'); 
             document.querySelector(".apps-container").classList.remove('hide');
-            document.getElementById("greeting-txt").innerHTML = `${accounts[0].username}`;
+            document.getElementById("greeting-txt").innerHTML = `Guest!`;
             document.getElementById('account-number').innerHTML = `${accounts[0].accountNumber}`;
             savingsBalance = accounts[0].savingsBalance;
             debitBalance = accounts[0].debitBalance;
@@ -214,7 +214,7 @@ getAccounts = (data) => {
         }else if(userName === accounts[1].username && passwordIn.value === accounts[1].password) {
             document.querySelector(".login-apps-container").classList.add('hide'); 
             document.querySelector(".apps-container").classList.remove('hide');
-            document.getElementById("greeting-txt").innerHTML = `${accounts[1].username}`;
+            document.getElementById("greeting-txt").innerHTML = `${accounts[1].username}!`;
             document.getElementById('account-number').innerHTML = `${accounts[1].accountNumber}`;
             savingsBalance = accounts[1].savingsBalance;
             debitBalance = accounts[1].debitBalance;
@@ -224,7 +224,7 @@ getAccounts = (data) => {
         }else if(userName === accounts[2].username && passwordIn.value === accounts[2].password) {
             document.querySelector(".login-apps-container").classList.add('hide'); 
             document.querySelector(".apps-container").classList.remove('hide');
-            document.getElementById("greeting-txt").innerHTML = `${accounts[2].username}`;
+            document.getElementById("greeting-txt").innerHTML = `${accounts[2].username}!`;
             document.getElementById('account-number').innerHTML = `${accounts[2].accountNumber}`;
             savingsBalance = accounts[2].savingsBalance;
             debitBalance = accounts[2].debitBalance;
