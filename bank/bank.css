@@ -10,15 +10,11 @@ body{
 color: var(--orange);
 }
 
-.left {
-    float: left;
-}
-
 input {
     width: 145px !important;
 }
 
-.logout-link:hover {
+.text-link:hover {
     cursor: pointer;
     color: var(--orange);
 }
@@ -37,9 +33,18 @@ input {
 }
 
 .apps-container .title-area {
+    position: relative;
     width: 100%;
     text-align: right;
-    margin-bottom: 10px;
+}
+
+.left {
+    /* border: 1px solid red; */
+    position: absolute;
+    display: flex;
+    top: 0;
+    float: left;
+    gap: 25px;
 }
 
 .account-info {
@@ -48,8 +53,8 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
-    padding-top: 25px;
+    padding: 45px 0 10px 0;
+    margin-bottom: 20px;
     width: 100%;
 }
 
@@ -58,7 +63,7 @@ input {
 }
 
 .total-balance-txt {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .accounts-title-container {
@@ -122,8 +127,42 @@ input {
     padding: 0px 20px 20px 20px;
     z-index: 1;
   }
+
+  .transfer-modal {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
+    background-color: var(--bg);
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    padding: 0px 20px 20px 20px;
+    z-index: 1;
+  }
+  
+  .select {
+    border: 1px solid var(--text);
+    width: 100%;
+    margin: 10px 0;
+    padding-right: 10px;
+    font-size: 1rem;
+  }
   
   .close-input-modal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 1px;
+    right: 1px;
+    font-size: 1.4rem;
+    color: #9d9d9d;
+    cursor: pointer;
+  }
+
+  .close-transfer-modal {
     position: absolute;
     width: 30px;
     height: 30px;

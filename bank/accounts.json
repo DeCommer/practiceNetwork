@@ -17,8 +17,8 @@
             "username": "Joseph",
             "password": "pass",
             "accountNumber": "0002",
-            "debitBalance": 0.00,
-            "savingsBalance": 0.00
+            "debitBalance": 5000.00,
+            "savingsBalance": 10000.00
         }
     ]
 }

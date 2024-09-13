@@ -1,5 +1,6 @@
 const getDate = document.getElementById('date-time')
 const inputModal = document.querySelector('.input-modal');
+const transferModal = document.querySelector('.transfer-modal');
 const overlay = document.querySelector(".overlay");
 const debitBtn = document.getElementById("debit-btn");
 const savingsBtn = document.getElementById("savings-btn");
@@ -161,6 +162,7 @@ function closeModal() {
     closeImageBtn.addEventListener('click', () => {
         overlay.style.display = "none";
         inputModal.classList.add('hidden');
+        transferModal.classList.add('hidden');
     });
 }
 
@@ -183,6 +185,71 @@ savingsWithdrawBtn.addEventListener("click", () => {
     displaySavingsWithdrawModal();
     closeModal();
 });
+
+// Balance Transfer
+
+function displayTransferModal() {
+    overlay.style.display = "block";
+    transferModal.classList.remove('hidden');
+    transferModal.style.position = 'fixed';
+    transferModal.style.top = `-${document.body.scrollY}px`;
+    transferModal.innerHTML=`
+        <div>
+            <h3 class="transfer-modal-title">Transfer Funds</h3>
+            <div>
+                <label>From Account: </label>
+                <select class="select" name="accounts" id="accounts">
+                    <option value="debit">Debit</option>
+                    <option value="savings">Savings</option>
+                </select>
+                <p id="available-debit-bal"></p>
+            </div>
+            <label>Amount: </label>
+            <input id="amt-in" type="number" placeholder="0"  min="1">
+        </div>
+        <div>
+            <div>
+                <label>To Account: </label>
+                <select class="select" name="accounts" id="accounts">
+                <option value="savings">Savings</option>
+                    <option value="debit">Debit</option>
+                </select>
+                <p id="available-savings-bal"></p>
+            </div>
+            <label>Amount: </label>
+            <input id="amt-in" type="number" placeholder="0"  min="1">
+        </div>
+        <button id="transfer-enter-button" class="sm-btn btn">Enter</button>
+        <a class="close-transfer-modal">x</a>
+        <p>Not yet functional</p>
+        `;
+    const transferEntBtn = document.getElementById('transfer-enter-button');
+    transferEntBtn.addEventListener('click', () => {
+
+    });
+
+};
+
+const transferBtn = document.getElementById('transfer');
+transferBtn.addEventListener('click', () => {
+    displayTransferModal();
+    transferLogic()
+    closeTransferModal();
+});
+
+function transferLogic() {
+    document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
+    document.getElementById("available-savings-bal").innerHTML = `Available balance: ${moneyFormatter.format(savingsBalance)}`;
+    closeTransferModal();
+}
+
+function closeTransferModal() {
+    const closeTransferBtn = document.querySelector('.close-transfer-modal');
+    closeTransferBtn.addEventListener('click', () => {
+        overlay.style.display = "none";
+        transferModal.classList.add('hidden');
+    });
+}
 
 //Login / logout
 
