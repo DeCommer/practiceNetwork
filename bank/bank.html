@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./bank.css">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml,
+        <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
+        <text y=%22.9em%22 font-size=%2290%22>💰</text></svg>"/>
         <link rel="stylesheet" href="../css/main.css">
         <script src="./bank.js" defer></script>
         <script src="../js/scripts.js" defer></script>
@@ -76,7 +79,7 @@
             </div>
             <div class="account-info">
                 <p>Account Number: <span id="account-number" class="balance-txt"></span></p>
-                <p class="total-balance-txt">Total balance: <span class="balance-txt" id="total-balance">$0</span></p>
+                <p class="total-balance-txt">Total balance: <span class="balance-txt" id="total-balance">$0.00</span></p>
             </div>
             <div class="accounts-title-container">
                 <h2>Accounts</h2>
@@ -84,17 +87,20 @@
             <div class="account-area">
                 <div class="account-card">
                     <p class="debit-account-name">Debit</p>
-                    <p>Account balance: <span class="balance-txt"id="debit-balance">$0</span></p>
+                    <p>Account balance: <span class="balance-txt"id="debit-balance">$0.00</span></p>
                     <!-- <p class="debit-available-txt">Available amount</p> -->
+                    <button id="debit-withdraw-btn" class="sm-btn btn">withdraw</button>
                     <button id="debit-btn" class="sm-btn btn">Deposit</button>
                 </div>
                 <div class="account-card">
                     <p class="debit-account-name">Savings</p>
-                    <p>Account balance: <span class="balance-txt" id="savings-balance">$0</span></p>
+                    <p>Account balance: <span class="balance-txt" id="savings-balance">$0.00</span></p>
                     <!-- <p class="debit-available-txt">Available amount</p> -->
+                    <button id="savings-withdraw-btn" class="sm-btn btn">withdraw</button>
                     <button id="savings-btn" class="sm-btn btn">Deposit</button>
                 </div>
             </div>
+            *There is no involvement of real money in this app
         </div>
     </body>
 </html>

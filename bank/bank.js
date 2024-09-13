@@ -3,19 +3,22 @@ const inputModal = document.querySelector('.input-modal');
 const overlay = document.querySelector(".overlay");
 const debitBtn = document.getElementById("debit-btn");
 const savingsBtn = document.getElementById("savings-btn");
+const debitWithdrawBtn = document.getElementById("debit-withdraw-btn");
+const savingsWithdrawBtn = document.getElementById("savings-withdraw-btn");
 
 const now = new Date();
 getDate.innerHTML=`Today is ${now.toLocaleString()}`;
 
 let debitBalance = 0;
 let savingsBalance = 0;
+let totalBalance = 0;
 
 const moneyFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
 });
 
-function displayDebitModal() {
+function displayDebitDepositModal() {
     overlay.style.display = "block";
     inputModal.classList.remove('hidden');
     inputModal.style.position = 'fixed';
@@ -30,7 +33,78 @@ function displayDebitModal() {
     const debitEntBtn = document.getElementById('debit-enter-button');
     debitEntBtn.addEventListener('click', () => {
         addDebitFunds();
-        updtateTotalBalance();
+        updateTotalBalance();
+    });
+};
+
+function displayDebitWithdrawModal() {
+    overlay.style.display = "block";
+    inputModal.classList.remove('hidden');
+    inputModal.style.position = 'fixed';
+    inputModal.style.top = `-${document.body.scrollY}px`;
+    inputModal.innerHTML=`
+        <h3>Withdraw From Debit</h3>
+        <label>Amount: </label>
+        <input id="amt-in" type="number" placeholder="0"  min="1">
+        <button id="debit-withdraw-btn" class="sm-btn btn">Enter</button>
+        <p id="message" class="message-txt"></p>
+        <a class="close-input-modal">x</a>
+    `;
+    const debitWithdrawBtn = document.getElementById('debit-withdraw-btn');
+    const amtIn = document.getElementById('amt-in');
+    debitWithdrawBtn.addEventListener('click', () => {
+        if(debitBalance <= 0 || debitBalance < amtIn.value) {
+            console.log("Insufficient funds in debit account")
+            document.getElementById("message").innerHTML = `Insufficient funds in debit`;
+        } else {
+            subDebitFunds();
+            updateTotalBalance();
+        }
+    });
+};
+
+function displaySavingsModal() {
+    overlay.style.display = "block";
+    inputModal.classList.remove('hidden');
+    inputModal.style.position = 'fixed';
+    inputModal.style.top = `-${document.body.scrollY}px`;
+    inputModal.innerHTML=`
+        <h3>Deposit into Savings</h3>
+        <label>Amount: </label>
+        <input id="amt-in" type="number" placeholder="0" min="1">
+        <button id="savings-enter-btn" class="sm-btn btn">Enter</button>
+        <a class="close-input-modal">x</a>
+    `;
+    const savingsEntBtn = document.getElementById('savings-enter-btn');
+    savingsEntBtn.addEventListener('click', () => {
+        addSavingsFunds();
+        updateTotalBalance();
+    });
+};
+
+function displaySavingsWithdrawModal() {
+    overlay.style.display = "block";
+    inputModal.classList.remove('hidden');
+    inputModal.style.position = 'fixed';
+    inputModal.style.top = `-${document.body.scrollY}px`;
+    inputModal.innerHTML=`
+        <h3>Withdraw From Savings</h3>
+        <label>Amount: </label>
+        <input id="amt-in" type="number" placeholder="0" min="1">
+        <button id="savings-withdraw-btn" class="sm-btn btn">Enter</button>
+        <p id="message" class="message-txt"></p>
+        <a class="close-input-modal">x</a>
+    `;
+    const savingsWithdrawEntBtn = document.getElementById('savings-withdraw-btn');
+    const amtIn = document.getElementById('amt-in');
+    savingsWithdrawEntBtn.addEventListener('click', () => {
+        if(savingsBalance <= 0 || savingsBalance < amtIn.value) {
+            console.log("Insufficient funds in savings account")
+            document.getElementById("message").innerHTML = `Insufficient funds in Savings`;
+        } else {
+            subSavingsFunds();
+            updateTotalBalance();
+        }
     });
 };
 
@@ -45,28 +119,17 @@ function addDebitFunds() {
     return debitBalance;
 };
 
-function displaySavingsModal() {
-    overlay.style.display = "block";
-    inputModal.classList.remove('hidden');
-    inputModal.style.position = 'fixed';
-    inputModal.style.top = `-${document.body.scrollY}px`;
-    inputModal.innerHTML=`
-        <h3>Deposit into Savings</h3>
-        <label>Amount: </label>
-        <input id="amt-in" type="number" placeholder="0" min="1">
-        <button id="savings-enter-button" class="sm-btn btn">Enter</button>
-        <a class="close-input-modal">x</a>
-    `;
-    const savingsEntBtn = document.getElementById('savings-enter-button');
-    savingsEntBtn.addEventListener('click', () => {
-        addSavingsFunds();
-        updtateTotalBalance();
-    });
+function subDebitFunds() {
+    let debitIn = document.getElementById('amt-in').value;
+    debitBalance -= Number(debitIn);
+    debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
+    overlay.style.display = "none";
+    inputModal.classList.add('hidden');
+    return debitBalance;
 };
 
-const savingsBalanceDisplay = document.getElementById('savings-balance');
-
 function addSavingsFunds() {
+    const savingsBalanceDisplay = document.getElementById('savings-balance');
     let savingsIn = document.getElementById('amt-in').value;
     savingsBalance += Number(savingsIn);
     savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
@@ -75,10 +138,21 @@ function addSavingsFunds() {
     return savingsBalance;
 };
 
-function updtateTotalBalance() {
+const savingsBalanceDisplay = document.getElementById('savings-balance');
+function subSavingsFunds() {
+    let savingsIn = document.getElementById('amt-in').value;
+    savingsBalance -= Number(savingsIn);
+    savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
+    overlay.style.display = "none";
+    inputModal.classList.add('hidden');
+    return savingsBalance;
+};
+
+function updateTotalBalance() {
     const totalBalanceDisplay = document.getElementById("total-balance");
     let totalBalance = debitBalance + savingsBalance;
     totalBalanceDisplay.innerHTML = `${moneyFormatter.format(totalBalance)}`;
+    console.log(totalBalance)
     return totalBalance;
 };
 
@@ -90,13 +164,23 @@ function closeModal() {
     });
 }
 
-debitBtn.addEventListener("click", (e) => {
-    displayDebitModal();
+debitBtn.addEventListener("click", () => {
+    displayDebitDepositModal();
     closeModal();
 });
 
-savingsBtn.addEventListener("click", (e) => {
+debitWithdrawBtn.addEventListener("click", () => {
+    displayDebitWithdrawModal();
+    closeModal();
+});
+
+savingsBtn.addEventListener("click", () => {
     displaySavingsModal();
+    closeModal();
+});
+
+savingsWithdrawBtn.addEventListener("click", () => {
+    displaySavingsWithdrawModal();
     closeModal();
 });
 
@@ -126,7 +210,7 @@ getAccounts = (data) => {
             debitBalance = accounts[0].debitBalance;
             savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(accounts[0].savingsBalance)}`;
             debitBalanceDisplay.innerHTML = `${moneyFormatter.format(accounts[0].debitBalance)}`;
-            updtateTotalBalance();
+            updateTotalBalance();
         }else if(userName === accounts[1].username && passwordIn.value === accounts[1].password) {
             document.querySelector(".login-apps-container").classList.add('hide'); 
             document.querySelector(".apps-container").classList.remove('hide');
@@ -136,7 +220,7 @@ getAccounts = (data) => {
             debitBalance = accounts[1].debitBalance;
             savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(accounts[1].savingsBalance)}`;
             debitBalanceDisplay.innerHTML = `${moneyFormatter.format(accounts[1].debitBalance)}`;
-            updtateTotalBalance();
+            updateTotalBalance();
         }else if(userName === accounts[2].username && passwordIn.value === accounts[2].password) {
             document.querySelector(".login-apps-container").classList.add('hide'); 
             document.querySelector(".apps-container").classList.remove('hide');
@@ -146,7 +230,7 @@ getAccounts = (data) => {
             debitBalance = accounts[2].debitBalance;
             savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(accounts[2].savingsBalance)}`;
             debitBalanceDisplay.innerHTML = `${moneyFormatter.format(accounts[2].debitBalance)}`;
-            updtateTotalBalance();
+            updateTotalBalance();
         }else {
             setTimeout(() => {
                 document.getElementById('message').innerHTML = ''
@@ -174,5 +258,4 @@ getAccounts = (data) => {
         userIn.value = "";
         passwordIn.value = "";
     });
-
 }

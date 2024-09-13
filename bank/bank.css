@@ -79,16 +79,11 @@ input {
     padding: 5px 20px;
     border-top: 5px solid var(--orange);
     height: 100px;
+    width: 250px;
 }
 
 .account-card:nth-child(2) {
     border-top: 7px solid var(--text);
-}
-
-.account-card .btn {
-    position: absolute;
-    bottom: 2px;
-    right: 0;
 }
 
 .debit-account-name {
@@ -139,7 +134,7 @@ input {
     cursor: pointer;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 700px) {
 
     .apps-container {
         display: flex;
@@ -153,7 +148,8 @@ input {
     }
 
     .account-area {
-        display: block;
+        display: flex;
+        flex-direction: column;
         text-align: left;
         width: 100%;
     }
