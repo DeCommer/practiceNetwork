@@ -3,8 +3,8 @@
             "username": "Demo",
             "password": "1234",
             "accountNumber": "0000-demo",
-            "debitBalance": 0.00,
-            "savingsBalance": 0.00
+            "debitBalance": 500.99,
+            "savingsBalance": 1000.50
         },
         {
             "username": "Constance",

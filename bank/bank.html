@@ -54,7 +54,7 @@
         <div class="input-modal hidden"></div>
         <div class="transfer-modal hidden"></div>
 
-        <div class="login-apps-container hide">
+        <div class="login-apps-container">
             <h2>Login</h2>
             <div class="login-container">
                 <label for="user-in">Username: </label>
@@ -68,7 +68,7 @@
             <button id="login-btn" class="sm-btn btn">Submit</button>
             *username: Demo, password: 1234
         </div>
-        <div class="apps-container ">
+        <div class="apps-container hide">
             <div class="title-area">
                 <div class="left">
                    <p class="text-link" id="logout">Logout</P>
@@ -80,11 +80,11 @@
                 </div>
             </div>
             <div class="account-info">
-                <p>Account Number: <span id="account-number" class="balance-txt"></span></p>
-                <p class="total-balance-txt">Total balance: <span class="balance-txt" id="total-balance">$0.00</span></p>
+                <p class="account-number-txt">Account Number: <span id="account-number" class="balance-txt"></span></p>
+                <p class="total-balance-txt">Total balance<sup>*</sup>: <span class="balance-txt" id="total-balance">$0.00</span></p>
             </div>
             <div class="accounts-title-container">
-                <h2>Accounts</h2>
+                <h2>Accounts<sup>*</sup></h2>
             </div>
             <div class="account-area">
                 <div class="account-card">
@@ -103,8 +103,12 @@
                 </div>
             </div>
             <div style="font-size: .6rem; width: 100%; text-align: right;">
-                <p>*No use of real money in this app</p>
+                <p><sup>*</sup>Not real money</p>
             </div>
         </div>
+        <footer>
+            <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+        </footer>
+          
     </body>
 </html>

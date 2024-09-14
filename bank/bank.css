@@ -42,7 +42,7 @@ input {
     /* border: 1px solid red; */
     position: absolute;
     display: flex;
-    top: 0;
+    bottom: 0;
     float: left;
     gap: 25px;
 }
@@ -70,6 +70,11 @@ input {
     width: 100%;
     text-align: left;
     margin-top: 10px;
+}
+
+.account-number-txt {
+   /* border: 1px solid red; */
+   margin-bottom: -40px;
 }
 
 .account-area {
@@ -182,6 +187,27 @@ input {
         width: 95% !important;
     }
 
+    .title-area {
+        /* border: 1px solid red; */
+        height: 75px;
+        display: flex;
+    }
+
+    .left {
+        /* border: 1px solid green; */
+        display: flex;
+        justify-content: left;
+    }
+
+    .right {
+        /* border: 1px solid blue; */
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: right;
+    }
+
+
     .title-area h2 {
         font-size: 1.3rem;
     }
@@ -198,6 +224,7 @@ input {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        height: 100px;
         gap: 0px;
         padding: 10px 0;
     }
