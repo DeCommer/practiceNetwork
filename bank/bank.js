@@ -13,6 +13,7 @@ getDate.innerHTML=`Today is ${now.toLocaleString()}`;
 let debitBalance = 0;
 let savingsBalance = 0;
 let totalBalance = 0;
+let fromValue = 0;
 
 const moneyFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -186,6 +187,8 @@ savingsWithdrawBtn.addEventListener("click", () => {
 
 // Balance Transfer
 
+
+
 function displayTransferModal() {
     overlay.style.display = "block";
     transferModal.classList.remove('hidden');
@@ -222,14 +225,10 @@ function displayTransferModal() {
         `;
     const transferEntBtn = document.getElementById('transfer-enter-button');
     transferEntBtn.addEventListener('click', () => {
-        let fromValue = document.getElementById("from-amt-in").value;
-        if(fromValue > debitBalance && fromValue > savingsBalance) {
-            document.getElementById("available-debit-bal").innerHTML = `Insufficient funds`;
-        }else{
-            transferLogic();
-            overlay.style.display = "none";
-            transferModal.classList.add('hidden');
-        }
+        transferLogic();
+        overlay.style.display = "none";
+        transferModal.classList.add('hidden');
+        
     });
 };
 
@@ -240,39 +239,55 @@ transferBtn.addEventListener('click', () => {
 });
 
 function transferLogic() {
+    // console.log(`Debit Balance: ${debitBalance} Type: ${typeof(debitBalance)}`)
+    // console.log(`savings Balance: ${savingsBalance} Type: ${typeof(debitBalance)}`)
+    // console.log("-----------------------------------------")
+
+    document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
+    document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
+    
 
     let accountSelectorFrom = document.getElementById("acc-selector-from");
     let accountSelectorTo = document.getElementById("acc-selector-to");
+
     accountSelectorTo.disabled = true
 
-    let fromValue = document.getElementById("from-amt-in").value;
+    fromValue = document.getElementById("from-amt-in").value;
     
-    document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
-    document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
+
     accountSelectorFrom.addEventListener("change", (e) =>{
         if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings") {
             document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(savingsBalance)}`;
             accountSelectorTo.selectedIndex = 1;
             document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(debitBalance)}`;
-
-        }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit") {
+        }
+        if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit") {
             document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
             accountSelectorTo.selectedIndex = 0;
             document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
         }
     });
-    if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings") {
-        savingsBalance -= Number(fromValue);
-        debitBalance += Number(fromValue);
-        savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
-        debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
-        closeTransferModal();
-    }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit") {
-        debitBalance -= Number(fromValue);
-        savingsBalance += Number(fromValue);
-        savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
-        debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
-        closeTransferModal();
+    if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings" 
+        && fromValue <= savingsBalance && savingsBalance != 0) {
+            savingsBalance -= Number(fromValue);
+            debitBalance += Number(fromValue);
+            savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
+            debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
+            closeTransferModal();
+
+    }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit" 
+        && fromValue <= debitBalance && debitBalance != 0) {
+                debitBalance -= Number(fromValue);
+                savingsBalance += Number(fromValue);
+                savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
+                debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
+                closeTransferModal();
+    }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit" 
+        || fromValue > debitBalance && debitBalance == 0) {
+            console.log('insufficent funds');
+    }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings" 
+        || fromValue > savingsBalance && savingsBalance == 0) {
+            console.log('insufficent funds');
     }
 }
 
