@@ -238,4 +238,8 @@ input {
     .input-modal {
         width: 75%;
     }
+
+    .transfer-modal {
+        width: 55%;
+    }
   }
