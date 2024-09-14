@@ -198,7 +198,7 @@ function displayTransferModal() {
             <h3 class="transfer-modal-title">Transfer Funds</h3>
             <div>
                 <label>From Account: </label>
-                <select class="select" name="accounts" id="accounts">
+                <select class="select" name="accounts" id="acc-selector">
                     <option value="debit">Debit</option>
                     <option value="savings">Savings</option>
                 </select>
@@ -210,8 +210,8 @@ function displayTransferModal() {
         <div>
             <div>
                 <label>To Account: </label>
-                <select class="select" name="accounts" id="accounts">
-                <option value="savings">Savings</option>
+                <select class="select" name="accounts" id="acc-selector">
+                    <option value="savings">Savings</option>
                     <option value="debit">Debit</option>
                 </select>
                 <p id="available-savings-bal"></p>
@@ -238,6 +238,10 @@ transferBtn.addEventListener('click', () => {
 });
 
 function transferLogic() {
+    const accountSelector = document.getElementById("acc-selector");
+    for(let i = 0; i < accountSelector.length; i++){
+        console.log(accountSelector.value)
+    }
     document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
     document.getElementById("available-savings-bal").innerHTML = `Available balance: ${moneyFormatter.format(savingsBalance)}`;
     closeTransferModal();
