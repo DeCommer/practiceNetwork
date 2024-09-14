@@ -1,7 +1,7 @@
 {"accounts": [
         {
-            "username": "Demo",
-            "password": "1234",
+            "username": "demo",
+            "password": "1111",
             "accountNumber": "0000-demo",
             "debitBalance": 500.99,
             "savingsBalance": 1000.50

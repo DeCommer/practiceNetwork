@@ -147,6 +147,14 @@ input {
     padding: 0px 20px 20px 20px;
     z-index: 1;
   }
+
+  .debit-transfer-container {
+    margin-top: 20px;
+  }
+
+  .savings-transfer-container {
+    margin: 25px 40px;
+  }
   
   .select {
     border: 1px solid var(--text);
@@ -206,7 +214,6 @@ input {
         flex-direction: column;
         justify-content: right;
     }
-
 
     .title-area h2 {
         font-size: 1.3rem;
