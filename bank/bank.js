@@ -56,8 +56,10 @@ function displayDebitWithdrawModal() {
     const amtIn = document.getElementById('amt-in');
     debitWithdrawBtn.addEventListener('click', () => {
         if(debitBalance <= 0 || debitBalance < amtIn.value) {
-            console.log("Insufficient funds in debit account")
-            document.getElementById("message").innerHTML = `Insufficient funds in debit`;
+            setTimeout(() =>{
+                document.getElementById("message").innerHTML = ``;
+            }, 1000);
+            document.getElementById("message").innerHTML = `Insufficient funds`;
         } else {
             subDebitFunds();
             updateTotalBalance();
@@ -101,8 +103,10 @@ function displaySavingsWithdrawModal() {
     const amtIn = document.getElementById('amt-in');
     savingsWithdrawEntBtn.addEventListener('click', () => {
         if(savingsBalance <= 0 || savingsBalance < amtIn.value) {
-            console.log("Insufficient funds in savings account")
-            document.getElementById("message").innerHTML = `Insufficient funds in Savings`;
+            setTimeout(() =>{
+                document.getElementById("message").innerHTML = ``;
+            }, 1000);
+            document.getElementById("message").innerHTML = `Insufficient funds`;
         } else {
             subSavingsFunds();
             updateTotalBalance();
@@ -238,14 +242,6 @@ transferBtn.addEventListener('click', () => {
 });
 
 function transferLogic() {
-    // console.log(`Debit Balance: ${debitBalance} Type: ${typeof(debitBalance)}`)
-    // console.log(`savings Balance: ${savingsBalance} Type: ${typeof(debitBalance)}`)
-    // console.log("-----------------------------------------")
-
-    // document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
-    // document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
-    
-
     let accountSelectorFrom = document.getElementById("acc-selector-from");
     let accountSelectorTo = document.getElementById("acc-selector-to");
 
@@ -293,10 +289,15 @@ function transferLogic() {
             closeTransferModal();
     }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings" 
         || fromValue > savingsBalance && savingsBalance == 0) {
+            setTimeout(() =>{
+                transferMessage.innerHTML = ``;
+            }, 1000);
             transferMessage.innerHTML = `Insufficent funds`;
-            // console.log('insufficent funds');
     }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit" 
         || fromValue > debitBalance && debitBalance == 0) {
+            setTimeout(() =>{
+                transferMessage.innerHTML = ``;
+            }, 1000);
             transferMessage.innerHTML = `Insufficent funds`;
     }
 }
@@ -310,15 +311,12 @@ function closeTransferModal() {
 }
 
 //Login / logout
-
 fetch("./accounts.json")
 .then(response => response.json())
 .then(data => getAccounts(data));
 
 getAccounts = (data) => {
     const accounts = data.accounts;
-    console.log(accounts);
-
     // const accountNumber = Math.random().toString(36).slice(2);
     const userIn = document.getElementById("user-in");
     const passwordIn = document.getElementById("pass-in");
