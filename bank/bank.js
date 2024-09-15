@@ -221,7 +221,7 @@ function displayTransferModal() {
         </div>
         <button id="transfer-enter-button" class="sm-btn btn">Enter</button>
         <a class="close-transfer-modal">x</a>
-        <p id="transfer-message"></p>
+        <p id="transfer-message">Not yet fully functional</p>
         `;
     const transferEntBtn = document.getElementById('transfer-enter-button');
     transferEntBtn.addEventListener('click', () => {
