@@ -202,7 +202,7 @@ function displayTransferModal() {
                     <option value="debit">Debit</option>
                     <option value="savings">Savings</option>
                 </select>
-                <p id="available-debit-bal"></p>
+                <p id="account-1-bal"></p>
             </div>
             <label>Amount: </label>
             <input id="from-amt-in" type="number" placeholder="0"  min="1">
@@ -216,7 +216,7 @@ function displayTransferModal() {
                     <option value="savings">Savings</option>
                     <option value="debit">Debit</option>
                 </select>
-                <p id="available-savings-bal"></p>
+                <p id="account-2-bal"></p>
             </div>
         </div>
         <button id="transfer-enter-button" class="sm-btn btn">Enter</button>
@@ -255,38 +255,36 @@ function transferLogic() {
     closeTransferModal()
 
     accountSelectorFrom.addEventListener("change", () =>{
-        if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings") {
-            document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(savingsBalance)}`;
+        if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "select") {
+            console.log('select an account')
+            document.getElementById("account-1-bal").innerHTML = ``;
+            document.getElementById("account-2-bal").innerHTML = ``;
+        }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings") {
             accountSelectorTo.selectedIndex = 2;
-            document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(debitBalance)}`;
+            document.getElementById("account-1-bal").innerHTML = `Savings balance: ${moneyFormatter.format(savingsBalance)}`;
+            document.getElementById("account-2-bal").innerHTML = `Debit balance: ${moneyFormatter.format(debitBalance)}`;
         }
         if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit") {
-            document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
             accountSelectorTo.selectedIndex = 1;
-            document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
+            document.getElementById("account-1-bal").innerHTML = `Debit balance: ${moneyFormatter.format(debitBalance)}`;
+            document.getElementById("account-2-bal").innerHTML = `Savings balance: ${moneyFormatter.format(savingsBalance)}`;
         }
     });
-    if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "select") {
-        console.log('select an account')
-        document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
-        document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
-        document.getElementById("available-debit-bal").innerHTML = ``;
-        document.getElementById("available-savings-bal").innerHTML = ``;
-    }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings" 
+     if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings" 
         && fromValue <= savingsBalance && savingsBalance != 0) {
             savingsBalance -= Number(fromValue);
             debitBalance += Number(fromValue);
-            document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
-            document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
-            savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
+            document.getElementById("account-1-bal").innerHTML = `Savings balance: ${moneyFormatter.format(savingsBalance)}`;
+            document.getElementById("account-2-bal").innerHTML = `Debit balance: ${moneyFormatter.format(debitBalance)}`;
             debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
+            savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
             closeTransferModal();
     }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit" 
         && fromValue <= debitBalance && debitBalance != 0) {
             debitBalance -= Number(fromValue);
             savingsBalance += Number(fromValue);
-            document.getElementById("available-debit-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
-            document.getElementById("available-savings-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
+            document.getElementById("account-1-bal").innerHTML = `Debit balance: ${moneyFormatter.format(debitBalance)}`;
+            document.getElementById("account-2-bal").innerHTML = `Savings balance: ${moneyFormatter.format(savingsBalance)}`;
             savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
             debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
             closeTransferModal();
