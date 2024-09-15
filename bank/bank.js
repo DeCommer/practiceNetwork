@@ -221,7 +221,7 @@ function displayTransferModal() {
         </div>
         <button id="transfer-enter-button" class="sm-btn btn">Enter</button>
         <a class="close-transfer-modal">x</a>
-        <p id="transfer-message">Not yet fully functional</p>
+        <p id="transfer-message"></p>
         `;
     const transferEntBtn = document.getElementById('transfer-enter-button');
     transferEntBtn.addEventListener('click', () => {
@@ -252,30 +252,33 @@ function transferLogic() {
     accountSelectorTo.disabled = true
 
     fromValue = document.getElementById("from-amt-in").value;
+    const transferMessage = document.getElementById("transfer-message");
     closeTransferModal()
 
     accountSelectorFrom.addEventListener("change", () =>{
         if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "select") {
-            console.log('select an account')
+            // console.log('select an account')
             document.getElementById("account-1-bal").innerHTML = ``;
             document.getElementById("account-2-bal").innerHTML = ``;
         }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings") {
             accountSelectorTo.selectedIndex = 2;
-            document.getElementById("account-1-bal").innerHTML = `Savings balance: ${moneyFormatter.format(savingsBalance)}`;
-            document.getElementById("account-2-bal").innerHTML = `Debit balance: ${moneyFormatter.format(debitBalance)}`;
+            document.getElementById("account-1-bal").innerHTML = `Available balance: ${moneyFormatter.format(savingsBalance)}`;
+            document.getElementById("account-2-bal").innerHTML = `Balance: ${moneyFormatter.format(debitBalance)}`;
+            transferMessage.innerHTML = ``;
         }
         if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit") {
             accountSelectorTo.selectedIndex = 1;
-            document.getElementById("account-1-bal").innerHTML = `Debit balance: ${moneyFormatter.format(debitBalance)}`;
-            document.getElementById("account-2-bal").innerHTML = `Savings balance: ${moneyFormatter.format(savingsBalance)}`;
+            document.getElementById("account-1-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
+            document.getElementById("account-2-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
+            transferMessage.innerHTML = ``;
         }
     });
      if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings" 
         && fromValue <= savingsBalance && savingsBalance != 0) {
             savingsBalance -= Number(fromValue);
             debitBalance += Number(fromValue);
-            document.getElementById("account-1-bal").innerHTML = `Savings balance: ${moneyFormatter.format(savingsBalance)}`;
-            document.getElementById("account-2-bal").innerHTML = `Debit balance: ${moneyFormatter.format(debitBalance)}`;
+            document.getElementById("account-1-bal").innerHTML = `Available balance: ${moneyFormatter.format(savingsBalance)}`;
+            document.getElementById("account-2-bal").innerHTML = `Balance: ${moneyFormatter.format(debitBalance)}`;
             debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
             savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
             closeTransferModal();
@@ -283,17 +286,18 @@ function transferLogic() {
         && fromValue <= debitBalance && debitBalance != 0) {
             debitBalance -= Number(fromValue);
             savingsBalance += Number(fromValue);
-            document.getElementById("account-1-bal").innerHTML = `Debit balance: ${moneyFormatter.format(debitBalance)}`;
-            document.getElementById("account-2-bal").innerHTML = `Savings balance: ${moneyFormatter.format(savingsBalance)}`;
+            document.getElementById("account-1-bal").innerHTML = `Available balance: ${moneyFormatter.format(debitBalance)}`;
+            document.getElementById("account-2-bal").innerHTML = `Balance: ${moneyFormatter.format(savingsBalance)}`;
             savingsBalanceDisplay.innerHTML = `${moneyFormatter.format(savingsBalance)}`;
             debitBalanceDisplay.innerHTML = `${moneyFormatter.format(debitBalance)}`;
             closeTransferModal();
     }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "savings" 
         || fromValue > savingsBalance && savingsBalance == 0) {
-            console.log('insufficent funds');
+            transferMessage.innerHTML = `Insufficent funds`;
+            // console.log('insufficent funds');
     }else if(accountSelectorFrom.options[accountSelectorFrom.selectedIndex].value == "debit" 
         || fromValue > debitBalance && debitBalance == 0) {
-            console.log('insufficent funds');
+            transferMessage.innerHTML = `Insufficent funds`;
     }
 }
 
