@@ -230,8 +230,6 @@ function displayTransferModal() {
     const transferEntBtn = document.getElementById('transfer-enter-button');
     transferEntBtn.addEventListener('click', () => {
         transferLogic();
-        closeTransferModal()
-        
     });
 };
 

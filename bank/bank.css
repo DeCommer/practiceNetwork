@@ -32,7 +32,7 @@ input {
     padding: 10px;
 }
 
-.apps-container .title-area {
+.title-area {
     position: relative;
     width: 100%;
     text-align: right;
@@ -44,7 +44,7 @@ input {
     display: flex;
     bottom: 0;
     float: left;
-    gap: 25px;
+    gap: 10px;
 }
 
 .account-info {
