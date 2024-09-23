@@ -17213,6 +17213,17 @@
       "distance": 5.05,
       "duration": "00:42:05",
       "calories": 629
+    },
+    {
+      "id": 1567,
+      "weekday": "Sunday",
+      "month": "September",
+      "dom": 22,
+      "year": "2024",
+      "avgPace": "8`33``",
+      "distance": 5.12,
+      "duration": "00:43:50",
+      "calories": 643
     }
   ]
 }
