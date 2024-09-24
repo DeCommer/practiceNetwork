@@ -21,8 +21,8 @@ const calculateAge = () => {
     let today = new Date();
 
     bdHours = (Math.abs(bd - Date.now()) / 36e5).toFixed(0);
-    bdMinutes = (Math.abs(bd - Date.now()) / 36e5 * 24).toFixed(0);
-    bdSeconds = (Math.abs(bd - Date.now()) / 36e5 * 60).toFixed(0);
+    bdMinutes = (Math.abs(bd - Date.now()) / 1000 / 60).toFixed(0);
+    bdSeconds = (Math.abs(bd - Date.now()) / 1000).toFixed(0);
 
     let d2 = today.getDate();
     let m2 = today.getMonth() + 1;
