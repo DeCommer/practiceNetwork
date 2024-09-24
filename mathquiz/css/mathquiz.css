@@ -280,7 +280,7 @@ label span {
   .winModal {
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
-    box-shadow: rgba(70, 20, 50, 1) 5px 5px 75px;
+    box-shadow: rgb(0, 0, 0) 5px 5px 75px;
     position: absolute;
     text-align: center;
     margin-top: 50px;
