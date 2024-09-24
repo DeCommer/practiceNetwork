@@ -12,7 +12,7 @@ input::-webkit-datetime-edit-year-field:focus {
 
 .input-box input {
     margin-top: 20px;
-    width: 175px;
+    width: 180px;
 }
 
 .calc-btn-area{
@@ -28,6 +28,11 @@ input::-webkit-datetime-edit-year-field:focus {
     text-align: center;
 }
 
+.results-area #result {
+    color: var(--orange);
+    font-weight: bold;
+}
+
 .results-area p {
     font-size: 2.2rem;
     color: var(--text)
@@ -41,6 +46,11 @@ input::-webkit-datetime-edit-year-field:focus {
 .additional-area p {
     font-size: 2.2rem;
     color: var(--orange);
+    text-align: center;
+}
+
+.additional-title {
+    text-align: center;
 }
 
 @media(max-width: 900px) {
