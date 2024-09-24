@@ -58,11 +58,22 @@ const calculateAge = () => {
         days.innerHTML = `${formatNumber((bdHours / 24).toFixed(0))} <span class="span">Days</span>`;
         hours.innerHTML = `${formatNumber(bdHours)} <span class="span">hours</span>`;
         minutes.innerHTML = `${formatNumber(bdMinutes)} <span class="span">minutes and</span>`;
+        function updateMinutes() {
+            bdMinutes++;
+            minutes.innerHTML = `${formatNumber(bdMinutes)} <span class="span">minutes and</span>`;
+        }setInterval(updateMinutes, 60000);
+
         seconds.innerHTML = `${formatNumber(bdSeconds)} <span class="span">seconds</span">`;
+        function updateSeconds() {
+            bdSeconds++;
+            seconds.innerHTML = `${formatNumber(bdSeconds)} <span class="span">seconds</span">`;
+        }setInterval(updateSeconds, 1000);
 
         console.log(bd)
     }
  }; 
+
+
 
  function formatNumber(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
