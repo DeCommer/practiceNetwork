@@ -67,7 +67,7 @@ const calculateAge = () => {
         function updateSeconds() {
             bdSeconds++;
             seconds.innerHTML = `${formatNumber(bdSeconds)} <span class="span">seconds</span">`;
-        }setInterval(updateSeconds, 1000);
+        }let s = setInterval(updateSeconds, 1000);
 
         console.log(bd)
     }
@@ -84,15 +84,8 @@ const calculateAge = () => {
  }
 
  const clear = () => {
-    userInput.value = ``;
-    message.innerHTML = ``;
-    result.innerHTML = ``;
-    additional.innerHTML = '';
-    days.innerHTML = ``;
-    hours.innerHTML = ``;
-    minutes.innerHTML = ``;
-    seconds.innerHTML = ``;
- }
+    window.location.reload();
+}
 
  enterBtn.addEventListener('click', calculateAge);
  clearBtn.addEventListener('click', clear);
