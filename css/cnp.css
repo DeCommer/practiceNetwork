@@ -1,0 +1,27 @@
+.app-hidden {
+    display: none;
+}
+
+.apps-container-hidden {
+    display: none !important;
+}
+
+.input-area {
+    margin-top: 15px;
+}
+
+.results-area {
+    text-align: center;
+}
+
+.sm-txt {
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+}
+
+@media(max-width: 900px) {
+    .title-text {
+        font-size: 1.7rem;
+    }
+}

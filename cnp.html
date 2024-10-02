@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinations and Permutations Calculator</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <link rel="stylesheet" href="./css/cnp.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/scripts.js" defer></script>
+    <script src="./js/cnp.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+          <div class="header-links">
+            <div class="left-header-links">
+              <a href="https://github.com/DeCommer?tab=repositories" target="_blank">GitHub</a>
+              <a href="https://www.decommer.com/">Home</a>
+          </div>
+          <button id="theme-toggle" class="theme-btn" type="button">
+            <span class="theme-icon">🌕</span>
+           </button>
+          </div>
+        </nav>
+          <div class="hero">
+            <div class="elem-logo">
+              <p class="logo-upper-left randNum">00</p>
+              <h1 class="logo-center">D<span>e</span></h1>
+              <p class="logo-bottom-center-name">DeCommer</p>
+              <p class="logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+            </div>
+            <div class="title-container">
+              <h2 class="title">Joseph DeCommer</h2>
+              <p class="description-text">Combinations and Permutations</p>
+            </div>
+          </div>
+        </header>
+        <div class="mobile-title-container app-hidden">
+            <div class="sm-elem-logo">
+                <p class="sm-logo-upper-left randNum">00</p>
+                <h1 class="sm-logo-center">D<span class="sm-logo-sm-txt">e</span></h1>
+                <p class="sm-logo-bottom-center-name">DeCommer</p>
+                <p class="sm-logo-bottom-center"><span class="randNum">00</span>.<span class="randNum">00</span></p>
+            </div>
+            <div>
+                <h2 class="title">DeCommer.com</h2>
+                <p class="description-text">Combinations and Permutations</p>
+            </div>
+        </div>
+
+        <div class="apps-container" id="combinations-container">
+            <div class="select-area">
+                <button class="sm-btn btn active" id="combination-switch-btn" type="button"><sub>n</sub>C<sub>k</sub> Mode</button>
+                <button class="sm-btn btn" id="permutation-switch-btn" type="button"><sub>n</sub>P<sub>k</sub> Mode</button>
+            </div>
+            <h1 class="title-text" id="title">Combinations Calculator</h1>
+            <p class="description-text" id="description">When order <u>does not</u> matter</p>
+            <div class="input-area">
+                <label>Total (n)</label>
+                <input type="number" id="n-in" min="0" placeholder="n">
+                <label>Selected (k)</label>
+                <input type="number" id="k-in" min="0" placeholder="k">
+            </div>
+
+            <div class="button-area">
+                <button id="enter-btn" class="btn">Enter</button>
+                <button id="clear-btn" class="btn">Clear</button>
+            </div>
+
+            <div class="results-area">
+                <p id="message"></p>
+                <p id="result" class="results-text">0</p>
+            </div>
+            <div class="eq-area">
+                <div class="hide" id="c-math-text">
+                    <p class="math-txt">\begin{eqnarray}
+                        {}_n \mathrm{ C }_k
+                        = \binom{ n }{ k }
+                        = \frac{ n! }{ k! ( n - k )! }
+                        \end{eqnarray}
+                    </p>
+                </div>
+                <div class="hide" id="p-math-text">
+                    <p class="math-txt">\begin{eqnarray}
+                        {}_n \mathrm{ P }_k
+                        = n \cdot ( n - 1 ) \cdots ( n - k + 1 )
+                        = \frac{ n! }{ ( n - k )! }
+                        \end{eqnarray}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Joseph DeCommer</p><p class="year"></p> <p> Hosted by GitHub</p>
+        </footer>
+          
+        <script data-name="BMC-Widget" 
+        data-cfasync="false" 
+        data-id="JosephDeCommer" 
+        data-description="Support me on Buy me a coffee!" 
+        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+        data-color="#a2faa7" data-position="Right" data-x_margin="18" data-y_margin="18">
+    </script>
+</body>
+</html>
