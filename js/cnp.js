@@ -1,5 +1,5 @@
-let total = document.getElementById('n-in').value;
-let selected = document.getElementById('k-in').value;
+let n = document.getElementById('n-in');
+let k = document.getElementById('k-in');
 const result = document.getElementById('result');
 const message = document.getElementById('message');
 const enterBtn = document.getElementById('enter-btn');
@@ -8,6 +8,27 @@ const pBtn = document.getElementById('permutation-switch-btn');
 const cBtn = document.getElementById('combination-switch-btn');
 
 let state = "combinations";
+
+function factorial(n) {
+    if( n < 1) {
+        return 1;
+    }else if(n == 0 || n == 1) {			
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+function combinationCalculation(n, k) {
+    if(n.value < k) {
+        console.log('n cannot be smaller than k')
+    }else {
+        return factorial(n) / (factorial(k) * factorial(n - k))
+    }
+}
+
+function permutationCalculation(n, k) {
+    return factorial(n) / factorial(n - k);
+}
 
 cBtn.addEventListener('click', () => {
     state = "combinations";
@@ -25,39 +46,13 @@ pBtn.addEventListener('click', () => {
     pBtn.classList.add('active');
 });
 
-function factorial(n) {
-    if( n < 1) {
-        return 1;
-    }else if(n == 0 || n == 1) {			
-        return 1;
-    }
-    return n * factorial(n - 1);
-}
-
-function combinationCalculation(n, k) {
-    return factorial(n) / (factorial(k) * factorial(n - k))
-}
-
-function permutationCalculation(n, k) {
-    return factorial(n) / factorial(n - k);
-}
-
 enterBtn.addEventListener('click', () => {
-    let total = document.getElementById('n-in').value;
-    let selected = document.getElementById('k-in').value;
-    console.log("Total: " + total);
-    console.log("Selected: " + selected);
-
     if(state === "combinations") {
-        if(total < selected) {
-            console.log('Total value too small')
-        }
-        result.innerHTML = combinationCalculation(total, selected);
-    }else if(state === "permutations") {
-        if(total < selected) {
-            console.log('Total value too small')
-        }
-        result.innerHTML = permutationCalculation(total, selected);
+        console.log('combinations');
+        combinationCalculation();
     }
-
+    if(state === "permutations") {
+        console.log("permutations")
+        permutationCalculation()
+}
 });

@@ -152,6 +152,3 @@ const displayRuns = (data) => {
     // document.getElementById('countdown').innerHTML = `<p><span style="color: var(--orange);">${Math.round(milesToVolt)}</span> miles until Nike+ Volt Level</p>`
     console.log(`${Math.round(milesToVolt)} miles until Nike+ Volt Level`);
 }
-
-
-
