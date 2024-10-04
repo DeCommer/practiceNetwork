@@ -16,7 +16,7 @@ function randomIntArray() {
     let elementVal = document.getElementById("el-val-in").value;
 	let randomArray = new Array(arrLength);
 	for(let i = 0; i < arrLength; i++) {
-		let randValue = Math.floor(Math.random() * elementVal) + 1;
+		let randValue = Math.floor(Math.random() * elementVal);
 		randomArray[i] = randValue;
 	}
 	return randomArray;
@@ -60,6 +60,7 @@ function sumNumbersInArray(arr) {
 
 function guts() {
     let arr = randomIntArray();
+    console.log(arr.length);
     if(arr.length === 1) {
         clear();
     } else {
@@ -91,7 +92,7 @@ function guts() {
 }
 
 function clear() {
-    array.innerHTML = `Enter value`;
+    array.innerHTML = `Array length must be at least 2`;
     setTimeout(() =>{
         array.innerHTML = ``;
     }, 1500);

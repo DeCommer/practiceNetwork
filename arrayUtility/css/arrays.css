@@ -1,8 +1,7 @@
 .array-area {
-    border-top: 1px solid var(--text);
-    border-bottom: 1px solid var(--text);
+    /* border-top: 1px solid var(--text);
+    border-bottom: 1px solid var(--text); */
     text-align: center;
-    padding: 20px;
     margin: 10px 10px 15px;
     max-width: 750px;
     max-height: 100px;
