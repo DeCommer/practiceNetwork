@@ -7,6 +7,7 @@ const largestNum = document.getElementById("lrg-num-txt");
 const smallestNum = document.getElementById("sm-num-txt");
 const sumNum = document.getElementById("sum-num-txt");
 const avgNum = document.getElementById("avg-num-txt");
+const sdNum = document.getElementById("sd-num-txt");
 let arrLength = document.getElementById("arr-len-in");
 let elementVal = document.getElementById("el-val-in");
 let message = document.getElementById('message');
@@ -58,9 +59,17 @@ function sumNumbersInArray(arr) {
 	return sum;
 }
 
+
+function standardDeviation(arr, usePopulation = false) {
+    const n = arr.length;
+    const mean = arr.reduce((a, b) => a + b, 0) / n;
+    return Math.sqrt(
+        arr.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b, 0) /
+        (n - (usePopulation ? 0 : 1))
+)};
+
 function guts() {
     let arr = randomIntArray();
-    console.log(arr.length);
     if(arr.length === 1) {
         clear();
     } else {
@@ -72,7 +81,8 @@ function guts() {
         largestNum.innerHTML =`Largest number: <span class="num-text">${largestNumberInArray(arr).toLocaleString('en-US')}</span>`;
         smallestNum.innerHTML =`Smallest number: <span class="num-text">${smallestNumberInArray(arr).toLocaleString('en-US')}</span>`;
         sumNum.innerHTML = `Sum: <span class="num-text">${sumNumbersInArray(arr).toLocaleString('en-US')}</span>`;
-        avgNum.innerHTML = `Average: <span class="num-text">${(sumNumbersInArray(arr)/arr.length).toLocaleString('en-US')}</span>`;
+        avgNum.innerHTML = `Mean: <span class="num-text">${(sumNumbersInArray(arr)/arr.length).toLocaleString('en-US')}</span>`;
+        sdNum.innerHTML = `Std dev (s): <span class="num-text">${(standardDeviation(arr)).toLocaleString('en-US')}</span>`;
         copy.classList.remove('hide');
     }
 
