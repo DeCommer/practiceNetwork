@@ -9,6 +9,7 @@ const sumNum = document.getElementById("sum-num-txt");
 const avgNum = document.getElementById("avg-num-txt");
 let arrLength = document.getElementById("arr-len-in");
 let elementVal = document.getElementById("el-val-in");
+let message = document.getElementById('message');
 
 function randomIntArray() {
     let arrLength = document.getElementById("arr-len-in").value;
@@ -26,7 +27,7 @@ function arrayDisplay(arr) {
     for(let i = 0; i < arr.length; i++) {
         textArr[i] = " " + arr[i].toLocaleString('en-US');
     }
-    return textArr.join("");
+    return textArr.join(" | ");
 }
 
 function largestNumberInArray(arr) {
@@ -57,41 +58,37 @@ function sumNumbersInArray(arr) {
 	return sum;
 }
 
-copy.addEventListener('click', () => {
-    let copyText = array.textContent;
-    let message = document.getElementById('message');
-    
-    navigator.clipboard.writeText(copyText)
-      .then(function() {
-        message.textContent = `✅ Array copied`
-        setTimeout(() =>{
-            message.textContent = '';
-        }, 1500);
-      })
-      .catch(function(error) {
-        console.log("Failed to copy text: " + error);
-      });
-  });
-
 function guts() {
     let arr = randomIntArray();
-    console.log(arrayDisplay(arr));
-    if(arr.length === 1 || elementVal === 1) {
+    console.log(elementVal.value);
+    if(arr.length === 1) {
         clear();
     } else {
         array.innerHTML = `
         <div class="array-area">
         <span class="arrSpan">${arrayDisplay(arr)}</span>
-        </div>
-        `
+        </div>`
         arrLenTxt.innerHTML = `Array length: <span class="num-text">${arr.length}</span>`;
         largestNum.innerHTML =`Largest number: <span class="num-text">${largestNumberInArray(arr).toLocaleString('en-US')}</span>`;
         smallestNum.innerHTML =`Smallest number: <span class="num-text">${smallestNumberInArray(arr).toLocaleString('en-US')}</span>`;
         sumNum.innerHTML = `Sum: <span class="num-text">${sumNumbersInArray(arr).toLocaleString('en-US')}</span>`;
         avgNum.innerHTML = `Average: <span class="num-text">${(sumNumbersInArray(arr)/arr.length).toLocaleString('en-US')}</span>`;
-        // console.log(arr.length);
         copy.classList.remove('hide');
     }
+
+    copy.addEventListener('click', () => {
+        let copyText = arr;
+        navigator.clipboard.writeText(copyText)
+          .then(function() {
+            message.innerHTML = `<p class="message">✅ Array copied</p>`
+            setTimeout(() =>{
+                message.textContent = '';
+            }, 1500);
+          })
+          .catch(function(error) {
+            console.log("Failed to copy text: " + error);
+          });
+      });
 }
 
 function clear() {
@@ -106,6 +103,7 @@ function clear() {
     smallestNum.innerHTML =``;
     sumNum.innerHTML = ``;
     avgNum.innerHTML = ``;
+    copy.classList.add('hide');
 }
 
 enterBtn.addEventListener('click', () => {
@@ -124,4 +122,5 @@ clearBtn.addEventListener('click', () => {
     smallestNum.innerHTML =``;
     sumNum.innerHTML = ``;
     avgNum.innerHTML = ``;
+    copy.classList.add('hide');
 });
