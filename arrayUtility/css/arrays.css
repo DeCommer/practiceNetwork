@@ -23,6 +23,13 @@
     align-items: center;
 }
 
+.stats-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .num-text {
     color: var(--orange);
     margin-left: 10px;

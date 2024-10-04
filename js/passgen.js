@@ -83,7 +83,7 @@ copy.addEventListener('click', () => {
         message.textContent = `✅ Password copied`
         setTimeout(() =>{
             message.textContent = '';
-        }, 1200);
+        }, 1500);
       })
       .catch(function(error) {
         console.log("Failed to copy text: " + error);
