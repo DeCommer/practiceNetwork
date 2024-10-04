@@ -81,6 +81,7 @@ function clear() {
         array.innerHTML = ``;
     }, 1500);
     arrLength.value = '';
+    elementVal.value = '';
     arrLenTxt.innerHTML = ``;
     largestNum.innerHTML =``;
     smallestNum.innerHTML =``;
@@ -98,6 +99,7 @@ elementVal.addEventListener('keypress', (e) => {if(e.key == 'Enter')guts()});
 clearBtn.addEventListener('click', () => {
     array.innerHTML = ``;
     arrLength.value = '';
+    elementVal.value = '';
     arrLenTxt.innerHTML = ``;
     largestNum.innerHTML =``;
     smallestNum.innerHTML =``;
