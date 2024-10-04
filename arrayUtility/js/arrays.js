@@ -60,7 +60,6 @@ function sumNumbersInArray(arr) {
 
 function guts() {
     let arr = randomIntArray();
-    console.log(elementVal.value);
     if(arr.length === 1) {
         clear();
     } else {
