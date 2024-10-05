@@ -5,9 +5,11 @@ const clearBtn = document.getElementById("clear-btn");
 const copy = document.getElementById('copy-btn');
 const largestNum = document.getElementById("lrg-num-txt");
 const smallestNum = document.getElementById("sm-num-txt");
+const rangeNum = document.getElementById("rng-num-txt");
 const sumNum = document.getElementById("sum-num-txt");
 const avgNum = document.getElementById("avg-num-txt");
 const sdNum = document.getElementById("sd-num-txt");
+const varianceNum = document.getElementById("vr-num-txt");
 let arrLength = document.getElementById("arr-len-in");
 let elementVal = document.getElementById("el-val-in");
 let message = document.getElementById('message');
@@ -67,6 +69,13 @@ function standardDeviation(arr, usePopulation = false) {
         (n - (usePopulation ? 0 : 1))
 )};
 
+function variance(arr, usePopulation = false) {
+    if (arr.length < 2) return 0;
+    const mean = arr.reduce((a, b) => a + b, 0) / arr.length;
+    const sumOfSquaredDifferences = arr.reduce((a, b) => a + (b - mean) ** 2, 0);
+    return sumOfSquaredDifferences / (arr.length - (usePopulation ? 0 : 1));
+  }
+
 function guts() {
     let arr = randomIntArray();
     if(arr.length === 1) {
@@ -77,11 +86,13 @@ function guts() {
         <span class="arrSpan">[ ${arrayDisplay(arr)} ]</span>
         </div>`
         arrLenTxt.innerHTML = `Array length: <span class="num-text">${arr.length}</span>`;
-        largestNum.innerHTML =`Largest number: <span class="num-text">${largestNumberInArray(arr).toLocaleString('en-US')}</span>`;
-        smallestNum.innerHTML =`Smallest number: <span class="num-text">${smallestNumberInArray(arr).toLocaleString('en-US')}</span>`;
+        largestNum.innerHTML =`Max: <span class="num-text">${largestNumberInArray(arr).toLocaleString('en-US')}</span>`;
+        smallestNum.innerHTML =`Min: <span class="num-text">${smallestNumberInArray(arr).toLocaleString('en-US')}</span>`;
+        rangeNum.innerHTML = `Range: <span class="num-text">${(largestNumberInArray(arr) - smallestNumberInArray(arr)).toLocaleString('en-US')}</span>`
         sumNum.innerHTML = `Sum ∑x : <span class="num-text">${sumNumbersInArray(arr).toLocaleString('en-US')}</span>`;
         avgNum.innerHTML = `Mean x̄ : <span class="num-text">${(sumNumbersInArray(arr)/arr.length).toLocaleString('en-US')}</span>`;
         sdNum.innerHTML = `Std dev(s): <span class="num-text">${(standardDeviation(arr)).toLocaleString('en-US')}</span>`;
+        varianceNum.innerHTML = `Variance: <span class="num-text">${(variance(arr)).toLocaleString('en-US')}</span>`;
         copy.classList.remove('hide');
     }
 
@@ -110,9 +121,11 @@ function clear() {
     arrLenTxt.innerHTML = ``;
     largestNum.innerHTML =``;
     smallestNum.innerHTML =``;
+    rangeNum.innerHTML = ``;
     sumNum.innerHTML = ``;
     avgNum.innerHTML = ``;
     sdNum.innerHTML = ``;
+    varianceNum.innerHTML = ``;
     copy.classList.add('hide');
 }
 
@@ -130,8 +143,10 @@ clearBtn.addEventListener('click', () => {
     arrLenTxt.innerHTML = ``;
     largestNum.innerHTML =``;
     smallestNum.innerHTML =``;
+    rangeNum.innerHTML = ``;
     sumNum.innerHTML = ``;
     avgNum.innerHTML = ``;
     sdNum.innerHTML = ``;
+    varianceNum.innerHTML = ``;
     copy.classList.add('hide');
 });

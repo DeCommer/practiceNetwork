@@ -29,15 +29,20 @@
     align-items: center;
 }
 
-.stats-area {
+.stats-area {   
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 15px 0 5px 0;
-    align-items: center;
+    gap: 10px;
+    margin: 25px 0 5px 0;
+    width: 300px;
 }
 
-.num-text {
+.stats-area p:nth-child(even) {
+    background-color: var(--slate);
+}
+
+.num-text{
     color: var(--orange);
-    margin-left: 10px;
+    margin-left: 25px;
+    float: right;
 }
