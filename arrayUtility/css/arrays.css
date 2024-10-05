@@ -1,11 +1,12 @@
 .array-area {
-    /* border-top: 1px solid var(--text);
-    border-bottom: 1px solid var(--text); */
-    text-align: left;
-    margin: 10px 10px 15px;
-    max-width: 750px;
-    max-height: 100px;
-    overflow-wrap: break-word;
+    /* border-top: 1px solid var(--text); */
+    border-bottom: 1px solid var(--text);
+    
+    /* border: 1px solid red; */
+    text-align: center;
+    max-width: 600px;
+    max-height: 150px;
+    padding: 10px 0 0 10px;
     overflow: scroll;
 }
 
@@ -32,6 +33,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 15px 0 5px 0;
     align-items: center;
 }
 

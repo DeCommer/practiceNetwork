@@ -28,7 +28,7 @@ function arrayDisplay(arr) {
     for(let i = 0; i < arr.length; i++) {
         textArr[i] = " " + arr[i].toLocaleString('en-US');
     }
-    return textArr.join(" | ");
+    return textArr.join(", ");
 }
 
 function largestNumberInArray(arr) {
@@ -59,7 +59,6 @@ function sumNumbersInArray(arr) {
 	return sum;
 }
 
-
 function standardDeviation(arr, usePopulation = false) {
     const n = arr.length;
     const mean = arr.reduce((a, b) => a + b, 0) / n;
@@ -80,9 +79,9 @@ function guts() {
         arrLenTxt.innerHTML = `Array length: <span class="num-text">${arr.length}</span>`;
         largestNum.innerHTML =`Largest number: <span class="num-text">${largestNumberInArray(arr).toLocaleString('en-US')}</span>`;
         smallestNum.innerHTML =`Smallest number: <span class="num-text">${smallestNumberInArray(arr).toLocaleString('en-US')}</span>`;
-        sumNum.innerHTML = `Sum: <span class="num-text">${sumNumbersInArray(arr).toLocaleString('en-US')}</span>`;
-        avgNum.innerHTML = `Mean: <span class="num-text">${(sumNumbersInArray(arr)/arr.length).toLocaleString('en-US')}</span>`;
-        sdNum.innerHTML = `Std dev (s): <span class="num-text">${(standardDeviation(arr)).toLocaleString('en-US')}</span>`;
+        sumNum.innerHTML = `Sum ∑x : <span class="num-text">${sumNumbersInArray(arr).toLocaleString('en-US')}</span>`;
+        avgNum.innerHTML = `Mean x̄ : <span class="num-text">${(sumNumbersInArray(arr)/arr.length).toLocaleString('en-US')}</span>`;
+        sdNum.innerHTML = `Std dev(s): <span class="num-text">${(standardDeviation(arr)).toLocaleString('en-US')}</span>`;
         copy.classList.remove('hide');
     }
 
@@ -113,6 +112,7 @@ function clear() {
     smallestNum.innerHTML =``;
     sumNum.innerHTML = ``;
     avgNum.innerHTML = ``;
+    sdNum.innerHTML = ``;
     copy.classList.add('hide');
 }
 
@@ -132,5 +132,6 @@ clearBtn.addEventListener('click', () => {
     smallestNum.innerHTML =``;
     sumNum.innerHTML = ``;
     avgNum.innerHTML = ``;
+    sdNum.innerHTML = ``;
     copy.classList.add('hide');
 });
