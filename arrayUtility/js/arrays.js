@@ -10,6 +10,7 @@ const sumNum = document.getElementById("sum-num-txt");
 const avgNum = document.getElementById("avg-num-txt");
 const sdNum = document.getElementById("sd-num-txt");
 const varianceNum = document.getElementById("vr-num-txt");
+const statsArea = document.querySelector(".stats-area");
 let arrLength = document.getElementById("arr-len-in");
 let elementVal = document.getElementById("el-val-in");
 let message = document.getElementById('message');
@@ -77,6 +78,7 @@ function variance(arr, usePopulation = false) {
   }
 
 function guts() {
+    statsArea.classList.remove("hide");
     let arr = randomIntArray();
     if(arr.length === 1) {
         clear();
@@ -112,6 +114,7 @@ function guts() {
 }
 
 function clear() {
+    statsArea.classList.add("hide");
     array.innerHTML = `Array length must be at least 2`;
     setTimeout(() =>{
         array.innerHTML = ``;
@@ -137,6 +140,7 @@ arrLength.addEventListener('keypress', (e) => {if(e.key == 'Enter')guts()});
 elementVal.addEventListener('keypress', (e) => {if(e.key == 'Enter')guts()});
 
 clearBtn.addEventListener('click', () => {
+    statsArea.classList.add("hide");
     array.innerHTML = ``;
     arrLength.value = '';
     elementVal.value = '';

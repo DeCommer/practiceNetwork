@@ -33,7 +33,11 @@
     display: flex;
     flex-direction: column;
     margin: 15px 0 5px 0;
-    width: 300px;
+    width: 350px;
+}
+
+.stats-area p {
+    padding: 5px 10px;
 }
 
 .stats-area p:nth-child(even) {
