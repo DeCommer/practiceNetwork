@@ -74,7 +74,7 @@ function guts() {
     } else {
         array.innerHTML = `
         <div class="array-area">
-        <span class="arrSpan">${arrayDisplay(arr)}</span>
+        <span class="arrSpan">[ ${arrayDisplay(arr)} ]</span>
         </div>`
         arrLenTxt.innerHTML = `Array length: <span class="num-text">${arr.length}</span>`;
         largestNum.innerHTML =`Largest number: <span class="num-text">${largestNumberInArray(arr).toLocaleString('en-US')}</span>`;
