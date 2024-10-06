@@ -12,7 +12,7 @@ const sdNum = document.getElementById("sd-num-txt");
 const varianceNum = document.getElementById("vr-num-txt");
 const statsArea = document.querySelector(".stats-area");
 let arrLength = document.getElementById("arr-len-in");
-let elementVal = document.getElementById("el-val-in");
+let elementVal = document.getElementById("min-in");
 let message = document.getElementById('message');
 
 function randomIntArray() {
