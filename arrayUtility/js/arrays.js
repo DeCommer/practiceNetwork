@@ -12,18 +12,21 @@ const sdNum = document.getElementById("sd-num-txt");
 const varianceNum = document.getElementById("vr-num-txt");
 const statsArea = document.querySelector(".stats-area");
 let arrLength = document.getElementById("arr-len-in");
-let elementVal = document.getElementById("el-val-in");
+let min = document.getElementById("min-val-in");
+let max = document.getElementById("max-val-in");
 let message = document.getElementById('message');
 
-
-
+// add check for min > max 
 
 function randomIntArray() {
     let arrLength = document.getElementById("arr-len-in").value;
-    let elementVal = document.getElementById("el-val-in").value;
+    let min = document.getElementById("min-val-in").value;
+    let max = document.getElementById("max-val-in").value;
+    console.log("Min: " + min);
+    console.log("Max: " + max);
 	let randomArray = new Array(arrLength);
 	for(let i = 0; i < arrLength; i++) {
-		let randValue = Math.floor(Math.random() * elementVal);
+		let randValue = Math.floor(Math.random() * (parseInt(max, 10) - parseInt(min, 10) + 1) + parseInt(min, 10))
 		randomArray[i] = randValue;
 	}
 	return randomArray;
@@ -123,7 +126,8 @@ function clear() {
         array.innerHTML = ``;
     }, 1500);
     arrLength.value = '';
-    elementVal.value = '';
+    min.value = '';
+    max.value = '';
     arrLenTxt.innerHTML = ``;
     largestNum.innerHTML =``;
     smallestNum.innerHTML =``;
@@ -140,13 +144,15 @@ enterBtn.addEventListener('click', () => {
 });
 
 arrLength.addEventListener('keypress', (e) => {if(e.key == 'Enter')guts()});
-elementVal.addEventListener('keypress', (e) => {if(e.key == 'Enter')guts()});
+min.addEventListener('keypress', (e) => {if(e.key == 'Enter')guts()});
+max.addEventListener('keypress', (e) => {if(e.key == 'Enter')guts()});
 
 clearBtn.addEventListener('click', () => {
     statsArea.classList.add("hide");
     array.innerHTML = ``;
     arrLength.value = '';
-    elementVal.value = '';
+    min.value = '';
+    max.value = '';
     arrLenTxt.innerHTML = ``;
     largestNum.innerHTML =``;
     smallestNum.innerHTML =``;
