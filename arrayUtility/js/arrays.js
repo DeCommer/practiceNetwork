@@ -30,12 +30,13 @@ function randomIntArray() {
         }, 3000);
     }else {
         for(let i = 0; i < arrLength; i++) {
-            let randValue = Math.floor(Math.random() * (parseInt(max, 10) - parseInt(min, 10) + 1) + parseInt(min, 10))
+            let randValue = 
+            Math.floor(Math.random() * (parseInt(max, 10) - parseInt(min, 10) + 1) + parseInt(min, 10));
             randomArray[i] = randValue;
         }
         return randomArray;
-    }
-}
+    };
+};
 
 function arrayDisplay(arr) {
     let textArr = new Array(arrLength);
@@ -43,7 +44,7 @@ function arrayDisplay(arr) {
         textArr[i] = " " + arr[i].toLocaleString('en-US');
     }
     return textArr.join(", ");
-}
+};
 
 function largestNumberInArray(arr) {
 	let maxVal = arr[0];
@@ -53,7 +54,7 @@ function largestNumberInArray(arr) {
 		}
 	}
 	return maxVal;
-}
+};
 
 function smallestNumberInArray(arr) {
 	let maxVal = arr[0];
@@ -63,7 +64,7 @@ function smallestNumberInArray(arr) {
 		}
 	}
 	return maxVal;
-}
+};
 
 function sumNumbersInArray(arr) {
 	let sum = 0;
@@ -71,7 +72,7 @@ function sumNumbersInArray(arr) {
 		sum += arr[i];
 	}
 	return sum;
-}
+};
 
 function standardDeviation(arr, usePopulation = false) {
     const n = arr.length;
@@ -86,7 +87,37 @@ function variance(arr, usePopulation = false) {
     const mean = arr.reduce((a, b) => a + b, 0) / arr.length;
     const sumOfSquaredDifferences = arr.reduce((a, b) => a + (b - mean) ** 2, 0);
     return sumOfSquaredDifferences / (arr.length - (usePopulation ? 0 : 1));
-  }
+};
+
+function quickSort(arr, start, end) {
+    if(arr != null && arr.length <= 1) {
+        return;
+    }
+    if(start < end) {
+        let pivotIndex = partition(arr, start, end);
+        quickSort(arr, start, pivotIndex - 1);
+        quickSort(arr, pivotIndex + 1, end);
+    }
+}
+
+function partition(arr, start, end) {
+    let pivot = arr[start];
+    let i = start;
+    for(let j = start + 1; j <= end; j++) {
+        if(arr[j] < pivot) {
+            i++;
+            swap(arr, i, j);
+        }
+    }
+    swap(arr, start, i);
+    return i;
+}
+
+function swap(arr, i, j){
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
 
 function guts() {
     statsArea.classList.remove("hide");
@@ -95,9 +126,10 @@ function guts() {
         message.innerHTML = `Array length must be greater than 2`;
         setTimeout(() =>{
             message.textContent = '';
+            clear();
         }, 1500);
-        clear();
     } else {
+        quickSort(arr, 0, arr.length - 1);
         array.innerHTML = `
         <div class="array-area">
         <span class="arrSpan">[ ${arrayDisplay(arr)} ]</span>
@@ -105,28 +137,27 @@ function guts() {
         arrLenTxt.innerHTML = `Array length: <span class="num-text">${arr.length}</span>`;
         largestNum.innerHTML =`Max: <span class="num-text">${largestNumberInArray(arr).toLocaleString('en-US')}</span>`;
         smallestNum.innerHTML =`Min: <span class="num-text">${smallestNumberInArray(arr).toLocaleString('en-US')}</span>`;
-        rangeNum.innerHTML = `Range: <span class="num-text">${(largestNumberInArray(arr) - smallestNumberInArray(arr)).toLocaleString('en-US')}</span>`
+        rangeNum.innerHTML = `Range: <span class="num-text">${(largestNumberInArray(arr) - smallestNumberInArray(arr)).toLocaleString('en-US')}</span>`;
         sumNum.innerHTML = `Sum ∑x : <span class="num-text">${sumNumbersInArray(arr).toLocaleString('en-US')}</span>`;
         avgNum.innerHTML = `Mean x̄ : <span class="num-text">${(sumNumbersInArray(arr)/arr.length).toLocaleString('en-US')}</span>`;
         sdNum.innerHTML = `Std dev(s): <span class="num-text">${(standardDeviation(arr)).toLocaleString('en-US')}</span>`;
         varianceNum.innerHTML = `Variance: <span class="num-text">${(variance(arr)).toLocaleString('en-US')}</span>`;
         copy.classList.remove('hide');
-    }
+    };
 
     copy.addEventListener('click', () => {
         let copyText = arr;
         navigator.clipboard.writeText(copyText)
           .then(function() {
-            message.innerHTML = `<p class="message">✅ Array copied</p>`
+            message.innerHTML = `<p class="message">✅ Array copied</p>`;
             setTimeout(() =>{
                 message.textContent = '';
             }, 1500);
-          })
-          .catch(function(error) {
+          }).catch(function(error) {
             console.log("Failed to copy text: " + error);
           });
-      });
-}
+    });
+};
 
 function clear() {
     statsArea.classList.add("hide");
@@ -146,7 +177,7 @@ function clear() {
     sdNum.innerHTML = ``;
     varianceNum.innerHTML = ``;
     copy.classList.add('hide');
-}
+};
 
 enterBtn.addEventListener('click', () => {
     guts();
@@ -172,4 +203,3 @@ clearBtn.addEventListener('click', () => {
     varianceNum.innerHTML = ``;
     copy.classList.add('hide');
 });
-
