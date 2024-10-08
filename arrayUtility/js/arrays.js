@@ -16,20 +16,25 @@ let min = document.getElementById("min-val-in");
 let max = document.getElementById("max-val-in");
 let message = document.getElementById('message');
 
-// add check for min > max 
-
 function randomIntArray() {
     let arrLength = document.getElementById("arr-len-in").value;
     let min = document.getElementById("min-val-in").value;
     let max = document.getElementById("max-val-in").value;
-    console.log("Min: " + min);
-    console.log("Max: " + max);
 	let randomArray = new Array(arrLength);
-	for(let i = 0; i < arrLength; i++) {
-		let randValue = Math.floor(Math.random() * (parseInt(max, 10) - parseInt(min, 10) + 1) + parseInt(min, 10))
-		randomArray[i] = randValue;
-	}
-	return randomArray;
+    if(min > max) {
+        message.innerHTML = `Max must be greater than min`;
+        statsArea.classList.add("hide");
+        array.innerHTML = ``;
+        setTimeout(() =>{
+            message.textContent = '';
+        }, 3000);
+    }else {
+        for(let i = 0; i < arrLength; i++) {
+            let randValue = Math.floor(Math.random() * (parseInt(max, 10) - parseInt(min, 10) + 1) + parseInt(min, 10))
+            randomArray[i] = randValue;
+        }
+        return randomArray;
+    }
 }
 
 function arrayDisplay(arr) {
@@ -87,6 +92,10 @@ function guts() {
     statsArea.classList.remove("hide");
     let arr = randomIntArray();
     if(arr.length === 1) {
+        message.innerHTML = `Array length must be greater than 2`;
+        setTimeout(() =>{
+            message.textContent = '';
+        }, 1500);
         clear();
     } else {
         array.innerHTML = `
@@ -121,7 +130,7 @@ function guts() {
 
 function clear() {
     statsArea.classList.add("hide");
-    array.innerHTML = `Array length must be at least 2`;
+    array.innerHTML = ``;
     setTimeout(() =>{
         array.innerHTML = ``;
     }, 1500);
@@ -163,3 +172,4 @@ clearBtn.addEventListener('click', () => {
     varianceNum.innerHTML = ``;
     copy.classList.add('hide');
 });
+
