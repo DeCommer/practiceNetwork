@@ -43,7 +43,7 @@
 }
 
 .stats-area p:nth-child(even) {
-    background-color: var(--slate);
+    background-color: var(--lightslate);
 }
 
 .num-text{
