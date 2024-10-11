@@ -113,14 +113,6 @@ function swap(arr, i, j){
 function guts() {
     statsArea.classList.remove("hide");
     let arr = randomIntArray();
-    // if(max.value < min.value) {
-    //     message.innerHTML = `Max must be greater than min.`;
-    //     clear();
-    //     setTimeout(() =>{
-    //         message.textContent = '';
-    //         clear();
-    //     }, 1500);
-    // }
     if(arr.length === 1) {
         message.innerHTML = `Array length must be greater than 2`;
         setTimeout(() =>{
@@ -128,20 +120,29 @@ function guts() {
             clear();
         }, 1500);
     }else {
-        quickSort(arr, 0, arr.length - 1);
-        array.innerHTML = `
-        <div class="array-area">
-        <span class="arrSpan">[ ${arrayDisplay(arr)} ]</span>
-        </div>`
-        arrLenTxt.innerHTML = `Array length: <span class="num-text">${arr.length}</span>`;
-        largestNum.innerHTML =`Max: <span class="num-text">${largestNumberInArray(arr).toLocaleString('en-US')}</span>`;
-        smallestNum.innerHTML =`Min: <span class="num-text">${smallestNumberInArray(arr).toLocaleString('en-US')}</span>`;
-        rangeNum.innerHTML = `Range: <span class="num-text">${(largestNumberInArray(arr) - smallestNumberInArray(arr)).toLocaleString('en-US')}</span>`;
-        sumNum.innerHTML = `Sum ∑x : <span class="num-text">${sumNumbersInArray(arr).toLocaleString('en-US')}</span>`;
-        avgNum.innerHTML = `Mean x̄ : <span class="num-text">${(sumNumbersInArray(arr)/arr.length).toLocaleString('en-US')}</span>`;
-        sdNum.innerHTML = `Std dev(s): <span class="num-text">${(standardDeviation(arr)).toLocaleString('en-US')}</span>`;
-        varianceNum.innerHTML = `Variance: <span class="num-text">${(variance(arr)).toLocaleString('en-US')}</span>`;
-        copy.classList.remove('hide');
+        if(parseInt(max.value) < parseInt(min.value)) {
+            message.innerHTML = `Max must be greater than min`;
+            clear();
+            setTimeout(() =>{
+                message.textContent = '';
+                clear();
+            }, 1500);
+        } else {
+            quickSort(arr, 0, arr.length - 1);
+            array.innerHTML = `
+            <div class="array-area">
+            <span class="arrSpan">[ ${arrayDisplay(arr)} ]</span>
+            </div>`
+            arrLenTxt.innerHTML = `Array length: <span class="num-text">${arr.length}</span>`;
+            largestNum.innerHTML =`Max: <span class="num-text">${largestNumberInArray(arr).toLocaleString('en-US')}</span>`;
+            smallestNum.innerHTML =`Min: <span class="num-text">${smallestNumberInArray(arr).toLocaleString('en-US')}</span>`;
+            rangeNum.innerHTML = `Range: <span class="num-text">${(largestNumberInArray(arr) - smallestNumberInArray(arr)).toLocaleString('en-US')}</span>`;
+            sumNum.innerHTML = `Sum ∑x : <span class="num-text">${sumNumbersInArray(arr).toLocaleString('en-US')}</span>`;
+            avgNum.innerHTML = `Mean x̄ : <span class="num-text">${(sumNumbersInArray(arr)/arr.length).toLocaleString('en-US')}</span>`;
+            sdNum.innerHTML = `Std dev(s): <span class="num-text">${(standardDeviation(arr)).toLocaleString('en-US')}</span>`;
+            varianceNum.innerHTML = `Variance: <span class="num-text">${(variance(arr)).toLocaleString('en-US')}</span>`;
+            copy.classList.remove('hide');
+        }
     };
 
     copy.addEventListener('click', () => {
