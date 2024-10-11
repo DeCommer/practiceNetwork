@@ -12,17 +12,16 @@
 } */
 
 html[data-theme='light'] {
-    --bg: #f3f8f9;
-    --text: #1a8fbe;
-    --orange: #e24a54;
-    --orangeHi: #f7616b;
-    --slate: #a5abb9;
-    --lightslate: #d7e2ef;
-    --activeGreen: #42d72b;
-    --activeGreenHi: #4ae632;
-    --leftGrad: #e24a54;
-    --centerGrad: #b7becf;
-    --rightGrad: #1a8fbe;
+    --bg: #fff;
+    --text: #007acc;
+    --orange: #ff5500;
+    --orangeHi: #ff7b00;
+    --slate: #dee7fb;
+    --activeGreen: #2cdb00;
+    --activeGreenHi: #00e650;
+    --leftGrad: #05cff7;
+    --centerGrad: #a2faa7;
+    --rightGrad: #007acc;
     --labelTxt: #1a8fbe;
     --tomato: #fff;
     --short: #42f5a1;
