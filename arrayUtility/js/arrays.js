@@ -113,8 +113,9 @@ function swap(arr, i, j){
 function guts() {
     statsArea.classList.remove("hide");
     let arr = randomIntArray();
-    if(arr.length === 1) {
-        message.innerHTML = `Array length must be greater than 2`;
+    if(parseInt(arr.length) === 1) {
+        clear();
+        message.innerHTML = `Array length must be greater than 1`;
         setTimeout(() =>{
             message.textContent = '';
             clear();
