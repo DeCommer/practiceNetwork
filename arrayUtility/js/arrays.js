@@ -21,21 +21,12 @@ function randomIntArray() {
     let min = document.getElementById("min-val-in").value;
     let max = document.getElementById("max-val-in").value;
 	let randomArray = new Array(arrLength);
-    if(min > max) {
-        message.innerHTML = `Max must be greater than min`;
-        statsArea.classList.add("hide");
-        array.innerHTML = ``;
-        setTimeout(() =>{
-            message.textContent = '';
-        }, 3000);
-    }else {
         for(let i = 0; i < arrLength; i++) {
             let randValue = 
             Math.floor(Math.random() * (parseInt(max, 10) - parseInt(min, 10) + 1) + parseInt(min, 10));
             randomArray[i] = randValue;
         }
         return randomArray;
-    };
 };
 
 function arrayDisplay(arr) {
@@ -122,13 +113,21 @@ function swap(arr, i, j){
 function guts() {
     statsArea.classList.remove("hide");
     let arr = randomIntArray();
+    // if(max.value < min.value) {
+    //     message.innerHTML = `Max must be greater than min.`;
+    //     clear();
+    //     setTimeout(() =>{
+    //         message.textContent = '';
+    //         clear();
+    //     }, 1500);
+    // }
     if(arr.length === 1) {
         message.innerHTML = `Array length must be greater than 2`;
         setTimeout(() =>{
             message.textContent = '';
             clear();
         }, 1500);
-    } else {
+    }else {
         quickSort(arr, 0, arr.length - 1);
         array.innerHTML = `
         <div class="array-area">
