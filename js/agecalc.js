@@ -86,3 +86,7 @@ const calculateAge = () => {
 userInput.addEventListener('keypress', (e) => {if(e.key == 'Enter')calculateAge()});
 enterBtn.addEventListener('click', calculateAge);
 clearBtn.addEventListener('click', clear);
+
+// const deathCountdown = (() => {
+//     startTime = 
+// })
