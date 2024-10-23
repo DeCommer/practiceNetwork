@@ -6,18 +6,19 @@
     <title>Alien Substance Wars</title>
     <link rel="stylesheet" href="./css/aliensubstance.css">
     <link rel="stylesheet" href="../css/main.css">
-    <script src="./js/aliensubstance.js" defer></script>
+    <script src="./js/main.js" type="module" defer></script>
     <!-- <script src="../js/scripts.js" defer></script> -->
 </head>
 <body>
     <p style="color: #fff">Alien Substance Wars alpha - © Joseph DeCommer 2024</p>
+    <p style="color: #fff">Status: INOP</p>
     <nav class="left-header-links"><a href="https://www.decommer.com">DeCommer.com</a><a>Two</a><a>Three</a></nav>
     <div class="as-main-container">
         <div class="as-top">
             <div class="as-game-info">
                 <h1 class="as-title">Alien Substance Wars</h1>
                 <div class="as-info-contents">
-                    <div id="as-day   " class="as-info-text">Day:    <span class="as-info-span">01/30</span></div>
+                    <div id="as-day   " class="as-info-text">Time Units:    <span class="as-info-span">01/30</span></div>
                     <div id="as-money " class="as-info-text">Money:  <span class="as-info-span">$1000</span></div>
                     <div id="as-bank  " class="as-info-text">Bank:   <span class="as-info-span">$0</span></div>
                     <div id="as-debt  " class="as-info-text">Debt:   <span class="as-info-span">$5000</span></div>
@@ -29,12 +30,12 @@
             <div class="as-planets-areas">
                 <div class="as-areas-contents">
                     <div class="as-travel-info">
-                        <h2>Planet: <span class="as-areas-span">Glurgon 9</span></h2>
-                        <h3>Sector: <span class="as-areas-span">Nebulon</span></h3>
+                        <h2>Planet: <span id="planet-txt" class="as-areas-span">Glurgon 9</span></h2>
+                        <h3>Sector: <span id="sector-txt" class="as-areas-span">Xylonia</span></h3>
                     </div>
-                    <p>Travel to: </p>
                     <div class="as-btns-area">
-                        <button class="place-btn">Xylonia 8</button>
+                        <p>Travel to: </p>
+                        <button class="place-btn active">Xylonia</button>
                         <button class="place-btn">Nexarion</button>
                         <button class="place-btn">Aethoria</button>
                         <button class="place-btn">Threnos</button>

@@ -1,17 +1,20 @@
 {"substances": [ 
         {
             "id": 1,
-            "substance": "Bleem",
-            "description": "Bleem is a mysterious, otherworldly substance native to the planet Xeridia-III. Its unique properties and behaviors defy human understanding."
+            "name": "Bleem",
+            "base_price": 9.99,
+            "description": "Bleem is a mysterious, otherworldly name native to the planet Xeridia-III. Its unique properties and behaviors defy human understanding."
         },
         {
             "id": 1,
-            "substance": "Flaglurg",
-            "description": "Flaglurg is a rare, sentient and shape-shifting substance indigenous to planet Zorvath, a distant world in the outer rim of the Andromeda galaxy."
+            "name": "Flaglurg",
+            "base_price": 1200.99,
+            "description": "Flaglurg is a rare, sentient and shape-shifting name indigenous to planet Zorvath, a distant world in the outer rim of the Andromeda galaxy."
         },
         {
             "id": 1,
-            "substance": "Sklerm",
+            "name": "Sklerm",
+            "base_price": 100.00,
             "description": "Sklerm is a fascinating, extraterrestrial material found on planet Kyreth-IV, renowned for its unique properties and potential applications."
         }
     ]

@@ -1,0 +1,8 @@
+{"planets": [
+        {
+            "id": 1,
+            "name": "Glurgon 9",
+            "sectors": [ "Xylonia", "Nexarion", "Aethoria", "Zhilakar", "Unknown"]
+        }
+    ]
+}

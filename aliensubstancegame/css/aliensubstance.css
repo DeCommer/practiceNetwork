@@ -8,6 +8,7 @@ body {
 }
 
 .as-main-container {
+    box-shadow: 5px 5px 100px 0px rgba(3,255,20,.5);
     position: relative;
     border: 5px solid #40c1fc;
     background-color: rgba(251, 253, 255);
@@ -18,8 +19,8 @@ body {
 
 .as-title {
     position: absolute;
-    top: -15px;
-    left: -15px;
+    top: -25px;
+    left: -25px;
     background-color: #fff;
     border: 5px solid #40c1fc;
     padding: 5px 15px;
@@ -41,7 +42,7 @@ body {
     /* border: 1px solid rgb(138, 131, 138); */
     width: 450px;
     height: 300px;
-    margin: 75px 75px 0 -100px;
+    margin: 55px 75px 0 -100px;
 }
 
 .as-info-text {
@@ -75,7 +76,7 @@ body {
 
 .as-areas-span {
     float: right;
-    color:rgb(158, 213, 235);
+    color:rgb(68, 255, 0);
     background-color: rgb(215, 94, 29);;
     padding: 3px 10px;
     border-radius: 10px;
@@ -91,6 +92,7 @@ body {
     height: 50px;
     margin: 10px;
     background-color: #042645;
+    border-radius: 50px;
     color: #ff00ff;
     font-size: 1.4rem;
     font-family: "Rajdhani", sans-serif;
@@ -135,7 +137,7 @@ body {
 .as-bottom {
     /* border: 1px solid blueviolet; */
     padding: 0 20px;
-    height: 550px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,7 +147,7 @@ body {
 .as-substances-contents {
     border: 1px solid rgb(138, 131, 138);;
     width: 400px;
-    height: 500px;
+    height:350px;
 }
 
 .as-game-action-btns {
@@ -153,7 +155,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 150px;
-    height: 500px;
+    height: 350px;
 }
 
 .action-btn {
@@ -168,7 +170,7 @@ body {
 .as-inventory-contents {
     border: 1px solid rgb(138, 131, 138);
     width: 400px;
-    height: 500px;
+    height:350px;
 }
 
 table {
@@ -179,12 +181,12 @@ table {
   }
   
   th {
-    text-align: left;
+    text-align: center;
   }
   
   td {
     border: 1px solid rgb(138, 131, 138);
-    text-align: left;
+    text-align: center;
     padding: 8px;
   }
   
