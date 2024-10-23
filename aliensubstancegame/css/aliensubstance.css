@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+body {
+    background: url(../assets/img/bg1.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+}
+
+.as-main-container {
+    position: relative;
+    border: 5px solid #40c1fc;
+    background-color: rgba(251, 253, 255);
+    margin-top: 25px;
+    width: 1000px;
+    height: fit-content;
+}
+
+.as-title {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background-color: #fff;
+    border: 5px solid #40c1fc;
+    padding: 5px 15px;
+    color: #ff00ff;
+    font-size: 2.6rem;
+    text-shadow: 2px 2px 0px rgba(34, 0, 0, 1);
+}
+
+.as-top {
+    /* border: 1px solid yellow; */
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.as-info-contents {
+    /* border: 1px solid rgb(138, 131, 138); */
+    width: 450px;
+    height: 300px;
+    margin: 75px 75px 0 -100px;
+}
+
+.as-info-text {
+    font-size: 2.2rem;
+    border: 1px solid #ff00ff;
+    background-color: #2d0646;
+    padding: 0 10px;
+    margin: 7px 0;
+    color: #95ff00;
+}
+
+.as-info-span {
+    float: right;
+    color: #ff00ff;
+}
+
+.as-areas-contents {
+    border: 1px solid rgb(138, 131, 138);
+    width: 450px;
+    height: fit-content;
+    margin: 25px 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.as-travel-info {
+    width: 90%;
+}
+
+.as-areas-span {
+    float: right;
+    color:rgb(158, 213, 235);
+    background-color: rgb(215, 94, 29);;
+    padding: 3px 10px;
+    border-radius: 10px;
+}
+
+.as-btns-area {
+    /* border: 1px solid red; */
+    width: fit-content;
+}
+
+.place-btn {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    background-color: #042645;
+    color: #ff00ff;
+    font-size: 1.4rem;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+}
+
+.place-btn:hover {
+    background-color: #0c4c87;
+    border: 1px solid #233a04;
+    color: #e320e3;
+}
+
+.space-ship-btn {
+    background-color: #1f7ba6;
+    border: 1px solid #233a04;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    height: 50px;
+    width: 425px;
+    margin: 10px
+}
+
+.as-middle {
+    /* border: 1px solid blue; */
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.as-message-contents {
+    background-color: rgba(255, 255, 255, 0.84);
+    border: 1px solid darkgray;
+    width: 950px;
+    height: 155px;
+    padding: 10px;
+}
+
+.as-bottom {
+    /* border: 1px solid blueviolet; */
+    padding: 0 20px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.as-substances-contents {
+    border: 1px solid rgb(138, 131, 138);;
+    width: 400px;
+    height: 500px;
+}
+
+.as-game-action-btns {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 500px;
+}
+
+.action-btn {
+    margin: 5px 0;
+    height: 40px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #494343;
+}
+
+.as-inventory-contents {
+    border: 1px solid rgb(138, 131, 138);
+    width: 400px;
+    height: 500px;
+}
+
+table {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  td {
+    border: 1px solid rgb(138, 131, 138);
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ddd;
+  }
+    
