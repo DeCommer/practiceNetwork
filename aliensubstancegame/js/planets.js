@@ -11,6 +11,25 @@ export default function planets() {
     const placeBtn_3 = document.getElementById("place-btn-3");
     const placeBtn_4 = document.getElementById("place-btn-4");
     const placeBtn_5 = document.getElementById("place-btn-5");
+    const spaceshipBtn = document.getElementById("place-btn-ship");
+    const spaceshipModal = document.getElementById("space-ship-modal");
+    const overlay = document.querySelector(".overlay");
+
+    function displaySpaceshipModal() {
+        overlay.style.display = "block";
+        spaceshipModal.classList.remove("hide");
+        spaceshipModal.style.position = 'fixed';
+        spaceshipModal.style.top = `-${document.body.scrollY}px`;
+        //button logic
+    };
+
+    function closeModal() {
+        const closeImageBtn = document.querySelector('.close-input-modal');
+        closeImageBtn.addEventListener('click', () => {
+            overlay.style.display = "none";
+            spaceshipModal.classList.add('hide');
+        });
+    }
 
     let message = document.getElementById("message-text");
 
@@ -76,6 +95,11 @@ export default function planets() {
             placeBtn_3.classList.remove("active");
             placeBtn_4.classList.remove("active");
             placeBtn_5.classList.add("active");
+        });
+
+        spaceshipBtn.addEventListener('click', () => {
+            displaySpaceshipModal();
+            closeModal();
         });
 
         if(currentPlanet === planetData.planets[0]) {
