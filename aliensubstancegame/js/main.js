@@ -1,5 +1,5 @@
-import planets from './planets.js';
+import displayPlanets from './planets.js';
 import substances from './substance.js'
 
-planets();
+displayPlanets();
 substances();

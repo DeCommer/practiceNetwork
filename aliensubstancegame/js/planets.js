@@ -3,6 +3,7 @@ export default function planets() {
     .then(response => response.json())
     .then(planetData => displayPlanets(planetData));
 
+
     const planetNameText = document.getElementById("planet-name-txt");
     const sectorNameText = document.getElementById("sector-name-txt");
     const placeBtn_0 = document.getElementById("place-btn-0");
@@ -14,7 +15,7 @@ export default function planets() {
 
     let message = document.getElementById("message-text");
 
-    const displayPlanets = (planetData) => {
+    function displayPlanets(planetData) {
         let currentPlanet = planetData.planets[0];
 
         placeBtn_0.addEventListener('click', () => {
@@ -62,9 +63,9 @@ export default function planets() {
             sectorNameText.innerHTML = planetData.planets[0].sectors[4];
             placeBtn_0.classList.remove("active");
             placeBtn_1.classList.remove("active");
-            placeBtn_2.classList.add("active");
+            placeBtn_2.classList.remove("active");
             placeBtn_3.classList.remove("active");
-            placeBtn_4.classList.remove("active");
+            placeBtn_4.classList.add("active");
             placeBtn_5.classList.remove("active");
         });
         placeBtn_5.addEventListener('click', () => {

@@ -107,7 +107,6 @@ body {
 }
 
 .place-btn:hover {
-    font-size: 1.6rem;
     background-color: #0c4c87;
     border: 1px solid #233a04;
     color: #e320e3;
@@ -128,7 +127,6 @@ body {
 }
 
 .space-ship-btn:hover {
-    font-size: 1.6rem;
     background-color: #31a1d4;
     border: 1px solid #233a04;
     color: #fff;
