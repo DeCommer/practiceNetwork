@@ -4,6 +4,6 @@ export default function substances() {
     .then(substanceData => substanceDealing(substanceData));
 
     const substanceDealing = (substanceData) => {
-        console.log(substanceData.substances[2].name);
+        console.log(substanceData.substances);
     }
 }

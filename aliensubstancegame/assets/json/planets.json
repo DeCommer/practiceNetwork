@@ -1,8 +1,18 @@
 {"planets": [
         {
-            "id": 1,
+            "id": 0,
             "name": "Glurgon 9",
-            "sectors": [ "Xylonia", "Nexarion", "Aethoria", "Zhilakar", "Unknown"]
+            "sectors": [ "Xylonia", "Nexarion", "Aethoria", "Zhilakar", "Unk. Planet", "Eoxklur"]
+        },
+        {
+            "id": 1,
+            "name": "Sklee",
+            "sectors": [ "Xylac-Prime", "G'rroth", "Korvus-5", "N'zrel-IV", "Blyglok"]
+        },  
+        {
+            "id": 2,
+            "name": "Meebles",
+            "sectors": [ "Burpatoria-XX", "Splorkon", "Snurfle-Prime", "Snizlyroth", "Other Neptune"]
         }
     ]
 }

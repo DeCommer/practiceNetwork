@@ -11,7 +11,7 @@ body {
     box-shadow: 5px 5px 100px 0px rgba(3,255,20,.5);
     position: relative;
     border: 5px solid #40c1fc;
-    background-color: rgba(251, 253, 255);
+    background-color: rgb(209, 224, 240);
     margin-top: 25px;
     width: 1000px;
     height: fit-content;
@@ -21,7 +21,7 @@ body {
     position: absolute;
     top: -25px;
     left: -25px;
-    background-color: #fff;
+    background-color: #f9fac6;
     border: 5px solid #40c1fc;
     padding: 5px 15px;
     color: #ff00ff;
@@ -61,6 +61,7 @@ body {
 
 .as-areas-contents {
     border: 1px solid rgb(138, 131, 138);
+    background-color: #fff;
     width: 450px;
     height: fit-content;
     margin: 25px 0;
@@ -72,6 +73,10 @@ body {
 
 .as-travel-info {
     width: 90%;
+    background-color: #042645;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .as-areas-span {
@@ -97,9 +102,12 @@ body {
     font-size: 1.4rem;
     font-family: "Rajdhani", sans-serif;
     font-weight: 400;
+    cursor: pointer;
+    text-shadow: 1px 1px 0px rgba(34, 0, 0, 1);
 }
 
 .place-btn:hover {
+    font-size: 1.6rem;
     background-color: #0c4c87;
     border: 1px solid #233a04;
     color: #e320e3;
@@ -115,7 +123,15 @@ body {
     font-weight: 400;
     height: 50px;
     width: 425px;
-    margin: 10px
+    margin: 10px;
+    cursor: pointer;
+}
+
+.space-ship-btn:hover {
+    font-size: 1.6rem;
+    background-color: #31a1d4;
+    border: 1px solid #233a04;
+    color: #fff;
 }
 
 .as-middle {
@@ -145,7 +161,8 @@ body {
 }
 
 .as-substances-contents {
-    border: 1px solid rgb(138, 131, 138);;
+    border: 1px solid rgb(138, 131, 138);
+    background-color: #fff;
     width: 400px;
     height:350px;
 }
@@ -165,10 +182,13 @@ body {
     font-weight: 500;
     font-size: 1.1rem;
     color: #494343;
+    cursor: pointer;
+    
 }
 
 .as-inventory-contents {
     border: 1px solid rgb(138, 131, 138);
+    background-color: #fff;
     width: 400px;
     height:350px;
 }
