@@ -2,17 +2,17 @@
         {
             "id": 0,
             "name": "Glurgon 9",
-            "sectors": [ "Xylonia", "Nexarion", "Aethoria", "Zhilakar", "Unk. Planet", "Eoxklur"]
+            "sectors": [ "Xylonia", "Nexarion", "Zhilakar", "Eoxklur"]
         },
         {
             "id": 1,
             "name": "Sklee",
-            "sectors": [ "Xylac-Prime", "G'rroth", "Korvus-5", "N'zrel-IV", "Blyglok"]
+            "sectors": [ "Xylac-Prime", "G'rroth", "N'zrel-IV", "Too-blak Niner"]
         },  
         {
             "id": 2,
             "name": "Meebles",
-            "sectors": [ "Burpatoria-XX", "Splorkon", "Snurfle-Prime", "Snizlyroth", "Other Neptune"]
+            "sectors": [ "Burpatoria-XX", "Snurfle-Prime", "Snizlyroth", "Gurgles-4"]
         }
     ]
 }
