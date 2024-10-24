@@ -21,7 +21,7 @@ body {
     position: absolute;
     top: -25px;
     left: -25px;
-    background-color: #f9fac6;
+    background-color: #ffffff;
     border: 5px solid #40c1fc;
     padding: 5px 15px;
     color: #ff00ff;
@@ -196,19 +196,19 @@ table {
     font-weight: 500;
     border-collapse: collapse;
     width: 100%;
-  }
+}
   
-  th {
+th {
     text-align: center;
-  }
+}
   
-  td {
+td {
     border: 1px solid rgb(138, 131, 138);
     text-align: center;
     padding: 8px;
-  }
+}
   
-  tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #ddd;
-  }
+}
     

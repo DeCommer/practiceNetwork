@@ -3,7 +3,6 @@ export default function planets() {
     .then(response => response.json())
     .then(planetData => displayPlanets(planetData));
 
-
     const planetNameText = document.getElementById("planet-name-txt");
     const sectorNameText = document.getElementById("sector-name-txt");
     const placeBtn_0 = document.getElementById("place-btn-0");
