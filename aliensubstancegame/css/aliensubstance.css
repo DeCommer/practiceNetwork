@@ -11,7 +11,6 @@ body {
     font-size: 3rem;
     font-weight: 500;
     color: #fff;
-    text-shadow: 2px 2px 0px rgba(34, 0, 0, 1);
 }
 
 .overlay {
@@ -30,7 +29,7 @@ body {
 
 .space-ship-modal {
     border: 2px solid;
-    background: url(../assets/img/spaceport.jpg) no-repeat center fixed;
+    background: url(../assets/img/spaceport.jpg) no-repeat center center fixed;
     background-size: cover;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
@@ -40,29 +39,75 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
-    height: 500px;
-    padding: 0px 20px 20px 20px;
+    width: 800px;
+    height: 600px;
     z-index: 1;
+    text-shadow: 2px 2px 0px rgba(34, 0, 0, 1);
+  }
+
+  img {
+    width: 260px;
+    margin: 20px;
+    border-radius: 50%;
+  }
+
+  img:hover {
+    box-shadow: 5px 5px 100px 0px rgba(255, 3, 238, 0.9);
+  }
+
+  .btns-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 35px;
+    width: 200;
+    height: 400px;
   }
 
   .planet-btn {
-    background: url(../assets/img/rocktexture.png) no-repeat center fixed;
-    background-size: cover;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
-    color: #95ff00;
-    text-shadow: 2px 1px 0px rgba(34, 0, 0, 1);
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    margin: 50px 10px;
+    width: 260px;
+    height: 260px;
     cursor: pointer;
+    color:#95ff00;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 0px rgba(34, 0, 0, 1);
+  }
+
+  .glurgon-btn {
+    background: url(../assets/img/glurgon9.png) no-repeat center;
+    background-size: cover;
+  }
+
+  .sklee-btn {
+    background: url(../assets/img/sklee.png) no-repeat center;
+    background-size: cover;
+  }
+
+  .meebles-btn {
+    width: 190px;
+    height: 190px;
+    background: url(../assets/img/meeble.png) no-repeat center;
+    background-size: cover;
   }
 
   .planet-btn:hover {
-    box-shadow: 5px 5px 100px 0px rgba(251, 3, 255, 0.8);
-    color: #ff00ff;
+    box-shadow: 5px 5px 100px 0px rgba(255, 3, 238, 0.9);
+  }
+
+  .location-text {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
 
   .close-input-modal {

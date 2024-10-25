@@ -102,6 +102,9 @@ export default function planets() {
             planetSwitch();
             overlay.style.display = "none";
             spaceshipModal.classList.add('hide');
+            document.getElementById("glurgon-loc-text").innerHTML = "You are here";
+            document.getElementById("sklee-loc-text").innerHTML = "5 time units away";
+            document.getElementById("meebles-loc-text").innerHTML = "2 time units away";
             timeUnits.innerText -= 3;
         });
         planet1Btn.addEventListener('click', () => {
@@ -113,7 +116,10 @@ export default function planets() {
             planetSwitch();
             overlay.style.display = "none";
             spaceshipModal.classList.add('hide');
-            timeUnits.innerText -= 2;
+            timeUnits.innerText -= 5;
+            document.getElementById("glurgon-loc-text").innerHTML = "3 time units away";
+            document.getElementById("sklee-loc-text").innerHTML = "You are here";
+            document.getElementById("meebles-loc-text").innerHTML = "2 time units away";
         });
         planet2Btn.addEventListener('click', () => {
             currentPlanet = planetData.planets[2];
@@ -124,7 +130,10 @@ export default function planets() {
             planetSwitch();
             overlay.style.display = "none";
             spaceshipModal.classList.add('hide');
-            timeUnits.innerText -= 5;
+            timeUnits.innerText -= 2;
+            document.getElementById("glurgon-loc-text").innerHTML = "3 time units away";
+            document.getElementById("sklee-loc-text").innerHTML = "5 time units away";
+            document.getElementById("meebles-loc-text").innerHTML = "You are here";
         });
 
         function planetSwitch() {
