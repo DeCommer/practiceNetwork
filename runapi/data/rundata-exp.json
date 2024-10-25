@@ -17386,9 +17386,20 @@
       "dom": 24,
       "year": "2024",
       "avgPace": "8`06``",
-      "distance": 3.17,
+      "distance": 3.18  ,
       "duration": "00:25:46",
       "calories": 394
+    },
+    {
+      "id": 1583,
+      "weekday": "Friday",
+      "month": "October",
+      "dom": 25,
+      "year": "2024",
+      "avgPace": "8`15``",
+      "distance": 3.19,
+      "duration": "00:26:23",
+      "calories": 385
     }
   ]
 }
