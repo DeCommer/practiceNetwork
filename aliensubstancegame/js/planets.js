@@ -106,6 +106,7 @@ export default function planets() {
             document.getElementById("sklee-loc-text").innerHTML = "5 time units away";
             document.getElementById("meebles-loc-text").innerHTML = "2 time units away";
             timeUnits.innerText -= 3;
+            message.innerText = "Welcome to Glugon 9";
         });
         planet1Btn.addEventListener('click', () => {
             currentPlanet = planetData.planets[1];
@@ -120,6 +121,7 @@ export default function planets() {
             document.getElementById("glurgon-loc-text").innerHTML = "3 time units away";
             document.getElementById("sklee-loc-text").innerHTML = "You are here";
             document.getElementById("meebles-loc-text").innerHTML = "2 time units away";
+            message.innerText = "Welcome to Planet Sklee";
         });
         planet2Btn.addEventListener('click', () => {
             currentPlanet = planetData.planets[2];
@@ -134,6 +136,7 @@ export default function planets() {
             document.getElementById("glurgon-loc-text").innerHTML = "3 time units away";
             document.getElementById("sklee-loc-text").innerHTML = "5 time units away";
             document.getElementById("meebles-loc-text").innerHTML = "You are here";
+            message.innerText = "Welcome to Planet Meebles";
         });
 
         function planetSwitch() {
