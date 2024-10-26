@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="overlay"></div>
-    <div id="space-ship-modal" class="space-ship-modal hide">
+    <div id="space-ship-modal" class="modal space-ship-modal hide">
         <h1>Welcome to Space Port 9000</h1>
         <div class="btns-container">
             <div class="btn-card">
@@ -30,6 +30,22 @@
         <h1>Choose your destination</h1>
         <a class="close-input-modal">x</a>
     </div>
+
+    <div id="store-modal" class="modal store-modal hide">
+        <h1>Store</h1>
+        <a id="store-close-btn" class="close-input-modal">x</a>
+        <div class="store-item-card">
+            <img src="assets/img/pistol.png">
+            <h4>Space Pistol</h4>
+            <p>⛢1500</p>
+        </div>
+    </div>
+
+<!-- 
+    <div id="bank-modal" class="modal bank-modal">
+        <h1>Bank</h1>
+        <a class="close-input-modal">x</a>
+    </div> -->
 
     <p style="color: #fff">Alien Substance Wars - © Joseph DeCommer 2024</p>
     <p style="color: #fff">Status: INOP / in progress</p>
@@ -105,11 +121,11 @@
                 </div>
             </div>
             <div class="as-game-action-btns">
-                <button class="action-btn">Store</button>
-                <button class="action-btn">Bank</button>
-                <button class="action-btn">Buy >></button>
-                <button class="action-btn"><< Sell</button>
-                <button class="action-btn">New Game</button>
+                <button id="store-btn" class="action-btn">Store</button>
+                <button id="bank-btn" class="action-btn">Bank</button>
+                <button id="buy-btn" class="action-btn">Buy >></button>
+                <button id="sell-btn" class="action-btn"><< Sell</button>
+                <button id="new-game-btn" class="action-btn">New Game</button>
             </div>
             <div class="as-inventory">
                 <p>Inventory 0/100</p>

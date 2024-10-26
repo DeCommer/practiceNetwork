@@ -10,34 +10,53 @@ export default function planets() {
     const placeBtn_2 = document.getElementById("place-btn-2");
     const placeBtn_3 = document.getElementById("place-btn-3");
     const spaceshipBtn = document.getElementById("place-btn-ship");
-    const spaceshipModal = document.getElementById("space-ship-modal");
     const overlay = document.querySelector(".overlay");
-
+    
     const planet0Btn = document.getElementById("planet0");
     const planet1Btn = document.getElementById("planet1");
     const planet2Btn = document.getElementById("planet2");
-
+    
     let timeUnits = document.getElementById("time-units-text");
     let money = document.getElementById("money-text");
     let bank = document.getElementById("bank-text");
     let debt = document.getElementById("debt-text");
-
+    
     let moneyValue = 1000;
     let bankValue = 0.00;
     let debitValue = 500;
     
+    const spaceshipModal = document.getElementById("space-ship-modal");
     function displaySpaceshipModal() {
         overlay.style.display = "block";
         spaceshipModal.classList.remove("hide");
         spaceshipModal.style.position = 'fixed';
         spaceshipModal.style.top = `-${document.body.scrollY}px`;
     };
-    
+
+    const storeModal = document.getElementById("store-modal");
+    const storeBtn = document.getElementById("store-btn");
+
+    function displayStoreModal() {
+        overlay.style.display = "block";
+        storeModal.classList.remove("hide");
+        storeModal.style.position = 'fixed';
+        storeModal.style.top = `-${document.body.scrollY}px`;
+    };
+
     function closeModal() {
         const closeImageBtn = document.querySelector('.close-input-modal');
         closeImageBtn.addEventListener('click', () => {
             overlay.style.display = "none";
+            storeModal.classList.add("hide");
             spaceshipModal.classList.add('hide');
+        });
+    }
+
+    function closeStoreModal() {
+        const storeClose = document.getElementById('store-close-btn');
+        storeClose.addEventListener('click', () => {
+            overlay.style.display = "none";
+            storeModal.classList.add("hide");
         });
     }
     
@@ -92,7 +111,12 @@ export default function planets() {
             displaySpaceshipModal();
             closeModal();
         });
-
+        
+        storeBtn.addEventListener('click', () => {
+            displayStoreModal();
+            closeStoreModal();
+        });
+        
         planet0Btn.addEventListener('click', () => {
             currentPlanet = planetData.planets[0];
             placeBtn_0.classList.add("active");

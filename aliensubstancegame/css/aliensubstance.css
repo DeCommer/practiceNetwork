@@ -26,11 +26,9 @@ body {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.5);
   }
-
-.space-ship-modal {
+  
+  .modal {
     border: 2px solid;
-    background: url(../assets/img/spaceport.jpg) no-repeat center center fixed;
-    background-size: cover;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .17);
     background-color: var(--bg);
@@ -42,17 +40,39 @@ body {
     width: 800px;
     height: 600px;
     z-index: 1;
-    text-shadow: 2px 2px 0px rgba(34, 0, 0, 1);
+    /* text-shadow: 2px 2px 0px rgba(34, 0, 0, 1); */
   }
 
-  img {
-    width: 260px;
-    margin: 20px;
-    border-radius: 50%;
+.space-ship-modal {
+    border: 2px solid;
+    background: url(../assets/img/spaceport.jpg) no-repeat center center fixed;
+    background-size: cover;
   }
 
-  img:hover {
-    box-shadow: 5px 5px 100px 0px rgba(255, 3, 238, 0.9);
+  .store-modal {
+    border: 2px solid;
+    background: url(../assets/img/store-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .store-item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    width:150px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .store-item-card img {
+    border: 1px solid gray;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
   }
 
   .btns-container {
