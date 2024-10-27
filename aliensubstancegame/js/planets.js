@@ -43,6 +43,15 @@ export default function planets() {
         storeModal.style.top = `-${document.body.scrollY}px`;
     };
 
+    const bankModal = document.getElementById("bank-modal");
+    const bankBtn = document.getElementById("bank-btn");
+
+    function displayBankModal() {
+        overlay.style.display = "block";
+        bankModal.classList.remove("hide");
+        bankModal.style.position = 'fixed';
+        bankModal.style.top = `-${document.body.scrollY}px`;
+    };
     function closeModal() {
         const closeImageBtn = document.querySelector('.close-input-modal');
         closeImageBtn.addEventListener('click', () => {
@@ -57,6 +66,14 @@ export default function planets() {
         storeClose.addEventListener('click', () => {
             overlay.style.display = "none";
             storeModal.classList.add("hide");
+        });
+    }
+
+    function closeBankModal() {
+        const bankClose = document.getElementById('bank-close-btn');
+        bankClose.addEventListener('click', () => {
+            overlay.style.display = "none";
+            bankModal.classList.add("hide");
         });
     }
     
@@ -116,6 +133,12 @@ export default function planets() {
             displayStoreModal();
             closeStoreModal();
         });
+
+        bankBtn.addEventListener('click', () => {
+            displayBankModal();
+            closeBankModal();
+        });
+        
         
         planet0Btn.addEventListener('click', () => {
             currentPlanet = planetData.planets[0];
