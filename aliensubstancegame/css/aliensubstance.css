@@ -149,47 +149,52 @@ body {
     border: 5px solid;
     border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
     background-color: rgb(209, 224, 240);
-    margin-top: 25px;
+    margin-top: 50px;
     width: 1000px;
     height: fit-content;
 }
 
+.logo {
+  margin: 10px;
+  font-size: 3rem;
+}
+
 .as-title {
     position: absolute;
-    top: -25px;
+    top: -60px;
     left: -25px;
-    background-color: #ffffff;
-    border: 5px solid;
-    border-image: linear-gradient(45deg, var(--leftGrad) 10%, var(--centerGrad) 50%, var(--rightGrad) 100%) 1;
-    padding: 5px 15px;
+    /* background-color: #fff; */
+    padding: 5px 25px 5px 0;
     color: #ff00ff;
     font-size: 2.6rem;
+    font-weight: 400;
     text-shadow: 2px 2px 0px rgba(34, 0, 0, 1);
 }
 
 .as-top {
     /* border: 1px solid yellow; */
+    margin: 20px 0;
+    padding-right: 70px;
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 90px;
 }
 
 .as-info-contents {
     /* border: 1px solid rgb(138, 131, 138); */
     width: 450px;
     height: 300px;
-    margin: 55px 75px 0 -100px;
 }
 
 .as-info-text {
     font-size: 2.2rem;
     border: 1px solid #ff00ff;
     background-color: #2d0646;
+    color: #95ff00;
     padding: 0 10px;
     margin: 7px 0;
-    color: #95ff00;
 }
 
 .as-info-span {
@@ -198,13 +203,11 @@ body {
 }
 
 .as-areas-contents {
-    border: 1px solid rgb(138, 131, 138);
-    background-color: #fff;
+  
     width: 450px;
-    height: fit-content;
-    margin: 25px 0;
-    padding: 10px;
+    padding-top: 20px;
     display: flex;
+    height: fit-content;
     flex-direction: column;
     align-items: center;
 }
@@ -349,4 +352,3 @@ td {
 tr:nth-child(even) {
     background-color: #ddd;
 }
-    

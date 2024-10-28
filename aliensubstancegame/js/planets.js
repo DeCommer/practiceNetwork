@@ -21,6 +21,7 @@ export default function planets() {
     let bank = document.getElementById("bank-text");
     let debt = document.getElementById("debt-text");
     
+    let timeUnitValue = 30;
     let moneyValue = 1000;
     let bankValue = 0.00;
     let debitValue = 500;
@@ -80,7 +81,7 @@ export default function planets() {
     let message = document.getElementById("message-text");
     
     function displayPlanets(planetData) {
-        timeUnits.innerText = 30;
+        timeUnits.innerText = timeUnitValue;
         money.innerText = moneyValue + debitValue;
         bank.innerText = bankValue;
         debt.innerText = debitValue;
@@ -138,7 +139,6 @@ export default function planets() {
             displayBankModal();
             closeBankModal();
         });
-        
         
         planet0Btn.addEventListener('click', () => {
             currentPlanet = planetData.planets[0];
