@@ -17411,6 +17411,28 @@
       "distance": 3.18,
       "duration": "00:25:43",
       "calories": 401
+    },
+    {
+      "id": 1585,
+      "weekday": "Monday",
+      "month": "October",
+      "dom": 28,
+      "year": "2024",
+      "avgPace": "8`21``",
+      "distance": 4.02,
+      "duration": "00:33:34",
+      "calories": 503
+    },
+    {
+      "id": 1586,
+      "weekday": "Tuesday",
+      "month": "October",
+      "dom": 28,
+      "year": "2024",
+      "avgPace": "8`15``",
+      "distance": 4.15,
+      "duration": "00:34:417",
+      "calories": 502
     }
   ]
 }
