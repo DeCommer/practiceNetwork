@@ -15,7 +15,7 @@ const questions = [
         correctAnswer: "36"
     },
     {
-        question: "Question 2",
+        question: "Question 2", 
         options: ["Choice_1", "Choice_2", "Choice_3", "Choice_4"],
         correctAnswer: "Choice_4"
     },
