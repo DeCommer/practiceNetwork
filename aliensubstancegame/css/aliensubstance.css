@@ -161,14 +161,14 @@ body {
 
 .as-title {
     position: absolute;
-    top: -60px;
+    top: -57px;
     left: -25px;
     /* background-color: #fff; */
     padding: 5px 25px 5px 0;
-    color: #ff00ff;
-    font-size: 2.6rem;
-    font-weight: 400;
-    text-shadow: 2px 2px 0px rgba(34, 0, 0, 1);
+    color: #00ff10;
+    font-size: 3rem;
+    font-weight: 500;
+    text-shadow: 3px 3px 1px rgba(34, 0, 0, 1);
 }
 
 .as-top {
@@ -316,6 +316,7 @@ body {
 
 .action-btn {
     margin: 5px 0;
+    padding: 5px;
     height: 40px;
     font-family: "Rajdhani", sans-serif;
     font-weight: 500;
