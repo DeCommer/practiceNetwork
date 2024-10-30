@@ -1,0 +1,23 @@
+
+.quiz-container {
+    border: 1px solid rgb(60, 115, 187);
+    border-radius: 25px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.question-text {
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    width: 95%;
+}
+
+button {
+    background-color: rgb(60, 115, 187);
+    border: 1px solid rgb(10, 46, 64);
+    margin: 10px;
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+}
