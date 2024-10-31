@@ -1,58 +1,92 @@
-const questionElement = document.getElementById("question");
-const optionsElement = document.getElementById("options");
-const submitButton = document.getElementById("submit-btn");
-const resultContainer = document.getElementById("result-container");
-const resultPercentContainer = document.getElementById("result-percent-container");
-
-let currentQuestion = 0;
-let numberOfQuestions = 2;
-let score = 0;
-
-const questions = [
+const quizData = [
     {
-        question: "The numbers 11, 12, 13, 17, 19, x have an average of 18. Find the value of x",
-        options: ["45", "82", "36", "29"],
-        correctAnswer: "36"
+        question: "What is the capital of France?",
+        options: ["Berlin", "Madrid", "Paris", "Lisbon"],
+        answer: "Paris",
     },
     {
-        question: "Question 2", 
-        options: ["Choice_1", "Choice_2", "Choice_3", "Choice_4"],
-        correctAnswer: "Choice_4"
+        question: "Which planet is known as the Red Planet?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        answer: "Mars",
     },
-
+    {
+        question: "What is the largest ocean on Earth?",
+        options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        answer: "Pacific Ocean",
+    },
+    {
+        question: "Who wrote 'Romeo and Juliet'?",
+        options: ["Charles Dickens", "Mark Twain", "William Shakespeare", "Jane Austen"],
+        answer: "William Shakespeare",
+    },
+    {
+        question: "What is the powerhouse of the cell?",
+        options: ["Nucleus", "Mitochondria", "Ribosome", "Endoplasmic Reticulum"],
+        answer: "Mitochondria",
+    },
+    {
+        question: "What is the smallest prime number?",
+        options: ["0", "1", "2", "3"],
+        answer: "2",
+    },
+    {
+        question: "What year did the Titanic sink?",
+        options: ["1912", "1905", "1898", "1920"],
+        answer: "1912",
+    },
+    {
+        question: "What is the capital of Japan?",
+        options: ["Seoul", "Tokyo", "Beijing", "Bangkok"],
+        answer: "Tokyo",
+    },
+    {
+        question: "Which gas do plants absorb?",
+        options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Helium"],
+        answer: "Carbon Dioxide",
+    },
+    {
+        question: "What is the chemical symbol for gold?",
+        options: ["Au", "Ag", "Pb", "Fe"],
+        answer: "Au",
+    },
 ];
 
-function loadQuestion() {
-    const question = questions[currentQuestion];
+const quizContainer = document.getElementById('quiz');
+const resultContainer = document.getElementById('result');
+const submitButton = document.getElementById('submit');
 
-    questionElement.textContent = question.question;
-    optionsElement.innerHTML = "";
+function loadQuiz() {
+    quizData.forEach((data, index) => {
+        const questionElement = document.createElement('div');
+        questionElement.classList.add('question');
+        questionElement.innerHTML = `<p>${index + 1}. ${data.question}</p>`;
 
-    question.options.forEach(option => {
-        const button = document.createElement("button");
-        button.textContent = option;
-        button.addEventListener("click", () => checkAnswer(option));
-        optionsElement.appendChild(button);
+        data.options.forEach(option => {
+            questionElement.innerHTML += `
+                <label>
+                    <input type="radio" name="question${index}" value="${option}">
+                    ${option}
+                </label><br>
+            `;
+        });
+
+        quizContainer.appendChild(questionElement);
     });
 }
 
-function checkAnswer(selectedOption) {
-    const question = questions[currentQuestion];
-    if (selectedOption === question.correctAnswer) {
-        score++;
-    }
+function calculateResult() {
+    let score = 0;
 
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-        loadQuestion();
-    } else {
-        showResults();
-    }
+    quizData.forEach((data, index) => {
+        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+        if (selectedOption && selectedOption.value === data.answer) {
+            score++;
+        }
+    });
+
+    resultContainer.innerHTML = `You scored ${score} out of ${quizData.length}.`;
 }
 
-function showResults() {
-    resultContainer.textContent = `You scored ${score} out of ${questions.length}!`;
-    resultPercentContainer.textContent = `That is ${(parseInt(score)/ parseInt(questions.length)) * 100}%`;
-}
+loadQuiz();
 
-loadQuestion();
+submitButton.addEventListener('click', calculateResult);
