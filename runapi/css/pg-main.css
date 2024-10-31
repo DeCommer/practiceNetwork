@@ -21,7 +21,7 @@
     display: flex;
     padding-bottom: 20px;
     align-items: center;
-    gap: 50px;
+    gap: 45px;
 }
 
 .metrics span {
@@ -32,7 +32,7 @@
 
 .totals {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .page-num-container {
@@ -40,10 +40,18 @@
 }
 
 .year-selector {
-    border-radius: 25px;
+    /* border-radius: 25px; */
+    border: none;
     width: 75px;
     text-align: center;
     font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
 
 button {
