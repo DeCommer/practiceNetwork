@@ -6,10 +6,20 @@ fetch("./data/rundata-exp.json")
 const displayRuns = (data) => {
     const runs = data.runs;
     const wrapper = document.getElementById('run-data-container');
+    const yearSelect = document.getElementById("year-selector");
     const rowsPerPage = 10;
     const initialPage = 1;
-    displayList = (items, wrapper, rowsPerPage, page) => {
 
+    // Populate year selector
+    const years = [...new Set(runs.map(run => run.year))];
+    years.forEach(year => {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearSelect.appendChild(option);
+    });
+
+    displayList = (items, wrapper, rowsPerPage, page) => {
         page--;
 
         const start = rowsPerPage * page;
@@ -123,6 +133,12 @@ const displayRuns = (data) => {
         });
         pagination.appendChild(lastButton);
     }
+
+    yearSelect.addEventListener('change', () => {
+        const selectedYear = yearSelect.value;
+        const filteredRuns = selectedYear ? runs.filter(run => run.year == selectedYear) : runs;
+        displayList(filteredRuns, wrapper, rowsPerPage, initialPage);
+    });
     
     displayList(runs, wrapper, rowsPerPage, initialPage);
 
