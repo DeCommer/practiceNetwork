@@ -150,19 +150,19 @@ const displayRuns = (data) => {
 
     const totalRuns = document.querySelector('.total-runs');
     const totalDist = document.querySelector('.total-distance');
-    const totalCal = document.querySelector('.total-cal')
+    const totalCal = document.querySelector('.total-cal');
 
-    let runSum = 0
-    let distSum = 0
-    let calSum = 0
+    let runSum = 0;
+    let distSum = 0;
+    let calSum = 0;
     runs.forEach(run => {
             runSum = run.id;
             calSum += run.calories;
             distSum += (run.distance);
     }); 
-    totalRuns.innerHTML = `<p>Total Runs: <span>${formatNumber(Math.round(runSum))}</span>`
-    totalDist.innerHTML = `<p>Distance: <span>${formatNumber(Math.round(distSum) - 35)}</span> mi`
-    totalCal.innerHTML = `<p>Calories: <span>${formatNumber(Math.round(calSum))}</span>`
+    totalRuns.innerHTML = `<p>Total Runs: <span>${formatNumber(Math.round(runSum))}</span>`;
+    totalDist.innerHTML = `<p>Distance: <span>${formatNumber(Math.round(distSum) - 35)}</span> mi`;
+    totalCal.innerHTML = `<p>Calories: <span>${formatNumber(Math.round(calSum))}</span>`;
 
     const milesToVolt = VOLT - (distSum - 35);
     // document.getElementById('countdown').innerHTML = `<p><span style="color: var(--orange);">${Math.round(milesToVolt)}</span> miles until Nike+ Volt Level</p>`
