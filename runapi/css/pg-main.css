@@ -21,7 +21,7 @@
     display: flex;
     padding-bottom: 20px;
     align-items: center;
-    gap: 45px;
+    gap: 35px;
 }
 
 .metrics span {
@@ -42,7 +42,7 @@
 .year-selector {
     /* border-radius: 25px; */
     border: none;
-    width: 75px;
+    width: 90px;
     text-align: center;
     font-size: 1rem;
 }
