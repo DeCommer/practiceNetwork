@@ -17431,8 +17431,19 @@
       "year": "2024",
       "avgPace": "8`15``",
       "distance": 4.15,
-      "duration": "00:34:417",
+      "duration": "00:34:17",
       "calories": 502
+    },
+    {
+      "id": 1587,
+      "weekday": "Thursday",
+      "month": "October",
+      "dom": 31,
+      "year": "2024",
+      "avgPace": "8`06``",
+      "distance": 3.18,
+      "duration": "00:25:45",
+      "calories": 390
     }
   ]
 }
