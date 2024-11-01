@@ -1,92 +1,129 @@
-const quizData = [
+const questions = [
     {
-        question: "What is the capital of France?",
-        options: ["Berlin", "Madrid", "Paris", "Lisbon"],
-        answer: "Paris",
+        question: "If red is yellow and blue is green, what color is next Tuesday?",
+        answers: [
+            {text: "Fish", correct: false},
+            {text: "Cat", correct: true},
+            {text: "Burgler", correct: false},
+            {text: "Whimsical", correct: false}
+        ]
+    }, 
+    {
+        question: "The ball is over there, then the ball moves, where is the ball?",
+        answers: [
+            {text: "Parts Unkn.", correct: false},
+            {text: "Detroit", correct: false},
+            {text: "The mall", correct: true},
+            {text: "Look out behind you!", correct: false}
+        ]
     },
     {
-        question: "Which planet is known as the Red Planet?",
-        options: ["Earth", "Mars", "Jupiter", "Saturn"],
-        answer: "Mars",
+        question: "17 is 1 less than the numer that is closest to the tire wall. When do you leave?",
+        answers: [
+            {text: "When the dishes are done", correct: false},
+            {text: "8:30", correct: false},
+            {text: "Your computer is broke", correct: true},
+            {text: "1dee12", correct: false}
+        ]
     },
     {
-        question: "What is the largest ocean on Earth?",
-        options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
-        answer: "Pacific Ocean",
-    },
-    {
-        question: "Who wrote 'Romeo and Juliet'?",
-        options: ["Charles Dickens", "Mark Twain", "William Shakespeare", "Jane Austen"],
-        answer: "William Shakespeare",
-    },
-    {
-        question: "What is the powerhouse of the cell?",
-        options: ["Nucleus", "Mitochondria", "Ribosome", "Endoplasmic Reticulum"],
-        answer: "Mitochondria",
-    },
-    {
-        question: "What is the smallest prime number?",
-        options: ["0", "1", "2", "3"],
-        answer: "2",
-    },
-    {
-        question: "What year did the Titanic sink?",
-        options: ["1912", "1905", "1898", "1920"],
-        answer: "1912",
-    },
-    {
-        question: "What is the capital of Japan?",
-        options: ["Seoul", "Tokyo", "Beijing", "Bangkok"],
-        answer: "Tokyo",
-    },
-    {
-        question: "Which gas do plants absorb?",
-        options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Helium"],
-        answer: "Carbon Dioxide",
-    },
-    {
-        question: "What is the chemical symbol for gold?",
-        options: ["Au", "Ag", "Pb", "Fe"],
-        answer: "Au",
-    },
+        question: "Two, four, six, eight, what comes next?",
+        answers: [
+            {text: "Sally", correct: false},
+            {text: "Billy", correct: false},
+            {text: "Johnson", correct: true},
+            {text: "49", correct: false}
+        ]
+    }
 ];
 
-const quizContainer = document.getElementById('quiz');
-const resultContainer = document.getElementById('result');
-const submitButton = document.getElementById('submit');
+const questionElement = document.getElementById("question");
+const ansBtns = document.getElementById("answer-btns");
+const nextBtn = document.getElementById("next-btn");
+const quizResultsText = document.getElementById("quiz-results-text");
+const questionNumText = document.getElementById("question-num-text");
 
-function loadQuiz() {
-    quizData.forEach((data, index) => {
-        const questionElement = document.createElement('div');
-        questionElement.classList.add('question');
-        questionElement.innerHTML = `<p>${index + 1}. ${data.question}</p>`;
+let currentQuestionIdx = 0;
+let score = 0;
 
-        data.options.forEach(option => {
-            questionElement.innerHTML += `
-                <label>
-                    <input type="radio" name="question${index}" value="${option}">
-                    ${option}
-                </label><br>
-            `;
-        });
-
-        quizContainer.appendChild(questionElement);
-    });
+function initQuiz() {
+    currentQuestionIdx = 0;
+    score = 0;
+    nextBtn.innerHTML = `Next`;
+    displayQuestion();
 }
 
-function calculateResult() {
-    let score = 0;
+function displayQuestion() {
+    resetState();
+    questionElement.classList.remove('hide');
+    let currentQuestion = questions[currentQuestionIdx];
+    let questionNo = currentQuestionIdx + 1;
+    questionNumText.innerHTML = `Question ${questionNo}:`
+    questionElement.innerHTML = currentQuestion
+    .question;
 
-    quizData.forEach((data, index) => {
-        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
-        if (selectedOption && selectedOption.value === data.answer) {
-            score++;
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("ansBtns");
+        ansBtns.appendChild(button);
+        if(answer.correct) {
+            button.dataset.correct = answer.correct;
         }
+        button.addEventListener("click", selectAnswer)
     });
-
-    resultContainer.innerHTML = `You scored ${score} out of ${quizData.length}.`;
 }
 
-loadQuiz();
+function selectAnswer(e) {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if(isCorrect) {
+        selectedBtn.classList.add("correct");
+        score++;
+    }else {
+        selectedBtn.classList.add("incorrect");
+    }
+    Array.from(ansBtns.children).forEach(button => {
+        if(button.dataset.correct === "true") {
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+    // nextBtn.style.display = "block";
+}
 
-submitButton.addEventListener('click', calculateResult);
+function resetState() {
+    // nextBtn.style.display = "none";
+    quizResultsText.classList.add('hide');
+    while(ansBtns.firstChild) {
+        ansBtns.removeChild(ansBtns.firstChild);
+    }
+}
+
+function displayScore() {
+    resetState();
+    questionElement.classList.add('hide');
+    quizResultsText.classList.remove('hide');
+    quizResultsText.innerHTML = `You scored ${score} out of ${questions.length}. \n That is ${(score / questions.length) * 100}%`;
+    nextBtn.innerHTML = "Reset";
+    // nextBtn.style.display = "block";
+}
+
+function handleNextBtn() {
+    currentQuestionIdx++;
+    if(currentQuestionIdx < questions.length) {
+        displayQuestion();
+    }else {
+        displayScore();
+    }
+}
+
+nextBtn.addEventListener("click", () => {
+    if(currentQuestionIdx < questions.length) {
+        handleNextBtn();
+    }else {
+        initQuiz();
+    }
+})
+
+initQuiz();
