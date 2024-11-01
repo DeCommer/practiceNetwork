@@ -33,3 +33,12 @@ section p {
     padding: 10px;
     color: var(--orange);
 }
+
+@media(max-width: 900px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+    .math-props-title{
+        font-size: 1.9rem;
+    }
+}
