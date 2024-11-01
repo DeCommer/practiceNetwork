@@ -1,0 +1,57 @@
+{"questions": [
+    {
+        "question": "What time is the time where time is timeless?",
+        "answers": [
+            {"text": "now", "correct": false},
+            {"text": "two days ago", "correct": false},
+            {"text": "forward", "correct": false},
+            {"text": "food", "correct": true}
+        ]
+    },
+    {
+        "question": "If red is yellow and blue is green, what color is next Tuesday?",
+        "answers": [
+            {"text": "Fish", "correct": false},
+            {"text": "Cat", "correct": true},
+            {"text": "Burgler", "correct": false},
+            {"text": "Whimsical", "correct": false}
+        ]
+    }, 
+    {
+        "question": "The ball is over there, then the ball moves, where is the ball?",
+        "answers": [
+            {"text": "Parts Unkn.", "correct": false},
+            {"text": "Detroit", "correct": false},
+            {"text": "The mall", "correct": true},
+            {"text": "Look out behind you!", "correct": false}
+        ]
+    },
+    {
+        "question": "17 is 1 less than the number that is closest to the tire wall. When do you leave?",
+        "answers": [
+            {"text": "When the dishes are done", "correct": false},
+            {"text": "8:30", "correct": false},
+            {"text": "Your computer is broke", "correct": true},
+            {"text": "1dee12", "correct": false}
+        ]
+    },
+    {
+        "question": "Two, four, six, eight, what comes next?",
+        "answers": [
+            {"text": "Sally", "correct": false},
+            {"text": "Billy", "correct": false},
+            {"text": "Johnson", "correct": true},
+            {"text": "49", "correct": false}
+        ]
+    },
+    {
+        "question": "What color is the number blue?",
+        "answers": [
+            {"text": "2", "correct": true},
+            {"text": "12", "correct": false},
+            {"text": "There is no way to tell", "correct": false},
+            {"text": "orange", "correct": false}
+        ]
+    }
+]
+}
