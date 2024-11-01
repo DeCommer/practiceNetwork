@@ -1,0 +1,35 @@
+.main-wrapper {
+    /* border: 1px solid red; */
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    font-size: 1rem;
+}
+.left-container {
+    /* border: 1px solid blue; */
+    margin: 10px;
+    padding: 10px;
+}
+.right-container {
+    /* border: 1px solid coral; */
+    margin: 10px;
+    padding: 10px;;
+}
+
+section {
+    /* border: 1px solid red; */
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.math-props-title {
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--orange);
+}
+section p {
+    padding: 10px;
+    color: var(--orange);
+}
