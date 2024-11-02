@@ -11,8 +11,10 @@
 }
 
 .quiz {
+    /* border: 1px solid red; */
     padding: 10px 0;
     text-align: center;
+    height: 300px;
 }
 
 .quiz h2 {
@@ -76,7 +78,7 @@
 .results-area {
     /* border: 1px solid red; */
     width: fit-content;
-    margin: 25px auto;
+    margin: 13% auto;
     padding: 25px;
 }
 

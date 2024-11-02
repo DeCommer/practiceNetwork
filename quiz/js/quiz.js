@@ -6,8 +6,9 @@ function quiz(data) {
     const questionElement = document.getElementById("question");
     const ansBtns = document.getElementById("answer-btns");
     const nextBtn = document.getElementById("next-btn");
-    const quizResultsText = document.getElementById("quiz-results-text");
     const questionNumText = document.getElementById("question-num-text");
+    const results = document.getElementById("results-area");
+    const quizResultsText = document.getElementById("quiz-results-text");
     const message = document.getElementById("quiz-message");
     let questions = data.questions;
     let currentQuestionIdx = 0;
@@ -60,6 +61,7 @@ function quiz(data) {
     function resetState() {
         quizResultsText.classList.add('hide');
         message.classList.add('hide');
+        results.classList.add('hide');
         while(ansBtns.firstChild) {
             ansBtns.removeChild(ansBtns.firstChild);
         }
@@ -72,6 +74,7 @@ function quiz(data) {
         questionElement.classList.add('hide');
         quizResultsText.classList.remove('hide');
         message.classList.remove('hide');
+        results.classList.remove('hide');
         quizResultsText.innerHTML = `You scored ${score} out of ${questions.length}. \n That is ${scorePercent}%`;
         if(scorePercent < 25) {
             message.innerHTML = `That score sucks!`;
