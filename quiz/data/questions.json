@@ -4,7 +4,7 @@
         "answers": [
             {"text": "now", "correct": false},
             {"text": "two days ago", "correct": false},
-            {"text": "forward", "correct": false},
+            {"text": "7", "correct": false},
             {"text": "food", "correct": true}
         ]
     },
@@ -51,6 +51,15 @@
             {"text": "12", "correct": false},
             {"text": "There is no way to tell", "correct": false},
             {"text": "orange", "correct": false}
+        ]
+    },
+    {
+        "question": "How many books did Billy read if his bus was three minutes late?",
+        "answers": [
+            {"text": "all of them", "correct": false},
+            {"text": "Billy", "correct": true},
+            {"text": "the bus", "correct": false},
+            {"text": "the one he dropped on the floor", "correct": false}
         ]
     }
 ]

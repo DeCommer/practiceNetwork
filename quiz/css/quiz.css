@@ -12,10 +12,11 @@
 
 .quiz {
     padding: 10px 0;
+    text-align: center;
 }
 
 .quiz h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: var(--text);
     font-weight: 500;
     margin-bottom: 25px;
@@ -27,6 +28,7 @@
     background: var(--bg);
     color: var(--orange);
     font-weight: 600;
+    font-size: 1.2rem;
     width: 50%;
     border: 1px solid var(--text);
     padding: 10px;
