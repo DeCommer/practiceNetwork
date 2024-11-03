@@ -10,15 +10,31 @@ function quiz(data) {
     const results = document.getElementById("results-area");
     const quizResultsText = document.getElementById("quiz-results-text");
     const message = document.getElementById("quiz-message");
+    const time = document.getElementById("time");
+
     let questions = data.questions;
     let currentQuestionIdx = 0;
     let score = 0;
-
+    
     function initQuiz() {
         currentQuestionIdx = 0;
         score = 0;
         nextBtn.innerHTML = `Next`;
         displayQuestion();
+    }
+    
+    function countdown(minutes) {
+        let timeLeft = minutes * 60; // Convert minutes to seconds
+        const interval = setInterval(() => {
+            const mins = Math.floor(timeLeft / 60);
+            const secs = timeLeft % 60;
+            time.innerHTML = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            timeLeft--;
+            if (timeLeft < 0) {
+                clearInterval(interval);
+                displayScore();
+            }
+        }, 1000);
     }
 
     function displayQuestion() {
@@ -39,6 +55,10 @@ function quiz(data) {
             }
             button.addEventListener("click", selectAnswer);
         });
+
+        if(currentQuestionIdx == 1) {
+            countdown(.2);
+        }
     }
 
     function selectAnswer(e) {
@@ -75,7 +95,8 @@ function quiz(data) {
         quizResultsText.classList.remove('hide');
         message.classList.remove('hide');
         results.classList.remove('hide');
-        quizResultsText.innerHTML = `You scored ${score} out of ${questions.length}. \n That is ${scorePercent}%`;
+        quizResultsText.innerHTML = 
+        `You scored ${score} out of ${questions.length}. \n That is ${scorePercent}%`;
         if(scorePercent < 25) {
             message.innerHTML = `That score sucks!`;
         }if (scorePercent > 25 && scorePercent <= 50){
@@ -104,6 +125,5 @@ function quiz(data) {
             initQuiz();
         }
     });
-
     initQuiz();
 }

@@ -3,11 +3,16 @@
     max-width: 600px;
 }
 
-.app-container h1 {
-    font-weight: 500;
-    color: var(--orange);
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     border-bottom: 1px solid var(--text);
     padding-bottom: 3px;
+}
+
+.app-header h1 {
+    color: var(--orange);
 }
 
 .quiz {
