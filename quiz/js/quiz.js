@@ -12,6 +12,8 @@ function quiz(data) {
     const message = document.getElementById("quiz-message");
     const time = document.getElementById("time");
 
+    const resetBtn = document.getElementById("reset-btn");
+
     let questions = data.questions;
     let currentQuestionIdx = 0;
     let score = 0;
@@ -106,7 +108,12 @@ function quiz(data) {
         }if (scorePercent > 75 && scorePercent <= 100){
             message.innerHTML = `No way! You cheated!`;
         }
-        nextBtn.innerHTML = "Reset";
+        // nextBtn.innerHTML = "Reset";
+        resetBtn.addEventListener('click', ()=>{
+            initQuiz();
+            nextBtn.classList.remove("hide");
+        });
+        nextBtn.classList.add("hide");
     }
 
     function handleNextBtn() {
