@@ -44,35 +44,35 @@ toggle.onclick = function() {
 function displayTime() {
     const updateTime = () => {
         const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
+        let hours = now.getHours();
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
-
-        const time = `${hours}.${minutes}`;
+        // const period = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12;
         const secs = `${seconds}`;
-        document.getElementById('time').innerHTML = time;
         document.getElementById('seconds').innerHTML = secs;
+        const currentTime = `${String(hours).padStart(2, '0')}:${minutes}`;
+        document.getElementById('time').innerHTML =currentTime;
     };
-
-    updateTime(); // Display the time immediately on load
-    setInterval(updateTime, 1000); // Update time every second
+    updateTime();
+    setInterval(updateTime, 1000);
 }
 
 function displayMobileTime() {
     const updateTime = () => {
         const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
+        let hours = now.getHours();
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
-
-        const time = `${hours}.${minutes}`;
+        // const period = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12;
         const secs = `${seconds}`;
-        document.getElementById('mobile-time').innerHTML = time;
         document.getElementById('mobile-seconds').innerHTML = secs;
+        const currentTime = `${String(hours).padStart(2, '0')}:${minutes}`;
+        document.getElementById('mobile-time').innerHTML =currentTime;
     };
-
-    updateTime(); // Display the time immediately on load
-    setInterval(updateTime, 1000); // Update time every second
+    updateTime();
+    setInterval(updateTime, 1000);
 }
 
 displayTime();
