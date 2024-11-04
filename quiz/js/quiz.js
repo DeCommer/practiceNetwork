@@ -2,7 +2,7 @@ fetch("./data/questions.json")
 .then(response => response.json())
 .then(data => quiz(data));
 function quiz(data) {
-    const time = document.getElementById("time");
+    const time = document.getElementById("timer");
     const nextBtn = document.getElementById("next-btn");
     const resetBtn = document.getElementById("reset-btn");
     const ansBtns = document.getElementById("answer-btns");
