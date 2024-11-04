@@ -25,18 +25,43 @@ function quiz(data) {
         displayQuestion();
     }
     
+    // function countdown(minutes) {
+    //     let timeLeft = minutes * 60;
+    //     const interval = setInterval(() => {
+    //         const mins = Math.floor(timeLeft / 60);
+    //         const secs = timeLeft % 60;
+    //         time.innerHTML = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    //         timeLeft--;
+    //         if (timeLeft < 0 ) {
+    //             clearInterval(interval);
+    //             displayScore();
+    //         }
+    //     }, 1000);
+    // }
+
+    let countdownInterval;
+    let timeLeft;
+
     function countdown(minutes) {
-        let timeLeft = minutes * 60; // Convert minutes to seconds
-        const interval = setInterval(() => {
-            const mins = Math.floor(timeLeft / 60);
-            const secs = timeLeft % 60;
-            time.innerHTML = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
-            timeLeft--;
-            if (timeLeft < 0) {
-                clearInterval(interval);
+        clearInterval(countdownInterval);
+        timeLeft = minutes * 60;
+
+        countdownInterval = setInterval(() => {
+            if (timeLeft > 0) {
+                const mins = Math.floor(timeLeft / 60);
+                const secs = timeLeft % 60;
+                time.innerHTML = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+                timeLeft--;
+            } else {
+                clearInterval(countdownInterval);
                 displayScore();
             }
         }, 1000);
+    }
+
+    function resetCountdown() {
+        clearInterval(countdownInterval);
+        time.innerHTML = `00:00`
     }
 
     function displayQuestion() {
@@ -91,6 +116,7 @@ function quiz(data) {
 
     function displayScore() {
         resetState();
+        resetCountdown()
         questionNumText.innerHTML = `Score`;
         let scorePercent = Math.trunc((score / questions.length) * 100);
         questionElement.classList.add('hide');
