@@ -4,13 +4,13 @@ year.forEach(year => {
     year.textContent = yearText;
 })
 
-const randNum = document.querySelectorAll(".randNum");
-setInterval(() =>{
-    randNum.forEach(randNum => {
-    let num = Math.floor(Math.random() * 90 + 10);
-    randNum.innerHTML = `${num}`;
-});
-}, 500)
+// const randNum = document.querySelectorAll(".randNum");
+// setInterval(() =>{
+//     randNum.forEach(randNum => {
+//     let num = Math.floor(Math.random() * 90 + 10);
+//     randNum.innerHTML = `${num}`;
+// });
+// }, 500);
 
 let url = window.location.href;
 console.log(url)
@@ -40,3 +40,40 @@ toggle.onclick = function() {
     document.documentElement.setAttribute('data-theme', targetTheme)
     localStorage.setItem('theme', targetTheme);
 };
+
+function displayTime() {
+    const updateTime = () => {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+
+        const time = `${hours}.${minutes}`;
+        const secs = `${seconds}`;
+        document.getElementById('time').innerHTML = time;
+        document.getElementById('seconds').innerHTML = secs;
+    };
+
+    updateTime(); // Display the time immediately on load
+    setInterval(updateTime, 1000); // Update time every second
+}
+
+function displayMobileTime() {
+    const updateTime = () => {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+
+        const time = `${hours}.${minutes}`;
+        const secs = `${seconds}`;
+        document.getElementById('mobile-time').innerHTML = time;
+        document.getElementById('mobile-seconds').innerHTML = secs;
+    };
+
+    updateTime(); // Display the time immediately on load
+    setInterval(updateTime, 1000); // Update time every second
+}
+
+displayTime();
+displayMobileTime();
