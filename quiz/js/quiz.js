@@ -1,51 +1,30 @@
 fetch("./data/questions.json")
 .then(response => response.json())
 .then(data => quiz(data));
-
 function quiz(data) {
-    const questionElement = document.getElementById("question");
-    const ansBtns = document.getElementById("answer-btns");
-    const nextBtn = document.getElementById("next-btn");
-    const questionNumText = document.getElementById("question-num-text");
-    const results = document.getElementById("results-area");
-    const quizResultsText = document.getElementById("quiz-results-text");
-    const message = document.getElementById("quiz-message");
     const time = document.getElementById("time");
-
+    const nextBtn = document.getElementById("next-btn");
     const resetBtn = document.getElementById("reset-btn");
-
-    let questions = data.questions;
-    let currentQuestionIdx = 0;
+    const ansBtns = document.getElementById("answer-btns");
+    const results = document.getElementById("results-area");
+    const message = document.getElementById("quiz-message");
+    const questionElement = document.getElementById("question");
+    const questionNumText = document.getElementById("question-num-text");
+    const quizResultsText = document.getElementById("quiz-results-text");
+    let timeLeft;
     let score = 0;
-    
+    let countdownInterval;
+    let currentQuestionIdx = 0;
+    let questions = data.questions;
     function initQuiz() {
         currentQuestionIdx = 0;
         score = 0;
         nextBtn.innerHTML = `Next`;
         displayQuestion();
     }
-    
-    // function countdown(minutes) {
-    //     let timeLeft = minutes * 60;
-    //     const interval = setInterval(() => {
-    //         const mins = Math.floor(timeLeft / 60);
-    //         const secs = timeLeft % 60;
-    //         time.innerHTML = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
-    //         timeLeft--;
-    //         if (timeLeft < 0 ) {
-    //             clearInterval(interval);
-    //             displayScore();
-    //         }
-    //     }, 1000);
-    // }
-
-    let countdownInterval;
-    let timeLeft;
-
     function countdown(minutes) {
         clearInterval(countdownInterval);
         timeLeft = minutes * 60;
-
         countdownInterval = setInterval(() => {
             if (timeLeft > 0) {
                 const mins = Math.floor(timeLeft / 60);
@@ -58,12 +37,10 @@ function quiz(data) {
             }
         }, 1000);
     }
-
     function resetCountdown() {
         clearInterval(countdownInterval);
-        time.innerHTML = `00:00`
+        time.innerHTML = `00:00`;
     }
-
     function displayQuestion() {
         resetState();
         questionElement.classList.remove('hide');
@@ -71,7 +48,6 @@ function quiz(data) {
         let questionNo = currentQuestionIdx + 1;
         questionNumText.innerHTML = `Question ${questionNo}:`;
         questionElement.innerHTML = currentQuestion.question;
-
         currentQuestion.answers.forEach(answer => {
             const button = document.createElement("button");
             button.innerHTML = answer.text;
@@ -82,12 +58,10 @@ function quiz(data) {
             }
             button.addEventListener("click", selectAnswer);
         });
-
         if(currentQuestionIdx == 1) {
             countdown(.2);
         }
     }
-
     function selectAnswer(e) {
         const selectedBtn = e.target;
         const isCorrect = selectedBtn.dataset.correct === "true";
@@ -104,7 +78,6 @@ function quiz(data) {
             button.disabled = true;
         });
     }
-
     function resetState() {
         quizResultsText.classList.add('hide');
         message.classList.add('hide');
@@ -113,10 +86,9 @@ function quiz(data) {
             ansBtns.removeChild(ansBtns.firstChild);
         }
     }
-
     function displayScore() {
         resetState();
-        resetCountdown()
+        resetCountdown();
         questionNumText.innerHTML = `Score`;
         let scorePercent = Math.trunc((score / questions.length) * 100);
         questionElement.classList.add('hide');
@@ -134,14 +106,12 @@ function quiz(data) {
         }if (scorePercent > 75 && scorePercent <= 100){
             message.innerHTML = `No way! You cheated!`;
         }
-        // nextBtn.innerHTML = "Reset";
         resetBtn.addEventListener('click', ()=>{
             initQuiz();
             nextBtn.classList.remove("hide");
         });
         nextBtn.classList.add("hide");
     }
-
     function handleNextBtn() {
         currentQuestionIdx++;
         if(currentQuestionIdx < questions.length) {
@@ -150,7 +120,6 @@ function quiz(data) {
             displayScore();
         }
     }
-
     nextBtn.addEventListener("click", () => {
         if(currentQuestionIdx < questions.length) {
             handleNextBtn();
