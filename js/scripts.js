@@ -51,7 +51,7 @@ function displayTime() {
         hours = hours % 12 || 12;
         const secs = `${seconds}`;
         document.getElementById('seconds').innerHTML = secs;
-        const currentTime = `${String(hours).padStart(2, '0')}:${minutes}`;
+        const currentTime = `${String(hours).padStart(2, '0')}.${minutes}`;
         document.getElementById('time').innerHTML =currentTime;
     };
     updateTime();
@@ -68,7 +68,7 @@ function displayMobileTime() {
         hours = hours % 12 || 12;
         const secs = `${seconds}`;
         document.getElementById('mobile-seconds').innerHTML = secs;
-        const currentTime = `${String(hours).padStart(2, '0')}:${minutes}`;
+        const currentTime = `${String(hours).padStart(2, '0')}.${minutes}`;
         document.getElementById('mobile-time').innerHTML =currentTime;
     };
     updateTime();
