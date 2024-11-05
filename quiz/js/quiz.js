@@ -59,7 +59,7 @@ function quiz(data) {
             button.addEventListener("click", selectAnswer);
         });
         if(currentQuestionIdx == 1) {
-            countdown(.2);
+            countdown(15);
         }
     }
     function selectAnswer(e) {
