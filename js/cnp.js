@@ -1,5 +1,5 @@
-let n = document.getElementById('n-in');
-let k = document.getElementById('k-in');
+let n = document.getElementById('n-in').value;
+let k = document.getElementById('k-in').value;
 const result = document.getElementById('result');
 const message = document.getElementById('message');
 const enterBtn = document.getElementById('enter-btn');
@@ -10,23 +10,27 @@ const cBtn = document.getElementById('combination-switch-btn');
 let state = "combinations";
 
 function factorial(n) {
-    if( n < 1) {
-        return 1;
-    }else if(n == 0 || n == 1) {			
+    if (n === 0 || n === 1) {
         return 1;
     }
-    return n * factorial(n - 1);
-}
-
-function combinationCalculation(n, k) {
-    if(n.value < k) {
-        console.log('n cannot be smaller than k')
-    }else {
-        return factorial(n) / (factorial(k) * factorial(n - k))
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
     }
+    return result;
 }
 
-function permutationCalculation(n, k) {
+function combinations(n, k) {
+    if (k > n) {
+        return 0; // Invalid case: r cannot be greater than n
+    }
+    return factorial(n) / (factorial(k) * factorial(n - k));
+}
+
+function permutations(n, k) {
+    if (k > n) {
+        return 0; // Invalid case: r cannot be greater than n
+    }
     return factorial(n) / factorial(n - k);
 }
 
@@ -48,11 +52,9 @@ pBtn.addEventListener('click', () => {
 
 enterBtn.addEventListener('click', () => {
     if(state === "combinations") {
-        console.log('combinations');
-        combinationCalculation();
+        result.innerHTML = combinations(n.value, k.value);
     }
     if(state === "permutations") {
-        console.log("permutations")
-        permutationCalculation()
+        permutations()
 }
 });
