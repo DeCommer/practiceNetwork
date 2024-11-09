@@ -1,5 +1,6 @@
-let n = document.getElementById('n-in').value;
-let k = document.getElementById('k-in').value;
+let n = parseInt(document.getElementById('n-in').value);
+let k = parseInt(document.getElementById('k-in').value);
+
 const result = document.getElementById('result');
 const message = document.getElementById('message');
 const enterBtn = document.getElementById('enter-btn');
@@ -12,6 +13,7 @@ const pMathText = document.getElementById("p-math-text");
 let state = "combinations";
 
 function factorial(n) {
+    // let n = parseInt(document.getElementById('n-in').value);
     if (n === 0 || n === 1) {
         return 1;
     }
@@ -54,14 +56,20 @@ pBtn.addEventListener('click', () => {
     pBtn.classList.add('active');
 });
 
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 enterBtn.addEventListener('click', () => {
+    let n = parseInt(document.getElementById('n-in').value);
+    let k = parseInt(document.getElementById('k-in').value);
     if(state === "combinations") {
-        result.innerHTML = combinations(n, k);
+        result.innerHTML = formatNumber(combinations(n, k));
         cMathText.classList.remove("hide");
         pMathText.classList.add("hide");
     }
     else if(state === "permutations") {
-        result.innerHTML = permutations(n,k);
+        result.innerHTML = formatNumber(permutations(n,k));
         pMathText.classList.remove("hide");
         cMathText.classList.add("hide");
     }
