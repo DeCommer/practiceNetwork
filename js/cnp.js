@@ -1,6 +1,5 @@
 let n = parseInt(document.getElementById('n-in').value);
 let k = parseInt(document.getElementById('k-in').value);
-
 const result = document.getElementById('result');
 const message = document.getElementById('message');
 const enterBtn = document.getElementById('enter-btn');
@@ -10,37 +9,56 @@ const cBtn = document.getElementById('combination-switch-btn');
 const cMathText = document.getElementById("c-math-text");
 const pMathText = document.getElementById("p-math-text");
 
+// Add replacement feature later
+
 let state = "combinations";
 
 function factorial(n) {
-    // let n = parseInt(document.getElementById('n-in').value);
-    if (n === 0 || n === 1) {
-        return 1;
-    }
     let result = 1;
-    for (let i = 2; i <= n; i++) {
-        result *= i;
-    }
+    if (n === 0 || n === 1) return 1;
+    for (let i = 2; i <= n; i++) result *= i;
     return result;
 }
 
 function combinations(n, k) {
-    if (k > n) {
-        return 0; // Invalid case: r cannot be greater than n
-    }
     return factorial(n) / (factorial(k) * factorial(n - k));
 }
 
 function permutations(n, k) {
-    if (k > n) {
-        return 0; // Invalid case: r cannot be greater than n
-    }
     return factorial(n) / factorial((n - k));
 }
 
+function cResult(n, k) {
+    if(n < k) {
+        message.innerHTML= `k must be smaller than n`
+        setTimeout(() =>{
+            message.innerHTML= ``;
+        }, 1000);
+    }else {
+        result.innerHTML = formatNumber(combinations(n, k));
+        cMathText.classList.remove("hide");
+        pMathText.classList.add("hide");
+    }
+}
+
+function pResult(n, k) {
+    if(n < k) {
+        message.innerHTML= `k must be smaller than n`
+        setTimeout(() =>{
+            message.innerHTML= ``;
+        }, 1000);
+    }else {
+        result.innerHTML = formatNumber(permutations(n,k));
+        pMathText.classList.remove("hide");
+        cMathText.classList.add("hide");
+    }
+}
+
 cBtn.addEventListener('click', () => {
+    let n = parseInt(document.getElementById('n-in').value);
+    let k = parseInt(document.getElementById('k-in').value);
+    cResult(n, k);
     state = "combinations";
-    console.log(state);
     document.getElementById('title').innerHTML = `Combinations Calculator`;
     document.getElementById('description').innerHTML = `When order <u>does not</u> matter`;
     cBtn.classList.add('active');
@@ -48,8 +66,10 @@ cBtn.addEventListener('click', () => {
 });
 
 pBtn.addEventListener('click', () => {
+    let n = parseInt(document.getElementById('n-in').value);
+    let k = parseInt(document.getElementById('k-in').value);
+    pResult(n, k);
     state = "permutations";
-    console.log(state);
     document.getElementById('title').innerHTML = `Permutations Calculator`;
     document.getElementById('description').innerHTML = `When order <u>does</u> matter`;
     cBtn.classList.remove('active');
@@ -64,14 +84,9 @@ enterBtn.addEventListener('click', () => {
     let n = parseInt(document.getElementById('n-in').value);
     let k = parseInt(document.getElementById('k-in').value);
     if(state === "combinations") {
-        result.innerHTML = formatNumber(combinations(n, k));
-        cMathText.classList.remove("hide");
-        pMathText.classList.add("hide");
-    }
-    else if(state === "permutations") {
-        result.innerHTML = formatNumber(permutations(n,k));
-        pMathText.classList.remove("hide");
-        cMathText.classList.add("hide");
+        cResult(n, k);
+    }else if(state === "permutations") {
+        pResult(n, k);
     }
 });
 
