@@ -10,6 +10,9 @@ const cMathText = document.getElementById("c-math-text");
 const pMathText = document.getElementById("p-math-text");
 
 // Add replacement feature later
+// permutations with replacement = n^k
+// combinations with replacement = (k + n - 1)! / k!(n-1)!
+
 
 let state = "combinations";
 
