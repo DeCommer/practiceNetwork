@@ -13,7 +13,6 @@ const pMathText = document.getElementById("p-math-text");
 // permutations with replacement = n^k
 // combinations with replacement = (k + n - 1)! / k!(n-1)!
 
-
 let state = "combinations";
 
 function factorial(n) {
