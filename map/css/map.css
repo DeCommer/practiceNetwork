@@ -16,7 +16,6 @@
     /* border: 1px solid #09396c;
     padding: 10px; */
     margin-bottom: 5px;
-
 }
 
 .map-container path {
@@ -30,7 +29,6 @@
 
 .state {
     cursor: pointer;
-    
 }
 
 .map-container :hover {
@@ -55,7 +53,7 @@
     transform: translate(-50%, -50%);
     width: fit-content;
     height: fit-content;
-    background-color: #f7efe0;
+    background-color: #fff;
     padding: 50px;
     border-radius: 10px;
     border: none;

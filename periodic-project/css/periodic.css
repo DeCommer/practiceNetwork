@@ -196,7 +196,7 @@ header {
     transform: translate(-50%, -50%);
     width: 600px;
     height: 900px;
-    background-color: #f7efe0;
+    background-color: #fff;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
@@ -240,7 +240,7 @@ header {
     border: 1px solid #646464;
     height: 500px;
     width: 500px;
-    margin: 10px 5%;
+    margin: 10px 8%;
     border-radius: 10px;
   }
 
