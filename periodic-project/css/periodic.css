@@ -20,6 +20,20 @@
     --rightGrad: #007acc;
 }
 
+html[data-theme='dark'] {
+    --alkali-metals: #79a7ac;
+    --alkali-earth-metals: #b8837e;
+    --trans-metals: #9f94b5;
+    --post-metals: #7db889;
+    --metalloids: #b6ac6d;
+    --reactive-nonmetals: #7f9ab3;
+    --noble-gas: #be8db9;
+    --lanthanides: #4f898b;
+    --actinides: #ba8d73;
+    --unknown: #9da8a9;
+
+}
+
 .app-hidden {
     display: none;
 }
@@ -36,6 +50,7 @@ main {
 .info-link {
     color: #007ACC;
     margin-left: 10px;
+    border-bottom: 1px solid;
 }
 
 header {
@@ -106,7 +121,8 @@ header {
 }
 
 .card:hover {
-    border: 1px solid #282828;
+    background-color: rgba(135, 219, 255, 0.353);
+    color: #fff;
 }
 
 .card p {
@@ -196,7 +212,7 @@ header {
     transform: translate(-50%, -50%);
     width: 600px;
     height: 900px;
-    background-color: #fff;
+    background-color: var(--bg);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
@@ -213,11 +229,11 @@ header {
   }
 
   .data h1 {
-    color: #282828;
+    color: var(--text);
     text-align: center;
-  }
+}
 
-  .data h1::after {
+.data h1::after {
     content: '';
   }
 
@@ -236,7 +252,13 @@ header {
     outline: none;
 }
 
-  img {
+.bmi {
+    border: none;
+    height: 125px !important;
+    width: 125px !important;
+  }
+
+  .data img {
     border: 1px solid #646464;
     height: 500px;
     width: 500px;
@@ -245,7 +267,7 @@ header {
   }
 
   .card-stats {
-    background-color: #fff;
+    background-color: var(--bg);
     border-radius: 10px;
     border: 1px solid #bdbaba;
     margin: 10px 0;
@@ -254,24 +276,18 @@ header {
     justify-content: space-evenly;
   }
 
-  .bmi {
-    border: none;
-    height: 125px;
-    width: 125px;
-  }
-
   .span {
     font-weight: 600;
   }
 
   .data p {
-    color: #643f07;
+    color: var(--text);
     padding: 10px;
   }
 
   .info-modal li {
     list-style-type: none;
-    color: #282828;
+    color: var(--text);
   }
 
 /************************************************ Key and colors */
